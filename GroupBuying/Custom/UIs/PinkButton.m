@@ -7,11 +7,9 @@
 //
 
 #import "PinkButton.h"
-#import "ColorsHeader.h"
 
 
 #define FONT_SIZE_PINKBUTTON    14.0f
-
 
 
 @implementation PinkButton
@@ -48,7 +46,7 @@
 
 - (void)setup
 {
-    self.backgroundColor = COLOR_MAIN ;
+//    self.backgroundColor = COLOR_MAIN ;
     self.layer.cornerRadius = CORNER_RADIUS_ALL ;
     [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal] ;
     self.titleLabel.font = [UIFont boldSystemFontOfSize:FONT_SIZE_PINKBUTTON] ;

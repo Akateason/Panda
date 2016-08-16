@@ -25,7 +25,7 @@ static int indexCache = 0 ;
         // Set in AppDelegate
 //        ((AppDelegate *)[UIApplication sharedApplication].delegate).tabbarCtrller = self ;
         
-        self.tabBar.tintColor = COLOR_MAIN ;
+//        self.tabBar.tintColor = COLOR_MAIN ;
         self.delegate = self ;
 //        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent] ;
     }

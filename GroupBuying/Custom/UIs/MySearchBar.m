@@ -8,7 +8,6 @@
 
 #import "MySearchBar.h"
 #import "UIImage+AddFunction.h"
-#import "ColorsHeader.h"
 
 @implementation MySearchBar
 
@@ -54,7 +53,7 @@
     
     self.searchBarStyle     = UISearchBarStyleMinimal ; //UISearchBarStyleProminent       ;
     
-    self.tintColor          = COLOR_MAIN            ;   //光标和取消文字的颜色
+//    self.tintColor          = COLOR_MAIN            ;   //光标和取消文字的颜色
     
     self.barTintColor = [UIColor blackColor] ;//[UIColor clearColor] ;
     

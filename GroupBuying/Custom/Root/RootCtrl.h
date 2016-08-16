@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ColorsHeader.h"
 #import "DigitInformation.h"
 #import "XTAnimation.h"
 #import "NSObject+MKBlockTimer.h"

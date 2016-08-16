@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ColorsHeader.h"
 
 /***************************************************************
  
@@ -32,7 +31,7 @@ General Information Here:
 
 #define loaderBackgroundColor       nil                                     //
 
-#define loaderBackgroundColor2      COLOR_BACKGROUND    //  [UIColor lightGrayColor]     //[UIColor colorWithWhite:1 alpha:1.0f]
+#define loaderBackgroundColor2      [UIColor lightGrayColor]     //[UIColor colorWithWhite:1 alpha:1.0f]
 
 #define loaderCornerRadius          20.0f
 #define loaderBackgroundWidth       150

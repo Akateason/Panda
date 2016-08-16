@@ -7,10 +7,6 @@
 //
 
 #import "MyTextField.h"
-#import "ColorsHeader.h"
-
-
-
 
 @implementation MyTextField
 
@@ -62,10 +58,10 @@
 
 - (void)anyStyle
 {
-    self.layer.borderColor = COLOR_BACKGROUND.CGColor ;
+//    self.layer.borderColor = COLOR_BACKGROUND.CGColor ;
     self.layer.borderWidth = 0.5f ;
     self.borderStyle       = UITextBorderStyleNone ;
-    self.textColor         = COLOR_MAIN ;   //[UIColor lightGrayColor] ;
+    self.textColor         = [UIColor lightGrayColor] ;
     self.font              = [UIFont systemFontOfSize:12.0f] ;
 }
 

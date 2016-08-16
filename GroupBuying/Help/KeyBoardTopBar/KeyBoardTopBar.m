@@ -7,7 +7,6 @@
 //
 
 #import "KeyBoardTopBar.h"
-#import "ColorsHeader.h"
 
 
 #define APPFM                   [UIScreen mainScreen].bounds
@@ -33,9 +32,9 @@
         
         UIButton *correctButton = [UIButton buttonWithType:UIButtonTypeCustom]  ;
         [correctButton setTitle:SHUTDOWN forState:UIControlStateNormal]         ;
-        [correctButton setTitleColor:COLOR_MAIN forState:UIControlStateNormal]  ;
+//        [correctButton setTitleColor:COLOR_MAIN forState:UIControlStateNormal]  ;
         [correctButton setFont:[UIFont systemFontOfSize:14.0f]]                 ;
-        correctButton.layer.borderColor = COLOR_MAIN.CGColor    ;
+//        correctButton.layer.borderColor = COLOR_MAIN.CGColor    ;
         correctButton.layer.borderWidth = 1.0f                  ;
         correctButton.layer.cornerRadius = 5.0f                 ;
         [correctButton setFrame:CGRectMake(0, 0, 60, 35)]       ;

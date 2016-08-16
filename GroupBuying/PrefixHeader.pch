@@ -12,11 +12,10 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "ArchiveHeader.h"
-#import "ColorsHeader.h"
 #import "WordsHeader.h"
 #import "PictureHeader.h"
 #import "KeyChainHeader.h"
-
+#import "UIColor+AllColors.h"
 
 /*
  * judge iOS VERSION more than this .

@@ -18,7 +18,7 @@
     UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, APP_WIDTH, APP_TABBAR_HEIGHT)] ;
     backView.backgroundColor = [UIColor whiteColor] ;
     UIView *upline = [[UIView alloc] initWithFrame:CGRectMake(0, 0, APP_WIDTH, ONE_PIXEL_VALUE)] ;
-    upline.backgroundColor = COLOR_TABLE_SEP ;
+//    upline.backgroundColor = COLOR_TABLE_SEP ;
     [backView addSubview:upline] ;
     [self insertSubview:backView atIndex:0] ;
     

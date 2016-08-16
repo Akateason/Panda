@@ -12,6 +12,12 @@
 		60074E061D60DFEF0040C3C0 /* FeaturesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60074E051D60DFEF0040C3C0 /* FeaturesController.m */; };
 		60074E091D60E0040040C3C0 /* ActivityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60074E081D60E0040040C3C0 /* ActivityController.m */; };
 		60074E0C1D60E0180040C3C0 /* MineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60074E0B1D60E0180040C3C0 /* MineController.m */; };
+		60074E111D634AA50040C3C0 /* NSObject+Reflection.m in Sources */ = {isa = PBXBuildFile; fileRef = 60074E0E1D634AA50040C3C0 /* NSObject+Reflection.m */; };
+		60074E121D634AA50040C3C0 /* XTJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 60074E101D634AA50040C3C0 /* XTJson.m */; };
+		60074E1B1D634AE80040C3C0 /* UIColor+AllColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 60074E151D634AE80040C3C0 /* UIColor+AllColors.m */; };
+		60074E1C1D634AE80040C3C0 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 60074E171D634AE80040C3C0 /* UIColor+HexString.m */; };
+		60074E1D1D634AE80040C3C0 /* xtAllColorsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60074E181D634AE80040C3C0 /* xtAllColorsList.plist */; };
+		60074E1E1D634AE80040C3C0 /* XTColorFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 60074E1A1D634AE80040C3C0 /* XTColorFetcher.m */; };
 		D75CC3C61C2A926100E590E6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC3C51C2A926100E590E6 /* main.m */; };
 		D75CC3C91C2A926100E590E6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC3C81C2A926100E590E6 /* AppDelegate.m */; };
 		D75CC3CC1C2A926100E590E6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC3CB1C2A926100E590E6 /* ViewController.m */; };
@@ -24,7 +30,6 @@
 		D75CC43D1C2A95DE00E590E6 /* NSDate+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC3FF1C2A95DD00E590E6 /* NSDate+Addition.m */; };
 		D75CC43E1C2A95DE00E590E6 /* NSString+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC4011C2A95DD00E590E6 /* NSString+Extend.m */; };
 		D75CC43F1C2A95DE00E590E6 /* UIButton+Badges.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC4031C2A95DD00E590E6 /* UIButton+Badges.m */; };
-		D75CC4401C2A95DE00E590E6 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC4051C2A95DD00E590E6 /* UIColor+HexString.m */; };
 		D75CC4411C2A95DE00E590E6 /* UIImage+AddFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC4071C2A95DD00E590E6 /* UIImage+AddFunction.m */; };
 		D75CC4421C2A95DE00E590E6 /* UILabel+Badges.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC4091C2A95DD00E590E6 /* UILabel+Badges.m */; };
 		D75CC4431C2A95DE00E590E6 /* UIView+Sizes.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC40B1C2A95DD00E590E6 /* UIView+Sizes.m */; };
@@ -239,6 +244,17 @@
 		60074E081D60E0040040C3C0 /* ActivityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityController.m; path = "GroupBuying/VC+V/Activity/ActivityController.m"; sourceTree = SOURCE_ROOT; };
 		60074E0A1D60E0180040C3C0 /* MineController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MineController.h; path = "GroupBuying/VC+V/Mine/MineController.h"; sourceTree = SOURCE_ROOT; };
 		60074E0B1D60E0180040C3C0 /* MineController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MineController.m; path = "GroupBuying/VC+V/Mine/MineController.m"; sourceTree = SOURCE_ROOT; };
+		60074E0D1D634AA50040C3C0 /* NSObject+Reflection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Reflection.h"; sourceTree = "<group>"; };
+		60074E0E1D634AA50040C3C0 /* NSObject+Reflection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Reflection.m"; sourceTree = "<group>"; };
+		60074E0F1D634AA50040C3C0 /* XTJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTJson.h; sourceTree = "<group>"; };
+		60074E101D634AA50040C3C0 /* XTJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTJson.m; sourceTree = "<group>"; };
+		60074E141D634AE80040C3C0 /* UIColor+AllColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AllColors.h"; sourceTree = "<group>"; };
+		60074E151D634AE80040C3C0 /* UIColor+AllColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AllColors.m"; sourceTree = "<group>"; };
+		60074E161D634AE80040C3C0 /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
+		60074E171D634AE80040C3C0 /* UIColor+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexString.m"; sourceTree = "<group>"; };
+		60074E181D634AE80040C3C0 /* xtAllColorsList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = xtAllColorsList.plist; sourceTree = "<group>"; };
+		60074E191D634AE80040C3C0 /* XTColorFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTColorFetcher.h; sourceTree = "<group>"; };
+		60074E1A1D634AE80040C3C0 /* XTColorFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTColorFetcher.m; sourceTree = "<group>"; };
 		D75CC3C11C2A926100E590E6 /* GroupBuying.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupBuying.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D75CC3C51C2A926100E590E6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D75CC3C71C2A926100E590E6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -263,8 +279,6 @@
 		D75CC4011C2A95DD00E590E6 /* NSString+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extend.m"; sourceTree = "<group>"; };
 		D75CC4021C2A95DD00E590E6 /* UIButton+Badges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Badges.h"; sourceTree = "<group>"; };
 		D75CC4031C2A95DD00E590E6 /* UIButton+Badges.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Badges.m"; sourceTree = "<group>"; };
-		D75CC4041C2A95DD00E590E6 /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
-		D75CC4051C2A95DD00E590E6 /* UIColor+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexString.m"; sourceTree = "<group>"; };
 		D75CC4061C2A95DD00E590E6 /* UIImage+AddFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AddFunction.h"; sourceTree = "<group>"; };
 		D75CC4071C2A95DD00E590E6 /* UIImage+AddFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AddFunction.m"; sourceTree = "<group>"; };
 		D75CC4081C2A95DD00E590E6 /* UILabel+Badges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Badges.h"; sourceTree = "<group>"; };
@@ -272,7 +286,6 @@
 		D75CC40A1C2A95DD00E590E6 /* UIView+Sizes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Sizes.h"; sourceTree = "<group>"; };
 		D75CC40B1C2A95DD00E590E6 /* UIView+Sizes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Sizes.m"; sourceTree = "<group>"; };
 		D75CC40D1C2A95DD00E590E6 /* ArchiveHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArchiveHeader.h; sourceTree = "<group>"; };
-		D75CC40E1C2A95DD00E590E6 /* ColorsHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorsHeader.h; sourceTree = "<group>"; };
 		D75CC40F1C2A95DD00E590E6 /* KeyChainHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyChainHeader.h; sourceTree = "<group>"; };
 		D75CC4101C2A95DD00E590E6 /* NotificationCenterHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationCenterHeader.h; sourceTree = "<group>"; };
 		D75CC4111C2A95DD00E590E6 /* PictureHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureHeader.h; sourceTree = "<group>"; };
@@ -763,6 +776,20 @@
 			name = Find;
 			sourceTree = "<group>";
 		};
+		60074E131D634AE80040C3C0 /* color */ = {
+			isa = PBXGroup;
+			children = (
+				60074E181D634AE80040C3C0 /* xtAllColorsList.plist */,
+				60074E141D634AE80040C3C0 /* UIColor+AllColors.h */,
+				60074E151D634AE80040C3C0 /* UIColor+AllColors.m */,
+				60074E161D634AE80040C3C0 /* UIColor+HexString.h */,
+				60074E171D634AE80040C3C0 /* UIColor+HexString.m */,
+				60074E191D634AE80040C3C0 /* XTColorFetcher.h */,
+				60074E1A1D634AE80040C3C0 /* XTColorFetcher.m */,
+			);
+			path = color;
+			sourceTree = "<group>";
+		};
 		D75CC3B81C2A926100E590E6 = {
 			isa = PBXGroup;
 			children = (
@@ -901,6 +928,7 @@
 		D75CC3FB1C2A95DD00E590E6 /* category */ = {
 			isa = PBXGroup;
 			children = (
+				60074E131D634AE80040C3C0 /* color */,
 				D75CC3FC1C2A95DD00E590E6 /* ALAssetsLibrary+CustomPhotoAlbum.h */,
 				D75CC3FD1C2A95DD00E590E6 /* ALAssetsLibrary+CustomPhotoAlbum.m */,
 				D75CC3FE1C2A95DD00E590E6 /* NSDate+Addition.h */,
@@ -909,8 +937,6 @@
 				D75CC4011C2A95DD00E590E6 /* NSString+Extend.m */,
 				D75CC4021C2A95DD00E590E6 /* UIButton+Badges.h */,
 				D75CC4031C2A95DD00E590E6 /* UIButton+Badges.m */,
-				D75CC4041C2A95DD00E590E6 /* UIColor+HexString.h */,
-				D75CC4051C2A95DD00E590E6 /* UIColor+HexString.m */,
 				D75CC4061C2A95DD00E590E6 /* UIImage+AddFunction.h */,
 				D75CC4071C2A95DD00E590E6 /* UIImage+AddFunction.m */,
 				D75CC4081C2A95DD00E590E6 /* UILabel+Badges.h */,
@@ -925,7 +951,6 @@
 			isa = PBXGroup;
 			children = (
 				D75CC40D1C2A95DD00E590E6 /* ArchiveHeader.h */,
-				D75CC40E1C2A95DD00E590E6 /* ColorsHeader.h */,
 				D75CC40F1C2A95DD00E590E6 /* KeyChainHeader.h */,
 				D75CC4141C2A95DD00E590E6 /* WordsHeader.h */,
 				D75CC4111C2A95DD00E590E6 /* PictureHeader.h */,
@@ -940,6 +965,10 @@
 		D75CC4151C2A95DD00E590E6 /* UIs */ = {
 			isa = PBXGroup;
 			children = (
+				60074E0D1D634AA50040C3C0 /* NSObject+Reflection.h */,
+				60074E0E1D634AA50040C3C0 /* NSObject+Reflection.m */,
+				60074E0F1D634AA50040C3C0 /* XTJson.h */,
+				60074E101D634AA50040C3C0 /* XTJson.m */,
 				D75CC4221C2A95DD00E590E6 /* XTNetReloader */,
 				D75CC4161C2A95DD00E590E6 /* MySearchBar.h */,
 				D75CC4171C2A95DD00E590E6 /* MySearchBar.m */,
@@ -1733,6 +1762,7 @@
 				TargetAttributes = {
 					D75CC3C01C2A926100E590E6 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 5D74XHX7AD;
 					};
 					D75CC3D91C2A926200E590E6 = {
 						CreatedOnToolsVersion = 7.2;
@@ -1784,6 +1814,7 @@
 				D75CC3CF1C2A926100E590E6 /* Main.storyboard in Resources */,
 				D75CC70D1C2BF99B00E590E6 /* UMSLoginViewController.xib in Resources */,
 				D75CC7171C2BF99B00E590E6 /* WeiboSDK.bundle in Resources */,
+				60074E1D1D634AE80040C3C0 /* xtAllColorsList.plist in Resources */,
 				D75CC70A1C2BF99B00E590E6 /* UMSCommentInputControlleriPad.xib in Resources */,
 				D75CC5DB1C2A965000E590E6 /* MJRefresh.bundle in Resources */,
 				D75CC5CB1C2A965000E590E6 /* WeiboSDK.bundle in Resources */,
@@ -1812,6 +1843,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D75CC4531C2A95DE00E590E6 /* XTRequest.m in Sources */,
+				60074E111D634AA50040C3C0 /* NSObject+Reflection.m in Sources */,
 				D75CC4411C2A95DE00E590E6 /* UIImage+AddFunction.m in Sources */,
 				D75CC5BA1C2A965000E590E6 /* ASIS3BucketRequest.m in Sources */,
 				D75CC4461C2A95DE00E590E6 /* MyTextField.m in Sources */,
@@ -1859,8 +1891,8 @@
 				D75CC5FC1C2A965000E590E6 /* UIButton+WebCache.m in Sources */,
 				D75CC4551C2A95DE00E590E6 /* XTVerification.m in Sources */,
 				D75CC59F1C2A965000E590E6 /* AFHTTPRequestOperation.m in Sources */,
-				D75CC4401C2A95DE00E590E6 /* UIColor+HexString.m in Sources */,
 				D75CC5DA1C2A965000E590E6 /* MJRefreshStateHeader.m in Sources */,
+				60074E1C1D634AE80040C3C0 /* UIColor+HexString.m in Sources */,
 				D75CC5E41C2A965000E590E6 /* QNEtag.m in Sources */,
 				60074E031D60DFDC0040C3C0 /* FindController.m in Sources */,
 				D75CC5D61C2A965000E590E6 /* MJRefreshBackNormalFooter.m in Sources */,
@@ -1897,6 +1929,7 @@
 				D75CC61D1C2A965000E590E6 /* FBShimmeringLayer.m in Sources */,
 				D75CC5B11C2A965000E590E6 /* ASICloudFilesContainer.m in Sources */,
 				D75CC5B41C2A965000E590E6 /* ASICloudFilesObject.m in Sources */,
+				60074E1E1D634AE80040C3C0 /* XTColorFetcher.m in Sources */,
 				D75CC5C71C2A965000E590E6 /* FMResultSet.m in Sources */,
 				D75CC5BE1C2A965000E590E6 /* UIBarButtonItem+Badge.m in Sources */,
 				D75CC5A01C2A965000E590E6 /* AFHTTPRequestOperationManager.m in Sources */,
@@ -1940,6 +1973,7 @@
 				60074E061D60DFEF0040C3C0 /* FeaturesController.m in Sources */,
 				D75CC5DD1C2A965000E590E6 /* UIScrollView+MJExtension.m in Sources */,
 				D75CC4451C2A95DE00E590E6 /* MyTabbar.m in Sources */,
+				60074E1B1D634AE80040C3C0 /* UIColor+AllColors.m in Sources */,
 				D75CC5D41C2A965000E590E6 /* MJRefreshAutoStateFooter.m in Sources */,
 				D75CC5F61C2A965000E590E6 /* SDWebImageCompat.m in Sources */,
 				D75CC7331C2D13C000E590E6 /* NSObject+YYModel.m in Sources */,
@@ -1957,6 +1991,7 @@
 				D75CC5F01C2A965000E590E6 /* QNUploadOption.m in Sources */,
 				D75CC5CC1C2A965000E590E6 /* MBProgressHUD.m in Sources */,
 				D75CC6001C2A965000E590E6 /* UIImageView+HighlightedWebCache.m in Sources */,
+				60074E121D634AA50040C3C0 /* XTJson.m in Sources */,
 				D75CC5B71C2A965000E590E6 /* Reachability.m in Sources */,
 				D75CC44A1C2A95DE00E590E6 /* XTNetReloader.m in Sources */,
 			);
@@ -2108,6 +2143,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2134,7 +2170,7 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.teason.GroupBuying;
+				PRODUCT_BUNDLE_IDENTIFIER = com.teason.IBardot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -2143,6 +2179,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2169,7 +2206,7 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.teason.GroupBuying;
+				PRODUCT_BUNDLE_IDENTIFIER = com.teason.IBardot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

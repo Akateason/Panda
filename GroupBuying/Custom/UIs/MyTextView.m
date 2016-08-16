@@ -7,9 +7,6 @@
 //
 
 #import "MyTextView.h"
-#import "ColorsHeader.h"
-
-
 
 @implementation MyTextView
 
@@ -41,7 +38,7 @@
 
 - (void)anyStyle
 {
-    self.layer.borderColor = COLOR_BACKGROUND.CGColor ;
+//    self.layer.borderColor = COLOR_BACKGROUND.CGColor ;
     self.layer.borderWidth = 0.0f ;
     
     self.font              = [UIFont systemFontOfSize:12.0f] ;

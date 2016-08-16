@@ -295,7 +295,8 @@ static SIAlertView *__si_alert_current_view;
 - (UIColor *)colorCancel
 {
     if (!_colorCancel) {
-        _colorCancel = COLOR_FW_BLUE ;
+//        _colorCancel = COLOR_FW_BLUE ;
+        _colorCancel = [UIColor blueColor] ;
     }
     return _colorCancel ;
 }
@@ -303,7 +304,8 @@ static SIAlertView *__si_alert_current_view;
 - (UIColor *)colorDefault
 {
     if (!_colorDefault) {
-        _colorDefault = COLOR_TABLE_SEP ;
+//        _colorDefault = COLOR_TABLE_SEP ;
+        _colorDefault = [UIColor lightGrayColor] ;
     }
     return _colorDefault ;
 }
@@ -311,7 +313,7 @@ static SIAlertView *__si_alert_current_view;
 - (UIColor *)colorDestructive
 {
     if (!_colorDestructive) {
-        _colorDestructive = COLOR_MAIN ;
+        _colorDestructive = [UIColor xt_mainColor] ;
     }
     return _colorDestructive ;
 }

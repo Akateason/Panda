@@ -196,7 +196,7 @@ NSString *const XHBirthdayKey = @"XHBirthday";
     _bannerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, - self.parallaxHeight, CGRectGetWidth(_bannerView.frame), CGRectGetHeight(_bannerView.frame) + self.parallaxHeight * 2)];
 
     _bannerImageView.contentMode = UIViewContentModeScaleAspectFit;
-    _bannerImageView.backgroundColor = COLOR_MAIN ;
+//    _bannerImageView.backgroundColor = COLOR_MAIN ;
     [_bannerView addSubview:self.bannerImageView];
     [self addSubview:self.bannerView];
     

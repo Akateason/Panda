@@ -74,13 +74,13 @@ NSString *const APPSTORE_APPID  = @"999705868" ;
 {
     //1 status bar .
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent] ;
-    [[UIApplication sharedApplication] keyWindow].tintColor = COLOR_MAIN ;
+    [[UIApplication sharedApplication] keyWindow].tintColor = [UIColor xt_mainColor] ;
     
     //2 nav style .
-    [[UINavigationBar appearance] setBarTintColor:COLOR_MAIN] ;
+    [[UINavigationBar appearance] setBarTintColor:[UIColor xt_mainColor]] ;
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}] ;
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]] ;
-    [[UINavigationBar appearance] setBackgroundColor:COLOR_MAIN] ;
+    [[UINavigationBar appearance] setBackgroundColor:[UIColor xt_mainColor]] ;
 }
 
 // Umeng SDK SHARE
