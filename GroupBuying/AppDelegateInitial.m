@@ -73,13 +73,13 @@ NSString *const APPSTORE_APPID  = @"999705868" ;
 - (void)setMyStyleWithWindow:(UIWindow *)window
 {
     //1 status bar .
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent] ;
+//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent] ;
     [[UIApplication sharedApplication] keyWindow].tintColor = [UIColor xt_mainColor] ;
     
     //2 nav style .
     [[UINavigationBar appearance] setBarTintColor:[UIColor xt_mainColor]] ;
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}] ;
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]] ;
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor]}] ;
+    [[UINavigationBar appearance] setTintColor:[UIColor blackColor]] ;
     [[UINavigationBar appearance] setBackgroundColor:[UIColor xt_mainColor]] ;
 }
 

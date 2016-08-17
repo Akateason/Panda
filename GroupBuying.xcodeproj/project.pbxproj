@@ -18,6 +18,7 @@
 		60074E1C1D634AE80040C3C0 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 60074E171D634AE80040C3C0 /* UIColor+HexString.m */; };
 		60074E1D1D634AE80040C3C0 /* xtAllColorsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60074E181D634AE80040C3C0 /* xtAllColorsList.plist */; };
 		60074E1E1D634AE80040C3C0 /* XTColorFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 60074E1A1D634AE80040C3C0 /* XTColorFetcher.m */; };
+		6084057C1D64DDDF00B40D68 /* HPProductCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6084057B1D64DDDF00B40D68 /* HPProductCollectionCell.m */; };
 		D75CC3C61C2A926100E590E6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC3C51C2A926100E590E6 /* main.m */; };
 		D75CC3C91C2A926100E590E6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC3C81C2A926100E590E6 /* AppDelegate.m */; };
 		D75CC3CC1C2A926100E590E6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC3CB1C2A926100E590E6 /* ViewController.m */; };
@@ -255,6 +256,8 @@
 		60074E181D634AE80040C3C0 /* xtAllColorsList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = xtAllColorsList.plist; sourceTree = "<group>"; };
 		60074E191D634AE80040C3C0 /* XTColorFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTColorFetcher.h; sourceTree = "<group>"; };
 		60074E1A1D634AE80040C3C0 /* XTColorFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTColorFetcher.m; sourceTree = "<group>"; };
+		6084057A1D64DDDF00B40D68 /* HPProductCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPProductCollectionCell.h; path = "GroupBuying/VC+V/HomePage/HPProductCollectionCell.h"; sourceTree = SOURCE_ROOT; };
+		6084057B1D64DDDF00B40D68 /* HPProductCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPProductCollectionCell.m; path = "GroupBuying/VC+V/HomePage/HPProductCollectionCell.m"; sourceTree = SOURCE_ROOT; };
 		D75CC3C11C2A926100E590E6 /* GroupBuying.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupBuying.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D75CC3C51C2A926100E590E6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D75CC3C71C2A926100E590E6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -736,6 +739,8 @@
 			children = (
 				60074DFA1D60DF270040C3C0 /* HomePageController.h */,
 				60074DFB1D60DF270040C3C0 /* HomePageController.m */,
+				6084057A1D64DDDF00B40D68 /* HPProductCollectionCell.h */,
+				6084057B1D64DDDF00B40D68 /* HPProductCollectionCell.m */,
 			);
 			name = HomePage;
 			sourceTree = "<group>";
@@ -1992,6 +1997,7 @@
 				D75CC5CC1C2A965000E590E6 /* MBProgressHUD.m in Sources */,
 				D75CC6001C2A965000E590E6 /* UIImageView+HighlightedWebCache.m in Sources */,
 				60074E121D634AA50040C3C0 /* XTJson.m in Sources */,
+				6084057C1D64DDDF00B40D68 /* HPProductCollectionCell.m in Sources */,
 				D75CC5B71C2A965000E590E6 /* Reachability.m in Sources */,
 				D75CC44A1C2A95DE00E590E6 /* XTNetReloader.m in Sources */,
 			);

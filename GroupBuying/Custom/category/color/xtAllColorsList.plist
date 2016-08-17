@@ -3,6 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>main</key>
-	<string>fa4c60</string>
+	<string>ffffff</string>
+	<key>tabbar_red</key>
+	<string>c60c30</string>
 </dict>
 </plist>

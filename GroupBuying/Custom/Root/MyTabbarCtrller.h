@@ -9,9 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @protocol MyTabbarCtrllerDelegate <NSObject>
+
 - (void)doubleTapedHomePage ;
+
 @end
 
+
 @interface MyTabbarCtrller : UITabBarController <UITabBarControllerDelegate>
+
 @property (nonatomic,weak) id <MyTabbarCtrllerDelegate> homePageDelegate ;
+
 @end
+

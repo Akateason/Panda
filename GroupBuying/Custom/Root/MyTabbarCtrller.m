@@ -15,7 +15,7 @@
 
 @implementation MyTabbarCtrller
 
-static int indexCache = 0 ;
+//  static int indexCache = 0 ;
 
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
@@ -24,9 +24,8 @@ static int indexCache = 0 ;
     {
         // Set in AppDelegate
 //        ((AppDelegate *)[UIApplication sharedApplication].delegate).tabbarCtrller = self ;
-        
-//        self.tabBar.tintColor = COLOR_MAIN ;
-        self.delegate = self ;
+        self.tabBar.tintColor = [UIColor xt_tabbarRedColor] ;
+//        self.delegate = self ;
 //        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent] ;
     }
     return self;
@@ -35,6 +34,14 @@ static int indexCache = 0 ;
 - (void)viewDidLoad
 {
     [super viewDidLoad] ;
+    
+    NSArray *vclist = self.viewControllers ;
+    for (int i = 0; i < vclist.count; i++)
+    {
+        UITabBarItem *item = self.tabBar.items[i] ;
+        item.selectedImage = [[UIImage imageNamed:[NSString stringWithFormat:@"item%d_s",i+1]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];;
+        item.image = [[UIImage imageNamed:[NSString stringWithFormat:@"item%d",i+1]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    }
 }
 
 /*
@@ -81,6 +88,6 @@ static int indexCache = 0 ;
     sleep(1) ;
     indexCache = 0 ;
 }
-
 */
+
 @end

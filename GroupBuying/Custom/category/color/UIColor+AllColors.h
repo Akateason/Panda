@@ -12,6 +12,7 @@
 
 + (UIColor *)xt_mainColor ;
 
++ (UIColor *)xt_tabbarRedColor ;
 
 
 @end

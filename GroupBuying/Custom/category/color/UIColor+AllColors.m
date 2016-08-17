@@ -16,7 +16,10 @@
     return [[XTColorFetcher class] xt_colorWithKey:@"main"] ;
 }
 
-
++ (UIColor *)xt_tabbarRedColor
+{
+    return [[XTColorFetcher class] xt_colorWithKey:@"tabbar_red"] ;
+}
 
 
 @end
