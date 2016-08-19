@@ -12,13 +12,13 @@
 #import "HPBigPhotoCollectionCell.h"
 
 
-@interface HomePageController () <UICollectionViewDelegate,UICollectionViewDataSource,CHTCollectionViewDelegateWaterfallLayout>
+@interface HomePageController () <UICollectionViewDelegate,UICollectionViewDataSource,CHTCollectionViewDelegateWaterfallLayout,UICollectionViewDelegateFlowLayout>
 {
     BOOL  bSwitcher ;   //  itemSwitcher  false -> waterflow , true -> big photo
 }
 
 // nav
-@property (weak, nonatomic) IBOutlet UIButton *btTitleLogo;
+@property (weak, nonatomic) IBOutlet UIButton        *btTitleLogo;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *itemRanking;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *itemCamera;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *itemSwitcher;
@@ -51,11 +51,17 @@
     
     self.itemSwitcher.image = bSwitcher ? [UIImage imageNamed:@"btn_square"] : [UIImage imageNamed:@"btn_tile"] ;
     
-    _collectionView.collectionViewLayout = bSwitcher ? self.bigphotoLayout : self.waterflowLayout ;
-//    _collectionView.collectionViewLayout = bSwitcher ? nil : self.waterflowLayout ;
-
+    if (bSwitcher) {
+        [_collectionView setCollectionViewLayout:self.bigphotoLayout animated:YES] ;
+    }
+    else {
+        [_collectionView setCollectionViewLayout:self.waterflowLayout animated:YES] ;
+    }
     
-    [_collectionView reloadData] ;
+//    _collectionView.collectionViewLayout = bSwitcher ? self.bigphotoLayout : self.waterflowLayout ;
+//    _collectionView.collectionViewLayout = bSwitcher ? nil : self.waterflowLayout ;
+    
+//    [_collectionView reloadData] ;
 }
 
 #pragma mark - prop
@@ -80,6 +86,7 @@
         _bigphotoLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
         _bigphotoLayout.headerHeight = 10;
         _bigphotoLayout.footerHeight = 0;
+        _bigphotoLayout.columnCount = 1 ;
         _bigphotoLayout.minimumColumnSpacing = 10;
         _bigphotoLayout.minimumInteritemSpacing = 10;
     }
@@ -93,7 +100,7 @@
     [super viewDidLoad] ;
     
     // nav item position
-    self.itemCamera.imageInsets = UIEdgeInsetsMake(0, 0, 0, -22) ;
+    self.itemCamera.imageInsets = UIEdgeInsetsMake(0, 0, 0, - 22.) ;
     
     // collection configure
     [self collectionViewLayoutConfigure] ;
@@ -103,13 +110,16 @@
 - (void)collectionViewLayoutConfigure
 {
     //config layout
-    _collectionView.collectionViewLayout = self.waterflowLayout ;
+    self.collectionView.collectionViewLayout = self.waterflowLayout ;
     
-    _collectionView.delegate = self ;
-    _collectionView.dataSource = self ;
-    _collectionView.backgroundColor = [UIColor xt_collectionBackgroundColor] ;
-    _collectionView.showsVerticalScrollIndicator = NO ;
-    _collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth ;
+    self.collectionView.delegate = self ;
+    self.collectionView.dataSource = self ;
+    self.collectionView.backgroundColor = [UIColor xt_collectionBackgroundColor] ;
+    self.collectionView.showsVerticalScrollIndicator = NO ;
+//    _collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth ;
+    
+    [self.collectionView registerClass:[HPProductCollectionCell class] forCellWithReuseIdentifier:id_HPProductCollectionCell] ;
+    [self.collectionView registerClass:[HPBigPhotoCollectionCell] forCellWithReuseIdentifier:id_HPBigPhotoCollectionCell] ;
 }
 
 
@@ -122,7 +132,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 5 ;
+    return 2 ;
 }
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
@@ -142,7 +152,15 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return bSwitcher ? [HPBigPhotoCollectionCell getSize] : [HPProductCollectionCell getSize] ;
+    if (collectionViewLayout == self.bigphotoLayout) {
+        return [HPBigPhotoCollectionCell getSize] ;
+    }
+    if (collectionViewLayout == self.waterflowLayout) {
+        return [HPProductCollectionCell getSize] ;
+    }
+
+    return CGSizeZero ;
+//    return bSwitcher ?  : [HPProductCollectionCell getSize] ;
 }
 
 #pragma mark - collection delegate
