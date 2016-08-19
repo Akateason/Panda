@@ -14,5 +14,6 @@
 
 + (UIColor *)xt_tabbarRedColor ;
 
++ (UIColor *)xt_collectionBackgroundColor ;
 
 @end

@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString *id_HPProductCollectionCell = @"HPProductCollectionCell" ;
+
 @interface HPProductCollectionCell : UICollectionViewCell
+
++ (CGSize)getSize ;
 
 @end

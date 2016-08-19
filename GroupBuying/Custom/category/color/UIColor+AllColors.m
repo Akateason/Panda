@@ -21,5 +21,9 @@
     return [[XTColorFetcher class] xt_colorWithKey:@"tabbar_red"] ;
 }
 
++ (UIColor *)xt_collectionBackgroundColor
+{
+    return [[XTColorFetcher class] xt_colorWithKey:@"collection_background"] ;
+}
 
 @end

@@ -6,5 +6,7 @@
 	<string>ffffff</string>
 	<key>tabbar_red</key>
 	<string>c60c30</string>
+	<key>collection_background</key>
+	<string>f2f2f2</string>
 </dict>
 </plist>
