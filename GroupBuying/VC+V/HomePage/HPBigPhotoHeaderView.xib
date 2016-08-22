@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HPBigPhotoHeaderView" id="U6b-Vx-4bR" customClass="HPBigPhotoHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="head" translatesAutoresizingMaskIntoConstraints="NO" id="a2C-K9-s4r">
+                    <rect key="frame" x="12" y="14" width="42" height="42"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="42" id="AL2-uC-h1v"/>
+                        <constraint firstAttribute="height" constant="42" id="f7R-s2-49A"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLj-8h-qdU">
+                    <rect key="frame" x="64" y="20" width="34" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGO-zf-KRw">
+                    <rect key="frame" x="241" y="22" width="61" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="IN2-Qg-AEV"/>
+                        <constraint firstAttribute="width" constant="61" id="q44-hE-NXv"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="+ 关注"/>
+                    <connections>
+                        <action selector="btFoucusOnClick:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="M6Y-jh-EGr"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vs-4b-LQ4">
+                    <rect key="frame" x="64" y="44" width="21" height="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="yLj-8h-qdU" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="20" id="2lI-h1-bQq"/>
+                <constraint firstItem="8vs-4b-LQ4" firstAttribute="top" secondItem="yLj-8h-qdU" secondAttribute="bottom" constant="8" id="QYU-xv-EAU"/>
+                <constraint firstItem="a2C-K9-s4r" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="14" id="Ql8-pc-0Ru"/>
+                <constraint firstItem="yLj-8h-qdU" firstAttribute="leading" secondItem="a2C-K9-s4r" secondAttribute="trailing" constant="10" id="SfN-jl-JuW"/>
+                <constraint firstItem="a2C-K9-s4r" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="12" id="WFN-kE-Y78"/>
+                <constraint firstItem="GGO-zf-KRw" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="22" id="nNV-JW-hC6"/>
+                <constraint firstItem="8vs-4b-LQ4" firstAttribute="leading" secondItem="a2C-K9-s4r" secondAttribute="trailing" constant="10" id="qb3-pb-1jk"/>
+                <constraint firstAttribute="trailing" secondItem="GGO-zf-KRw" secondAttribute="trailing" constant="18" id="tCc-es-U6l"/>
+            </constraints>
+            <connections>
+                <outlet property="btFoucus" destination="GGO-zf-KRw" id="XHe-AR-b4R"/>
+                <outlet property="headImageView" destination="a2C-K9-s4r" id="qkB-Ek-49k"/>
+                <outlet property="labelName" destination="yLj-8h-qdU" id="4zq-XS-oqa"/>
+                <outlet property="lableTime" destination="8vs-4b-LQ4" id="3dM-aj-ywA"/>
+            </connections>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="head" width="300" height="300"/>
+    </resources>
+</document>

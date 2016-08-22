@@ -21,6 +21,7 @@
        if (finished)
        {
            weakItemSwitcher.enabled = true ;
+           weakCollectionView.contentOffset = CGPointZero ;
            [weakCollectionView reloadData] ;
        }
    }] ;
