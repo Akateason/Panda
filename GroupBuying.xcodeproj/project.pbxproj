@@ -26,6 +26,8 @@
 		D74589871D6A9DCB00835234 /* HPBigPhotoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D74589851D6A9DCB00835234 /* HPBigPhotoHeaderView.m */; };
 		D74589881D6A9DCB00835234 /* HPBigPhotoHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D74589861D6A9DCB00835234 /* HPBigPhotoHeaderView.xib */; };
 		D745898C1D6AAF9500835234 /* XLPlainFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D745898B1D6AAF9500835234 /* XLPlainFlowLayout.m */; };
+		D74589901D6AE3D700835234 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D745898F1D6AE3D700835234 /* KxMenu.m */; };
+		D74589931D6B0C1500835234 /* HomePageController+TitleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D74589921D6B0C1500835234 /* HomePageController+TitleManager.m */; };
 		D75CC3C61C2A926100E590E6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC3C51C2A926100E590E6 /* main.m */; };
 		D75CC3C91C2A926100E590E6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC3C81C2A926100E590E6 /* AppDelegate.m */; };
 		D75CC3CC1C2A926100E590E6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC3CB1C2A926100E590E6 /* ViewController.m */; };
@@ -276,6 +278,10 @@
 		D74589861D6A9DCB00835234 /* HPBigPhotoHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HPBigPhotoHeaderView.xib; path = "GroupBuying/VC+V/HomePage/HPBigPhotoHeaderView.xib"; sourceTree = SOURCE_ROOT; };
 		D745898A1D6AAF9500835234 /* XLPlainFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLPlainFlowLayout.h; sourceTree = "<group>"; };
 		D745898B1D6AAF9500835234 /* XLPlainFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLPlainFlowLayout.m; sourceTree = "<group>"; };
+		D745898E1D6AE3D700835234 /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
+		D745898F1D6AE3D700835234 /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
+		D74589911D6B0C1400835234 /* HomePageController+TitleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "HomePageController+TitleManager.h"; path = "GroupBuying/VC+V/HomePage/HomePageController+TitleManager.h"; sourceTree = SOURCE_ROOT; };
+		D74589921D6B0C1500835234 /* HomePageController+TitleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "HomePageController+TitleManager.m"; path = "GroupBuying/VC+V/HomePage/HomePageController+TitleManager.m"; sourceTree = SOURCE_ROOT; };
 		D75CC3C11C2A926100E590E6 /* GroupBuying.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupBuying.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D75CC3C51C2A926100E590E6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D75CC3C71C2A926100E590E6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -758,6 +764,8 @@
 				D74589891D6AAF9500835234 /* XLPlainFlowLayout */,
 				60074DFA1D60DF270040C3C0 /* HomePageController.h */,
 				60074DFB1D60DF270040C3C0 /* HomePageController.m */,
+				D74589911D6B0C1400835234 /* HomePageController+TitleManager.h */,
+				D74589921D6B0C1500835234 /* HomePageController+TitleManager.m */,
 				608405841D69505E00B40D68 /* HomePageController+collectionLayoutSwitch.h */,
 				608405851D69505E00B40D68 /* HomePageController+collectionLayoutSwitch.m */,
 				6084057A1D64DDDF00B40D68 /* HPProductCollectionCell.h */,
@@ -832,6 +840,15 @@
 			name = XLPlainFlowLayout;
 			path = "GroupBuying/VC+V/HomePage/XLPlainFlowLayout";
 			sourceTree = SOURCE_ROOT;
+		};
+		D745898D1D6AE3D700835234 /* KxMenu */ = {
+			isa = PBXGroup;
+			children = (
+				D745898E1D6AE3D700835234 /* KxMenu.h */,
+				D745898F1D6AE3D700835234 /* KxMenu.m */,
+			);
+			path = KxMenu;
+			sourceTree = "<group>";
 		};
 		D75CC3B81C2A926100E590E6 = {
 			isa = PBXGroup;
@@ -931,6 +948,7 @@
 		D75CC3F91C2A92B200E590E6 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				D745898D1D6AE3D700835234 /* KxMenu */,
 				D75CC72D1C2D13C000E590E6 /* YYModel */,
 				D75CC6C51C2BF99B00E590E6 /* UMessage_Sdk_1.1.0 */,
 				D75CC6C81C2BF99B00E590E6 /* UMSocial_Sdk_4.2.3 */,
@@ -1805,7 +1823,7 @@
 				TargetAttributes = {
 					D75CC3C01C2A926100E590E6 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 5D74XHX7AD;
+						DevelopmentTeam = 37CT629P96;
 					};
 					D75CC3D91C2A926200E590E6 = {
 						CreatedOnToolsVersion = 7.2;
@@ -1943,6 +1961,7 @@
 				D75CC5E41C2A965000E590E6 /* QNEtag.m in Sources */,
 				60074E031D60DFDC0040C3C0 /* FindController.m in Sources */,
 				D75CC5D61C2A965000E590E6 /* MJRefreshBackNormalFooter.m in Sources */,
+				D74589901D6AE3D700835234 /* KxMenu.m in Sources */,
 				D75CC5B21C2A965000E590E6 /* ASICloudFilesContainerRequest.m in Sources */,
 				D75CC7271C2CFDA600E590E6 /* Article.m in Sources */,
 				D75CC5A41C2A965000E590E6 /* AFURLConnectionOperation.m in Sources */,
@@ -1967,6 +1986,7 @@
 				D75CC5B91C2A965000E590E6 /* ASIS3BucketObject.m in Sources */,
 				D75CC5BB1C2A965000E590E6 /* ASIS3ObjectRequest.m in Sources */,
 				60074DFC1D60DF270040C3C0 /* HomePageController.m in Sources */,
+				D74589931D6B0C1500835234 /* HomePageController+TitleManager.m in Sources */,
 				D75CC43C1C2A95DE00E590E6 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,
 				D75CC7291C2CFDA600E590E6 /* ArticlePraise.m in Sources */,
 				D75CC5B51C2A965000E590E6 /* ASICloudFilesObjectRequest.m in Sources */,

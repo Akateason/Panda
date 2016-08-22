@@ -10,4 +10,8 @@
 
 @interface HomePageController : RootCtrl
 
+// title
+@property (nonatomic,strong) NSArray                 *menuItems ;
+@property (weak, nonatomic) IBOutlet UIButton        *btTitleLogo;
+
 @end

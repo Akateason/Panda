@@ -13,7 +13,9 @@
 #import "HomePageController+collectionLayoutSwitch.h"
 #import "HPBigPhotoHeaderView.h"
 #import "XLPlainFlowLayout.h"
-
+#import "KxMenu.h"
+#import "UIColor+HexString.h"
+#import "HomePageController+TitleManager.h"
 
 @interface HomePageController () <UICollectionViewDelegate,UICollectionViewDataSource,CHTCollectionViewDelegateWaterfallLayout,UICollectionViewDelegateFlowLayout>
 {
@@ -21,13 +23,11 @@
 }
 
 // nav
-@property (weak, nonatomic) IBOutlet UIButton        *btTitleLogo;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *itemRanking;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *itemCamera;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *itemSwitcher;
 // collection view
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
-//
 @property (nonatomic,strong) CHTCollectionViewWaterfallLayout *waterflowLayout ;
 @property (nonatomic,strong) XLPlainFlowLayout *bplayout ;
 
@@ -37,8 +37,38 @@
 
 #pragma mark - action
 
-- (IBAction)btTitleLogoOnCLick:(id)sender {
-    NSLog(@"标题") ;
+- (IBAction)btTitleLogoOnCLick:(UIButton *)sender
+{
+    // show pop menu .
+    CGRect rect = sender.frame ;
+    rect.origin.y += sender.frame.size.height / 2. ;
+    [KxMenu showMenuInView:self.view.window fromRect:rect menuItems:self.menuItems] ;
+    
+    // 模拟 [ 有新数据 ]
+    [self itemIndex:0 hasNewData:YES] ;
+    [self itemIndex:1 hasNewData:YES] ;
+    [self itemIndex:2 hasNewData:NO] ;
+}
+
+- (void)toAll:(KxMenuItem *)item
+{
+    NSLog(@"全部") ;
+    [self.btTitleLogo setTitle:[self getDisplayStringWithPopItemIndex:0]
+                      forState:0] ;
+}
+
+- (void)toMyFocus:(KxMenuItem *)item
+{
+    NSLog(@"我关注的人") ;
+    [self.btTitleLogo setTitle:[self getDisplayStringWithPopItemIndex:1]
+                      forState:0] ;
+}
+
+- (void)toCanBuy:(KxMenuItem *)item
+{
+    NSLog(@"可购买的") ;
+    [self.btTitleLogo setTitle:[self getDisplayStringWithPopItemIndex:2]
+                      forState:0] ;
 }
 
 - (IBAction)itemRankingOnClick:(id)sender {
@@ -64,6 +94,27 @@
 }
 
 #pragma mark - prop
+
+- (NSArray *)menuItems
+{
+    if (!_menuItems) {
+        _menuItems = @[
+                       [KxMenuItem menuItem:@"全部"
+                                      image:nil
+                                     target:self
+                                     action:@selector(toAll:)] ,
+                       [KxMenuItem menuItem:@"我关注的人"
+                                      image:nil
+                                     target:self
+                                     action:@selector(toMyFocus:)] ,
+                       [KxMenuItem menuItem:@"可购买的"
+                                      image:nil
+                                     target:self
+                                     action:@selector(toCanBuy:)]
+                       ] ;
+    }
+    return _menuItems ;
+}
 
 - (UICollectionView *)collectionView {
     if (!_collectionView)
@@ -101,7 +152,7 @@
     if (!_bplayout) {
         _bplayout = [[XLPlainFlowLayout alloc] init] ;
         _bplayout.itemSize = CGSizeMake(APP_WIDTH, [HPBigPhotoCollectionCell getSize].height) ;
-        _bplayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0) ;
+        _bplayout.sectionInset = UIEdgeInsetsMake(0, 0, 10, 0) ;
     }
     return _bplayout ;
 }
@@ -115,14 +166,14 @@
     // nav item position
     self.itemCamera.imageInsets = UIEdgeInsetsMake(0, 0, 0, - 22.) ;
     [self.view addSubview:self.collectionView];
+    // title pop menu .
+    [KxMenu setTintColor:[UIColor colorWithHexString:@"555555" alpha:0.5]] ;
 }
 
 - (void)dealloc
 {
     _collectionView.delegate = nil ;
     _collectionView.dataSource = nil ;
-    
-    
 }
 
 
