@@ -16,4 +16,10 @@
 
 + (UIColor *)xt_collectionBackgroundColor ;
 
++ (UIColor *)xt_w_dark ;
+
++ (UIColor *)xt_w_light ;
+
++ (UIColor *)xt_seperate ;
+
 @end

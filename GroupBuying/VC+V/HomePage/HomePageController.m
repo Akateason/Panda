@@ -10,6 +10,7 @@
 #import "CHTCollectionViewWaterfallLayout.h"
 #import "HPProductCollectionCell.h"
 #import "HPBigPhotoCollectionCell.h"
+#import "HomePageController+collectionLayoutSwitch.h"
 
 
 @interface HomePageController () <UICollectionViewDelegate,UICollectionViewDataSource,CHTCollectionViewDelegateWaterfallLayout,UICollectionViewDelegateFlowLayout>
@@ -23,7 +24,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *itemCamera;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *itemSwitcher;
 // collection view
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 //
 @property (nonatomic,strong) CHTCollectionViewWaterfallLayout *waterflowLayout ;
 @property (nonatomic,strong) CHTCollectionViewWaterfallLayout *bigphotoLayout ;
@@ -41,37 +42,51 @@
 - (IBAction)itemRankingOnClick:(id)sender {
     NSLog(@"排行榜") ;
 }
+
 - (IBAction)itemCameraOnclick:(id)sender {
     NSLog(@"照相机") ;
 }
+
 - (IBAction)itemSwitcherOnClick:(id)sender {
     NSLog(@"切换视图") ;
-    
+    self.itemSwitcher.enabled = false ;
     bSwitcher = !bSwitcher ;
-    
     self.itemSwitcher.image = bSwitcher ? [UIImage imageNamed:@"btn_square"] : [UIImage imageNamed:@"btn_tile"] ;
-    
     if (bSwitcher) {
-        [_collectionView setCollectionViewLayout:self.bigphotoLayout animated:YES] ;
+        [self setLayout:self.bigphotoLayout collectionView:_collectionView switcher:self.itemSwitcher] ;
     }
     else {
-        [_collectionView setCollectionViewLayout:self.waterflowLayout animated:YES] ;
+        [self setLayout:self.waterflowLayout collectionView:_collectionView switcher:self.itemSwitcher] ;
     }
     
-//    _collectionView.collectionViewLayout = bSwitcher ? self.bigphotoLayout : self.waterflowLayout ;
-//    _collectionView.collectionViewLayout = bSwitcher ? nil : self.waterflowLayout ;
-    
-//    [_collectionView reloadData] ;
 }
 
 #pragma mark - prop
+
+- (UICollectionView *)collectionView {
+    if (!_collectionView)
+    {
+        _collectionView = [[UICollectionView alloc] initWithFrame:[self getCollectionRect]
+                                             collectionViewLayout:self.waterflowLayout];
+        _collectionView.dataSource = self;
+        _collectionView.delegate = self;
+        _collectionView.backgroundColor = [UIColor xt_collectionBackgroundColor] ;
+        _collectionView.showsVerticalScrollIndicator = NO ;
+//        _collectionView.decelerationRate = 0 ;
+        [_collectionView registerNib:[UINib nibWithNibName:id_HPProductCollectionCell bundle:nil]
+              forCellWithReuseIdentifier:id_HPProductCollectionCell] ;
+        [_collectionView registerNib:[UINib nibWithNibName:id_HPBigPhotoCollectionCell bundle:nil]
+          forCellWithReuseIdentifier:id_HPBigPhotoCollectionCell] ;
+    }
+    return _collectionView;
+}
 
 - (CHTCollectionViewWaterfallLayout *)waterflowLayout
 {
     if (!_waterflowLayout) {
         _waterflowLayout = [[CHTCollectionViewWaterfallLayout alloc] init];
-        _waterflowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
-        _waterflowLayout.headerHeight = 10;
+        _waterflowLayout.sectionInset = UIEdgeInsetsMake(10, 0, 0, 0);
+        _waterflowLayout.headerHeight = 0;
         _waterflowLayout.footerHeight = 0;
         _waterflowLayout.minimumColumnSpacing = 3;
         _waterflowLayout.minimumInteritemSpacing = 3;
@@ -83,8 +98,8 @@
 {
     if (!_bigphotoLayout) {
         _bigphotoLayout = [[CHTCollectionViewWaterfallLayout alloc] init];
-        _bigphotoLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
-        _bigphotoLayout.headerHeight = 10;
+        _bigphotoLayout.sectionInset = UIEdgeInsetsMake(10, 0, 0, 0);
+        _bigphotoLayout.headerHeight = 0;
         _bigphotoLayout.footerHeight = 0;
         _bigphotoLayout.columnCount = 1 ;
         _bigphotoLayout.minimumColumnSpacing = 10;
@@ -101,25 +116,12 @@
     
     // nav item position
     self.itemCamera.imageInsets = UIEdgeInsetsMake(0, 0, 0, - 22.) ;
-    
-    // collection configure
-    [self collectionViewLayoutConfigure] ;
+    [self.view addSubview:self.collectionView];
 }
 
-
-- (void)collectionViewLayoutConfigure
-{
-    //config layout
-    self.collectionView.collectionViewLayout = self.waterflowLayout ;
-    
-    self.collectionView.delegate = self ;
-    self.collectionView.dataSource = self ;
-    self.collectionView.backgroundColor = [UIColor xt_collectionBackgroundColor] ;
-    self.collectionView.showsVerticalScrollIndicator = NO ;
-//    _collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth ;
-    
-    [self.collectionView registerClass:[HPProductCollectionCell class] forCellWithReuseIdentifier:id_HPProductCollectionCell] ;
-    [self.collectionView registerClass:[HPBigPhotoCollectionCell] forCellWithReuseIdentifier:id_HPBigPhotoCollectionCell] ;
+- (void)dealloc {
+    _collectionView.delegate = nil;
+    _collectionView.dataSource = nil;
 }
 
 
@@ -132,18 +134,20 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 2 ;
+    return 5 ;
 }
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     // Set up the reuse identifier
-    if (bSwitcher) {
+    
+    if (collectionView.collectionViewLayout == self.bigphotoLayout) {
         HPBigPhotoCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:id_HPBigPhotoCollectionCell forIndexPath:indexPath] ;
         return cell ;
+
     }
-    else {
+    else if (collectionView.collectionViewLayout == self.waterflowLayout) {
         HPProductCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:id_HPProductCollectionCell forIndexPath:indexPath];
         return cell;
     }
@@ -158,9 +162,7 @@
     if (collectionViewLayout == self.waterflowLayout) {
         return [HPProductCollectionCell getSize] ;
     }
-
     return CGSizeZero ;
-//    return bSwitcher ?  : [HPProductCollectionCell getSize] ;
 }
 
 #pragma mark - collection delegate
@@ -169,7 +171,14 @@
     
 }
 
-#pragma mark - util
 
+
+#pragma mark - util
+- (CGRect)getCollectionRect
+{
+    CGRect rect = self.view.bounds ;
+    rect.size.height -= (APP_TABBAR_HEIGHT + APP_NAVIGATIONBAR_HEIGHT + APP_STATUSBAR_HEIGHT);
+    return rect ;
+}
 
 @end

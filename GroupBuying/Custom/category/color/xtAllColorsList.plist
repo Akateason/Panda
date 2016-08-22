@@ -8,5 +8,11 @@
 	<string>c60c30</string>
 	<key>collection_background</key>
 	<string>f2f2f2</string>
+	<key>w_dark</key>
+	<string>333333</string>
+	<key>w_light</key>
+	<string>999999</string>
+	<key>seperate</key>
+	<string>f5f5f5</string>
 </dict>
 </plist>

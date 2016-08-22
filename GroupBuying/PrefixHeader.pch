@@ -42,7 +42,7 @@
 #define APP_HEIGHT                      APPFRAME.size.height
 #define APP_NAVIGATIONBAR_HEIGHT        44.0f
 #define APP_STATUSBAR_HEIGHT            20.0f
-#define APP_TABBAR_HEIGHT               50.0f
+#define APP_TABBAR_HEIGHT               49.0f
 #define ONE_PIXEL_VALUE                 0.5f
 
 //all CORNER RADIUS

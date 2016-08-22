@@ -20,6 +20,9 @@
 		60074E1E1D634AE80040C3C0 /* XTColorFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 60074E1A1D634AE80040C3C0 /* XTColorFetcher.m */; };
 		6084057C1D64DDDF00B40D68 /* HPProductCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6084057B1D64DDDF00B40D68 /* HPProductCollectionCell.m */; };
 		6084057F1D663CCC00B40D68 /* HPBigPhotoCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6084057E1D663CCC00B40D68 /* HPBigPhotoCollectionCell.m */; };
+		608405811D67F45700B40D68 /* HPProductCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 608405801D67F45700B40D68 /* HPProductCollectionCell.xib */; };
+		608405831D67F62500B40D68 /* HPBigPhotoCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 608405821D67F62500B40D68 /* HPBigPhotoCollectionCell.xib */; };
+		608405861D69505E00B40D68 /* HomePageController+collectionLayoutSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 608405851D69505E00B40D68 /* HomePageController+collectionLayoutSwitch.m */; };
 		D75CC3C61C2A926100E590E6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC3C51C2A926100E590E6 /* main.m */; };
 		D75CC3C91C2A926100E590E6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC3C81C2A926100E590E6 /* AppDelegate.m */; };
 		D75CC3CC1C2A926100E590E6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC3CB1C2A926100E590E6 /* ViewController.m */; };
@@ -261,6 +264,10 @@
 		6084057B1D64DDDF00B40D68 /* HPProductCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPProductCollectionCell.m; path = "GroupBuying/VC+V/HomePage/HPProductCollectionCell.m"; sourceTree = SOURCE_ROOT; };
 		6084057D1D663CCC00B40D68 /* HPBigPhotoCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPBigPhotoCollectionCell.h; path = "GroupBuying/VC+V/HomePage/HPBigPhotoCollectionCell.h"; sourceTree = SOURCE_ROOT; };
 		6084057E1D663CCC00B40D68 /* HPBigPhotoCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPBigPhotoCollectionCell.m; path = "GroupBuying/VC+V/HomePage/HPBigPhotoCollectionCell.m"; sourceTree = SOURCE_ROOT; };
+		608405801D67F45700B40D68 /* HPProductCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HPProductCollectionCell.xib; path = "GroupBuying/VC+V/HomePage/HPProductCollectionCell.xib"; sourceTree = SOURCE_ROOT; };
+		608405821D67F62500B40D68 /* HPBigPhotoCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HPBigPhotoCollectionCell.xib; path = "GroupBuying/VC+V/HomePage/HPBigPhotoCollectionCell.xib"; sourceTree = SOURCE_ROOT; };
+		608405841D69505E00B40D68 /* HomePageController+collectionLayoutSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "HomePageController+collectionLayoutSwitch.h"; path = "GroupBuying/VC+V/HomePage/HomePageController+collectionLayoutSwitch.h"; sourceTree = SOURCE_ROOT; };
+		608405851D69505E00B40D68 /* HomePageController+collectionLayoutSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "HomePageController+collectionLayoutSwitch.m"; path = "GroupBuying/VC+V/HomePage/HomePageController+collectionLayoutSwitch.m"; sourceTree = SOURCE_ROOT; };
 		D75CC3C11C2A926100E590E6 /* GroupBuying.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupBuying.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D75CC3C51C2A926100E590E6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D75CC3C71C2A926100E590E6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -742,10 +749,14 @@
 			children = (
 				60074DFA1D60DF270040C3C0 /* HomePageController.h */,
 				60074DFB1D60DF270040C3C0 /* HomePageController.m */,
+				608405841D69505E00B40D68 /* HomePageController+collectionLayoutSwitch.h */,
+				608405851D69505E00B40D68 /* HomePageController+collectionLayoutSwitch.m */,
 				6084057A1D64DDDF00B40D68 /* HPProductCollectionCell.h */,
 				6084057B1D64DDDF00B40D68 /* HPProductCollectionCell.m */,
+				608405801D67F45700B40D68 /* HPProductCollectionCell.xib */,
 				6084057D1D663CCC00B40D68 /* HPBigPhotoCollectionCell.h */,
 				6084057E1D663CCC00B40D68 /* HPBigPhotoCollectionCell.m */,
+				608405821D67F62500B40D68 /* HPBigPhotoCollectionCell.xib */,
 			);
 			name = HomePage;
 			sourceTree = "<group>";
@@ -1816,8 +1827,10 @@
 				D75CC7121C2BF99B00E590E6 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				D75CC70F1C2BF99B00E590E6 /* UMSShareListController.xib in Resources */,
 				D75CC70C1C2BF99B00E590E6 /* UMShareEditViewControlleriPad.xib in Resources */,
+				608405811D67F45700B40D68 /* HPProductCollectionCell.xib in Resources */,
 				D75CC7081C2BF99B00E590E6 /* UMSCommentDetailController.xib in Resources */,
 				D75CC70B1C2BF99B00E590E6 /* UMShareEditViewController.xib in Resources */,
+				608405831D67F62500B40D68 /* HPBigPhotoCollectionCell.xib in Resources */,
 				D75CC7061C2BF99B00E590E6 /* UMSocialLocalizable.strings in Resources */,
 				D75CC70E1C2BF99B00E590E6 /* UMSnsAccountViewController.xib in Resources */,
 				D75CC7131C2BF99B00E590E6 /* UMSocialSDKResourcesNew.bundle in Resources */,
@@ -2001,6 +2014,7 @@
 				D75CC5E51C2A965000E590E6 /* QNUrlSafeBase64.m in Sources */,
 				D75CC5F01C2A965000E590E6 /* QNUploadOption.m in Sources */,
 				D75CC5CC1C2A965000E590E6 /* MBProgressHUD.m in Sources */,
+				608405861D69505E00B40D68 /* HomePageController+collectionLayoutSwitch.m in Sources */,
 				D75CC6001C2A965000E590E6 /* UIImageView+HighlightedWebCache.m in Sources */,
 				60074E121D634AA50040C3C0 /* XTJson.m in Sources */,
 				6084057C1D64DDDF00B40D68 /* HPProductCollectionCell.m in Sources */,

@@ -26,4 +26,20 @@
     return [[XTColorFetcher class] xt_colorWithKey:@"collection_background"] ;
 }
 
++ (UIColor *)xt_w_dark
+{
+    return [[XTColorFetcher class] xt_colorWithKey:@"w_dark"] ;
+}
+
++ (UIColor *)xt_w_light
+{
+    return [[XTColorFetcher class] xt_colorWithKey:@"w_light"] ;
+}
+
++ (UIColor *)xt_seperate
+{
+    return [[XTColorFetcher class] xt_colorWithKey:@"seperate"] ;
+}
+
+
 @end
