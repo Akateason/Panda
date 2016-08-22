@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Ranking View Controller-->
+        <scene sceneID="E8d-hV-MI5">
+            <objects>
+                <viewController storyboardIdentifier="RankingViewController" id="PZc-Td-o7S" customClass="RankingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HPX-3J-6t8"/>
+                        <viewControllerLayoutGuide type="bottom" id="hbW-D2-oog"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FDK-lx-QKp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NDN-S3-grk">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hbW-D2-oog" firstAttribute="top" secondItem="NDN-S3-grk" secondAttribute="bottom" id="bvA-f0-mGV"/>
+                            <constraint firstAttribute="trailing" secondItem="NDN-S3-grk" secondAttribute="trailing" id="dfD-9n-wY4"/>
+                            <constraint firstItem="NDN-S3-grk" firstAttribute="top" secondItem="HPX-3J-6t8" secondAttribute="bottom" id="dyX-em-u0x"/>
+                            <constraint firstItem="NDN-S3-grk" firstAttribute="leading" secondItem="FDK-lx-QKp" secondAttribute="leading" id="zKY-Q2-AOT"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="table" destination="NDN-S3-grk" id="adV-td-JAQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oyG-gC-DiK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="224" y="350"/>
+        </scene>
+    </scenes>
+</document>

@@ -24,6 +24,14 @@
     
 }
 
++ (RootCtrl *)getCtrllerFromStory:(NSString *)storyboard
+     controllerIdentifier:(NSString *)identifier
+{
+    UIStoryboard *story = [UIStoryboard storyboardWithName:storyboard bundle:nil] ;
+    RootCtrl *ctrller = [story instantiateViewControllerWithIdentifier:identifier] ;
+    return ctrller ;
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

@@ -16,6 +16,7 @@
 #import "KxMenu.h"
 #import "UIColor+HexString.h"
 #import "HomePageController+TitleManager.h"
+#import "RankingViewController.h"
 
 @interface HomePageController () <UICollectionViewDelegate,UICollectionViewDataSource,CHTCollectionViewDelegateWaterfallLayout,UICollectionViewDelegateFlowLayout>
 {
@@ -73,6 +74,10 @@
 
 - (IBAction)itemRankingOnClick:(id)sender {
     NSLog(@"排行榜") ;
+    RankingViewController *rankCtrller = (RankingViewController *)[RankingViewController getCtrllerFromStory:@"HomePage" controllerIdentifier:@"RankingViewController"] ;
+    [rankCtrller setHidesBottomBarWhenPushed:YES] ;
+    [self.navigationController pushViewController:rankCtrller animated:YES] ;
+    
 }
 
 - (IBAction)itemCameraOnclick:(id)sender {
@@ -257,6 +262,14 @@
     CGRect rect = self.view.bounds ;
     rect.size.height -= (APP_TABBAR_HEIGHT + APP_NAVIGATIONBAR_HEIGHT + APP_STATUSBAR_HEIGHT);
     return rect ;
+}
+
+#pragma mark - Navigation
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    [segue.destinationViewController setHidesBottomBarWhenPushed:YES] ;
 }
 
 @end

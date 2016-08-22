@@ -28,6 +28,8 @@
 		D745898C1D6AAF9500835234 /* XLPlainFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D745898B1D6AAF9500835234 /* XLPlainFlowLayout.m */; };
 		D74589901D6AE3D700835234 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D745898F1D6AE3D700835234 /* KxMenu.m */; };
 		D74589931D6B0C1500835234 /* HomePageController+TitleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D74589921D6B0C1500835234 /* HomePageController+TitleManager.m */; };
+		D74589971D6B18C400835234 /* RankingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D74589961D6B18C400835234 /* RankingViewController.m */; };
+		D74589991D6B190D00835234 /* HomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D74589981D6B190D00835234 /* HomePage.storyboard */; };
 		D75CC3C61C2A926100E590E6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC3C51C2A926100E590E6 /* main.m */; };
 		D75CC3C91C2A926100E590E6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC3C81C2A926100E590E6 /* AppDelegate.m */; };
 		D75CC3CC1C2A926100E590E6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC3CB1C2A926100E590E6 /* ViewController.m */; };
@@ -282,6 +284,9 @@
 		D745898F1D6AE3D700835234 /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
 		D74589911D6B0C1400835234 /* HomePageController+TitleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "HomePageController+TitleManager.h"; path = "GroupBuying/VC+V/HomePage/HomePageController+TitleManager.h"; sourceTree = SOURCE_ROOT; };
 		D74589921D6B0C1500835234 /* HomePageController+TitleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "HomePageController+TitleManager.m"; path = "GroupBuying/VC+V/HomePage/HomePageController+TitleManager.m"; sourceTree = SOURCE_ROOT; };
+		D74589951D6B18C400835234 /* RankingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RankingViewController.h; path = "GroupBuying/VC+V/Ranking/RankingViewController.h"; sourceTree = SOURCE_ROOT; };
+		D74589961D6B18C400835234 /* RankingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RankingViewController.m; path = "GroupBuying/VC+V/Ranking/RankingViewController.m"; sourceTree = SOURCE_ROOT; };
+		D74589981D6B190D00835234 /* HomePage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = HomePage.storyboard; path = "VC+V/HomePage/HomePage.storyboard"; sourceTree = "<group>"; };
 		D75CC3C11C2A926100E590E6 /* GroupBuying.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupBuying.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D75CC3C51C2A926100E590E6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D75CC3C71C2A926100E590E6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -754,11 +759,12 @@
 			isa = PBXGroup;
 			children = (
 				D75CC3CD1C2A926100E590E6 /* Main.storyboard */,
+				D74589981D6B190D00835234 /* HomePage.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
 		};
-		60074DF91D60DEC90040C3C0 /* HomePage */ = {
+		60074DF91D60DEC90040C3C0 /* HomePage1 */ = {
 			isa = PBXGroup;
 			children = (
 				D74589891D6AAF9500835234 /* XLPlainFlowLayout */,
@@ -778,43 +784,43 @@
 				D74589851D6A9DCB00835234 /* HPBigPhotoHeaderView.m */,
 				D74589861D6A9DCB00835234 /* HPBigPhotoHeaderView.xib */,
 			);
-			name = HomePage;
+			name = HomePage1;
 			sourceTree = "<group>";
 		};
-		60074DFD1D60DF2F0040C3C0 /* Mine */ = {
+		60074DFD1D60DF2F0040C3C0 /* Mine1 */ = {
 			isa = PBXGroup;
 			children = (
 				60074E0A1D60E0180040C3C0 /* MineController.h */,
 				60074E0B1D60E0180040C3C0 /* MineController.m */,
 			);
-			name = Mine;
+			name = Mine1;
 			sourceTree = "<group>";
 		};
-		60074DFE1D60DF390040C3C0 /* Activity */ = {
+		60074DFE1D60DF390040C3C0 /* Activity1 */ = {
 			isa = PBXGroup;
 			children = (
 				60074E071D60E0040040C3C0 /* ActivityController.h */,
 				60074E081D60E0040040C3C0 /* ActivityController.m */,
 			);
-			name = Activity;
+			name = Activity1;
 			sourceTree = "<group>";
 		};
-		60074DFF1D60DF3C0040C3C0 /* Features */ = {
+		60074DFF1D60DF3C0040C3C0 /* Features1 */ = {
 			isa = PBXGroup;
 			children = (
 				60074E041D60DFEF0040C3C0 /* FeaturesController.h */,
 				60074E051D60DFEF0040C3C0 /* FeaturesController.m */,
 			);
-			name = Features;
+			name = Features1;
 			sourceTree = "<group>";
 		};
-		60074E001D60DF410040C3C0 /* Find */ = {
+		60074E001D60DF410040C3C0 /* Find1 */ = {
 			isa = PBXGroup;
 			children = (
 				60074E011D60DFDC0040C3C0 /* FindController.h */,
 				60074E021D60DFDC0040C3C0 /* FindController.m */,
 			);
-			name = Find;
+			name = Find1;
 			sourceTree = "<group>";
 		};
 		60074E131D634AE80040C3C0 /* color */ = {
@@ -848,6 +854,15 @@
 				D745898F1D6AE3D700835234 /* KxMenu.m */,
 			);
 			path = KxMenu;
+			sourceTree = "<group>";
+		};
+		D74589941D6B186B00835234 /* Ranking */ = {
+			isa = PBXGroup;
+			children = (
+				D74589951D6B18C400835234 /* RankingViewController.h */,
+				D74589961D6B18C400835234 /* RankingViewController.m */,
+			);
+			name = Ranking;
 			sourceTree = "<group>";
 		};
 		D75CC3B81C2A926100E590E6 = {
@@ -924,11 +939,12 @@
 		D75CC3F71C2A92B200E590E6 /* VC+V */ = {
 			isa = PBXGroup;
 			children = (
-				60074DF91D60DEC90040C3C0 /* HomePage */,
-				60074E001D60DF410040C3C0 /* Find */,
-				60074DFF1D60DF3C0040C3C0 /* Features */,
-				60074DFE1D60DF390040C3C0 /* Activity */,
-				60074DFD1D60DF2F0040C3C0 /* Mine */,
+				D74589941D6B186B00835234 /* Ranking */,
+				60074DF91D60DEC90040C3C0 /* HomePage1 */,
+				60074E001D60DF410040C3C0 /* Find1 */,
+				60074DFF1D60DF3C0040C3C0 /* Features1 */,
+				60074DFE1D60DF390040C3C0 /* Activity1 */,
+				60074DFD1D60DF2F0040C3C0 /* Mine1 */,
 			);
 			name = "VC+V";
 			path = Controller;
@@ -1823,7 +1839,7 @@
 				TargetAttributes = {
 					D75CC3C01C2A926100E590E6 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 37CT629P96;
+						DevelopmentTeam = 5D74XHX7AD;
 					};
 					D75CC3D91C2A926200E590E6 = {
 						CreatedOnToolsVersion = 7.2;
@@ -1875,6 +1891,7 @@
 				D75CC70E1C2BF99B00E590E6 /* UMSnsAccountViewController.xib in Resources */,
 				D75CC7131C2BF99B00E590E6 /* UMSocialSDKResourcesNew.bundle in Resources */,
 				D75CC3CF1C2A926100E590E6 /* Main.storyboard in Resources */,
+				D74589991D6B190D00835234 /* HomePage.storyboard in Resources */,
 				D75CC70D1C2BF99B00E590E6 /* UMSLoginViewController.xib in Resources */,
 				D75CC7171C2BF99B00E590E6 /* WeiboSDK.bundle in Resources */,
 				60074E1D1D634AE80040C3C0 /* xtAllColorsList.plist in Resources */,
@@ -1965,6 +1982,7 @@
 				D75CC5B21C2A965000E590E6 /* ASICloudFilesContainerRequest.m in Sources */,
 				D75CC7271C2CFDA600E590E6 /* Article.m in Sources */,
 				D75CC5A41C2A965000E590E6 /* AFURLConnectionOperation.m in Sources */,
+				D74589971D6B18C400835234 /* RankingViewController.m in Sources */,
 				D75CC3C91C2A926100E590E6 /* AppDelegate.m in Sources */,
 				D75CC3C61C2A926100E590E6 /* main.m in Sources */,
 				D75CC5B31C2A965000E590E6 /* ASICloudFilesContainerXMLParserDelegate.m in Sources */,

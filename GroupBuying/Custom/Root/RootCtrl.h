@@ -19,6 +19,10 @@
 
 @interface RootCtrl : UIViewController
 
+// get ctrller from storyboard
++ (RootCtrl *)getCtrllerFromStory:(NSString *)storyboard
+             controllerIdentifier:(NSString *)identifier ;
+
 #pragma mark - title for Umeng Anaylize .
 @property (nonatomic,copy)   NSString      *myTitle ;
 
