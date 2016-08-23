@@ -226,6 +226,8 @@
 		D75CC72B1C2CFDA600E590E6 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC7261C2CFDA600E590E6 /* User.m */; };
 		D75CC7331C2D13C000E590E6 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC72F1C2D13C000E590E6 /* NSObject+YYModel.m */; };
 		D75CC7341C2D13C000E590E6 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC7311C2D13C000E590E6 /* YYClassInfo.m */; };
+		D76E837A1D6C61C60014FDEA /* RootCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E83791D6C61C60014FDEA /* RootCollectionView.m */; };
+		D76E837E1D6C6EBD0014FDEA /* RankingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E837D1D6C6EBD0014FDEA /* RankingCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -693,6 +695,11 @@
 		D75CC7301C2D13C000E590E6 /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
 		D75CC7311C2D13C000E590E6 /* YYClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYClassInfo.m; sourceTree = "<group>"; };
 		D75CC7321C2D13C000E590E6 /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
+		D76E83781D6C61C60014FDEA /* RootCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootCollectionView.h; sourceTree = "<group>"; };
+		D76E83791D6C61C60014FDEA /* RootCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootCollectionView.m; sourceTree = "<group>"; };
+		D76E837B1D6C624F0014FDEA /* LoadingImagesHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadingImagesHeader.h; sourceTree = "<group>"; };
+		D76E837C1D6C6EBD0014FDEA /* RankingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RankingCell.h; path = "GroupBuying/VC+V/Ranking/RankingCell.h"; sourceTree = SOURCE_ROOT; };
+		D76E837D1D6C6EBD0014FDEA /* RankingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RankingCell.m; path = "GroupBuying/VC+V/Ranking/RankingCell.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -861,6 +868,8 @@
 			children = (
 				D74589951D6B18C400835234 /* RankingViewController.h */,
 				D74589961D6B18C400835234 /* RankingViewController.m */,
+				D76E837C1D6C6EBD0014FDEA /* RankingCell.h */,
+				D76E837D1D6C6EBD0014FDEA /* RankingCell.m */,
 			);
 			name = Ranking;
 			sourceTree = "<group>";
@@ -1624,6 +1633,9 @@
 				D75CC6BD1C2BEB0400E590E6 /* RootCtrl.m */,
 				D75CC6BE1C2BEB0400E590E6 /* RootTableView.h */,
 				D75CC6BF1C2BEB0400E590E6 /* RootTableView.m */,
+				D76E83781D6C61C60014FDEA /* RootCollectionView.h */,
+				D76E83791D6C61C60014FDEA /* RootCollectionView.m */,
+				D76E837B1D6C624F0014FDEA /* LoadingImagesHeader.h */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -2005,6 +2017,7 @@
 				D75CC5BB1C2A965000E590E6 /* ASIS3ObjectRequest.m in Sources */,
 				60074DFC1D60DF270040C3C0 /* HomePageController.m in Sources */,
 				D74589931D6B0C1500835234 /* HomePageController+TitleManager.m in Sources */,
+				D76E837A1D6C61C60014FDEA /* RootCollectionView.m in Sources */,
 				D75CC43C1C2A95DE00E590E6 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,
 				D75CC7291C2CFDA600E590E6 /* ArticlePraise.m in Sources */,
 				D75CC5B51C2A965000E590E6 /* ASICloudFilesObjectRequest.m in Sources */,
@@ -2058,6 +2071,7 @@
 				D75CC44B1C2A95DE00E590E6 /* XTSegment.m in Sources */,
 				60074E061D60DFEF0040C3C0 /* FeaturesController.m in Sources */,
 				D75CC5DD1C2A965000E590E6 /* UIScrollView+MJExtension.m in Sources */,
+				D76E837E1D6C6EBD0014FDEA /* RankingCell.m in Sources */,
 				D75CC4451C2A95DE00E590E6 /* MyTabbar.m in Sources */,
 				60074E1B1D634AE80040C3C0 /* UIColor+AllColors.m in Sources */,
 				D75CC5D41C2A965000E590E6 /* MJRefreshAutoStateFooter.m in Sources */,

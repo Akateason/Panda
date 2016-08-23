@@ -41,5 +41,9 @@
     return [[XTColorFetcher class] xt_colorWithKey:@"seperate"] ;
 }
 
++ (UIColor *)xt_w_desc
+{
+    return [[XTColorFetcher class] xt_colorWithKey:@"w_desc"] ;
+}
 
 @end

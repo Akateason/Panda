@@ -144,8 +144,12 @@
 {
     self.currentIndex = index ;
     
-    if (callback) {
-        [self.delegate clickSegmentWith:index] ;
+    if (callback)
+    {
+        if (self.delegate && [self.delegate respondsToSelector:@selector(clickSegmentWith:)])
+        {
+            [self.delegate clickSegmentWith:index] ;
+        }
     }
     
     [self changeButtonSelectInfo] ;

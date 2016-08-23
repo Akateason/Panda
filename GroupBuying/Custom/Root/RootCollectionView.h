@@ -1,23 +1,24 @@
 //
-//  RootTableView.h
-//  Demo_MjRefresh
+//  RootCollectionView.h
+//  GroupBuying
 //
-//  Created by TuTu on 15/12/3.
-//  Copyright © 2015年 teason. All rights reserved.
+//  Created by TuTu on 16/8/23.
+//  Copyright © 2016年 teason. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
+@protocol RootCollectionViewDelegate <NSObject>
 
-
-@protocol RootTableViewDelegate <NSObject>
 - (void)loadNewData ;
 - (void)loadMoreData ;
+
 @end
 
-@interface RootTableView : UITableView
+@interface RootCollectionView : UICollectionView
 
-@property (nonatomic,weak) id <RootTableViewDelegate> xt_Delegate ; // SET myDelegate TO YOUR CTRLLER
+@property (nonatomic,weak) id <RootCollectionViewDelegate> xt_delegate ;
+
 @property (nonatomic) BOOL showRefreshDetail ;      // DEFAULT IS `NO`  -> ONLY GIF IMAGES , SHOW WORDS WHEN IT BECOMES `YES`
 @property (nonatomic) BOOL automaticallyLoadMore ;  // DEFAULT IS `NO`  -> MANUALLY LOADING . AUTOMATICALLY LOAD WHEN IT BECOMES `YES`
 @property (nonatomic) BOOL automaticallyLoadNew ;   // DEFAULT IS `YES` -> EVERYTIME INITIAL WITH AUTO LOAD NEW . CHANGE IT TO `NO` IF NECESSARY .

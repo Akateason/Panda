@@ -7,6 +7,7 @@
 //
 
 #import "HomePageController.h"
+#import "RootCollectionView.h"
 #import "CHTCollectionViewWaterfallLayout.h"
 #import "HPProductCollectionCell.h"
 #import "HPBigPhotoCollectionCell.h"
@@ -18,7 +19,7 @@
 #import "HomePageController+TitleManager.h"
 #import "RankingViewController.h"
 
-@interface HomePageController () <UICollectionViewDelegate,UICollectionViewDataSource,CHTCollectionViewDelegateWaterfallLayout,UICollectionViewDelegateFlowLayout>
+@interface HomePageController () <UICollectionViewDelegate,UICollectionViewDataSource,CHTCollectionViewDelegateWaterfallLayout,RootCollectionViewDelegate>
 {
     BOOL  bSwitcher ;   //  itemSwitcher  false -> waterflow , true -> big photo
 }
@@ -28,7 +29,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *itemCamera;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *itemSwitcher;
 // collection view
-@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) IBOutlet RootCollectionView *collectionView;
 @property (nonatomic,strong) CHTCollectionViewWaterfallLayout *waterflowLayout ;
 @property (nonatomic,strong) XLPlainFlowLayout *bplayout ;
 
@@ -121,11 +122,11 @@
     return _menuItems ;
 }
 
-- (UICollectionView *)collectionView {
+- (RootCollectionView *)collectionView {
     if (!_collectionView)
     {
-        _collectionView = [[UICollectionView alloc] initWithFrame:[self getCollectionRect]
-                                             collectionViewLayout:self.waterflowLayout];
+        _collectionView = [[RootCollectionView alloc] initWithFrame:[self getCollectionRect]
+                                               collectionViewLayout:self.waterflowLayout];
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
         _collectionView.backgroundColor = [UIColor xt_collectionBackgroundColor] ;

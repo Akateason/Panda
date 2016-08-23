@@ -22,4 +22,6 @@
 
 + (UIColor *)xt_seperate ;
 
++ (UIColor *)xt_w_desc ;
+
 @end

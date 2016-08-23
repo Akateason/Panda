@@ -1,30 +1,33 @@
 //
-//  RootTableView.m
-//  Demo_MjRefresh
+//  RootCollectionView.m
+//  GroupBuying
 //
-//  Created by TuTu on 15/12/3.
-//  Copyright © 2015年 teason. All rights reserved.
+//  Created by TuTu on 16/8/23.
+//  Copyright © 2016年 teason. All rights reserved.
 //
 
-#import "RootTableView.h"
-#import "MJRefresh.h"
+#import "RootCollectionView.h"
 #import "LoadingImagesHeader.h"
+#import "MJRefresh.h"
 
 
-@interface RootTableView ()
+@interface RootCollectionView ()
 @property (nonatomic,strong) NSArray *gifImageList ;
 @end
 
-@implementation RootTableView
-#pragma mark --
-#pragma mark - Public
-- (void)pullDownRefreshHeader
-{
-    [self.mj_header beginRefreshing] ;
-}
+@implementation RootCollectionView
 
 #pragma mark --
 #pragma mark - Initialization
+
+- (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout
+{
+    self = [super initWithFrame:frame collectionViewLayout:layout] ;
+    if (self) {
+        [self setup] ;
+    }
+    return self ;
+}
 
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
@@ -49,6 +52,7 @@
     [self MJRefreshConfigure] ;
     [self defaultPublicAPIs] ;
 }
+
 
 - (void)MJRefreshConfigure
 {
@@ -133,7 +137,7 @@
 #pragma mark - loading methods
 - (void)loadNewDataSelector
 {
-    [self.xt_Delegate loadNewData] ;
+    [self.xt_delegate loadNewData] ;
     [self headerEnding] ;
 }
 
@@ -151,7 +155,7 @@
     {
         dispatch_queue_t queue = dispatch_queue_create("refreshAutoFooter", NULL) ;
         dispatch_async(queue, ^{
-            [self.xt_Delegate loadMoreData] ;
+            [self.xt_delegate loadMoreData] ;
             [self footerEnding] ;
         }) ;
         
@@ -159,7 +163,7 @@
     }
     else
     {
-        [self.xt_Delegate loadMoreData] ;
+        [self.xt_delegate loadMoreData] ;
     }
     
     [self footerEnding] ;
@@ -172,6 +176,16 @@
         [self.mj_footer endRefreshing];
     }) ;
 }
+
+
+#pragma mark --
+#pragma mark - Public
+- (void)pullDownRefreshHeader
+{
+    [self.mj_header beginRefreshing] ;
+}
+
+
 
 /*
 // Only override drawRect: if you perform custom drawing.
