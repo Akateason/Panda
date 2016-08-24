@@ -12,6 +12,6 @@
 
 - (void)setLayout:(UICollectionViewLayout *)layout
    collectionView:(UICollectionView *)collectionView
-         switcher:(UIBarButtonItem *)itemSwitcher ;
+         switcher:(UIButton *)itemSwitcher ;
 
 @end

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Camera View Controller-->
+        <scene sceneID="Ifs-3D-ZgF">
+            <objects>
+                <viewController id="NqE-kU-8F4" customClass="CameraViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mrf-Or-Z3x"/>
+                        <viewControllerLayoutGuide type="bottom" id="CoU-fS-ec4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="L41-65-eO5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mXu-xA-DU1">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T3K-yW-mqc">
+                                        <rect key="frame" x="10" y="10" width="62" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="9GM-Z1-1St"/>
+                                            <constraint firstAttribute="width" constant="62" id="r59-Q4-FbN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="预览"/>
+                                        <connections>
+                                            <action selector="btPreviewOnClick:" destination="NqE-kU-8F4" eventType="touchUpInside" id="oP2-Al-cnG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="T3K-yW-mqc" firstAttribute="leading" secondItem="mXu-xA-DU1" secondAttribute="leading" constant="10" id="Gq5-34-lPf"/>
+                                    <constraint firstAttribute="height" constant="44" id="KC6-Gv-VQE"/>
+                                    <constraint firstItem="T3K-yW-mqc" firstAttribute="top" secondItem="mXu-xA-DU1" secondAttribute="top" constant="10" id="THG-1c-V6t"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mXu-xA-DU1" firstAttribute="leading" secondItem="L41-65-eO5" secondAttribute="leading" id="1l8-4i-rUG"/>
+                            <constraint firstItem="CoU-fS-ec4" firstAttribute="top" secondItem="mXu-xA-DU1" secondAttribute="bottom" id="3eg-9g-9Dr"/>
+                            <constraint firstAttribute="trailing" secondItem="mXu-xA-DU1" secondAttribute="trailing" id="va1-i1-Umi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="6wk-zJ-U32">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" title="取消" id="ol3-1E-UgV">
+                            <connections>
+                                <action selector="btCancelOnClick:" destination="NqE-kU-8F4" id="PKR-e8-JmM"/>
+                            </connections>
+                        </barButtonItem>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sPH-Al-HC1">
+                            <rect key="frame" x="180" y="7" width="240" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="camera"/>
+                            <connections>
+                                <action selector="btTitleOnClick:" destination="NqE-kU-8F4" eventType="touchUpInside" id="pwr-eF-GaT"/>
+                            </connections>
+                        </button>
+                        <barButtonItem key="rightBarButtonItem" title="继续" id="cpD-wk-Bhr">
+                            <connections>
+                                <action selector="btFinishOnClick:" destination="NqE-kU-8F4" id="Vf7-P8-qHm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="btCancel" destination="ol3-1E-UgV" id="k9c-bN-1Ft"/>
+                        <outlet property="btFinish" destination="cpD-wk-Bhr" id="Y9t-sP-8r6"/>
+                        <outlet property="btPreview" destination="T3K-yW-mqc" id="PEv-D9-Mrw"/>
+                        <outlet property="btTitle" destination="sPH-Al-HC1" id="Dc3-C8-uSv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CHo-PX-0VM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1032" y="316"/>
+        </scene>
+        <!--Camera Nav Ctrller-->
+        <scene sceneID="5ul-AC-Dgs">
+            <objects>
+                <navigationController storyboardIdentifier="CameraNavCtrller" automaticallyAdjustsScrollViewInsets="NO" id="rhk-zO-UuV" customClass="CameraNavCtrller" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="idd-xF-GlJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NqE-kU-8F4" kind="relationship" relationship="rootViewController" id="Vuf-q4-cTa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z8c-XA-849" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="220" y="316"/>
+        </scene>
+    </scenes>
+</document>

@@ -228,6 +228,15 @@
 		D75CC7341C2D13C000E590E6 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC7311C2D13C000E590E6 /* YYClassInfo.m */; };
 		D76E837A1D6C61C60014FDEA /* RootCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E83791D6C61C60014FDEA /* RootCollectionView.m */; };
 		D76E837E1D6C6EBD0014FDEA /* RankingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E837D1D6C6EBD0014FDEA /* RankingCell.m */; };
+		D76E83821D6D3F010014FDEA /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E83811D6D3F010014FDEA /* CameraViewController.m */; };
+		D76E83841D6D40D40014FDEA /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D76E83831D6D40D40014FDEA /* Camera.storyboard */; };
+		D76E83871D6D46300014FDEA /* CameraNavCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E83861D6D46300014FDEA /* CameraNavCtrller.m */; };
+		D76E838B1D6D48560014FDEA /* AlbumnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E83891D6D48560014FDEA /* AlbumnCell.m */; };
+		D76E838C1D6D48560014FDEA /* AlbumnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76E838A1D6D48560014FDEA /* AlbumnCell.xib */; };
+		D76E838F1D6D49790014FDEA /* AlbumOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E838E1D6D49790014FDEA /* AlbumOperation.m */; };
+		D76E83961D6DA3290014FDEA /* CameraGoupCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E83951D6DA3290014FDEA /* CameraGoupCtrller.m */; };
+		D76E839A1D6DA6540014FDEA /* CameraGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E83981D6DA6540014FDEA /* CameraGroupCell.m */; };
+		D76E839B1D6DA6540014FDEA /* CameraGroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76E83991D6DA6540014FDEA /* CameraGroupCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -700,6 +709,21 @@
 		D76E837B1D6C624F0014FDEA /* LoadingImagesHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadingImagesHeader.h; sourceTree = "<group>"; };
 		D76E837C1D6C6EBD0014FDEA /* RankingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RankingCell.h; path = "GroupBuying/VC+V/Ranking/RankingCell.h"; sourceTree = SOURCE_ROOT; };
 		D76E837D1D6C6EBD0014FDEA /* RankingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RankingCell.m; path = "GroupBuying/VC+V/Ranking/RankingCell.m"; sourceTree = SOURCE_ROOT; };
+		D76E83801D6D3F010014FDEA /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraViewController.h; path = "GroupBuying/VC+V/Camera/CameraViewController.h"; sourceTree = SOURCE_ROOT; };
+		D76E83811D6D3F010014FDEA /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraViewController.m; path = "GroupBuying/VC+V/Camera/CameraViewController.m"; sourceTree = SOURCE_ROOT; };
+		D76E83831D6D40D40014FDEA /* Camera.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Camera.storyboard; path = "VC+V/Camera/Camera.storyboard"; sourceTree = "<group>"; };
+		D76E83851D6D46300014FDEA /* CameraNavCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraNavCtrller.h; path = "GroupBuying/VC+V/Camera/CameraNavCtrller.h"; sourceTree = SOURCE_ROOT; };
+		D76E83861D6D46300014FDEA /* CameraNavCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraNavCtrller.m; path = "GroupBuying/VC+V/Camera/CameraNavCtrller.m"; sourceTree = SOURCE_ROOT; };
+		D76E83881D6D48560014FDEA /* AlbumnCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlbumnCell.h; path = "GroupBuying/VC+V/Camera/AlbumnCell.h"; sourceTree = SOURCE_ROOT; };
+		D76E83891D6D48560014FDEA /* AlbumnCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlbumnCell.m; path = "GroupBuying/VC+V/Camera/AlbumnCell.m"; sourceTree = SOURCE_ROOT; };
+		D76E838A1D6D48560014FDEA /* AlbumnCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AlbumnCell.xib; path = "GroupBuying/VC+V/Camera/AlbumnCell.xib"; sourceTree = SOURCE_ROOT; };
+		D76E838D1D6D49790014FDEA /* AlbumOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlbumOperation.h; path = "GroupBuying/VC+V/Camera/AlbumOperation.h"; sourceTree = SOURCE_ROOT; };
+		D76E838E1D6D49790014FDEA /* AlbumOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlbumOperation.m; path = "GroupBuying/VC+V/Camera/AlbumOperation.m"; sourceTree = SOURCE_ROOT; };
+		D76E83941D6DA3290014FDEA /* CameraGoupCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraGoupCtrller.h; path = "GroupBuying/VC+V/Camera/CameraGoupCtrller.h"; sourceTree = SOURCE_ROOT; };
+		D76E83951D6DA3290014FDEA /* CameraGoupCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraGoupCtrller.m; path = "GroupBuying/VC+V/Camera/CameraGoupCtrller.m"; sourceTree = SOURCE_ROOT; };
+		D76E83971D6DA6540014FDEA /* CameraGroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraGroupCell.h; path = "GroupBuying/VC+V/Camera/CameraGroupCell.h"; sourceTree = SOURCE_ROOT; };
+		D76E83981D6DA6540014FDEA /* CameraGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraGroupCell.m; path = "GroupBuying/VC+V/Camera/CameraGroupCell.m"; sourceTree = SOURCE_ROOT; };
+		D76E83991D6DA6540014FDEA /* CameraGroupCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CameraGroupCell.xib; path = "GroupBuying/VC+V/Camera/CameraGroupCell.xib"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -767,6 +791,7 @@
 			children = (
 				D75CC3CD1C2A926100E590E6 /* Main.storyboard */,
 				D74589981D6B190D00835234 /* HomePage.storyboard */,
+				D76E83831D6D40D40014FDEA /* Camera.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -948,6 +973,7 @@
 		D75CC3F71C2A92B200E590E6 /* VC+V */ = {
 			isa = PBXGroup;
 			children = (
+				D76E837F1D6D3EAF0014FDEA /* Camera */,
 				D74589941D6B186B00835234 /* Ranking */,
 				60074DF91D60DEC90040C3C0 /* HomePage1 */,
 				60074E001D60DF410040C3C0 /* Find1 */,
@@ -1784,6 +1810,35 @@
 			path = YYModel;
 			sourceTree = "<group>";
 		};
+		D76E837F1D6D3EAF0014FDEA /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				D76E83801D6D3F010014FDEA /* CameraViewController.h */,
+				D76E83811D6D3F010014FDEA /* CameraViewController.m */,
+				D76E83851D6D46300014FDEA /* CameraNavCtrller.h */,
+				D76E83861D6D46300014FDEA /* CameraNavCtrller.m */,
+				D76E83881D6D48560014FDEA /* AlbumnCell.h */,
+				D76E83891D6D48560014FDEA /* AlbumnCell.m */,
+				D76E838A1D6D48560014FDEA /* AlbumnCell.xib */,
+				D76E838D1D6D49790014FDEA /* AlbumOperation.h */,
+				D76E838E1D6D49790014FDEA /* AlbumOperation.m */,
+				D76E83931D6DA2A40014FDEA /* CameraGroupCtrller */,
+			);
+			name = Camera;
+			sourceTree = "<group>";
+		};
+		D76E83931D6DA2A40014FDEA /* CameraGroupCtrller */ = {
+			isa = PBXGroup;
+			children = (
+				D76E83941D6DA3290014FDEA /* CameraGoupCtrller.h */,
+				D76E83951D6DA3290014FDEA /* CameraGoupCtrller.m */,
+				D76E83971D6DA6540014FDEA /* CameraGroupCell.h */,
+				D76E83981D6DA6540014FDEA /* CameraGroupCell.m */,
+				D76E83991D6DA6540014FDEA /* CameraGroupCell.xib */,
+			);
+			name = CameraGroupCtrller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1851,7 +1906,7 @@
 				TargetAttributes = {
 					D75CC3C01C2A926100E590E6 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 5D74XHX7AD;
+						DevelopmentTeam = S9H98D8VCR;
 					};
 					D75CC3D91C2A926200E590E6 = {
 						CreatedOnToolsVersion = 7.2;
@@ -1895,12 +1950,14 @@
 				D75CC7121C2BF99B00E590E6 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				D75CC70F1C2BF99B00E590E6 /* UMSShareListController.xib in Resources */,
 				D75CC70C1C2BF99B00E590E6 /* UMShareEditViewControlleriPad.xib in Resources */,
+				D76E838C1D6D48560014FDEA /* AlbumnCell.xib in Resources */,
 				608405811D67F45700B40D68 /* HPProductCollectionCell.xib in Resources */,
 				D75CC7081C2BF99B00E590E6 /* UMSCommentDetailController.xib in Resources */,
 				D75CC70B1C2BF99B00E590E6 /* UMShareEditViewController.xib in Resources */,
 				608405831D67F62500B40D68 /* HPBigPhotoCollectionCell.xib in Resources */,
 				D75CC7061C2BF99B00E590E6 /* UMSocialLocalizable.strings in Resources */,
 				D75CC70E1C2BF99B00E590E6 /* UMSnsAccountViewController.xib in Resources */,
+				D76E83841D6D40D40014FDEA /* Camera.storyboard in Resources */,
 				D75CC7131C2BF99B00E590E6 /* UMSocialSDKResourcesNew.bundle in Resources */,
 				D75CC3CF1C2A926100E590E6 /* Main.storyboard in Resources */,
 				D74589991D6B190D00835234 /* HomePage.storyboard in Resources */,
@@ -1910,6 +1967,7 @@
 				D75CC70A1C2BF99B00E590E6 /* UMSCommentInputControlleriPad.xib in Resources */,
 				D74589881D6A9DCB00835234 /* HPBigPhotoHeaderView.xib in Resources */,
 				D75CC5DB1C2A965000E590E6 /* MJRefresh.bundle in Resources */,
+				D76E839B1D6DA6540014FDEA /* CameraGroupCell.xib in Resources */,
 				D75CC5CB1C2A965000E590E6 /* WeiboSDK.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1966,6 +2024,8 @@
 				D75CC5E31C2A965000E590E6 /* QNCrc32.m in Sources */,
 				D75CC5AF1C2A965000E590E6 /* ASINetworkQueue.m in Sources */,
 				60074E0C1D60E0180040C3C0 /* MineController.m in Sources */,
+				D76E83961D6DA3290014FDEA /* CameraGoupCtrller.m in Sources */,
+				D76E83871D6D46300014FDEA /* CameraNavCtrller.m in Sources */,
 				D75CC4481C2A95DE00E590E6 /* PinkButton.m in Sources */,
 				D75CC5A61C2A965000E590E6 /* AFURLResponseSerialization.m in Sources */,
 				D75CC5CE1C2A965000E590E6 /* MJRefreshBackFooter.m in Sources */,
@@ -2009,6 +2069,7 @@
 				D75CC5D51C2A965000E590E6 /* MJRefreshBackGifFooter.m in Sources */,
 				D75CC5F91C2A965000E590E6 /* SDWebImageDownloaderOperation.m in Sources */,
 				D75CC5D91C2A965000E590E6 /* MJRefreshNormalHeader.m in Sources */,
+				D76E838B1D6D48560014FDEA /* AlbumnCell.m in Sources */,
 				D75CC5F51C2A965000E590E6 /* SDImageCache.m in Sources */,
 				D75CC5FA1C2A965000E590E6 /* SDWebImageManager.m in Sources */,
 				D75CC5C61C2A965000E590E6 /* FMDatabaseQueue.m in Sources */,
@@ -2034,6 +2095,7 @@
 				D75CC4511C2A95DE00E590E6 /* XTFileManager.m in Sources */,
 				D75CC5F81C2A965000E590E6 /* SDWebImageDownloader.m in Sources */,
 				D75CC5E81C2A965000E590E6 /* QNResponseInfo.m in Sources */,
+				D76E83821D6D3F010014FDEA /* CameraViewController.m in Sources */,
 				D75CC5CD1C2A965000E590E6 /* MJRefreshAutoFooter.m in Sources */,
 				D75CC5F41C2A965000E590E6 /* NSData+ImageContentType.m in Sources */,
 				D75CC43F1C2A95DE00E590E6 /* UIButton+Badges.m in Sources */,
@@ -2077,6 +2139,7 @@
 				D75CC5D41C2A965000E590E6 /* MJRefreshAutoStateFooter.m in Sources */,
 				D75CC5F61C2A965000E590E6 /* SDWebImageCompat.m in Sources */,
 				D75CC7331C2D13C000E590E6 /* NSObject+YYModel.m in Sources */,
+				D76E839A1D6DA6540014FDEA /* CameraGroupCell.m in Sources */,
 				D75CC5AE1C2A965000E590E6 /* ASIInputStream.m in Sources */,
 				D75CC5BF1C2A965000E590E6 /* Base64.m in Sources */,
 				D75CC4541C2A95DE00E590E6 /* XTTickConvert.m in Sources */,
@@ -2093,6 +2156,7 @@
 				608405861D69505E00B40D68 /* HomePageController+collectionLayoutSwitch.m in Sources */,
 				D75CC6001C2A965000E590E6 /* UIImageView+HighlightedWebCache.m in Sources */,
 				60074E121D634AA50040C3C0 /* XTJson.m in Sources */,
+				D76E838F1D6D49790014FDEA /* AlbumOperation.m in Sources */,
 				6084057C1D64DDDF00B40D68 /* HPProductCollectionCell.m in Sources */,
 				D74589871D6A9DCB00835234 /* HPBigPhotoHeaderView.m in Sources */,
 				D75CC5B71C2A965000E590E6 /* Reachability.m in Sources */,
@@ -2257,6 +2321,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/GroupBuying/PrefixHeader.pch";
 				INFOPLIST_FILE = GroupBuying/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2293,6 +2358,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/GroupBuying/PrefixHeader.pch";
 				INFOPLIST_FILE = GroupBuying/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

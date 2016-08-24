@@ -12,10 +12,10 @@
 
 - (void)setLayout:(UICollectionViewLayout *)layout
    collectionView:(UICollectionView *)collectionView
-         switcher:(UIBarButtonItem *)itemSwitcher
+         switcher:(UIButton *)itemSwitcher
 {
     UICollectionView * __weak weakCollectionView = collectionView ;
-    UIBarButtonItem * __weak weakItemSwitcher = itemSwitcher ;
+    UIButton * __weak weakItemSwitcher = itemSwitcher ;
     
    [collectionView setCollectionViewLayout:layout animated:false completion:^(BOOL finished) {
        if (finished)

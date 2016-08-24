@@ -18,16 +18,14 @@
 #import "UIColor+HexString.h"
 #import "HomePageController+TitleManager.h"
 #import "RankingViewController.h"
+#import "CameraNavCtrller.h"
 
 @interface HomePageController () <UICollectionViewDelegate,UICollectionViewDataSource,CHTCollectionViewDelegateWaterfallLayout,RootCollectionViewDelegate>
-{
-    BOOL  bSwitcher ;   //  itemSwitcher  false -> waterflow , true -> big photo
-}
 
 // nav
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *itemRanking;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *itemCamera;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *itemSwitcher;
+@property (weak, nonatomic) IBOutlet UIButton *itemRanking;
+@property (weak, nonatomic) IBOutlet UIButton *itemCamera;
+@property (weak, nonatomic) IBOutlet UIButton *itemSwitcher;
 // collection view
 @property (strong, nonatomic) IBOutlet RootCollectionView *collectionView;
 @property (nonatomic,strong) CHTCollectionViewWaterfallLayout *waterflowLayout ;
@@ -83,14 +81,18 @@
 
 - (IBAction)itemCameraOnclick:(id)sender {
     NSLog(@"照相机") ;
+    CameraNavCtrller *cNavCtrller = [CameraNavCtrller getNavCtrller] ;
+    [cNavCtrller setHidesBottomBarWhenPushed:YES] ;
+    [self presentViewController:cNavCtrller animated:YES completion:^{
+        
+    }] ;
 }
 
 - (IBAction)itemSwitcherOnClick:(id)sender {
     NSLog(@"切换视图") ;
     self.itemSwitcher.enabled = false ;
-    bSwitcher = !bSwitcher ;
-    self.itemSwitcher.image = bSwitcher ? [UIImage imageNamed:@"btn_square"] : [UIImage imageNamed:@"btn_tile"] ;
-    if (bSwitcher) {
+    self.itemSwitcher.selected = !self.itemSwitcher.selected ;
+    if (self.itemSwitcher.selected) {
         [self setLayout:self.bplayout collectionView:_collectionView switcher:self.itemSwitcher] ;
     }
     else {
@@ -170,10 +172,21 @@
     [super viewDidLoad] ;
     
     // nav item position
-    self.itemCamera.imageInsets = UIEdgeInsetsMake(0, 0, 0, - 22.) ;
     [self.view addSubview:self.collectionView];
     // title pop menu .
     [KxMenu setTintColor:[UIColor colorWithHexString:@"555555" alpha:0.5]] ;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated] ;
+    [self.navigationController setNavigationBarHidden:YES] ;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated] ;
+    [self.navigationController setNavigationBarHidden:NO] ;
 }
 
 - (void)dealloc
@@ -261,7 +274,9 @@
 - (CGRect)getCollectionRect
 {
     CGRect rect = self.view.bounds ;
-    rect.size.height -= (APP_TABBAR_HEIGHT + APP_NAVIGATIONBAR_HEIGHT + APP_STATUSBAR_HEIGHT);
+    rect.size.height -= (APP_TABBAR_HEIGHT + APP_NAVIGATIONBAR_HEIGHT + APP_STATUSBAR_HEIGHT) ;
+    rect.origin.y = APP_NAVIGATIONBAR_HEIGHT + APP_STATUSBAR_HEIGHT ;
+    
     return rect ;
 }
 
