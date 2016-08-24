@@ -19,6 +19,7 @@
 @property (nonatomic, weak)  id <CameraGroupCtrllerDelegate> delegate ;
 @property (nonatomic,strong) ALAssetsLibrary *assetsLibrary ;
 
-- (instancetype)initWithFrame:(CGRect)frame ;
+- (instancetype)initWithFrame:(CGRect)frame library:(ALAssetsLibrary *)assetsLibrary ;
+- (void)cameraGroupAnimation:(BOOL)inOrOut onView:(UIView *)view ;
 
 @end

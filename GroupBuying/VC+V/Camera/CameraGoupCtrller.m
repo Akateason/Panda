@@ -20,14 +20,41 @@
 
 @implementation CameraGoupCtrller
 
-- (instancetype)initWithFrame:(CGRect)frame
+#pragma mark - public
+- (void)cameraGroupAnimation:(BOOL)inOrOut onView:(UIView *)view
+{
+    if (inOrOut) {
+        [view addSubview:self.view] ;
+        float transformY = - self.view.frame.size.height ;
+        self.view.transform = CGAffineTransformMakeTranslation(0, transformY) ;
+        [UIView animateWithDuration:0.5
+                         animations:^{
+                             self.view.transform = CGAffineTransformIdentity ;
+                         }] ;
+    }
+    else {
+        [UIView animateWithDuration:0.5
+                         animations:^{
+                             float transformY = - self.view.frame.size.height ;
+                             self.view.transform = CGAffineTransformMakeTranslation(0, transformY) ;
+                         }
+                         completion:^(BOOL finished) {
+                             if (finished) {
+                                 [self.view removeFromSuperview] ;
+                             }
+                         }] ;
+    }
+}
+
+
+- (instancetype)initWithFrame:(CGRect)frame library:(ALAssetsLibrary *)assetsLibrary
 {
     self = [super init] ;
     if (self) {
+        self.assetsLibrary = assetsLibrary ;
         self.view.frame = frame ;
         [self table] ;
         [self setupGroups] ;
-
     }
     return self;
 }
@@ -43,12 +70,16 @@
 - (void)setupGroups
 {
     // enumerate groups
-    [self.assetsLibrary enumerateGroupsWithTypes:ALAssetsGroupAll usingBlock:^(ALAssetsGroup *group, BOOL *stop)
+    [self.assetsLibrary enumerateGroupsWithTypes:ALAssetsGroupAll
+                                      usingBlock:^(ALAssetsGroup *group, BOOL *stop)
      {
          if (!group) return ;
          [self.groupList addObject:group] ;
-         [_table reloadData] ;
          
+         if (stop) {
+             self.groupList = [[[self.groupList reverseObjectEnumerator] allObjects] mutableCopy] ;
+             [_table reloadData] ;
+         }
      } failureBlock:^(NSError *error) {
          NSLog(@"Enumerate the asset groups failed.");
          [_table reloadData] ;

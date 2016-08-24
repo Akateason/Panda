@@ -43,15 +43,18 @@ static float kMAX_SELECT_COUNT = 10. ;
 #pragma mark - Action
 - (IBAction)btCancelOnClick:(id)sender {
     NSLog(@"取消") ;
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }] ;
+    if (self.groupCtrller.view.superview) {
+        [self.groupCtrller cameraGroupAnimation:!self.groupCtrller.view.superview onView:self.view] ;
+    }
+    else {
+        [self dismissViewControllerAnimated:YES completion:^{
+        }] ;
+    }
 }
 
 - (IBAction)btTitleOnClick:(id)sender {
     NSLog(@"相册") ;
-    [self.view addSubview:self.groupCtrller.view] ;
-
+    [self.groupCtrller cameraGroupAnimation:!self.groupCtrller.view.superview onView:self.view] ;
 }
 
 - (IBAction)btFinishOnClick:(id)sender {
@@ -67,9 +70,8 @@ static float kMAX_SELECT_COUNT = 10. ;
 - (CameraGoupCtrller *)groupCtrller
 {
     if (!_groupCtrller) {
-        _groupCtrller = [[CameraGoupCtrller alloc] initWithFrame:CGRectMake(0, 0, APP_WIDTH, APP_HEIGHT - APP_NAVIGATIONBAR_HEIGHT - APP_STATUSBAR_HEIGHT)] ;
+        _groupCtrller = [[CameraGoupCtrller alloc] initWithFrame:CGRectMake(0, 0, APP_WIDTH, APP_HEIGHT - APP_NAVIGATIONBAR_HEIGHT - APP_STATUSBAR_HEIGHT) library:self.assetsLibrary] ;
         _groupCtrller.delegate = self ;
-        _groupCtrller.assetsLibrary = self.assetsLibrary ;
     }
     return _groupCtrller ;
 }
@@ -167,7 +169,7 @@ static float kMAX_SELECT_COUNT = 10. ;
     [self multySelectedImageList] ;
     [self imageList] ;
     [self getAllPictures] ;
-    
+    [self.btTitle setTitle:@"相机胶卷⌵" forState:0] ;
 }
 
 #pragma mark --
@@ -314,7 +316,6 @@ static float kMAX_SELECT_COUNT = 10. ;
     [self.collectionView reloadItemsAtIndexPaths:@[indexPath]] ;
 //        [self.choosePicBar setCount:self.multySelectedImageList.count] ;
     
-    
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -398,12 +399,21 @@ static float kMAX_SELECT_COUNT = 10. ;
 }
 
 
-
-
+#pragma mark --
 #pragma mark - CameraGroupCtrllerDelegate
 - (void)selectAlbumnGroup:(ALAssetsGroup *)group
 {
+    [self.imageList removeAllObjects] ;
+    [self.multySelectedImageList removeAllObjects] ;
     
+    photoCount = 0 ;
+    [self showImgAssetsInGroup:group] ;
+    
+    if (self.groupCtrller.view.superview) {
+        [self.groupCtrller cameraGroupAnimation:!self.groupCtrller.view.superview onView:self.view] ;
+        [self.collectionView reloadData] ;
+        [self.btTitle setTitle:[[group valueForProperty:ALAssetsGroupPropertyName] stringByAppendingString:@"⌵"] forState:0] ;
+    }
 }
 
 
