@@ -7,6 +7,7 @@
 //
 
 #import "RankingCell.h"
+#import "TestUser.h"
 
 @interface RankingCell ()
 
@@ -25,6 +26,18 @@
 @end
 
 @implementation RankingCell
+
+- (void)setIndex:(int)index
+{
+    _index = index ;
+    
+    _userHeadImageView.image = [UIImage imageNamed:[TestUser headImage:index]] ;
+    _labelName.text = [TestUser username:index] ;
+    _labelRanking.text = [NSString stringWithFormat:@"第%d名",index + 1] ;
+    _labelDescrip.text = @"很高兴认识你" ;
+}
+
+
 
 - (IBAction)btFoucusOnClick:(id)sender
 {

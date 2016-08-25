@@ -7,6 +7,7 @@
 //
 
 #import "HPBigPhotoHeaderView.h"
+#import "TestUser.h"
 
 @interface HPBigPhotoHeaderView ()
 
@@ -18,6 +19,19 @@
 @end
 
 @implementation HPBigPhotoHeaderView
+
+- (void)setIndex:(int)index
+{
+    _index = index ;
+    
+    _headImageView.image = [UIImage imageNamed:[TestUser headImage:index]] ;
+    _labelName.text = [TestUser username:index] ;
+    _lableTime.text = @"今天 13 : 32" ;
+
+}
+
+
+
 
 - (void)awakeFromNib
 {

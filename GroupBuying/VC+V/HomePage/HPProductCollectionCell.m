@@ -7,6 +7,7 @@
 //
 
 #import "HPProductCollectionCell.h"
+#import "TestUser.h"
 
 @interface HPProductCollectionCell ()
 
@@ -18,6 +19,17 @@
 @end
 
 @implementation HPProductCollectionCell
+
+- (void)setIndex:(int)index
+{
+    _index = index ;
+    
+    _imgView.image = [UIImage imageNamed:[TestUser bigImage:index]] ;
+}
+
+
+
+
 
 - (IBAction)btCollectOnClick:(UIButton *)sender
 {

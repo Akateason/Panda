@@ -12,6 +12,8 @@ static NSString *id_HPProductCollectionCell = @"HPProductCollectionCell" ;
 
 @interface HPProductCollectionCell : UICollectionViewCell
 
+@property (nonatomic) int  index ;
+
 + (CGSize)getSize ;
 
 @end

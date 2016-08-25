@@ -19,6 +19,7 @@
 #import "HomePageController+TitleManager.h"
 #import "RankingViewController.h"
 #import "CameraNavCtrller.h"
+//#import "TestUser.h"
 
 @interface HomePageController () <UICollectionViewDelegate,UICollectionViewDataSource,CHTCollectionViewDelegateWaterfallLayout,RootCollectionViewDelegate>
 
@@ -201,7 +202,7 @@
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
     if (collectionView.collectionViewLayout == self.bplayout) {
-       return 5 ;
+       return 10 ;
     }
     else if (collectionView.collectionViewLayout == self.waterflowLayout) {
        return 1 ;
@@ -215,7 +216,7 @@
         return 1 ;
     }
     else if (collectionView.collectionViewLayout == self.waterflowLayout) {
-        return 5 ;
+        return 10 ;
     }
     return 0 ;
 }
@@ -225,11 +226,13 @@
     // Set up the reuse identifier
     if (collectionView.collectionViewLayout == self.bplayout) {
         HPBigPhotoCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:id_HPBigPhotoCollectionCell forIndexPath:indexPath] ;
+        cell.index = indexPath.section ;
         return cell ;
 
     }
     else if (collectionView.collectionViewLayout == self.waterflowLayout) {
         HPProductCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:id_HPProductCollectionCell forIndexPath:indexPath];
+        cell.index = indexPath.row ;
         return cell;
     }
     return nil ;
@@ -259,6 +262,7 @@
     UICollectionReusableView *reusableView = nil ;
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         HPBigPhotoHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:id_HPBigPhotoHeaderView forIndexPath:indexPath];
+        headerView.index = indexPath.section ;
         return headerView ;
     }
     return reusableView ;

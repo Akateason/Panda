@@ -12,4 +12,6 @@ static NSString *id_rankingCell = @"RankingCell" ;
 
 @interface RankingCell : UITableViewCell
 
+@property (nonatomic) int index ;
+
 @end

@@ -12,6 +12,8 @@ static NSString *id_HPBigPhotoCollectionCell = @"HPBigPhotoCollectionCell" ;
 
 @interface HPBigPhotoCollectionCell : UICollectionViewCell
 
+@property (nonatomic) int index ;
+
 + (CGSize)getSize ;
 
 @end

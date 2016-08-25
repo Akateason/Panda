@@ -81,6 +81,8 @@
     if (!cell) {
         cell = [tableView dequeueReusableCellWithIdentifier:id_rankingCell] ;
     }
+    cell.index = indexPath.row ;
+    
     return cell ;
 }
 

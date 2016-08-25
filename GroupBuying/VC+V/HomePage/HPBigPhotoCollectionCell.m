@@ -7,6 +7,7 @@
 //
 
 #import "HPBigPhotoCollectionCell.h"
+#import "TestUser.h"
 
 @interface HPBigPhotoCollectionCell ()
 
@@ -25,6 +26,17 @@
 
 @implementation HPBigPhotoCollectionCell
 
+#pragma mark -
+- (void)setIndex:(int)index
+{
+    _index = index ;
+    
+    _imgProductView.image = [UIImage imageNamed:[TestUser bigImage:index]] ;
+    _labelTitle.text = @"今天的天气真好" ;
+
+}
+
+#pragma mark -
 - (void)awakeFromNib
 {
     self.backgroundColor = [UIColor whiteColor] ;
