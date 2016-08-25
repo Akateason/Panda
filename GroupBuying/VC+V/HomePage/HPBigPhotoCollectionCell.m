@@ -33,7 +33,7 @@
     
     _imgProductView.image = [UIImage imageNamed:[TestUser bigImage:index]] ;
     _labelTitle.text = @"今天的天气真好" ;
-
+    
 }
 
 #pragma mark -
@@ -63,6 +63,7 @@
 
 - (IBAction)btCommentOnClick:(id)sender
 {
+    
 }
 
 - (IBAction)btLikeOnClick:(UIButton *)sender
@@ -70,5 +71,6 @@
     sender.selected = !sender.selected ;
 }
 
-
 @end
+
+
