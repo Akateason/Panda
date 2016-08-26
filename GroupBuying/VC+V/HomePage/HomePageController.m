@@ -19,9 +19,9 @@
 #import "HomePageController+TitleManager.h"
 #import "RankingViewController.h"
 #import "CameraNavCtrller.h"
-//#import "TestUser.h"
+#import "UserInfoCtrller.h"
 
-@interface HomePageController () <UICollectionViewDelegate,UICollectionViewDataSource,CHTCollectionViewDelegateWaterfallLayout,RootCollectionViewDelegate>
+@interface HomePageController () <UICollectionViewDelegate,UICollectionViewDataSource,CHTCollectionViewDelegateWaterfallLayout,RootCollectionViewDelegate,HPBigPhotoHeaderViewDelegate>
 
 // nav
 @property (weak, nonatomic) IBOutlet UIButton *itemRanking;
@@ -35,6 +35,16 @@
 @end
 
 @implementation HomePageController
+
+
+#pragma mark - HPBigPhotoHeaderViewDelegate
+- (void)userheadOnClick
+{
+    UserInfoCtrller *userCtrl = (UserInfoCtrller *)[[self class] getCtrllerFromStory:@"HomePage" controllerIdentifier:@"UserInfoCtrller"] ;
+    [userCtrl setHidesBottomBarWhenPushed:YES] ;
+    [self.navigationController pushViewController:userCtrl animated:YES] ;
+}
+
 
 #pragma mark - action
 
@@ -134,11 +144,11 @@
         _collectionView.delegate = self;
         _collectionView.backgroundColor = [UIColor xt_collectionBackgroundColor] ;
         _collectionView.showsVerticalScrollIndicator = NO ;
-        [_collectionView registerNib:[UINib nibWithNibName:id_HPProductCollectionCell bundle:nil]
+        [_collectionView registerNib:[UINib nibWithNibName:id_HPProductCollectionCell bundle:[NSBundle mainBundle]]
               forCellWithReuseIdentifier:id_HPProductCollectionCell] ;
-        [_collectionView registerNib:[UINib nibWithNibName:id_HPBigPhotoCollectionCell bundle:nil]
+        [_collectionView registerNib:[UINib nibWithNibName:id_HPBigPhotoCollectionCell bundle:[NSBundle mainBundle]]
           forCellWithReuseIdentifier:id_HPBigPhotoCollectionCell] ;
-        [_collectionView registerNib:[UINib nibWithNibName:id_HPBigPhotoHeaderView bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:id_HPBigPhotoHeaderView] ;
+        [_collectionView registerNib:[UINib nibWithNibName:id_HPBigPhotoHeaderView bundle:[NSBundle mainBundle]] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:id_HPBigPhotoHeaderView] ;
     }
     return _collectionView;
 }
@@ -197,6 +207,17 @@
 }
 
 
+#pragma mark - RootCollectionViewDelegate
+
+- (void)loadNewData
+{
+    
+}
+
+- (void)loadMoreData
+{
+    
+}
 
 #pragma mark - collection dataSourse
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -263,6 +284,7 @@
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         HPBigPhotoHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:id_HPBigPhotoHeaderView forIndexPath:indexPath];
         headerView.index = indexPath.section ;
+        headerView.delegate = self ;
         return headerView ;
     }
     return reusableView ;

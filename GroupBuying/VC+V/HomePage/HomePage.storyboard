@@ -163,11 +163,45 @@
                     <connections>
                         <outlet property="bt2top" destination="Czq-Oq-zqh" id="1XS-vH-4AR"/>
                         <outlet property="table" destination="NDN-S3-grk" id="adV-td-JAQ"/>
+                        <segue destination="ffz-7e-KqP" kind="modal" id="i9D-R8-VS1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oyG-gC-DiK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="224" y="350"/>
+        </scene>
+        <!--User Info Ctrller-->
+        <scene sceneID="ntH-Zq-3hX">
+            <objects>
+                <viewController storyboardIdentifier="UserInfoCtrller" id="ffz-7e-KqP" customClass="UserInfoCtrller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jtm-4v-gay"/>
+                        <viewControllerLayoutGuide type="bottom" id="euf-H0-5Eh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZQX-X7-1pr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WSB-OO-qhP" customClass="RootTableView">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WSB-OO-qhP" firstAttribute="leading" secondItem="ZQX-X7-1pr" secondAttribute="leading" id="HlN-WM-vSJ"/>
+                            <constraint firstItem="WSB-OO-qhP" firstAttribute="top" secondItem="Jtm-4v-gay" secondAttribute="bottom" id="XL1-ws-sLj"/>
+                            <constraint firstItem="euf-H0-5Eh" firstAttribute="top" secondItem="WSB-OO-qhP" secondAttribute="bottom" id="Zvn-CJ-CcF"/>
+                            <constraint firstAttribute="trailing" secondItem="WSB-OO-qhP" secondAttribute="trailing" id="cCb-2Z-aPD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="table" destination="WSB-OO-qhP" id="vYf-jw-cI8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="epF-Pl-nba" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="980" y="350"/>
         </scene>
     </scenes>
     <resources>

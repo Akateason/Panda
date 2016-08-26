@@ -239,6 +239,11 @@
 		D76E839B1D6DA6540014FDEA /* CameraGroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76E83991D6DA6540014FDEA /* CameraGroupCell.xib */; };
 		D76E839D1D6EA1D90014FDEA /* testUser.plist in Resources */ = {isa = PBXBuildFile; fileRef = D76E839C1D6EA1D90014FDEA /* testUser.plist */; };
 		D76E83A01D6EA2B40014FDEA /* TestUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E839F1D6EA2B40014FDEA /* TestUser.m */; };
+		D76E83B61D6FE6000014FDEA /* UserInfoCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E83B51D6FE6000014FDEA /* UserInfoCtrller.m */; };
+		D76E83BE1D70175D0014FDEA /* ParallaxHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E83BB1D70175D0014FDEA /* ParallaxHeaderView.m */; };
+		D76E83BF1D70175D0014FDEA /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E83BD1D70175D0014FDEA /* UIImage+ImageEffects.m */; };
+		D76E83C21D70280F0014FDEA /* UserInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E83C11D70280F0014FDEA /* UserInfoView.m */; };
+		D76E83C61D7028680014FDEA /* UserInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76E83C51D7028680014FDEA /* UserInfoView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -729,6 +734,15 @@
 		D76E839C1D6EA1D90014FDEA /* testUser.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = testUser.plist; sourceTree = "<group>"; };
 		D76E839E1D6EA2B40014FDEA /* TestUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestUser.h; sourceTree = "<group>"; };
 		D76E839F1D6EA2B40014FDEA /* TestUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestUser.m; sourceTree = "<group>"; };
+		D76E83B41D6FE6000014FDEA /* UserInfoCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInfoCtrller.h; path = "GroupBuying/VC+V/User/UserInfoCtrller.h"; sourceTree = SOURCE_ROOT; };
+		D76E83B51D6FE6000014FDEA /* UserInfoCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInfoCtrller.m; path = "GroupBuying/VC+V/User/UserInfoCtrller.m"; sourceTree = SOURCE_ROOT; };
+		D76E83BA1D70175D0014FDEA /* ParallaxHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParallaxHeaderView.h; path = "GroupBuying/VC+V/User/ParallaxHeaderView.h"; sourceTree = SOURCE_ROOT; };
+		D76E83BB1D70175D0014FDEA /* ParallaxHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParallaxHeaderView.m; path = "GroupBuying/VC+V/User/ParallaxHeaderView.m"; sourceTree = SOURCE_ROOT; };
+		D76E83BC1D70175D0014FDEA /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageEffects.h"; path = "GroupBuying/VC+V/User/UIImage+ImageEffects.h"; sourceTree = SOURCE_ROOT; };
+		D76E83BD1D70175D0014FDEA /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageEffects.m"; path = "GroupBuying/VC+V/User/UIImage+ImageEffects.m"; sourceTree = SOURCE_ROOT; };
+		D76E83C01D70280F0014FDEA /* UserInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInfoView.h; path = "GroupBuying/VC+V/User/UserInfoView.h"; sourceTree = SOURCE_ROOT; };
+		D76E83C11D70280F0014FDEA /* UserInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInfoView.m; path = "GroupBuying/VC+V/User/UserInfoView.m"; sourceTree = SOURCE_ROOT; };
+		D76E83C51D7028680014FDEA /* UserInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserInfoView.xib; path = "GroupBuying/VC+V/User/UserInfoView.xib"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -981,6 +995,7 @@
 		D75CC3F71C2A92B200E590E6 /* VC+V */ = {
 			isa = PBXGroup;
 			children = (
+				D76E83B31D6FE5820014FDEA /* User */,
 				D76E837F1D6D3EAF0014FDEA /* Camera */,
 				D74589941D6B186B00835234 /* Ranking */,
 				60074DF91D60DEC90040C3C0 /* HomePage1 */,
@@ -1847,6 +1862,22 @@
 			name = CameraGroupCtrller;
 			sourceTree = "<group>";
 		};
+		D76E83B31D6FE5820014FDEA /* User */ = {
+			isa = PBXGroup;
+			children = (
+				D76E83B41D6FE6000014FDEA /* UserInfoCtrller.h */,
+				D76E83B51D6FE6000014FDEA /* UserInfoCtrller.m */,
+				D76E83C01D70280F0014FDEA /* UserInfoView.h */,
+				D76E83C11D70280F0014FDEA /* UserInfoView.m */,
+				D76E83C51D7028680014FDEA /* UserInfoView.xib */,
+				D76E83BA1D70175D0014FDEA /* ParallaxHeaderView.h */,
+				D76E83BB1D70175D0014FDEA /* ParallaxHeaderView.m */,
+				D76E83BC1D70175D0014FDEA /* UIImage+ImageEffects.h */,
+				D76E83BD1D70175D0014FDEA /* UIImage+ImageEffects.m */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1963,6 +1994,7 @@
 				D75CC7081C2BF99B00E590E6 /* UMSCommentDetailController.xib in Resources */,
 				D75CC70B1C2BF99B00E590E6 /* UMShareEditViewController.xib in Resources */,
 				608405831D67F62500B40D68 /* HPBigPhotoCollectionCell.xib in Resources */,
+				D76E83C61D7028680014FDEA /* UserInfoView.xib in Resources */,
 				D76E839D1D6EA1D90014FDEA /* testUser.plist in Resources */,
 				D75CC7061C2BF99B00E590E6 /* UMSocialLocalizable.strings in Resources */,
 				D75CC70E1C2BF99B00E590E6 /* UMSnsAccountViewController.xib in Resources */,
@@ -2010,6 +2042,7 @@
 				60074E091D60E0040040C3C0 /* ActivityController.m in Sources */,
 				D75CC5E91C2A965000E590E6 /* QNSessionManager.m in Sources */,
 				D75CC61F1C2A965000E590E6 /* YXSpritesLoadingView.m in Sources */,
+				D76E83BE1D70175D0014FDEA /* ParallaxHeaderView.m in Sources */,
 				D75CC5FF1C2A965000E590E6 /* UIImage+WebP.m in Sources */,
 				D75CC5AC1C2A965000E590E6 /* ASIFormDataRequest.m in Sources */,
 				D75CC5B01C2A965000E590E6 /* ASICloudFilesCDNRequest.m in Sources */,
@@ -2071,6 +2104,7 @@
 				D75CC5B61C2A965000E590E6 /* ASICloudFilesRequest.m in Sources */,
 				D75CC5AB1C2A965000E590E6 /* ASIDownloadCache.m in Sources */,
 				D75CC4521C2A95DE00E590E6 /* XTHudManager.m in Sources */,
+				D76E83B61D6FE6000014FDEA /* UserInfoCtrller.m in Sources */,
 				D75CC5E11C2A965000E590E6 /* GTM_Base64.m in Sources */,
 				D75CC5C51C2A965000E590E6 /* FMDatabasePool.m in Sources */,
 				D75CC5FE1C2A965000E590E6 /* UIImage+MultiFormat.m in Sources */,
@@ -2123,6 +2157,7 @@
 				D75CC5C11C2A965000E590E6 /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				D75CC5FB1C2A965000E590E6 /* SDWebImagePrefetcher.m in Sources */,
 				D75CC5EB1C2A965000E590E6 /* QNFileRecorder.m in Sources */,
+				D76E83C21D70280F0014FDEA /* UserInfoView.m in Sources */,
 				D75CC5D31C2A965000E590E6 /* MJRefreshAutoNormalFooter.m in Sources */,
 				D75CC5DE1C2A965000E590E6 /* UIScrollView+MJRefresh.m in Sources */,
 				D75CC6591C2B9A1700E590E6 /* AppDelegateInitial.m in Sources */,
@@ -2158,6 +2193,7 @@
 				D75CC5D11C2A965000E590E6 /* MJRefreshHeader.m in Sources */,
 				D75CC6031C2A965000E590E6 /* SIAlertView.m in Sources */,
 				D75CC5BD1C2A965000E590E6 /* ASIS3ServiceRequest.m in Sources */,
+				D76E83BF1D70175D0014FDEA /* UIImage+ImageEffects.m in Sources */,
 				D75CC6561C2AA17700E590E6 /* ResultParsered.m in Sources */,
 				D75CC5DF1C2A965000E590E6 /* UIView+MJExtension.m in Sources */,
 				D75CC5E51C2A965000E590E6 /* QNUrlSafeBase64.m in Sources */,

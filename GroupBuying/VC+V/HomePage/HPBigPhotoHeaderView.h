@@ -10,8 +10,15 @@
 
 static NSString *id_HPBigPhotoHeaderView = @"HPBigPhotoHeaderView" ;
 
-@interface HPBigPhotoHeaderView : UICollectionReusableView
+@protocol HPBigPhotoHeaderViewDelegate <NSObject>
 
+- (void)userheadOnClick ;
+
+@end
+
+
+@interface HPBigPhotoHeaderView : UICollectionReusableView
+@property (nonatomic,weak) id <HPBigPhotoHeaderViewDelegate> delegate ;
 @property (nonatomic) int index ;
 
 @end

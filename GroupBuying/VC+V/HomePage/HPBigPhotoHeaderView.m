@@ -30,6 +30,12 @@
 
 }
 
+- (IBAction)headOnClick:(id)sender
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(userheadOnClick)]) {
+        [self.delegate userheadOnClick] ;
+    }
+}
 
 
 
