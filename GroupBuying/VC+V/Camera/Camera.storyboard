@@ -74,11 +74,46 @@
                         <outlet property="btFinish" destination="cpD-wk-Bhr" id="Y9t-sP-8r6"/>
                         <outlet property="btPreview" destination="T3K-yW-mqc" id="PEv-D9-Mrw"/>
                         <outlet property="btTitle" destination="sPH-Al-HC1" id="Dc3-C8-uSv"/>
+                        <segue destination="g2k-dW-xzI" kind="push" identifier="camera2post" id="IeB-h9-3ot"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CHo-PX-0VM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1032" y="316"/>
+            <point key="canvasLocation" x="584" y="308"/>
+        </scene>
+        <!--发布笔记-->
+        <scene sceneID="NUf-hE-k6f">
+            <objects>
+                <viewController id="g2k-dW-xzI" customClass="PostCtrller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ag3-gS-qa5"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mj6-Ka-Wuw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dhz-tm-OTj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cUP-Pu-Pyf">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="cUP-Pu-Pyf" secondAttribute="trailing" id="32D-nT-BVu"/>
+                            <constraint firstItem="cUP-Pu-Pyf" firstAttribute="top" secondItem="ag3-gS-qa5" secondAttribute="bottom" id="BDZ-9J-ou1"/>
+                            <constraint firstItem="cUP-Pu-Pyf" firstAttribute="leading" secondItem="dhz-tm-OTj" secondAttribute="leading" id="XwE-Vg-iFz"/>
+                            <constraint firstItem="Mj6-Ka-Wuw" firstAttribute="top" secondItem="cUP-Pu-Pyf" secondAttribute="bottom" id="zZI-Y4-axU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="发布笔记" id="FyO-iM-EZ3"/>
+                    <connections>
+                        <outlet property="table" destination="cUP-Pu-Pyf" id="M6Y-ZR-JoL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vap-q8-N5F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1279" y="308"/>
         </scene>
         <!--Camera Nav Ctrller-->
         <scene sceneID="5ul-AC-Dgs">
@@ -96,7 +131,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8c-XA-849" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="220" y="316"/>
+            <point key="canvasLocation" x="-92" y="308"/>
         </scene>
     </scenes>
 </document>

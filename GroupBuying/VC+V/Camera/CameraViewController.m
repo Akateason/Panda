@@ -60,6 +60,7 @@ static float kMAX_SELECT_COUNT = 10. ;
 
 - (IBAction)btFinishOnClick:(id)sender {
     NSLog(@"继续") ;
+    [self performSegueWithIdentifier:@"camera2post" sender:nil] ;
 }
 
 - (IBAction)btPreviewOnClick:(id)sender {
