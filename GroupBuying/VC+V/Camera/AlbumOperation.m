@@ -40,9 +40,10 @@
     CGImageRef aspectRatioThumbnail = [self.asset aspectRatioThumbnail] ;
     if (self.isCancelled) return;
     UIImage *imgAspectRatio = [UIImage imageWithCGImage:aspectRatioThumbnail] ;
+    if (self.isCancelled) return ;
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        if (self.isCancelled) return;
+        if (self.isCancelled) return ;
         if (self.completion) {
             self.completion(imgAspectRatio) ;
         }

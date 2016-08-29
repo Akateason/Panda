@@ -13,6 +13,7 @@
 #import "AlbumnCell.h"
 #import "AlbumOperation.h"
 #import "CameraGoupCtrller.h"
+#import "SVProgressHUD.h"
 
 static float kMAX_SELECT_COUNT = 10. ;
 
@@ -262,6 +263,7 @@ static float kMAX_SELECT_COUNT = 10. ;
     if (row > 0)
     {
         ALAsset *asset = (ALAsset *)self.imageList[row - 1] ;
+        cell.img.image = nil ;
         AlbumOperation *operation = [[AlbumOperation alloc] initWithAsset:asset
                                                                 indexPath:indexPath
                                                                completion:^(UIImage *resultImage) {
@@ -303,10 +305,8 @@ static float kMAX_SELECT_COUNT = 10. ;
         int maxCount = kMAX_SELECT_COUNT - self.existedSubArticleCount ;
         if (self.multySelectedImageList.count >= maxCount)
         {
-            dispatch_async(dispatch_get_main_queue(), ^{
-//                    [XTHudManager showWordHudWithTitle:WD_HUD_SUB_COUNT_OVERFLOW] ;
-                NSLog(@"%d more release",maxCount) ;
-            }) ;
+            [SVProgressHUD showErrorWithStatus:@"超过最大图片数"] ;
+            NSLog(@"%d 超过最大图片数",maxCount) ;
             return ;
         }
         [self.multySelectedImageList addObject:numRow] ;

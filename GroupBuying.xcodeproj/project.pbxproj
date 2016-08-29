@@ -23,6 +23,12 @@
 		608405811D67F45700B40D68 /* HPProductCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 608405801D67F45700B40D68 /* HPProductCollectionCell.xib */; };
 		608405831D67F62500B40D68 /* HPBigPhotoCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 608405821D67F62500B40D68 /* HPBigPhotoCollectionCell.xib */; };
 		608405861D69505E00B40D68 /* HomePageController+collectionLayoutSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 608405851D69505E00B40D68 /* HomePageController+collectionLayoutSwitch.m */; };
+		608405921D74AA6800B40D68 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 608405891D74AA6800B40D68 /* SVIndefiniteAnimatedView.m */; };
+		608405931D74AA6800B40D68 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6084058B1D74AA6800B40D68 /* SVProgressAnimatedView.m */; };
+		608405941D74AA6800B40D68 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6084058D1D74AA6800B40D68 /* SVProgressHUD.bundle */; };
+		608405951D74AA6800B40D68 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6084058F1D74AA6800B40D68 /* SVProgressHUD.m */; };
+		608405961D74AA6800B40D68 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 608405911D74AA6800B40D68 /* SVRadialGradientLayer.m */; };
+		6084059A1D74AE6800B40D68 /* PostCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = 608405991D74AE6800B40D68 /* PostCtrller.m */; };
 		D74589871D6A9DCB00835234 /* HPBigPhotoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D74589851D6A9DCB00835234 /* HPBigPhotoHeaderView.m */; };
 		D74589881D6A9DCB00835234 /* HPBigPhotoHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D74589861D6A9DCB00835234 /* HPBigPhotoHeaderView.xib */; };
 		D745898C1D6AAF9500835234 /* XLPlainFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D745898B1D6AAF9500835234 /* XLPlainFlowLayout.m */; };
@@ -59,7 +65,6 @@
 		D75CC44F1C2A95DE00E590E6 /* ShareUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC42F1C2A95DE00E590E6 /* ShareUtils.m */; };
 		D75CC4501C2A95DE00E590E6 /* XTAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC4311C2A95DE00E590E6 /* XTAnimation.m */; };
 		D75CC4511C2A95DE00E590E6 /* XTFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC4331C2A95DE00E590E6 /* XTFileManager.m */; };
-		D75CC4521C2A95DE00E590E6 /* XTHudManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC4351C2A95DE00E590E6 /* XTHudManager.m */; };
 		D75CC4531C2A95DE00E590E6 /* XTRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC4371C2A95DE00E590E6 /* XTRequest.m */; };
 		D75CC4541C2A95DE00E590E6 /* XTTickConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC4391C2A95DE00E590E6 /* XTTickConvert.m */; };
 		D75CC4551C2A95DE00E590E6 /* XTVerification.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC43B1C2A95DE00E590E6 /* XTVerification.m */; };
@@ -297,6 +302,18 @@
 		608405821D67F62500B40D68 /* HPBigPhotoCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HPBigPhotoCollectionCell.xib; path = "GroupBuying/VC+V/HomePage/HPBigPhotoCollectionCell.xib"; sourceTree = SOURCE_ROOT; };
 		608405841D69505E00B40D68 /* HomePageController+collectionLayoutSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "HomePageController+collectionLayoutSwitch.h"; path = "GroupBuying/VC+V/HomePage/HomePageController+collectionLayoutSwitch.h"; sourceTree = SOURCE_ROOT; };
 		608405851D69505E00B40D68 /* HomePageController+collectionLayoutSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "HomePageController+collectionLayoutSwitch.m"; path = "GroupBuying/VC+V/HomePage/HomePageController+collectionLayoutSwitch.m"; sourceTree = SOURCE_ROOT; };
+		608405881D74AA6800B40D68 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		608405891D74AA6800B40D68 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		6084058A1D74AA6800B40D68 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		6084058B1D74AA6800B40D68 /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		6084058C1D74AA6800B40D68 /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		6084058D1D74AA6800B40D68 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		6084058E1D74AA6800B40D68 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		6084058F1D74AA6800B40D68 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		608405901D74AA6800B40D68 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		608405911D74AA6800B40D68 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		608405981D74AE6800B40D68 /* PostCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostCtrller.h; path = "GroupBuying/VC+V/Post/PostCtrller.h"; sourceTree = SOURCE_ROOT; };
+		608405991D74AE6800B40D68 /* PostCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostCtrller.m; path = "GroupBuying/VC+V/Post/PostCtrller.m"; sourceTree = SOURCE_ROOT; };
 		D74589841D6A9DCA00835234 /* HPBigPhotoHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPBigPhotoHeaderView.h; path = "GroupBuying/VC+V/HomePage/HPBigPhotoHeaderView.h"; sourceTree = SOURCE_ROOT; };
 		D74589851D6A9DCB00835234 /* HPBigPhotoHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPBigPhotoHeaderView.m; path = "GroupBuying/VC+V/HomePage/HPBigPhotoHeaderView.m"; sourceTree = SOURCE_ROOT; };
 		D74589861D6A9DCB00835234 /* HPBigPhotoHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HPBigPhotoHeaderView.xib; path = "GroupBuying/VC+V/HomePage/HPBigPhotoHeaderView.xib"; sourceTree = SOURCE_ROOT; };
@@ -374,8 +391,6 @@
 		D75CC4311C2A95DE00E590E6 /* XTAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTAnimation.m; sourceTree = "<group>"; };
 		D75CC4321C2A95DE00E590E6 /* XTFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTFileManager.h; sourceTree = "<group>"; };
 		D75CC4331C2A95DE00E590E6 /* XTFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTFileManager.m; sourceTree = "<group>"; };
-		D75CC4341C2A95DE00E590E6 /* XTHudManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTHudManager.h; sourceTree = "<group>"; };
-		D75CC4351C2A95DE00E590E6 /* XTHudManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTHudManager.m; sourceTree = "<group>"; };
 		D75CC4361C2A95DE00E590E6 /* XTRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRequest.h; sourceTree = "<group>"; };
 		D75CC4371C2A95DE00E590E6 /* XTRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRequest.m; sourceTree = "<group>"; };
 		D75CC4381C2A95DE00E590E6 /* XTTickConvert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTTickConvert.h; sourceTree = "<group>"; };
@@ -898,6 +913,32 @@
 			path = color;
 			sourceTree = "<group>";
 		};
+		608405871D74AA6800B40D68 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				608405881D74AA6800B40D68 /* SVIndefiniteAnimatedView.h */,
+				608405891D74AA6800B40D68 /* SVIndefiniteAnimatedView.m */,
+				6084058A1D74AA6800B40D68 /* SVProgressAnimatedView.h */,
+				6084058B1D74AA6800B40D68 /* SVProgressAnimatedView.m */,
+				6084058C1D74AA6800B40D68 /* SVProgressHUD-Prefix.pch */,
+				6084058D1D74AA6800B40D68 /* SVProgressHUD.bundle */,
+				6084058E1D74AA6800B40D68 /* SVProgressHUD.h */,
+				6084058F1D74AA6800B40D68 /* SVProgressHUD.m */,
+				608405901D74AA6800B40D68 /* SVRadialGradientLayer.h */,
+				608405911D74AA6800B40D68 /* SVRadialGradientLayer.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		608405971D74ADD000B40D68 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				608405981D74AE6800B40D68 /* PostCtrller.h */,
+				608405991D74AE6800B40D68 /* PostCtrller.m */,
+			);
+			name = Post;
+			sourceTree = "<group>";
+		};
 		D74589891D6AAF9500835234 /* XLPlainFlowLayout */ = {
 			isa = PBXGroup;
 			children = (
@@ -1005,6 +1046,7 @@
 		D75CC3F71C2A92B200E590E6 /* VC+V */ = {
 			isa = PBXGroup;
 			children = (
+				608405971D74ADD000B40D68 /* Post */,
 				D76E83B31D6FE5820014FDEA /* User */,
 				D76E837F1D6D3EAF0014FDEA /* Camera */,
 				D74589941D6B186B00835234 /* Ranking */,
@@ -1032,6 +1074,7 @@
 		D75CC3F91C2A92B200E590E6 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				608405871D74AA6800B40D68 /* SVProgressHUD */,
 				D745898D1D6AE3D700835234 /* KxMenu */,
 				D75CC72D1C2D13C000E590E6 /* YYModel */,
 				D75CC6C51C2BF99B00E590E6 /* UMessage_Sdk_1.1.0 */,
@@ -1157,8 +1200,6 @@
 				D75CC4311C2A95DE00E590E6 /* XTAnimation.m */,
 				D75CC4321C2A95DE00E590E6 /* XTFileManager.h */,
 				D75CC4331C2A95DE00E590E6 /* XTFileManager.m */,
-				D75CC4341C2A95DE00E590E6 /* XTHudManager.h */,
-				D75CC4351C2A95DE00E590E6 /* XTHudManager.m */,
 				D75CC4361C2A95DE00E590E6 /* XTRequest.h */,
 				D75CC4371C2A95DE00E590E6 /* XTRequest.m */,
 				D75CC4381C2A95DE00E590E6 /* XTTickConvert.h */,
@@ -2032,6 +2073,7 @@
 				D75CC7171C2BF99B00E590E6 /* WeiboSDK.bundle in Resources */,
 				60074E1D1D634AE80040C3C0 /* xtAllColorsList.plist in Resources */,
 				D75CC70A1C2BF99B00E590E6 /* UMSCommentInputControlleriPad.xib in Resources */,
+				608405941D74AA6800B40D68 /* SVProgressHUD.bundle in Resources */,
 				D74589881D6A9DCB00835234 /* HPBigPhotoHeaderView.xib in Resources */,
 				D75CC5DB1C2A965000E590E6 /* MJRefresh.bundle in Resources */,
 				D76E839B1D6DA6540014FDEA /* CameraGroupCell.xib in Resources */,
@@ -2077,6 +2119,7 @@
 				D75CC7281C2CFDA600E590E6 /* ArticleComment.m in Sources */,
 				D75CC5AD1C2A965000E590E6 /* ASIHTTPRequest.m in Sources */,
 				D75CC5DC1C2A965000E590E6 /* MJRefreshConst.m in Sources */,
+				608405951D74AA6800B40D68 /* SVProgressHUD.m in Sources */,
 				D75CC5ED1C2A965000E590E6 /* QNFormUpload.m in Sources */,
 				D75CC5C21C2A965000E590E6 /* XHPathCover.m in Sources */,
 				D75CC6C31C2BEB0400E590E6 /* RootCtrl.m in Sources */,
@@ -2099,11 +2142,13 @@
 				D75CC5A61C2A965000E590E6 /* AFURLResponseSerialization.m in Sources */,
 				D75CC5CE1C2A965000E590E6 /* MJRefreshBackFooter.m in Sources */,
 				D75CC5F31C2A965000E590E6 /* MKAnnotationView+WebCache.m in Sources */,
+				608405961D74AA6800B40D68 /* SVRadialGradientLayer.m in Sources */,
 				D75CC5A91C2A965000E590E6 /* ASIDataCompressor.m in Sources */,
 				D75CC5E01C2A965000E590E6 /* NSObject+MKBlockTimer.m in Sources */,
 				D75CC5D71C2A965000E590E6 /* MJRefreshBackStateFooter.m in Sources */,
 				D75CC5C81C2A965000E590E6 /* HWWeakTimer.m in Sources */,
 				D75CC6C21C2BEB0400E590E6 /* MyWebController.m in Sources */,
+				608405931D74AA6800B40D68 /* SVProgressAnimatedView.m in Sources */,
 				D75CC5C91C2A965000E590E6 /* KeyBoardTopBar.m in Sources */,
 				D75CC5D21C2A965000E590E6 /* MJRefreshAutoGifFooter.m in Sources */,
 				D75CC4431C2A95DE00E590E6 /* UIView+Sizes.m in Sources */,
@@ -2131,10 +2176,10 @@
 				D75CC5D01C2A965000E590E6 /* MJRefreshFooter.m in Sources */,
 				D75CC5B61C2A965000E590E6 /* ASICloudFilesRequest.m in Sources */,
 				D75CC5AB1C2A965000E590E6 /* ASIDownloadCache.m in Sources */,
-				D75CC4521C2A95DE00E590E6 /* XTHudManager.m in Sources */,
 				D76E83B61D6FE6000014FDEA /* UserInfoCtrller.m in Sources */,
 				D75CC5E11C2A965000E590E6 /* GTM_Base64.m in Sources */,
 				D75CC5C51C2A965000E590E6 /* FMDatabasePool.m in Sources */,
+				608405921D74AA6800B40D68 /* SVIndefiniteAnimatedView.m in Sources */,
 				D75CC5FE1C2A965000E590E6 /* UIImage+MultiFormat.m in Sources */,
 				D75CC4491C2A95DE00E590E6 /* PlaceHolderTextView.m in Sources */,
 				D75CC5D51C2A965000E590E6 /* MJRefreshBackGifFooter.m in Sources */,
@@ -2228,6 +2273,7 @@
 				D75CC5F01C2A965000E590E6 /* QNUploadOption.m in Sources */,
 				D75CC5CC1C2A965000E590E6 /* MBProgressHUD.m in Sources */,
 				608405861D69505E00B40D68 /* HomePageController+collectionLayoutSwitch.m in Sources */,
+				6084059A1D74AE6800B40D68 /* PostCtrller.m in Sources */,
 				D75CC6001C2A965000E590E6 /* UIImageView+HighlightedWebCache.m in Sources */,
 				60074E121D634AA50040C3C0 /* XTJson.m in Sources */,
 				D76E838F1D6D49790014FDEA /* AlbumOperation.m in Sources */,

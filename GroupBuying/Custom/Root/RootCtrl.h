@@ -7,14 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DigitInformation.h"
-#import "XTAnimation.h"
-#import "NSObject+MKBlockTimer.h"
-#import "ServerRequest.h"
-#import "YXSpritesLoadingView.h"
-#import "XTHudManager.h"
+
+@class DigitInformation ;
+@class XTAnimation ;
+@class ServerRequest ;
 #import "RootTableView.h"
-#import "XTNetReloader.h"
+
 
 
 @interface RootCtrl : UIViewController
@@ -27,7 +25,7 @@
 @property (nonatomic,copy)   NSString      *myTitle ;
 
 #pragma mark - xtNetReloader
-- (void)showNetReloaderWithReloadButtonClickBlock:(ReloadButtonClickBlock)reloadBlock ;
+- (void)showNetReloaderWithReloadButtonClickBlock:(void(^)())reloadBlock ;
 - (void)dismissNetReloader ;
 
 #pragma mark - show guiding Image list . teach users how to use app .

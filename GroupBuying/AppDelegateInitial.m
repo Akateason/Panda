@@ -55,19 +55,19 @@ NSString *const APPSTORE_APPID  = @"999705868" ;
     //  Setting My Style
     [self setMyStyleWithWindow:self.window] ;
     //  Get Token and userInfo if loginED (token existed)
-    [self getTokenAndUser] ;
+//    [self getTokenAndUser] ;
     //  Umeng SDK Initialization .
-    [self UmengSdkInitialization] ;
+//    [self UmengSdkInitialization] ;
     //  weibo Initialization .
-    [self weiboInitialization] ;
+//    [self weiboInitialization] ;
 }
 
 - (void)getTokenAndUser
 {
-    if ([[DigitInformation shareInstance] g_token] != nil)
-    {
+//    if ([[DigitInformation shareInstance] g_token] != nil)
+//    {
 //        [[DigitInformation shareInstance] g_user] ;
-    }
+//    }
 }
 
 - (void)setMyStyleWithWindow:(UIWindow *)window

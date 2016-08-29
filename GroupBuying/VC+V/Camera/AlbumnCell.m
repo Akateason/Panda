@@ -24,7 +24,7 @@
 - (void)awakeFromNib
 {
 //    _img.backgroundColor = COLOR_HEADER_BACK ;
-    _img.contentMode = UIViewContentModeScaleAspectFit ;
+    _img.contentMode = UIViewContentModeScaleAspectFill ;
     _img_takePhoto.hidden = YES ;
     _img_picSelect.hidden = NO ;
 }
