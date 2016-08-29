@@ -74,7 +74,7 @@ static CGFloat kParallaxDeltaFactor = 0.5f;
         rect.size.height += delta;
         self.imageScrollView.frame = rect;
         self.clipsToBounds = NO;
-//        self.headerTitleLabel.alpha = 1 - (delta) * 1 / kMaxTitleAlphaOffset;
+        
     }
 }
 

@@ -244,6 +244,10 @@
 		D76E83BF1D70175D0014FDEA /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E83BD1D70175D0014FDEA /* UIImage+ImageEffects.m */; };
 		D76E83C21D70280F0014FDEA /* UserInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E83C11D70280F0014FDEA /* UserInfoView.m */; };
 		D76E83C61D7028680014FDEA /* UserInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76E83C51D7028680014FDEA /* UserInfoView.xib */; };
+		D76E83ED1D7435680014FDEA /* UserFoucusHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E83EC1D7435680014FDEA /* UserFoucusHeaderView.m */; };
+		D76E83F11D74359D0014FDEA /* UserFoucusHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76E83F01D74359D0014FDEA /* UserFoucusHeaderView.xib */; };
+		D76E83F51D7439950014FDEA /* UserNotesCollectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E83F31D7439950014FDEA /* UserNotesCollectionTableViewCell.m */; };
+		D76E83F61D7439950014FDEA /* UserNotesCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76E83F41D7439950014FDEA /* UserNotesCollectionTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -743,6 +747,12 @@
 		D76E83C01D70280F0014FDEA /* UserInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInfoView.h; path = "GroupBuying/VC+V/User/UserInfoView.h"; sourceTree = SOURCE_ROOT; };
 		D76E83C11D70280F0014FDEA /* UserInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInfoView.m; path = "GroupBuying/VC+V/User/UserInfoView.m"; sourceTree = SOURCE_ROOT; };
 		D76E83C51D7028680014FDEA /* UserInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserInfoView.xib; path = "GroupBuying/VC+V/User/UserInfoView.xib"; sourceTree = SOURCE_ROOT; };
+		D76E83EB1D7435680014FDEA /* UserFoucusHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserFoucusHeaderView.h; path = "GroupBuying/VC+V/User/UserFoucusHeaderView.h"; sourceTree = SOURCE_ROOT; };
+		D76E83EC1D7435680014FDEA /* UserFoucusHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserFoucusHeaderView.m; path = "GroupBuying/VC+V/User/UserFoucusHeaderView.m"; sourceTree = SOURCE_ROOT; };
+		D76E83F01D74359D0014FDEA /* UserFoucusHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserFoucusHeaderView.xib; path = "GroupBuying/VC+V/User/UserFoucusHeaderView.xib"; sourceTree = SOURCE_ROOT; };
+		D76E83F21D7439950014FDEA /* UserNotesCollectionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserNotesCollectionTableViewCell.h; path = "GroupBuying/VC+V/User/UserNotesCollectionTableViewCell.h"; sourceTree = SOURCE_ROOT; };
+		D76E83F31D7439950014FDEA /* UserNotesCollectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserNotesCollectionTableViewCell.m; path = "GroupBuying/VC+V/User/UserNotesCollectionTableViewCell.m"; sourceTree = SOURCE_ROOT; };
+		D76E83F41D7439950014FDEA /* UserNotesCollectionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserNotesCollectionTableViewCell.xib; path = "GroupBuying/VC+V/User/UserNotesCollectionTableViewCell.xib"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1867,6 +1877,20 @@
 			children = (
 				D76E83B41D6FE6000014FDEA /* UserInfoCtrller.h */,
 				D76E83B51D6FE6000014FDEA /* UserInfoCtrller.m */,
+				D76E83EB1D7435680014FDEA /* UserFoucusHeaderView.h */,
+				D76E83EC1D7435680014FDEA /* UserFoucusHeaderView.m */,
+				D76E83F01D74359D0014FDEA /* UserFoucusHeaderView.xib */,
+				D76E83F21D7439950014FDEA /* UserNotesCollectionTableViewCell.h */,
+				D76E83F31D7439950014FDEA /* UserNotesCollectionTableViewCell.m */,
+				D76E83F41D7439950014FDEA /* UserNotesCollectionTableViewCell.xib */,
+				D76E83EA1D74350A0014FDEA /* topParallaxHeader */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		D76E83EA1D74350A0014FDEA /* topParallaxHeader */ = {
+			isa = PBXGroup;
+			children = (
 				D76E83C01D70280F0014FDEA /* UserInfoView.h */,
 				D76E83C11D70280F0014FDEA /* UserInfoView.m */,
 				D76E83C51D7028680014FDEA /* UserInfoView.xib */,
@@ -1875,7 +1899,7 @@
 				D76E83BC1D70175D0014FDEA /* UIImage+ImageEffects.h */,
 				D76E83BD1D70175D0014FDEA /* UIImage+ImageEffects.m */,
 			);
-			name = User;
+			name = topParallaxHeader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1989,6 +2013,7 @@
 				D75CC7121C2BF99B00E590E6 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				D75CC70F1C2BF99B00E590E6 /* UMSShareListController.xib in Resources */,
 				D75CC70C1C2BF99B00E590E6 /* UMShareEditViewControlleriPad.xib in Resources */,
+				D76E83F61D7439950014FDEA /* UserNotesCollectionTableViewCell.xib in Resources */,
 				D76E838C1D6D48560014FDEA /* AlbumnCell.xib in Resources */,
 				608405811D67F45700B40D68 /* HPProductCollectionCell.xib in Resources */,
 				D75CC7081C2BF99B00E590E6 /* UMSCommentDetailController.xib in Resources */,
@@ -1996,6 +2021,7 @@
 				608405831D67F62500B40D68 /* HPBigPhotoCollectionCell.xib in Resources */,
 				D76E83C61D7028680014FDEA /* UserInfoView.xib in Resources */,
 				D76E839D1D6EA1D90014FDEA /* testUser.plist in Resources */,
+				D76E83F11D74359D0014FDEA /* UserFoucusHeaderView.xib in Resources */,
 				D75CC7061C2BF99B00E590E6 /* UMSocialLocalizable.strings in Resources */,
 				D75CC70E1C2BF99B00E590E6 /* UMSnsAccountViewController.xib in Resources */,
 				D76E83841D6D40D40014FDEA /* Camera.storyboard in Resources */,
@@ -2039,6 +2065,7 @@
 				D75CC4411C2A95DE00E590E6 /* UIImage+AddFunction.m in Sources */,
 				D75CC5BA1C2A965000E590E6 /* ASIS3BucketRequest.m in Sources */,
 				D75CC4461C2A95DE00E590E6 /* MyTextField.m in Sources */,
+				D76E83ED1D7435680014FDEA /* UserFoucusHeaderView.m in Sources */,
 				60074E091D60E0040040C3C0 /* ActivityController.m in Sources */,
 				D75CC5E91C2A965000E590E6 /* QNSessionManager.m in Sources */,
 				D75CC61F1C2A965000E590E6 /* YXSpritesLoadingView.m in Sources */,
@@ -2089,6 +2116,7 @@
 				D75CC59F1C2A965000E590E6 /* AFHTTPRequestOperation.m in Sources */,
 				D75CC5DA1C2A965000E590E6 /* MJRefreshStateHeader.m in Sources */,
 				60074E1C1D634AE80040C3C0 /* UIColor+HexString.m in Sources */,
+				D76E83F51D7439950014FDEA /* UserNotesCollectionTableViewCell.m in Sources */,
 				D75CC5E41C2A965000E590E6 /* QNEtag.m in Sources */,
 				60074E031D60DFDC0040C3C0 /* FindController.m in Sources */,
 				D75CC5D61C2A965000E590E6 /* MJRefreshBackNormalFooter.m in Sources */,

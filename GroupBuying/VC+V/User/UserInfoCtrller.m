@@ -7,14 +7,17 @@
 //
 
 #import "UserInfoCtrller.h"
-#import "RootTableView.h"
+//#import "RootTableView.h"
 #import "ParallaxHeaderView.h"
 #import "ParallaxHeaderView.h"
 #import "UserInfoView.h"
+#import "UserFoucusHeaderView.h"
+#import "UserNotesCollectionTableViewCell.h"
 
-@interface UserInfoCtrller () <UITableViewDelegate,UITableViewDataSource,RootTableViewDelegate>
 
-@property (weak, nonatomic) IBOutlet RootTableView  *table;
+@interface UserInfoCtrller () <UITableViewDelegate,UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView  *table;
 @property (nonatomic,strong) ParallaxHeaderView     *paralax ;
 @property (nonatomic,strong) UserInfoView           *userinfoView ;
 @end
@@ -41,12 +44,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.title = @"teason" ;
+    
     _table.delegate = self ;
     _table.dataSource = self ;
     _table.separatorStyle = 0 ;
-    _table.xt_Delegate = self ;
+//    _table.xt_Delegate = self ;
+    [_table registerNib:[UINib nibWithNibName:idUserNotesCollectionTableViewCell bundle:nil] forCellReuseIdentifier:idUserNotesCollectionTableViewCell] ;
+    [_table registerNib:[UINib nibWithNibName:idUserFoucusHeaderView bundle:nil] forHeaderFooterViewReuseIdentifier:idUserFoucusHeaderView] ;
     
-    [self userinfoView] ;
     
     self.paralax = ({
         ParallaxHeaderView *header = [ParallaxHeaderView parallaxHeaderViewWithSubView:self.userinfoView] ;
@@ -64,43 +70,49 @@
 }
 
 
-#pragma mark - RootTableViewDelegate
-- (void)loadNewData
-{
-    //    if (_dataList.count) [self.dataList removeAllObjects] ;
-    //
-    //    ResultParsered *result = [ServerRequest getHomePageInfoResultWithSinceID:0 AndMaxID:0 AndCount:20] ;
-    //    for (NSDictionary *dicArticle in result.info[@"items"][@"articles"][@"article_list"]) {
-    //        Article *article = [Article yy_modelWithJSON:dicArticle] ;
-    //        [self.dataList addObject:article] ;
-    //    }
-}
-
-- (void)loadMoreData
-{
-    
-}
+//#pragma mark - RootTableViewDelegate
+//- (void)loadNewData
+//{
+//
+//}
+//
+//- (void)loadMoreData
+//{
+//    
+//}
 
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0 ;
+    return 1 ;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    UserInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierUserInfoCell] ;
-//    if (!cell) {
-//        cell = [tableView dequeueReusableCellWithIdentifier:identifierUserInfoCell] ;
-//    }
-//    return cell ;
+    UserNotesCollectionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:idUserNotesCollectionTableViewCell] ;
+    if (!cell) {
+        cell = [tableView dequeueReusableCellWithIdentifier:idUserNotesCollectionTableViewCell] ;
+    }
+    return cell ;
+}
+
+// custom view for header. will be adjusted to default or specified header height
+- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UserFoucusHeaderView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:idUserFoucusHeaderView] ;
+    return header ;
 }
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    return [UserInfoCell getHeight] ;
+    return 800. ;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 40. ;
 }
 
 
@@ -108,8 +120,6 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     [self.paralax layoutHeaderViewForScrollViewOffset:scrollView.contentOffset] ;
-  
-  
 }
 
 
