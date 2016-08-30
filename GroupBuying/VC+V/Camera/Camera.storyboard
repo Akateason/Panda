@@ -8,7 +8,7 @@
         <!--Camera View Controller-->
         <scene sceneID="Ifs-3D-ZgF">
             <objects>
-                <viewController id="NqE-kU-8F4" customClass="CameraViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CameraViewController" id="NqE-kU-8F4" customClass="CameraViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mrf-Or-Z3x"/>
                         <viewControllerLayoutGuide type="bottom" id="CoU-fS-ec4"/>
@@ -75,11 +75,62 @@
                         <outlet property="btPreview" destination="T3K-yW-mqc" id="PEv-D9-Mrw"/>
                         <outlet property="btTitle" destination="sPH-Al-HC1" id="Dc3-C8-uSv"/>
                         <segue destination="g2k-dW-xzI" kind="push" identifier="camera2post" id="IeB-h9-3ot"/>
+                        <segue destination="402-0h-dqk" kind="push" identifier="camra2preview" id="VuD-8U-Vmk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CHo-PX-0VM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="584" y="308"/>
+        </scene>
+        <!--预览-->
+        <scene sceneID="xBf-Zs-E84">
+            <objects>
+                <viewController storyboardIdentifier="PreviewCtrller" id="402-0h-dqk" customClass="PreviewCtrller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xbv-jn-UbY"/>
+                        <viewControllerLayoutGuide type="bottom" id="OYY-Uk-Rv8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2Sd-vf-tN6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YA2-ru-S4R">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="1" minimumInteritemSpacing="1" id="bxi-y0-Mf9">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="0ql-7f-IbK">
+                                        <rect key="frame" x="0.0" y="64" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="YA2-ru-S4R" secondAttribute="trailing" id="NKs-ZX-m2F"/>
+                            <constraint firstItem="OYY-Uk-Rv8" firstAttribute="top" secondItem="YA2-ru-S4R" secondAttribute="bottom" id="qXS-Vx-8th"/>
+                            <constraint firstItem="YA2-ru-S4R" firstAttribute="top" secondItem="Xbv-jn-UbY" secondAttribute="bottom" id="rmD-zL-WcK"/>
+                            <constraint firstItem="YA2-ru-S4R" firstAttribute="leading" secondItem="2Sd-vf-tN6" secondAttribute="leading" id="xgz-As-DXi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="预览" id="DDK-ip-Fvc"/>
+                    <connections>
+                        <outlet property="collectionview" destination="YA2-ru-S4R" id="F6N-DQ-vvo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4xE-cO-rKA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="584" y="1026"/>
         </scene>
         <!--发布笔记-->
         <scene sceneID="NUf-hE-k6f">

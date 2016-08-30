@@ -46,4 +46,9 @@
     return [[XTColorFetcher class] xt_colorWithKey:@"w_desc"] ;
 }
 
++ (UIColor *)xt_w_gray
+{
+    return [[XTColorFetcher class] xt_colorWithKey:@"w_gray"] ;
+}
+
 @end

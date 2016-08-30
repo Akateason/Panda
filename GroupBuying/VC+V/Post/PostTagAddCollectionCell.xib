@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PostTagAddCollectionCell" id="gTV-IL-0wX" customClass="PostTagAddCollectionCell">
+            <rect key="frame" x="0.0" y="0.0" width="74" height="30"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="74" height="30"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJU-9f-Itn">
+                        <rect key="frame" x="0.0" y="0.0" width="74" height="25"/>
+                        <color key="backgroundColor" red="1" green="0.97254901959999995" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="sJz-4g-9z7"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#添加标签" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B9N-oc-dpv">
+                        <rect key="frame" x="9" y="6" width="56" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="nJU-9f-Itn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="AtJ-jv-AoU"/>
+                <constraint firstAttribute="trailing" secondItem="nJU-9f-Itn" secondAttribute="trailing" id="Pcc-Tp-2Yt"/>
+                <constraint firstItem="B9N-oc-dpv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="6" id="a9u-7s-Abx"/>
+                <constraint firstItem="B9N-oc-dpv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="9" id="gaP-8M-EcC"/>
+                <constraint firstItem="nJU-9f-Itn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="jB1-FY-LHh"/>
+            </constraints>
+            <size key="customSize" width="98" height="30"/>
+            <connections>
+                <outlet property="bgView" destination="nJU-9f-Itn" id="XD9-Ec-bnC"/>
+                <outlet property="label" destination="B9N-oc-dpv" id="EsJ-0x-cAj"/>
+            </connections>
+            <point key="canvasLocation" x="345" y="290"/>
+        </collectionViewCell>
+    </objects>
+</document>

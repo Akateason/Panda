@@ -10,4 +10,6 @@
 
 @interface PostCtrller : RootCtrl
 
+@property (nonatomic,strong) NSArray *photoList ;
+
 @end

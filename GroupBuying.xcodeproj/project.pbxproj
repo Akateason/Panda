@@ -255,6 +255,21 @@
 		D76E83F11D74359D0014FDEA /* UserFoucusHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76E83F01D74359D0014FDEA /* UserFoucusHeaderView.xib */; };
 		D76E83F51D7439950014FDEA /* UserNotesCollectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E83F31D7439950014FDEA /* UserNotesCollectionTableViewCell.m */; };
 		D76E83F61D7439950014FDEA /* UserNotesCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76E83F41D7439950014FDEA /* UserNotesCollectionTableViewCell.xib */; };
+		D76E83FA1D7524BA0014FDEA /* PostPhotosCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E83F81D7524BA0014FDEA /* PostPhotosCell.m */; };
+		D76E83FB1D7524BA0014FDEA /* PostPhotosCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76E83F91D7524BA0014FDEA /* PostPhotosCell.xib */; };
+		D76E83FF1D7526250014FDEA /* PostPhotoCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E83FD1D7526250014FDEA /* PostPhotoCollectionCell.m */; };
+		D76E84001D7526250014FDEA /* PostPhotoCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76E83FE1D7526250014FDEA /* PostPhotoCollectionCell.xib */; };
+		D76E84041D7528F70014FDEA /* PostAddPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E84021D7528F70014FDEA /* PostAddPhotoCell.m */; };
+		D76E84051D7528F70014FDEA /* PostAddPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76E84031D7528F70014FDEA /* PostAddPhotoCell.xib */; };
+		D76E84091D755FDD0014FDEA /* PreviewCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E84081D755FDD0014FDEA /* PreviewCtrller.m */; };
+		D76E84111D75665F0014FDEA /* PreviewCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E84101D75665F0014FDEA /* PreviewCollectionCell.m */; };
+		D76E84151D7567A70014FDEA /* XTZoomPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E84141D7567A70014FDEA /* XTZoomPicture.m */; };
+		D76E84191D75991D0014FDEA /* PostTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E84171D75991D0014FDEA /* PostTagCell.m */; };
+		D76E841A1D75991D0014FDEA /* PostTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76E84181D75991D0014FDEA /* PostTagCell.xib */; };
+		D76E841F1D759CB30014FDEA /* PostTagItemCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E841D1D759CB30014FDEA /* PostTagItemCollectionCell.m */; };
+		D76E84201D759CB30014FDEA /* PostTagItemCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76E841E1D759CB30014FDEA /* PostTagItemCollectionCell.xib */; };
+		D76E84241D759CD30014FDEA /* PostTagAddCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E84221D759CD30014FDEA /* PostTagAddCollectionCell.m */; };
+		D76E84251D759CD30014FDEA /* PostTagAddCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76E84231D759CD30014FDEA /* PostTagAddCollectionCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -773,6 +788,30 @@
 		D76E83F21D7439950014FDEA /* UserNotesCollectionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserNotesCollectionTableViewCell.h; path = "GroupBuying/VC+V/User/UserNotesCollectionTableViewCell.h"; sourceTree = SOURCE_ROOT; };
 		D76E83F31D7439950014FDEA /* UserNotesCollectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserNotesCollectionTableViewCell.m; path = "GroupBuying/VC+V/User/UserNotesCollectionTableViewCell.m"; sourceTree = SOURCE_ROOT; };
 		D76E83F41D7439950014FDEA /* UserNotesCollectionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserNotesCollectionTableViewCell.xib; path = "GroupBuying/VC+V/User/UserNotesCollectionTableViewCell.xib"; sourceTree = SOURCE_ROOT; };
+		D76E83F71D7524BA0014FDEA /* PostPhotosCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostPhotosCell.h; path = "GroupBuying/VC+V/Post/PostPhotosCell.h"; sourceTree = SOURCE_ROOT; };
+		D76E83F81D7524BA0014FDEA /* PostPhotosCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostPhotosCell.m; path = "GroupBuying/VC+V/Post/PostPhotosCell.m"; sourceTree = SOURCE_ROOT; };
+		D76E83F91D7524BA0014FDEA /* PostPhotosCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostPhotosCell.xib; path = "GroupBuying/VC+V/Post/PostPhotosCell.xib"; sourceTree = SOURCE_ROOT; };
+		D76E83FC1D7526250014FDEA /* PostPhotoCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostPhotoCollectionCell.h; path = "GroupBuying/VC+V/Post/PostPhotoCollectionCell.h"; sourceTree = SOURCE_ROOT; };
+		D76E83FD1D7526250014FDEA /* PostPhotoCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostPhotoCollectionCell.m; path = "GroupBuying/VC+V/Post/PostPhotoCollectionCell.m"; sourceTree = SOURCE_ROOT; };
+		D76E83FE1D7526250014FDEA /* PostPhotoCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostPhotoCollectionCell.xib; path = "GroupBuying/VC+V/Post/PostPhotoCollectionCell.xib"; sourceTree = SOURCE_ROOT; };
+		D76E84011D7528F70014FDEA /* PostAddPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostAddPhotoCell.h; path = "GroupBuying/VC+V/Post/PostAddPhotoCell.h"; sourceTree = SOURCE_ROOT; };
+		D76E84021D7528F70014FDEA /* PostAddPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostAddPhotoCell.m; path = "GroupBuying/VC+V/Post/PostAddPhotoCell.m"; sourceTree = SOURCE_ROOT; };
+		D76E84031D7528F70014FDEA /* PostAddPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostAddPhotoCell.xib; path = "GroupBuying/VC+V/Post/PostAddPhotoCell.xib"; sourceTree = SOURCE_ROOT; };
+		D76E84071D755FDD0014FDEA /* PreviewCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreviewCtrller.h; path = "GroupBuying/VC+V/Camera/PreviewCtrller.h"; sourceTree = SOURCE_ROOT; };
+		D76E84081D755FDD0014FDEA /* PreviewCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreviewCtrller.m; path = "GroupBuying/VC+V/Camera/PreviewCtrller.m"; sourceTree = SOURCE_ROOT; };
+		D76E840F1D75665F0014FDEA /* PreviewCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreviewCollectionCell.h; path = "GroupBuying/VC+V/Camera/PreviewCollectionCell.h"; sourceTree = SOURCE_ROOT; };
+		D76E84101D75665F0014FDEA /* PreviewCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreviewCollectionCell.m; path = "GroupBuying/VC+V/Camera/PreviewCollectionCell.m"; sourceTree = SOURCE_ROOT; };
+		D76E84131D7567A70014FDEA /* XTZoomPicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTZoomPicture.h; sourceTree = "<group>"; };
+		D76E84141D7567A70014FDEA /* XTZoomPicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTZoomPicture.m; sourceTree = "<group>"; };
+		D76E84161D75991D0014FDEA /* PostTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostTagCell.h; path = "GroupBuying/VC+V/Post/PostTagCell.h"; sourceTree = SOURCE_ROOT; };
+		D76E84171D75991D0014FDEA /* PostTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostTagCell.m; path = "GroupBuying/VC+V/Post/PostTagCell.m"; sourceTree = SOURCE_ROOT; };
+		D76E84181D75991D0014FDEA /* PostTagCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostTagCell.xib; path = "GroupBuying/VC+V/Post/PostTagCell.xib"; sourceTree = SOURCE_ROOT; };
+		D76E841C1D759CB30014FDEA /* PostTagItemCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostTagItemCollectionCell.h; path = "GroupBuying/VC+V/Post/PostTagItemCollectionCell.h"; sourceTree = SOURCE_ROOT; };
+		D76E841D1D759CB30014FDEA /* PostTagItemCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostTagItemCollectionCell.m; path = "GroupBuying/VC+V/Post/PostTagItemCollectionCell.m"; sourceTree = SOURCE_ROOT; };
+		D76E841E1D759CB30014FDEA /* PostTagItemCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostTagItemCollectionCell.xib; path = "GroupBuying/VC+V/Post/PostTagItemCollectionCell.xib"; sourceTree = SOURCE_ROOT; };
+		D76E84211D759CD30014FDEA /* PostTagAddCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostTagAddCollectionCell.h; path = "GroupBuying/VC+V/Post/PostTagAddCollectionCell.h"; sourceTree = SOURCE_ROOT; };
+		D76E84221D759CD30014FDEA /* PostTagAddCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostTagAddCollectionCell.m; path = "GroupBuying/VC+V/Post/PostTagAddCollectionCell.m"; sourceTree = SOURCE_ROOT; };
+		D76E84231D759CD30014FDEA /* PostTagAddCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostTagAddCollectionCell.xib; path = "GroupBuying/VC+V/Post/PostTagAddCollectionCell.xib"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -944,6 +983,14 @@
 				6035CF291D74B38B00EA590B /* PostContentCell.h */,
 				6035CF2A1D74B38B00EA590B /* PostContentCell.m */,
 				6035CF2C1D74B3AC00EA590B /* PostContentCell.xib */,
+				D76E83F71D7524BA0014FDEA /* PostPhotosCell.h */,
+				D76E83F81D7524BA0014FDEA /* PostPhotosCell.m */,
+				D76E83F91D7524BA0014FDEA /* PostPhotosCell.xib */,
+				D76E841B1D7599300014FDEA /* PostPhotosCellSubs */,
+				D76E84161D75991D0014FDEA /* PostTagCell.h */,
+				D76E84171D75991D0014FDEA /* PostTagCell.m */,
+				D76E84181D75991D0014FDEA /* PostTagCell.xib */,
+				D76E84261D75A3CC0014FDEA /* PostTagCellSubs */,
 			);
 			name = Post;
 			sourceTree = "<group>";
@@ -1162,6 +1209,7 @@
 		D75CC4151C2A95DD00E590E6 /* UIs */ = {
 			isa = PBXGroup;
 			children = (
+				D76E84121D7567A70014FDEA /* XTZoomPicture */,
 				60074E0D1D634AA50040C3C0 /* NSObject+Reflection.h */,
 				60074E0E1D634AA50040C3C0 /* NSObject+Reflection.m */,
 				60074E0F1D634AA50040C3C0 /* XTJson.h */,
@@ -1905,6 +1953,7 @@
 				D76E838A1D6D48560014FDEA /* AlbumnCell.xib */,
 				D76E838D1D6D49790014FDEA /* AlbumOperation.h */,
 				D76E838E1D6D49790014FDEA /* AlbumOperation.m */,
+				D76E84061D755FB80014FDEA /* PreviewCtrller */,
 				D76E83931D6DA2A40014FDEA /* CameraGroupCtrller */,
 			);
 			name = Camera;
@@ -1950,6 +1999,52 @@
 				D76E83BD1D70175D0014FDEA /* UIImage+ImageEffects.m */,
 			);
 			name = topParallaxHeader;
+			sourceTree = "<group>";
+		};
+		D76E84061D755FB80014FDEA /* PreviewCtrller */ = {
+			isa = PBXGroup;
+			children = (
+				D76E84071D755FDD0014FDEA /* PreviewCtrller.h */,
+				D76E84081D755FDD0014FDEA /* PreviewCtrller.m */,
+				D76E840F1D75665F0014FDEA /* PreviewCollectionCell.h */,
+				D76E84101D75665F0014FDEA /* PreviewCollectionCell.m */,
+			);
+			name = PreviewCtrller;
+			sourceTree = "<group>";
+		};
+		D76E84121D7567A70014FDEA /* XTZoomPicture */ = {
+			isa = PBXGroup;
+			children = (
+				D76E84131D7567A70014FDEA /* XTZoomPicture.h */,
+				D76E84141D7567A70014FDEA /* XTZoomPicture.m */,
+			);
+			path = XTZoomPicture;
+			sourceTree = "<group>";
+		};
+		D76E841B1D7599300014FDEA /* PostPhotosCellSubs */ = {
+			isa = PBXGroup;
+			children = (
+				D76E83FC1D7526250014FDEA /* PostPhotoCollectionCell.h */,
+				D76E83FD1D7526250014FDEA /* PostPhotoCollectionCell.m */,
+				D76E83FE1D7526250014FDEA /* PostPhotoCollectionCell.xib */,
+				D76E84011D7528F70014FDEA /* PostAddPhotoCell.h */,
+				D76E84021D7528F70014FDEA /* PostAddPhotoCell.m */,
+				D76E84031D7528F70014FDEA /* PostAddPhotoCell.xib */,
+			);
+			name = PostPhotosCellSubs;
+			sourceTree = "<group>";
+		};
+		D76E84261D75A3CC0014FDEA /* PostTagCellSubs */ = {
+			isa = PBXGroup;
+			children = (
+				D76E841C1D759CB30014FDEA /* PostTagItemCollectionCell.h */,
+				D76E841D1D759CB30014FDEA /* PostTagItemCollectionCell.m */,
+				D76E841E1D759CB30014FDEA /* PostTagItemCollectionCell.xib */,
+				D76E84211D759CD30014FDEA /* PostTagAddCollectionCell.h */,
+				D76E84221D759CD30014FDEA /* PostTagAddCollectionCell.m */,
+				D76E84231D759CD30014FDEA /* PostTagAddCollectionCell.xib */,
+			);
+			name = PostTagCellSubs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2059,13 +2154,17 @@
 			files = (
 				D75CC3D41C2A926100E590E6 /* LaunchScreen.storyboard in Resources */,
 				D75CC3D11C2A926100E590E6 /* Assets.xcassets in Resources */,
+				D76E84051D7528F70014FDEA /* PostAddPhotoCell.xib in Resources */,
 				6035CF2D1D74B3AC00EA590B /* PostContentCell.xib in Resources */,
 				D75CC7091C2BF99B00E590E6 /* UMSCommentInputController.xib in Resources */,
 				D75CC7121C2BF99B00E590E6 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				D75CC70F1C2BF99B00E590E6 /* UMSShareListController.xib in Resources */,
+				D76E83FB1D7524BA0014FDEA /* PostPhotosCell.xib in Resources */,
 				D75CC70C1C2BF99B00E590E6 /* UMShareEditViewControlleriPad.xib in Resources */,
 				D76E83F61D7439950014FDEA /* UserNotesCollectionTableViewCell.xib in Resources */,
+				D76E84251D759CD30014FDEA /* PostTagAddCollectionCell.xib in Resources */,
 				D76E838C1D6D48560014FDEA /* AlbumnCell.xib in Resources */,
+				D76E84001D7526250014FDEA /* PostPhotoCollectionCell.xib in Resources */,
 				608405811D67F45700B40D68 /* HPProductCollectionCell.xib in Resources */,
 				D75CC7081C2BF99B00E590E6 /* UMSCommentDetailController.xib in Resources */,
 				D75CC70B1C2BF99B00E590E6 /* UMShareEditViewController.xib in Resources */,
@@ -2073,6 +2172,7 @@
 				D76E83C61D7028680014FDEA /* UserInfoView.xib in Resources */,
 				D76E839D1D6EA1D90014FDEA /* testUser.plist in Resources */,
 				D76E83F11D74359D0014FDEA /* UserFoucusHeaderView.xib in Resources */,
+				D76E841A1D75991D0014FDEA /* PostTagCell.xib in Resources */,
 				D75CC7061C2BF99B00E590E6 /* UMSocialLocalizable.strings in Resources */,
 				D75CC70E1C2BF99B00E590E6 /* UMSnsAccountViewController.xib in Resources */,
 				D76E83841D6D40D40014FDEA /* Camera.storyboard in Resources */,
@@ -2084,6 +2184,7 @@
 				60074E1D1D634AE80040C3C0 /* xtAllColorsList.plist in Resources */,
 				D75CC70A1C2BF99B00E590E6 /* UMSCommentInputControlleriPad.xib in Resources */,
 				608405941D74AA6800B40D68 /* SVProgressHUD.bundle in Resources */,
+				D76E84201D759CB30014FDEA /* PostTagItemCollectionCell.xib in Resources */,
 				D74589881D6A9DCB00835234 /* HPBigPhotoHeaderView.xib in Resources */,
 				D75CC5DB1C2A965000E590E6 /* MJRefresh.bundle in Resources */,
 				D76E839B1D6DA6540014FDEA /* CameraGroupCell.xib in Resources */,
@@ -2117,6 +2218,7 @@
 				D75CC4411C2A95DE00E590E6 /* UIImage+AddFunction.m in Sources */,
 				D75CC5BA1C2A965000E590E6 /* ASIS3BucketRequest.m in Sources */,
 				D75CC4461C2A95DE00E590E6 /* MyTextField.m in Sources */,
+				D76E84111D75665F0014FDEA /* PreviewCollectionCell.m in Sources */,
 				D76E83ED1D7435680014FDEA /* UserFoucusHeaderView.m in Sources */,
 				60074E091D60E0040040C3C0 /* ActivityController.m in Sources */,
 				D75CC5E91C2A965000E590E6 /* QNSessionManager.m in Sources */,
@@ -2140,6 +2242,7 @@
 				D745898C1D6AAF9500835234 /* XLPlainFlowLayout.m in Sources */,
 				D75CC44D1C2A95DE00E590E6 /* DigitInformation.m in Sources */,
 				D75CC6C41C2BEB0400E590E6 /* RootTableView.m in Sources */,
+				D76E83FF1D7526250014FDEA /* PostPhotoCollectionCell.m in Sources */,
 				D75CC3CC1C2A926100E590E6 /* ViewController.m in Sources */,
 				D75CC5A81C2A965000E590E6 /* ASIAuthenticationDialog.m in Sources */,
 				D75CC5FD1C2A965000E590E6 /* UIImage+GIF.m in Sources */,
@@ -2171,6 +2274,7 @@
 				D75CC59F1C2A965000E590E6 /* AFHTTPRequestOperation.m in Sources */,
 				D75CC5DA1C2A965000E590E6 /* MJRefreshStateHeader.m in Sources */,
 				60074E1C1D634AE80040C3C0 /* UIColor+HexString.m in Sources */,
+				D76E84151D7567A70014FDEA /* XTZoomPicture.m in Sources */,
 				D76E83F51D7439950014FDEA /* UserNotesCollectionTableViewCell.m in Sources */,
 				D75CC5E41C2A965000E590E6 /* QNEtag.m in Sources */,
 				60074E031D60DFDC0040C3C0 /* FindController.m in Sources */,
@@ -2198,10 +2302,12 @@
 				D76E838B1D6D48560014FDEA /* AlbumnCell.m in Sources */,
 				D75CC5F51C2A965000E590E6 /* SDImageCache.m in Sources */,
 				D75CC5FA1C2A965000E590E6 /* SDWebImageManager.m in Sources */,
+				D76E84241D759CD30014FDEA /* PostTagAddCollectionCell.m in Sources */,
 				D75CC5C61C2A965000E590E6 /* FMDatabaseQueue.m in Sources */,
 				D75CC6C01C2BEB0400E590E6 /* MyNavCtrller.m in Sources */,
 				D75CC5B91C2A965000E590E6 /* ASIS3BucketObject.m in Sources */,
 				D75CC5BB1C2A965000E590E6 /* ASIS3ObjectRequest.m in Sources */,
+				D76E84191D75991D0014FDEA /* PostTagCell.m in Sources */,
 				60074DFC1D60DF270040C3C0 /* HomePageController.m in Sources */,
 				D76E83A01D6EA2B40014FDEA /* TestUser.m in Sources */,
 				D74589931D6B0C1500835234 /* HomePageController+TitleManager.m in Sources */,
@@ -2212,11 +2318,13 @@
 				D75CC5B51C2A965000E590E6 /* ASICloudFilesObjectRequest.m in Sources */,
 				D75CC6C11C2BEB0400E590E6 /* MyTabbarCtrller.m in Sources */,
 				D75CC5B81C2A965000E590E6 /* ASIS3Bucket.m in Sources */,
+				D76E84091D755FDD0014FDEA /* PreviewCtrller.m in Sources */,
 				D75CC44F1C2A95DE00E590E6 /* ShareUtils.m in Sources */,
 				D75CC61D1C2A965000E590E6 /* FBShimmeringLayer.m in Sources */,
 				D75CC5B11C2A965000E590E6 /* ASICloudFilesContainer.m in Sources */,
 				D75CC5B41C2A965000E590E6 /* ASICloudFilesObject.m in Sources */,
 				60074E1E1D634AE80040C3C0 /* XTColorFetcher.m in Sources */,
+				D76E83FA1D7524BA0014FDEA /* PostPhotosCell.m in Sources */,
 				D75CC5C71C2A965000E590E6 /* FMResultSet.m in Sources */,
 				D75CC5BE1C2A965000E590E6 /* UIBarButtonItem+Badge.m in Sources */,
 				D75CC5A01C2A965000E590E6 /* AFHTTPRequestOperationManager.m in Sources */,
@@ -2277,6 +2385,7 @@
 				D75CC5D11C2A965000E590E6 /* MJRefreshHeader.m in Sources */,
 				D75CC6031C2A965000E590E6 /* SIAlertView.m in Sources */,
 				D75CC5BD1C2A965000E590E6 /* ASIS3ServiceRequest.m in Sources */,
+				D76E841F1D759CB30014FDEA /* PostTagItemCollectionCell.m in Sources */,
 				D76E83BF1D70175D0014FDEA /* UIImage+ImageEffects.m in Sources */,
 				D75CC6561C2AA17700E590E6 /* ResultParsered.m in Sources */,
 				D75CC5DF1C2A965000E590E6 /* UIView+MJExtension.m in Sources */,
@@ -2285,6 +2394,7 @@
 				D75CC5CC1C2A965000E590E6 /* MBProgressHUD.m in Sources */,
 				608405861D69505E00B40D68 /* HomePageController+collectionLayoutSwitch.m in Sources */,
 				6084059A1D74AE6800B40D68 /* PostCtrller.m in Sources */,
+				D76E84041D7528F70014FDEA /* PostAddPhotoCell.m in Sources */,
 				D75CC6001C2A965000E590E6 /* UIImageView+HighlightedWebCache.m in Sources */,
 				60074E121D634AA50040C3C0 /* XTJson.m in Sources */,
 				D76E838F1D6D49790014FDEA /* AlbumOperation.m in Sources */,

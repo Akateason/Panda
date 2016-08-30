@@ -14,6 +14,8 @@
 #import "AlbumOperation.h"
 #import "CameraGoupCtrller.h"
 #import "SVProgressHUD.h"
+#import "CommonFunc.h"
+#import "PreviewCtrller.h"
 
 static float kMAX_SELECT_COUNT = 10. ;
 
@@ -28,9 +30,9 @@ static float kMAX_SELECT_COUNT = 10. ;
 @property  (weak, nonatomic) IBOutlet UIButton *btPreview;
 //
 @property  (nonatomic, strong) ALAssetsLibrary          *assetsLibrary ;
-@property  (nonatomic, strong) NSMutableArray           *imageList ; // data source
+@property  (nonatomic, strong) NSMutableArray           *imageList ;        // data source .
 @property  (nonatomic, strong) NSMutableArray           *multySelectedImageList ;
-@property  (nonatomic, strong) NSMutableArray           *resultImgList ;
+@property  (nonatomic, strong) NSMutableArray           *resultImgList ;    // result .
 @property  (strong, nonatomic) UICollectionView         *collectionView ;
 @property  (nonatomic, strong) NSOperationQueue         *operationQueue ;
 //
@@ -60,11 +62,28 @@ static float kMAX_SELECT_COUNT = 10. ;
 
 - (IBAction)btFinishOnClick:(id)sender {
     NSLog(@"继续") ;
-    [self performSegueWithIdentifier:@"camera2post" sender:nil] ;
+    if (!self.resultImgList.count) {
+        [SVProgressHUD showErrorWithStatus:@"请选择图片"] ;
+        return ;
+    }
+    
+    if (self.openType == typeDefault) {
+        [self performSegueWithIdentifier:@"camera2post" sender:self.resultImgList] ;
+    }
+    else if (self.openType == typeEdit) {
+        NSMutableArray *tmpList = [self.postCtrl.photoList mutableCopy] ;
+        tmpList = [[tmpList arrayByAddingObjectsFromArray:self.resultImgList] mutableCopy] ;
+        self.postCtrl.photoList = tmpList ;
+        [self.navigationController popToViewController:self.postCtrl animated:YES] ;
+    }
+        
+    
+    
 }
 
 - (IBAction)btPreviewOnClick:(id)sender {
     NSLog(@"预览") ;
+    [self performSegueWithIdentifier:@"camra2preview" sender:self.resultImgList] ;
 }
 
 #pragma mark --
@@ -106,9 +125,13 @@ static float kMAX_SELECT_COUNT = 10. ;
 {
     _resultImgList = [@[] mutableCopy] ;
     
-    for (NSNumber *number in self.multySelectedImageList) {
-        ALAsset *asset = (ALAsset *)self.imageList[[number intValue]] ;
-        [_resultImgList addObject:asset] ;
+    for (NSNumber *number in self.multySelectedImageList)
+    {
+        ALAsset *asset = (ALAsset *)self.imageList[[number intValue] - 1] ;
+        ALAssetRepresentation* representation = [asset defaultRepresentation] ;
+        CGImageRef imgref = [representation fullResolutionImage] ;
+        UIImage *imageTmp = [UIImage imageWithCGImage:imgref] ;
+        [_resultImgList addObject:imageTmp] ;
     }
     return _resultImgList ;
 }
@@ -174,6 +197,8 @@ static float kMAX_SELECT_COUNT = 10. ;
     [self.btTitle setTitle:@"相机胶卷⌵" forState:0] ;
 }
 
+
+
 #pragma mark --
 #pragma mark - Function .
 - (void)getAllPictures
@@ -216,6 +241,8 @@ static float kMAX_SELECT_COUNT = 10. ;
     }] ;
 }
 
+
+
 #pragma mark - Multy Picture selected
 - (BOOL)thisPhotoIsSelectedWithRow:(NSInteger)row
 {
@@ -231,6 +258,9 @@ static float kMAX_SELECT_COUNT = 10. ;
 }
 
 
+
+
+
 #pragma mark --
 #pragma mark - collection dataSourse
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -243,7 +273,6 @@ static float kMAX_SELECT_COUNT = 10. ;
     return [self.imageList count] + 1 ;
 }
 
-// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger row = indexPath.row ;
@@ -313,11 +342,15 @@ static float kMAX_SELECT_COUNT = 10. ;
         [self.multySelectedImageList addObject:numRow] ;
     }
     
-//    AlbumnCell *cell = (AlbumnCell *)[self.collectionView cellForItemAtIndexPath:indexPath] ;
     [self.collectionView reloadItemsAtIndexPaths:@[indexPath]] ;
-//        [self.choosePicBar setCount:self.multySelectedImageList.count] ;
+    
+    NSString *strDisplay = !self.multySelectedImageList.count ? @"继续" : [NSString stringWithFormat:@"继续(%lu)",(unsigned long)self.multySelectedImageList.count] ;
+    [self.btFinish setTitle:strDisplay] ;
+
     
 }
+
+
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -345,6 +378,9 @@ static float kMAX_SELECT_COUNT = 10. ;
     
 }
 
+
+
+
 #pragma mark --
 #pragma mark - Open camera
 - (void)openCamera
@@ -353,9 +389,9 @@ static float kMAX_SELECT_COUNT = 10. ;
                                     usingDelegate:self] ;
 }
 
-- (BOOL) startCameraControllerFromViewController:(UIViewController*) controller
-                                   usingDelegate:(id <UIImagePickerControllerDelegate,
-                                                  UINavigationControllerDelegate>) delegate
+- (BOOL)startCameraControllerFromViewController:(UIViewController*) controller
+                                usingDelegate:(id <UIImagePickerControllerDelegate ,
+                                                UINavigationControllerDelegate>) delegate
 {
     // here, check the device is available  or not
     BOOL bFail = ![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] || !delegate || !controller ;
@@ -373,6 +409,10 @@ static float kMAX_SELECT_COUNT = 10. ;
     return YES ;
 }
 
+
+
+
+
 #pragma mark --
 #pragma mark - imagePickerDelegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
@@ -380,23 +420,16 @@ static float kMAX_SELECT_COUNT = 10. ;
     UIImage *imageFromCamera = [info objectForKey:UIImagePickerControllerOriginalImage] ;
     [self dismissViewControllerAnimated:YES
                              completion:^{
-                                 [self go2CuttingVC:imageFromCamera] ;
-//                                 [CommonFunc saveImageToLibrary:imageFromCamera hud:NO] ;
+                                 [self takePhoto2PostVC:imageFromCamera] ;
+//                                 [CommonFunc saveImageToLibrary:imageFromCamera] ;
                              }] ;
 }
 
-- (void)go2CuttingVC:(UIImage *)imageResult
+- (void)takePhoto2PostVC:(UIImage *)imageResult
 {
-//    if (self.fetchMode == mode_single)
-//    {
-//        [self performSegueWithIdentifier:@"camera2Preview" sender:imageResult] ;
-//    }
-//    else if (self.fetchMode == mode_addSingle)
-//    {
-//        [self dismissViewControllerAnimated:YES completion:^{
-//            [(MultyEditCtrller *)self.orginCtrller changeImageCallback:imageResult] ;
-//        }] ;
-//    }
+    self.multySelectedImageList = [@[] mutableCopy] ;
+    self.resultImgList = [@[imageResult] mutableCopy] ;
+    [self performSegueWithIdentifier:@"camera2post" sender:self.resultImgList] ;
 }
 
 
@@ -439,14 +472,23 @@ static float kMAX_SELECT_COUNT = 10. ;
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"camera2post"]) {
+        PostCtrller *postctrller = segue.destinationViewController ;
+        postctrller.photoList = sender ;
+    }
+    else if ([segue.identifier isEqualToString:@"camra2preview"]) {
+        PreviewCtrller *previewCtrller = segue.destinationViewController ;
+        previewCtrller.photosList = sender ;
+    }
 }
-*/
+
 
 @end

@@ -24,4 +24,6 @@
 
 + (UIColor *)xt_w_desc ;
 
++ (UIColor *)xt_w_gray ;
+
 @end

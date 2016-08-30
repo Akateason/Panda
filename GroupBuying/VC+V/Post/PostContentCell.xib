@@ -26,28 +26,37 @@
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="分享你想说的...(必填)" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3Bg-BD-B2c">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3Bg-BD-B2c">
                         <rect key="frame" x="8" y="46" width="304" height="140"/>
                         <color key="backgroundColor" red="1" green="0.60939943360000004" blue="0.64999970529999995" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分享你想说的...(必填)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U98-pw-GaZ">
+                        <rect key="frame" x="13" y="55" width="116" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="jwG-sh-gvk" firstAttribute="top" secondItem="5MN-WM-y8R" secondAttribute="top" constant="45" id="2kj-CX-kwp"/>
                     <constraint firstItem="3Bg-BD-B2c" firstAttribute="top" secondItem="jwG-sh-gvk" secondAttribute="bottom" id="6Uk-RW-okS"/>
                     <constraint firstAttribute="trailing" secondItem="jwG-sh-gvk" secondAttribute="trailing" id="98b-9h-HD9"/>
+                    <constraint firstItem="U98-pw-GaZ" firstAttribute="leading" secondItem="5MN-WM-y8R" secondAttribute="leading" constant="13" id="MOH-wX-ndj"/>
                     <constraint firstAttribute="trailing" secondItem="hui-u1-8Dw" secondAttribute="trailing" constant="12" id="Q4A-D1-Zn6"/>
                     <constraint firstAttribute="bottom" secondItem="3Bg-BD-B2c" secondAttribute="bottom" constant="7" id="Xxu-pl-zA3"/>
                     <constraint firstItem="hui-u1-8Dw" firstAttribute="leading" secondItem="5MN-WM-y8R" secondAttribute="leading" constant="12" id="Yas-5m-h53"/>
                     <constraint firstItem="jwG-sh-gvk" firstAttribute="leading" secondItem="5MN-WM-y8R" secondAttribute="leading" id="YvL-fd-3Ei"/>
                     <constraint firstItem="3Bg-BD-B2c" firstAttribute="leading" secondItem="5MN-WM-y8R" secondAttribute="leading" constant="8" id="bkf-3Y-1Ny"/>
+                    <constraint firstItem="U98-pw-GaZ" firstAttribute="top" secondItem="jwG-sh-gvk" secondAttribute="bottom" constant="9" id="h9P-Wu-S4B"/>
                     <constraint firstAttribute="trailing" secondItem="3Bg-BD-B2c" secondAttribute="trailing" constant="8" id="nTo-8v-Nh3"/>
                     <constraint firstItem="hui-u1-8Dw" firstAttribute="top" secondItem="5MN-WM-y8R" secondAttribute="top" constant="8" id="q15-WR-SyC"/>
                     <constraint firstItem="jwG-sh-gvk" firstAttribute="top" secondItem="hui-u1-8Dw" secondAttribute="bottom" constant="7" id="qVI-zw-ano"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="lb_tfPlaceholder" destination="U98-pw-GaZ" id="Shc-v6-P4w"/>
                 <outlet property="seperateLine" destination="jwG-sh-gvk" id="zCc-K5-TsE"/>
                 <outlet property="tf_title" destination="hui-u1-8Dw" id="FQz-5X-uTf"/>
                 <outlet property="tv_words" destination="3Bg-BD-B2c" id="5hV-er-KUb"/>

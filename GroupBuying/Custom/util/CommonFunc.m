@@ -67,7 +67,7 @@ NSString *const URL_QINIU_HEAD          = @"http://img.subaojiang.com/" ;
         imgSave = [self getSuBaoJiangWaterMask:imgSave] ;
         ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init] ;
         [library saveImage:imgSave
-                   toAlbum:@"速报酱"
+                   toAlbum:@"IBardot"
        withCompletionBlock:^(NSError *error) {
            if (!error) {
                dispatch_async(dispatch_get_main_queue(), ^{

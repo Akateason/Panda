@@ -16,5 +16,7 @@
 	<string>f5f5f5</string>
 	<key>w_desc</key>
 	<string>b3b3b3</string>
+	<key>w_gray</key>
+	<string>808080</string>
 </dict>
 </plist>
