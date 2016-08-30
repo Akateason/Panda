@@ -46,11 +46,11 @@
                     </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="mHZ-Cm-2qr" firstAttribute="top" secondItem="8fs-SO-jlx" secondAttribute="bottom" constant="8" id="84B-6w-hT6"/>
                     <constraint firstAttribute="trailing" secondItem="8fs-SO-jlx" secondAttribute="trailing" constant="19" id="CZF-9F-TWO"/>
                     <constraint firstItem="8fs-SO-jlx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="19" id="DsD-9v-AV3"/>
                     <constraint firstItem="4Sw-mB-U1C" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="S0U-Dd-eZS"/>
                     <constraint firstAttribute="trailing" secondItem="mHZ-Cm-2qr" secondAttribute="trailing" constant="14" id="VLP-iL-ah1"/>
-                    <constraint firstAttribute="bottom" secondItem="mHZ-Cm-2qr" secondAttribute="bottom" constant="1" id="dIg-jh-7ZK"/>
                     <constraint firstItem="8fs-SO-jlx" firstAttribute="top" secondItem="4Sw-mB-U1C" secondAttribute="bottom" constant="15" id="fD6-W9-jLT"/>
                     <constraint firstItem="4Sw-mB-U1C" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="x9T-XF-jk2"/>
                 </constraints>

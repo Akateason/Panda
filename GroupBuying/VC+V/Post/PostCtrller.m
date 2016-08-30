@@ -12,13 +12,27 @@
 #import "CameraViewController.h"
 #import "PostTagCell.h"
 
-@interface PostCtrller () <UITableViewDelegate,UITableViewDataSource,PostPhotosCellDelegate>
+@interface PostCtrller () <UITableViewDelegate,UITableViewDataSource,PostPhotosCellDelegate,PostTagCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *table;
+@property (weak, nonatomic) IBOutlet UIButton *btPost;
 
 @end
 
 @implementation PostCtrller
+
+
+#pragma mark - PostTagCellDelegate <NSObject>
+
+- (void)addTag
+{
+    [self performSegueWithIdentifier:@"post2tagSearch" sender:nil] ;
+}
+
+- (void)saveDraft
+{
+    
+}
 
 #pragma mark - PostPhotosCellDelegate
 - (void)addPhoto
@@ -31,6 +45,11 @@
     [self.navigationController pushViewController:cameraVC animated:YES] ;
 }
 
+#pragma mark - Action
+- (IBAction)btPostOnClick:(id)sender
+{
+    NSLog(@"发布笔记") ;
+}
 
 
 #pragma mark - life
@@ -44,6 +63,8 @@
     [_table registerNib:[UINib nibWithNibName:idPostContentCell bundle:nil] forCellReuseIdentifier:idPostContentCell] ;
     [_table registerNib:[UINib nibWithNibName:idPostPhotosCell bundle:nil] forCellReuseIdentifier:idPostPhotosCell] ;
     [_table registerNib:[UINib nibWithNibName:idPostTagCell bundle:nil] forCellReuseIdentifier:idPostTagCell] ;
+    
+    _btPost.backgroundColor = [UIColor xt_tabbarRedColor] ;
 }
 
 
@@ -75,6 +96,7 @@
     }
     else if (indexPath.row == 2) {
         PostTagCell *cell = [tableView dequeueReusableCellWithIdentifier:idPostTagCell] ;
+        cell.delegate = self ;
         cell.listTags = @[@1,@1,@1]; // for test .
         return cell ;
     }
@@ -92,14 +114,18 @@
         return 100. ;
     }
     else if (indexPath.row == 2) {
-        return 130. ;
+//        return 130. ;
+        return APP_HEIGHT - 194. - 100. + 130. ;
     }
     
     return 0 ;
 }
 
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.table reloadData] ;
+}
 
 
 

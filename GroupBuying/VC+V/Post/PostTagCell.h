@@ -8,10 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-static NSString *idPostTagCell = @"PostTagCell" ;
+static NSString * _Nonnull idPostTagCell = @"PostTagCell" ;
+
+
+@protocol PostTagCellDelegate <NSObject>
+
+- (void)addTag ;
+- (void)saveDraft ;
+
+@end
 
 @interface PostTagCell : UITableViewCell
 
+@property (nonatomic,weak) id <PostTagCellDelegate> delegate ;
 @property (nonatomic,strong,nullable) NSArray *listTags ;
 
 @end

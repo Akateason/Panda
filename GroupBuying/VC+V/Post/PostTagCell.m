@@ -23,6 +23,10 @@
 - (IBAction)btSaveDraftOnClick:(id)sender
 {
     NSLog(@"保存至草稿箱") ;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(saveDraft)])
+    {
+        [self.delegate saveDraft] ;
+    }
 }
 
 - (void)awakeFromNib {
@@ -65,10 +69,16 @@
 #pragma mark - collection delegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.listTags.count == indexPath.row) {
+    if (self.listTags.count == indexPath.row)
+    {
         NSLog(@"add tag .") ;
+        if (self.delegate && [self.delegate respondsToSelector:@selector(addTag)])
+        {
+            [self.delegate addTag] ;
+        }
     }
-    else {
+    else
+    {
         NSLog(@"tags click") ;
     }
 }

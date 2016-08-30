@@ -46,13 +46,20 @@ static float kMAX_SELECT_COUNT = 10. ;
 #pragma mark - Action
 - (IBAction)btCancelOnClick:(id)sender {
     NSLog(@"取消") ;
-    if (self.groupCtrller.view.superview) {
-        [self.groupCtrller cameraGroupAnimation:!self.groupCtrller.view.superview onView:self.view] ;
+    if (self.openType == typeDefault) {
+        if (self.groupCtrller.view.superview) {
+            [self.groupCtrller cameraGroupAnimation:!self.groupCtrller.view.superview onView:self.view] ;
+        }
+        else {
+            [self dismissViewControllerAnimated:YES
+                                     completion:nil] ;
+        }
     }
-    else {
-        [self dismissViewControllerAnimated:YES completion:^{
-        }] ;
+    else if (self.openType == typeEdit) {
+        [self.navigationController popViewControllerAnimated:YES] ;
     }
+    
+
 }
 
 - (IBAction)btTitleOnClick:(id)sender {

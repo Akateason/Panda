@@ -20,6 +20,8 @@
 		60074E1E1D634AE80040C3C0 /* XTColorFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 60074E1A1D634AE80040C3C0 /* XTColorFetcher.m */; };
 		6035CF2B1D74B38B00EA590B /* PostContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6035CF2A1D74B38B00EA590B /* PostContentCell.m */; };
 		6035CF2D1D74B3AC00EA590B /* PostContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6035CF2C1D74B3AC00EA590B /* PostContentCell.xib */; };
+		6035CF311D75E64E00EA590B /* TagSearchingCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = 6035CF301D75E64E00EA590B /* TagSearchingCtrller.m */; };
+		6035CF341D75EDBA00EA590B /* TagSearchingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6035CF331D75EDBA00EA590B /* TagSearchingCell.m */; };
 		6084057C1D64DDDF00B40D68 /* HPProductCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6084057B1D64DDDF00B40D68 /* HPProductCollectionCell.m */; };
 		6084057F1D663CCC00B40D68 /* HPBigPhotoCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6084057E1D663CCC00B40D68 /* HPBigPhotoCollectionCell.m */; };
 		608405811D67F45700B40D68 /* HPProductCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 608405801D67F45700B40D68 /* HPProductCollectionCell.xib */; };
@@ -314,6 +316,10 @@
 		6035CF291D74B38B00EA590B /* PostContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostContentCell.h; path = "GroupBuying/VC+V/Post/PostContentCell.h"; sourceTree = SOURCE_ROOT; };
 		6035CF2A1D74B38B00EA590B /* PostContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostContentCell.m; path = "GroupBuying/VC+V/Post/PostContentCell.m"; sourceTree = SOURCE_ROOT; };
 		6035CF2C1D74B3AC00EA590B /* PostContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostContentCell.xib; path = "GroupBuying/VC+V/Post/PostContentCell.xib"; sourceTree = SOURCE_ROOT; };
+		6035CF2F1D75E64E00EA590B /* TagSearchingCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagSearchingCtrller.h; path = "GroupBuying/VC+V/Tag/TagSearchingCtrller.h"; sourceTree = SOURCE_ROOT; };
+		6035CF301D75E64E00EA590B /* TagSearchingCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagSearchingCtrller.m; path = "GroupBuying/VC+V/Tag/TagSearchingCtrller.m"; sourceTree = SOURCE_ROOT; };
+		6035CF321D75EDBA00EA590B /* TagSearchingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagSearchingCell.h; path = "GroupBuying/VC+V/Tag/TagSearchingCell.h"; sourceTree = SOURCE_ROOT; };
+		6035CF331D75EDBA00EA590B /* TagSearchingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagSearchingCell.m; path = "GroupBuying/VC+V/Tag/TagSearchingCell.m"; sourceTree = SOURCE_ROOT; };
 		6084057A1D64DDDF00B40D68 /* HPProductCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPProductCollectionCell.h; path = "GroupBuying/VC+V/HomePage/HPProductCollectionCell.h"; sourceTree = SOURCE_ROOT; };
 		6084057B1D64DDDF00B40D68 /* HPProductCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPProductCollectionCell.m; path = "GroupBuying/VC+V/HomePage/HPProductCollectionCell.m"; sourceTree = SOURCE_ROOT; };
 		6084057D1D663CCC00B40D68 /* HPBigPhotoCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPBigPhotoCollectionCell.h; path = "GroupBuying/VC+V/HomePage/HPBigPhotoCollectionCell.h"; sourceTree = SOURCE_ROOT; };
@@ -958,6 +964,17 @@
 			path = category/color;
 			sourceTree = "<group>";
 		};
+		6035CF2E1D75E62000EA590B /* Tag */ = {
+			isa = PBXGroup;
+			children = (
+				6035CF2F1D75E64E00EA590B /* TagSearchingCtrller.h */,
+				6035CF301D75E64E00EA590B /* TagSearchingCtrller.m */,
+				6035CF321D75EDBA00EA590B /* TagSearchingCell.h */,
+				6035CF331D75EDBA00EA590B /* TagSearchingCell.m */,
+			);
+			name = Tag;
+			sourceTree = "<group>";
+		};
 		608405871D74AA6800B40D68 /* SVProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -1102,6 +1119,7 @@
 		D75CC3F71C2A92B200E590E6 /* VC+V */ = {
 			isa = PBXGroup;
 			children = (
+				6035CF2E1D75E62000EA590B /* Tag */,
 				608405971D74ADD000B40D68 /* Post */,
 				D76E83B31D6FE5820014FDEA /* User */,
 				D76E837F1D6D3EAF0014FDEA /* Camera */,
@@ -2249,6 +2267,7 @@
 				D75CC5E31C2A965000E590E6 /* QNCrc32.m in Sources */,
 				D75CC5AF1C2A965000E590E6 /* ASINetworkQueue.m in Sources */,
 				60074E0C1D60E0180040C3C0 /* MineController.m in Sources */,
+				6035CF311D75E64E00EA590B /* TagSearchingCtrller.m in Sources */,
 				D76E83961D6DA3290014FDEA /* CameraGoupCtrller.m in Sources */,
 				D76E83871D6D46300014FDEA /* CameraNavCtrller.m in Sources */,
 				D75CC4481C2A95DE00E590E6 /* PinkButton.m in Sources */,
@@ -2346,6 +2365,7 @@
 				D75CC6041C2A965000E590E6 /* UICollectionViewLeftAlignedLayout.m in Sources */,
 				D75CC6021C2A965000E590E6 /* UIView+WebCacheOperation.m in Sources */,
 				D75CC7341C2D13C000E590E6 /* YYClassInfo.m in Sources */,
+				6035CF341D75EDBA00EA590B /* TagSearchingCell.m in Sources */,
 				D75CC5C11C2A965000E590E6 /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				D75CC5FB1C2A965000E590E6 /* SDWebImagePrefetcher.m in Sources */,
 				D75CC5EB1C2A965000E590E6 /* QNFileRecorder.m in Sources */,
