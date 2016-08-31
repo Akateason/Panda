@@ -197,14 +197,14 @@ NSString *const URL_QINIU_HEAD          = @"http://img.subaojiang.com/" ;
 + (void)logSussessedWithResult:(ResultParsered *)result
              AndWithController:(UIViewController *)contoller
 {
-    if (result.errCode) {
-        NSLog(@"err code : %@",result.message) ;
+//    if (result.errCode) {
+//        NSLog(@"err code : %@",result.message) ;
 //        [XTHudManager showWordHudWithTitle:WD_LOGIN_FAILURE] ;
-        return;
-    }
+//        return;
+//    }
     
 //    G_USER = nil ; // remove current user
-    G_TOKEN = [result.info objectForKey:@"token"];
+//    G_TOKEN = [result.info objectForKey:@"token"];
    
     dispatch_queue_t queue = dispatch_queue_create("saveAndLogin", NULL) ;
     dispatch_async(queue, ^{
