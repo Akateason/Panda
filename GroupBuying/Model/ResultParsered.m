@@ -16,20 +16,15 @@
     self = [super init];
     if (self)
     {
-        _errCode = [dict[@"err_code"] intValue] ;
-        
-//        if (_errCode == 10002)
-//        {
-//            // token失效
-//            [CommonFunc exitLog] ;
-//        }
-        
-        _message = dict[@"message"] ;
-        _info    = dict[@"info"] ;
+        _code = [dict[@"code"] intValue] ;
+        if (_code == -53)
+        {
+            // token失效
+            [CommonFunc exitLog] ;
+        }
+        _data = dict[@"data"] ;
     }
-//    NSLog(@"errCode : %@",@(_errCode)) ;
-//    NSLog(@"message : %@",_message) ;
-//    NSLog(@"info    : %@",_info) ;
+
     return self;
 }
 

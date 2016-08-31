@@ -229,10 +229,6 @@
 		D75CC7171C2BF99B00E590E6 /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D75CC6F71C2BF99B00E590E6 /* WeiboSDK.bundle */; };
 		D75CC71B1C2BF99B00E590E6 /* libSocialWechat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D75CC7001C2BF99B00E590E6 /* libSocialWechat.a */; };
 		D75CC71C1C2BF99B00E590E6 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D75CC7011C2BF99B00E590E6 /* libWeChatSDK.a */; };
-		D75CC7271C2CFDA600E590E6 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC71E1C2CFDA600E590E6 /* Article.m */; };
-		D75CC7281C2CFDA600E590E6 /* ArticleComment.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC7201C2CFDA600E590E6 /* ArticleComment.m */; };
-		D75CC7291C2CFDA600E590E6 /* ArticlePraise.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC7221C2CFDA600E590E6 /* ArticlePraise.m */; };
-		D75CC72B1C2CFDA600E590E6 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC7261C2CFDA600E590E6 /* User.m */; };
 		D75CC7331C2D13C000E590E6 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC72F1C2D13C000E590E6 /* NSObject+YYModel.m */; };
 		D75CC7341C2D13C000E590E6 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC7311C2D13C000E590E6 /* YYClassInfo.m */; };
 		D76E837A1D6C61C60014FDEA /* RootCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E83791D6C61C60014FDEA /* RootCollectionView.m */; };
@@ -272,6 +268,8 @@
 		D76E84201D759CB30014FDEA /* PostTagItemCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76E841E1D759CB30014FDEA /* PostTagItemCollectionCell.xib */; };
 		D76E84241D759CD30014FDEA /* PostTagAddCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E84221D759CD30014FDEA /* PostTagAddCollectionCell.m */; };
 		D76E84251D759CD30014FDEA /* PostTagAddCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76E84231D759CD30014FDEA /* PostTagAddCollectionCell.xib */; };
+		D76E842A1D767A590014FDEA /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E84291D767A590014FDEA /* User.m */; };
+		D76E842E1D767DE20014FDEA /* Pic.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E842D1D767DE20014FDEA /* Pic.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -743,14 +741,6 @@
 		D75CC7021C2BF99B00E590E6 /* UMSocialWechatHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialWechatHandler.h; sourceTree = "<group>"; };
 		D75CC7031C2BF99B00E590E6 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		D75CC7041C2BF99B00E590E6 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
-		D75CC71D1C2CFDA500E590E6 /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
-		D75CC71E1C2CFDA600E590E6 /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
-		D75CC71F1C2CFDA600E590E6 /* ArticleComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleComment.h; sourceTree = "<group>"; };
-		D75CC7201C2CFDA600E590E6 /* ArticleComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleComment.m; sourceTree = "<group>"; };
-		D75CC7211C2CFDA600E590E6 /* ArticlePraise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePraise.h; sourceTree = "<group>"; };
-		D75CC7221C2CFDA600E590E6 /* ArticlePraise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlePraise.m; sourceTree = "<group>"; };
-		D75CC7251C2CFDA600E590E6 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		D75CC7261C2CFDA600E590E6 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		D75CC72E1C2D13C000E590E6 /* NSObject+YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YYModel.h"; sourceTree = "<group>"; };
 		D75CC72F1C2D13C000E590E6 /* NSObject+YYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YYModel.m"; sourceTree = "<group>"; };
 		D75CC7301C2D13C000E590E6 /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
@@ -818,6 +808,10 @@
 		D76E84211D759CD30014FDEA /* PostTagAddCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostTagAddCollectionCell.h; path = "GroupBuying/VC+V/Post/PostTagAddCollectionCell.h"; sourceTree = SOURCE_ROOT; };
 		D76E84221D759CD30014FDEA /* PostTagAddCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostTagAddCollectionCell.m; path = "GroupBuying/VC+V/Post/PostTagAddCollectionCell.m"; sourceTree = SOURCE_ROOT; };
 		D76E84231D759CD30014FDEA /* PostTagAddCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostTagAddCollectionCell.xib; path = "GroupBuying/VC+V/Post/PostTagAddCollectionCell.xib"; sourceTree = SOURCE_ROOT; };
+		D76E84281D767A590014FDEA /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		D76E84291D767A590014FDEA /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		D76E842C1D767DE20014FDEA /* Pic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pic.h; sourceTree = "<group>"; };
+		D76E842D1D767DE20014FDEA /* Pic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pic.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1183,7 +1177,8 @@
 			children = (
 				D75CC6541C2AA17700E590E6 /* ResultParsered.h */,
 				D75CC6551C2AA17700E590E6 /* ResultParsered.m */,
-				D75CC72C1C2CFDAD00E590E6 /* testModel */,
+				D76E842B1D767DCC0014FDEA /* Pic */,
+				D76E84271D767A480014FDEA /* User */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1932,21 +1927,6 @@
 			path = Wechat;
 			sourceTree = "<group>";
 		};
-		D75CC72C1C2CFDAD00E590E6 /* testModel */ = {
-			isa = PBXGroup;
-			children = (
-				D75CC71D1C2CFDA500E590E6 /* Article.h */,
-				D75CC71E1C2CFDA600E590E6 /* Article.m */,
-				D75CC71F1C2CFDA600E590E6 /* ArticleComment.h */,
-				D75CC7201C2CFDA600E590E6 /* ArticleComment.m */,
-				D75CC7211C2CFDA600E590E6 /* ArticlePraise.h */,
-				D75CC7221C2CFDA600E590E6 /* ArticlePraise.m */,
-				D75CC7251C2CFDA600E590E6 /* User.h */,
-				D75CC7261C2CFDA600E590E6 /* User.m */,
-			);
-			name = testModel;
-			sourceTree = "<group>";
-		};
 		D75CC72D1C2D13C000E590E6 /* YYModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -2063,6 +2043,24 @@
 				D76E84231D759CD30014FDEA /* PostTagAddCollectionCell.xib */,
 			);
 			name = PostTagCellSubs;
+			sourceTree = "<group>";
+		};
+		D76E84271D767A480014FDEA /* User */ = {
+			isa = PBXGroup;
+			children = (
+				D76E84281D767A590014FDEA /* User.h */,
+				D76E84291D767A590014FDEA /* User.m */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		D76E842B1D767DCC0014FDEA /* Pic */ = {
+			isa = PBXGroup;
+			children = (
+				D76E842C1D767DE20014FDEA /* Pic.h */,
+				D76E842D1D767DE20014FDEA /* Pic.m */,
+			);
+			name = Pic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2239,6 +2237,7 @@
 				D76E84111D75665F0014FDEA /* PreviewCollectionCell.m in Sources */,
 				D76E83ED1D7435680014FDEA /* UserFoucusHeaderView.m in Sources */,
 				60074E091D60E0040040C3C0 /* ActivityController.m in Sources */,
+				D76E842A1D767A590014FDEA /* User.m in Sources */,
 				D75CC5E91C2A965000E590E6 /* QNSessionManager.m in Sources */,
 				D75CC61F1C2A965000E590E6 /* YXSpritesLoadingView.m in Sources */,
 				D76E83BE1D70175D0014FDEA /* ParallaxHeaderView.m in Sources */,
@@ -2246,7 +2245,6 @@
 				D75CC5AC1C2A965000E590E6 /* ASIFormDataRequest.m in Sources */,
 				D75CC5B01C2A965000E590E6 /* ASICloudFilesCDNRequest.m in Sources */,
 				D75CC43D1C2A95DE00E590E6 /* NSDate+Addition.m in Sources */,
-				D75CC7281C2CFDA600E590E6 /* ArticleComment.m in Sources */,
 				D75CC5AD1C2A965000E590E6 /* ASIHTTPRequest.m in Sources */,
 				D75CC5DC1C2A965000E590E6 /* MJRefreshConst.m in Sources */,
 				608405951D74AA6800B40D68 /* SVProgressHUD.m in Sources */,
@@ -2300,7 +2298,6 @@
 				D75CC5D61C2A965000E590E6 /* MJRefreshBackNormalFooter.m in Sources */,
 				D74589901D6AE3D700835234 /* KxMenu.m in Sources */,
 				D75CC5B21C2A965000E590E6 /* ASICloudFilesContainerRequest.m in Sources */,
-				D75CC7271C2CFDA600E590E6 /* Article.m in Sources */,
 				D75CC5A41C2A965000E590E6 /* AFURLConnectionOperation.m in Sources */,
 				D74589971D6B18C400835234 /* RankingViewController.m in Sources */,
 				D75CC3C91C2A926100E590E6 /* AppDelegate.m in Sources */,
@@ -2333,7 +2330,6 @@
 				6035CF2B1D74B38B00EA590B /* PostContentCell.m in Sources */,
 				D76E837A1D6C61C60014FDEA /* RootCollectionView.m in Sources */,
 				D75CC43C1C2A95DE00E590E6 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,
-				D75CC7291C2CFDA600E590E6 /* ArticlePraise.m in Sources */,
 				D75CC5B51C2A965000E590E6 /* ASICloudFilesObjectRequest.m in Sources */,
 				D75CC6C11C2BEB0400E590E6 /* MyTabbarCtrller.m in Sources */,
 				D75CC5B81C2A965000E590E6 /* ASIS3Bucket.m in Sources */,
@@ -2374,7 +2370,6 @@
 				D75CC5DE1C2A965000E590E6 /* UIScrollView+MJRefresh.m in Sources */,
 				D75CC6591C2B9A1700E590E6 /* AppDelegateInitial.m in Sources */,
 				D75CC5E61C2A965000E590E6 /* QNDns.m in Sources */,
-				D75CC72B1C2CFDA600E590E6 /* User.m in Sources */,
 				D75CC5EE1C2A965000E590E6 /* QNResumeUpload.m in Sources */,
 				D75CC5A71C2A965000E590E6 /* AFURLSessionManager.m in Sources */,
 				D75CC5C01C2A965000E590E6 /* NSString+MD5.m in Sources */,
@@ -2399,6 +2394,7 @@
 				D76E839A1D6DA6540014FDEA /* CameraGroupCell.m in Sources */,
 				D75CC5AE1C2A965000E590E6 /* ASIInputStream.m in Sources */,
 				D75CC5BF1C2A965000E590E6 /* Base64.m in Sources */,
+				D76E842E1D767DE20014FDEA /* Pic.m in Sources */,
 				D75CC4541C2A95DE00E590E6 /* XTTickConvert.m in Sources */,
 				D75CC5EF1C2A965000E590E6 /* QNUploadManager.m in Sources */,
 				D75CC5A21C2A965000E590E6 /* AFNetworkReachabilityManager.m in Sources */,

@@ -1,20 +1,28 @@
 //
 //  User.h
-//  SuBaoJiang
+//  GroupBuying
 //
-//  Created by apple on 15/6/5.
-//  Copyright (c) 2015年 teason. All rights reserved.
+//  Created by TuTu on 16/8/31.
+//  Copyright © 2016年 teason. All rights reserved.
 //
 
-
-#import "YYModel.h"
+#import <Foundation/Foundation.h>
+@class Pic ;
 
 @interface User : NSObject
 
-@property (nonatomic)           int             u_id ;
-@property (nonatomic,copy)      NSString        *u_headpic ;
-@property (nonatomic,copy)      NSString        *u_nickname ;
-@property (nonatomic,copy)      NSString        *u_description ;
-@property (nonatomic)           int             gender ; // 0-无,1-男,2-女
+@property (nonatomic)       long        idOwn ;
+@property (nonatomic)       long        userId ;
+@property (nonatomic,copy)  NSString    *nickName ;
+@property (nonatomic,copy)  NSString    *email ;
+@property (nonatomic,copy)  NSString    *mobile ;
+@property (nonatomic,copy)  NSString    *status ;
+@property (nonatomic,copy)  NSString    *type ;
+@property (nonatomic,copy)  NSString    *gender ;
+@property (nonatomic,copy)  NSString    *name ;
+@property (nonatomic)       long long   createTime ;
+@property (nonatomic)       long long   updateTime ;
+@property (nonatomic)       long long   lastLoginTime ;
+@property (nonatomic,strong)Pic         *headPic ;
 
 @end

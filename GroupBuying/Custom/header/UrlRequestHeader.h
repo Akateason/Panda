@@ -10,7 +10,7 @@
 #define SuBaoJiang_UrlRequestHeader_h
 
 /**
- *服务器ip地址切换
+ *服务器
  */
 static NSString *const G_IP_SERVER              = @"http://api3.subaojiang.com/" ;
 

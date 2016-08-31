@@ -10,9 +10,8 @@
 
 @interface ResultParsered : NSObject
 
-@property (nonatomic)           NSInteger       errCode     ;
-@property (nonatomic,copy)      NSString        *message    ;
-@property (nonatomic,strong)    NSDictionary    *info       ;
+@property (nonatomic)           NSInteger       code        ;
+@property (nonatomic,strong)    NSDictionary    *data       ;
 
 - (instancetype)initWithDic:(NSDictionary *)dict            ;
 
