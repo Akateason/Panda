@@ -7,12 +7,11 @@
 //
 
 #import "EditorPhotosCollectionCell.h"
-#import "PhotoTaggingStageView.h"
+
 
 @interface EditorPhotosCollectionCell ()
 
-@property (nonatomic,strong) PhotoTaggingStageView *stageView ;
-
+@property (weak, nonatomic) IBOutlet UIImageView *imgView;
 
 @end
 
@@ -22,30 +21,15 @@
 {
     [super awakeFromNib];
     // Initialization code
-    
-    [self stageView] ;
+    _imgView.backgroundColor = [UIColor whiteColor] ;
 }
 
-
-- (PhotoTaggingStageView *)stageView
-{
-    if (!_stageView) {
-        CGRect rect = CGRectZero ;
-        rect.size = CGSizeMake(APP_WIDTH, APP_WIDTH) ;
-        _stageView = [[PhotoTaggingStageView alloc] initWithFrame:rect] ;
-        _stageView.backgroundColor = [UIColor whiteColor] ;
-        if (!_stageView.superview) {
-            [self addSubview:_stageView] ;
-        }
-    }
-    return _stageView ;
-}
 
 - (void)setImage:(UIImage *)image
 {
     _image = image ;
     
-    self.stageView.originImage = image ;
+    self.imgView.image = image ;
 }
 
 @end

@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>editor_w</key>
+	<string>e8e8e8</string>
+	<key>editor_bg</key>
+	<string>272829</string>
+	<key>editor_bar</key>
+	<string>111213</string>
 	<key>main</key>
 	<string>ffffff</string>
 	<key>tabbar_red</key>

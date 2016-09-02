@@ -8,6 +8,7 @@
 
 #import "TagSearchingCtrller.h"
 #import "TagSearchingCell.h"
+#import "SVProgressHUD.h"
 
 @interface TagSearchingCtrller () <UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate>
 
@@ -22,6 +23,7 @@
 
 - (IBAction)btCancelOnClick:(id)sender
 {
+    _block(nil) ;
     [self dismissViewControllerAnimated:YES completion:nil] ;
 }
 
@@ -33,7 +35,6 @@
 {
     [super viewDidLoad];
     
-    
     // Do any additional setup after loading the view.
     _topView.backgroundColor = [UIColor whiteColor] ;
     [_btCancel setTitleColor:[UIColor xt_w_dark] forState:0] ;
@@ -41,13 +42,10 @@
     [_searchBar becomeFirstResponder] ;
     _searchBar.delegate = self ;
     
-    
-//    [_table registerNib:[UINib nibWithNibName:idTagSearchingCell bundle:nil] forCellReuseIdentifier:idTagSearchingCell] ;
     _table.separatorStyle = 0 ;
     _table.dataSource = self ;
     _table.delegate = self ;
 }
-
 
 
 #pragma mark - UISearchBarDelegate <UIBarPositioningDelegate>
@@ -117,7 +115,13 @@
 {
     TagSearchingCell *cell = [tableView cellForRowAtIndexPath:indexPath] ;
     NSLog(@"你将要添加的是 : %@",cell.strDisplay) ;
-    
+    if (cell.strDisplay.length) {
+        _block(cell.strDisplay) ;
+        [self dismissViewControllerAnimated:YES completion:nil] ;
+    }
+    else {
+        [SVProgressHUD showErrorWithStatus:@"请输入标签"] ;
+    }
     
 }
 

@@ -26,4 +26,10 @@
 
 + (UIColor *)xt_w_gray ;
 
++ (UIColor *)xt_editor_bg ;
+
++ (UIColor *)xt_editor_bar ;
+
++ (UIColor *)xt_editor_w ;
+
 @end

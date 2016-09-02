@@ -192,8 +192,36 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HGi-aa-ne5">
                                 <rect key="frame" x="0.0" y="495" width="600" height="105"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tts-qb-Qqe">
+                                        <rect key="frame" x="180" y="28" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="AeG-Pw-4EU"/>
+                                            <constraint firstAttribute="width" constant="50" id="CDF-Hv-tJe"/>
+                                        </constraints>
+                                        <state key="normal" title="编辑"/>
+                                        <connections>
+                                            <action selector="btEditPhotoOnClick:" destination="8Oq-iT-Xrc" eventType="touchUpInside" id="6dQ-l3-VcR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMB-xS-w4J">
+                                        <rect key="frame" x="370" y="28" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="PGd-HG-l21"/>
+                                            <constraint firstAttribute="width" constant="50" id="vag-e7-85d"/>
+                                        </constraints>
+                                        <state key="normal" title="标签"/>
+                                        <connections>
+                                            <action selector="btTaggingOnClick:" destination="8Oq-iT-Xrc" eventType="touchUpInside" id="iwB-q6-phZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.97647058819999999" green="0.70588235290000001" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="tts-qb-Qqe" firstAttribute="centerX" secondItem="HGi-aa-ne5" secondAttribute="centerX" constant="-95" id="5WC-vr-FOo"/>
+                                    <constraint firstItem="tts-qb-Qqe" firstAttribute="centerY" secondItem="HGi-aa-ne5" secondAttribute="centerY" id="Oy5-fM-aBA"/>
+                                    <constraint firstItem="aMB-xS-w4J" firstAttribute="top" secondItem="tts-qb-Qqe" secondAttribute="top" id="Tks-4f-jTY"/>
+                                    <constraint firstItem="aMB-xS-w4J" firstAttribute="centerX" secondItem="HGi-aa-ne5" secondAttribute="centerX" constant="95" id="Uba-Fq-kE6"/>
                                     <constraint firstAttribute="height" constant="105" id="u2o-Cg-0gE"/>
                                 </constraints>
                             </view>
@@ -251,16 +279,98 @@
                         <outlet property="bgMiddle" destination="4I5-OB-ehl" id="Xpj-zl-v4w"/>
                         <outlet property="bottomBar" destination="HGi-aa-ne5" id="VRO-jf-xa6"/>
                         <outlet property="btBack" destination="zB6-1d-9An" id="1AY-Z7-m7u"/>
+                        <outlet property="btEditPhoto" destination="tts-qb-Qqe" id="ILW-DM-yHW"/>
                         <outlet property="btSave" destination="EGR-r1-vV7" id="6dh-DW-Ndl"/>
+                        <outlet property="btTagging" destination="aMB-xS-w4J" id="kNa-sU-ftR"/>
                         <outlet property="collectionView" destination="p5M-1v-0Ls" id="1i6-9U-1Ln"/>
                         <outlet property="labelTitle" destination="VUn-HN-uN4" id="XU6-02-lPQ"/>
                         <outlet property="topBar" destination="EOh-Uy-qvx" id="g4P-xY-9gy"/>
                         <outlet property="width_collection" destination="9sz-dc-y4V" id="DNb-4b-0Vt"/>
+                        <segue destination="2Xx-rp-QWC" kind="push" identifier="editor2tagging" id="cmD-h7-ocv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hSY-jQ-2PU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="584" y="-471"/>
+        </scene>
+        <!--Photo Tagging Ctrller-->
+        <scene sceneID="wgJ-Hy-sz1">
+            <objects>
+                <viewController id="2Xx-rp-QWC" customClass="PhotoTaggingCtrller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FJd-sD-k5C"/>
+                        <viewControllerLayoutGuide type="bottom" id="c1W-LJ-YfS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3TK-OW-0WW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p9h-LX-iza">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TW4-ts-Dll">
+                                        <rect key="frame" x="8" y="7" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="QCN-Qt-GAS"/>
+                                            <constraint firstAttribute="width" constant="46" id="eNc-zo-1mR"/>
+                                        </constraints>
+                                        <state key="normal" title="返回"/>
+                                        <connections>
+                                            <action selector="btBackOnClick:" destination="8Oq-iT-Xrc" eventType="touchUpInside" id="5CN-Yj-tuy"/>
+                                            <action selector="btBackOnClick:" destination="2Xx-rp-QWC" eventType="touchUpInside" id="akD-UL-gdQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65f-dt-zAi">
+                                        <rect key="frame" x="546" y="7" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="46" id="Ed6-84-xfV"/>
+                                            <constraint firstAttribute="height" constant="30" id="QFA-Pi-qcx"/>
+                                        </constraints>
+                                        <state key="normal" title="保存"/>
+                                        <connections>
+                                            <action selector="btSaveOnClick:" destination="8Oq-iT-Xrc" eventType="touchUpInside" id="DfF-nA-ud2"/>
+                                            <action selector="btSaveOnClick:" destination="2Xx-rp-QWC" eventType="touchUpInside" id="NV1-4d-o4s"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfy-3E-yUn">
+                                        <rect key="frame" x="286" y="11" width="29" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.97254901959999995" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="qfy-3E-yUn" firstAttribute="centerY" secondItem="p9h-LX-iza" secondAttribute="centerY" id="3EI-fp-ELU"/>
+                                    <constraint firstItem="TW4-ts-Dll" firstAttribute="leading" secondItem="p9h-LX-iza" secondAttribute="leading" constant="8" id="5kq-4v-pPN"/>
+                                    <constraint firstItem="65f-dt-zAi" firstAttribute="top" secondItem="p9h-LX-iza" secondAttribute="top" constant="7" id="F4u-nM-sn1"/>
+                                    <constraint firstItem="TW4-ts-Dll" firstAttribute="top" secondItem="p9h-LX-iza" secondAttribute="top" constant="7" id="JpH-8y-KC1"/>
+                                    <constraint firstAttribute="trailing" secondItem="65f-dt-zAi" secondAttribute="trailing" constant="8" id="QmU-g4-vXT"/>
+                                    <constraint firstAttribute="bottom" secondItem="TW4-ts-Dll" secondAttribute="bottom" constant="7" id="UYN-4E-1Sq"/>
+                                    <constraint firstAttribute="height" constant="44" id="VJ9-Ap-k93"/>
+                                    <constraint firstItem="qfy-3E-yUn" firstAttribute="centerX" secondItem="p9h-LX-iza" secondAttribute="centerX" id="dmo-Il-COK"/>
+                                    <constraint firstAttribute="bottom" secondItem="65f-dt-zAi" secondAttribute="bottom" constant="7" id="eBF-08-0BQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="p9h-LX-iza" firstAttribute="leading" secondItem="3TK-OW-0WW" secondAttribute="leading" id="5yI-eu-3fg"/>
+                            <constraint firstAttribute="trailing" secondItem="p9h-LX-iza" secondAttribute="trailing" id="aUl-Vz-GJm"/>
+                            <constraint firstItem="p9h-LX-iza" firstAttribute="top" secondItem="3TK-OW-0WW" secondAttribute="top" id="gbh-zq-NKl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9d7-Tv-bZ3"/>
+                    <connections>
+                        <outlet property="btSave" destination="65f-dt-zAi" id="8uj-dD-og0"/>
+                        <outlet property="btback" destination="TW4-ts-Dll" id="btq-kw-ce3"/>
+                        <outlet property="labelTitle" destination="qfy-3E-yUn" id="5K0-EF-ka3"/>
+                        <outlet property="topView" destination="p9h-LX-iza" id="e3Q-fg-w4C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BOe-NW-LCP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1286" y="-471"/>
         </scene>
         <!--发布笔记-->
         <scene sceneID="NUf-hE-k6f">
@@ -318,7 +428,7 @@
         <!--Tag Searching Ctrller-->
         <scene sceneID="jUc-Zi-yUU">
             <objects>
-                <viewController id="Emz-7g-81A" customClass="TagSearchingCtrller" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TagSearchingCtrller" id="Emz-7g-81A" customClass="TagSearchingCtrller" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SSN-PF-rxx"/>
                         <viewControllerLayoutGuide type="bottom" id="Wvk-Vn-moU"/>

@@ -51,4 +51,19 @@
     return [[XTColorFetcher class] xt_colorWithKey:@"w_gray"] ;
 }
 
++ (UIColor *)xt_editor_bg
+{
+    return [[XTColorFetcher class] xt_colorWithKey:@"editor_bg"] ;
+}
+
++ (UIColor *)xt_editor_bar
+{
+    return [[XTColorFetcher class] xt_colorWithKey:@"editor_bar"] ;
+}
+
++ (UIColor *)xt_editor_w
+{
+    return [[XTColorFetcher class] xt_colorWithKey:@"editor_w"] ;
+}
+
 @end

@@ -201,7 +201,7 @@
 		D75CC64F1C2A986000E590E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75CC64E1C2A986000E590E6 /* UIKit.framework */; };
 		D75CC6511C2A986600E590E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75CC6501C2A986600E590E6 /* Foundation.framework */; };
 		D75CC6561C2AA17700E590E6 /* ResultParsered.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC6551C2AA17700E590E6 /* ResultParsered.m */; };
-		D75CC6591C2B9A1700E590E6 /* AppDelegateInitial.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC6581C2B9A1700E590E6 /* AppDelegateInitial.m */; };
+		D75CC6591C2B9A1700E590E6 /* AppDelegateInitial.mm in Sources */ = {isa = PBXBuildFile; fileRef = D75CC6581C2B9A1700E590E6 /* AppDelegateInitial.mm */; };
 		D75CC65B1C2B9DA100E590E6 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D75CC65A1C2B9DA100E590E6 /* libsqlite3.0.tbd */; };
 		D75CC6C01C2BEB0400E590E6 /* MyNavCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC6B71C2BEB0400E590E6 /* MyNavCtrller.m */; };
 		D75CC6C11C2BEB0400E590E6 /* MyTabbarCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC6B91C2BEB0400E590E6 /* MyTabbarCtrller.m */; };
@@ -270,12 +270,29 @@
 		D76E84251D759CD30014FDEA /* PostTagAddCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76E84231D759CD30014FDEA /* PostTagAddCollectionCell.xib */; };
 		D76E842A1D767A590014FDEA /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E84291D767A590014FDEA /* User.m */; };
 		D76E842E1D767DE20014FDEA /* Pic.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E842D1D767DE20014FDEA /* Pic.m */; };
-		D76E843B1D76C3010014FDEA /* PhotoEditorCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E843A1D76C3010014FDEA /* PhotoEditorCtrller.m */; };
+		D76E843B1D76C3010014FDEA /* PhotoEditorCtrller.mm in Sources */ = {isa = PBXBuildFile; fileRef = D76E843A1D76C3010014FDEA /* PhotoEditorCtrller.mm */; };
 		D76E843F1D76D6A90014FDEA /* EditorPhotosCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E843D1D76D6A90014FDEA /* EditorPhotosCollectionCell.m */; };
 		D76E84401D76D6A90014FDEA /* EditorPhotosCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76E843E1D76D6A90014FDEA /* EditorPhotosCollectionCell.xib */; };
-		D76E84481D76DC2D0014FDEA /* PhotoTaggingStageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E84471D76DC2D0014FDEA /* PhotoTaggingStageView.m */; };
-		D76E844B1D76DC740014FDEA /* PhotoTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E844A1D76DC740014FDEA /* PhotoTagView.m */; };
-		D76E844E1D76E0E40014FDEA /* PhotoTagItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E844D1D76E0E40014FDEA /* PhotoTagItem.m */; };
+		D76E84511D77CCAC0014FDEA /* PhotoTaggingCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E84501D77CCAC0014FDEA /* PhotoTaggingCtrller.m */; };
+		D76E846C1D780FAC0014FDEA /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E84541D780FAC0014FDEA /* MASCompositeConstraint.m */; };
+		D76E846D1D780FAC0014FDEA /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E84571D780FAC0014FDEA /* MASConstraint.m */; };
+		D76E846E1D780FAC0014FDEA /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E84591D780FAC0014FDEA /* MASConstraintMaker.m */; };
+		D76E846F1D780FAC0014FDEA /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E845B1D780FAC0014FDEA /* MASLayoutConstraint.m */; };
+		D76E84701D780FAC0014FDEA /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E845F1D780FAC0014FDEA /* MASViewAttribute.m */; };
+		D76E84711D780FAC0014FDEA /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E84611D780FAC0014FDEA /* MASViewConstraint.m */; };
+		D76E84721D780FAC0014FDEA /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E84631D780FAC0014FDEA /* NSArray+MASAdditions.m */; };
+		D76E84731D780FAC0014FDEA /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E84661D780FAC0014FDEA /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		D76E84741D780FAC0014FDEA /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E84681D780FAC0014FDEA /* View+MASAdditions.m */; };
+		D76E84751D780FAC0014FDEA /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E846B1D780FAC0014FDEA /* ViewController+MASAdditions.m */; };
+		D76E84861D7817A50014FDEA /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E847A1D7817A50014FDEA /* NSTimer+Addition.m */; };
+		D76E84871D7817A50014FDEA /* pch.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E847C1D7817A50014FDEA /* pch.m */; };
+		D76E84881D7817A50014FDEA /* YXLTagEditorImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E847E1D7817A50014FDEA /* YXLTagEditorImageView.m */; };
+		D76E848A1D7817A50014FDEA /* YXLTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E84821D7817A50014FDEA /* YXLTagView.m */; };
+		D76E848B1D7817A50014FDEA /* YXLWaterFlowImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E84841D7817A50014FDEA /* YXLWaterFlowImageView.m */; };
+		D76E84911D783B880014FDEA /* pg_edit_sdk_cdb_piratesdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76E848D1D783B880014FDEA /* pg_edit_sdk_cdb_piratesdk.framework */; };
+		D76E84921D783B880014FDEA /* pg_edit_sdk_common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76E848E1D783B880014FDEA /* pg_edit_sdk_common.framework */; };
+		D76E84931D783B880014FDEA /* pg_edit_sdk_resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D76E848F1D783B880014FDEA /* pg_edit_sdk_resource.bundle */; };
+		D76E84941D783B880014FDEA /* PhotoEditFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76E84901D783B880014FDEA /* PhotoEditFramework.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -686,7 +703,7 @@
 		D75CC6541C2AA17700E590E6 /* ResultParsered.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultParsered.h; sourceTree = "<group>"; };
 		D75CC6551C2AA17700E590E6 /* ResultParsered.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultParsered.m; sourceTree = "<group>"; };
 		D75CC6571C2B9A1700E590E6 /* AppDelegateInitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegateInitial.h; sourceTree = "<group>"; };
-		D75CC6581C2B9A1700E590E6 /* AppDelegateInitial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegateInitial.m; sourceTree = "<group>"; };
+		D75CC6581C2B9A1700E590E6 /* AppDelegateInitial.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegateInitial.mm; sourceTree = "<group>"; };
 		D75CC65A1C2B9DA100E590E6 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		D75CC6B61C2BEB0400E590E6 /* MyNavCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavCtrller.h; sourceTree = "<group>"; };
 		D75CC6B71C2BEB0400E590E6 /* MyNavCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavCtrller.m; sourceTree = "<group>"; };
@@ -819,16 +836,51 @@
 		D76E842C1D767DE20014FDEA /* Pic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pic.h; sourceTree = "<group>"; };
 		D76E842D1D767DE20014FDEA /* Pic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pic.m; sourceTree = "<group>"; };
 		D76E84391D76C3010014FDEA /* PhotoEditorCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoEditorCtrller.h; path = "GroupBuying/VC+V/PhotoEditor/PhotoEditorCtrller.h"; sourceTree = SOURCE_ROOT; };
-		D76E843A1D76C3010014FDEA /* PhotoEditorCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoEditorCtrller.m; path = "GroupBuying/VC+V/PhotoEditor/PhotoEditorCtrller.m"; sourceTree = SOURCE_ROOT; };
+		D76E843A1D76C3010014FDEA /* PhotoEditorCtrller.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = PhotoEditorCtrller.mm; path = "GroupBuying/VC+V/PhotoEditor/PhotoEditorCtrller.mm"; sourceTree = SOURCE_ROOT; };
 		D76E843C1D76D6A90014FDEA /* EditorPhotosCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditorPhotosCollectionCell.h; path = "GroupBuying/VC+V/PhotoEditor/EditorPhotosCollectionCell.h"; sourceTree = SOURCE_ROOT; };
 		D76E843D1D76D6A90014FDEA /* EditorPhotosCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditorPhotosCollectionCell.m; path = "GroupBuying/VC+V/PhotoEditor/EditorPhotosCollectionCell.m"; sourceTree = SOURCE_ROOT; };
 		D76E843E1D76D6A90014FDEA /* EditorPhotosCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EditorPhotosCollectionCell.xib; path = "GroupBuying/VC+V/PhotoEditor/EditorPhotosCollectionCell.xib"; sourceTree = SOURCE_ROOT; };
-		D76E84461D76DC2D0014FDEA /* PhotoTaggingStageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoTaggingStageView.h; path = "GroupBuying/VC+V/PhotoEditor/PhotoTagging/PhotoTaggingStageView.h"; sourceTree = SOURCE_ROOT; };
-		D76E84471D76DC2D0014FDEA /* PhotoTaggingStageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoTaggingStageView.m; path = "GroupBuying/VC+V/PhotoEditor/PhotoTagging/PhotoTaggingStageView.m"; sourceTree = SOURCE_ROOT; };
-		D76E84491D76DC740014FDEA /* PhotoTagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoTagView.h; path = "GroupBuying/VC+V/PhotoEditor/PhotoTagging/PhotoTagView.h"; sourceTree = SOURCE_ROOT; };
-		D76E844A1D76DC740014FDEA /* PhotoTagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoTagView.m; path = "GroupBuying/VC+V/PhotoEditor/PhotoTagging/PhotoTagView.m"; sourceTree = SOURCE_ROOT; };
-		D76E844C1D76E0E40014FDEA /* PhotoTagItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoTagItem.h; path = "GroupBuying/VC+V/PhotoEditor/PhotoTagging/PhotoTagItem.h"; sourceTree = SOURCE_ROOT; };
-		D76E844D1D76E0E40014FDEA /* PhotoTagItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoTagItem.m; path = "GroupBuying/VC+V/PhotoEditor/PhotoTagging/PhotoTagItem.m"; sourceTree = SOURCE_ROOT; };
+		D76E844F1D77CCAC0014FDEA /* PhotoTaggingCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoTaggingCtrller.h; path = "GroupBuying/VC+V/PhotoEditor/PhotoTaggingCtrller.h"; sourceTree = SOURCE_ROOT; };
+		D76E84501D77CCAC0014FDEA /* PhotoTaggingCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoTaggingCtrller.m; path = "GroupBuying/VC+V/PhotoEditor/PhotoTaggingCtrller.m"; sourceTree = SOURCE_ROOT; };
+		D76E84531D780FAC0014FDEA /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
+		D76E84541D780FAC0014FDEA /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
+		D76E84551D780FAC0014FDEA /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
+		D76E84561D780FAC0014FDEA /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraint.h; sourceTree = "<group>"; };
+		D76E84571D780FAC0014FDEA /* MASConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraint.m; sourceTree = "<group>"; };
+		D76E84581D780FAC0014FDEA /* MASConstraintMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraintMaker.h; sourceTree = "<group>"; };
+		D76E84591D780FAC0014FDEA /* MASConstraintMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraintMaker.m; sourceTree = "<group>"; };
+		D76E845A1D780FAC0014FDEA /* MASLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLayoutConstraint.h; sourceTree = "<group>"; };
+		D76E845B1D780FAC0014FDEA /* MASLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLayoutConstraint.m; sourceTree = "<group>"; };
+		D76E845C1D780FAC0014FDEA /* Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masonry.h; sourceTree = "<group>"; };
+		D76E845D1D780FAC0014FDEA /* MASUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASUtilities.h; sourceTree = "<group>"; };
+		D76E845E1D780FAC0014FDEA /* MASViewAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewAttribute.h; sourceTree = "<group>"; };
+		D76E845F1D780FAC0014FDEA /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
+		D76E84601D780FAC0014FDEA /* MASViewConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewConstraint.h; sourceTree = "<group>"; };
+		D76E84611D780FAC0014FDEA /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
+		D76E84621D780FAC0014FDEA /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		D76E84631D780FAC0014FDEA /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		D76E84641D780FAC0014FDEA /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		D76E84651D780FAC0014FDEA /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		D76E84661D780FAC0014FDEA /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		D76E84671D780FAC0014FDEA /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
+		D76E84681D780FAC0014FDEA /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
+		D76E84691D780FAC0014FDEA /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		D76E846A1D780FAC0014FDEA /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		D76E846B1D780FAC0014FDEA /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		D76E84791D7817A50014FDEA /* NSTimer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Addition.h"; sourceTree = "<group>"; };
+		D76E847A1D7817A50014FDEA /* NSTimer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Addition.m"; sourceTree = "<group>"; };
+		D76E847B1D7817A50014FDEA /* pch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pch.h; sourceTree = "<group>"; };
+		D76E847C1D7817A50014FDEA /* pch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pch.m; sourceTree = "<group>"; };
+		D76E847D1D7817A50014FDEA /* YXLTagEditorImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLTagEditorImageView.h; sourceTree = "<group>"; };
+		D76E847E1D7817A50014FDEA /* YXLTagEditorImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLTagEditorImageView.m; sourceTree = "<group>"; };
+		D76E84811D7817A50014FDEA /* YXLTagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLTagView.h; sourceTree = "<group>"; };
+		D76E84821D7817A50014FDEA /* YXLTagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLTagView.m; sourceTree = "<group>"; };
+		D76E84831D7817A50014FDEA /* YXLWaterFlowImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLWaterFlowImageView.h; sourceTree = "<group>"; };
+		D76E84841D7817A50014FDEA /* YXLWaterFlowImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLWaterFlowImageView.m; sourceTree = "<group>"; };
+		D76E848D1D783B880014FDEA /* pg_edit_sdk_cdb_piratesdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = pg_edit_sdk_cdb_piratesdk.framework; sourceTree = "<group>"; };
+		D76E848E1D783B880014FDEA /* pg_edit_sdk_common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = pg_edit_sdk_common.framework; sourceTree = "<group>"; };
+		D76E848F1D783B880014FDEA /* pg_edit_sdk_resource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = pg_edit_sdk_resource.bundle; sourceTree = "<group>"; };
+		D76E84901D783B880014FDEA /* PhotoEditFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PhotoEditFramework.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -838,6 +890,7 @@
 			files = (
 				D75CC65B1C2B9DA100E590E6 /* libsqlite3.0.tbd in Frameworks */,
 				D75CC7161C2BF99B00E590E6 /* libWeiboSDK.a in Frameworks */,
+				D76E84921D783B880014FDEA /* pg_edit_sdk_common.framework in Frameworks */,
 				D75CC7101C2BF99B00E590E6 /* libSocialQQ.a in Frameworks */,
 				D75CC6511C2A986600E590E6 /* Foundation.framework in Frameworks */,
 				D75CC64F1C2A986000E590E6 /* UIKit.framework in Frameworks */,
@@ -850,8 +903,10 @@
 				D75CC71C1C2BF99B00E590E6 /* libWeChatSDK.a in Frameworks */,
 				D75CC7141C2BF99B00E590E6 /* libSocialSina.a in Frameworks */,
 				D75CC6411C2A97F600E590E6 /* MapKit.framework in Frameworks */,
+				D76E84911D783B880014FDEA /* pg_edit_sdk_cdb_piratesdk.framework in Frameworks */,
 				D75CC63F1C2A97EC00E590E6 /* MediaPlayer.framework in Frameworks */,
 				D75CC7071C2BF99B00E590E6 /* libUMSocial_Sdk_4.2.3.a in Frameworks */,
+				D76E84941D783B880014FDEA /* PhotoEditFramework.framework in Frameworks */,
 				D75CC63D1C2A97E000E590E6 /* QuartzCore.framework in Frameworks */,
 				D75CC63B1C2A97D600E590E6 /* Security.framework in Frameworks */,
 				D75CC6391C2A97CD00E590E6 /* libiconv.2.4.0.tbd in Frameworks */,
@@ -1081,7 +1136,7 @@
 				D75CC3C71C2A926100E590E6 /* AppDelegate.h */,
 				D75CC3C81C2A926100E590E6 /* AppDelegate.m */,
 				D75CC6571C2B9A1700E590E6 /* AppDelegateInitial.h */,
-				D75CC6581C2B9A1700E590E6 /* AppDelegateInitial.m */,
+				D75CC6581C2B9A1700E590E6 /* AppDelegateInitial.mm */,
 				60074DF81D60DEAB0040C3C0 /* Storyboard */,
 				D75CC3CA1C2A926100E590E6 /* ViewController.h */,
 				D75CC3CB1C2A926100E590E6 /* ViewController.m */,
@@ -1161,6 +1216,8 @@
 		D75CC3F91C2A92B200E590E6 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				D76E848C1D783B880014FDEA /* Camera360 */,
+				D76E84521D780FAC0014FDEA /* Masonry */,
 				608405871D74AA6800B40D68 /* SVProgressHUD */,
 				D745898D1D6AE3D700835234 /* KxMenu */,
 				D75CC72D1C2D13C000E590E6 /* YYModel */,
@@ -2084,27 +2141,85 @@
 		D76E84381D76C1590014FDEA /* PhotoEditor */ = {
 			isa = PBXGroup;
 			children = (
-				D76E84451D76DBEB0014FDEA /* PhotoTagging */,
 				D76E84391D76C3010014FDEA /* PhotoEditorCtrller.h */,
-				D76E843A1D76C3010014FDEA /* PhotoEditorCtrller.m */,
+				D76E843A1D76C3010014FDEA /* PhotoEditorCtrller.mm */,
 				D76E843C1D76D6A90014FDEA /* EditorPhotosCollectionCell.h */,
 				D76E843D1D76D6A90014FDEA /* EditorPhotosCollectionCell.m */,
 				D76E843E1D76D6A90014FDEA /* EditorPhotosCollectionCell.xib */,
+				D76E84951D7845ED0014FDEA /* Tagging */,
 			);
 			name = PhotoEditor;
 			sourceTree = "<group>";
 		};
-		D76E84451D76DBEB0014FDEA /* PhotoTagging */ = {
+		D76E84521D780FAC0014FDEA /* Masonry */ = {
 			isa = PBXGroup;
 			children = (
-				D76E84461D76DC2D0014FDEA /* PhotoTaggingStageView.h */,
-				D76E84471D76DC2D0014FDEA /* PhotoTaggingStageView.m */,
-				D76E84491D76DC740014FDEA /* PhotoTagView.h */,
-				D76E844A1D76DC740014FDEA /* PhotoTagView.m */,
-				D76E844C1D76E0E40014FDEA /* PhotoTagItem.h */,
-				D76E844D1D76E0E40014FDEA /* PhotoTagItem.m */,
+				D76E84531D780FAC0014FDEA /* MASCompositeConstraint.h */,
+				D76E84541D780FAC0014FDEA /* MASCompositeConstraint.m */,
+				D76E84551D780FAC0014FDEA /* MASConstraint+Private.h */,
+				D76E84561D780FAC0014FDEA /* MASConstraint.h */,
+				D76E84571D780FAC0014FDEA /* MASConstraint.m */,
+				D76E84581D780FAC0014FDEA /* MASConstraintMaker.h */,
+				D76E84591D780FAC0014FDEA /* MASConstraintMaker.m */,
+				D76E845A1D780FAC0014FDEA /* MASLayoutConstraint.h */,
+				D76E845B1D780FAC0014FDEA /* MASLayoutConstraint.m */,
+				D76E845C1D780FAC0014FDEA /* Masonry.h */,
+				D76E845D1D780FAC0014FDEA /* MASUtilities.h */,
+				D76E845E1D780FAC0014FDEA /* MASViewAttribute.h */,
+				D76E845F1D780FAC0014FDEA /* MASViewAttribute.m */,
+				D76E84601D780FAC0014FDEA /* MASViewConstraint.h */,
+				D76E84611D780FAC0014FDEA /* MASViewConstraint.m */,
+				D76E84621D780FAC0014FDEA /* NSArray+MASAdditions.h */,
+				D76E84631D780FAC0014FDEA /* NSArray+MASAdditions.m */,
+				D76E84641D780FAC0014FDEA /* NSArray+MASShorthandAdditions.h */,
+				D76E84651D780FAC0014FDEA /* NSLayoutConstraint+MASDebugAdditions.h */,
+				D76E84661D780FAC0014FDEA /* NSLayoutConstraint+MASDebugAdditions.m */,
+				D76E84671D780FAC0014FDEA /* View+MASAdditions.h */,
+				D76E84681D780FAC0014FDEA /* View+MASAdditions.m */,
+				D76E84691D780FAC0014FDEA /* View+MASShorthandAdditions.h */,
+				D76E846A1D780FAC0014FDEA /* ViewController+MASAdditions.h */,
+				D76E846B1D780FAC0014FDEA /* ViewController+MASAdditions.m */,
 			);
-			name = PhotoTagging;
+			path = Masonry;
+			sourceTree = "<group>";
+		};
+		D76E84761D7817A50014FDEA /* YXLImageLabel */ = {
+			isa = PBXGroup;
+			children = (
+				D76E84791D7817A50014FDEA /* NSTimer+Addition.h */,
+				D76E847A1D7817A50014FDEA /* NSTimer+Addition.m */,
+				D76E847B1D7817A50014FDEA /* pch.h */,
+				D76E847C1D7817A50014FDEA /* pch.m */,
+				D76E847D1D7817A50014FDEA /* YXLTagEditorImageView.h */,
+				D76E847E1D7817A50014FDEA /* YXLTagEditorImageView.m */,
+				D76E84811D7817A50014FDEA /* YXLTagView.h */,
+				D76E84821D7817A50014FDEA /* YXLTagView.m */,
+				D76E84831D7817A50014FDEA /* YXLWaterFlowImageView.h */,
+				D76E84841D7817A50014FDEA /* YXLWaterFlowImageView.m */,
+			);
+			name = YXLImageLabel;
+			path = "GroupBuying/VC+V/PhotoEditor/YXLImageLabel";
+			sourceTree = SOURCE_ROOT;
+		};
+		D76E848C1D783B880014FDEA /* Camera360 */ = {
+			isa = PBXGroup;
+			children = (
+				D76E848D1D783B880014FDEA /* pg_edit_sdk_cdb_piratesdk.framework */,
+				D76E848E1D783B880014FDEA /* pg_edit_sdk_common.framework */,
+				D76E848F1D783B880014FDEA /* pg_edit_sdk_resource.bundle */,
+				D76E84901D783B880014FDEA /* PhotoEditFramework.framework */,
+			);
+			path = Camera360;
+			sourceTree = "<group>";
+		};
+		D76E84951D7845ED0014FDEA /* Tagging */ = {
+			isa = PBXGroup;
+			children = (
+				D76E844F1D77CCAC0014FDEA /* PhotoTaggingCtrller.h */,
+				D76E84501D77CCAC0014FDEA /* PhotoTaggingCtrller.m */,
+				D76E84761D7817A50014FDEA /* YXLImageLabel */,
+			);
+			name = Tagging;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2174,7 +2289,7 @@
 				TargetAttributes = {
 					D75CC3C01C2A926100E590E6 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 5D74XHX7AD;
+						DevelopmentTeam = S9H98D8VCR;
 					};
 					D75CC3D91C2A926200E590E6 = {
 						CreatedOnToolsVersion = 7.2;
@@ -2227,6 +2342,7 @@
 				D76E84001D7526250014FDEA /* PostPhotoCollectionCell.xib in Resources */,
 				608405811D67F45700B40D68 /* HPProductCollectionCell.xib in Resources */,
 				D75CC7081C2BF99B00E590E6 /* UMSCommentDetailController.xib in Resources */,
+				D76E84931D783B880014FDEA /* pg_edit_sdk_resource.bundle in Resources */,
 				D75CC70B1C2BF99B00E590E6 /* UMShareEditViewController.xib in Resources */,
 				608405831D67F62500B40D68 /* HPBigPhotoCollectionCell.xib in Resources */,
 				D76E83C61D7028680014FDEA /* UserInfoView.xib in Resources */,
@@ -2276,6 +2392,7 @@
 			files = (
 				D75CC4531C2A95DE00E590E6 /* XTRequest.m in Sources */,
 				60074E111D634AA50040C3C0 /* NSObject+Reflection.m in Sources */,
+				D76E84721D780FAC0014FDEA /* NSArray+MASAdditions.m in Sources */,
 				D75CC4411C2A95DE00E590E6 /* UIImage+AddFunction.m in Sources */,
 				D75CC5BA1C2A965000E590E6 /* ASIS3BucketRequest.m in Sources */,
 				D75CC4461C2A95DE00E590E6 /* MyTextField.m in Sources */,
@@ -2286,7 +2403,6 @@
 				D75CC5E91C2A965000E590E6 /* QNSessionManager.m in Sources */,
 				D75CC61F1C2A965000E590E6 /* YXSpritesLoadingView.m in Sources */,
 				D76E83BE1D70175D0014FDEA /* ParallaxHeaderView.m in Sources */,
-				D76E84481D76DC2D0014FDEA /* PhotoTaggingStageView.m in Sources */,
 				D75CC5FF1C2A965000E590E6 /* UIImage+WebP.m in Sources */,
 				D75CC5AC1C2A965000E590E6 /* ASIFormDataRequest.m in Sources */,
 				D75CC5B01C2A965000E590E6 /* ASICloudFilesCDNRequest.m in Sources */,
@@ -2315,6 +2431,7 @@
 				D76E83961D6DA3290014FDEA /* CameraGoupCtrller.m in Sources */,
 				D76E83871D6D46300014FDEA /* CameraNavCtrller.m in Sources */,
 				D75CC4481C2A95DE00E590E6 /* PinkButton.m in Sources */,
+				D76E846F1D780FAC0014FDEA /* MASLayoutConstraint.m in Sources */,
 				D75CC5A61C2A965000E590E6 /* AFURLResponseSerialization.m in Sources */,
 				D75CC5CE1C2A965000E590E6 /* MJRefreshBackFooter.m in Sources */,
 				D75CC5F31C2A965000E590E6 /* MKAnnotationView+WebCache.m in Sources */,
@@ -2328,14 +2445,16 @@
 				D75CC5C91C2A965000E590E6 /* KeyBoardTopBar.m in Sources */,
 				D75CC5D21C2A965000E590E6 /* MJRefreshAutoGifFooter.m in Sources */,
 				D75CC4431C2A95DE00E590E6 /* UIView+Sizes.m in Sources */,
+				D76E84741D780FAC0014FDEA /* View+MASAdditions.m in Sources */,
 				D75CC4441C2A95DE00E590E6 /* MySearchBar.m in Sources */,
-				D76E843B1D76C3010014FDEA /* PhotoEditorCtrller.m in Sources */,
+				D76E843B1D76C3010014FDEA /* PhotoEditorCtrller.mm in Sources */,
 				D75CC5E71C2A965000E590E6 /* QNHttpManager.m in Sources */,
 				D75CC5CF1C2A965000E590E6 /* MJRefreshComponent.m in Sources */,
 				D75CC44C1C2A95DE00E590E6 /* CommonFunc.m in Sources */,
 				D75CC5FC1C2A965000E590E6 /* UIButton+WebCache.m in Sources */,
 				D75CC4551C2A95DE00E590E6 /* XTVerification.m in Sources */,
 				D75CC59F1C2A965000E590E6 /* AFHTTPRequestOperation.m in Sources */,
+				D76E84861D7817A50014FDEA /* NSTimer+Addition.m in Sources */,
 				D75CC5DA1C2A965000E590E6 /* MJRefreshStateHeader.m in Sources */,
 				60074E1C1D634AE80040C3C0 /* UIColor+HexString.m in Sources */,
 				D76E84151D7567A70014FDEA /* XTZoomPicture.m in Sources */,
@@ -2353,10 +2472,13 @@
 				D75CC5D01C2A965000E590E6 /* MJRefreshFooter.m in Sources */,
 				D75CC5B61C2A965000E590E6 /* ASICloudFilesRequest.m in Sources */,
 				D75CC5AB1C2A965000E590E6 /* ASIDownloadCache.m in Sources */,
+				D76E846D1D780FAC0014FDEA /* MASConstraint.m in Sources */,
 				D76E83B61D6FE6000014FDEA /* UserInfoCtrller.m in Sources */,
 				D75CC5E11C2A965000E590E6 /* GTM_Base64.m in Sources */,
 				D75CC5C51C2A965000E590E6 /* FMDatabasePool.m in Sources */,
+				D76E84751D780FAC0014FDEA /* ViewController+MASAdditions.m in Sources */,
 				608405921D74AA6800B40D68 /* SVIndefiniteAnimatedView.m in Sources */,
+				D76E84701D780FAC0014FDEA /* MASViewAttribute.m in Sources */,
 				D75CC5FE1C2A965000E590E6 /* UIImage+MultiFormat.m in Sources */,
 				D75CC4491C2A95DE00E590E6 /* PlaceHolderTextView.m in Sources */,
 				D75CC5D51C2A965000E590E6 /* MJRefreshBackGifFooter.m in Sources */,
@@ -2382,12 +2504,15 @@
 				D75CC5B81C2A965000E590E6 /* ASIS3Bucket.m in Sources */,
 				D76E84091D755FDD0014FDEA /* PreviewCtrller.m in Sources */,
 				D75CC44F1C2A95DE00E590E6 /* ShareUtils.m in Sources */,
+				D76E846C1D780FAC0014FDEA /* MASCompositeConstraint.m in Sources */,
 				D75CC61D1C2A965000E590E6 /* FBShimmeringLayer.m in Sources */,
 				D75CC5B11C2A965000E590E6 /* ASICloudFilesContainer.m in Sources */,
 				D75CC5B41C2A965000E590E6 /* ASICloudFilesObject.m in Sources */,
+				D76E848B1D7817A50014FDEA /* YXLWaterFlowImageView.m in Sources */,
 				60074E1E1D634AE80040C3C0 /* XTColorFetcher.m in Sources */,
 				D76E83FA1D7524BA0014FDEA /* PostPhotosCell.m in Sources */,
 				D75CC5C71C2A965000E590E6 /* FMResultSet.m in Sources */,
+				D76E84871D7817A50014FDEA /* pch.m in Sources */,
 				D75CC5BE1C2A965000E590E6 /* UIBarButtonItem+Badge.m in Sources */,
 				D75CC5A01C2A965000E590E6 /* AFHTTPRequestOperationManager.m in Sources */,
 				D75CC4511C2A95DE00E590E6 /* XTFileManager.m in Sources */,
@@ -2413,9 +2538,10 @@
 				D75CC5FB1C2A965000E590E6 /* SDWebImagePrefetcher.m in Sources */,
 				D75CC5EB1C2A965000E590E6 /* QNFileRecorder.m in Sources */,
 				D76E83C21D70280F0014FDEA /* UserInfoView.m in Sources */,
+				D76E84511D77CCAC0014FDEA /* PhotoTaggingCtrller.m in Sources */,
 				D75CC5D31C2A965000E590E6 /* MJRefreshAutoNormalFooter.m in Sources */,
 				D75CC5DE1C2A965000E590E6 /* UIScrollView+MJRefresh.m in Sources */,
-				D75CC6591C2B9A1700E590E6 /* AppDelegateInitial.m in Sources */,
+				D75CC6591C2B9A1700E590E6 /* AppDelegateInitial.mm in Sources */,
 				D75CC5E61C2A965000E590E6 /* QNDns.m in Sources */,
 				D75CC5EE1C2A965000E590E6 /* QNResumeUpload.m in Sources */,
 				D75CC5A71C2A965000E590E6 /* AFURLSessionManager.m in Sources */,
@@ -2423,6 +2549,7 @@
 				D75CC5BC1C2A965000E590E6 /* ASIS3Request.m in Sources */,
 				D75CC5F71C2A965000E590E6 /* SDWebImageDecoder.m in Sources */,
 				D75CC5D81C2A965000E590E6 /* MJRefreshGifHeader.m in Sources */,
+				D76E84881D7817A50014FDEA /* YXLTagEditorImageView.m in Sources */,
 				D75CC5EC1C2A965000E590E6 /* QNConfiguration.m in Sources */,
 				D75CC5A31C2A965000E590E6 /* AFSecurityPolicy.m in Sources */,
 				D75CC5EA1C2A965000E590E6 /* QNUserAgent.m in Sources */,
@@ -2445,7 +2572,9 @@
 				D76E842E1D767DE20014FDEA /* Pic.m in Sources */,
 				D75CC4541C2A95DE00E590E6 /* XTTickConvert.m in Sources */,
 				D75CC5EF1C2A965000E590E6 /* QNUploadManager.m in Sources */,
+				D76E84731D780FAC0014FDEA /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				D75CC5A21C2A965000E590E6 /* AFNetworkReachabilityManager.m in Sources */,
+				D76E848A1D7817A50014FDEA /* YXLTagView.m in Sources */,
 				D75CC5D11C2A965000E590E6 /* MJRefreshHeader.m in Sources */,
 				D75CC6031C2A965000E590E6 /* SIAlertView.m in Sources */,
 				D75CC5BD1C2A965000E590E6 /* ASIS3ServiceRequest.m in Sources */,
@@ -2455,8 +2584,9 @@
 				D75CC5DF1C2A965000E590E6 /* UIView+MJExtension.m in Sources */,
 				D75CC5E51C2A965000E590E6 /* QNUrlSafeBase64.m in Sources */,
 				D75CC5F01C2A965000E590E6 /* QNUploadOption.m in Sources */,
+				D76E84711D780FAC0014FDEA /* MASViewConstraint.m in Sources */,
 				D75CC5CC1C2A965000E590E6 /* MBProgressHUD.m in Sources */,
-				D76E844B1D76DC740014FDEA /* PhotoTagView.m in Sources */,
+				D76E846E1D780FAC0014FDEA /* MASConstraintMaker.m in Sources */,
 				608405861D69505E00B40D68 /* HomePageController+collectionLayoutSwitch.m in Sources */,
 				6084059A1D74AE6800B40D68 /* PostCtrller.m in Sources */,
 				D76E84041D7528F70014FDEA /* PostAddPhotoCell.m in Sources */,
@@ -2464,7 +2594,6 @@
 				60074E121D634AA50040C3C0 /* XTJson.m in Sources */,
 				D76E838F1D6D49790014FDEA /* AlbumOperation.m in Sources */,
 				6084057C1D64DDDF00B40D68 /* HPProductCollectionCell.m in Sources */,
-				D76E844E1D76E0E40014FDEA /* PhotoTagItem.m in Sources */,
 				D74589871D6A9DCB00835234 /* HPBigPhotoHeaderView.m in Sources */,
 				D75CC5B71C2A965000E590E6 /* Reachability.m in Sources */,
 				D75CC44A1C2A95DE00E590E6 /* XTNetReloader.m in Sources */,
@@ -2617,6 +2746,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2624,6 +2754,7 @@
 					"$(PROJECT_DIR)/GroupBuying/Help/QQsdk",
 					"$(PROJECT_DIR)/GroupBuying/Help/UMSocial_Sdk_4.2.3/TencentOpenAPI",
 					"$(PROJECT_DIR)/GroupBuying/Help/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
+					"$(PROJECT_DIR)/GroupBuying/Help/Camera360",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/GroupBuying/PrefixHeader.pch";
@@ -2654,6 +2785,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2661,6 +2793,7 @@
 					"$(PROJECT_DIR)/GroupBuying/Help/QQsdk",
 					"$(PROJECT_DIR)/GroupBuying/Help/UMSocial_Sdk_4.2.3/TencentOpenAPI",
 					"$(PROJECT_DIR)/GroupBuying/Help/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
+					"$(PROJECT_DIR)/GroupBuying/Help/Camera360",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/GroupBuying/PrefixHeader.pch";

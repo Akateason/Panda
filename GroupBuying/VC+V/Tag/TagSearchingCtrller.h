@@ -10,4 +10,6 @@
 
 @interface TagSearchingCtrller : RootCtrl
 
+@property (nonatomic ,copy) void (^block)(NSString *text) ;
+
 @end
