@@ -7,7 +7,7 @@
 //
 
 #import "FindController.h"
-#import "PhotoEditorCtrller.h"
+#import "CuttingViewController.h"
 
 @interface FindController ()
 
@@ -23,13 +23,24 @@
         [tmpList addObject:[UIImage imageNamed:[NSString stringWithFormat:@"%@",@(i)]]] ;
     }
     
-    PhotoEditorCtrller *photoEditorCtrl = (PhotoEditorCtrller *)[[self class] getCtrllerFromStory:@"Camera" controllerIdentifier:@"PhotoEditorCtrller"] ;
-    photoEditorCtrl.listPhotos = tmpList ;
-    [photoEditorCtrl setHidesBottomBarWhenPushed:YES] ;
-    [self.navigationController pushViewController:photoEditorCtrl animated:YES] ;
+    CuttingViewController *cuttingCtrl = (CuttingViewController *)[[self class] getCtrllerFromStory:@"Camera" controllerIdentifier:@"CuttingViewController"] ;
+    cuttingCtrl.listPhotos = tmpList ;
+    [cuttingCtrl setHidesBottomBarWhenPushed:YES] ;
+    [self.navigationController pushViewController:cuttingCtrl animated:YES] ;
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad] ;
+}
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated] ;
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:NO] ;
+    [self.navigationController setNavigationBarHidden:NO] ;
+}
 
 
 @end

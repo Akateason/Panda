@@ -293,6 +293,9 @@
 		D76E84921D783B880014FDEA /* pg_edit_sdk_common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76E848E1D783B880014FDEA /* pg_edit_sdk_common.framework */; };
 		D76E84931D783B880014FDEA /* pg_edit_sdk_resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D76E848F1D783B880014FDEA /* pg_edit_sdk_resource.bundle */; };
 		D76E84941D783B880014FDEA /* PhotoEditFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76E84901D783B880014FDEA /* PhotoEditFramework.framework */; };
+		D76E84A51D79883A0014FDEA /* KICropImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E84A21D79883A0014FDEA /* KICropImageView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D76E84A61D79883B0014FDEA /* UIImage+KIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E84A41D79883A0014FDEA /* UIImage+KIAdditions.m */; };
+		D76E84A91D7997D80014FDEA /* CuttingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E84A81D7997D80014FDEA /* CuttingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -881,6 +884,12 @@
 		D76E848E1D783B880014FDEA /* pg_edit_sdk_common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = pg_edit_sdk_common.framework; sourceTree = "<group>"; };
 		D76E848F1D783B880014FDEA /* pg_edit_sdk_resource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = pg_edit_sdk_resource.bundle; sourceTree = "<group>"; };
 		D76E84901D783B880014FDEA /* PhotoEditFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PhotoEditFramework.framework; sourceTree = "<group>"; };
+		D76E84A11D79883A0014FDEA /* KICropImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KICropImageView.h; sourceTree = "<group>"; };
+		D76E84A21D79883A0014FDEA /* KICropImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KICropImageView.m; sourceTree = "<group>"; };
+		D76E84A31D79883A0014FDEA /* UIImage+KIAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+KIAdditions.h"; sourceTree = "<group>"; };
+		D76E84A41D79883A0014FDEA /* UIImage+KIAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+KIAdditions.m"; sourceTree = "<group>"; };
+		D76E84A71D7997D80014FDEA /* CuttingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CuttingViewController.h; path = "GroupBuying/VC+V/PhotoEditor/Cut/CuttingViewController.h"; sourceTree = SOURCE_ROOT; };
+		D76E84A81D7997D80014FDEA /* CuttingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CuttingViewController.m; path = "GroupBuying/VC+V/PhotoEditor/Cut/CuttingViewController.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1216,6 +1225,7 @@
 		D75CC3F91C2A92B200E590E6 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				D76E84A01D79883A0014FDEA /* CropImageView */,
 				D76E848C1D783B880014FDEA /* Camera360 */,
 				D76E84521D780FAC0014FDEA /* Masonry */,
 				608405871D74AA6800B40D68 /* SVProgressHUD */,
@@ -2146,7 +2156,8 @@
 				D76E843C1D76D6A90014FDEA /* EditorPhotosCollectionCell.h */,
 				D76E843D1D76D6A90014FDEA /* EditorPhotosCollectionCell.m */,
 				D76E843E1D76D6A90014FDEA /* EditorPhotosCollectionCell.xib */,
-				D76E84951D7845ED0014FDEA /* Tagging */,
+				D76E84961D7953D70014FDEA /* CutPhoto */,
+				D76E84951D7845ED0014FDEA /* TaggingPhoto */,
 			);
 			name = PhotoEditor;
 			sourceTree = "<group>";
@@ -2212,14 +2223,34 @@
 			path = Camera360;
 			sourceTree = "<group>";
 		};
-		D76E84951D7845ED0014FDEA /* Tagging */ = {
+		D76E84951D7845ED0014FDEA /* TaggingPhoto */ = {
 			isa = PBXGroup;
 			children = (
 				D76E844F1D77CCAC0014FDEA /* PhotoTaggingCtrller.h */,
 				D76E84501D77CCAC0014FDEA /* PhotoTaggingCtrller.m */,
 				D76E84761D7817A50014FDEA /* YXLImageLabel */,
 			);
-			name = Tagging;
+			name = TaggingPhoto;
+			sourceTree = "<group>";
+		};
+		D76E84961D7953D70014FDEA /* CutPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				D76E84A71D7997D80014FDEA /* CuttingViewController.h */,
+				D76E84A81D7997D80014FDEA /* CuttingViewController.m */,
+			);
+			name = CutPhoto;
+			sourceTree = "<group>";
+		};
+		D76E84A01D79883A0014FDEA /* CropImageView */ = {
+			isa = PBXGroup;
+			children = (
+				D76E84A11D79883A0014FDEA /* KICropImageView.h */,
+				D76E84A21D79883A0014FDEA /* KICropImageView.m */,
+				D76E84A31D79883A0014FDEA /* UIImage+KIAdditions.h */,
+				D76E84A41D79883A0014FDEA /* UIImage+KIAdditions.m */,
+			);
+			path = CropImageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2500,6 +2531,7 @@
 				D76E837A1D6C61C60014FDEA /* RootCollectionView.m in Sources */,
 				D75CC43C1C2A95DE00E590E6 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,
 				D75CC5B51C2A965000E590E6 /* ASICloudFilesObjectRequest.m in Sources */,
+				D76E84A61D79883B0014FDEA /* UIImage+KIAdditions.m in Sources */,
 				D75CC6C11C2BEB0400E590E6 /* MyTabbarCtrller.m in Sources */,
 				D75CC5B81C2A965000E590E6 /* ASIS3Bucket.m in Sources */,
 				D76E84091D755FDD0014FDEA /* PreviewCtrller.m in Sources */,
@@ -2562,6 +2594,7 @@
 				D76E837E1D6C6EBD0014FDEA /* RankingCell.m in Sources */,
 				D75CC4451C2A95DE00E590E6 /* MyTabbar.m in Sources */,
 				60074E1B1D634AE80040C3C0 /* UIColor+AllColors.m in Sources */,
+				D76E84A91D7997D80014FDEA /* CuttingViewController.m in Sources */,
 				D75CC5D41C2A965000E590E6 /* MJRefreshAutoStateFooter.m in Sources */,
 				D75CC5F61C2A965000E590E6 /* SDWebImageCompat.m in Sources */,
 				D75CC7331C2D13C000E590E6 /* NSObject+YYModel.m in Sources */,
@@ -2585,6 +2618,7 @@
 				D75CC5E51C2A965000E590E6 /* QNUrlSafeBase64.m in Sources */,
 				D75CC5F01C2A965000E590E6 /* QNUploadOption.m in Sources */,
 				D76E84711D780FAC0014FDEA /* MASViewConstraint.m in Sources */,
+				D76E84A51D79883A0014FDEA /* KICropImageView.m in Sources */,
 				D75CC5CC1C2A965000E590E6 /* MBProgressHUD.m in Sources */,
 				D76E846E1D780FAC0014FDEA /* MASConstraintMaker.m in Sources */,
 				608405861D69505E00B40D68 /* HomePageController+collectionLayoutSwitch.m in Sources */,

@@ -70,7 +70,8 @@
     [self configureUIs] ;
     
     // Do any additional setup after loading the view.
-    tagEditorImageView = [[YXLTagEditorImageView alloc] initWithImage:self.image] ;
+    tagEditorImageView = [[YXLTagEditorImageView alloc] initWithImage:self.image
+                          frame:self.view.frame] ;
     tagEditorImageView.backgroundColor = [UIColor blackColor] ;
     tagEditorImageView.viewC = self ;
     
@@ -80,7 +81,7 @@
     [tagEditorImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
-    
+
     [tagEditorImageView addTagViewText:@"哈哈哈哈" Location:CGPointMake(111,222) isPositiveAndNegative:YES];
     [tagEditorImageView addTagViewText:@"哈哈lalallallal" Location:CGPointMake(222, 111) isPositiveAndNegative:NO];
 

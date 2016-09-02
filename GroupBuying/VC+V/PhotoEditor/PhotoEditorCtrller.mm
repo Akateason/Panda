@@ -14,6 +14,7 @@
 
 
 @interface PhotoEditorCtrller () <UICollectionViewDelegate,UICollectionViewDataSource,pg_edit_sdk_controller_delegate>
+
 // UIs
 @property (weak, nonatomic) IBOutlet UIView *topBar;
 @property (weak, nonatomic) IBOutlet UIButton *btBack;
@@ -21,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;
 
 @property (weak, nonatomic) IBOutlet UIView *bgMiddle;
+
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *width_collection;
 
@@ -130,6 +132,7 @@
     }
 }
 
+
 #pragma mark - life
 - (void)viewDidLoad
 {
@@ -144,6 +147,7 @@
     _collectionView.delegate = self ;
     _collectionView.dataSource = self ;
     [_collectionView registerNib:[UINib nibWithNibName:idEditorPhotosCollectionCell bundle:nil] forCellWithReuseIdentifier:idEditorPhotosCollectionCell] ;
+    
 }
 
 - (void)configureUIs
@@ -157,9 +161,11 @@
     [_btTagging setTitleColor:[UIColor xt_editor_w] forState:0] ;
     _labelTitle.textColor = [UIColor xt_editor_w] ;
     
-    
     _width_collection.constant = APP_WIDTH - 20. ;
 }
+
+
+
 
 #pragma mark - collection dataSourse
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section

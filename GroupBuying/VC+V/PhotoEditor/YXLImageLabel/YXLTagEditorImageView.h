@@ -15,7 +15,9 @@
  *
  *  @param image 作为点选标签的底图
  */
--(id)initWithImage:(UIImage *)image;
+- (id)initWithImage:(UIImage *)image
+              frame:(CGRect)frame ;
+
 /**
  *  图片尺寸初始化
  */

@@ -26,13 +26,15 @@
     BOOL isViewDidLoad;
     
     // add by teason
-    CGFloat rectWidth ;
+    CGFloat rctWidth ;
+    CGFloat rctHeight ;
 }
 @end
 
 @implementation YXLTagEditorImageView
 
 - (id)initWithImage:(UIImage *)image
+              frame:(CGRect)frame
 {
     self = [super init];
     if (self) {
@@ -49,6 +51,9 @@
         [self scaledFrame];
         [self initTagUI];
         
+        // add by tea
+        rctWidth = CGWidth(frame) ;
+        rctHeight = CGHeight(frame) ;
     }
     return self;
 }
@@ -285,8 +290,8 @@
 -(void)positive:(YXLTagView *)view{
     [view mas_updateConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(@(CGOriginX(view.frame)+CGWidth(view.frame)-8));
-        if (CGRectGetMaxX(view.frame)+CGWidth(view.frame)-8 >=kWindowWidth) {
-            make.left.equalTo(@(kWindowWidth-CGWidth(view.frame)));
+        if (CGRectGetMaxX(view.frame)+CGWidth(view.frame)-8 >=rctWidth) {
+            make.left.equalTo(@(rctWidth-CGWidth(view.frame)));
         }
     }];
 }
@@ -325,8 +330,8 @@
                     make.left.equalTo(@0);
                 }
             }else{
-                if (CGRectGetMaxX(viewTag.frame) >=kWindowWidth) {
-                    make.left.equalTo(@(kWindowWidth-(CGWidth(imageLabelIcon)+8+W)));
+                if (CGRectGetMaxX(viewTag.frame) >=rctWidth) {
+                    make.left.equalTo(@(rctWidth-(CGWidth(imageLabelIcon)+8+W)));
                 }
             }
             [ws correct:text isPositiveAndNegative:YES];
@@ -365,8 +370,8 @@
         if (point.y-imageLabelIcon.size.height/2 <= 0) {
             make.top.equalTo(@(0));
         }
-        if (point.x+(CGWidth(viewTag.frame)-viewTagLeft) >=kWindowWidth) {
-            make.left.equalTo(@(kWindowWidth-(CGWidth(viewTag.frame))));
+        if (point.x+(CGWidth(viewTag.frame)-viewTagLeft) >=rctWidth) {
+            make.left.equalTo(@(rctWidth-(CGWidth(viewTag.frame))));
         }
     }];
 }
@@ -419,7 +424,7 @@
         W=size.width-(CGWidth(imageLabelIcon)-15);
     }
     
-    if (CGOriginX(viewTag.frame)+(CGWidth(imageLabelIcon)+8+W) >= kWindowWidth) {
+    if (CGOriginX(viewTag.frame)+(CGWidth(imageLabelIcon)+8+W) >= rctWidth) {
         [viewTag mas_updateConstraints:^(MASConstraintMaker *make) {
             if (isPositiveAndNegative) {
                 viewTag.isPositiveAndNegative=YES;
@@ -466,29 +471,29 @@
 -(void)scaledFrame{
     CGRect noScale = CGRectMake(0.0, 0.0, _imagePreviews.image.size.width , _imagePreviews.image.size.height );
     
-    if (CGWidth(noScale) <= kWindowWidth && CGHeight(noScale) <= self.frame.size.height) {
+    if (CGWidth(noScale) <= rctWidth && CGHeight(noScale) <= self.frame.size.height) {
         imageScale = 1.0;
         _imagePreviews.frame = (CGRect) {
-            {kWindowWidth / 2 - noScale.size.width / 2 ,
-            (kWindowHeight - 44) / 2 - noScale.size.height/2 } ,
+            {rctWidth / 2 - noScale.size.width / 2 ,
+            (rctHeight - 44) / 2 - noScale.size.height/2 } ,
             noScale.size } ;
         return ;
     }
     CGRect scaled;
-    imageScale= (kWindowHeight - 44) / _imagePreviews.image.size.height;
+    imageScale= (rctHeight - 44) / _imagePreviews.image.size.height;
     scaled=CGRectMake(0.0, 0.0, _imagePreviews.image.size.width * imageScale , _imagePreviews.image.size.height * imageScale );
-    if (CGWidth(scaled) <= kWindowWidth && CGHeight(scaled) <= (kWindowHeight-44)) {
+    if (CGWidth(scaled) <= rctWidth && CGHeight(scaled) <= (rctHeight-44)) {
         _imagePreviews.frame= (CGRect){
-            {kWindowWidth / 2 - scaled.size.width / 2,
+            {rctWidth / 2 - scaled.size.width / 2,
             (self.frame.size.height - 44) / 2 - scaled.size.height / 2} ,
             scaled.size} ;
         return ;
     }
-    imageScale = kWindowWidth / _imagePreviews.image.size.width ;
+    imageScale = rctWidth / _imagePreviews.image.size.width ;
     scaled = CGRectMake(0.0, 0.0, _imagePreviews.image.size.width * imageScale, _imagePreviews.image.size.height * imageScale) ;
     _imagePreviews.frame=(CGRect){
-        {kWindowWidth / 2 - scaled.size.width / 2 ,
-        (kWindowHeight - 44) / 2 - scaled.size.height / 2} ,
+        {rctWidth / 2 - scaled.size.width / 2 ,
+        (rctHeight - 44) / 2 - scaled.size.height / 2} ,
         scaled.size} ;
 }
 
