@@ -17,16 +17,16 @@
 
 - (IBAction)btAction:(id)sender
 {
-    NSMutableArray *tmpList = [@[] mutableCopy] ;
-    for (int i = 1; i < 10; i++)
-    {
-        [tmpList addObject:[UIImage imageNamed:[NSString stringWithFormat:@"%@",@(i)]]] ;
-    }
-    
-    CuttingViewController *cuttingCtrl = (CuttingViewController *)[[self class] getCtrllerFromStory:@"Camera" controllerIdentifier:@"CuttingViewController"] ;
-    cuttingCtrl.listPhotos = tmpList ;
-    [cuttingCtrl setHidesBottomBarWhenPushed:YES] ;
-    [self.navigationController pushViewController:cuttingCtrl animated:YES] ;
+//    NSMutableArray *tmpList = [@[] mutableCopy] ;
+//    for (int i = 1; i < 10; i++)
+//    {
+//        [tmpList addObject:[UIImage imageNamed:[NSString stringWithFormat:@"%@",@(i)]]] ;
+//    }
+//    
+//    CuttingViewController *cuttingCtrl = (CuttingViewController *)[[self class] getCtrllerFromStory:@"Camera" controllerIdentifier:@"CuttingViewController"] ;
+//    cuttingCtrl.listPhotos = tmpList ;
+//    [cuttingCtrl setHidesBottomBarWhenPushed:YES] ;
+//    [self.navigationController pushViewController:cuttingCtrl animated:YES] ;
 }
 
 - (void)viewDidLoad
