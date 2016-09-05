@@ -445,8 +445,8 @@
 {
     CGSize orgSize = theView.bounds.size ;
     UIGraphicsBeginImageContextWithOptions(orgSize, YES, theView.layer.contentsScale * 2);
-    [theView.layer renderInContext:UIGraphicsGetCurrentContext()]   ;
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext()    ;
+    [theView.layer renderInContext:UIGraphicsGetCurrentContext()] ;
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext() ;
     UIGraphicsEndImageContext() ;
     
     return image ;

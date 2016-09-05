@@ -51,7 +51,9 @@
     NSString *strBtSave = (self.listPhotos.count - 1 == _indexInCropping) ? @"完成" : @"下一张" ;
     [_btSave setTitle:strBtSave forState:0] ;
     _labelTitle.text = [NSString stringWithFormat:@"裁剪%@/%@张图中",@(self.indexInCropping+1),@(self.listPhotos.count)] ;
+    
     [self.cropImageView setImage:self.listPhotos[_indexInCropping]] ;
+    [self.cropImageView updateZoomScale] ;
     
 }
 
@@ -72,11 +74,11 @@
     cropRect.size.width = cropWid ;
     cropRect.size.height = cropHt ;
     
-    _cropImageView = [[KICropImageView alloc] initWithFrame:cropRect] ;
-    [_cropImageView setCropSize:CGSizeMake(cropWid, cropHt)] ;
-    [_cropImageView setImage:self.listPhotos[0]] ;
-    [_cropImageView setUserInterfaced:true] ;
+    _cropImageView = [[KICropImageView alloc] init] ;
+    [_cropImageView setFrame:cropRect] ;
     [self.view addSubview:_cropImageView] ;
+    [_cropImageView setImage:self.listPhotos[0]] ;
+    [_cropImageView setCropSize:CGSizeMake(cropWid, cropHt)] ;
     
 }
 
