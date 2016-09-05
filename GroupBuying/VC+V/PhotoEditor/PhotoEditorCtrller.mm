@@ -11,24 +11,18 @@
 #import "PhotoTaggingCtrller.h"
 #import <PhotoEditFramework/PhotoEditFramework.h>
 #import "SVProgressHUD.h"
-
+#import "PostCtrller.h"
 
 @interface PhotoEditorCtrller () <UICollectionViewDelegate,UICollectionViewDataSource,pg_edit_sdk_controller_delegate>
 
-// UIs
+// storyboard
 @property (weak, nonatomic) IBOutlet UIView *topBar;
 @property (weak, nonatomic) IBOutlet UIButton *btBack;
 @property (weak, nonatomic) IBOutlet UIButton *btSave;
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;
-
 @property (weak, nonatomic) IBOutlet UIView *bgMiddle;
-
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *width_collection;
-
 @property (weak, nonatomic) IBOutlet UIView *bottomBar;
-
-
 @property (weak, nonatomic) IBOutlet UIButton *btEditPhoto;
 @property (weak, nonatomic) IBOutlet UIButton *btTagging;
 
@@ -45,17 +39,21 @@
 #pragma mark - action
 - (IBAction)btBackOnClick:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES] ;
+//    [self.navigationController popViewControllerAnimated:YES] ;
+    [self dismissViewControllerAnimated:YES completion:nil] ;
 }
 
 - (IBAction)btSaveOnClick:(id)sender
 {
     NSLog(@"保存") ;
+    [self performSegueWithIdentifier:@"editor2Post" sender:self.listPhotos] ;
 }
 
 - (IBAction)btTaggingOnClick:(id)sender
 {
-    [self performSegueWithIdentifier:@"editor2tagging" sender:self.listPhotos[self.currentIndex - 1]] ;
+    NSLog(@"标签") ;
+    [self performSegueWithIdentifier:@"editor2tagging"
+                              sender:self.listPhotos[self.currentIndex - 1]] ;
 }
 
 - (IBAction)btEditPhotoOnClick:(id)sender
@@ -138,16 +136,14 @@
 {
     [super viewDidLoad];
     
-    [[UIApplication sharedApplication] setStatusBarHidden:YES] ;
-    [self.navigationController setNavigationBarHidden:YES] ;
-    
     [self configureUIs] ;
     
     _collectionView.pagingEnabled = true ;
     _collectionView.delegate = self ;
     _collectionView.dataSource = self ;
-    [_collectionView registerNib:[UINib nibWithNibName:idEditorPhotosCollectionCell bundle:nil] forCellWithReuseIdentifier:idEditorPhotosCollectionCell] ;
-    
+    [_collectionView registerNib:[UINib nibWithNibName:idEditorPhotosCollectionCell bundle:nil]
+      forCellWithReuseIdentifier:idEditorPhotosCollectionCell] ;
+    _collectionView.backgroundColor = [UIColor xt_editor_bg] ;
 }
 
 - (void)configureUIs
@@ -160,11 +156,16 @@
     [_btEditPhoto setTitleColor:[UIColor xt_editor_w] forState:0] ;
     [_btTagging setTitleColor:[UIColor xt_editor_w] forState:0] ;
     _labelTitle.textColor = [UIColor xt_editor_w] ;
-    
-    _width_collection.constant = APP_WIDTH - 20. ;
+    self.currentIndex = 1 ;
 }
 
-
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated] ;
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:YES] ;
+    [self.navigationController setNavigationBarHidden:YES] ;
+}
 
 
 #pragma mark - collection dataSourse
@@ -175,19 +176,26 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    EditorPhotosCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:idEditorPhotosCollectionCell forIndexPath:indexPath] ;
+    EditorPhotosCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:idEditorPhotosCollectionCell
+                                                                                 forIndexPath:indexPath] ;
     cell.image = self.listPhotos[indexPath.row] ;
-    self.currentIndex = (int)(indexPath.row + 1) ;
     return cell ;
 }
+
 
 #pragma mark - collection delegate
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(APP_WIDTH - 20. , APP_WIDTH - 20.) ;
+    return CGSizeMake(APP_WIDTH - 20., self.bgMiddle.frame.size.height - 20. ) ;
 }
 
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGFloat pageWith = APP_WIDTH - 20. ;
+    int page = floor((scrollView.contentOffset.x - pageWith / 2) / pageWith) + 1 ;
+    self.currentIndex = page + 1 ;
+}
 
 
 
@@ -222,6 +230,10 @@
     if ([segue.identifier isEqualToString:@"editor2tagging"]) {
         PhotoTaggingCtrller *tagCtrl = segue.destinationViewController ;
         tagCtrl.image = sender ;
+    }
+    else if ([segue.identifier isEqualToString:@"editor2Post"]) {
+        PostCtrller *postCtrl = [segue destinationViewController] ;
+        postCtrl.photoList = sender ;
     }
 }
 

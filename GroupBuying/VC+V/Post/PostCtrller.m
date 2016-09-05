@@ -26,17 +26,19 @@
 
 - (void)addTag
 {
+    NSLog(@"添加 文章标签") ;
     [self performSegueWithIdentifier:@"post2tagSearch" sender:nil] ;
 }
 
 - (void)saveDraft
 {
-    
+    NSLog(@"保存草稿") ;
 }
 
 #pragma mark - PostPhotosCellDelegate
 - (void)addPhoto
 {
+    NSLog(@"再添加图片") ;
     CameraViewController *cameraVC = (CameraViewController *)[[self class] getCtrllerFromStory:@"Camera" controllerIdentifier:@"CameraViewController"] ;
     cameraVC.openType = typeEdit ;
     cameraVC.existedSubArticleCount = (int)self.photoList.count ;
@@ -45,10 +47,20 @@
     [self.navigationController pushViewController:cameraVC animated:YES] ;
 }
 
+- (void)deletePhotoWithList:(NSArray *)list
+{
+    self.photoList = list ;
+}
+
+
 #pragma mark - Action
 - (IBAction)btPostOnClick:(id)sender
 {
     NSLog(@"发布笔记") ;
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }] ;
 }
 
 
@@ -71,6 +83,9 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated] ;
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:NO] ;
+    [self.navigationController setNavigationBarHidden:NO] ;
     
     [_table reloadData] ;
 }

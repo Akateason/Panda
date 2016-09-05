@@ -16,6 +16,7 @@
 #import "SVProgressHUD.h"
 #import "CommonFunc.h"
 #import "PreviewCtrller.h"
+#import "CuttingViewController.h"
 
 static float kMAX_SELECT_COUNT = 10. ;
 
@@ -75,7 +76,7 @@ static float kMAX_SELECT_COUNT = 10. ;
     }
     
     if (self.openType == typeDefault) {
-        [self performSegueWithIdentifier:@"camera2post" sender:self.resultImgList] ;
+        [self performSegueWithIdentifier:@"camera2cut" sender:self.resultImgList] ;
     }
     else if (self.openType == typeEdit) {
         NSMutableArray *tmpList = [self.postCtrl.photoList mutableCopy] ;
@@ -204,6 +205,14 @@ static float kMAX_SELECT_COUNT = 10. ;
     [self.btTitle setTitle:@"相机胶卷⌵" forState:0] ;
 }
 
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated] ;
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:NO] ;
+    [self.navigationController setNavigationBarHidden:NO] ;
+}
 
 
 #pragma mark --
@@ -436,7 +445,7 @@ static float kMAX_SELECT_COUNT = 10. ;
 {
     self.multySelectedImageList = [@[] mutableCopy] ;
     self.resultImgList = [@[imageResult] mutableCopy] ;
-    [self performSegueWithIdentifier:@"camera2post" sender:self.resultImgList] ;
+    [self performSegueWithIdentifier:@"camera2cut" sender:self.resultImgList] ;
 }
 
 
@@ -487,9 +496,9 @@ static float kMAX_SELECT_COUNT = 10. ;
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    if ([segue.identifier isEqualToString:@"camera2post"]) {
-        PostCtrller *postctrller = segue.destinationViewController ;
-        postctrller.photoList = sender ;
+    if ([segue.identifier isEqualToString:@"camera2cut"]) {
+        CuttingViewController *cutCtrl = segue.destinationViewController ;
+        cutCtrl.listPhotos = sender ;        
     }
     else if ([segue.identifier isEqualToString:@"camra2preview"]) {
         PreviewCtrller *previewCtrller = segue.destinationViewController ;

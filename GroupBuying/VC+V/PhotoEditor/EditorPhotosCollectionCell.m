@@ -21,7 +21,7 @@
 {
     [super awakeFromNib];
     // Initialization code
-    _imgView.backgroundColor = [UIColor whiteColor] ;
+    _imgView.backgroundColor = [UIColor clearColor] ;
 }
 
 

@@ -25,6 +25,9 @@
     NSMutableArray *tmpList = [self.listPhotos mutableCopy] ;
     [tmpList removeObjectAtIndex:index] ;
     self.listPhotos = tmpList ;
+    if (self.delegate) {
+        [self.delegate deletePhotoWithList:self.listPhotos] ;
+    }
     
     [_collectionView reloadData] ;
 }

@@ -13,6 +13,7 @@ static NSString *idPostPhotosCell = @"PostPhotosCell" ;
 @protocol PostPhotosCellDelegate <NSObject>
 
 - (void)addPhoto ;
+- (void)deletePhotoWithList:(NSArray *)list ;
 
 @end
 

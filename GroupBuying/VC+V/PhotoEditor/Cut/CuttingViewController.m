@@ -8,7 +8,11 @@
 
 #import "CuttingViewController.h"
 #import "KICropImageView.h"
+#import "PhotoEditorCtrller.h"
 
+
+#define cropWid         (APP_WIDTH - 20.)
+#define cropHt          (cropWid / 750. * 1004.)
 
 @interface CuttingViewController ()
 
@@ -19,16 +23,17 @@
 @property (weak, nonatomic) IBOutlet UIButton *btSave;
 // code
 @property (nonatomic,strong) KICropImageView *cropImageView;
-
 @property (nonatomic)   int indexInCropping ; // start from 0 .
 
 @end
 
 @implementation CuttingViewController
 
+#pragma mark - action
 - (IBAction)btBackOnClick:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES] ;
+//    [self.navigationController popViewControllerAnimated:YES] ;
+    [self dismissViewControllerAnimated:YES completion:nil] ;
 }
 
 - (IBAction)btSaveOnClick:(id)sender
@@ -36,28 +41,48 @@
     // cut next photo or end finish .
     if (self.listPhotos.count - 1 == _indexInCropping) {
         // 1. croping all photos finished .
-        
+        // push to editor .
+        [self cutFinished] ;
+        return ;
     }
     else {
         // 2. crop next photo .
-        UIImage *croppedImage = [self.cropImageView cropImage] ;
-        NSMutableArray *tmplist = [self.listPhotos mutableCopy] ;
-        [tmplist replaceObjectAtIndex:_indexInCropping withObject:croppedImage] ;
-        self.listPhotos = tmplist ;
-        
-        _indexInCropping ++ ;
+        [self cutNextPhoto] ;
     }
     
+    //
+    [self displayUIs] ;
+}
+
+#pragma mark - 
+- (void)cutNextPhoto
+{
+    UIImage *croppedImage = [self.cropImageView cropImage] ;
+    NSMutableArray *tmplist = [self.listPhotos mutableCopy] ;
+    [tmplist replaceObjectAtIndex:_indexInCropping withObject:croppedImage] ;
+    self.listPhotos = [NSArray arrayWithArray:tmplist] ;
+    
+    _indexInCropping ++ ;
+}
+
+- (void)displayUIs
+{
     NSString *strBtSave = (self.listPhotos.count - 1 == _indexInCropping) ? @"完成" : @"下一张" ;
     [_btSave setTitle:strBtSave forState:0] ;
     _labelTitle.text = [NSString stringWithFormat:@"裁剪%@/%@张图中",@(self.indexInCropping+1),@(self.listPhotos.count)] ;
     
     [self.cropImageView setImage:self.listPhotos[_indexInCropping]] ;
     [self.cropImageView updateZoomScale] ;
-    
+}
+
+- (void)cutFinished
+{
+    [self cutNextPhoto] ;
+    [self performSegueWithIdentifier:@"cut2editor" sender:self.listPhotos] ;
 }
 
 
+#pragma mark - life
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -65,20 +90,7 @@
     
     [self configureUIs] ;
     
-    
-    CGFloat cropWid = APP_WIDTH - 20. ;
-    CGFloat cropHt  = cropWid / 750. * 1004. ;
-    CGRect cropRect = CGRectZero ;
-    cropRect.origin.x = 10 ;
-    cropRect.origin.y = self.topBar.frame.size.height + 10 ;
-    cropRect.size.width = cropWid ;
-    cropRect.size.height = cropHt ;
-    
-    _cropImageView = [[KICropImageView alloc] init] ;
-    [_cropImageView setFrame:cropRect] ;
-    [self.view addSubview:_cropImageView] ;
-    [_cropImageView setImage:self.listPhotos[0]] ;
-    [_cropImageView setCropSize:CGSizeMake(cropWid, cropHt)] ;
+    [self.view addSubview:self.cropImageView] ;
     
 }
 
@@ -99,7 +111,33 @@
     NSString *strBtSave = (self.listPhotos.count - 1 == _indexInCropping) ? @"完成" : @"下一张" ;
     [_btSave setTitle:strBtSave forState:0] ;
     _labelTitle.text = [NSString stringWithFormat:@"裁剪%@/%@张图中",@(self.indexInCropping+1),@(self.listPhotos.count)] ;
+    self.view.backgroundColor = [UIColor xt_editor_bg] ;
 }
+
+#pragma mark - prop
+- (KICropImageView *)cropImageView
+{
+    if (!_cropImageView) {
+        CGRect cropRect = CGRectZero ;
+        cropRect.origin.x = 10 ;
+        cropRect.origin.y = self.topBar.frame.size.height + 10 ;
+        cropRect.size.width = cropWid ;
+        cropRect.size.height = cropHt ;
+        
+        _cropImageView = [[KICropImageView alloc] init] ;
+        _cropImageView.backgroundColor = [UIColor whiteColor] ;
+        [_cropImageView setFrame:cropRect] ;
+        [_cropImageView setImage:self.listPhotos[0]] ;
+        [_cropImageView setCropSize:CGSizeMake(cropWid, cropHt)] ;
+    }
+    return _cropImageView ;
+}
+
+
+
+
+
+
 
 
 - (void)didReceiveMemoryWarning {
@@ -107,14 +145,18 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"cut2editor"])
+    {
+        PhotoEditorCtrller *editorCtrl = [segue destinationViewController] ;
+        editorCtrl.listPhotos = sender ;
+    }
 }
-*/
+
 
 @end

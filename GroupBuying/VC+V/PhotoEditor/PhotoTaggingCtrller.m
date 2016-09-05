@@ -9,17 +9,15 @@
 #import "PhotoTaggingCtrller.h"
 #import "YXLTagEditorImageView.h"
 
-
-//#import "PhotoTaggingStageView.h"
-
 @interface PhotoTaggingCtrller ()<UIGestureRecognizerDelegate>
-{
-    YXLTagEditorImageView *tagEditorImageView;
-}
+
+// story board
 @property (weak, nonatomic) IBOutlet UIView *topView;
 @property (weak, nonatomic) IBOutlet UIButton *btback;
 @property (weak, nonatomic) IBOutlet UIButton *btSave;
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;
+// code
+@property (nonatomic,strong)YXLTagEditorImageView *tagEditorImageView;
 
 @end
 
@@ -30,12 +28,13 @@
 - (IBAction)btBackOnClick:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES] ;
+//    [self dismissViewControllerAnimated:YES completion:nil] ;
 }
 
 //// *  确定并pop    返回这个图片所有的标签地址内容，是否翻转样式的数组   坐标为这个图片的真实坐标
 - (IBAction)btSaveOnClick:(id)sender
 {
-    NSMutableArray *array =[tagEditorImageView popTagModel];
+    NSMutableArray *array =[self.tagEditorImageView popTagModel];
     if (array.count==0) {
         [self.navigationController popViewControllerAnimated:YES];
         return;
@@ -60,34 +59,36 @@
 }
 
 #pragma mark - prop
-
+- (YXLTagEditorImageView *)tagEditorImageView
+{
+    if (!_tagEditorImageView) {
+        _tagEditorImageView = [[YXLTagEditorImageView alloc] initWithImage:self.image] ;
+        _tagEditorImageView.viewC = self ;
+        _tagEditorImageView.userInteractionEnabled = YES;
+    }
+    return _tagEditorImageView ;
+}
 
 #pragma mark - life
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    [self configureUIs] ;
     
     // Do any additional setup after loading the view.
-    tagEditorImageView = [[YXLTagEditorImageView alloc] initWithImage:self.image
-                          frame:self.view.frame] ;
-    tagEditorImageView.backgroundColor = [UIColor blackColor] ;
-    tagEditorImageView.viewC = self ;
-    
-    tagEditorImageView.userInteractionEnabled = YES;
-    [self.view addSubview:tagEditorImageView];
-    
-    [tagEditorImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.view addSubview:self.tagEditorImageView];
+    [self.tagEditorImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
-
-    [tagEditorImageView addTagViewText:@"哈哈哈哈" Location:CGPointMake(111,222) isPositiveAndNegative:YES];
-    [tagEditorImageView addTagViewText:@"哈哈lalallallal" Location:CGPointMake(222, 111) isPositiveAndNegative:NO];
+    [_tagEditorImageView addTagViewText:@"哈哈哈哈" Location:CGPointMake(111,222) isPositiveAndNegative:YES];
+    [_tagEditorImageView addTagViewText:@"哈哈lalallallal" Location:CGPointMake(222, 111) isPositiveAndNegative:NO];
+    
+   
 
     
-//    
-    [self.view bringSubviewToFront:self.topView] ;
+    //
+    [self configureUIs] ;
+
 }
 
 - (void)configureUIs
@@ -97,6 +98,9 @@
     [_btSave setTitleColor:[UIColor xt_editor_w] forState:0] ;
     [_btback setTitleColor:[UIColor xt_editor_w] forState:0] ;
     _labelTitle.textColor = [UIColor xt_editor_w] ;
+    _labelTitle.text = @"添加标签" ;
+    [self.view bringSubviewToFront:self.topView] ;
+
 }
 
 

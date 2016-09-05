@@ -24,17 +24,15 @@
     CGFloat viewTagLeft;
     NSMutableArray *arrayInitDidView;
     BOOL isViewDidLoad;
-    
-    // add by teason
-    CGFloat rctWidth ;
-    CGFloat rctHeight ;
 }
 @end
 
 @implementation YXLTagEditorImageView
 
+#define rctWidth    ([[UIScreen mainScreen] bounds].size.width)
+#define rctHeight   ([[UIScreen mainScreen] bounds].size.height)
+
 - (id)initWithImage:(UIImage *)image
-              frame:(CGRect)frame
 {
     self = [super init];
     if (self) {
@@ -50,10 +48,6 @@
         _imagePreviews.image = image;
         [self scaledFrame];
         [self initTagUI];
-        
-        // add by tea
-        rctWidth = CGWidth(frame) ;
-        rctHeight = CGHeight(frame) ;
     }
     return self;
 }
