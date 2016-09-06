@@ -63,6 +63,10 @@
     }] ;
 }
 
+- (IBAction)btCancelOnClick:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil] ;
+
+}
 
 #pragma mark - life
 - (void)viewDidLoad
@@ -129,7 +133,6 @@
         return 100. ;
     }
     else if (indexPath.row == 2) {
-//        return 130. ;
         return APP_HEIGHT - 194. - 100. + 130. ;
     }
     

@@ -8,12 +8,7 @@
 
 #import "RootCtrl.h"
 #import "PostCtrller.h"
-
-
-typedef NS_ENUM(NSUInteger, CameraViewControllerOpenType) {
-    typeDefault , // 多图 . [添加]    点继续,进入postVC
-    typeEdit    , // 多图 . [编辑]    点继续,返回postVC
-} ;
+#import "PublicEnum.h"
 
 
 @interface CameraViewController : RootCtrl

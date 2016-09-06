@@ -7,9 +7,14 @@
 //
 
 #import "RootCtrl.h"
+#import "PublicEnum.h"
 
 @interface CuttingViewController : RootCtrl
 
+//
 @property (nonatomic,strong) NSArray *listPhotos ;
+
+// 打开方式
+@property (nonatomic) CameraViewControllerOpenType  openType ;
 
 @end

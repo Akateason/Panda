@@ -32,8 +32,12 @@
 #pragma mark - action
 - (IBAction)btBackOnClick:(id)sender
 {
-//    [self.navigationController popViewControllerAnimated:YES] ;
-    [self dismissViewControllerAnimated:YES completion:nil] ;
+    if (self.openType == typeDefault) {
+        [self dismissViewControllerAnimated:YES completion:nil] ;
+    }
+    else if (self.openType == typeEdit) {
+        [self.navigationController popViewControllerAnimated:YES] ;
+    }
 }
 
 - (IBAction)btSaveOnClick:(id)sender
@@ -81,6 +85,7 @@
 - (void)cutFinished
 {
     [self cutNextPhoto] ;
+    
     [self performSegueWithIdentifier:@"cut2editor" sender:self.listPhotos] ;
 }
 
@@ -160,6 +165,7 @@
     {
         PhotoEditorCtrller *editorCtrl = [segue destinationViewController] ;
         editorCtrl.listPhotos = sender ;
+        editorCtrl.openType = self.openType ;
     }
 }
 

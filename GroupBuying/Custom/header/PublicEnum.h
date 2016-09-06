@@ -9,16 +9,13 @@
 #ifndef subao_PublicEnum_h
 #define subao_PublicEnum_h
 
-/*
- 页面跳转. (系统通知,首页banner)
- **/
-typedef NS_ENUM(NSInteger , MODE_skipCategory)
-{
-    mode_advertise = 1, //广告 h5
-    mode_activity ,     //活动 h5
-    mode_topic ,        //话题 t_id
-    mode_detail         //详情 a_id
+
+// 添加图片 . 新增或编辑
+typedef NS_ENUM(NSUInteger, CameraViewControllerOpenType) {
+    typeDefault , // 多图 . [添加]    点继续,进入cutVC -> editorVC -> PostVC
+    typeEdit    , // 多图 . [编辑]    点继续,进入cutVC -> editorVC <- PostVC (popback)
 } ;
+
 
 /**
  category

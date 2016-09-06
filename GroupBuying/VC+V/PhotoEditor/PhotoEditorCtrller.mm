@@ -39,14 +39,35 @@
 #pragma mark - action
 - (IBAction)btBackOnClick:(id)sender
 {
-//    [self.navigationController popViewControllerAnimated:YES] ;
-    [self dismissViewControllerAnimated:YES completion:nil] ;
+    
+    if (self.openType == typeDefault) {
+        [self dismissViewControllerAnimated:YES completion:nil] ;
+    }
+    else if (self.openType == typeEdit) {
+        [self.navigationController popViewControllerAnimated:YES] ;
+    }
 }
 
 - (IBAction)btSaveOnClick:(id)sender
 {
     NSLog(@"保存") ;
-    [self performSegueWithIdentifier:@"editor2Post" sender:self.listPhotos] ;
+    if (self.openType == typeDefault) {
+        [self performSegueWithIdentifier:@"editor2Post" sender:self.listPhotos] ;
+    }
+    else if (self.openType == typeEdit) {
+        for (id VC  in self.navigationController.viewControllers)
+        {
+            if ([VC isKindOfClass:[PostCtrller class]])
+            {
+                PostCtrller *postCtrl = (PostCtrller *)VC ;
+                NSMutableArray *tmpList = [postCtrl.photoList mutableCopy] ;
+                [tmpList addObjectsFromArray:self.listPhotos] ;
+                postCtrl.photoList = tmpList ;
+                [self.navigationController popToViewController:postCtrl animated:YES] ;
+                break ;
+            }
+        }
+    }
 }
 
 - (IBAction)btTaggingOnClick:(id)sender

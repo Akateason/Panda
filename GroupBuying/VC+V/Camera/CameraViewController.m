@@ -47,7 +47,8 @@ static float kMAX_SELECT_COUNT = 10. ;
 #pragma mark - Action
 - (IBAction)btCancelOnClick:(id)sender {
     NSLog(@"取消") ;
-    if (self.openType == typeDefault) {
+    if (self.openType == typeDefault)
+    {
         if (self.groupCtrller.view.superview) {
             [self.groupCtrller cameraGroupAnimation:!self.groupCtrller.view.superview onView:self.view] ;
         }
@@ -75,17 +76,7 @@ static float kMAX_SELECT_COUNT = 10. ;
         return ;
     }
     
-    if (self.openType == typeDefault) {
-        [self performSegueWithIdentifier:@"camera2cut" sender:self.resultImgList] ;
-    }
-    else if (self.openType == typeEdit) {
-        NSMutableArray *tmpList = [self.postCtrl.photoList mutableCopy] ;
-        tmpList = [[tmpList arrayByAddingObjectsFromArray:self.resultImgList] mutableCopy] ;
-        self.postCtrl.photoList = tmpList ;
-        [self.navigationController popToViewController:self.postCtrl animated:YES] ;
-    }
-        
-    
+    [self performSegueWithIdentifier:@"camera2cut" sender:self.resultImgList] ;
     
 }
 
@@ -498,7 +489,8 @@ static float kMAX_SELECT_COUNT = 10. ;
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"camera2cut"]) {
         CuttingViewController *cutCtrl = segue.destinationViewController ;
-        cutCtrl.listPhotos = sender ;        
+        cutCtrl.listPhotos = sender ;
+        cutCtrl.openType = self.openType ;
     }
     else if ([segue.identifier isEqualToString:@"camra2preview"]) {
         PreviewCtrller *previewCtrller = segue.destinationViewController ;
