@@ -71,10 +71,11 @@
     [_btSave setTitle:strBtSave forState:0] ;
     _labelTitle.text = [NSString stringWithFormat:@"裁剪%@/%@张图中",@(self.indexInCropping+1),@(self.listPhotos.count)] ;
     
-    // reset zoom scale and offset .
-    self.cropImageView.scrollView.zoomScale = 1 ;
-    self.cropImageView.scrollView.contentOffset = CGPointZero ;
-    [self.cropImageView setImage:self.listPhotos[_indexInCropping]] ;
+    //
+    [self.cropImageView removeFromSuperview] ;
+    _cropImageView = nil ;
+    [self cropImageView] ;
+    
 }
 
 - (void)cutFinished
@@ -127,7 +128,7 @@
         _cropImageView = [[KICropImageView alloc] init] ;
         _cropImageView.backgroundColor = [UIColor xt_editor_bg] ;
         [_cropImageView setFrame:maskRect] ;                        // mask rect size .
-        [_cropImageView setImage:self.listPhotos[0]] ;
+        [_cropImageView setImage:self.listPhotos[_indexInCropping]] ;
         [_cropImageView setCropSize:CGSizeMake(cropWid, cropHt)] ;  // crop size .
         if (!_cropImageView.superview) {
             [self.view addSubview:self.cropImageView] ;

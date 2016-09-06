@@ -56,7 +56,7 @@
     }
     [[self imageView] setImage:_image];
     
-    [self updateZoomScale];
+    [self updateZoomScale] ;
 }
 
 
@@ -78,29 +78,40 @@
     [[self scrollView] setMinimumZoomScale:min];
     [[self scrollView] setMaximumZoomScale:min + 3] ;
     [[self scrollView] setZoomScale:min animated:NO] ;
-    [[self scrollView] setContentOffset:CGPointZero] ;
+    
+    CGFloat cs_width = _cropSize.width;
+    CGFloat cs_height = _cropSize.height;
+    CGFloat x = (CGRectGetWidth(self.bounds) - cs_width) / 2 ;
+    CGFloat y = (CGRectGetHeight(self.bounds) - cs_height) / 2 ;
+    CGFloat top = y;
+    CGFloat left = x;
+    CGFloat right = CGRectGetWidth(self.bounds)- cs_width - x;
+    CGFloat bottom = CGRectGetHeight(self.bounds)- cs_height - y;
+    _imageInset = UIEdgeInsetsMake(top, left, bottom, right);
+    [[self scrollView] setContentOffset:CGPointMake(0, 0)] ;
+    [[self scrollView] setContentInset:_imageInset] ;
+    
 }
 
 - (void)setCropSize:(CGSize)size {
     _cropSize = size;
-    [self updateZoomScale];
     
-    CGFloat width = _cropSize.width;
-    CGFloat height = _cropSize.height;
     
-    CGFloat x = (CGRectGetWidth(self.bounds) - width) / 2;
-    CGFloat y = (CGRectGetHeight(self.bounds) - height) / 2;
+//    CGFloat x = (CGRectGetWidth(self.bounds) - width) / 2;
+//    CGFloat y = (CGRectGetHeight(self.bounds) - height) / 2;
     
     [[self maskView] setCropSize:_cropSize];
     
-    CGFloat top = y;
-    CGFloat left = x;
-    CGFloat right = CGRectGetWidth(self.bounds)- width - x;
-    CGFloat bottom = CGRectGetHeight(self.bounds)- height - y;
-    _imageInset = UIEdgeInsetsMake(top, left, bottom, right);
-    [[self scrollView] setContentInset:_imageInset];
-    
-    [[self scrollView] setContentOffset:CGPointMake(0, 0)];
+    [self updateZoomScale];
+
+//    CGFloat top = y;
+//    CGFloat left = x;
+//    CGFloat right = CGRectGetWidth(self.bounds)- width - x;
+//    CGFloat bottom = CGRectGetHeight(self.bounds)- height - y;
+//    _imageInset = UIEdgeInsetsMake(top, left, bottom, right);
+//    [[self scrollView] setContentInset:_imageInset];
+//    
+//    [[self scrollView] setContentOffset:CGPointMake(0, 0)];
 }
 
 - (UIImage *)cropImage
@@ -115,8 +126,8 @@
     aX = aX / zoomScale;
     aY = aY / zoomScale;
     
-    CGFloat aWidth =  MAX(_cropSize.width / zoomScale, _cropSize.width);
-    CGFloat aHeight = MAX(_cropSize.height / zoomScale, _cropSize.height);
+    CGFloat aWidth =  _cropSize.width / zoomScale ;
+    CGFloat aHeight = _cropSize.height / zoomScale ;
     
 #ifdef DEBUG
     NSLog(@"%f--%f--%f--%f", aX, aY, aWidth, aHeight);
