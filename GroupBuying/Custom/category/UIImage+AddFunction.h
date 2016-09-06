@@ -56,6 +56,12 @@
 //8.模糊
 - (UIImage *)blur ;
 
+/*改变size*/
+- (UIImage *)resizeToWidth:(CGFloat)width height:(CGFloat)height ;
+
+/*裁切*/
+- (UIImage *)cropImageWithX:(CGFloat)x y:(CGFloat)y width:(CGFloat)width height:(CGFloat)height ;
+
 #pragma mark -- 
 #pragma mark - convert
 //1.UIimage转换NSdata

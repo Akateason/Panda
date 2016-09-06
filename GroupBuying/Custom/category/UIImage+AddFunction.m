@@ -486,6 +486,30 @@
     return returnImage;
 }
 
+
+- (UIImage *)resizeToWidth:(CGFloat)width height:(CGFloat)height {
+    CGSize size = CGSizeMake(width, height);
+    if (UIGraphicsBeginImageContextWithOptions != NULL) {
+        UIGraphicsBeginImageContextWithOptions(size, NO, 0);
+    } else {
+        UIGraphicsBeginImageContext(size);
+    }
+    [self drawInRect:CGRectMake(0, 0, width, height)];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
+- (UIImage *)cropImageWithX:(CGFloat)x y:(CGFloat)y width:(CGFloat)width height:(CGFloat)height {
+    CGRect rect = CGRectMake(x, y, width, height);
+    CGImageRef imageRef = CGImageCreateWithImageInRect(self.CGImage, rect);
+    UIImage *image = [UIImage imageWithCGImage:imageRef];
+    return image;
+}
+
+
+
+
 #pragma mark --
 #pragma mark - UIimage转换NSdata
 //1.UIimage转换NSdata

@@ -10,9 +10,9 @@
     [[self scrollView] setFrame:self.bounds];
     [[self maskView] setFrame:self.bounds];
     
-    if (CGSizeEqualToSize(_cropSize, CGSizeZero)) {
-        [self setCropSize:CGSizeMake(100, 100)];
-    }
+//    if (CGSizeEqualToSize(_cropSize, CGSizeZero)) {
+//        [self setCropSize:CGSizeMake(100, 100)];
+//    }
 }
 
 - (UIScrollView *)scrollView
@@ -30,7 +30,7 @@
 
 - (UIImageView *)imageView {
     if (_imageView == nil) {
-        _imageView = [[UIImageView alloc] init];
+        _imageView = [[UIImageView alloc] init] ;
         _imageView.contentMode = UIViewContentModeScaleAspectFit ;
         [[self scrollView] addSubview:_imageView];
     }
@@ -39,8 +39,8 @@
 
 - (KICropImageMaskView *)maskView {
     if (_maskView == nil) {
-        _maskView = [[KICropImageMaskView alloc] init];
-        [_maskView setBackgroundColor:[UIColor clearColor]];
+        _maskView = [[KICropImageMaskView alloc] init] ;
+        [_maskView setBackgroundColor:[UIColor clearColor]] ;
         [_maskView setUserInteractionEnabled:NO];
         [self addSubview:_maskView];
         [self bringSubviewToFront:_maskView];
@@ -59,14 +59,26 @@
     [self updateZoomScale];
 }
 
+
+
 - (void)updateZoomScale
 {
-    [[self imageView] setFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)] ;
+    if (_image == nil || CGSizeEqualToSize(_cropSize, CGSizeZero)) {
+        return ;
+    }
     
-    [[self scrollView] setMinimumZoomScale:1.] ;
-    [[self scrollView] setMaximumZoomScale:4.0f];
+    CGFloat width = _image.size.width;
+    CGFloat height = _image.size.height;
+    [[self imageView] setFrame:CGRectMake(0, 0, width, height)] ;
 
-    [[self scrollView] setZoomScale:1 animated:YES];
+    CGFloat xScale = _cropSize.width / width ;
+    CGFloat yScale = _cropSize.height / height ;
+    CGFloat min = MAX(xScale, yScale) ;
+
+    [[self scrollView] setMinimumZoomScale:min];
+    [[self scrollView] setMaximumZoomScale:min + 3] ;
+    [[self scrollView] setZoomScale:min animated:NO] ;
+    [[self scrollView] setContentOffset:CGPointZero] ;
 }
 
 - (void)setCropSize:(CGSize)size {
@@ -93,8 +105,28 @@
 
 - (UIImage *)cropImage
 {
-    UIImage *imageRet = [UIImage getImageFromView:self] ;
-    return imageRet ;
+    CGFloat zoomScale = [self scrollView].zoomScale;
+    
+    CGFloat offsetX = [self scrollView].contentOffset.x;
+    CGFloat offsetY = [self scrollView].contentOffset.y;
+    CGFloat aX = offsetX>=0 ? offsetX+_imageInset.left : (_imageInset.left - ABS(offsetX));
+    CGFloat aY = offsetY>=0 ? offsetY+_imageInset.top : (_imageInset.top - ABS(offsetY));
+    
+    aX = aX / zoomScale;
+    aY = aY / zoomScale;
+    
+    CGFloat aWidth =  MAX(_cropSize.width / zoomScale, _cropSize.width);
+    CGFloat aHeight = MAX(_cropSize.height / zoomScale, _cropSize.height);
+    
+#ifdef DEBUG
+    NSLog(@"%f--%f--%f--%f", aX, aY, aWidth, aHeight);
+#endif
+    
+    UIImage *image = [_image cropImageWithX:aX y:aY width:aWidth height:aHeight];
+    
+    image = [image resizeToWidth:_cropSize.width height:_cropSize.height];
+    
+    return image;
 }
 
 #pragma UIScrollViewDelegate
@@ -121,7 +153,8 @@
 
 @implementation KICropImageMaskView
 
-- (void)setCropSize:(CGSize)size {
+- (void)setCropSize:(CGSize)size
+{
     CGFloat x = (CGRectGetWidth(self.bounds) - size.width) / 2;
     CGFloat y = (CGRectGetHeight(self.bounds) - size.height) / 2;
     _cropRect = CGRectMake(x, y, size.width, size.height);
@@ -129,20 +162,21 @@
     [self setNeedsDisplay];
 }
 
-- (CGSize)cropSize {
+- (CGSize)cropSize
+{
     return _cropRect.size;
 }
 
-- (void)drawRect:(CGRect)rect {
-    [super drawRect:rect];
-    CGContextRef ctx = UIGraphicsGetCurrentContext();
-    CGContextSetRGBFillColor(ctx, 1, 1, 1, .6);
-    CGContextFillRect(ctx, self.bounds);
+- (void)drawRect:(CGRect)rect
+{
+    [super drawRect:rect] ;
     
-    CGContextSetStrokeColorWithColor(ctx, [UIColor redColor].CGColor);
-    CGContextStrokeRectWithWidth(ctx, _cropRect, kMaskViewBorderWidth);
-    
-    CGContextClearRect(ctx, _cropRect);
+    CGContextRef ctx = UIGraphicsGetCurrentContext() ;
+    CGContextSetRGBFillColor(ctx, 0, 0, 0, .6) ;
+    CGContextFillRect(ctx, self.bounds) ;
+    CGContextSetStrokeColorWithColor(ctx, [UIColor redColor].CGColor) ;
+    CGContextStrokeRectWithWidth(ctx, _cropRect, kMaskViewBorderWidth) ;
+    CGContextClearRect(ctx, _cropRect) ;
     
 //    CGContextRelease(ctx) ;
 }

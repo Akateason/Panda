@@ -71,8 +71,10 @@
     [_btSave setTitle:strBtSave forState:0] ;
     _labelTitle.text = [NSString stringWithFormat:@"裁剪%@/%@张图中",@(self.indexInCropping+1),@(self.listPhotos.count)] ;
     
+    // reset zoom scale and offset .
+    self.cropImageView.scrollView.zoomScale = 1 ;
+    self.cropImageView.scrollView.contentOffset = CGPointZero ;
     [self.cropImageView setImage:self.listPhotos[_indexInCropping]] ;
-    [self.cropImageView updateZoomScale] ;
 }
 
 - (void)cutFinished
@@ -89,9 +91,7 @@
     // Do any additional setup after loading the view.
     
     [self configureUIs] ;
-    
-    [self.view addSubview:self.cropImageView] ;
-    
+    [self cropImageView] ;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -110,7 +110,7 @@
     _labelTitle.textColor = [UIColor xt_editor_w] ;
     NSString *strBtSave = (self.listPhotos.count - 1 == _indexInCropping) ? @"完成" : @"下一张" ;
     [_btSave setTitle:strBtSave forState:0] ;
-    _labelTitle.text = [NSString stringWithFormat:@"裁剪%@/%@张图中",@(self.indexInCropping+1),@(self.listPhotos.count)] ;
+    _labelTitle.text = [NSString stringWithFormat:@"裁剪%@/%@张图",@(self.indexInCropping+1),@(self.listPhotos.count)] ;
     self.view.backgroundColor = [UIColor xt_editor_bg] ;
 }
 
@@ -118,17 +118,21 @@
 - (KICropImageView *)cropImageView
 {
     if (!_cropImageView) {
-        CGRect cropRect = CGRectZero ;
-        cropRect.origin.x = 10 ;
-        cropRect.origin.y = self.topBar.frame.size.height + 10 ;
-        cropRect.size.width = cropWid ;
-        cropRect.size.height = cropHt ;
+        CGRect maskRect = CGRectZero ;
+        maskRect.origin.x = 10 ;
+        maskRect.origin.y = self.topBar.frame.size.height + 10 ;
+        maskRect.size.width = cropWid ;
+        maskRect.size.height = APP_HEIGHT - self.topBar.frame.size.height - 20 ; ;
         
         _cropImageView = [[KICropImageView alloc] init] ;
-        _cropImageView.backgroundColor = [UIColor whiteColor] ;
-        [_cropImageView setFrame:cropRect] ;
+        _cropImageView.backgroundColor = [UIColor xt_editor_bg] ;
+        [_cropImageView setFrame:maskRect] ;                        // mask rect size .
         [_cropImageView setImage:self.listPhotos[0]] ;
-        [_cropImageView setCropSize:CGSizeMake(cropWid, cropHt)] ;
+        [_cropImageView setCropSize:CGSizeMake(cropWid, cropHt)] ;  // crop size .
+        if (!_cropImageView.superview) {
+            [self.view addSubview:self.cropImageView] ;
+
+        }
     }
     return _cropImageView ;
 }

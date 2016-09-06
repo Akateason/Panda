@@ -19,7 +19,7 @@
 
 - (UIScrollView *)scrollView ;
 - (KICropImageMaskView *)maskView;
-- (void)updateZoomScale;
+- (void)updateZoomScale ;
 
 - (UIImage *)cropImage;
 

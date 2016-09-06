@@ -2148,12 +2148,8 @@
 		D76E84381D76C1590014FDEA /* PhotoEditor */ = {
 			isa = PBXGroup;
 			children = (
-				D76E84391D76C3010014FDEA /* PhotoEditorCtrller.h */,
-				D76E843A1D76C3010014FDEA /* PhotoEditorCtrller.mm */,
-				D76E843C1D76D6A90014FDEA /* EditorPhotosCollectionCell.h */,
-				D76E843D1D76D6A90014FDEA /* EditorPhotosCollectionCell.m */,
-				D76E843E1D76D6A90014FDEA /* EditorPhotosCollectionCell.xib */,
 				D76E84961D7953D70014FDEA /* CutPhoto */,
+				D76E84AB1D7E78BF0014FDEA /* Editor */,
 				D76E84951D7845ED0014FDEA /* TaggingPhoto */,
 			);
 			name = PhotoEditor;
@@ -2248,6 +2244,18 @@
 			path = CropImageView;
 			sourceTree = "<group>";
 		};
+		D76E84AB1D7E78BF0014FDEA /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+				D76E84391D76C3010014FDEA /* PhotoEditorCtrller.h */,
+				D76E843A1D76C3010014FDEA /* PhotoEditorCtrller.mm */,
+				D76E843C1D76D6A90014FDEA /* EditorPhotosCollectionCell.h */,
+				D76E843D1D76D6A90014FDEA /* EditorPhotosCollectionCell.m */,
+				D76E843E1D76D6A90014FDEA /* EditorPhotosCollectionCell.xib */,
+			);
+			name = Editor;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2315,7 +2323,7 @@
 				TargetAttributes = {
 					D75CC3C01C2A926100E590E6 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 5D74XHX7AD;
+						DevelopmentTeam = S9H98D8VCR;
 					};
 					D75CC3D91C2A926200E590E6 = {
 						CreatedOnToolsVersion = 7.2;
