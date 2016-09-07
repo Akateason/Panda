@@ -22,6 +22,8 @@
 		6035CF2D1D74B3AC00EA590B /* PostContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6035CF2C1D74B3AC00EA590B /* PostContentCell.xib */; };
 		6035CF311D75E64E00EA590B /* TagSearchingCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = 6035CF301D75E64E00EA590B /* TagSearchingCtrller.m */; };
 		6035CF341D75EDBA00EA590B /* TagSearchingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6035CF331D75EDBA00EA590B /* TagSearchingCell.m */; };
+		608075FF1D805DB00056573F /* NoteDetailCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = 608075FE1D805DB00056573F /* NoteDetailCtrller.m */; };
+		608076031D8066EE0056573F /* UIAlternativeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 608076021D8066EE0056573F /* UIAlternativeButton.m */; };
 		6084057C1D64DDDF00B40D68 /* HPProductCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6084057B1D64DDDF00B40D68 /* HPProductCollectionCell.m */; };
 		6084057F1D663CCC00B40D68 /* HPBigPhotoCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6084057E1D663CCC00B40D68 /* HPBigPhotoCollectionCell.m */; };
 		608405811D67F45700B40D68 /* HPProductCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 608405801D67F45700B40D68 /* HPProductCollectionCell.xib */; };
@@ -343,6 +345,10 @@
 		6035CF301D75E64E00EA590B /* TagSearchingCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagSearchingCtrller.m; path = "GroupBuying/VC+V/Tag/TagSearchingCtrller.m"; sourceTree = SOURCE_ROOT; };
 		6035CF321D75EDBA00EA590B /* TagSearchingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagSearchingCell.h; path = "GroupBuying/VC+V/Tag/TagSearchingCell.h"; sourceTree = SOURCE_ROOT; };
 		6035CF331D75EDBA00EA590B /* TagSearchingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagSearchingCell.m; path = "GroupBuying/VC+V/Tag/TagSearchingCell.m"; sourceTree = SOURCE_ROOT; };
+		608075FD1D805DB00056573F /* NoteDetailCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteDetailCtrller.h; path = "GroupBuying/VC+V/NoteDetail/NoteDetailCtrller.h"; sourceTree = SOURCE_ROOT; };
+		608075FE1D805DB00056573F /* NoteDetailCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteDetailCtrller.m; path = "GroupBuying/VC+V/NoteDetail/NoteDetailCtrller.m"; sourceTree = SOURCE_ROOT; };
+		608076011D8066EE0056573F /* UIAlternativeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAlternativeButton.h; sourceTree = "<group>"; };
+		608076021D8066EE0056573F /* UIAlternativeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAlternativeButton.m; sourceTree = "<group>"; };
 		6084057A1D64DDDF00B40D68 /* HPProductCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPProductCollectionCell.h; path = "GroupBuying/VC+V/HomePage/HPProductCollectionCell.h"; sourceTree = SOURCE_ROOT; };
 		6084057B1D64DDDF00B40D68 /* HPProductCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPProductCollectionCell.m; path = "GroupBuying/VC+V/HomePage/HPProductCollectionCell.m"; sourceTree = SOURCE_ROOT; };
 		6084057D1D663CCC00B40D68 /* HPBigPhotoCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPBigPhotoCollectionCell.h; path = "GroupBuying/VC+V/HomePage/HPBigPhotoCollectionCell.h"; sourceTree = SOURCE_ROOT; };
@@ -1047,6 +1053,24 @@
 			name = Tag;
 			sourceTree = "<group>";
 		};
+		608075FC1D805D870056573F /* NoteDetail */ = {
+			isa = PBXGroup;
+			children = (
+				608075FD1D805DB00056573F /* NoteDetailCtrller.h */,
+				608075FE1D805DB00056573F /* NoteDetailCtrller.m */,
+			);
+			name = NoteDetail;
+			sourceTree = "<group>";
+		};
+		608076001D8066EE0056573F /* UIAlternaiveButton */ = {
+			isa = PBXGroup;
+			children = (
+				608076011D8066EE0056573F /* UIAlternativeButton.h */,
+				608076021D8066EE0056573F /* UIAlternativeButton.m */,
+			);
+			path = UIAlternaiveButton;
+			sourceTree = "<group>";
+		};
 		608405871D74AA6800B40D68 /* SVProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -1191,6 +1215,7 @@
 		D75CC3F71C2A92B200E590E6 /* VC+V */ = {
 			isa = PBXGroup;
 			children = (
+				608075FC1D805D870056573F /* NoteDetail */,
 				D76E84381D76C1590014FDEA /* PhotoEditor */,
 				6035CF2E1D75E62000EA590B /* Tag */,
 				608405971D74ADD000B40D68 /* Post */,
@@ -1222,6 +1247,7 @@
 		D75CC3F91C2A92B200E590E6 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				608076001D8066EE0056573F /* UIAlternaiveButton */,
 				D76E84A01D79883A0014FDEA /* CropImageView */,
 				D76E848C1D783B880014FDEA /* Camera360 */,
 				D76E84521D780FAC0014FDEA /* Masonry */,
@@ -2479,6 +2505,7 @@
 				D75CC44C1C2A95DE00E590E6 /* CommonFunc.m in Sources */,
 				D75CC5FC1C2A965000E590E6 /* UIButton+WebCache.m in Sources */,
 				D75CC4551C2A95DE00E590E6 /* XTVerification.m in Sources */,
+				608075FF1D805DB00056573F /* NoteDetailCtrller.m in Sources */,
 				D75CC59F1C2A965000E590E6 /* AFHTTPRequestOperation.m in Sources */,
 				D76E84861D7817A50014FDEA /* NSTimer+Addition.m in Sources */,
 				D75CC5DA1C2A965000E590E6 /* MJRefreshStateHeader.m in Sources */,
@@ -2622,6 +2649,7 @@
 				60074E121D634AA50040C3C0 /* XTJson.m in Sources */,
 				D76E838F1D6D49790014FDEA /* AlbumOperation.m in Sources */,
 				6084057C1D64DDDF00B40D68 /* HPProductCollectionCell.m in Sources */,
+				608076031D8066EE0056573F /* UIAlternativeButton.m in Sources */,
 				D74589871D6A9DCB00835234 /* HPBigPhotoHeaderView.m in Sources */,
 				D75CC5B71C2A965000E590E6 /* Reachability.m in Sources */,
 				D75CC44A1C2A95DE00E590E6 /* XTNetReloader.m in Sources */,

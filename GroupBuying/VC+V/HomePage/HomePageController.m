@@ -20,6 +20,7 @@
 #import "RankingViewController.h"
 #import "CameraNavCtrller.h"
 #import "UserInfoCtrller.h"
+#import "NoteDetailCtrller.h"
 
 @interface HomePageController () <UICollectionViewDelegate,UICollectionViewDataSource,CHTCollectionViewDelegateWaterfallLayout,RootCollectionViewDelegate,HPBigPhotoHeaderViewDelegate>
 
@@ -294,6 +295,9 @@
 #pragma mark - collection delegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    NoteDetailCtrller *detailCtrller = (NoteDetailCtrller *)[[self class] getCtrllerFromStory:@"HomePage" controllerIdentifier:@"NoteDetailCtrller"] ;
+    [detailCtrller setHidesBottomBarWhenPushed:YES] ;
+    [self.navigationController pushViewController:detailCtrller animated:YES] ;
     
 }
 
