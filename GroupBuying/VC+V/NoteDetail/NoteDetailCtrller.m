@@ -9,15 +9,18 @@
 #import "NoteDetailCtrller.h"
 #import "UIAlternativeButton.h"
 #import "UIImage+AddFunction.h"
+#import "RootTableView.h"
 
-@interface NoteDetailCtrller ()
+@interface NoteDetailCtrller () <UITableViewDataSource,UITableViewDelegate,RootTableViewDelegate>
 
+// storyboard
 @property (weak, nonatomic) IBOutlet UIView *bottomBar;
-@property (weak, nonatomic) IBOutlet UITableView *table;
+@property (weak, nonatomic) IBOutlet RootTableView *table;
 @property (weak, nonatomic) IBOutlet UIAlternativeButton *bt_coupon;
 @property (weak, nonatomic) IBOutlet UIAlternativeButton *btLike;
 @property (weak, nonatomic) IBOutlet UIAlternativeButton *btComment;
 @property (weak, nonatomic) IBOutlet UIAlternativeButton *btCollecion;
+
 
 @end
 
@@ -46,6 +49,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self configureUIs] ;
+    
+    _table.delegate = self ;
+    _table.dataSource = self ;
+    _table.xt_Delegate = self ;
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -69,6 +77,56 @@
     [_btComment setBackgroundImage:btBgImage forState:UIControlStateHighlighted] ;
     [_btCollecion setBackgroundImage:btBgImage forState:UIControlStateHighlighted] ;
 }
+
+
+
+
+#pragma mark - RootTableViewDelegate
+- (void)loadNewData
+{
+    
+}
+
+- (void)loadMoreData
+{
+
+}
+
+#pragma mark - UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1 ;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 2 ;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"cell" ;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier] ;
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] ;
+    }
+
+    return cell ;
+}
+
+#pragma mark - UITableViewDelegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 44.0 ;
+}
+
+
+
+
+
+
+
+
 
 
 

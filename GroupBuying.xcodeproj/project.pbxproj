@@ -22,6 +22,10 @@
 		6035CF2D1D74B3AC00EA590B /* PostContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6035CF2C1D74B3AC00EA590B /* PostContentCell.xib */; };
 		6035CF311D75E64E00EA590B /* TagSearchingCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = 6035CF301D75E64E00EA590B /* TagSearchingCtrller.m */; };
 		6035CF341D75EDBA00EA590B /* TagSearchingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6035CF331D75EDBA00EA590B /* TagSearchingCell.m */; };
+		606BF84F1D8415AC00C503FE /* DetailUserInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 606BF84E1D8415AC00C503FE /* DetailUserInfoView.m */; };
+		606BF8511D84164200C503FE /* DetailUserInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 606BF8501D84164200C503FE /* DetailUserInfoView.xib */; };
+		606BF8551D841B7500C503FE /* DetailCoverTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 606BF8531D841B7500C503FE /* DetailCoverTitleCell.m */; };
+		606BF8561D841B7500C503FE /* DetailCoverTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 606BF8541D841B7500C503FE /* DetailCoverTitleCell.xib */; };
 		608075FF1D805DB00056573F /* NoteDetailCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = 608075FE1D805DB00056573F /* NoteDetailCtrller.m */; };
 		608076031D8066EE0056573F /* UIAlternativeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 608076021D8066EE0056573F /* UIAlternativeButton.m */; };
 		6084057C1D64DDDF00B40D68 /* HPProductCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6084057B1D64DDDF00B40D68 /* HPProductCollectionCell.m */; };
@@ -345,6 +349,12 @@
 		6035CF301D75E64E00EA590B /* TagSearchingCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagSearchingCtrller.m; path = "GroupBuying/VC+V/Tag/TagSearchingCtrller.m"; sourceTree = SOURCE_ROOT; };
 		6035CF321D75EDBA00EA590B /* TagSearchingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagSearchingCell.h; path = "GroupBuying/VC+V/Tag/TagSearchingCell.h"; sourceTree = SOURCE_ROOT; };
 		6035CF331D75EDBA00EA590B /* TagSearchingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagSearchingCell.m; path = "GroupBuying/VC+V/Tag/TagSearchingCell.m"; sourceTree = SOURCE_ROOT; };
+		606BF84D1D8415AC00C503FE /* DetailUserInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailUserInfoView.h; path = "GroupBuying/VC+V/NoteDetail/DetailUserInfoView.h"; sourceTree = SOURCE_ROOT; };
+		606BF84E1D8415AC00C503FE /* DetailUserInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailUserInfoView.m; path = "GroupBuying/VC+V/NoteDetail/DetailUserInfoView.m"; sourceTree = SOURCE_ROOT; };
+		606BF8501D84164200C503FE /* DetailUserInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailUserInfoView.xib; path = "GroupBuying/VC+V/NoteDetail/DetailUserInfoView.xib"; sourceTree = SOURCE_ROOT; };
+		606BF8521D841B7500C503FE /* DetailCoverTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailCoverTitleCell.h; path = "GroupBuying/VC+V/NoteDetail/DetailCoverTitleCell.h"; sourceTree = SOURCE_ROOT; };
+		606BF8531D841B7500C503FE /* DetailCoverTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailCoverTitleCell.m; path = "GroupBuying/VC+V/NoteDetail/DetailCoverTitleCell.m"; sourceTree = SOURCE_ROOT; };
+		606BF8541D841B7500C503FE /* DetailCoverTitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailCoverTitleCell.xib; path = "GroupBuying/VC+V/NoteDetail/DetailCoverTitleCell.xib"; sourceTree = SOURCE_ROOT; };
 		608075FD1D805DB00056573F /* NoteDetailCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteDetailCtrller.h; path = "GroupBuying/VC+V/NoteDetail/NoteDetailCtrller.h"; sourceTree = SOURCE_ROOT; };
 		608075FE1D805DB00056573F /* NoteDetailCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteDetailCtrller.m; path = "GroupBuying/VC+V/NoteDetail/NoteDetailCtrller.m"; sourceTree = SOURCE_ROOT; };
 		608076011D8066EE0056573F /* UIAlternativeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAlternativeButton.h; sourceTree = "<group>"; };
@@ -1058,6 +1068,12 @@
 			children = (
 				608075FD1D805DB00056573F /* NoteDetailCtrller.h */,
 				608075FE1D805DB00056573F /* NoteDetailCtrller.m */,
+				606BF84D1D8415AC00C503FE /* DetailUserInfoView.h */,
+				606BF84E1D8415AC00C503FE /* DetailUserInfoView.m */,
+				606BF8501D84164200C503FE /* DetailUserInfoView.xib */,
+				606BF8521D841B7500C503FE /* DetailCoverTitleCell.h */,
+				606BF8531D841B7500C503FE /* DetailCoverTitleCell.m */,
+				606BF8541D841B7500C503FE /* DetailCoverTitleCell.xib */,
 			);
 			name = NoteDetail;
 			sourceTree = "<group>";
@@ -2379,6 +2395,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				606BF8511D84164200C503FE /* DetailUserInfoView.xib in Resources */,
 				D75CC3D41C2A926100E590E6 /* LaunchScreen.storyboard in Resources */,
 				D75CC3D11C2A926100E590E6 /* Assets.xcassets in Resources */,
 				D76E84051D7528F70014FDEA /* PostAddPhotoCell.xib in Resources */,
@@ -2418,6 +2435,7 @@
 				D75CC5DB1C2A965000E590E6 /* MJRefresh.bundle in Resources */,
 				D76E839B1D6DA6540014FDEA /* CameraGroupCell.xib in Resources */,
 				D75CC5CB1C2A965000E590E6 /* WeiboSDK.bundle in Resources */,
+				606BF8561D841B7500C503FE /* DetailCoverTitleCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2541,6 +2559,7 @@
 				D75CC5F51C2A965000E590E6 /* SDImageCache.m in Sources */,
 				D75CC5FA1C2A965000E590E6 /* SDWebImageManager.m in Sources */,
 				D76E84241D759CD30014FDEA /* PostTagAddCollectionCell.m in Sources */,
+				606BF8551D841B7500C503FE /* DetailCoverTitleCell.m in Sources */,
 				D75CC5C61C2A965000E590E6 /* FMDatabaseQueue.m in Sources */,
 				D75CC6C01C2BEB0400E590E6 /* MyNavCtrller.m in Sources */,
 				D75CC5B91C2A965000E590E6 /* ASIS3BucketObject.m in Sources */,
@@ -2634,6 +2653,7 @@
 				D75CC5BD1C2A965000E590E6 /* ASIS3ServiceRequest.m in Sources */,
 				D76E841F1D759CB30014FDEA /* PostTagItemCollectionCell.m in Sources */,
 				D76E83BF1D70175D0014FDEA /* UIImage+ImageEffects.m in Sources */,
+				606BF84F1D8415AC00C503FE /* DetailUserInfoView.m in Sources */,
 				D75CC6561C2AA17700E590E6 /* ResultParsered.m in Sources */,
 				D75CC5DF1C2A965000E590E6 /* UIView+MJExtension.m in Sources */,
 				D75CC5E51C2A965000E590E6 /* QNUrlSafeBase64.m in Sources */,
