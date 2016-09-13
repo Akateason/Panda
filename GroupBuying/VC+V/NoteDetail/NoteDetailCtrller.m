@@ -50,9 +50,9 @@
     // Do any additional setup after loading the view.
     [self configureUIs] ;
     
-    _table.delegate = self ;
-    _table.dataSource = self ;
-    _table.xt_Delegate = self ;
+//    _table.delegate = self ;
+//    _table.dataSource = self ;
+//    _table.xt_Delegate = self ;
     
 }
 

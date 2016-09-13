@@ -14,20 +14,20 @@
 
 @interface ViewController () <UITableViewDataSource,UITableViewDelegate,RootTableViewDelegate>
 
-@property (weak, nonatomic) IBOutlet RootTableView *table;
-@property (strong, nonatomic) NSMutableArray *dataList ;
+//@property (weak, nonatomic) IBOutlet RootTableView *table;
+//@property (strong, nonatomic) NSMutableArray *dataList ;
 
 @end
 
 @implementation ViewController
 
-- (NSMutableArray *)dataList
-{
-    if (!_dataList) {
-        _dataList = [@[] mutableCopy] ;
-    }
-    return _dataList ;
-}
+//- (NSMutableArray *)dataList
+//{
+//    if (!_dataList) {
+//        _dataList = [@[] mutableCopy] ;
+//    }
+//    return _dataList ;
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,17 +39,17 @@
 //    _table.showRefreshDetail = YES ;
 }
 
-#pragma mark - RootTableViewDelegate
-- (void)loadNewData
-{
-    if (_dataList.count) [self.dataList removeAllObjects] ;
-    
-    ResultParsered *result = [ServerRequest getHomePageInfoResultWithSinceID:0 AndMaxID:0 AndCount:20] ;
-//    for (NSDictionary *dicArticle in result.info[@"items"][@"articles"][@"article_list"]) {
-//        Article *article = [Article yy_modelWithJSON:dicArticle] ;
-//        [self.dataList addObject:article] ;
-//    }
-}
+//#pragma mark - RootTableViewDelegate
+//- (void)loadNewData
+//{
+//    if (_dataList.count) [self.dataList removeAllObjects] ;
+//    
+//    ResultParsered *result = [ServerRequest getHomePageInfoResultWithSinceID:0 AndMaxID:0 AndCount:20] ;
+////    for (NSDictionary *dicArticle in result.info[@"items"][@"articles"][@"article_list"]) {
+////        Article *article = [Article yy_modelWithJSON:dicArticle] ;
+////        [self.dataList addObject:article] ;
+////    }
+//}
 
 //- (void)loadMoreData
 //{

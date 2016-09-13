@@ -10,4 +10,10 @@
 
 @implementation User
 
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{
+             @"idOwn" : @"id",
+             };
+}
+
 @end

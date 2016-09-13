@@ -8,6 +8,7 @@
 
 #import "FindController.h"
 #import "CuttingViewController.h"
+#import "UserOnDevice.h"
 
 @interface FindController ()
 
@@ -15,10 +16,7 @@
 
 @implementation FindController
 
-- (IBAction)btAction:(id)sender
-{
-    
-}
+
 
 - (void)viewDidLoad
 {
@@ -31,6 +29,9 @@
     
     [[UIApplication sharedApplication] setStatusBarHidden:NO] ;
     [self.navigationController setNavigationBarHidden:NO] ;
+    
+    UserOnDevice *userOnDevice = [[UserOnDevice alloc] init] ;
+    [userOnDevice checkForLoginOrNot:self] ;
 }
 
 

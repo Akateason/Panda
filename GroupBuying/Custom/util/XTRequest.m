@@ -11,7 +11,9 @@
 #import "ASIFormDataRequest.h"
 #import "ASIHTTPRequest.h"
 #import "AppDelegate.h"
-#import "MBProgressHUD.h"
+#import "SVProgressHUD.h"
+
+#define ACCEPTABLE_CONTENT_TYPES        @"application/json", @"text/html", @"text/json", @"text/javascript",@"text/plain"
 
 @implementation XTRequest
 
@@ -46,20 +48,20 @@
            success:(void (^)(id json))success
               fail:(void (^)())fail
 {
-    UIView *view = [UIApplication sharedApplication].delegate.window ;
     if (hud) {
-        [MBProgressHUD showHUDAddedTo:view animated:NO] ;
+        [SVProgressHUD show] ;
     }
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.requestSerializer.timeoutInterval = TIMEOUT ;
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];//设置相应内容类型
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:ACCEPTABLE_CONTENT_TYPES,nil];//设置相应内容类型
     [manager GET:url parameters:dict success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (success) {
-            NSLog(@"%@",responseObject) ;
+            NSLog(@"url : %@ \nparam : %@",url,dict) ;
+            NSLog(@"resp %@",responseObject) ;
             success(responseObject);
             if (hud) {
-                [MBProgressHUD hideAllHUDsForView:view animated:NO] ;
+                [SVProgressHUD dismiss] ;
             }
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -67,7 +69,7 @@
         if (fail) {
             fail();
             if (hud) {
-                [MBProgressHUD hideAllHUDsForView:view animated:NO] ;
+                [SVProgressHUD dismiss] ;
             }
         }
     }];
@@ -79,28 +81,29 @@
             success:(void (^)(id json))success
                fail:(void (^)())fail
 {
-    UIView *view = [UIApplication sharedApplication].delegate.window ;
     if (hud) {
-        [MBProgressHUD showHUDAddedTo:view animated:NO] ;
+        [SVProgressHUD show] ;
     }
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];//设置相应内容类型
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:ACCEPTABLE_CONTENT_TYPES,nil];//设置相应内容类型
     manager.requestSerializer.timeoutInterval = TIMEOUT ;
 
     [manager POST:url parameters:dict success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (success) {
-            success(responseObject);
+            NSLog(@"url : %@ \nparam : %@",url,dict) ;
+            NSLog(@"resp %@",responseObject) ;
+            success(responseObject) ;
             if (hud) {
-                [MBProgressHUD hideAllHUDsForView:view animated:NO] ;
+                [SVProgressHUD dismiss] ;
             }
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
+        NSLog(@"Error: %@", error) ;
         if (fail) {
             fail();
             if (hud) {
-                [MBProgressHUD hideAllHUDsForView:view animated:NO] ;
+                [SVProgressHUD dismiss] ;
             }
         }
     }];

@@ -10,7 +10,7 @@
 
 @class DigitInformation ;
 @class XTAnimation ;
-@class ServerRequest ;
+#import "ServerRequest.h"
 #import "RootTableView.h"
 
 
