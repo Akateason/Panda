@@ -1,15 +1,14 @@
 //
-//  HPBigPhotoHeaderView.m
+//  DetailUserInfoView.m
 //  GroupBuying
 //
-//  Created by TuTu on 16/8/22.
+//  Created by teason on 16/9/10.
 //  Copyright © 2016年 teason. All rights reserved.
 //
 
-#import "HPBigPhotoHeaderView.h"
-#import "TestUser.h"
+#import "DetailUserInfoView.h"
 
-@interface HPBigPhotoHeaderView ()
+@interface DetailUserInfoView ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *headImageView;
 @property (weak, nonatomic) IBOutlet UIButton *btFoucus;
@@ -18,29 +17,18 @@
 
 @end
 
-@implementation HPBigPhotoHeaderView
-
-- (void)setIndex:(int)index
-{
-    _index = index ;
-    
-    _headImageView.image = [UIImage imageNamed:[TestUser headImage:index]] ;
-    _labelName.text = [TestUser username:index] ;
-    _lableTime.text = @"今天 13 : 32" ;
-
-}
+@implementation DetailUserInfoView
 
 - (IBAction)headOnClick:(id)sender
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(userheadOnClick)]) {
-        [self.delegate userheadOnClick] ;
-    }
+    
 }
 
 - (IBAction)btFoucusOnClick:(id)sender
 {
     
 }
+
 
 
 - (void)awakeFromNib
@@ -56,10 +44,23 @@
     
     _headImageView.layer.cornerRadius = _headImageView.frame.size.width / 2. ;
     _headImageView.layer.masksToBounds = YES ;
-
+    
     _lableTime.textColor =  [UIColor xt_w_light] ;
 }
 
 
+
+
+
+
+
+
+/*
+// Only override drawRect: if you perform custom drawing.
+// An empty implementation adversely affects performance during animation.
+- (void)drawRect:(CGRect)rect {
+    // Drawing code
+}
+*/
 
 @end
