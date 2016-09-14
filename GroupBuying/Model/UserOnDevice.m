@@ -8,14 +8,32 @@
 
 #import "UserOnDevice.h"
 #import "RootCtrl.h"
+#import "XTJson.h"
+#import "YYModel.h"
 
 static NSString * const kName       = @"name" ;
 static NSString * const kPassword   = @"password" ;
 static NSString * const kToken      = @"token" ;
+static NSString * const kUser       = @"userCurrent" ;
 
 @implementation UserOnDevice
 
-- (void)cacheUserName:(NSString *)name
++ (void)cacheUserCurrent:(User *)user
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults] ;
+    NSString *jsonStr = [user yy_modelToJSONString] ;
+    [defaults setObject:jsonStr forKey:kUser] ;
+}
+
++ (User *)currentUserOnDevice
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults] ;
+    NSString *json = [defaults objectForKey:kUser] ;
+    User *auser = [User yy_modelWithJSON:[XTJson getJsonObj:json]] ;
+    return auser ;
+}
+
++ (void)cacheUserName:(NSString *)name
              password:(NSString *)password
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults] ;
@@ -25,7 +43,7 @@ static NSString * const kToken      = @"token" ;
                  forKey:kPassword] ;
 }
 
-- (void)cacheToken:(NSString *)token
++ (void)cacheToken:(NSString *)token
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults] ;
     [defaults setObject:token
@@ -33,7 +51,7 @@ static NSString * const kToken      = @"token" ;
 
 }
 
-- (NSString *)token
++ (NSString *)token
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults] ;
     NSString *token = [defaults objectForKey:kToken] ;
@@ -41,7 +59,7 @@ static NSString * const kToken      = @"token" ;
 }
 
 // if not login . present from ctrller .
-- (void)checkForLoginOrNot:(UIViewController *)ctrller
++ (void)checkForLoginOrNot:(UIViewController *)ctrller
 {
     if ( ![self token].length )
     {
@@ -57,12 +75,13 @@ static NSString * const kToken      = @"token" ;
 
 
 // delete name , pass, token .
-- (void)clean
++ (void)clean
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults] ;
     [defaults removeObjectForKey:kName] ;
     [defaults removeObjectForKey:kPassword] ;
     [defaults removeObjectForKey:kToken] ;
+    [defaults removeObjectForKey:kUser] ;
 }
 
 

@@ -12,10 +12,11 @@
 #import "XTRequest.h"
 #import "ResultParsered.h"
 #import "PublicEnum.h"
-@class User ;
+@class User,Article ;
 
 @interface ServerRequest : XTRequest
 
+#pragma - 登录注册
 + (void)loginWithUserName:(NSString *)name
                  password:(NSString *)password
                   success:(void (^)(id json))success
@@ -27,6 +28,15 @@
                      success:(void (^)(id json))success
                         fail:(void (^)())fail ;
 
+#pragma - 添加文章信息
++ (void)addArticle:(Article *)article
+           success:(void (^)(id json))success
+              fail:(void (^)())fail ;
+
+// 上传资源
++ (void)uploadResourceImage:(UIImage *)image
+                    success:(void (^)(id responseObject))success
+                       fail:(void (^)())fail ;
 @end
 
 

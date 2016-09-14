@@ -24,4 +24,24 @@
              };
 }
 
+
+- (instancetype)initArticleWillPostWithTitle:(NSString *)title
+                                    picItems:(NSArray *)picItems
+                                     content:(NSString *)content
+                                        type:(NSString *)type
+                                        tags:(NSArray *)tags
+{
+    self = [super init];
+    if (self) {
+        self.title = title ;
+        self.picItems = picItems ;
+        self.content = content ;
+        self.type = type ;
+        self.tags = tags ;
+    }
+    return self;
+}
+
+
+
 @end

@@ -11,16 +11,20 @@
 
 @interface UserOnDevice : User
 
-- (void)cacheUserName:(NSString *)name
++ (void)cacheUserCurrent:(User *)user ;
+
++ (User *)currentUserOnDevice ;
+
++ (void)cacheUserName:(NSString *)name
              password:(NSString *)password ;
 
-- (void)cacheToken:(NSString *)token ;
++ (void)cacheToken:(NSString *)token ;
 
-- (NSString *)token ;
++ (NSString *)token ;
 
-- (void)checkForLoginOrNot:(UIViewController *)ctrller ;  // if not login . present from ctrller .
++ (void)checkForLoginOrNot:(UIViewController *)ctrller ;  // if not login . present from ctrller .
 
-- (void)clean ; // delete name , pass, token .
++ (void)clean ; // delete name , pass, token .
 
 
 @end

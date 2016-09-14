@@ -1416,12 +1416,12 @@
 		D75CC4271C2A95DE00E590E6 /* util */ = {
 			isa = PBXGroup;
 			children = (
+				D75CC42C1C2A95DE00E590E6 /* ServerRequest.h */,
+				D75CC42D1C2A95DE00E590E6 /* ServerRequest.m */,
 				D75CC4281C2A95DE00E590E6 /* CommonFunc.h */,
 				D75CC4291C2A95DE00E590E6 /* CommonFunc.m */,
 				D75CC42A1C2A95DE00E590E6 /* DigitInformation.h */,
 				D75CC42B1C2A95DE00E590E6 /* DigitInformation.m */,
-				D75CC42C1C2A95DE00E590E6 /* ServerRequest.h */,
-				D75CC42D1C2A95DE00E590E6 /* ServerRequest.m */,
 				D75CC42E1C2A95DE00E590E6 /* ShareUtils.h */,
 				D75CC42F1C2A95DE00E590E6 /* ShareUtils.m */,
 				D75CC4301C2A95DE00E590E6 /* XTAnimation.h */,

@@ -8,10 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class Resource ;
+
 @interface Pic : NSObject
 
 @property (nonatomic,copy)  NSString    *resourceId ;
 @property (nonatomic,copy)  NSString    *nativeUrl ;
 @property (nonatomic,copy)  NSString    *qiniuUrl ;
+
+- (instancetype)initWithResource:(Resource *)resource ;
 
 @end

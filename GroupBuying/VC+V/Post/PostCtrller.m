@@ -11,6 +11,15 @@
 #import "PostPhotosCell.h"
 #import "CameraViewController.h"
 #import "PostTagCell.h"
+#import "Article.h"
+#import "Resource.h"
+#import "Pic.h"
+#import "YYModel.h"
+
+
+
+static NSString *const kType = @"NOTE" ;
+
 
 @interface PostCtrller () <UITableViewDelegate,UITableViewDataSource,PostPhotosCellDelegate,PostTagCellDelegate>
 
@@ -36,6 +45,7 @@
 }
 
 #pragma mark - PostPhotosCellDelegate
+
 - (void)addPhoto
 {
     NSLog(@"再添加图片") ;
@@ -43,7 +53,6 @@
     cameraVC.openType = typeEdit ;
     cameraVC.existedSubArticleCount = (int)self.photoList.count ;
     cameraVC.postCtrl = self ;
-    
     [self.navigationController pushViewController:cameraVC animated:YES] ;
 }
 
@@ -57,16 +66,61 @@
 - (IBAction)btPostOnClick:(id)sender
 {
     NSLog(@"发布笔记") ;
+    PostContentCell *contentCell = [_table cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]] ;
+    NSString *title = [contentCell fetchTitleStr] ;
+    NSString *content = [contentCell fetchContentStr] ;
     
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }] ;
+    
+    // upload a photo .
+    [ServerRequest uploadResourceImage:[self.photoList firstObject]
+                               success:^(id responseObject) {
+                                   
+                                   Resource *resource = [Resource yy_modelWithJSON:responseObject] ;
+                                   Pic *aPic = [[Pic alloc] initWithResource:resource] ;
+                                   
+                                   
+                                   
+                                   
+                               } fail:^{
+                                   
+                               }] ;
+    
+    
+    
+    /*
+     
+    Article *articleWillPost = [[Article alloc] initArticleWillPostWithTitle:title
+                                                                    picItems:<#(NSArray *)#>
+                                                                     content:content
+                                                                        type:kType
+                                                                        tags:<#(NSArray *)#>] ;
+    
+    [ServerRequest addArticle:articleWillPost
+                      success:^(id json) {
+                          
+                          [self dismissViewControllerAnimated:YES
+                                                   completion:^{
+                          }] ;
+                          
+                      } fail:^{
+                          
+                      }] ;
+    */
+    
+    
 }
 
 - (IBAction)btCancelOnClick:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil] ;
 
 }
+
+
+
+
+
+
+
 
 #pragma mark - life
 - (void)viewDidLoad
@@ -79,7 +133,6 @@
     [_table registerNib:[UINib nibWithNibName:idPostContentCell bundle:nil] forCellReuseIdentifier:idPostContentCell] ;
     [_table registerNib:[UINib nibWithNibName:idPostPhotosCell bundle:nil] forCellReuseIdentifier:idPostPhotosCell] ;
     [_table registerNib:[UINib nibWithNibName:idPostTagCell bundle:nil] forCellReuseIdentifier:idPostTagCell] ;
-    
     _btPost.backgroundColor = [UIColor xt_tabbarRedColor] ;
 }
 
@@ -93,6 +146,11 @@
     
     [_table reloadData] ;
 }
+
+
+
+
+
 
 
 #pragma mark - UITableViewDataSource

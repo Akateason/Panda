@@ -30,8 +30,9 @@
     [[UIApplication sharedApplication] setStatusBarHidden:NO] ;
     [self.navigationController setNavigationBarHidden:NO] ;
     
-    UserOnDevice *userOnDevice = [[UserOnDevice alloc] init] ;
-    [userOnDevice checkForLoginOrNot:self] ;
+    
+    
+//    [UserOnDevice  clean] ;
 }
 
 

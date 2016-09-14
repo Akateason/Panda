@@ -13,4 +13,7 @@ static NSString *idPostContentCell = @"PostContentCell" ;
 
 @interface PostContentCell : UITableViewCell
 
+- (NSString *)fetchTitleStr ;
+- (NSString *)fetchContentStr ;
+
 @end

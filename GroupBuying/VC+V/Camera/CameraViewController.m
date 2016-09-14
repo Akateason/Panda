@@ -82,6 +82,10 @@ static float kMAX_SELECT_COUNT = 10. ;
 
 - (IBAction)btPreviewOnClick:(id)sender {
     NSLog(@"预览") ;
+    if (!self.resultImgList.count) {
+        [SVProgressHUD showErrorWithStatus:@"请选择图片"] ;
+        return ;
+    }
     [self performSegueWithIdentifier:@"camra2preview" sender:self.resultImgList] ;
 }
 

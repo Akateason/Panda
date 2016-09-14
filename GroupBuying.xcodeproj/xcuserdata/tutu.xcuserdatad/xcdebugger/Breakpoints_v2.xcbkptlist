@@ -102,16 +102,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GroupBuying/VC+V/Login/LoginViewController.m"
-            timestampString = "495465883.470529"
+            filePath = "GroupBuying/VC+V/Post/PostCtrller.m"
+            timestampString = "495541986.095813"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "-btLoginOnClick:"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "-btPostOnClick:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -121,14 +121,46 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GroupBuying/Model/UserOnDevice.m"
-            timestampString = "495467762.293566"
+            filePath = "GroupBuying/VC+V/Post/PostCtrller.m"
+            timestampString = "495541986.095813"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "-token"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "-btPostOnClick:"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__29-[PostCtrller btPostOnClick:]_block_invoke"
+                  moduleName = "GroupBuying"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Data/tutu/Desktop/ibardot/CCommerceIOS/GroupBuying/VC+V/Post/PostCtrller.m"
+                  timestampString = "495542044.830835"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "160">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__29-[PostCtrller btPostOnClick:]_block_invoke_2"
+                  moduleName = "GroupBuying"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Data/tutu/Desktop/ibardot/CCommerceIOS/GroupBuying/VC+V/Post/PostCtrller.m"
+                  timestampString = "495542044.83104"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -137,13 +169,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GroupBuying/VC+V/Login/RegisterViewController.m"
-            timestampString = "495467997.082009"
+            filePath = "GroupBuying/VC+V/Post/PostCtrller.m"
+            timestampString = "495541986.095813"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "-btRegisterOnClick:"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "-btPostOnClick:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

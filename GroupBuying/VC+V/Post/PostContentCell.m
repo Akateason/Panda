@@ -30,14 +30,22 @@
     _tv_words.delegate = self ;
 }
 
-
-
 #pragma mark - UITextViewDelegate
 - (void)textViewDidChange:(UITextView *)textView
 {
     self.lb_tfPlaceholder.hidden = (textView.text.length > 0) ;
 }
 
+
+- (NSString *)fetchTitleStr
+{
+    return self.tf_title.text ;
+}
+
+- (NSString *)fetchContentStr
+{
+    return self.tv_words.text ;
+}
 
 
 @end

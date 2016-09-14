@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "SVProgressHUD.h"
 #import "YYModel.h"
+#import "UserOnDevice.h"
 
 @interface LoginViewController ()
 
@@ -46,7 +47,19 @@
                              success:^(id json) {
                                  
                                  ResultParsered *result = [ResultParsered yy_modelWithJSON:json] ;
-                                 
+                                 if (result.code == 1)
+                                 {
+                                     NSString *token = result.data[@"token"] ;
+                                     User *user = [UserOnDevice yy_modelWithJSON:result.data[@"user"]] ;
+                                     [UserOnDevice cacheToken:token] ;
+                                     [UserOnDevice cacheUserName:user.mobile
+                                                        password:self.tf_password.text] ;
+                                     [UserOnDevice cacheUserCurrent:user] ;
+                                     
+                                     [self dismissViewControllerAnimated:YES
+                                                              completion:^{
+                                                              }] ;
+                                 }
                                  
                              }
                                 fail:^{

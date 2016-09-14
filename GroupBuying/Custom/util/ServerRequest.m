@@ -13,6 +13,15 @@
 #import "ASIFormDataRequest.h"
 #import "ASIHTTPRequest.h"
 #import "CommonFunc.h"
+#import "Article.h"
+#import "XTJson.h"
+#import "UserOnDevice.h"
+#import "AFNetworking.h"
+#import "SVProgressHUD.h"
+
+#define ACCEPTABLE_CONTENT_TYPES        @"application/json", @"text/html", @"text/json", @"text/javascript",@"text/plain"
+
+
 
 @implementation ServerRequest
 
@@ -51,6 +60,57 @@
     } fail:^{
         if (fail) fail();
     }] ;
+}
+
+
++ (void)addArticle:(Article *)article
+           success:(void (^)(id json))success
+              fail:(void (^)())fail
+{
+    NSMutableDictionary *paramer = [self getParameters] ;
+    NSString *jsonStr = [XTJson getJsonStr:article] ;
+    [paramer setObject:jsonStr forKey:@"request_body"] ;
+    [paramer setObject:[UserOnDevice token] forKey:@"token"] ;
+    [XTRequest POSTWithUrl:[self getFinalUrl:URL_ARTICLE_ADD]
+                parameters:paramer
+                   success:^(id json) {
+                       if (success) success(json);
+                   } fail:^{
+                       if (fail) fail();
+                   }] ;
+
+}
+
+
++ (void)uploadResourceImage:(UIImage *)image
+                    success:(void (^)(id responseObject))success
+                       fail:(void (^)())fail
+{
+    NSString *urlStr = [[self getFinalUrl:URL_RESOURCE_UPLOAD] stringByAppendingString:[NSString stringWithFormat:@"?token=%@",[UserOnDevice token]]] ;
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager] ;
+    [manager POST:urlStr
+       parameters:nil
+    constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        
+        NSData* dataImg = UIImageJPEGRepresentation(image, 1);
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        formatter.dateFormat = @"yyyyMMddHHmmss";
+        NSString *datestr = [formatter stringFromDate:[NSDate date]] ;
+        NSString *fileName = [NSString stringWithFormat:@"%@_%@.jpg", datestr,[UserOnDevice currentUserOnDevice].idOwn] ;
+        [formData appendPartWithFileData:dataImg
+                                    name:@"file"
+                                fileName:fileName
+                                mimeType:@"image/jpeg"] ;
+        
+    } success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"上传成功 %@", responseObject);
+        if (success) success(responseObject);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"上传失败 %@", error);
+        if (fail) fail();
+    }] ;
+    
+    
 }
 
 

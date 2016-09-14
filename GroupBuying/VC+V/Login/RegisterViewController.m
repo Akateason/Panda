@@ -56,10 +56,11 @@
                                     if (result.code == 1)
                                     {
                                         NSString *token = result.data[@"token"] ;
-                                        UserOnDevice *user = [UserOnDevice yy_modelWithJSON:result.data[@"user"]] ;
-                                        [user cacheToken:token] ;
-                                        [user cacheUserName:user.mobile
+                                        User *user = [UserOnDevice yy_modelWithJSON:result.data[@"user"]] ;
+                                        [UserOnDevice cacheToken:token] ;
+                                        [UserOnDevice cacheUserName:user.mobile
                                                    password:self.tf_password.text] ;
+                                        [UserOnDevice cacheUserCurrent:user] ;
                                         
                                         [self dismissViewControllerAnimated:YES
                                                                  completion:^{

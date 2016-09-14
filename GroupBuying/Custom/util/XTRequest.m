@@ -88,7 +88,7 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:ACCEPTABLE_CONTENT_TYPES,nil];//设置相应内容类型
     manager.requestSerializer.timeoutInterval = TIMEOUT ;
-
+    
     [manager POST:url parameters:dict success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (success) {
             NSLog(@"url : %@ \nparam : %@",url,dict) ;
