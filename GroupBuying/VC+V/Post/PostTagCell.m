@@ -29,7 +29,15 @@
     }
 }
 
-- (void)awakeFromNib {
+- (void)setListTags:(NSArray *)listTags
+{
+    _listTags = listTags ;
+    
+    [_collectionView reloadData] ;
+}
+
+- (void)awakeFromNib
+{
     [super awakeFromNib];
     // Initialization code
     
@@ -60,8 +68,10 @@
     }
     else {
         PostTagItemCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:idPostTagItemCollectionCell forIndexPath:indexPath];
-        
-        return cell;
+        cell.tagName = self.listTags[indexPath.row] ;
+        cell.index = indexPath.row ;
+        cell.closeTagBlock = self.closeTagBlock ;
+        return cell ;
     }
     return nil ;
 }
@@ -92,7 +102,7 @@
     }
     else {
         // (@"tags click") ;
-        return [PostTagItemCollectionCell getSizeWithTagName:@"呵呵哒"] ;
+        return [PostTagItemCollectionCell getSizeWithTagName:self.listTags[indexPath.row]] ;
     }
     return CGSizeZero ;
 }

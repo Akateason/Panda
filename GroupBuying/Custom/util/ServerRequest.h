@@ -34,9 +34,15 @@
               fail:(void (^)())fail ;
 
 // 上传资源
++ (NSURLSessionUploadTask*)uploadTaskWithImage:(UIImage*)image
+                                    completion:(void (^)(NSURLResponse *response, id responseObject, NSError *error))completionBlock ;
 + (void)uploadResourceImage:(UIImage *)image
                     success:(void (^)(id responseObject))success
                        fail:(void (^)())fail ;
+
++ (void)uploadResourceImages:(NSArray *)images
+                     success:(void (^)(id responseObject))success
+                        fail:(void (^)())fail ;
 @end
 
 

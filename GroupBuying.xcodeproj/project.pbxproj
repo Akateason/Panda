@@ -22,6 +22,7 @@
 		6035CF2D1D74B3AC00EA590B /* PostContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6035CF2C1D74B3AC00EA590B /* PostContentCell.xib */; };
 		6035CF311D75E64E00EA590B /* TagSearchingCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = 6035CF301D75E64E00EA590B /* TagSearchingCtrller.m */; };
 		6035CF341D75EDBA00EA590B /* TagSearchingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6035CF331D75EDBA00EA590B /* TagSearchingCell.m */; };
+		604E126A1D8BB93300F43A3C /* UploadTaskOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 604E12691D8BB93300F43A3C /* UploadTaskOperation.m */; };
 		606BF84F1D8415AC00C503FE /* DetailUserInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 606BF84E1D8415AC00C503FE /* DetailUserInfoView.m */; };
 		606BF8511D84164200C503FE /* DetailUserInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 606BF8501D84164200C503FE /* DetailUserInfoView.xib */; };
 		606BF8551D841B7500C503FE /* DetailCoverTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 606BF8531D841B7500C503FE /* DetailCoverTitleCell.m */; };
@@ -359,6 +360,8 @@
 		6035CF301D75E64E00EA590B /* TagSearchingCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagSearchingCtrller.m; path = "GroupBuying/VC+V/Tag/TagSearchingCtrller.m"; sourceTree = SOURCE_ROOT; };
 		6035CF321D75EDBA00EA590B /* TagSearchingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagSearchingCell.h; path = "GroupBuying/VC+V/Tag/TagSearchingCell.h"; sourceTree = SOURCE_ROOT; };
 		6035CF331D75EDBA00EA590B /* TagSearchingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagSearchingCell.m; path = "GroupBuying/VC+V/Tag/TagSearchingCell.m"; sourceTree = SOURCE_ROOT; };
+		604E12681D8BB93300F43A3C /* UploadTaskOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UploadTaskOperation.h; path = "GroupBuying/VC+V/Post/BatchUpload/UploadTaskOperation.h"; sourceTree = SOURCE_ROOT; };
+		604E12691D8BB93300F43A3C /* UploadTaskOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UploadTaskOperation.m; path = "GroupBuying/VC+V/Post/BatchUpload/UploadTaskOperation.m"; sourceTree = SOURCE_ROOT; };
 		606BF84D1D8415AC00C503FE /* DetailUserInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailUserInfoView.h; path = "GroupBuying/VC+V/NoteDetail/DetailUserInfoView.h"; sourceTree = SOURCE_ROOT; };
 		606BF84E1D8415AC00C503FE /* DetailUserInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailUserInfoView.m; path = "GroupBuying/VC+V/NoteDetail/DetailUserInfoView.m"; sourceTree = SOURCE_ROOT; };
 		606BF8501D84164200C503FE /* DetailUserInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailUserInfoView.xib; path = "GroupBuying/VC+V/NoteDetail/DetailUserInfoView.xib"; sourceTree = SOURCE_ROOT; };
@@ -459,7 +462,7 @@
 		D75CC42A1C2A95DE00E590E6 /* DigitInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DigitInformation.h; sourceTree = "<group>"; };
 		D75CC42B1C2A95DE00E590E6 /* DigitInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DigitInformation.m; sourceTree = "<group>"; };
 		D75CC42C1C2A95DE00E590E6 /* ServerRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerRequest.h; sourceTree = "<group>"; };
-		D75CC42D1C2A95DE00E590E6 /* ServerRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerRequest.m; sourceTree = "<group>"; };
+		D75CC42D1C2A95DE00E590E6 /* ServerRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerRequest.m; sourceTree = "<group>"; wrapsLines = 0; };
 		D75CC42E1C2A95DE00E590E6 /* ShareUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareUtils.h; sourceTree = "<group>"; };
 		D75CC42F1C2A95DE00E590E6 /* ShareUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareUtils.m; sourceTree = "<group>"; };
 		D75CC4301C2A95DE00E590E6 /* XTAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTAnimation.h; sourceTree = "<group>"; };
@@ -1093,6 +1096,15 @@
 			name = Tag;
 			sourceTree = "<group>";
 		};
+		604E12671D8BB5EA00F43A3C /* batchUploadImages */ = {
+			isa = PBXGroup;
+			children = (
+				604E12681D8BB93300F43A3C /* UploadTaskOperation.h */,
+				604E12691D8BB93300F43A3C /* UploadTaskOperation.m */,
+			);
+			name = batchUploadImages;
+			sourceTree = "<group>";
+		};
 		608075FC1D805D870056573F /* NoteDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -1137,6 +1149,7 @@
 		608405971D74ADD000B40D68 /* Post */ = {
 			isa = PBXGroup;
 			children = (
+				604E12671D8BB5EA00F43A3C /* batchUploadImages */,
 				608405981D74AE6800B40D68 /* PostCtrller.h */,
 				608405991D74AE6800B40D68 /* PostCtrller.m */,
 				6035CF291D74B38B00EA590B /* PostContentCell.h */,
@@ -2337,12 +2350,12 @@
 		D7E0F4B11D87ADBF00EA663B /* Article */ = {
 			isa = PBXGroup;
 			children = (
-				D7E0F4B21D87ADF700EA663B /* ArticlePicItemInfo.h */,
-				D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */,
-				D7E0F4B51D87B2D100EA663B /* ArticlePicItem.h */,
-				D7E0F4B61D87B2D100EA663B /* ArticlePicItem.m */,
 				D7E0F4B81D87B42D00EA663B /* Article.h */,
 				D7E0F4B91D87B42D00EA663B /* Article.m */,
+				D7E0F4B51D87B2D100EA663B /* ArticlePicItem.h */,
+				D7E0F4B61D87B2D100EA663B /* ArticlePicItem.m */,
+				D7E0F4B21D87ADF700EA663B /* ArticlePicItemInfo.h */,
+				D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */,
 			);
 			name = Article;
 			sourceTree = "<group>";
@@ -2445,7 +2458,7 @@
 				TargetAttributes = {
 					D75CC3C01C2A926100E590E6 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = S9H98D8VCR;
+						DevelopmentTeam = 5D74XHX7AD;
 					};
 					D75CC3D91C2A926200E590E6 = {
 						CreatedOnToolsVersion = 7.2;
@@ -2726,6 +2739,7 @@
 				D75CC44B1C2A95DE00E590E6 /* XTSegment.m in Sources */,
 				60074E061D60DFEF0040C3C0 /* FeaturesController.m in Sources */,
 				D75CC5DD1C2A965000E590E6 /* UIScrollView+MJExtension.m in Sources */,
+				604E126A1D8BB93300F43A3C /* UploadTaskOperation.m in Sources */,
 				D76E837E1D6C6EBD0014FDEA /* RankingCell.m in Sources */,
 				D75CC4451C2A95DE00E590E6 /* MyTabbar.m in Sources */,
 				60074E1B1D634AE80040C3C0 /* UIColor+AllColors.m in Sources */,

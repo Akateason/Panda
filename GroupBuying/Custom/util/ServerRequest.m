@@ -81,6 +81,37 @@
 
 }
 
++ (NSURLSessionUploadTask*)uploadTaskWithImage:(UIImage*)image
+                                    completion:(void (^)(NSURLResponse *response, id responseObject, NSError *error))completionBlock
+{
+    NSString *urlStr = [[self getFinalUrl:URL_RESOURCE_UPLOAD] stringByAppendingString:[NSString stringWithFormat:@"?token=%@",[UserOnDevice token]]] ;
+
+    // 构造 NSURLRequest
+    NSError* error = NULL;
+    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST"
+                                                                                              URLString:urlStr
+                                                                                             parameters:nil
+                                                                              constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
+                                    {
+                                        NSData* dataImg = UIImageJPEGRepresentation(image, 1);
+                                        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+                                        formatter.dateFormat = @"yyyyMMddHHmmss";
+                                        NSString *datestr = [formatter stringFromDate:[NSDate date]] ;
+                                        NSString *fileName = [NSString stringWithFormat:@"%@_%@.jpg", datestr,[UserOnDevice currentUserOnDevice].idOwn] ;
+                                        [formData appendPartWithFileData:dataImg
+                                                                    name:@"file"
+                                                                fileName:fileName
+                                                                mimeType:@"image/jpeg"] ;
+                                    } error:&error];
+    
+    // 可在此处配置验证信息
+    // 将 NSURLRequest 与 completionBlock 包装为 NSURLSessionUploadTask
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]] ;
+    NSURLSessionUploadTask *uploadTask = [manager uploadTaskWithStreamedRequest:request
+                                                                       progress:nil
+                                                              completionHandler:completionBlock] ;
+    return uploadTask;
+}
 
 + (void)uploadResourceImage:(UIImage *)image
                     success:(void (^)(id responseObject))success
@@ -88,9 +119,9 @@
 {
     NSString *urlStr = [[self getFinalUrl:URL_RESOURCE_UPLOAD] stringByAppendingString:[NSString stringWithFormat:@"?token=%@",[UserOnDevice token]]] ;
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager] ;
-    [manager POST:urlStr
-       parameters:nil
-    constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+    [manager              POST:urlStr
+                    parameters:nil
+       constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         
         NSData* dataImg = UIImageJPEGRepresentation(image, 1);
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -109,10 +140,40 @@
         NSLog(@"上传失败 %@", error);
         if (fail) fail();
     }] ;
-    
-    
 }
 
+/*
++ (void)uploadResourceImages:(NSArray *)images
+                    success:(void (^)(id responseObject))success
+                       fail:(void (^)())fail
+{
+    NSString *urlStr = [[self getFinalUrl:URL_RESOURCE_UPLOAD] stringByAppendingString:[NSString stringWithFormat:@"?token=%@",[UserOnDevice token]]] ;
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager] ;
+    [manager              POST:urlStr
+                    parameters:nil
+     constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+         
+         for (UIImage *image in images) {
+             NSData* dataImg = UIImageJPEGRepresentation(image, 1);
+             NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+             formatter.dateFormat = @"yyyyMMddHHmmss";
+             NSString *datestr = [formatter stringFromDate:[NSDate date]] ;
+             NSString *fileName = [NSString stringWithFormat:@"%@_%@.jpg", datestr,[UserOnDevice currentUserOnDevice].idOwn] ;
+             [formData appendPartWithFileData:dataImg
+                                         name:@"file"
+                                     fileName:fileName
+                                     mimeType:@"image/jpeg"] ;
+         }
+         
+     } success:^(NSURLSessionDataTask *task, id responseObject) {
+         NSLog(@"上传成功 %@", responseObject);
+         if (success) success(responseObject);
+     } failure:^(NSURLSessionDataTask *task, NSError *error) {
+         NSLog(@"上传失败 %@", error);
+         if (fail) fail();
+     }] ;
+}
+*/
 
 //+ (void)getQiniuTokenWithBuckect:(NSString *)bucket
 //                         success:(void (^)(id json))success

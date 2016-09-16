@@ -10,4 +10,10 @@
 
 @implementation Resource
 
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{
+             @"idResource" : @"id",
+             };
+}
+
 @end

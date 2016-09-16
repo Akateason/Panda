@@ -21,6 +21,14 @@
 - (IBAction)btCloseOnClick:(id)sender
 {
     NSLog(@"关闭标签") ;
+    self.closeTagBlock(self.index) ;
+}
+
+- (void)setTagName:(NSString *)tagName
+{
+    _tagName = tagName ;
+    
+    _labelTagName.text = tagName ;
 }
 
 - (void)awakeFromNib
@@ -29,9 +37,6 @@
     // Initialization code
     _bgView.backgroundColor = [UIColor xt_seperate] ;
     _labelTagName.textColor = [UIColor xt_tabbarRedColor] ;
-    
-    
-    _labelTagName.text = @"呵呵哒" ;
 }
 
 + (CGSize)getSizeWithTagName:(NSString *)tagName

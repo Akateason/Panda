@@ -16,5 +16,7 @@
 @property (nonatomic,strong)    NSArray     *items ; //图片中的标签信息(ArticlePicItemInfo对象数组)
 @property (nonatomic)           long long   createTime ;
 
+- (instancetype)initWillUploadWithPic:(Pic *)pic
+                                items:(NSArray *)items ;
 
 @end

@@ -16,7 +16,7 @@
 @property (nonatomic,copy)      NSString    *content ;
 @property (nonatomic,copy)      NSString    *type ; // 类型(个人笔记)允许值: "NOTE"
 @property (nonatomic,copy)      NSString    *status ; // 状态(已发布，已归档) 允许值: "PUBLISH", "ARCHIVE"
-@property (nonatomic,strong)    NSArray     *tags ; //文章标签数组
+@property (nonatomic,strong)    NSArray     *tags ; //文章标签数组 <string>
 
 
 @property (nonatomic)           long long   createTime ;

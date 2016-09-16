@@ -11,6 +11,16 @@
 
 @implementation ArticlePicItem
 
+- (instancetype)initWillUploadWithPic:(Pic *)pic items:(NSArray *)items
+{
+    self = [super init];
+    if (self) {
+        self.img = pic ;
+        self.items = items ;
+    }
+    return self;
+}
+
 + (NSDictionary *)modelCustomPropertyMapper {
     return @{
              @"id_ArticlePicItem" : @"id",
@@ -23,6 +33,9 @@
              
              };
 }
+
+
+
 
 
 @end

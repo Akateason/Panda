@@ -15,7 +15,11 @@
 #import "Resource.h"
 #import "Pic.h"
 #import "YYModel.h"
-
+#import "UploadTaskOperation.h"
+#import "SVProgressHUD.h"
+#import "ArticlePicItem.h"
+#import "ArticlePicItemInfo.h"
+#import "TagSearchingCtrller.h"
 
 
 static NSString *const kType = @"NOTE" ;
@@ -26,10 +30,11 @@ static NSString *const kType = @"NOTE" ;
 @property (weak, nonatomic) IBOutlet UITableView *table;
 @property (weak, nonatomic) IBOutlet UIButton *btPost;
 
+@property (nonatomic,strong) NSArray *articleTaglist ; // tags in article .
+
 @end
 
 @implementation PostCtrller
-
 
 #pragma mark - PostTagCellDelegate <NSObject>
 
@@ -66,46 +71,90 @@ static NSString *const kType = @"NOTE" ;
 - (IBAction)btPostOnClick:(id)sender
 {
     NSLog(@"发布笔记") ;
+    [SVProgressHUD showWithStatus:@"正在上传..."] ;
+    
     PostContentCell *contentCell = [_table cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]] ;
     NSString *title = [contentCell fetchTitleStr] ;
     NSString *content = [contentCell fetchContentStr] ;
     
     
-    // upload a photo .
-    [ServerRequest uploadResourceImage:[self.photoList firstObject]
-                               success:^(id responseObject) {
-                                   
-                                   Resource *resource = [Resource yy_modelWithJSON:responseObject] ;
-                                   Pic *aPic = [[Pic alloc] initWithResource:resource] ;
-                                   
-                                   
-                                   
-                                   
-                               } fail:^{
-                                   
-                               }] ;
-    
-    
-    
-    /*
-     
-    Article *articleWillPost = [[Article alloc] initArticleWillPostWithTitle:title
-                                                                    picItems:<#(NSArray *)#>
-                                                                     content:content
-                                                                        type:kType
-                                                                        tags:<#(NSArray *)#>] ;
-    
-    [ServerRequest addArticle:articleWillPost
-                      success:^(id json) {
-                          
-                          [self dismissViewControllerAnimated:YES
-                                                   completion:^{
+    // batch upload photos .
+    __block BOOL bUploadFail = false ;
+    // 准备保存结果的数组,先用 NSNull 占位 , 保证最后顺序
+    NSMutableArray* result = [NSMutableArray array];
+    for (int i = 0 ; i < self.photoList.count ; i++) {
+        [result addObject:[NSNull null]];
+    }
+    dispatch_group_t group = dispatch_group_create();
+    for (NSInteger i = 0; i < self.photoList.count; i++)
+    {
+        dispatch_group_enter(group);
+        NSURLSessionUploadTask* uploadTask = [ServerRequest uploadTaskWithImage:self.photoList[i]
+                                                                     completion:^(NSURLResponse *response, NSDictionary* responseObject, NSError *error)
+        {
+            if (error) {
+                bUploadFail = YES ;
+                NSLog(@"第 %d 张图片上传失败: %@", (int)i + 1, error);
+                dispatch_group_leave(group);
+            } else {
+                NSLog(@"第 %d 张图片上传成功", (int)i + 1);
+                @synchronized (result) { // NSMutableArray 是线程不安全的，所以加个同步锁
+                    result[i] = responseObject;
+                }
+                dispatch_group_leave(group);
+            }
+        }];
+        [uploadTask resume];
+    }
+    // notify .
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        if (bUploadFail) {
+            NSLog(@"上传shibai!");
+            [SVProgressHUD dismiss] ;
+            [SVProgressHUD showErrorWithStatus:@"图片上传失败"] ;
+            return ;
+        }
+        NSLog(@"图片上传完成!");
+        NSMutableArray *articlePicItemList = [@[] mutableCopy] ;
+        for (NSDictionary *response in result)
+        {
+            Resource *resource = [Resource yy_modelWithDictionary:response[@"data"][@"resource"]] ;
+            Pic *aPic = [[Pic alloc] initWithResource:resource] ;
+//            ArticlePicItemInfo *aPicItemInfo = [[ArticlePicItemInfo alloc] init] ;
+            ArticlePicItem *picItem = [[ArticlePicItem alloc] initWillUploadWithPic:aPic
+                                                                              items:nil] ;
+            [articlePicItemList addObject:picItem] ;
+        }
+                        
+        
+        // article .
+        Article *articleWillUpload = [[Article alloc] initArticleWillPostWithTitle:title
+                                                                          picItems:articlePicItemList
+                                                                           content:content
+                                                                              type:@"NOTE"
+                                                                              tags:self.articleTaglist] ;
+                
+        [ServerRequest addArticle:articleWillUpload
+                          success:^(id json)
+        {
+            
+                              
+            [self dismissViewControllerAnimated:YES completion:^{}] ;
+            
+        }
+                             fail:^
+        {
+            
+                             
                           }] ;
-                          
-                      } fail:^{
-                          
-                      }] ;
-    */
+        
+        [SVProgressHUD dismiss] ;
+    });
+   
+
+    
+
+    
     
     
 }
@@ -134,8 +183,9 @@ static NSString *const kType = @"NOTE" ;
     [_table registerNib:[UINib nibWithNibName:idPostPhotosCell bundle:nil] forCellReuseIdentifier:idPostPhotosCell] ;
     [_table registerNib:[UINib nibWithNibName:idPostTagCell bundle:nil] forCellReuseIdentifier:idPostTagCell] ;
     _btPost.backgroundColor = [UIColor xt_tabbarRedColor] ;
+    
+    self.articleTaglist = @[] ;
 }
-
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -174,7 +224,14 @@ static NSString *const kType = @"NOTE" ;
     else if (indexPath.row == 2) {
         PostTagCell *cell = [tableView dequeueReusableCellWithIdentifier:idPostTagCell] ;
         cell.delegate = self ;
-        cell.listTags = @[@1,@1,@1]; // for test .
+        cell.listTags = self.articleTaglist ;
+        cell.closeTagBlock = ^(NSInteger indexRemove) {
+            NSMutableArray *tmplist = [self.articleTaglist mutableCopy];
+            [tmplist removeObjectAtIndex:indexRemove] ;
+            self.articleTaglist = tmplist ;
+            [_table reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:2 inSection:0]]
+                          withRowAnimation:UITableViewRowAnimationNone] ;
+        } ;
         return cell ;
     }
     
@@ -204,6 +261,26 @@ static NSString *const kType = @"NOTE" ;
 }
 
 
+
+
+#pragma mark - Navigation
+ 
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"post2tagSearch"])
+    {
+        TagSearchingCtrller *tagSearchVC = [segue destinationViewController] ;
+        tagSearchVC.block = ^(NSString *tagCallback) {
+            NSMutableArray *tmplist = [self.articleTaglist mutableCopy];
+            [tmplist addObject:tagCallback] ;
+            self.articleTaglist = tmplist ;
+            [_table reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:2 inSection:0]]
+                          withRowAnimation:UITableViewRowAnimationNone] ;
+        } ;
+    }
+    
+}
 
 
 

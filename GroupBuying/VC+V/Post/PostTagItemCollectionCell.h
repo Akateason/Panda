@@ -14,4 +14,8 @@ static NSString *idPostTagItemCollectionCell = @"PostTagItemCollectionCell" ;
 
 + (CGSize)getSizeWithTagName:(NSString *)tagName ;
 
+@property (nonatomic,copy) NSString     *tagName ;
+@property (nonatomic)      NSInteger    index ;
+@property (nonatomic,copy) void (^closeTagBlock)(NSInteger indexRemove) ;
+
 @end

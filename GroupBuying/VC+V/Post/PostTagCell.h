@@ -22,5 +22,6 @@ static NSString * _Nonnull idPostTagCell = @"PostTagCell" ;
 
 @property (nonatomic,weak) id <PostTagCellDelegate> delegate ;
 @property (nonatomic,strong,nullable) NSArray *listTags ;
+@property (nonatomic,copy) void (^closeTagBlock)(NSInteger indexRemove) ;
 
 @end
