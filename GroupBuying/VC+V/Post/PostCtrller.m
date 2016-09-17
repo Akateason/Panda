@@ -15,7 +15,6 @@
 #import "Resource.h"
 #import "Pic.h"
 #import "YYModel.h"
-#import "UploadTaskOperation.h"
 #import "SVProgressHUD.h"
 #import "ArticlePicItem.h"
 #import "ArticlePicItemInfo.h"
