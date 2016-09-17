@@ -28,21 +28,30 @@
                      success:(void (^)(id json))success
                         fail:(void (^)())fail ;
 
+
+
+#pragma -  搜索首页笔记信息
++ (void)homelistWithSearchtype:(NSNumber *)typeNumber
+                       refresh:(NSNumber *)refreshNumber
+                        userID:(NSString *)userID
+                          from:(NSNumber *)from
+                       howmany:(NSNumber *)howmany
+                       success:(void (^)(id json))success
+                          fail:(void (^)())fail ;
+
+
+
 #pragma - 添加文章信息
 + (void)addArticle:(Article *)article
            success:(void (^)(id json))success
               fail:(void (^)())fail ;
-
 // 上传资源
 + (NSURLSessionUploadTask*)uploadTaskWithImage:(UIImage*)image
-                                    completion:(void (^)(NSURLResponse *response, id responseObject, NSError *error))completionBlock ;
-+ (void)uploadResourceImage:(UIImage *)image
-                    success:(void (^)(id responseObject))success
-                       fail:(void (^)())fail ;
+                                    completion:(void (^)(NSURLResponse *response,
+                                                         id responseObject,
+                                                         NSError *error))completionBlock ;
 
-+ (void)uploadResourceImages:(NSArray *)images
-                     success:(void (^)(id responseObject))success
-                        fail:(void (^)())fail ;
+
 @end
 
 

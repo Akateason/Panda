@@ -22,6 +22,17 @@
 #import "UserInfoCtrller.h"
 #import "NoteDetailCtrller.h"
 #import "UserOnDevice.h"
+#import "YYModel.h"
+
+
+static NSInteger const kPageHowmany = 20 ;
+
+typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
+    type_all = 0 ,
+    type_myFoucus,
+    type_canBuy
+};
+
 
 @interface HomePageController () <UICollectionViewDelegate,UICollectionViewDataSource,CHTCollectionViewDelegateWaterfallLayout,RootCollectionViewDelegate,HPBigPhotoHeaderViewDelegate>
 
@@ -30,9 +41,14 @@
 @property (weak, nonatomic) IBOutlet UIButton *itemCamera;
 @property (weak, nonatomic) IBOutlet UIButton *itemSwitcher;
 // collection view
-@property (strong, nonatomic) IBOutlet RootCollectionView *collectionView;
+@property (strong, nonatomic) RootCollectionView *collectionView;
 @property (nonatomic,strong) CHTCollectionViewWaterfallLayout *waterflowLayout ;
 @property (nonatomic,strong) XLPlainFlowLayout *bplayout ;
+
+
+@property (nonatomic,strong) NSArray                *listNote ;
+@property (nonatomic)        BOOL                   bFirstTime ;
+@property (nonatomic)        HOMEPAGE_SEARCHTYPE    schType ;
 
 @end
 
@@ -58,9 +74,9 @@
     [KxMenu showMenuInView:self.view.window fromRect:rect menuItems:self.menuItems] ;
     
     // 模拟 [ 有新数据 ]
-    [self itemIndex:0 hasNewData:YES] ;
-    [self itemIndex:1 hasNewData:YES] ;
-    [self itemIndex:2 hasNewData:NO] ;
+//    [self itemIndex:0 hasNewData:YES] ;
+//    [self itemIndex:1 hasNewData:YES] ;
+//    [self itemIndex:2 hasNewData:NO] ;
 }
 
 - (void)toAll:(KxMenuItem *)item
@@ -68,6 +84,7 @@
     NSLog(@"全部") ;
     [self.btTitleLogo setTitle:[self getDisplayStringWithPopItemIndex:0]
                       forState:0] ;
+    self.schType = type_all ;
 }
 
 - (void)toMyFocus:(KxMenuItem *)item
@@ -75,6 +92,7 @@
     NSLog(@"我关注的人") ;
     [self.btTitleLogo setTitle:[self getDisplayStringWithPopItemIndex:1]
                       forState:0] ;
+    self.schType = type_myFoucus ;
 }
 
 - (void)toCanBuy:(KxMenuItem *)item
@@ -82,6 +100,7 @@
     NSLog(@"可购买的") ;
     [self.btTitleLogo setTitle:[self getDisplayStringWithPopItemIndex:2]
                       forState:0] ;
+    self.schType = type_canBuy ;
 }
 
 - (IBAction)itemRankingOnClick:(id)sender {
@@ -144,6 +163,7 @@
                                                collectionViewLayout:self.waterflowLayout];
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
+        _collectionView.xt_delegate = self ;
         _collectionView.backgroundColor = [UIColor xt_collectionBackgroundColor] ;
         _collectionView.showsVerticalScrollIndicator = NO ;
         [_collectionView registerNib:[UINib nibWithNibName:id_HPProductCollectionCell bundle:[NSBundle mainBundle]]
@@ -184,6 +204,7 @@
 {
     [super viewDidLoad] ;
     
+    _bFirstTime = true ;
     // nav item position
     [self.view addSubview:self.collectionView];
     // title pop menu .
@@ -191,7 +212,6 @@
     
     // login
     [UserOnDevice checkForLoginOrNot:self] ;
-
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -218,7 +238,24 @@
 
 - (void)loadNewData
 {
+    NSString *userID = [UserOnDevice currentUserOnDevice].idOwn ;
+    NSLog(@"userID : %@",userID) ;
     
+    [ServerRequest homelistWithSearchtype:@(self.schType)
+                                  refresh:@(!_bFirstTime)
+                                   userID:userID
+                                     from:@(self.listNote.count)
+                                  howmany:@(kPageHowmany)
+                                  success:^(id json) {
+                                      ResultParsered *result = [ResultParsered yy_modelWithJSON:json] ;
+                                      NSArray *noteDicList = result.data[@"noteList"] ;
+                                      NSLog(@"noteList : %@",noteDicList) ;
+                                      
+                                  } fail:^{
+                                      
+                                  }] ;
+    
+    _bFirstTime = false ;
 }
 
 - (void)loadMoreData

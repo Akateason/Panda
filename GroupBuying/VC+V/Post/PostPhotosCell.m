@@ -26,7 +26,7 @@
     [tmpList removeObjectAtIndex:index] ;
     self.listPhotos = tmpList ;
     if (self.delegate) {
-        [self.delegate deletePhotoWithList:self.listPhotos] ;
+        [self.delegate deletePhotoWithList:self.listPhotos index:index] ;
     }
     
     [_collectionView reloadData] ;

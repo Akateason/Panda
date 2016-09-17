@@ -30,6 +30,7 @@
                                      content:(NSString *)content
                                         type:(NSString *)type
                                         tags:(NSArray *)tags
+                                      status:(NSString *)status
 {
     self = [super init];
     if (self) {
@@ -38,6 +39,7 @@
         self.content = content ;
         self.type = type ;
         self.tags = tags ;
+        self.status = status ;
     }
     return self;
 }

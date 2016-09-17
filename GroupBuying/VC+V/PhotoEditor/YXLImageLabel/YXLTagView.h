@@ -24,8 +24,8 @@
  */
 @property (nonatomic ,assign) BOOL isImageLabelShow;
 
-//ADDBY @TEASON
+
 @property (nonatomic,copy) NSString *typeStr ;
-//ADDBY @TEASON
+
 
 @end

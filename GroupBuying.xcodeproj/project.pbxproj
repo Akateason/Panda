@@ -49,7 +49,6 @@
 		D74589991D6B190D00835234 /* HomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D74589981D6B190D00835234 /* HomePage.storyboard */; };
 		D75CC3C61C2A926100E590E6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC3C51C2A926100E590E6 /* main.m */; };
 		D75CC3C91C2A926100E590E6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC3C81C2A926100E590E6 /* AppDelegate.m */; };
-		D75CC3CC1C2A926100E590E6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC3CB1C2A926100E590E6 /* ViewController.m */; };
 		D75CC3CF1C2A926100E590E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D75CC3CD1C2A926100E590E6 /* Main.storyboard */; };
 		D75CC3D11C2A926100E590E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D75CC3D01C2A926100E590E6 /* Assets.xcassets */; };
 		D75CC3D41C2A926100E590E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D75CC3D21C2A926100E590E6 /* LaunchScreen.storyboard */; };
@@ -408,8 +407,6 @@
 		D75CC3C51C2A926100E590E6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D75CC3C71C2A926100E590E6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D75CC3C81C2A926100E590E6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D75CC3CA1C2A926100E590E6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D75CC3CB1C2A926100E590E6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D75CC3CE1C2A926100E590E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D75CC3D01C2A926100E590E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D75CC3D31C2A926100E590E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -1227,8 +1224,6 @@
 				D75CC6571C2B9A1700E590E6 /* AppDelegateInitial.h */,
 				D75CC6581C2B9A1700E590E6 /* AppDelegateInitial.mm */,
 				60074DF81D60DEAB0040C3C0 /* Storyboard */,
-				D75CC3CA1C2A926100E590E6 /* ViewController.h */,
-				D75CC3CB1C2A926100E590E6 /* ViewController.m */,
 				D76E839C1D6EA1D90014FDEA /* testUser.plist */,
 				D76E839E1D6EA2B40014FDEA /* TestUser.h */,
 				D76E839F1D6EA2B40014FDEA /* TestUser.m */,
@@ -2593,7 +2588,6 @@
 				D75CC44D1C2A95DE00E590E6 /* DigitInformation.m in Sources */,
 				D75CC6C41C2BEB0400E590E6 /* RootTableView.m in Sources */,
 				D76E83FF1D7526250014FDEA /* PostPhotoCollectionCell.m in Sources */,
-				D75CC3CC1C2A926100E590E6 /* ViewController.m in Sources */,
 				D75CC5A81C2A965000E590E6 /* ASIAuthenticationDialog.m in Sources */,
 				D75CC5FD1C2A965000E590E6 /* UIImage+GIF.m in Sources */,
 				D75CC5E31C2A965000E590E6 /* QNCrc32.m in Sources */,

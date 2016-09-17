@@ -10,14 +10,23 @@
 #import "YXLTagView.h"
 #import "TagSearchingCtrller.h"
 
+static const NSInteger kTagForButton    = 323236 ;
+#define                kButtonNames     @[@"产地",@"品牌",@"价格",@"型号"]
+#define                kButtonKeys      @[@"LOCATION",@"BRAND",@"PRICE",@"SKU"]
+static const CGFloat widthAndHeight     = 50. ;
+static const CGFloat flexToCenterX      = (widthAndHeight / 2 + 5.) ;
 
 @interface YXLTagEditorImageView ()<UIGestureRecognizerDelegate>
 {
     NSMutableArray *arrayTagS;
     UIView *viewCover;
     UIView *viewMBP;
-    UIButton *buttonOne;
-    UIButton *buttonTwo;
+    
+    UIButton *btLocation ;
+    UIButton *btBrand ;
+    UIButton *btPrice ;
+    UIButton *btSKU ;
+    
     YXLTagView *viewTag;
     CGFloat imageScale;
     UIImage *imageLabelIcon;
@@ -97,25 +106,41 @@
         make.edges.equalTo(self);
     }];
     
-    CGFloat widthAndHeight = 50 ;
     
-    buttonOne =[self getButtonOne];
-    buttonOne.layer.cornerRadius=widthAndHeight/2;
-    [viewCover addSubview:buttonOne];
-    [buttonOne mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self).offset(-(widthAndHeight/1.3));
+    
+    btLocation = [self configureButtonWithTag:kTagForButton] ;
+    [viewCover addSubview:btLocation];
+    [btLocation mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self).offset(- 3 * flexToCenterX) ;
+        make.centerY.equalTo(self) ;
+        make.size.mas_equalTo(CGSizeMake(widthAndHeight, widthAndHeight));
+    }];
+    
+    btBrand = [self configureButtonWithTag:kTagForButton + 1] ;
+    [viewCover addSubview:btBrand];
+    [btBrand mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self).offset(- flexToCenterX);
         make.centerY.equalTo(self);
         make.size.mas_equalTo(CGSizeMake(widthAndHeight, widthAndHeight));
     }];
     
-    buttonTwo =[self getButtonTwo];
-    buttonTwo.layer.cornerRadius=widthAndHeight/2;
-    [viewCover addSubview:buttonTwo];
-    [buttonTwo mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self).offset(widthAndHeight/1.3);
+    btPrice = [self configureButtonWithTag:kTagForButton + 2] ;
+    [viewCover addSubview:btPrice];
+    [btPrice mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self).offset(flexToCenterX) ;
+        make.centerY.equalTo(self) ;
+        make.size.mas_equalTo(CGSizeMake(widthAndHeight, widthAndHeight));
+    }];
+    
+    btSKU = [self configureButtonWithTag:kTagForButton + 3] ;
+    [viewCover addSubview:btSKU];
+    [btSKU mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self).offset(flexToCenterX * 3);
         make.centerY.equalTo(self);
         make.size.mas_equalTo(CGSizeMake(widthAndHeight, widthAndHeight));
     }];
+    
+    
 }
 /**
  *  mbp界面的动画
@@ -124,12 +149,16 @@
     if (animation) {
         [UIView animateWithDuration:0.1 animations:^{
             viewCover.alpha=1;
-            buttonOne.transform=CGAffineTransformMakeScale(1.2, 1.2);
-            buttonTwo.transform=CGAffineTransformMakeScale(1.2, 1.2);
+            btLocation.transform=CGAffineTransformMakeScale(1.2, 1.2);
+            btSKU.transform=CGAffineTransformMakeScale(1.2, 1.2);
+            btBrand.transform=CGAffineTransformMakeScale(1.2, 1.2);
+            btPrice.transform=CGAffineTransformMakeScale(1.2, 1.2);
         } completion:^(BOOL finished) {
             [UIView animateWithDuration:0.1 delay:0 options:UIViewAnimationOptionOverrideInheritedDuration animations:^{
-                buttonOne.transform=CGAffineTransformIdentity;
-                buttonTwo.transform=CGAffineTransformIdentity;
+                btLocation.transform=CGAffineTransformIdentity;
+                btSKU.transform=CGAffineTransformIdentity;
+                btBrand.transform=CGAffineTransformIdentity;
+                btPrice.transform=CGAffineTransformIdentity;
             }completion:^(BOOL finished) {
                 
             }];
@@ -153,7 +182,11 @@
 
 #pragma -mark 添加已知标签
 
--(void)addTagViewText:(NSString *)text Location:(CGPoint )point isPositiveAndNegative:(BOOL)isPositiveAndNegative {
+-(void)addTagViewText:(NSString *)text
+             Location:(CGPoint )point
+isPositiveAndNegative:(BOOL)isPositiveAndNegative
+                 type:(NSString *)typeStr
+{
     CGFloat X;
     if (isPositiveAndNegative) {
         X = point.x * imageScale - 8 ;
@@ -164,6 +197,9 @@
     [self addtagViewimageClickinit:pointimageScale isAddTagView:YES] ;
     if(text.length!=0)
         viewTag.imageLabel.labelWaterFlow.text = text ;
+    
+    viewTag.typeStr = typeStr ;
+
     [arrayInitDidView addObject:[NSString stringWithFormat:@"%d",isPositiveAndNegative]] ;
     
 }
@@ -304,7 +340,8 @@
 /**
  *  编辑
  */
--(void)menuItem1Pressed{
+-(void)menuItem1Pressed
+{
     
     TagSearchingCtrller *vc = (TagSearchingCtrller *)[[TagSearchingCtrller class] getCtrllerFromStory:@"Camera" controllerIdentifier:@"TagSearchingCtrller"] ;
     __weak YXLTagEditorImageView *ws =self;
@@ -377,55 +414,48 @@
     [self mbpAnimation:NO];
 }
 
--(void)clickButtonOne {
-    TagSearchingCtrller *vc = (TagSearchingCtrller *)[[TagSearchingCtrller class] getCtrllerFromStory:@"Camera" controllerIdentifier:@"TagSearchingCtrller"] ;    __weak YXLTagEditorImageView *ws =self;
-    vc.block=^(NSString *text){
+- (void)clickButton:(UIButton *)sender
+{
+    NSLog(@"type : %@", kButtonNames[sender.tag - kTagForButton]) ;
+    
+    TagSearchingCtrller *vc = (TagSearchingCtrller *)[[TagSearchingCtrller class] getCtrllerFromStory:@"Camera" controllerIdentifier:@"TagSearchingCtrller"] ;
+    __weak YXLTagEditorImageView *ws = self ;
+    vc.block = ^(NSString *text) {
         if (!text) {
-            [self clickViewMBP];
+            [self clickViewMBP] ;
             return  ;
         }
-        viewTag.imageLabel.labelWaterFlow.text=text;
-        viewTag.isImageLabelShow=YES;
-        [self clickViewMBP];
-        [ws correct:text isPositiveAndNegative:YES];
-    };
-    [self.viewC presentViewController:vc animated:YES completion:nil];
+        viewTag.typeStr = kButtonKeys[sender.tag - kTagForButton] ;
+        viewTag.imageLabel.labelWaterFlow.text = text;
+        viewTag.isImageLabelShow = YES ;
+        [self clickViewMBP] ;
+        [ws correct:text isPositiveAndNegative:YES] ;
+    } ;
+    [self.viewC presentViewController:vc animated:YES completion:nil] ;
 }
 
--(void)clickButtonTwo {
-    TagSearchingCtrller *vc = (TagSearchingCtrller *)[[TagSearchingCtrller class] getCtrllerFromStory:@"Camera" controllerIdentifier:@"TagSearchingCtrller"] ;    __weak YXLTagEditorImageView *ws =self;
-    vc.block=^(NSString *text){
-        if (!text) {
-            [self clickViewMBP];
-            return  ;
-        }
-        viewTag.imageLabel.labelWaterFlow.text=text;
-        viewTag.isImageLabelShow=YES;
-        [self clickViewMBP];
-        [ws correct:text isPositiveAndNegative:YES];
-    };
-    [self.viewC presentViewController:vc animated:YES completion:nil];
-}
+
 /**
  *  修正
  */
--(void)correct:(NSString *)text isPositiveAndNegative:(BOOL)isPositiveAndNegative{
+-(void)correct:(NSString *)text isPositiveAndNegative:(BOOL)isPositiveAndNegative
+{
     CGSize size =[text sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:Font(11),NSFontAttributeName, nil]];
     CGFloat W;
     if (CGWidth(imageLabelIcon)-15 > size.width) {
         W=0;
-    }else{
+    }
+    else {
         W=size.width-(CGWidth(imageLabelIcon)-15);
     }
     
-    if (CGOriginX(viewTag.frame)+(CGWidth(imageLabelIcon)+8+W) >= rctWidth) {
+    if (CGOriginX(viewTag.frame) + (CGWidth(imageLabelIcon) + 8 + W) >= rctWidth) {
         [viewTag mas_updateConstraints:^(MASConstraintMaker *make) {
             if (isPositiveAndNegative) {
                 viewTag.isPositiveAndNegative=YES;
                 make.left.equalTo(@(CGOriginX(viewTag.frame)-(CGWidth(imageLabelIcon)+8+W)));
             }else{
                 make.left.equalTo(@(CGRectGetMaxX(viewTag.frame)-(CGWidth(imageLabelIcon)+8+W)));
-                
             }
             
         }];
@@ -433,7 +463,8 @@
 }
 
 #pragma -mark 初始化
--(UIImageView *)getimagePreviews{
+- (UIImageView *)getimagePreviews
+{
     UIImageView *image =[UIImageView new];
     image.contentMode = UIViewContentModeScaleAspectFit ;
     UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickimagePreviews:)];
@@ -444,25 +475,24 @@
     return image;
 }
 
--(UIButton *)getButtonOne{
-    UIButton *btn =[UIButton new];
+- (UIButton *)configureButtonWithTag:(NSInteger)btTag
+{
+    NSString *strTitle = kButtonNames[btTag - kTagForButton] ;
+    UIButton *btn = [UIButton new] ;
+    btn.tag = btTag ;
     btn.backgroundColor=UIColorRGBA(0, 0, 0, 0.6);
-    [btn setTitle:@"特点" forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(clickButtonOne) forControlEvents:UIControlEventTouchUpInside];
+    [btn setTitle:strTitle forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
+    btn.layer.cornerRadius=widthAndHeight / 2 ;
     return btn;
 }
 
--(UIButton *)getButtonTwo{
-    UIButton *btn =[UIButton new];
-    btn.backgroundColor=UIColorRGBA(0, 0, 0, 0.6);
-    [btn setTitle:@"品牌" forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(clickButtonTwo) forControlEvents:UIControlEventTouchUpInside];
-    return btn;
-}
+
 
 
 #pragma -mark 尺寸
--(void)scaledFrame{
+- (void)scaledFrame
+{
     CGRect noScale = CGRectMake(0.0, 0.0, _imagePreviews.image.size.width , _imagePreviews.image.size.height );
     
     if (CGWidth(noScale) <= rctWidth && CGHeight(noScale) <= self.frame.size.height) {
@@ -492,11 +522,14 @@
 }
 
 #pragma -mark pop返回标签尺寸和文本
--(NSMutableArray *)popTagModel{
+- (NSMutableArray *)popTagModel
+{
     NSMutableArray *array =[NSMutableArray array];
     NSString *positiveAndNegative;
-    NSString *point;
-    if (viewCover.alpha==1) {
+    float pX, pY ;
+    
+    if (viewCover.alpha==1)
+    {
         if (arrayTagS.count !=0) {
             YXLTagView *tag =[arrayTagS lastObject];
             if (!tag.isImageLabelShow) {
@@ -505,16 +538,27 @@
             }
         }
     }
-    for (YXLTagView *tag in arrayTagS) {
-        positiveAndNegative =@"0";
-        point =[NSString stringWithFormat:@"%f,%f",CGOriginX(tag.frame)/imageScale,CGOriginY(tag.frame)/imageScale];
-        if(tag.isPositiveAndNegative ==YES){
-            positiveAndNegative =@"1";
-            point =[NSString stringWithFormat:@"%f,%f",CGRectGetMaxX(tag.frame)/imageScale,CGOriginY(tag.frame)/imageScale];
+    
+    for (YXLTagView *tag in arrayTagS)
+    {
+        positiveAndNegative = @"RIGHT" ;
+        pX = CGOriginX(tag.frame)/imageScale ;
+        pY = CGOriginY(tag.frame)/imageScale ;
+        if(tag.isPositiveAndNegative ==YES)
+        {
+            positiveAndNegative = @"LEFT" ;
+            pX = CGRectGetMaxX(tag.frame)/imageScale ;
+            pY = CGOriginY(tag.frame)/imageScale ;
         }
-        NSDictionary *dic=@{@"positiveAndNegative":positiveAndNegative,@"point":point,@"text":tag.imageLabel.labelWaterFlow.text};
-        [array addObject:dic];
+        NSDictionary *dic = @{@"posType":positiveAndNegative ,
+                              @"posX":@(pX) ,
+                              @"posY":@(pY) ,
+                              @"text":tag.imageLabel.labelWaterFlow.text ,
+                              @"type":tag.typeStr} ;
+        [array addObject:dic] ;
     }
-    return array;
+    return array ;
 }
+
+
 @end

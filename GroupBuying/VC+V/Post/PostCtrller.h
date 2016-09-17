@@ -11,5 +11,6 @@
 @interface PostCtrller : RootCtrl
 
 @property (nonatomic,strong) NSArray *photoList ;
+@property (nonatomic,strong) NSArray *photoTagList ; // tags in photo
 
 @end

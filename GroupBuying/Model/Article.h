@@ -34,6 +34,7 @@
                                     picItems:(NSArray *)picItems
                                      content:(NSString *)content
                                         type:(NSString *)type
-                                        tags:(NSArray *)tags ;
+                                        tags:(NSArray *)tags
+                                      status:(NSString *)status ;
 
 @end

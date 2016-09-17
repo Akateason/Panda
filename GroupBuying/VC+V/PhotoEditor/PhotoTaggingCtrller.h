@@ -7,9 +7,12 @@
 //
 
 #import "RootCtrl.h"
+#import "PhotoEditorCtrller.h"
 
 @interface PhotoTaggingCtrller : RootCtrl
 
 @property (nonatomic,strong) UIImage *image ;
+@property (nonatomic,strong) PhotoEditorCtrller *editVC ;
+@property (nonatomic) NSInteger indexInPhotoList ;
 
 @end

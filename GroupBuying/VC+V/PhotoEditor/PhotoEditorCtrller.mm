@@ -36,10 +36,21 @@
 
 @implementation PhotoEditorCtrller
 
+- (NSArray *)listTagItems
+{
+    if (!_listTagItems) {
+        NSMutableArray *tmpList = [@[] mutableCopy] ;
+        for (int i = 0; i < self.listPhotos.count; i++) {
+            [tmpList addObject:[NSNull null]] ;
+        }
+        _listTagItems = tmpList ;
+    }
+    return _listTagItems ;
+}
+
 #pragma mark - action
 - (IBAction)btBackOnClick:(id)sender
 {
-    
     if (self.openType == typeDefault) {
         [self dismissViewControllerAnimated:YES completion:nil] ;
     }
@@ -52,7 +63,7 @@
 {
     NSLog(@"保存") ;
     if (self.openType == typeDefault) {
-        [self performSegueWithIdentifier:@"editor2Post" sender:self.listPhotos] ;
+        [self performSegueWithIdentifier:@"editor2Post" sender:nil] ;
     }
     else if (self.openType == typeEdit) {
         for (id VC  in self.navigationController.viewControllers)
@@ -248,13 +259,18 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    if ([segue.identifier isEqualToString:@"editor2tagging"]) {
+    if ([segue.identifier isEqualToString:@"editor2tagging"])
+    {
         PhotoTaggingCtrller *tagCtrl = segue.destinationViewController ;
+        tagCtrl.editVC = self ;
+        tagCtrl.indexInPhotoList = self.currentIndex - 1 ;
         tagCtrl.image = sender ;
     }
-    else if ([segue.identifier isEqualToString:@"editor2Post"]) {
+    else if ([segue.identifier isEqualToString:@"editor2Post"])
+    {
         PostCtrller *postCtrl = [segue destinationViewController] ;
-        postCtrl.photoList = sender ;
+        postCtrl.photoList = self.listPhotos ;
+        postCtrl.photoTagList = self.listTagItems ;
     }
 }
 

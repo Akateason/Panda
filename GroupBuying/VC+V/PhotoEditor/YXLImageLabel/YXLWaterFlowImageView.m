@@ -9,7 +9,8 @@
 #import "YXLWaterFlowImageView.h"
 
 @implementation YXLWaterFlowImageView
--(id)initWithFrame:(CGRect)frame
+
+- (id)initWithFrame:(CGRect)frame
 {
     self =[super initWithFrame:frame];
     if (self) {
@@ -25,4 +26,5 @@
     }
     return self;
 }
+
 @end

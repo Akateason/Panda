@@ -8,6 +8,8 @@
 
 #import "PhotoTaggingCtrller.h"
 #import "YXLTagEditorImageView.h"
+#import "ArticlePicItemInfo.h"
+#import "YYModel.h"
 
 @interface PhotoTaggingCtrller ()<UIGestureRecognizerDelegate>
 
@@ -28,34 +30,30 @@
 - (IBAction)btBackOnClick:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES] ;
-//    [self dismissViewControllerAnimated:YES completion:nil] ;
 }
 
-//// *  确定并pop    返回这个图片所有的标签地址内容，是否翻转样式的数组   坐标为这个图片的真实坐标
+// 确定并pop    返回这个图片所有的标签地址内容，是否翻转样式的数组   坐标为这个图片的真实坐标
 - (IBAction)btSaveOnClick:(id)sender
 {
-    NSMutableArray *array =[self.tagEditorImageView popTagModel];
-    if (array.count==0) {
+    NSMutableArray *dicList =[self.tagEditorImageView popTagModel];
+    if (dicList.count == 0)
+    {
         [self.navigationController popViewControllerAnimated:YES];
         return;
     }
-    NSMutableArray *array1 =[NSMutableArray array];
-    for(NSDictionary *dic in array){
-        BOOL is =[dic[@"positiveAndNegative"] boolValue];
-        NSString *positiveAndNegative ;
-        if (is) {
-            positiveAndNegative=@"反";
-        }else{
-            positiveAndNegative=@"正";
-        }
-        NSString *string =[NSString stringWithFormat:@"方向%@坐标%@文本%@",positiveAndNegative,dic[@"point"],dic[@"text"]];
-        [array1 addObject:string];
+   
+    NSMutableArray *tagItemInfoList = [@[] mutableCopy] ;
+    for (NSDictionary *dic in dicList)
+    {
+        ArticlePicItemInfo *itemInfo = [ArticlePicItemInfo yy_modelWithDictionary:dic] ;
+        [tagItemInfoList addObject:itemInfo] ;
     }
-    NSString *string =[array1 componentsJoinedByString:@"\n"];
-    NSLog(@"%@",string) ;
-//    _popBlock(string);
-    [self.navigationController popViewControllerAnimated:YES];
+    
+    NSMutableArray *tmplist = [self.editVC.listTagItems mutableCopy] ;
+    [tmplist replaceObjectAtIndex:self.indexInPhotoList withObject:tagItemInfoList] ;
+    self.editVC.listTagItems = tmplist ;
 
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - prop
@@ -80,10 +78,10 @@
     [self.tagEditorImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
-    [_tagEditorImageView addTagViewText:@"哈哈哈哈" Location:CGPointMake(111,222) isPositiveAndNegative:YES];
-    [_tagEditorImageView addTagViewText:@"哈哈lalallallal" Location:CGPointMake(222, 111) isPositiveAndNegative:NO];
     
-   
+    
+    [_tagEditorImageView addTagViewText:@"哈哈哈哈" Location:CGPointMake(111,222) isPositiveAndNegative:YES type:@"LOCATION"] ;
+    [_tagEditorImageView addTagViewText:@"哈哈lalallallal" Location:CGPointMake(222, 111) isPositiveAndNegative:NO type:@"LOCATION"] ;
 
     
     //

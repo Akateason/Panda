@@ -18,6 +18,8 @@
 #import "UserOnDevice.h"
 #import "AFNetworking.h"
 #import "SVProgressHUD.h"
+#import "YYModel.h"
+
 
 #define ACCEPTABLE_CONTENT_TYPES        @"application/json", @"text/html", @"text/json", @"text/javascript",@"text/plain"
 
@@ -62,23 +64,53 @@
     }] ;
 }
 
++ (void)homelistWithSearchtype:(NSNumber *)typeNumber
+                       refresh:(NSNumber *)refreshNumber
+                        userID:(NSString *)userID
+                          from:(NSNumber *)from
+                       howmany:(NSNumber *)howmany
+                       success:(void (^)(id json))success
+                          fail:(void (^)())fail
+{
+    NSMutableDictionary *paramer = [self getParameters] ;
+    [paramer setObject:typeNumber forKey:@"searchType"] ;
+    [paramer setObject:refreshNumber forKey:@"refresh"] ;
+    if (userID != nil) {
+        [paramer setObject:userID forKey:@"userId"] ;
+    }
+    
+    [paramer setObject:from forKey:@"from"] ;
+    [paramer setObject:howmany forKey:@"howmany"] ;
+    
+    [XTRequest GETWithUrl:[self getFinalUrl:URL_HOME_LIST_SEARCH]
+               parameters:paramer
+                  success:^(id json) {
+                      if (success) success(json);
+
+                  } fail:^{
+                      if (fail) fail();
+
+                  }] ;
+    
+}
+
 
 + (void)addArticle:(Article *)article
            success:(void (^)(id json))success
               fail:(void (^)())fail
 {
+    NSString *urlStr = [[self getFinalUrl:URL_ARTICLE_ADD] stringByAppendingString:[NSString stringWithFormat:@"?token=%@",[UserOnDevice token]]] ;
+    NSString *jsonStr = [article yy_modelToJSONString] ;
     NSMutableDictionary *paramer = [self getParameters] ;
-    NSString *jsonStr = [XTJson getJsonStr:article] ;
     [paramer setObject:jsonStr forKey:@"request_body"] ;
-    [paramer setObject:[UserOnDevice token] forKey:@"token"] ;
-    [XTRequest POSTWithUrl:[self getFinalUrl:URL_ARTICLE_ADD]
-                parameters:paramer
-                   success:^(id json) {
-                       if (success) success(json);
-                   } fail:^{
-                       if (fail) fail();
-                   }] ;
-
+    
+    [XTRequest POSTWithTokenUrl:urlStr
+                  bodyParameter:paramer
+                        success:^(id json) {
+                            if (success) success(json);
+                        } fail:^{
+                            if (fail) fail();
+                        }] ;
 }
 
 + (NSURLSessionUploadTask*)uploadTaskWithImage:(UIImage*)image
@@ -113,6 +145,8 @@
     return uploadTask;
 }
 
+
+/*
 + (void)uploadResourceImage:(UIImage *)image
                     success:(void (^)(id responseObject))success
                        fail:(void (^)())fail
@@ -142,7 +176,6 @@
     }] ;
 }
 
-/*
 + (void)uploadResourceImages:(NSArray *)images
                     success:(void (^)(id responseObject))success
                        fail:(void (^)())fail

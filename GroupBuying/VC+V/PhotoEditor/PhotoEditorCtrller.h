@@ -11,7 +11,9 @@
 
 @interface PhotoEditorCtrller : RootCtrl
 
-@property (nonatomic,strong) NSArray *listPhotos ;
+@property (nonatomic,strong) NSArray *listPhotos ; // UIimage list
+@property (nonatomic,strong) NSArray *listTagItems ; // 若图片无tag,用NSNull占位.
+
 // 打开方式
 @property (nonatomic) CameraViewControllerOpenType  openType ;
 

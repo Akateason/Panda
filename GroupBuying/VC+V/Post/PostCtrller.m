@@ -24,7 +24,6 @@
 
 static NSString *const kType = @"NOTE" ;
 
-
 @interface PostCtrller () <UITableViewDelegate,UITableViewDataSource,PostPhotosCellDelegate,PostTagCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *table;
@@ -37,7 +36,6 @@ static NSString *const kType = @"NOTE" ;
 @implementation PostCtrller
 
 #pragma mark - PostTagCellDelegate <NSObject>
-
 - (void)addTag
 {
     NSLog(@"添加 文章标签") ;
@@ -50,7 +48,6 @@ static NSString *const kType = @"NOTE" ;
 }
 
 #pragma mark - PostPhotosCellDelegate
-
 - (void)addPhoto
 {
     NSLog(@"再添加图片") ;
@@ -61,29 +58,45 @@ static NSString *const kType = @"NOTE" ;
     [self.navigationController pushViewController:cameraVC animated:YES] ;
 }
 
-- (void)deletePhotoWithList:(NSArray *)list
+- (void)deletePhotoWithList:(NSArray *)list index:(NSInteger)indexDelete
 {
     self.photoList = list ;
+    
+    NSMutableArray *tmplist = [self.photoTagList mutableCopy];
+    [tmplist removeObjectAtIndex:indexDelete] ;
+    self.photoTagList = tmplist ;
 }
 
 
+
+
 #pragma mark - Action
+
 - (IBAction)btPostOnClick:(id)sender
 {
     NSLog(@"发布笔记") ;
     [SVProgressHUD showWithStatus:@"正在上传..."] ;
-    
     PostContentCell *contentCell = [_table cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]] ;
     NSString *title = [contentCell fetchTitleStr] ;
     NSString *content = [contentCell fetchContentStr] ;
+    if (!title.length) {
+        [SVProgressHUD showErrorWithStatus:@"请输入标题"] ;
+        return ;
+    } else if (!content.length) {
+        [SVProgressHUD showErrorWithStatus:@"请输入内容文字"] ;
+        return ;
+    } else if (!self.photoList.count) {
+        [SVProgressHUD showErrorWithStatus:@"请添加图片"] ;
+        return ;
+    }
     
     
-    // batch upload photos .
+// batch upload photos .
     __block BOOL bUploadFail = false ;
     // 准备保存结果的数组,先用 NSNull 占位 , 保证最后顺序
     NSMutableArray* result = [NSMutableArray array];
     for (int i = 0 ; i < self.photoList.count ; i++) {
-        [result addObject:[NSNull null]];
+        [result addObject:[NSNull null]] ;
     }
     dispatch_group_t group = dispatch_group_create();
     for (NSInteger i = 0; i < self.photoList.count; i++)
@@ -106,24 +119,30 @@ static NSString *const kType = @"NOTE" ;
         }];
         [uploadTask resume];
     }
+    
     // notify .
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
         if (bUploadFail) {
-            NSLog(@"上传shibai!");
+            NSLog(@"上传失败!");
             [SVProgressHUD dismiss] ;
             [SVProgressHUD showErrorWithStatus:@"图片上传失败"] ;
             return ;
         }
         NSLog(@"图片上传完成!");
         NSMutableArray *articlePicItemList = [@[] mutableCopy] ;
+        int idx = 0 ;
         for (NSDictionary *response in result)
         {
             Resource *resource = [Resource yy_modelWithDictionary:response[@"data"][@"resource"]] ;
             Pic *aPic = [[Pic alloc] initWithResource:resource] ;
-//            ArticlePicItemInfo *aPicItemInfo = [[ArticlePicItemInfo alloc] init] ;
+            NSArray *tagItemList = nil ;
+            if ([self.photoTagList[idx] isKindOfClass:[NSArray class]]) {
+                tagItemList = self.photoTagList[idx] ;
+            }
             ArticlePicItem *picItem = [[ArticlePicItem alloc] initWillUploadWithPic:aPic
-                                                                              items:nil] ;
+                                                                              items:tagItemList] ;
             [articlePicItemList addObject:picItem] ;
+            idx++ ;
         }
                         
         
@@ -132,36 +151,29 @@ static NSString *const kType = @"NOTE" ;
                                                                           picItems:articlePicItemList
                                                                            content:content
                                                                               type:@"NOTE"
-                                                                              tags:self.articleTaglist] ;
-                
+                                                                              tags:self.articleTaglist
+                                                                            status:@"PUBLISH"] ;
+        
         [ServerRequest addArticle:articleWillUpload
                           success:^(id json)
         {
-            
-                              
+            [SVProgressHUD dismiss] ;
+            NSLog(@"文章发布成功") ;
             [self dismissViewControllerAnimated:YES completion:^{}] ;
             
         }
                              fail:^
         {
-            
-                             
+            NSLog(@"文章发布失败") ;
+            [SVProgressHUD dismiss] ;
                           }] ;
         
-        [SVProgressHUD dismiss] ;
     });
-   
-
-    
-
-    
-    
     
 }
 
 - (IBAction)btCancelOnClick:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil] ;
-
 }
 
 

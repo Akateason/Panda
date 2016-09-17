@@ -118,6 +118,32 @@
     [self POSTWithUrl:url hud:YES parameters:dict success:success fail:fail] ;
 }
 
++ (void)POSTWithTokenUrl:(NSString *)url
+           bodyParameter:(NSDictionary *)dict
+                 success:(void (^)(id json))success
+                    fail:(void (^)())fail
+{
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager] ;
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:ACCEPTABLE_CONTENT_TYPES,nil];//设置相应内容类型
+//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json", @"text/plain", @"text/html", nil];
+    
+    [manager POST:url
+       parameters:dict
+          success:^(NSURLSessionDataTask *task, id responseObject) {
+              NSString *jsonStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+              NSData *dataBody = [jsonStr dataUsingEncoding:NSUTF8StringEncoding] ;
+              NSDictionary * jsonData = [NSJSONSerialization JSONObjectWithData:dataBody options:NSJSONReadingMutableContainers error:nil] ;
+              NSLog(@"success %@", jsonData);
+              if (success) success(jsonData);
+          } failure:^(NSURLSessionDataTask *task, NSError *error) {
+              NSLog(@"fail %@", error);
+              if (fail) fail();
+          }] ;
+}
+
+
 
 + (ResultParsered *)getJsonWithURLstr:(NSString *)urlstr
          AndWithParamer:(NSDictionary *)dict
