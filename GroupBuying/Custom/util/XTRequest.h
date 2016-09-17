@@ -44,7 +44,7 @@ typedef NS_ENUM(NSInteger, METHOD_REQUEST)
                fail:(void (^)())fail ;
 
 + (void)POSTWithTokenUrl:(NSString *)url
-           bodyParameter:(NSDictionary *)dict
+                    body:(id)body
                  success:(void (^)(id json))success
                     fail:(void (^)())fail ;
 

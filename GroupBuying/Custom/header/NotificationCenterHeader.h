@@ -10,7 +10,7 @@
 #define subao_NoticicationCenterHeader_h
 
 //后台获取
-static NSString *const NOTIFICATION_EG      = @"NOTIFICATION_EG" ;
+static NSString *const NOTIFICATION_POST_ARTICLE_COMPLETE      = @"NOTIFICATION_POST_ARTICLE_COMPLETE" ;
 
 
 

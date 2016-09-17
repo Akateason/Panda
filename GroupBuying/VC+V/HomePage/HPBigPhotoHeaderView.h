@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class NoteListViewItem ;
+
 static NSString *id_HPBigPhotoHeaderView = @"HPBigPhotoHeaderView" ;
 
 @protocol HPBigPhotoHeaderViewDelegate <NSObject>
@@ -18,7 +20,9 @@ static NSString *id_HPBigPhotoHeaderView = @"HPBigPhotoHeaderView" ;
 
 
 @interface HPBigPhotoHeaderView : UICollectionReusableView
+
 @property (nonatomic,weak) id <HPBigPhotoHeaderViewDelegate> delegate ;
 @property (nonatomic) int index ;
+@property (nonatomic,strong) NoteListViewItem *noteItem ;
 
 @end

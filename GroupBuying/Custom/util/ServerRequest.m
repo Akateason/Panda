@@ -100,12 +100,12 @@
               fail:(void (^)())fail
 {
     NSString *urlStr = [[self getFinalUrl:URL_ARTICLE_ADD] stringByAppendingString:[NSString stringWithFormat:@"?token=%@",[UserOnDevice token]]] ;
-    NSString *jsonStr = [article yy_modelToJSONString] ;
-    NSMutableDictionary *paramer = [self getParameters] ;
-    [paramer setObject:jsonStr forKey:@"request_body"] ;
+    NSDictionary *jsonObj = [article yy_modelToJSONObject] ;
+//    NSMutableDictionary *paramer = [self getParameters] ;
+//    [paramer setObject:jsonStr forKey:@"request_body"] ;
     
     [XTRequest POSTWithTokenUrl:urlStr
-                  bodyParameter:paramer
+                           body:jsonObj
                         success:^(id json) {
                             if (success) success(json);
                         } fail:^{

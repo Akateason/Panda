@@ -119,7 +119,7 @@
 }
 
 + (void)POSTWithTokenUrl:(NSString *)url
-           bodyParameter:(NSDictionary *)dict
+                    body:(id)body
                  success:(void (^)(id json))success
                     fail:(void (^)())fail
 {
@@ -130,7 +130,7 @@
 //    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json", @"text/plain", @"text/html", nil];
     
     [manager POST:url
-       parameters:dict
+       parameters:body
           success:^(NSURLSessionDataTask *task, id responseObject) {
               NSString *jsonStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
               NSData *dataBody = [jsonStr dataUsingEncoding:NSUTF8StringEncoding] ;

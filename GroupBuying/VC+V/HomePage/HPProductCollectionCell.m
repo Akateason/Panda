@@ -7,7 +7,10 @@
 //
 
 #import "HPProductCollectionCell.h"
-#import "TestUser.h"
+//#import "TestUser.h"
+#import "NoteListViewItem.h"
+#import "Pic.h"
+#import "UIImageView+WebCache.h"
 
 @interface HPProductCollectionCell ()
 
@@ -20,14 +23,22 @@
 
 @implementation HPProductCollectionCell
 
-- (void)setIndex:(int)index
+//- (void)setIndex:(int)index
+//{
+//    _index = index ;
+//    
+//    _imgView.image = [UIImage imageNamed:[TestUser bigImage:index]] ;
+//}
+
+- (void)setNoteItem:(NoteListViewItem *)noteItem
 {
-    _index = index ;
+    _noteItem = noteItem ;
     
-    _imgView.image = [UIImage imageNamed:[TestUser bigImage:index]] ;
+    [_imgView sd_setImageWithURL:[NSURL URLWithString:noteItem.img.qiniuUrl]] ;
+    _btCollect.selected = noteItem.isFavorite ;
+    _btLike.selected = noteItem.isUpvote ;
+    _labelLikeCount.text = [NSString stringWithFormat:@"%ld",noteItem.upvoteCnt] ;
 }
-
-
 
 
 

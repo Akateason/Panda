@@ -8,6 +8,9 @@
 
 #import "HPBigPhotoCollectionCell.h"
 #import "TestUser.h"
+#import "NoteListViewItem.h"
+#import "UIImageView+WebCache.h"
+#import "Pic.h"
 
 @interface HPBigPhotoCollectionCell ()
 
@@ -27,14 +30,27 @@
 @implementation HPBigPhotoCollectionCell
 
 #pragma mark -
-- (void)setIndex:(int)index
+//- (void)setIndex:(int)index
+//{
+//    _index = index ;
+//    
+//    _imgProductView.image = [UIImage imageNamed:[TestUser bigImage:index]] ;
+//    _labelTitle.text = @"今天的天气真好" ;
+//}
+
+- (void)setNoteItem:(NoteListViewItem *)noteItem
 {
-    _index = index ;
+    _noteItem = noteItem ;
     
-    _imgProductView.image = [UIImage imageNamed:[TestUser bigImage:index]] ;
-    _labelTitle.text = @"今天的天气真好" ;
-    
+//    
+    [_imgProductView sd_setImageWithURL:[NSURL URLWithString:noteItem.img.qiniuUrl]] ;
+    _labelTitle.text = noteItem.articleTitle ;
+    _btCollection.selected = noteItem.isFavorite ;
+    _btLike.selected = noteItem.isUpvote ;
+    _labelLikeNum.text = [NSString stringWithFormat:@"%ld",noteItem.upvoteCnt] ;
+    _labelCommentNum.text = [NSString stringWithFormat:@"%ld",noteItem.commentCnt] ;
 }
+
 
 #pragma mark -
 - (void)awakeFromNib
@@ -50,9 +66,16 @@
     _labelCommentNum.textColor = [UIColor xt_w_light] ;
 }
 
-+ (CGSize)getSize
++ (CGSize)getSizeWithTitleStr:(NSString *)titleStr
 {
-    float height = APP_WIDTH * 1000 / 750 + 75. ;
+    UIFont *font = [UIFont systemFontOfSize:13] ;
+    CGSize size = CGSizeMake(APP_WIDTH - 2 * 12., 100.) ;
+    CGSize labelSize = [titleStr boundingRectWithSize:size
+                                              options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading
+                                           attributes:@{NSFontAttributeName:font}
+                                              context:nil].size ;
+    CGFloat titleHeight = labelSize.height ;
+    float height = APP_WIDTH * 1000 / 750 + 75. - 16 + titleHeight ;
     return CGSizeMake(APP_WIDTH, height) ;
 }
 
@@ -63,7 +86,7 @@
 
 - (IBAction)btCommentOnClick:(id)sender
 {
-    
+    NSLog(@"评论 ") ;
 }
 
 - (IBAction)btLikeOnClick:(UIButton *)sender

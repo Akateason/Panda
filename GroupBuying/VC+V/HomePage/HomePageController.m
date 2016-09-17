@@ -23,7 +23,8 @@
 #import "NoteDetailCtrller.h"
 #import "UserOnDevice.h"
 #import "YYModel.h"
-
+#import "NoteListViewItem.h"
+#import "NotificationCenterHeader.h"
 
 static NSInteger const kPageHowmany = 20 ;
 
@@ -192,7 +193,7 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
 {
     if (!_bplayout) {
         _bplayout = [[XLPlainFlowLayout alloc] init] ;
-        _bplayout.itemSize = CGSizeMake(APP_WIDTH, [HPBigPhotoCollectionCell getSize].height) ;
+        _bplayout.itemSize = CGSizeMake(APP_WIDTH, [HPBigPhotoCollectionCell getSizeWithTitleStr:@"aa"].height) ;
         _bplayout.sectionInset = UIEdgeInsetsMake(0, 0, 10, 0) ;
     }
     return _bplayout ;
@@ -202,6 +203,11 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
 
 - (void)viewDidLoad
 {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(articlePostComplete)
+                                                 name:NOTIFICATION_POST_ARTICLE_COMPLETE
+                                               object:nil] ;
+    
     [super viewDidLoad] ;
     
     _bFirstTime = true ;
@@ -231,8 +237,14 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
 {
     _collectionView.delegate = nil ;
     _collectionView.dataSource = nil ;
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NOTIFICATION_POST_ARTICLE_COMPLETE object:nil] ;
 }
 
+#pragma mark - NOTIFICATION_POST_ARTICLE_COMPLETE
+- (void)articlePostComplete
+{
+    [_collectionView pullDownRefreshHeader] ;
+}
 
 #pragma mark - RootCollectionViewDelegate
 
@@ -244,22 +256,59 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
     [ServerRequest homelistWithSearchtype:@(self.schType)
                                   refresh:@(!_bFirstTime)
                                    userID:userID
-                                     from:@(self.listNote.count)
+                                     from:@(0)
                                   howmany:@(kPageHowmany)
                                   success:^(id json) {
+                                      
                                       ResultParsered *result = [ResultParsered yy_modelWithJSON:json] ;
                                       NSArray *noteDicList = result.data[@"noteList"] ;
-                                      NSLog(@"noteList : %@",noteDicList) ;
+                                      if (!noteDicList.count) return ;
+                                      NSMutableArray *tmpList = [@[] mutableCopy] ;
+                                      for (NSDictionary *jsonObj in noteDicList)
+                                      {
+                                          NoteListViewItem *item = [NoteListViewItem yy_modelWithJSON:jsonObj] ;
+                                          [tmpList addObject:item] ;
+                                      }
+                                      self.listNote = tmpList ;
+                                      
+                                      [_collectionView reloadData] ;
                                       
                                   } fail:^{
                                       
                                   }] ;
     
-    _bFirstTime = false ;
+    if (_bFirstTime) _bFirstTime = false ;
+    
 }
 
 - (void)loadMoreData
 {
+    NSString *userID = [UserOnDevice currentUserOnDevice].idOwn ;
+    NSLog(@"userID : %@",userID) ;
+
+    [ServerRequest homelistWithSearchtype:@(self.schType)
+                                  refresh:@(!_bFirstTime)
+                                   userID:userID
+                                     from:@(self.listNote.count)
+                                  howmany:@(kPageHowmany)
+                                  success:^(id json) {
+                                      
+                                      ResultParsered *result = [ResultParsered yy_modelWithJSON:json] ;
+                                      NSArray *noteDicList = result.data[@"noteList"] ;
+                                      if (!noteDicList.count) return ;
+                                      NSMutableArray *tmpList = [self.listNote mutableCopy] ;
+                                      for (NSDictionary *jsonObj in noteDicList)
+                                      {
+                                          NoteListViewItem *item = [NoteListViewItem yy_modelWithJSON:jsonObj] ;
+                                          [tmpList addObject:item] ;
+                                      }
+                                      self.listNote = tmpList ;
+                                      
+                                      [_collectionView reloadData] ;
+                                      
+                                  } fail:^{
+                                      
+                                  }] ;
     
 }
 
@@ -267,7 +316,7 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
     if (collectionView.collectionViewLayout == self.bplayout) {
-       return 10 ;
+       return self.listNote.count ;
     }
     else if (collectionView.collectionViewLayout == self.waterflowLayout) {
        return 1 ;
@@ -281,7 +330,7 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
         return 1 ;
     }
     else if (collectionView.collectionViewLayout == self.waterflowLayout) {
-        return 10 ;
+        return self.listNote.count ;
     }
     return 0 ;
 }
@@ -291,13 +340,14 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
     // Set up the reuse identifier
     if (collectionView.collectionViewLayout == self.bplayout) {
         HPBigPhotoCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:id_HPBigPhotoCollectionCell forIndexPath:indexPath] ;
-        cell.index = indexPath.section ;
+        cell.noteItem = self.listNote[indexPath.section] ;
         return cell ;
 
     }
     else if (collectionView.collectionViewLayout == self.waterflowLayout) {
         HPProductCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:id_HPProductCollectionCell forIndexPath:indexPath];
-        cell.index = indexPath.row ;
+//        cell.index = indexPath.row ;
+        cell.noteItem = self.listNote[indexPath.row] ;
         return cell;
     }
     return nil ;
@@ -306,7 +356,8 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if (collectionViewLayout == self.bplayout) {
-        return [HPBigPhotoCollectionCell getSize] ;
+        NoteListViewItem *note = self.listNote[indexPath.section] ;
+        return [HPBigPhotoCollectionCell getSizeWithTitleStr:note.articleTitle] ;
     }
     if (collectionViewLayout == self.waterflowLayout) {
         return [HPProductCollectionCell getSize] ;
@@ -327,7 +378,8 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
     UICollectionReusableView *reusableView = nil ;
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         HPBigPhotoHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:id_HPBigPhotoHeaderView forIndexPath:indexPath];
-        headerView.index = indexPath.section ;
+//        headerView.index = indexPath.section ;
+        headerView.noteItem = self.listNote[indexPath.section] ;
         headerView.delegate = self ;
         return headerView ;
     }

@@ -7,7 +7,11 @@
 //
 
 #import "HPBigPhotoHeaderView.h"
-#import "TestUser.h"
+//#import "TestUser.h"
+#import "NoteListViewItem.h"
+#import "UIImageView+WebCache.h"
+#import "XTTickConvert.h"
+#import "Pic.h"
 
 @interface HPBigPhotoHeaderView ()
 
@@ -20,14 +24,24 @@
 
 @implementation HPBigPhotoHeaderView
 
-- (void)setIndex:(int)index
-{
-    _index = index ;
-    
-    _headImageView.image = [UIImage imageNamed:[TestUser headImage:index]] ;
-    _labelName.text = [TestUser username:index] ;
-    _lableTime.text = @"今天 13 : 32" ;
+//- (void)setIndex:(int)index
+//{
+//    _index = index ;
+//    
+//    _headImageView.image = [UIImage imageNamed:[TestUser headImage:index]] ;
+//    _labelName.text = [TestUser username:index] ;
+//    _lableTime.text = @"今天 13 : 32" ;
+//}
 
+- (void)setNoteItem:(NoteListViewItem *)noteItem
+{
+    _noteItem = noteItem ;
+    
+    _labelName.text = noteItem.ownerNickName ;
+    NSDate *articleCreateDate = [XTTickConvert getNSDateWithTick:noteItem.articleCreateTime] ;
+    _lableTime.text = [XTTickConvert timeInfoWithDate:articleCreateDate] ;
+    [_headImageView sd_setImageWithURL:[NSURL URLWithString:noteItem.ownerHeadPic.qiniuUrl]
+     placeholderImage:[UIImage imageNamed:@"t_h_5"]] ;
 }
 
 - (IBAction)headOnClick:(id)sender

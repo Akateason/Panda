@@ -20,7 +20,7 @@
 #import "ArticlePicItem.h"
 #import "ArticlePicItemInfo.h"
 #import "TagSearchingCtrller.h"
-
+#import "NotificationCenterHeader.h"
 
 static NSString *const kType = @"NOTE" ;
 
@@ -158,14 +158,25 @@ static NSString *const kType = @"NOTE" ;
                           success:^(id json)
         {
             [SVProgressHUD dismiss] ;
+            ResultParsered *result = [ResultParsered yy_modelWithJSON:json] ;
+            if (result.code != 1) {
+                NSLog(@"文章发布失败") ;
+                [SVProgressHUD dismiss] ;
+                [SVProgressHUD showErrorWithStatus:@"提交失败,网络状态不佳"] ;
+                return ;
+            }
+            
+            // success .
             NSLog(@"文章发布成功") ;
             [self dismissViewControllerAnimated:YES completion:^{}] ;
+            [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_POST_ARTICLE_COMPLETE object:nil] ;
             
         }
                              fail:^
         {
             NSLog(@"文章发布失败") ;
             [SVProgressHUD dismiss] ;
+            [SVProgressHUD showErrorWithStatus:@"提交失败,网络状态不佳"] ;
                           }] ;
         
     });
