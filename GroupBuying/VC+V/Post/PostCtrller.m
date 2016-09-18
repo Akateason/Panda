@@ -20,6 +20,8 @@
 #import "ArticlePicItemInfo.h"
 #import "TagSearchingCtrller.h"
 #import "NotificationCenterHeader.h"
+#import "UserOnDevice.h"
+
 
 static NSString *const kType = @"NOTE" ;
 
@@ -73,6 +75,13 @@ static NSString *const kType = @"NOTE" ;
 
 - (IBAction)btPostOnClick:(id)sender
 {
+    // login
+    User *user = [UserOnDevice currentUserOnDevice] ;
+    if (!user) {
+        [SVProgressHUD showErrorWithStatus:@"您还未登录哦"] ;
+        return ;
+    }
+    
     NSLog(@"发布笔记") ;
     [SVProgressHUD showWithStatus:@"正在上传..."] ;
     PostContentCell *contentCell = [_table cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]] ;

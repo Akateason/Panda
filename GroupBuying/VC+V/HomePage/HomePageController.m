@@ -112,7 +112,12 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
     
 }
 
-- (IBAction)itemCameraOnclick:(id)sender {
+- (IBAction)itemCameraOnclick:(id)sender
+{
+    // login
+    [UserOnDevice checkForLoginOrNot:self] ;
+
+    
     NSLog(@"照相机") ;
     CameraNavCtrller *cNavCtrller = [CameraNavCtrller getNavCtrller] ;
     [cNavCtrller setHidesBottomBarWhenPushed:YES] ;
