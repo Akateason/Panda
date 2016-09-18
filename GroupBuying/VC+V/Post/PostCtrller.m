@@ -86,10 +86,11 @@ static NSString *const kType = @"NOTE" ;
     PostContentCell *contentCell = [_table cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]] ;
     NSString *title = [contentCell fetchTitleStr] ;
     NSString *content = [contentCell fetchContentStr] ;
-    if (!title.length) {
-        [SVProgressHUD showErrorWithStatus:@"请输入标题"] ;
-        return ;
-    } else if (!content.length) {
+//    if (!title.length) {
+//        [SVProgressHUD showErrorWithStatus:@"请输入标题"] ;
+//        return ;
+//    } else
+    if (!content.length) {
         [SVProgressHUD showErrorWithStatus:@"请输入内容文字"] ;
         return ;
     } else if (!self.photoList.count) {
