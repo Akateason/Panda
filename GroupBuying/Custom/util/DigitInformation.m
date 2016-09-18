@@ -11,7 +11,7 @@
 #import "ServerRequest.h"
 #import "XTFileManager.h"
 #import "CommonFunc.h"
-#import "WXApi.h"
+//#import "WXApi.h"
 
 static dispatch_once_t onceToken ;
 static DigitInformation *instance ;
@@ -108,7 +108,7 @@ static DigitInformation *instance ;
 {
     if (_appHasInstalledWX == TRUE) return _appHasInstalledWX ;
     
-    _appHasInstalledWX = [WXApi isWXAppInstalled] ;
+//    _appHasInstalledWX = [WXApi isWXAppInstalled] ;
     return _appHasInstalledWX ;
 }
 

@@ -40,6 +40,7 @@
 {
     [super awakeFromNib];
     // Initialization code
+    _btSaveDraft.hidden = true ;
     
     _labelTitle.textColor = [UIColor xt_w_desc] ;
     [_btSaveDraft setTitleColor:[UIColor xt_w_gray] forState:0] ;

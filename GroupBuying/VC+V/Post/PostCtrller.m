@@ -28,7 +28,6 @@ static NSString *const kType = @"NOTE" ;
 @interface PostCtrller () <UITableViewDelegate,UITableViewDataSource,PostPhotosCellDelegate,PostTagCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *table;
-@property (weak, nonatomic) IBOutlet UIButton *btPost;
 
 @property (nonatomic,strong) NSArray *articleTaglist ; // tags in article .
 
@@ -213,7 +212,7 @@ static NSString *const kType = @"NOTE" ;
     [_table registerNib:[UINib nibWithNibName:idPostContentCell bundle:nil] forCellReuseIdentifier:idPostContentCell] ;
     [_table registerNib:[UINib nibWithNibName:idPostPhotosCell bundle:nil] forCellReuseIdentifier:idPostPhotosCell] ;
     [_table registerNib:[UINib nibWithNibName:idPostTagCell bundle:nil] forCellReuseIdentifier:idPostTagCell] ;
-    _btPost.backgroundColor = [UIColor xt_tabbarRedColor] ;
+//    _btPost.backgroundColor = [UIColor xt_tabbarRedColor] ;
     
     self.articleTaglist = @[] ;
 }

@@ -8,12 +8,12 @@
 
 #import "AppDelegateInitial.h"
 #import "KeyChainHeader.h"
-#import "UMSocial.h"
-#import "UMSocialWechatHandler.h"
+//#import "UMSocial.h"
+//#import "UMSocialWechatHandler.h"
 #import "WeiboSDK.h"
-#import "UMSocialSinaSSOHandler.h"
+//#import "UMSocialSinaSSOHandler.h"
 #import "DigitInformation.h"
-#import "WXApi.h"
+//#import "WXApi.h"
 #import <PhotoEditFramework/PhotoEditFramework.h>
 
 

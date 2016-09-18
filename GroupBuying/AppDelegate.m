@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "UMSocial.h"
+//#import "UMSocial.h"
 #import "AppDelegateInitial.h"
 #import "ServerRequest.h"
 #import "WeiboSDK.h"

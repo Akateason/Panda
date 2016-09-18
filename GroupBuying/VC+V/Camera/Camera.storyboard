@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -464,33 +464,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cUP-Pu-Pyf">
-                                <rect key="frame" x="0.0" y="64" width="600" height="496"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ril-qf-2qs">
-                                <rect key="frame" x="0.0" y="560" width="600" height="40"/>
-                                <color key="backgroundColor" red="0.99497195510000003" green="0.2469716193" blue="0.29821157279999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="G9j-af-W0k"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="发布">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="btPostOnClick:" destination="g2k-dW-xzI" eventType="touchUpInside" id="C6x-Bl-cyI"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="cUP-Pu-Pyf" secondAttribute="trailing" id="32D-nT-BVu"/>
                             <constraint firstItem="cUP-Pu-Pyf" firstAttribute="top" secondItem="ag3-gS-qa5" secondAttribute="bottom" id="BDZ-9J-ou1"/>
-                            <constraint firstAttribute="trailing" secondItem="Ril-qf-2qs" secondAttribute="trailing" id="HRr-FF-LBU"/>
                             <constraint firstItem="cUP-Pu-Pyf" firstAttribute="leading" secondItem="dhz-tm-OTj" secondAttribute="leading" id="XwE-Vg-iFz"/>
-                            <constraint firstItem="Mj6-Ka-Wuw" firstAttribute="top" secondItem="Ril-qf-2qs" secondAttribute="bottom" id="ZOq-Fi-gIw"/>
-                            <constraint firstItem="Ril-qf-2qs" firstAttribute="leading" secondItem="dhz-tm-OTj" secondAttribute="leading" id="xsf-xl-6W5"/>
-                            <constraint firstItem="Mj6-Ka-Wuw" firstAttribute="top" secondItem="cUP-Pu-Pyf" secondAttribute="bottom" constant="40" id="zZI-Y4-axU"/>
+                            <constraint firstItem="Mj6-Ka-Wuw" firstAttribute="top" secondItem="cUP-Pu-Pyf" secondAttribute="bottom" id="zZI-Y4-axU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="发布笔记" id="FyO-iM-EZ3">
@@ -499,11 +482,15 @@
                                 <action selector="btCancelOnClick:" destination="g2k-dW-xzI" id="NNg-pt-HMa"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="发布" id="e7V-LS-RY0">
+                            <connections>
+                                <action selector="btPostOnClick:" destination="g2k-dW-xzI" id="IRF-dB-jbQ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="btPost" destination="Ril-qf-2qs" id="ljt-3j-NDY"/>
                         <outlet property="table" destination="cUP-Pu-Pyf" id="M6Y-ZR-JoL"/>
                         <segue destination="Emz-7g-81A" kind="modal" identifier="post2tagSearch" id="8jX-4B-5v7"/>
                     </connections>

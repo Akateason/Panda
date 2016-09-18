@@ -11,13 +11,7 @@
 #import "YYModel.h"
 #import "UserOnDevice.h"
 
-@interface RegisterViewController ()
-
-@property (weak, nonatomic) IBOutlet UIView *v1;
-@property (weak, nonatomic) IBOutlet UIView *v2;
-@property (weak, nonatomic) IBOutlet UIView *v3;
-@property (weak, nonatomic) IBOutlet UIView *v4;
-@property (weak, nonatomic) IBOutlet UIView *v5;
+@interface RegisterViewController () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *tf_phone;
 @property (weak, nonatomic) IBOutlet UITextField *tf_nickname;
@@ -30,6 +24,11 @@
 @end
 
 @implementation RegisterViewController
+
+- (IBAction)touchView:(id)sender
+{
+    [self.view endEditing:YES] ;
+}
 
 - (IBAction)btCheckCodeOnClick:(id)sender
 {
@@ -71,8 +70,6 @@
                                    fail:^{
                                        
                                    }] ;
-    
-    
 }
 
 
@@ -80,21 +77,65 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSArray *bgviews = @[_v1,_v2,_v3,_v4,_v5] ;
-    for (UIView *bgV in bgviews)
-    {
-        bgV.backgroundColor = [UIColor whiteColor] ;
-        CGRect rect = CGRectZero ;
-        rect.size.width = bgV.frame.size.width ;
-        rect.size.height = 1. ;
-        UIView *baseline = [[UIView alloc] initWithFrame:rect] ;
-        baseline.backgroundColor = [UIColor xt_seperate] ;
-        [bgV addSubview:baseline] ;
-    }
+//    NSArray *bgviews = @[_v1,_v2,_v3,_v4,_v5] ;
+//    for (UIView *bgV in bgviews)
+//    {
+//        bgV.backgroundColor = [UIColor whiteColor] ;
+//        CGRect rect = CGRectZero ;
+//        rect.size.width = bgV.frame.size.width ;
+//        rect.size.height = 1. ;
+//        UIView *baseline = [[UIView alloc] initWithFrame:rect] ;
+//        baseline.backgroundColor = [UIColor xt_seperate] ;
+//        [bgV addSubview:baseline] ;
+//    }
+    
     _btRegister.backgroundColor = [UIColor xt_w_dark] ;
     [_btCheckCode setTitleColor:[UIColor xt_w_dark] forState:0] ;
     
+    _tf_phone.delegate = self ;
+    _tf_nickname.delegate = self ;
+    _tf_password.delegate = self ;
+    _tf_passCorrect.delegate = self ;
+    _tf_checkCode.delegate = self ;
+    
 }
+
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    //设置动画的名字
+    [UIView beginAnimations:@"Animation" context:nil];
+    //设置动画的间隔时间
+    [UIView setAnimationDuration:0.20];
+    //??使用当前正在运行的状态开始下一段动画
+    [UIView setAnimationBeginsFromCurrentState: YES];
+    //设置视图移动的位移
+    NSLog(@"textField.bounds.origin.y : %lf",textField.bounds.origin.y) ;
+    NSLog(@"textField.frame.origin.y : %lf",textField.frame.origin.y) ;
+    self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y - textField.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
+    //设置动画结束
+    [UIView commitAnimations];
+}
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    //设置动画的名字
+    [UIView beginAnimations:@"Animation" context:nil];
+    //设置动画的间隔时间
+    [UIView setAnimationDuration:0.20];
+    //??使用当前正在运行的状态开始下一段动画
+    [UIView setAnimationBeginsFromCurrentState: YES];
+    //设置视图移动的位移
+    self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + textField.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
+    //设置动画结束
+    [UIView commitAnimations];
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

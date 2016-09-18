@@ -32,7 +32,7 @@
     
     
     
-//    [UserOnDevice  clean] ;
+    [UserOnDevice  clean] ;
 }
 
 
