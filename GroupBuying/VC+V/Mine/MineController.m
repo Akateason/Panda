@@ -7,7 +7,28 @@
 //
 
 #import "MineController.h"
+#import "UserOnDevice.h"
 
 @implementation MineController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad] ;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated] ;
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:NO] ;
+    [self.navigationController setNavigationBarHidden:NO] ;
+    
+    
+    
+    [UserOnDevice  clean] ;
+}
+
+
+
 
 @end

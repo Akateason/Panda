@@ -32,7 +32,6 @@
     
     
     
-//    [UserOnDevice  clean] ;
 }
 
 
