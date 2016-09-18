@@ -29,6 +29,9 @@ static NSString * const kUser       = @"userCurrent" ;
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults] ;
     NSString *json = [defaults objectForKey:kUser] ;
+    if (!json) {
+        return nil ;
+    }
     User *auser = [User yy_modelWithJSON:[XTJson getJsonObj:json]] ;
     return auser ;
 }
