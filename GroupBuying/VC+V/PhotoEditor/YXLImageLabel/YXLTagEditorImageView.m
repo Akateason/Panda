@@ -283,18 +283,19 @@ isPositiveAndNegative:(BOOL)isPositiveAndNegative
 /**
  *  长按手势
  */
--(void)longTagView:(UILongPressGestureRecognizer *)sender{
-    viewTag =(YXLTagView *)sender.view;
+-(void)longTagView:(UILongPressGestureRecognizer *)sender
+{
+    viewTag = (YXLTagView *)sender.view;
     if (sender.state ==UIGestureRecognizerStateBegan) {
-        [sender.view becomeFirstResponder];
-        UIMenuController *popMenu = [UIMenuController sharedMenuController];
-        UIMenuItem *item1 = [[UIMenuItem alloc] initWithTitle:@"编辑" action:@selector(menuItem1Pressed)];
-        UIMenuItem *item2 = [[UIMenuItem alloc] initWithTitle:@"删除" action:@selector(menuItem2Pressed)];
-        NSArray *menuItems = [NSArray arrayWithObjects:item1,item2,nil];
-        [popMenu setMenuItems:menuItems];
-        [popMenu setArrowDirection:UIMenuControllerArrowDown];
-        [popMenu setTargetRect:sender.view.frame inView:_imagePreviews];
-        [popMenu setMenuVisible:YES animated:YES];
+        [sender.view becomeFirstResponder] ;
+        UIMenuController *popMenu = [UIMenuController sharedMenuController] ;
+        UIMenuItem *item1 = [[UIMenuItem alloc] initWithTitle:@"编辑" action:@selector(menuItem1Pressed)] ;
+        UIMenuItem *item2 = [[UIMenuItem alloc] initWithTitle:@"删除" action:@selector(menuItem2Pressed)] ;
+        NSArray *menuItems = [NSArray arrayWithObjects:item1,item2,nil] ;
+        [popMenu setMenuItems:menuItems] ;
+        [popMenu setArrowDirection:UIMenuControllerArrowDown] ;
+        [popMenu setTargetRect:sender.view.frame inView:_imagePreviews] ;
+        [popMenu setMenuVisible:YES animated:YES] ;
     }
 }
 /**
@@ -345,8 +346,8 @@ isPositiveAndNegative:(BOOL)isPositiveAndNegative
     
     TagSearchingCtrller *vc = (TagSearchingCtrller *)[[TagSearchingCtrller class] getCtrllerFromStory:@"Camera" controllerIdentifier:@"TagSearchingCtrller"] ;
     __weak YXLTagEditorImageView *ws =self;
-    
-    vc.block=^(NSString *text){        
+    vc.strWillEdit = viewTag.imageLabel.labelWaterFlow.text ;
+    vc.block=^(NSString *text){
         viewTag.imageLabel.labelWaterFlow.text=text;
         [viewTag mas_updateConstraints:^(MASConstraintMaker *make) {
             CGSize size =[text sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:Font(11),NSFontAttributeName, nil]];

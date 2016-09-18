@@ -23,14 +23,21 @@
 
 - (IBAction)btCancelOnClick:(id)sender
 {
+    if (!_searchBar.text.length) {
+        [SVProgressHUD showErrorWithStatus:@"请输入标签哦"] ;
+        return ;
+    }
+    
     _block(nil) ;
     [self dismissViewControllerAnimated:YES completion:nil] ;
 }
 
 
+#pragma mark -
 
 
 
+#pragma mark -
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -45,6 +52,8 @@
     _table.separatorStyle = 0 ;
     _table.dataSource = self ;
     _table.delegate = self ;
+    
+    self.searchBar.text = self.strWillEdit ;
 }
 
 
