@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -35,6 +35,9 @@
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <state key="normal" title="更多 &gt;"/>
+                        <connections>
+                            <action selector="btMoreOnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="zP1-ba-LH2"/>
+                        </connections>
                     </button>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="3c4-VD-0zB">
                         <rect key="frame" x="0.0" y="42" width="320" height="175"/>
@@ -72,6 +75,13 @@
                     <constraint firstItem="Eeg-Wf-Dwm" firstAttribute="top" secondItem="3c4-VD-0zB" secondAttribute="bottom" id="zQU-0y-uap"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="baseline" destination="Eeg-Wf-Dwm" id="wyM-ae-caC"/>
+                <outlet property="btMore" destination="OC8-QH-bj3" id="uyD-8T-yu3"/>
+                <outlet property="collectionView" destination="3c4-VD-0zB" id="6aj-GL-7kw"/>
+                <outlet property="labelTitle" destination="JfZ-DI-6mo" id="RWy-Y9-FHV"/>
+                <outlet property="seperateline" destination="eh5-Vk-bNq" id="wQ8-JY-LnB"/>
+            </connections>
             <point key="canvasLocation" x="451" y="391.5"/>
         </tableViewCell>
     </objects>

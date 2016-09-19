@@ -1033,9 +1033,6 @@
 		60319D5F1D8F1CCF00BD094D /* hisFocusSub */ = {
 			isa = PBXGroup;
 			children = (
-				60319D601D8F1D0C00BD094D /* UserItemCollectionCell.h */,
-				60319D611D8F1D0C00BD094D /* UserItemCollectionCell.m */,
-				60319D621D8F1D0C00BD094D /* UserItemCollectionCell.xib */,
 			);
 			name = hisFocusSub;
 			sourceTree = "<group>";
@@ -1043,9 +1040,6 @@
 		60319D6A1D8F215100BD094D /* recommendSub */ = {
 			isa = PBXGroup;
 			children = (
-				60319D6B1D8F219B00BD094D /* ProductRecommendCollectionCell.h */,
-				60319D6C1D8F219B00BD094D /* ProductRecommendCollectionCell.m */,
-				60319D6D1D8F219B00BD094D /* ProductRecommendCollectionCell.xib */,
 			);
 			name = recommendSub;
 			sourceTree = "<group>";
@@ -1066,26 +1060,7 @@
 			children = (
 				608075FD1D805DB00056573F /* NoteDetailCtrller.h */,
 				608075FE1D805DB00056573F /* NoteDetailCtrller.m */,
-				606BF84D1D8415AC00C503FE /* DetailUserInfoView.h */,
-				606BF84E1D8415AC00C503FE /* DetailUserInfoView.m */,
-				606BF8501D84164200C503FE /* DetailUserInfoView.xib */,
-				606BF8521D841B7500C503FE /* DetailCoverTitleCell.h */,
-				606BF8531D841B7500C503FE /* DetailCoverTitleCell.m */,
-				606BF8541D841B7500C503FE /* DetailCoverTitleCell.xib */,
-				60319D501D8ED10A00BD094D /* DetailTagsCell.h */,
-				60319D511D8ED10A00BD094D /* DetailTagsCell.m */,
-				60319D521D8ED10A00BD094D /* DetailTagsCell.xib */,
-				60319D551D8ED3B800BD094D /* DetailCommentsCell.h */,
-				60319D561D8ED3B800BD094D /* DetailCommentsCell.m */,
-				60319D571D8ED3B800BD094D /* DetailCommentsCell.xib */,
-				60319D5A1D8F1A9200BD094D /* DetailHisFocusCell.h */,
-				60319D5B1D8F1A9200BD094D /* DetailHisFocusCell.m */,
-				60319D5C1D8F1A9200BD094D /* DetailHisFocusCell.xib */,
-				60319D5F1D8F1CCF00BD094D /* hisFocusSub */,
-				60319D651D8F1E8900BD094D /* DetailRecommend Cell.h */,
-				60319D661D8F1E8900BD094D /* DetailRecommend Cell.m */,
-				60319D671D8F1E8900BD094D /* DetailRecommend Cell.xib */,
-				60319D6A1D8F215100BD094D /* recommendSub */,
+				D7428EF41D8F873C00E64D65 /* NoteDetailSubviews */,
 			);
 			name = NoteDetail;
 			sourceTree = "<group>";
@@ -1134,6 +1109,39 @@
 				D76E84261D75A3CC0014FDEA /* PostTagCellSubs */,
 			);
 			name = Post;
+			sourceTree = "<group>";
+		};
+		D7428EF41D8F873C00E64D65 /* NoteDetailSubviews */ = {
+			isa = PBXGroup;
+			children = (
+				606BF84D1D8415AC00C503FE /* DetailUserInfoView.h */,
+				606BF84E1D8415AC00C503FE /* DetailUserInfoView.m */,
+				606BF8501D84164200C503FE /* DetailUserInfoView.xib */,
+				606BF8521D841B7500C503FE /* DetailCoverTitleCell.h */,
+				606BF8531D841B7500C503FE /* DetailCoverTitleCell.m */,
+				606BF8541D841B7500C503FE /* DetailCoverTitleCell.xib */,
+				60319D501D8ED10A00BD094D /* DetailTagsCell.h */,
+				60319D511D8ED10A00BD094D /* DetailTagsCell.m */,
+				60319D521D8ED10A00BD094D /* DetailTagsCell.xib */,
+				60319D551D8ED3B800BD094D /* DetailCommentsCell.h */,
+				60319D561D8ED3B800BD094D /* DetailCommentsCell.m */,
+				60319D571D8ED3B800BD094D /* DetailCommentsCell.xib */,
+				60319D5A1D8F1A9200BD094D /* DetailHisFocusCell.h */,
+				60319D5B1D8F1A9200BD094D /* DetailHisFocusCell.m */,
+				60319D5C1D8F1A9200BD094D /* DetailHisFocusCell.xib */,
+				60319D5F1D8F1CCF00BD094D /* hisFocusSub */,
+				60319D601D8F1D0C00BD094D /* UserItemCollectionCell.h */,
+				60319D611D8F1D0C00BD094D /* UserItemCollectionCell.m */,
+				60319D621D8F1D0C00BD094D /* UserItemCollectionCell.xib */,
+				60319D651D8F1E8900BD094D /* DetailRecommend Cell.h */,
+				60319D661D8F1E8900BD094D /* DetailRecommend Cell.m */,
+				60319D671D8F1E8900BD094D /* DetailRecommend Cell.xib */,
+				60319D6A1D8F215100BD094D /* recommendSub */,
+				60319D6B1D8F219B00BD094D /* ProductRecommendCollectionCell.h */,
+				60319D6C1D8F219B00BD094D /* ProductRecommendCollectionCell.m */,
+				60319D6D1D8F219B00BD094D /* ProductRecommendCollectionCell.xib */,
+			);
+			name = NoteDetailSubviews;
 			sourceTree = "<group>";
 		};
 		D74589891D6AAF9500835234 /* XLPlainFlowLayout */ = {

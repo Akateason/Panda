@@ -21,7 +21,6 @@
 @property (weak, nonatomic) IBOutlet UIAlternativeButton *btComment;
 @property (weak, nonatomic) IBOutlet UIAlternativeButton *btCollecion;
 
-
 @end
 
 @implementation NoteDetailCtrller

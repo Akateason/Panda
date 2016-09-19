@@ -10,4 +10,6 @@
 
 @interface NoteDetailCtrller : RootCtrl
 
+@property (nonatomic,copy)   NSString *articleId ;
+
 @end

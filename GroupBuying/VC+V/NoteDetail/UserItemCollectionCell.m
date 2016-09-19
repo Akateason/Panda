@@ -8,11 +8,27 @@
 
 #import "UserItemCollectionCell.h"
 
+@interface UserItemCollectionCell ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *userHeadPic;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UIButton *btFocus;
+
+@end
+
 @implementation UserItemCollectionCell
 
-- (void)awakeFromNib {
+- (IBAction)btFoucusOnClick:(id)sender
+{
+    
+}
+
+- (void)awakeFromNib
+{
     [super awakeFromNib];
     // Initialization code
+    _usernameLabel.textColor = [UIColor xt_w_dark] ;
+    [_btFocus setTitleColor:[UIColor xt_w_dark] forState:0] ;
 }
 
 @end
