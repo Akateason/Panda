@@ -10,9 +10,17 @@
 #import "UIAlternativeButton.h"
 #import "UIImage+AddFunction.h"
 #import "RootTableView.h"
+#import "NoteDetailViewItem.h"
+#import "UserOnDevice.h"
+#import "YYModel.h"
+#import "DetailUserInfoView.h"
+#import "DetailCoverTitleCell.h"
+
 
 @interface NoteDetailCtrller () <UITableViewDataSource,UITableViewDelegate,RootTableViewDelegate>
-
+{
+    BOOL bFirstTime ;
+}
 // storyboard
 @property (weak, nonatomic) IBOutlet UIView *bottomBar;
 @property (weak, nonatomic) IBOutlet RootTableView *table;
@@ -21,45 +29,12 @@
 @property (weak, nonatomic) IBOutlet UIAlternativeButton *btComment;
 @property (weak, nonatomic) IBOutlet UIAlternativeButton *btCollecion;
 
+// data
+@property (nonatomic,strong) NoteDetailViewItem *noteDetail ;
+
 @end
 
 @implementation NoteDetailCtrller
-
-#pragma mark - bottom bar actions
-- (IBAction)btCouponOnClick:(id)sender {
-}
-
-- (IBAction)btLikeOnClick:(UIAlternativeButton *)button {
-    button.selected = !button.selected ;
-}
-
-- (IBAction)btCommentOnClick:(id)sender {
-}
-
-- (IBAction)btCollectionOnClick:(UIAlternativeButton *)button {
-    button.selected = !button.selected ;
-}
-
-
-
-#pragma mark - life
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    [self configureUIs] ;
-    
-//    _table.delegate = self ;
-//    _table.dataSource = self ;
-//    _table.xt_Delegate = self ;
-    
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated] ;
-    _bottomBar.hidden = NO ;
-}
 
 
 - (void)configureUIs
@@ -77,18 +52,83 @@
     [_btCollecion setBackgroundImage:btBgImage forState:UIControlStateHighlighted] ;
 }
 
+- (void)configureTable
+{
+    _table.delegate = self ;
+    _table.dataSource = self ;
+    _table.xt_Delegate = self ;
+    _table.separatorStyle = UITableViewCellSeparatorStyleNone ;
+    [_table registerNib:[UINib nibWithNibName:kID_DetailUserInfoView bundle:nil] forHeaderFooterViewReuseIdentifier:kID_DetailUserInfoView] ;
+    [_table registerNib:[UINib nibWithNibName:kID_DetailCoverTitleCell bundle:nil] forCellReuseIdentifier:kID_DetailCoverTitleCell] ;
+}
+
+
+#pragma mark - bottom bar actions
+- (IBAction)btCouponOnClick:(id)sender {
+    NSLog(@"优惠券") ;
+}
+
+- (IBAction)btLikeOnClick:(UIAlternativeButton *)button {
+    button.selected = !button.selected ;
+}
+
+- (IBAction)btCommentOnClick:(id)sender {
+    NSLog(@"评论") ;
+}
+
+- (IBAction)btCollectionOnClick:(UIAlternativeButton *)button {
+    button.selected = !button.selected ;
+}
+
+
+
+#pragma mark - life
+- (void)viewDidLoad
+{
+    bFirstTime = YES ;
+    self.title = @"笔记详情" ;
+    
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    [self configureUIs] ;
+    [self configureTable] ;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated] ;
+    _bottomBar.hidden = NO ;
+}
 
 
 
 #pragma mark - RootTableViewDelegate
 - (void)loadNewData
 {
-    
+    NSString *userID = [UserOnDevice currentUserOnDevice].idOwn ;
+
+    [ServerRequest articleDetailWithArticleID:self.articleId
+                                      refresh:@(bFirstTime)
+                                       userID:userID
+                                      success:^(id json) {
+                                          ResultParsered *result = [ResultParsered yy_modelWithJSON:json] ;
+                                          if (result.code == 1) {
+                                              id jsonobj = result.data[@"noteDetail"] ;
+                                              NoteDetailViewItem *detailItem = [NoteDetailViewItem yy_modelWithJSON:jsonobj] ;
+                                              self.noteDetail = detailItem ;
+                                              
+                                              [_table reloadData] ;
+                                          }
+                                      }
+                                         fail:^{
+                                             
+                                         }] ;
+    bFirstTime = NO ;
 }
 
 - (void)loadMoreData
 {
-
+    
 }
 
 #pragma mark - UITableViewDataSource
@@ -99,27 +139,50 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2 ;
+    return 1 ;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellIdentifier = @"cell" ;
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier] ;
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] ;
+    NSInteger section = indexPath.section ;
+    if (section == 0) {
+        DetailCoverTitleCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_DetailCoverTitleCell] ;
+        cell.noteItem = self.noteDetail ;
+        return cell ;
     }
-
-    return cell ;
+    
+    return nil ;
 }
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 44.0 ;
+    NSInteger section = indexPath.section ;
+    if (section == 0) {
+        return [DetailCoverTitleCell getHeightWithNoteItem:self.noteDetail] ;
+    }
+    
+    return 0 ;
 }
 
+- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if (section == 0)
+    {
+        DetailUserInfoView *headerUser = [tableView dequeueReusableHeaderFooterViewWithIdentifier:kID_DetailUserInfoView] ;
+        headerUser.note = self.noteDetail ;
+        return headerUser ;
+    }
+    return nil ;
+}
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return 55. ;
+    }
+    return 0 ;
+}
 
 
 

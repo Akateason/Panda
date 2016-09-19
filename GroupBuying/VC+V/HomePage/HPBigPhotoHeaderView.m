@@ -72,6 +72,8 @@
     _headImageView.layer.masksToBounds = YES ;
 
     _lableTime.textColor =  [UIColor xt_w_light] ;
+    _labelName.textColor = [UIColor xt_w_dark] ;
+
 }
 
 

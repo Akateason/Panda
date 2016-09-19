@@ -86,10 +86,32 @@
                parameters:paramer
                   success:^(id json) {
                       if (success) success(json);
-
                   } fail:^{
                       if (fail) fail();
+                  }] ;
+    
+}
 
+#pragma - 指定文章ID搜索笔记详情信息
++ (void)articleDetailWithArticleID:(NSString *)articleID
+                           refresh:(NSNumber *)refreshNumber
+                            userID:(NSString *)userID
+                           success:(void (^)(id json))success
+                              fail:(void (^)())fail
+{
+    NSMutableDictionary *paramer = [self getParameters] ;
+    [paramer setObject:articleID forKey:@"id"] ;
+    [paramer setObject:refreshNumber forKey:@"refresh"] ;
+    if (userID != nil) {
+        [paramer setObject:userID forKey:@"userId"] ;
+    }
+    
+    [XTRequest GETWithUrl:[self getFinalUrl:URL_NOTE_DETAIL]
+               parameters:paramer
+                  success:^(id json) {
+                      if (success) success(json);
+                  } fail:^{
+                      if (fail) fail();
                   }] ;
     
 }
@@ -101,8 +123,6 @@
 {
     NSString *urlStr = [[self getFinalUrl:URL_ARTICLE_ADD] stringByAppendingString:[NSString stringWithFormat:@"?token=%@",[UserOnDevice token]]] ;
     NSDictionary *jsonObj = [article yy_modelToJSONObject] ;
-//    NSMutableDictionary *paramer = [self getParameters] ;
-//    [paramer setObject:jsonStr forKey:@"request_body"] ;
     
     [XTRequest POSTWithTokenUrl:urlStr
                            body:jsonObj

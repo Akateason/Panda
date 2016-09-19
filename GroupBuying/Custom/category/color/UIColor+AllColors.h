@@ -32,4 +32,6 @@
 
 + (UIColor *)xt_editor_w ;
 
++ (UIColor *)xt_w_content ;
+
 @end

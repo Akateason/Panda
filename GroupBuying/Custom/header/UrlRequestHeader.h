@@ -28,6 +28,8 @@ static NSString *const URL_ARTICLE_ADD          = @"/gwn/s/article/add" ;
 //搜索首页笔记信息
 static NSString *const URL_HOME_LIST_SEARCH     = @"/gwn/note/list/home/search" ;
 
+//指定文章ID搜索笔记详情信息
+static NSString *const URL_NOTE_DETAIL          = @"/gwn/note/detail/getById" ;
 
 
 

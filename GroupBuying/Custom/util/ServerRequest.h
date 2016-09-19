@@ -40,6 +40,15 @@
                           fail:(void (^)())fail ;
 
 
+#pragma - 指定文章ID搜索笔记详情信息
++ (void)articleDetailWithArticleID:(NSString *)articleID
+                           refresh:(NSNumber *)refreshNumber
+                            userID:(NSString *)userID
+                           success:(void (^)(id json))success
+                              fail:(void (^)())fail ;
+
+
+
 
 #pragma - 添加文章信息
 + (void)addArticle:(Article *)article

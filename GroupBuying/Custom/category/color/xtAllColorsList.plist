@@ -24,5 +24,7 @@
 	<string>b3b3b3</string>
 	<key>w_gray</key>
 	<string>808080</string>
+	<key>w_content</key>
+	<string>666666</string>
 </dict>
 </plist>

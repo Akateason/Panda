@@ -7,6 +7,11 @@
 //
 
 #import "DetailUserInfoView.h"
+#import "UIImageView+WebCache.h"
+#import "NoteDetailViewItem.h"
+#import "Pic.h"
+#import "XTTickConvert.h"
+#import "Article.h"
 
 @interface DetailUserInfoView ()
 
@@ -19,14 +24,26 @@
 
 @implementation DetailUserInfoView
 
+- (void)setNote:(NoteDetailViewItem *)note
+{
+    _note = note ;
+    
+    [_headImageView sd_setImageWithURL:[NSURL URLWithString:note.ownerHeadPic.qiniuUrl]
+                      placeholderImage:[UIImage imageNamed:@"t_h_5"]] ;
+    _btFoucus.hidden = note.isFollow ;
+    _lableTime.text = [XTTickConvert timeInfoWithDate:[XTTickConvert getNSDateWithTick:note.articleInfo.createTime]] ;
+    _labelName.text = note.ownerNickName ;
+}
+
+
 - (IBAction)headOnClick:(id)sender
 {
-    
+    NSLog(@"头像") ;
 }
 
 - (IBAction)btFoucusOnClick:(id)sender
 {
-    
+    NSLog(@"关注") ;
 }
 
 
@@ -46,6 +63,7 @@
     _headImageView.layer.masksToBounds = YES ;
     
     _lableTime.textColor =  [UIColor xt_w_light] ;
+    _labelName.textColor = [UIColor xt_w_dark] ;
 }
 
 

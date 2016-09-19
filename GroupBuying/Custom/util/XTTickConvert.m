@@ -16,7 +16,7 @@
 + (long long)getTickWithDate:(NSDate *)_date
 {
     NSTimeInterval timeInterval2 = [_date timeIntervalSince1970];
-    long long time = (long long)(timeInterval2 * TICK_S_OR_SS_2);
+    long long time = (long long)(timeInterval2 * TICK_S_OR_SS_1);
     NSLog(@"tick :%lld",time);
     return time;
 }
@@ -24,7 +24,7 @@
 //转tick,转出String
 + (NSString *)getDateWithTick:(long long)_tick AndWithFormart:(NSString *)formatStr
 {
-    NSTimeInterval timeInterval = _tick / TICK_S_OR_SS_2;
+    NSTimeInterval timeInterval = _tick / TICK_S_OR_SS_1;
     NSDate *date111 = [NSDate dateWithTimeIntervalSince1970:timeInterval];
     //    NSLog(@"date:%@",date111);
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -40,7 +40,7 @@
 //转tick,转出NsDate
 + (NSDate *)getNSDateWithTick:(long long)_tick
 {
-    NSTimeInterval timeInterval = _tick / TICK_S_OR_SS_2;
+    NSTimeInterval timeInterval = _tick / TICK_S_OR_SS_1;
     return [NSDate dateWithTimeIntervalSince1970:timeInterval];
 }
 
@@ -76,7 +76,7 @@
     // 把日期字符串格式化为日期对象
     
     NSDate *curDate = [NSDate date];
-    NSTimeInterval time = -[date timeIntervalSinceDate:curDate];
+    NSTimeInterval time = - [date timeIntervalSinceDate:curDate];
 //    NSLog(@"[curDate getYear] : %d",[curDate getYear]) ;
 //    NSLog(@"[date getYear] : %d",[date getYear]) ;
 //    NSLog(@"[curDate getMonth] : %d",[curDate getMonth]) ;

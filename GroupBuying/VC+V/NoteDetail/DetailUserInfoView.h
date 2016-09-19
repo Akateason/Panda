@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString *const kID_DetailUserInfoView = @"DetailUserInfoView" ;
+
+@class NoteDetailViewItem ;
+
 @interface DetailUserInfoView : UITableViewHeaderFooterView
+
+@property (nonatomic,strong) NoteDetailViewItem *note ;
 
 @end

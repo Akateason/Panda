@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString *const kID_DetailCoverTitleCell = @"DetailCoverTitleCell" ;
+
+@class NoteDetailViewItem ;
+
 @interface DetailCoverTitleCell : UITableViewCell
+
+@property (nonatomic,strong)NoteDetailViewItem *noteItem ;
+
++ (CGFloat)getHeightWithNoteItem:(NoteDetailViewItem *)noteItem ;
 
 @end

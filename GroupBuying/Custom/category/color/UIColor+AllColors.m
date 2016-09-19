@@ -66,4 +66,9 @@
     return [[XTColorFetcher class] xt_colorWithKey:@"editor_w"] ;
 }
 
++ (UIColor *)xt_w_content
+{
+    return [[XTColorFetcher class] xt_colorWithKey:@"w_content"] ;
+}
+
 @end

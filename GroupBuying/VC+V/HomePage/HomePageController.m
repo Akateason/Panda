@@ -395,9 +395,18 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NoteDetailCtrller *detailCtrller = (NoteDetailCtrller *)[[self class] getCtrllerFromStory:@"HomePage" controllerIdentifier:@"NoteDetailCtrller"] ;
+    NSString *articleIDWillSend = nil ;
+    if (collectionView.collectionViewLayout == self.bplayout) {
+        NoteListViewItem *note = self.listNote[indexPath.section] ;
+        articleIDWillSend = note.articleId ;
+    }
+    else if (collectionView.collectionViewLayout == self.waterflowLayout) {
+        NoteListViewItem *note = self.listNote[indexPath.row] ;
+        articleIDWillSend = note.articleId ;
+    }
+    detailCtrller.articleId = articleIDWillSend ;
     [detailCtrller setHidesBottomBarWhenPushed:YES] ;
-    [self.navigationController pushViewController:detailCtrller animated:YES] ;
-    
+    [self.navigationController pushViewController:detailCtrller animated:YES] ;    
 }
 
 #pragma mark - util
