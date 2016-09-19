@@ -15,7 +15,8 @@
 #import "YYModel.h"
 #import "DetailUserInfoView.h"
 #import "DetailCoverTitleCell.h"
-
+#import "DetailTagsCell.h"
+#import "Article.h"
 
 @interface NoteDetailCtrller () <UITableViewDataSource,UITableViewDelegate,RootTableViewDelegate>
 {
@@ -60,6 +61,7 @@
     _table.separatorStyle = UITableViewCellSeparatorStyleNone ;
     [_table registerNib:[UINib nibWithNibName:kID_DetailUserInfoView bundle:nil] forHeaderFooterViewReuseIdentifier:kID_DetailUserInfoView] ;
     [_table registerNib:[UINib nibWithNibName:kID_DetailCoverTitleCell bundle:nil] forCellReuseIdentifier:kID_DetailCoverTitleCell] ;
+    [_table registerNib:[UINib nibWithNibName:kID_DetailTagsCell bundle:nil] forCellReuseIdentifier:kID_DetailTagsCell] ;
 }
 
 
@@ -134,7 +136,7 @@
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1 ;
+    return 2 ;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -150,7 +152,11 @@
         cell.noteItem = self.noteDetail ;
         return cell ;
     }
-    
+    else if (section == 1) {
+        DetailTagsCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_DetailTagsCell] ;
+        cell.tags = self.noteDetail.articleInfo.tags ;
+        return cell ;
+    }
     return nil ;
 }
 
@@ -161,7 +167,9 @@
     if (section == 0) {
         return [DetailCoverTitleCell getHeightWithNoteItem:self.noteDetail] ;
     }
-    
+    else if (section == 1) {
+        return [DetailTagsCell calculateHeight:self.noteDetail.articleInfo.tags] ;
+    }
     return 0 ;
 }
 

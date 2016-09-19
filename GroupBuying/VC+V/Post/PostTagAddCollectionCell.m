@@ -26,4 +26,12 @@
     _label.textColor = [UIColor xt_tabbarRedColor] ;
 }
 
+- (void)setStrDisplay:(NSString *)strDisplay
+{
+    _strDisplay = strDisplay ;
+    
+    _label.text = [@"#" stringByAppendingString:strDisplay] ;
+}
+
+
 @end

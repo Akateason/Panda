@@ -144,7 +144,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GroupBuying/Custom/util/ServerRequest.m"
@@ -153,7 +153,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "105"
             endingLineNumber = "105"
-            landmarkName = "+addArticle:success:fail:"
+            landmarkName = "+articleDetailWithArticleID:refresh:userID:success:fail:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

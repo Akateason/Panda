@@ -35,6 +35,9 @@
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <state key="normal" title="更多 &gt;"/>
+                        <connections>
+                            <action selector="btMoreOnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="skG-qS-ONJ"/>
+                        </connections>
                     </button>
                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0kH-lr-OrX">
                         <rect key="frame" x="0.0" y="32" width="320" height="213"/>
@@ -66,6 +69,13 @@
                     <constraint firstAttribute="trailing" secondItem="dmG-MG-Bei" secondAttribute="trailing" id="ysp-cd-Zh1"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="baseline" destination="a1q-HX-grO" id="j0W-Fw-sp4"/>
+                <outlet property="btMore" destination="goA-yL-bNK" id="L4x-9D-XGs"/>
+                <outlet property="labelTitle" destination="D3f-fA-Tki" id="zjx-hX-hCP"/>
+                <outlet property="seperateline" destination="dmG-MG-Bei" id="wsr-lT-Ejf"/>
+                <outlet property="table" destination="0kH-lr-OrX" id="8Hv-d7-rzG"/>
+            </connections>
             <point key="canvasLocation" x="451" y="405.5"/>
         </tableViewCell>
     </objects>

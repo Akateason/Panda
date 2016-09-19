@@ -27,13 +27,18 @@
 {
     float imgH = APP_WIDTH * 500. / 374. ;
     
-    UIFont *fontTitle = [UIFont systemFontOfSize:14] ;
-    CGSize sizeTitle = CGSizeMake(APP_WIDTH - 2 * 12., 100.) ;
-    CGSize titlelabelSize = [noteItem.articleInfo.title boundingRectWithSize:sizeTitle
-                                              options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading
-                                           attributes:@{NSFontAttributeName:fontTitle}
-                                              context:nil].size ;
-    CGFloat titleHeight = titlelabelSize.height ;
+    CGFloat titleHeight = 0.;
+    if (noteItem.articleInfo.title.length)
+    {
+        UIFont *fontTitle = [UIFont systemFontOfSize:14] ;
+        CGSize sizeTitle = CGSizeMake(APP_WIDTH - 2 * 12., 100.) ;
+        CGSize titlelabelSize = [noteItem.articleInfo.title boundingRectWithSize:sizeTitle
+                                                                         options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading
+                                                                      attributes:@{NSFontAttributeName:fontTitle}
+                                                                         context:nil].size ;
+        titleHeight = titlelabelSize.height ;
+    }
+    
 
     UIFont *fontContent= [UIFont systemFontOfSize:13] ;
     CGSize sizeContent = CGSizeMake(APP_WIDTH - 2 * 12., 1000.) ;
@@ -44,7 +49,7 @@
     CGFloat contentHeight = contentLabelSize.height ;
     
     
-    return 8. + imgH + 10. + titleHeight + 14 + contentHeight + 10 + 15 ;
+    return imgH + 10. + titleHeight + 14 + contentHeight + 10 + 15 ;
 }
 
 - (void)setNoteItem:(NoteDetailViewItem *)noteItem

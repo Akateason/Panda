@@ -15,25 +15,27 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJU-9f-Itn">
                         <rect key="frame" x="0.0" y="0.0" width="74" height="25"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#添加标签" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B9N-oc-dpv">
+                                <rect key="frame" x="9" y="5" width="56" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.97254901959999995" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="B9N-oc-dpv" firstAttribute="centerY" secondItem="nJU-9f-Itn" secondAttribute="centerY" id="Jkt-1H-War"/>
                             <constraint firstAttribute="height" constant="25" id="sJz-4g-9z7"/>
+                            <constraint firstItem="B9N-oc-dpv" firstAttribute="centerX" secondItem="nJU-9f-Itn" secondAttribute="centerX" id="xIu-v6-aGB"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#添加标签" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B9N-oc-dpv">
-                        <rect key="frame" x="9" y="6" width="56" height="15"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
                 <constraint firstItem="nJU-9f-Itn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="AtJ-jv-AoU"/>
                 <constraint firstAttribute="trailing" secondItem="nJU-9f-Itn" secondAttribute="trailing" id="Pcc-Tp-2Yt"/>
-                <constraint firstItem="B9N-oc-dpv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="6" id="a9u-7s-Abx"/>
-                <constraint firstItem="B9N-oc-dpv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="9" id="gaP-8M-EcC"/>
                 <constraint firstItem="nJU-9f-Itn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="jB1-FY-LHh"/>
             </constraints>
             <size key="customSize" width="98" height="30"/>

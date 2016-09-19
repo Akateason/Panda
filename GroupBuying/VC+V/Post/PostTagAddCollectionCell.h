@@ -12,4 +12,6 @@ static NSString *idPostTagAddCollectionCell = @"PostTagAddCollectionCell" ;
 
 @interface PostTagAddCollectionCell : UICollectionViewCell
 
+@property (nonatomic,copy) NSString *strDisplay ;
+
 @end

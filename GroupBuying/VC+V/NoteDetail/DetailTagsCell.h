@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString *const kID_DetailTagsCell = @"DetailTagsCell" ;
+
 @interface DetailTagsCell : UITableViewCell
+
+@property (nonatomic,strong) NSArray *tags ;
+
++ (CGFloat)calculateHeight:(NSArray *)tags ;
 
 @end
