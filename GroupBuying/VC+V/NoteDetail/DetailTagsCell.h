@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^TagClick)(NSString *tagStr) ;
+
 static NSString *const kID_DetailTagsCell = @"DetailTagsCell" ;
 
 @interface DetailTagsCell : UITableViewCell
 
 @property (nonatomic,strong) NSArray *tags ;
+@property (nonatomic,copy) TagClick clickTagBlock ;
 
 + (CGFloat)calculateHeight:(NSArray *)tags ;
 

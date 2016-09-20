@@ -29,7 +29,7 @@
     _note = note ;
     
     [_headImageView sd_setImageWithURL:[NSURL URLWithString:note.ownerHeadPic.qiniuUrl]
-                      placeholderImage:[UIImage imageNamed:@"t_h_5"]] ;
+                      placeholderImage:IMG_HEAD_NO] ;
     _btFoucus.hidden = note.isFollow ;
     _lableTime.text = [XTTickConvert timeInfoWithDate:[XTTickConvert getNSDateWithTick:note.articleInfo.createTime]] ;
     _labelName.text = note.ownerNickName ;
@@ -52,7 +52,6 @@
 {
     [super awakeFromNib];
     // Initialization code
-    self.backgroundColor = [UIColor whiteColor] ;
     
     [_btFoucus setTitleColor:[UIColor xt_w_dark] forState:0] ;
     _btFoucus.layer.cornerRadius = 5. ;
@@ -64,6 +63,10 @@
     
     _lableTime.textColor =  [UIColor xt_w_light] ;
     _labelName.textColor = [UIColor xt_w_dark] ;
+    
+    UIView *bView = [[UIView alloc] initWithFrame:self.frame] ;
+    bView.backgroundColor = [UIColor whiteColor] ;
+    self.backgroundView = bView ;
 }
 
 

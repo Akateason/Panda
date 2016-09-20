@@ -61,7 +61,8 @@ static const CGFloat flexToCenterX      = (widthAndHeight / 2 + 5.) ;
     return self;
 }
 
--(id)init{
+- (id)init
+{
     self = [super init];
     if (self) {
         if (imageLabelIcon == nil) {
@@ -86,10 +87,10 @@ static const CGFloat flexToCenterX      = (widthAndHeight / 2 + 5.) ;
 /**
  *  初始化MBP界面
  */
--(void)initTagUI{
-    
-    viewCover =[UIView new];
-    viewCover.alpha=0;
+- (void)initTagUI
+{
+    viewCover = [UIView new];
+    viewCover.alpha = 0;
     [self addSubview:viewCover];
     [viewCover mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self);
@@ -182,29 +183,31 @@ static const CGFloat flexToCenterX      = (widthAndHeight / 2 + 5.) ;
 
 #pragma -mark 添加已知标签
 
--(void)addTagViewText:(NSString *)text
-             Location:(CGPoint )point
-isPositiveAndNegative:(BOOL)isPositiveAndNegative
-                 type:(NSString *)typeStr
+- (void)addTagViewText:(NSString *)text
+              Location:(CGPoint )point
+ isPositiveAndNegative:(BOOL)isPositiveAndNegative
+                  type:(NSString *)typeStr
 {
     CGFloat X;
     if (isPositiveAndNegative) {
         X = point.x * imageScale - 8 ;
-    }else{
+    } else {
         X = point.x * imageScale ;
     }
     CGPoint pointimageScale = CGPointMake(X, point.y * imageScale + imageLabelIcon.size.height / 2) ;
-    [self addtagViewimageClickinit:pointimageScale isAddTagView:YES] ;
-    if(text.length!=0)
+    [self addtagViewimageClickinit:pointimageScale
+                      isAddTagView:YES] ;
+    if(text.length != 0)
         viewTag.imageLabel.labelWaterFlow.text = text ;
     
     viewTag.typeStr = typeStr ;
-
+    
     [arrayInitDidView addObject:[NSString stringWithFormat:@"%d",isPositiveAndNegative]] ;
     
 }
 
-- (void)didMoveToWindow {
+- (void)didMoveToWindow
+{
     [self layoutIfNeeded];
     if (self.window) {
         if(!isViewDidLoad){
@@ -222,8 +225,9 @@ isPositiveAndNegative:(BOOL)isPositiveAndNegative
 }
 
 #pragma -mark 点击创建标签
--(void)addtagViewimageClickinit:(CGPoint)point isAddTagView:(BOOL)isAdd{
-    YXLTagView *viewTagNew =[[YXLTagView alloc]init];
+- (void)addtagViewimageClickinit:(CGPoint)point isAddTagView:(BOOL)isAdd
+{
+    YXLTagView *viewTagNew = [[YXLTagView alloc] init] ;
     UIPanGestureRecognizer *panTagView =[[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panTagView:)];
     panTagView.minimumNumberOfTouches=1;
     panTagView.maximumNumberOfTouches=1;
@@ -245,7 +249,7 @@ isPositiveAndNegative:(BOOL)isPositiveAndNegative
     [viewTagNew mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(@(point.x));
         make.top.equalTo(@(point.y-imageLabelIcon.size.height/2));
-        make.width.greaterThanOrEqualTo(@(viewTagNew.imageLabel.image.size.width+8));
+        make.width.greaterThanOrEqualTo(@(viewTagNew.imageLabel.image.size.width + 8));
         make.height.equalTo(@(imageLabelIcon.size.height));
     }];
     
@@ -265,7 +269,8 @@ isPositiveAndNegative:(BOOL)isPositiveAndNegative
 /**
  *  标签移动
  */
--(void)panTagView:(UIPanGestureRecognizer *)sender{
+- (void)panTagView:(UIPanGestureRecognizer *)sender
+{
     viewTag =(YXLTagView *)sender.view;
     CGPoint point = [sender locationInView:_imagePreviews];
     if (sender.state == UIGestureRecognizerStateBegan) {
@@ -273,6 +278,7 @@ isPositiveAndNegative:(BOOL)isPositiveAndNegative
     }
     [self panTagViewPoint:point];
 }
+
 /**
  *  点击标签翻转
  */
@@ -280,6 +286,7 @@ isPositiveAndNegative:(BOOL)isPositiveAndNegative
     viewTag =(YXLTagView *)sender.view;
     [self viewTagIsPositiveAndNegative:viewTag.isPositiveAndNegative view:viewTag];
 }
+
 /**
  *  长按手势
  */
@@ -298,6 +305,7 @@ isPositiveAndNegative:(BOOL)isPositiveAndNegative
         [popMenu setMenuVisible:YES animated:YES] ;
     }
 }
+
 /**
  *  点击图片
  */
@@ -306,7 +314,10 @@ isPositiveAndNegative:(BOOL)isPositiveAndNegative
     NSLog(@"clickimagePreviews : %@",NSStringFromCGPoint(point)) ;
     [self addtagViewimageClickinit:point isAddTagView:NO];
 }
--(void)viewTagIsPositiveAndNegative:(BOOL)isPositiveAndNegative view:(YXLTagView *)view{
+
+-(void)viewTagIsPositiveAndNegative:(BOOL)isPositiveAndNegative
+                               view:(YXLTagView *)view
+{
     if(isPositiveAndNegative){
         view.isPositiveAndNegative=NO;
         [self positive:view];
@@ -315,6 +326,7 @@ isPositiveAndNegative:(BOOL)isPositiveAndNegative
         [self negative:view];
     }
 }
+
 /**
  *  正向
  */
@@ -492,34 +504,50 @@ isPositiveAndNegative:(BOOL)isPositiveAndNegative
 
 
 #pragma -mark 尺寸
+
+static const float kNavHeight = 0 ;
+
 - (void)scaledFrame
 {
     CGRect noScale = CGRectMake(0.0, 0.0, _imagePreviews.image.size.width , _imagePreviews.image.size.height );
     
     if (CGWidth(noScale) <= rctWidth && CGHeight(noScale) <= self.frame.size.height) {
         imageScale = 1.0;
+//        _imagePreviews.frame = (CGRect) {
+//            {rctWidth / 2 - noScale.size.width / 2 ,
+//            (rctHeight - kNavHeight) / 2 - noScale.size.height / 2 } ,
+//            noScale.size } ;
         _imagePreviews.frame = (CGRect) {
             {rctWidth / 2 - noScale.size.width / 2 ,
-            (rctHeight - 44) / 2 - noScale.size.height/2 } ,
+                0 } ,
             noScale.size } ;
         return ;
     }
     CGRect scaled;
-    imageScale= (rctHeight - 44) / _imagePreviews.image.size.height;
+    imageScale= (rctHeight - kNavHeight) / _imagePreviews.image.size.height;
     scaled=CGRectMake(0.0, 0.0, _imagePreviews.image.size.width * imageScale , _imagePreviews.image.size.height * imageScale );
-    if (CGWidth(scaled) <= rctWidth && CGHeight(scaled) <= (rctHeight-44)) {
-        _imagePreviews.frame= (CGRect){
+    if (CGWidth(scaled) <= rctWidth && CGHeight(scaled) <= (rctHeight-kNavHeight)) {
+//        _imagePreviews.frame= (CGRect){
+//            {rctWidth / 2 - scaled.size.width / 2,
+//            (self.frame.size.height - kNavHeight) / 2 - scaled.size.height / 2} ,
+//            scaled.size} ;
+        _imagePreviews.frame= (CGRect) {
             {rctWidth / 2 - scaled.size.width / 2,
-            (self.frame.size.height - 44) / 2 - scaled.size.height / 2} ,
+                0 } ,
             scaled.size} ;
         return ;
     }
     imageScale = rctWidth / _imagePreviews.image.size.width ;
     scaled = CGRectMake(0.0, 0.0, _imagePreviews.image.size.width * imageScale, _imagePreviews.image.size.height * imageScale) ;
+//    _imagePreviews.frame=(CGRect){
+//        {rctWidth / 2 - scaled.size.width / 2 ,
+//        (rctHeight - kNavHeight) / 2 - scaled.size.height / 2} ,
+//        scaled.size} ;
     _imagePreviews.frame=(CGRect){
         {rctWidth / 2 - scaled.size.width / 2 ,
-        (rctHeight - 44) / 2 - scaled.size.height / 2} ,
+            0} ,
         scaled.size} ;
+
 }
 
 #pragma -mark pop返回标签尺寸和文本
@@ -543,19 +571,20 @@ isPositiveAndNegative:(BOOL)isPositiveAndNegative
     for (YXLTagView *tag in arrayTagS)
     {
         positiveAndNegative = @"RIGHT" ;
-        pX = CGOriginX(tag.frame)/imageScale ;
-        pY = CGOriginY(tag.frame)/imageScale ;
-        if(tag.isPositiveAndNegative ==YES)
+        pX = CGOriginX(tag.frame) / imageScale ;
+        pY = CGOriginY(tag.frame) / imageScale ;
+        if(tag.isPositiveAndNegative == YES)
         {
             positiveAndNegative = @"LEFT" ;
-            pX = CGRectGetMaxX(tag.frame)/imageScale ;
-            pY = CGOriginY(tag.frame)/imageScale ;
+            pX = CGRectGetMaxX(tag.frame) / imageScale ;
+            pY = CGOriginY(tag.frame) / imageScale ;
         }
         NSDictionary *dic = @{@"posType":positiveAndNegative ,
                               @"posX":@(pX) ,
                               @"posY":@(pY) ,
                               @"text":tag.imageLabel.labelWaterFlow.text ,
                               @"type":tag.typeStr} ;
+        NSLog(@"pop : %@",dic) ;
         [array addObject:dic] ;
     }
     return array ;

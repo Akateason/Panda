@@ -71,4 +71,9 @@
     return [[XTColorFetcher class] xt_colorWithKey:@"w_content"] ;
 }
 
++ (UIColor *)xt_w_comment
+{
+    return [[XTColorFetcher class] xt_colorWithKey:@"w_comment"] ;
+}
+
 @end

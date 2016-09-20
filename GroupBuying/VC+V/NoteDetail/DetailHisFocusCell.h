@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString *kID_DetailHisFocusCell = @"DetailHisFocusCell" ;
+static float    kHeight_HisFocusCell    = 166. ;
+
+
 @interface DetailHisFocusCell : UITableViewCell
 
 @end

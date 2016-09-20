@@ -17,6 +17,10 @@
 #import "DetailCoverTitleCell.h"
 #import "DetailTagsCell.h"
 #import "Article.h"
+#import "DetailCommentsCell.h"
+#import "DetailHisFocusCell.h"
+#import "DetailRecommend Cell.h"
+#import "TagDetailCtrller.h"
 
 @interface NoteDetailCtrller () <UITableViewDataSource,UITableViewDelegate,RootTableViewDelegate>
 {
@@ -46,11 +50,15 @@
     [_btLike setTitleColor:[UIColor xt_w_desc] forState:0] ;
     [_btComment setTitleColor:[UIColor xt_w_desc] forState:0] ;
     [_btCollecion setTitleColor:[UIColor xt_w_desc] forState:0] ;
-    UIImage *btBgImage = [UIImage imageWithColor:[UIColor xt_tabbarRedColor] size:_btLike.frame.size] ;
-    [_bt_coupon setBackgroundImage:btBgImage forState:UIControlStateHighlighted] ;
-    [_btLike setBackgroundImage:btBgImage forState:UIControlStateHighlighted] ;
-    [_btComment setBackgroundImage:btBgImage forState:UIControlStateHighlighted] ;
-    [_btCollecion setBackgroundImage:btBgImage forState:UIControlStateHighlighted] ;
+    
+    UIImage *btBgImageRed = [UIImage imageWithColor:[UIColor xt_tabbarRedColor] size:_btLike.frame.size] ;
+    UIImage *btBgImageWhite = [UIImage imageWithColor:[UIColor whiteColor] size:_btLike.frame.size] ;
+//    [_bt_coupon setBackgroundImage:btBgImage forState:UIControlStateHighlighted] ;
+//    [_btLike setBackgroundImage:btBgImage forState:UIControlStateHighlighted] ;
+//    [_btComment setBackgroundImage:btBgImage forState:UIControlStateHighlighted] ;
+    [_btCollecion setBackgroundImage:btBgImageRed forState:UIControlStateNormal] ;
+    [_btCollecion setBackgroundImage:btBgImageWhite forState:UIControlStateSelected] ;
+    
 }
 
 - (void)configureTable
@@ -62,6 +70,9 @@
     [_table registerNib:[UINib nibWithNibName:kID_DetailUserInfoView bundle:nil] forHeaderFooterViewReuseIdentifier:kID_DetailUserInfoView] ;
     [_table registerNib:[UINib nibWithNibName:kID_DetailCoverTitleCell bundle:nil] forCellReuseIdentifier:kID_DetailCoverTitleCell] ;
     [_table registerNib:[UINib nibWithNibName:kID_DetailTagsCell bundle:nil] forCellReuseIdentifier:kID_DetailTagsCell] ;
+    [_table registerNib:[UINib nibWithNibName:kID_DetailCommentsCell bundle:nil] forCellReuseIdentifier:kID_DetailCommentsCell] ;
+    [_table registerNib:[UINib nibWithNibName:kID_DetailHisFocusCell bundle:nil] forCellReuseIdentifier:kID_DetailHisFocusCell] ;
+    [_table registerNib:[UINib nibWithNibName:kID_DetailRecommend_Cell bundle:nil] forCellReuseIdentifier:kID_DetailRecommend_Cell] ;
 }
 
 
@@ -136,11 +147,16 @@
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2 ;
+    return 5 ;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (section == 1) {
+        if (!self.noteDetail.articleInfo.tags.count) {
+            return 0 ; // 无标签. 不显示
+        }
+    }
     return 1 ;
 }
 
@@ -155,6 +171,26 @@
     else if (section == 1) {
         DetailTagsCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_DetailTagsCell] ;
         cell.tags = self.noteDetail.articleInfo.tags ;
+        cell.clickTagBlock = ^(NSString *tagStr){
+            TagDetailCtrller *tagDetailVC = (TagDetailCtrller *)[[self class] getCtrllerFromStory:@"HomePage" controllerIdentifier:@"TagDetailCtrller"] ;
+            tagDetailVC.tagStr = tagStr ;
+            [self.navigationController pushViewController:tagDetailVC animated:YES] ;
+        } ;
+        return cell ;
+    }
+    else if (section == 2) {
+        DetailCommentsCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_DetailCommentsCell] ;
+        cell.comments = self.noteDetail.commentList ;
+        return cell ;
+    }
+    else if (section == 3) {
+        DetailHisFocusCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_DetailHisFocusCell] ;
+        
+        return cell ;
+    }
+    else if (section == 4) {
+        DetailRecommend_Cell *cell = [tableView dequeueReusableCellWithIdentifier:kID_DetailRecommend_Cell] ;
+        
         return cell ;
     }
     return nil ;
@@ -170,6 +206,16 @@
     else if (section == 1) {
         return [DetailTagsCell calculateHeight:self.noteDetail.articleInfo.tags] ;
     }
+    else if (section == 2) {
+        return [DetailCommentsCell calculateHeight:self.noteDetail.commentList] ;
+    }
+    else if (section == 3) {
+        return kHeight_HisFocusCell ;
+    }
+    else if (section == 4) {
+        return kHeight_DetailRecommend_Cell ;
+    }
+
     return 0 ;
 }
 

@@ -28,7 +28,8 @@
                           height:(CGFloat)height
                      normalColor:(UIColor *)normalColor
                      selectColor:(UIColor *)selectColor
-                            font:(UIFont *)font ;
+                            font:(UIFont *)font
+                           frame:(CGRect)frame ;
 
 - (void)moveToIndex:(int)index
            callBack:(BOOL)callback ;

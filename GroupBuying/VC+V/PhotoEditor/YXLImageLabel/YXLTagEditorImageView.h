@@ -31,10 +31,10 @@
  *  如果是取本demo里面值则不需要修改直接传入,如果是自定义的需要参考一下上面标签位置的逻辑！否则会有点偏移
  *  @param isPositiveAndNegative 标签这个样式是正还是反
  */
--(void)addTagViewText:(NSString *)text
-             Location:(CGPoint )point
-isPositiveAndNegative:(BOOL)isPositiveAndNegative
-                 type:(NSString *)typeStr ;
+- (void)addTagViewText:(NSString *)text
+              Location:(CGPoint )point
+ isPositiveAndNegative:(BOOL)isPositiveAndNegative
+                  type:(NSString *)typeStr ;
 
 /**
  *  获取所有标签信息

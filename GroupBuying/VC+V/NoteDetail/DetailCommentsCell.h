@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString *const kID_DetailCommentsCell = @"DetailCommentsCell" ;
+
 @interface DetailCommentsCell : UITableViewCell
+
+@property (nonatomic,strong) NSArray *comments ;
+
++ (CGFloat)calculateHeight:(NSArray *)comments ;
 
 @end

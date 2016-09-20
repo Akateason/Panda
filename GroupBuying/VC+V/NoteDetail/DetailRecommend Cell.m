@@ -7,8 +7,10 @@
 //
 
 #import "DetailRecommend Cell.h"
+#import "ProductRecommendCollectionCell.h"
 
-@interface DetailRecommend_Cell ()
+@interface DetailRecommend_Cell () <UICollectionViewDataSource,UICollectionViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UIView *seperateline;
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;
 @property (weak, nonatomic) IBOutlet UIButton *btMore;
@@ -19,7 +21,9 @@
 
 @implementation DetailRecommend_Cell
 
-- (IBAction)btMoreOnClick:(id)sender {
+- (IBAction)btMoreOnClick:(id)sender
+{
+    
 }
 
 
@@ -31,7 +35,43 @@
     _labelTitle.textColor = [UIColor xt_w_dark] ;
     [_btMore setTitleColor:[UIColor xt_w_light] forState:0] ;
     _baseline.backgroundColor = [UIColor xt_seperate] ;
+    
+    _collectionView.backgroundColor = [UIColor whiteColor] ;
+    _collectionView.dataSource = self ;
+    _collectionView.delegate = self ;
+    [_collectionView registerNib:[UINib nibWithNibName:kID_ProductRecommendCollectionCell bundle:nil] forCellWithReuseIdentifier:kID_ProductRecommendCollectionCell] ;
 }
+
+
+#pragma mark - collection dataSourse
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 5 ;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    ProductRecommendCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kID_ProductRecommendCollectionCell forIndexPath:indexPath] ;    
+    return cell ;
+}
+
+#pragma mark - collection delegate
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"select tag") ;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(130,175) ;
+}
+
+
+
+
+
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

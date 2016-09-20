@@ -20,7 +20,4 @@
 @property (nonatomic)        int        isUpvote ; //是否已点赞该文章（0 未点赞 1已点赞）
 @property (nonatomic,strong) NSArray    *commentList ; //评论列表（Comment对象List）
 
-
-
-
 @end

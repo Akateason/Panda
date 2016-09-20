@@ -26,6 +26,10 @@
     _priceLabel.textColor = [UIColor xt_w_desc] ;
     _productImageView.layer.borderWidth = 1. ;
     _productImageView.layer.borderColor = [UIColor xt_seperate].CGColor ;
+    _productImageView.layer.masksToBounds = YES ;
+    
+    _productNameTitle.text = @"freeplus净润洗面霜" ;
+    _priceLabel.text = @"¥ 199.00" ;
 }
 
 @end

@@ -16,5 +16,12 @@
              };
 }
 
+- (BOOL)positiveOrNagitive
+{
+    if ([self.posType isEqualToString:@"RIGHT"]) {
+        return false ;
+    }
+    return true ;
+}
 
 @end

@@ -28,7 +28,8 @@
                                                 height:45.
                                            normalColor:[UIColor xt_w_light]
                                            selectColor:[UIColor xt_tabbarRedColor]
-                                                  font:[UIFont systemFontOfSize:14.]] ;
+                                                  font:[UIFont systemFontOfSize:14.]
+                                                 frame:APPFRAME] ;
         _segment.backgroundColor = [UIColor whiteColor] ;
         _segment.delegate = self ;
         _segment.frame = CGRectMake(0, 0, APP_WIDTH, 45.) ;

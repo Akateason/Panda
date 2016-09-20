@@ -25,4 +25,6 @@
 @property (nonatomic)       long long   createTime ;
 
 
+- (BOOL)positiveOrNagitive ;
+
 @end

@@ -11,8 +11,9 @@
 
 @interface PhotoTaggingCtrller : RootCtrl
 
-@property (nonatomic,strong) UIImage *image ;
-@property (nonatomic,strong) PhotoEditorCtrller *editVC ;
-@property (nonatomic) NSInteger indexInPhotoList ;
+@property (nonatomic,strong)    UIImage             *image ;
+@property (nonatomic,strong)    PhotoEditorCtrller  *editVC ;
+@property (nonatomic)           NSInteger           indexInPhotoList ;
 
 @end
+

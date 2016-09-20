@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString *kID_UserItemCollectionCell = @"UserItemCollectionCell" ;
+
 @interface UserItemCollectionCell : UICollectionViewCell
 
+@property (nonatomic) int index ;
 @end

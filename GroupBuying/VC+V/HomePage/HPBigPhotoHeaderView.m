@@ -41,7 +41,7 @@
     NSDate *articleCreateDate = [XTTickConvert getNSDateWithTick:noteItem.articleCreateTime] ;
     _lableTime.text = [XTTickConvert timeInfoWithDate:articleCreateDate] ;
     [_headImageView sd_setImageWithURL:[NSURL URLWithString:noteItem.ownerHeadPic.qiniuUrl]
-     placeholderImage:[UIImage imageNamed:@"t_h_5"]] ;
+     placeholderImage:IMG_HEAD_NO] ;
 }
 
 - (IBAction)headOnClick:(id)sender

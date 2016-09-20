@@ -24,8 +24,9 @@
                      normalColor:(UIColor *)normalColor
                      selectColor:(UIColor *)selectColor
                             font:(UIFont *)font
+                           frame:(CGRect)frame
 {
-    self = [super init] ;
+    self = [super initWithFrame:frame] ;
     if (self)
     {
         self.dataList = datalist ;
@@ -53,7 +54,7 @@
 {
     _sumIndex = sumIndex ;
     
-    self.btWidth = APPFRAME.size.width / sumIndex ;
+    self.btWidth = CGWidth(self.frame) / sumIndex ;
 }
 
 - (void)setImgBG_sel:(UIImage *)imgBG_sel

@@ -34,4 +34,6 @@
 
 + (UIColor *)xt_w_content ;
 
++ (UIColor *)xt_w_comment ;
+
 @end

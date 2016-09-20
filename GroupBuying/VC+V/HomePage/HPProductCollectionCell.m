@@ -7,7 +7,7 @@
 //
 
 #import "HPProductCollectionCell.h"
-//#import "TestUser.h"
+#import "TestUser.h"
 #import "NoteListViewItem.h"
 #import "Pic.h"
 #import "UIImageView+WebCache.h"
@@ -23,12 +23,12 @@
 
 @implementation HPProductCollectionCell
 
-//- (void)setIndex:(int)index
-//{
-//    _index = index ;
-//    
-//    _imgView.image = [UIImage imageNamed:[TestUser bigImage:index]] ;
-//}
+- (void)setIndex:(int)index
+{
+    _index = index ;
+    
+    _imgView.image = [UIImage imageNamed:[TestUser bigImage:index]] ;
+}
 
 - (void)setNoteItem:(NoteListViewItem *)noteItem
 {

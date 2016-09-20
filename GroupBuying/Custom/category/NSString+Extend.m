@@ -30,4 +30,16 @@
     return content ;
 }
 
+
+- (CGSize)calculateWithOverSize:(CGSize)overSize
+                 systemFontSize:(CGFloat)fontNumber
+{
+    UIFont *font = [UIFont systemFontOfSize:fontNumber] ;
+    CGSize labelSize = [self boundingRectWithSize:overSize
+                                          options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading
+                                       attributes:@{NSFontAttributeName:font}
+                                          context:nil].size ;
+    return labelSize ;
+}
+
 @end

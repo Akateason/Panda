@@ -291,6 +291,12 @@
 		D76E84941D783B880014FDEA /* PhotoEditFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76E84901D783B880014FDEA /* PhotoEditFramework.framework */; };
 		D76E84A51D79883A0014FDEA /* KICropImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E84A21D79883A0014FDEA /* KICropImageView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D76E84A91D7997D80014FDEA /* CuttingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E84A81D7997D80014FDEA /* CuttingViewController.m */; };
+		D7886D511D90EFAB003D6D57 /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7886D4F1D90EFAB003D6D57 /* CommentCell.m */; };
+		D7886D521D90EFAB003D6D57 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7886D501D90EFAB003D6D57 /* CommentCell.xib */; };
+		D7886D561D910799003D6D57 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = D7886D551D910799003D6D57 /* Comment.m */; };
+		D7886D5B1D912E20003D6D57 /* TagDetailCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7886D5A1D912E20003D6D57 /* TagDetailCtrller.m */; };
+		D7886D5F1D914B58003D6D57 /* TDCProductCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7886D5D1D914B58003D6D57 /* TDCProductCollectionCell.m */; };
+		D7886D601D914B58003D6D57 /* TDCProductCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7886D5E1D914B58003D6D57 /* TDCProductCollectionCell.xib */; };
 		D7E0F4B41D87ADF700EA663B /* ArticlePicItemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */; };
 		D7E0F4B71D87B2D100EA663B /* ArticlePicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B61D87B2D100EA663B /* ArticlePicItem.m */; };
 		D7E0F4BA1D87B42D00EA663B /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B91D87B42D00EA663B /* Article.m */; };
@@ -870,6 +876,16 @@
 		D76E84A21D79883A0014FDEA /* KICropImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KICropImageView.m; sourceTree = "<group>"; };
 		D76E84A71D7997D80014FDEA /* CuttingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CuttingViewController.h; path = "GroupBuying/VC+V/PhotoEditor/Cut/CuttingViewController.h"; sourceTree = SOURCE_ROOT; };
 		D76E84A81D7997D80014FDEA /* CuttingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CuttingViewController.m; path = "GroupBuying/VC+V/PhotoEditor/Cut/CuttingViewController.m"; sourceTree = SOURCE_ROOT; };
+		D7886D4E1D90EFAB003D6D57 /* CommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentCell.h; path = "GroupBuying/VC+V/NoteDetail/CommentCell.h"; sourceTree = SOURCE_ROOT; };
+		D7886D4F1D90EFAB003D6D57 /* CommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentCell.m; path = "GroupBuying/VC+V/NoteDetail/CommentCell.m"; sourceTree = SOURCE_ROOT; };
+		D7886D501D90EFAB003D6D57 /* CommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommentCell.xib; path = "GroupBuying/VC+V/NoteDetail/CommentCell.xib"; sourceTree = SOURCE_ROOT; };
+		D7886D541D910799003D6D57 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		D7886D551D910799003D6D57 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		D7886D591D912E20003D6D57 /* TagDetailCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagDetailCtrller.h; path = "GroupBuying/VC+V/Tag/TagDetailCtrller.h"; sourceTree = SOURCE_ROOT; };
+		D7886D5A1D912E20003D6D57 /* TagDetailCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagDetailCtrller.m; path = "GroupBuying/VC+V/Tag/TagDetailCtrller.m"; sourceTree = SOURCE_ROOT; };
+		D7886D5C1D914B58003D6D57 /* TDCProductCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TDCProductCollectionCell.h; path = "GroupBuying/VC+V/NoteDetail/TDCProductCollectionCell.h"; sourceTree = SOURCE_ROOT; };
+		D7886D5D1D914B58003D6D57 /* TDCProductCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TDCProductCollectionCell.m; path = "GroupBuying/VC+V/NoteDetail/TDCProductCollectionCell.m"; sourceTree = SOURCE_ROOT; };
+		D7886D5E1D914B58003D6D57 /* TDCProductCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TDCProductCollectionCell.xib; path = "GroupBuying/VC+V/NoteDetail/TDCProductCollectionCell.xib"; sourceTree = SOURCE_ROOT; };
 		D7E0F4B21D87ADF700EA663B /* ArticlePicItemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItemInfo.h; sourceTree = "<group>"; };
 		D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlePicItemInfo.m; sourceTree = "<group>"; };
 		D7E0F4B51D87B2D100EA663B /* ArticlePicItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItem.h; sourceTree = "<group>"; };
@@ -1033,6 +1049,9 @@
 		60319D5F1D8F1CCF00BD094D /* hisFocusSub */ = {
 			isa = PBXGroup;
 			children = (
+				60319D601D8F1D0C00BD094D /* UserItemCollectionCell.h */,
+				60319D611D8F1D0C00BD094D /* UserItemCollectionCell.m */,
+				60319D621D8F1D0C00BD094D /* UserItemCollectionCell.xib */,
 			);
 			name = hisFocusSub;
 			sourceTree = "<group>";
@@ -1040,6 +1059,9 @@
 		60319D6A1D8F215100BD094D /* recommendSub */ = {
 			isa = PBXGroup;
 			children = (
+				60319D6B1D8F219B00BD094D /* ProductRecommendCollectionCell.h */,
+				60319D6C1D8F219B00BD094D /* ProductRecommendCollectionCell.m */,
+				60319D6D1D8F219B00BD094D /* ProductRecommendCollectionCell.xib */,
 			);
 			name = recommendSub;
 			sourceTree = "<group>";
@@ -1047,10 +1069,8 @@
 		6035CF2E1D75E62000EA590B /* Tag */ = {
 			isa = PBXGroup;
 			children = (
-				6035CF2F1D75E64E00EA590B /* TagSearchingCtrller.h */,
-				6035CF301D75E64E00EA590B /* TagSearchingCtrller.m */,
-				6035CF321D75EDBA00EA590B /* TagSearchingCell.h */,
-				6035CF331D75EDBA00EA590B /* TagSearchingCell.m */,
+				D7886D581D912DFA003D6D57 /* TagDetailVC */,
+				D7886D571D912DEE003D6D57 /* TagSearchVC */,
 			);
 			name = Tag;
 			sourceTree = "<group>";
@@ -1126,20 +1146,15 @@
 				60319D551D8ED3B800BD094D /* DetailCommentsCell.h */,
 				60319D561D8ED3B800BD094D /* DetailCommentsCell.m */,
 				60319D571D8ED3B800BD094D /* DetailCommentsCell.xib */,
+				D7886D4D1D90EF83003D6D57 /* CommentCell */,
 				60319D5A1D8F1A9200BD094D /* DetailHisFocusCell.h */,
 				60319D5B1D8F1A9200BD094D /* DetailHisFocusCell.m */,
 				60319D5C1D8F1A9200BD094D /* DetailHisFocusCell.xib */,
 				60319D5F1D8F1CCF00BD094D /* hisFocusSub */,
-				60319D601D8F1D0C00BD094D /* UserItemCollectionCell.h */,
-				60319D611D8F1D0C00BD094D /* UserItemCollectionCell.m */,
-				60319D621D8F1D0C00BD094D /* UserItemCollectionCell.xib */,
 				60319D651D8F1E8900BD094D /* DetailRecommend Cell.h */,
 				60319D661D8F1E8900BD094D /* DetailRecommend Cell.m */,
 				60319D671D8F1E8900BD094D /* DetailRecommend Cell.xib */,
 				60319D6A1D8F215100BD094D /* recommendSub */,
-				60319D6B1D8F219B00BD094D /* ProductRecommendCollectionCell.h */,
-				60319D6C1D8F219B00BD094D /* ProductRecommendCollectionCell.m */,
-				60319D6D1D8F219B00BD094D /* ProductRecommendCollectionCell.xib */,
 			);
 			name = NoteDetailSubviews;
 			sourceTree = "<group>";
@@ -1317,6 +1332,7 @@
 			children = (
 				D75CC6541C2AA17700E590E6 /* ResultParsered.h */,
 				D75CC6551C2AA17700E590E6 /* ResultParsered.m */,
+				D7886D531D91077D003D6D57 /* Comment */,
 				D7E0F4C21D87F1E700EA663B /* Resource */,
 				D7E0F4BB1D87EA6600EA663B /* Note */,
 				D7E0F4B11D87ADBF00EA663B /* Article */,
@@ -2202,6 +2218,48 @@
 			name = Editor;
 			sourceTree = "<group>";
 		};
+		D7886D4D1D90EF83003D6D57 /* CommentCell */ = {
+			isa = PBXGroup;
+			children = (
+				D7886D4E1D90EFAB003D6D57 /* CommentCell.h */,
+				D7886D4F1D90EFAB003D6D57 /* CommentCell.m */,
+				D7886D501D90EFAB003D6D57 /* CommentCell.xib */,
+			);
+			name = CommentCell;
+			sourceTree = "<group>";
+		};
+		D7886D531D91077D003D6D57 /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				D7886D541D910799003D6D57 /* Comment.h */,
+				D7886D551D910799003D6D57 /* Comment.m */,
+			);
+			name = Comment;
+			sourceTree = "<group>";
+		};
+		D7886D571D912DEE003D6D57 /* TagSearchVC */ = {
+			isa = PBXGroup;
+			children = (
+				6035CF2F1D75E64E00EA590B /* TagSearchingCtrller.h */,
+				6035CF301D75E64E00EA590B /* TagSearchingCtrller.m */,
+				6035CF321D75EDBA00EA590B /* TagSearchingCell.h */,
+				6035CF331D75EDBA00EA590B /* TagSearchingCell.m */,
+			);
+			name = TagSearchVC;
+			sourceTree = "<group>";
+		};
+		D7886D581D912DFA003D6D57 /* TagDetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				D7886D591D912E20003D6D57 /* TagDetailCtrller.h */,
+				D7886D5A1D912E20003D6D57 /* TagDetailCtrller.m */,
+				D7886D5C1D914B58003D6D57 /* TDCProductCollectionCell.h */,
+				D7886D5D1D914B58003D6D57 /* TDCProductCollectionCell.m */,
+				D7886D5E1D914B58003D6D57 /* TDCProductCollectionCell.xib */,
+			);
+			name = TagDetailVC;
+			sourceTree = "<group>";
+		};
 		D7E0F4B11D87ADBF00EA663B /* Article */ = {
 			isa = PBXGroup;
 			children = (
@@ -2354,6 +2412,7 @@
 				60319D591D8ED3B800BD094D /* DetailCommentsCell.xib in Resources */,
 				606BF8511D84164200C503FE /* DetailUserInfoView.xib in Resources */,
 				D75CC3D41C2A926100E590E6 /* LaunchScreen.storyboard in Resources */,
+				D7886D521D90EFAB003D6D57 /* CommentCell.xib in Resources */,
 				60319D5E1D8F1A9200BD094D /* DetailHisFocusCell.xib in Resources */,
 				D7E0F4CB1D88033D00EA663B /* Login.storyboard in Resources */,
 				D75CC3D11C2A926100E590E6 /* Assets.xcassets in Resources */,
@@ -2361,6 +2420,7 @@
 				6035CF2D1D74B3AC00EA590B /* PostContentCell.xib in Resources */,
 				D76E83FB1D7524BA0014FDEA /* PostPhotosCell.xib in Resources */,
 				D76E83F61D7439950014FDEA /* UserNotesCollectionTableViewCell.xib in Resources */,
+				D7886D601D914B58003D6D57 /* TDCProductCollectionCell.xib in Resources */,
 				D76E84251D759CD30014FDEA /* PostTagAddCollectionCell.xib in Resources */,
 				60319D691D8F1E8900BD094D /* DetailRecommend Cell.xib in Resources */,
 				D76E838C1D6D48560014FDEA /* AlbumnCell.xib in Resources */,
@@ -2482,14 +2542,17 @@
 				D75CC59F1C2A965000E590E6 /* AFHTTPRequestOperation.m in Sources */,
 				D76E84861D7817A50014FDEA /* NSTimer+Addition.m in Sources */,
 				D75CC5DA1C2A965000E590E6 /* MJRefreshStateHeader.m in Sources */,
+				D7886D5F1D914B58003D6D57 /* TDCProductCollectionCell.m in Sources */,
 				60074E1C1D634AE80040C3C0 /* UIColor+HexString.m in Sources */,
 				D76E84151D7567A70014FDEA /* XTZoomPicture.m in Sources */,
 				D76E83F51D7439950014FDEA /* UserNotesCollectionTableViewCell.m in Sources */,
 				D75CC5E41C2A965000E590E6 /* QNEtag.m in Sources */,
 				60074E031D60DFDC0040C3C0 /* FindController.m in Sources */,
+				D7886D561D910799003D6D57 /* Comment.m in Sources */,
 				D75CC5D61C2A965000E590E6 /* MJRefreshBackNormalFooter.m in Sources */,
 				D74589901D6AE3D700835234 /* KxMenu.m in Sources */,
 				D75CC5B21C2A965000E590E6 /* ASICloudFilesContainerRequest.m in Sources */,
+				D7886D511D90EFAB003D6D57 /* CommentCell.m in Sources */,
 				D75CC5A41C2A965000E590E6 /* AFURLConnectionOperation.m in Sources */,
 				D74589971D6B18C400835234 /* RankingViewController.m in Sources */,
 				D75CC3C91C2A926100E590E6 /* AppDelegate.m in Sources */,
@@ -2563,6 +2626,7 @@
 				D75CC5E21C2A965000E590E6 /* QNAsyncRun.m in Sources */,
 				D75CC5A51C2A965000E590E6 /* AFURLRequestSerialization.m in Sources */,
 				D75CC6041C2A965000E590E6 /* UICollectionViewLeftAlignedLayout.m in Sources */,
+				D7886D5B1D912E20003D6D57 /* TagDetailCtrller.m in Sources */,
 				D75CC6021C2A965000E590E6 /* UIView+WebCacheOperation.m in Sources */,
 				D75CC7341C2D13C000E590E6 /* YYClassInfo.m in Sources */,
 				6035CF341D75EDBA00EA590B /* TagSearchingCell.m in Sources */,

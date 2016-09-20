@@ -15,4 +15,14 @@
 
 // \n
 - (NSString *)minusReturnStr ;
+
+
+// 算label大小
+- (CGSize)calculateWithOverSize:(CGSize)overSize
+                 systemFontSize:(CGFloat)fontNumber ;
+
+
+
+
+
 @end

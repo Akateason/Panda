@@ -27,6 +27,12 @@ static float kSingleRowHeight   =   30. ;
 #define      tagFont                [UIFont systemFontOfSize:12.]
 
 
+- (void)setTags:(NSArray *)tags
+{
+    _tags = tags ;
+}
+
+
 + (CGFloat)calculateHeight:(NSArray *)tags
 {
     if (!tags || !tags.count) return 0. ;
@@ -60,7 +66,6 @@ static float kSingleRowHeight   =   30. ;
     CGFloat tagsWidth = labelSize.width ;
     return tagsWidth + 9. * 2;
 }
-
 
 
 - (void)awakeFromNib
@@ -98,6 +103,7 @@ static float kSingleRowHeight   =   30. ;
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"select tag") ;
+    self.clickTagBlock(self.tags[indexPath.row]) ;
 }
 
 

@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString *const kID_DetailRecommend_Cell         = @"DetailRecommend Cell" ;
+static float           kHeight_DetailRecommend_Cell     = 233. ;
+
+
 @interface DetailRecommend_Cell : UITableViewCell
 
 @end

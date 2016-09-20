@@ -35,7 +35,7 @@
 // 确定并pop    返回这个图片所有的标签地址内容，是否翻转样式的数组   坐标为这个图片的真实坐标
 - (IBAction)btSaveOnClick:(id)sender
 {
-    NSMutableArray *dicList =[self.tagEditorImageView popTagModel];
+    NSMutableArray *dicList = [self.tagEditorImageView popTagModel];
     if (dicList.count == 0)
     {
         [self.navigationController popViewControllerAnimated:YES];
@@ -60,7 +60,7 @@
 - (YXLTagEditorImageView *)tagEditorImageView
 {
     if (!_tagEditorImageView) {
-        _tagEditorImageView = [[YXLTagEditorImageView alloc] initWithImage:self.image] ;
+        _tagEditorImageView = [[YXLTagEditorImageView alloc] initWithImage:nil] ;
         _tagEditorImageView.viewC = self ;
         _tagEditorImageView.userInteractionEnabled = YES;
     }
@@ -79,12 +79,13 @@
         make.edges.equalTo(self.view);
     }];
     
+    self.tagEditorImageView.imagePreviews.image = self.image ;
+    [self.tagEditorImageView scaledFrame] ;
     
     [_tagEditorImageView addTagViewText:@"哈哈哈哈" Location:CGPointMake(111,222) isPositiveAndNegative:YES type:@"LOCATION"] ;
     [_tagEditorImageView addTagViewText:@"哈哈lalallallal" Location:CGPointMake(222, 111) isPositiveAndNegative:NO type:@"LOCATION"] ;
-
     
-    //
+    
     [self configureUIs] ;
 
 }
