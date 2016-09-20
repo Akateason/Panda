@@ -30,6 +30,18 @@
 		60319D691D8F1E8900BD094D /* DetailRecommend Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60319D671D8F1E8900BD094D /* DetailRecommend Cell.xib */; };
 		60319D6E1D8F219B00BD094D /* ProductRecommendCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319D6C1D8F219B00BD094D /* ProductRecommendCollectionCell.m */; };
 		60319D6F1D8F219B00BD094D /* ProductRecommendCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60319D6D1D8F219B00BD094D /* ProductRecommendCollectionCell.xib */; };
+		60319D731D91795A00BD094D /* FVCKindsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319D711D91795A00BD094D /* FVCKindsCell.m */; };
+		60319D741D91795A00BD094D /* FVCKindsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60319D721D91795A00BD094D /* FVCKindsCell.xib */; };
+		60319D781D91849600BD094D /* FVCKindCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319D761D91849600BD094D /* FVCKindCollectionCell.m */; };
+		60319D791D91849600BD094D /* FVCKindCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60319D771D91849600BD094D /* FVCKindCollectionCell.xib */; };
+		60319D7E1D91918400BD094D /* FVCHotTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319D7C1D91918400BD094D /* FVCHotTagCell.m */; };
+		60319D7F1D91918400BD094D /* FVCHotTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60319D7D1D91918400BD094D /* FVCHotTagCell.xib */; };
+		60319D831D919C9500BD094D /* HotTagCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319D811D919C9500BD094D /* HotTagCollectionCell.m */; };
+		60319D841D919C9500BD094D /* HotTagCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60319D821D919C9500BD094D /* HotTagCollectionCell.xib */; };
+		60319D881D91AE4300BD094D /* FVCRecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319D861D91AE4300BD094D /* FVCRecommendCell.m */; };
+		60319D891D91AE4300BD094D /* FVCRecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60319D871D91AE4300BD094D /* FVCRecommendCell.xib */; };
+		60319D8D1D91B4D000BD094D /* ActivityPageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319D8B1D91B4D000BD094D /* ActivityPageCell.m */; };
+		60319D8E1D91B4D000BD094D /* ActivityPageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60319D8C1D91B4D000BD094D /* ActivityPageCell.xib */; };
 		6035CF2B1D74B38B00EA590B /* PostContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6035CF2A1D74B38B00EA590B /* PostContentCell.m */; };
 		6035CF2D1D74B3AC00EA590B /* PostContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6035CF2C1D74B3AC00EA590B /* PostContentCell.xib */; };
 		6035CF311D75E64E00EA590B /* TagSearchingCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = 6035CF301D75E64E00EA590B /* TagSearchingCtrller.m */; };
@@ -370,6 +382,24 @@
 		60319D6B1D8F219B00BD094D /* ProductRecommendCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductRecommendCollectionCell.h; path = "GroupBuying/VC+V/NoteDetail/ProductRecommendCollectionCell.h"; sourceTree = SOURCE_ROOT; };
 		60319D6C1D8F219B00BD094D /* ProductRecommendCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductRecommendCollectionCell.m; path = "GroupBuying/VC+V/NoteDetail/ProductRecommendCollectionCell.m"; sourceTree = SOURCE_ROOT; };
 		60319D6D1D8F219B00BD094D /* ProductRecommendCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProductRecommendCollectionCell.xib; path = "GroupBuying/VC+V/NoteDetail/ProductRecommendCollectionCell.xib"; sourceTree = SOURCE_ROOT; };
+		60319D701D91795A00BD094D /* FVCKindsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FVCKindsCell.h; path = "GroupBuying/VC+V/Find/FVCKindsCell.h"; sourceTree = SOURCE_ROOT; };
+		60319D711D91795A00BD094D /* FVCKindsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FVCKindsCell.m; path = "GroupBuying/VC+V/Find/FVCKindsCell.m"; sourceTree = SOURCE_ROOT; };
+		60319D721D91795A00BD094D /* FVCKindsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FVCKindsCell.xib; path = "GroupBuying/VC+V/Find/FVCKindsCell.xib"; sourceTree = SOURCE_ROOT; };
+		60319D751D91849600BD094D /* FVCKindCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FVCKindCollectionCell.h; path = "GroupBuying/VC+V/Find/FVCKindCollectionCell.h"; sourceTree = SOURCE_ROOT; };
+		60319D761D91849600BD094D /* FVCKindCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FVCKindCollectionCell.m; path = "GroupBuying/VC+V/Find/FVCKindCollectionCell.m"; sourceTree = SOURCE_ROOT; };
+		60319D771D91849600BD094D /* FVCKindCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FVCKindCollectionCell.xib; path = "GroupBuying/VC+V/Find/FVCKindCollectionCell.xib"; sourceTree = SOURCE_ROOT; };
+		60319D7B1D91918400BD094D /* FVCHotTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FVCHotTagCell.h; path = "GroupBuying/VC+V/Find/FVCHotTagCell.h"; sourceTree = SOURCE_ROOT; };
+		60319D7C1D91918400BD094D /* FVCHotTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FVCHotTagCell.m; path = "GroupBuying/VC+V/Find/FVCHotTagCell.m"; sourceTree = SOURCE_ROOT; };
+		60319D7D1D91918400BD094D /* FVCHotTagCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FVCHotTagCell.xib; path = "GroupBuying/VC+V/Find/FVCHotTagCell.xib"; sourceTree = SOURCE_ROOT; };
+		60319D801D919C9500BD094D /* HotTagCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HotTagCollectionCell.h; path = "GroupBuying/VC+V/Find/HotTagCollectionCell.h"; sourceTree = SOURCE_ROOT; };
+		60319D811D919C9500BD094D /* HotTagCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HotTagCollectionCell.m; path = "GroupBuying/VC+V/Find/HotTagCollectionCell.m"; sourceTree = SOURCE_ROOT; };
+		60319D821D919C9500BD094D /* HotTagCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HotTagCollectionCell.xib; path = "GroupBuying/VC+V/Find/HotTagCollectionCell.xib"; sourceTree = SOURCE_ROOT; };
+		60319D851D91AE4300BD094D /* FVCRecommendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FVCRecommendCell.h; path = "GroupBuying/VC+V/Find/FVCRecommendCell.h"; sourceTree = SOURCE_ROOT; };
+		60319D861D91AE4300BD094D /* FVCRecommendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FVCRecommendCell.m; path = "GroupBuying/VC+V/Find/FVCRecommendCell.m"; sourceTree = SOURCE_ROOT; };
+		60319D871D91AE4300BD094D /* FVCRecommendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FVCRecommendCell.xib; path = "GroupBuying/VC+V/Find/FVCRecommendCell.xib"; sourceTree = SOURCE_ROOT; };
+		60319D8A1D91B4D000BD094D /* ActivityPageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityPageCell.h; path = "GroupBuying/VC+V/Activity/ActivityPageCell.h"; sourceTree = SOURCE_ROOT; };
+		60319D8B1D91B4D000BD094D /* ActivityPageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityPageCell.m; path = "GroupBuying/VC+V/Activity/ActivityPageCell.m"; sourceTree = SOURCE_ROOT; };
+		60319D8C1D91B4D000BD094D /* ActivityPageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ActivityPageCell.xib; path = "GroupBuying/VC+V/Activity/ActivityPageCell.xib"; sourceTree = SOURCE_ROOT; };
 		6035CF291D74B38B00EA590B /* PostContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostContentCell.h; path = "GroupBuying/VC+V/Post/PostContentCell.h"; sourceTree = SOURCE_ROOT; };
 		6035CF2A1D74B38B00EA590B /* PostContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostContentCell.m; path = "GroupBuying/VC+V/Post/PostContentCell.m"; sourceTree = SOURCE_ROOT; };
 		6035CF2C1D74B3AC00EA590B /* PostContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostContentCell.xib; path = "GroupBuying/VC+V/Post/PostContentCell.xib"; sourceTree = SOURCE_ROOT; };
@@ -1020,6 +1050,9 @@
 			children = (
 				60074E071D60E0040040C3C0 /* ActivityController.h */,
 				60074E081D60E0040040C3C0 /* ActivityController.m */,
+				60319D8A1D91B4D000BD094D /* ActivityPageCell.h */,
+				60319D8B1D91B4D000BD094D /* ActivityPageCell.m */,
+				60319D8C1D91B4D000BD094D /* ActivityPageCell.xib */,
 			);
 			name = Activity1;
 			sourceTree = "<group>";
@@ -1038,9 +1071,7 @@
 			children = (
 				60074E011D60DFDC0040C3C0 /* FindController.h */,
 				60074E021D60DFDC0040C3C0 /* FindController.m */,
-				D7886D611D915787003D6D57 /* FVCBannerCell.h */,
-				D7886D621D915787003D6D57 /* FVCBannerCell.m */,
-				D7886D631D915787003D6D57 /* FVCBannerCell.xib */,
+				60319D7A1D91914F00BD094D /* FindSub */,
 			);
 			name = Find1;
 			sourceTree = "<group>";
@@ -1078,6 +1109,31 @@
 				60319D6D1D8F219B00BD094D /* ProductRecommendCollectionCell.xib */,
 			);
 			name = recommendSub;
+			sourceTree = "<group>";
+		};
+		60319D7A1D91914F00BD094D /* FindSub */ = {
+			isa = PBXGroup;
+			children = (
+				D7886D611D915787003D6D57 /* FVCBannerCell.h */,
+				D7886D621D915787003D6D57 /* FVCBannerCell.m */,
+				D7886D631D915787003D6D57 /* FVCBannerCell.xib */,
+				60319D701D91795A00BD094D /* FVCKindsCell.h */,
+				60319D711D91795A00BD094D /* FVCKindsCell.m */,
+				60319D721D91795A00BD094D /* FVCKindsCell.xib */,
+				60319D751D91849600BD094D /* FVCKindCollectionCell.h */,
+				60319D761D91849600BD094D /* FVCKindCollectionCell.m */,
+				60319D771D91849600BD094D /* FVCKindCollectionCell.xib */,
+				60319D7B1D91918400BD094D /* FVCHotTagCell.h */,
+				60319D7C1D91918400BD094D /* FVCHotTagCell.m */,
+				60319D7D1D91918400BD094D /* FVCHotTagCell.xib */,
+				60319D801D919C9500BD094D /* HotTagCollectionCell.h */,
+				60319D811D919C9500BD094D /* HotTagCollectionCell.m */,
+				60319D821D919C9500BD094D /* HotTagCollectionCell.xib */,
+				60319D851D91AE4300BD094D /* FVCRecommendCell.h */,
+				60319D861D91AE4300BD094D /* FVCRecommendCell.m */,
+				60319D871D91AE4300BD094D /* FVCRecommendCell.xib */,
+			);
+			name = FindSub;
 			sourceTree = "<group>";
 		};
 		6035CF2E1D75E62000EA590B /* Tag */ = {
@@ -2437,22 +2493,28 @@
 			files = (
 				60319D591D8ED3B800BD094D /* DetailCommentsCell.xib in Resources */,
 				606BF8511D84164200C503FE /* DetailUserInfoView.xib in Resources */,
+				60319D7F1D91918400BD094D /* FVCHotTagCell.xib in Resources */,
 				D75CC3D41C2A926100E590E6 /* LaunchScreen.storyboard in Resources */,
 				D7886D521D90EFAB003D6D57 /* CommentCell.xib in Resources */,
 				60319D5E1D8F1A9200BD094D /* DetailHisFocusCell.xib in Resources */,
 				D7E0F4CB1D88033D00EA663B /* Login.storyboard in Resources */,
+				60319D841D919C9500BD094D /* HotTagCollectionCell.xib in Resources */,
 				D75CC3D11C2A926100E590E6 /* Assets.xcassets in Resources */,
 				D76E84051D7528F70014FDEA /* PostAddPhotoCell.xib in Resources */,
 				6035CF2D1D74B3AC00EA590B /* PostContentCell.xib in Resources */,
+				60319D741D91795A00BD094D /* FVCKindsCell.xib in Resources */,
 				D76E83FB1D7524BA0014FDEA /* PostPhotosCell.xib in Resources */,
+				60319D8E1D91B4D000BD094D /* ActivityPageCell.xib in Resources */,
 				D76E83F61D7439950014FDEA /* UserNotesCollectionTableViewCell.xib in Resources */,
 				D7886D601D914B58003D6D57 /* TDCProductCollectionCell.xib in Resources */,
 				D76E84251D759CD30014FDEA /* PostTagAddCollectionCell.xib in Resources */,
 				60319D691D8F1E8900BD094D /* DetailRecommend Cell.xib in Resources */,
 				D76E838C1D6D48560014FDEA /* AlbumnCell.xib in Resources */,
+				60319D891D91AE4300BD094D /* FVCRecommendCell.xib in Resources */,
 				D76E84001D7526250014FDEA /* PostPhotoCollectionCell.xib in Resources */,
 				608405811D67F45700B40D68 /* HPProductCollectionCell.xib in Resources */,
 				D76E84931D783B880014FDEA /* pg_edit_sdk_resource.bundle in Resources */,
+				60319D791D91849600BD094D /* FVCKindCollectionCell.xib in Resources */,
 				608405831D67F62500B40D68 /* HPBigPhotoCollectionCell.xib in Resources */,
 				D76E83C61D7028680014FDEA /* UserInfoView.xib in Resources */,
 				D76E839D1D6EA1D90014FDEA /* testUser.plist in Resources */,
@@ -2499,6 +2561,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D75CC4531C2A95DE00E590E6 /* XTRequest.m in Sources */,
+				60319D731D91795A00BD094D /* FVCKindsCell.m in Sources */,
 				60074E111D634AA50040C3C0 /* NSObject+Reflection.m in Sources */,
 				D76E84721D780FAC0014FDEA /* NSArray+MASAdditions.m in Sources */,
 				D75CC4411C2A95DE00E590E6 /* UIImage+AddFunction.m in Sources */,
@@ -2532,9 +2595,11 @@
 				D75CC5A81C2A965000E590E6 /* ASIAuthenticationDialog.m in Sources */,
 				D75CC5FD1C2A965000E590E6 /* UIImage+GIF.m in Sources */,
 				D75CC5E31C2A965000E590E6 /* QNCrc32.m in Sources */,
+				60319D781D91849600BD094D /* FVCKindCollectionCell.m in Sources */,
 				D7E0F4CE1D880E8E00EA663B /* RegisterViewController.m in Sources */,
 				D75CC5AF1C2A965000E590E6 /* ASINetworkQueue.m in Sources */,
 				60074E0C1D60E0180040C3C0 /* MineController.m in Sources */,
+				60319D881D91AE4300BD094D /* FVCRecommendCell.m in Sources */,
 				6035CF311D75E64E00EA590B /* TagSearchingCtrller.m in Sources */,
 				D76E83961D6DA3290014FDEA /* CameraGoupCtrller.m in Sources */,
 				D76E83871D6D46300014FDEA /* CameraNavCtrller.m in Sources */,
@@ -2552,6 +2617,7 @@
 				608405931D74AA6800B40D68 /* SVProgressAnimatedView.m in Sources */,
 				D75CC5C91C2A965000E590E6 /* KeyBoardTopBar.m in Sources */,
 				D75CC5D21C2A965000E590E6 /* MJRefreshAutoGifFooter.m in Sources */,
+				60319D7E1D91918400BD094D /* FVCHotTagCell.m in Sources */,
 				D7E0F4C11D87ED0A00EA663B /* NoteDetailViewItem.m in Sources */,
 				D75CC4431C2A95DE00E590E6 /* UIView+Sizes.m in Sources */,
 				D76E84741D780FAC0014FDEA /* View+MASAdditions.m in Sources */,
@@ -2619,6 +2685,7 @@
 				D7E0F4D11D882A5400EA663B /* UserOnDevice.m in Sources */,
 				D76E83A01D6EA2B40014FDEA /* TestUser.m in Sources */,
 				D74589931D6B0C1500835234 /* HomePageController+TitleManager.m in Sources */,
+				60319D831D919C9500BD094D /* HotTagCollectionCell.m in Sources */,
 				6035CF2B1D74B38B00EA590B /* PostContentCell.m in Sources */,
 				D76E837A1D6C61C60014FDEA /* RootCollectionView.m in Sources */,
 				D75CC43C1C2A95DE00E590E6 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,
@@ -2724,6 +2791,7 @@
 				6084059A1D74AE6800B40D68 /* PostCtrller.m in Sources */,
 				D76E84041D7528F70014FDEA /* PostAddPhotoCell.m in Sources */,
 				D75CC6001C2A965000E590E6 /* UIImageView+HighlightedWebCache.m in Sources */,
+				60319D8D1D91B4D000BD094D /* ActivityPageCell.m in Sources */,
 				60074E121D634AA50040C3C0 /* XTJson.m in Sources */,
 				D76E838F1D6D49790014FDEA /* AlbumOperation.m in Sources */,
 				6084057C1D64DDDF00B40D68 /* HPProductCollectionCell.m in Sources */,

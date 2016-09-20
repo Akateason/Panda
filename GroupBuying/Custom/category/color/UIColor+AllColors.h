@@ -36,4 +36,8 @@
 
 + (UIColor *)xt_w_comment ;
 
++ (UIColor *)xt_w_find_ad_white ;
+
+
+
 @end

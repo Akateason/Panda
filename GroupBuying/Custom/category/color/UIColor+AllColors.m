@@ -76,4 +76,9 @@
     return [[XTColorFetcher class] xt_colorWithKey:@"w_comment"] ;
 }
 
++ (UIColor *)xt_w_find_ad_white
+{
+    return [[XTColorFetcher class] xt_colorWithKey:@"w_find_ad_white"] ;
+}
+
 @end

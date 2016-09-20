@@ -31,8 +31,8 @@
                                                                    canLoop:YES
                                                                   duration:5.0] ;
     loopScroll.delegate = self ;
-    loopScroll.color_pageControl        = [UIColor colorWithRed:250.0/255.0 green:219/255.0 blue:249/255.0 alpha:1] ;
-    loopScroll.color_currentPageControl = [UIColor redColor] ;
+    loopScroll.color_pageControl        = [UIColor whiteColor] ;
+    loopScroll.color_currentPageControl = [UIColor xt_tabbarRedColor] ;
     
     [self addSubview:loopScroll] ;
     

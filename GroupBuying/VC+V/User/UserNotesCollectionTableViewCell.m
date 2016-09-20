@@ -20,7 +20,10 @@
 @implementation UserNotesCollectionTableViewCell
 
 #pragma mark -
-
++ (float)getHeightWithCount:(NSInteger)count
+{
+    return 10 + count / 2 * ([HPProductCollectionCell getSize].height + 3.) ;
+}
 
 #pragma mark -
 - (CHTCollectionViewWaterfallLayout *)waterflowLayout
@@ -68,7 +71,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     HPProductCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:id_HPProductCollectionCell forIndexPath:indexPath];
-//    cell.index = indexPath.row ;
+    cell.index = indexPath.row ;
     return cell;
 }
 

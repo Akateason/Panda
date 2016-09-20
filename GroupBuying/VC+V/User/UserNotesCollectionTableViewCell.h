@@ -12,4 +12,6 @@ static NSString *idUserNotesCollectionTableViewCell = @"UserNotesCollectionTable
 
 @interface UserNotesCollectionTableViewCell : UITableViewCell
 
++ (float)getHeightWithCount:(NSInteger)count ;
+
 @end

@@ -43,6 +43,7 @@
     _btFocus.backgroundColor = [UIColor whiteColor] ;
     _btFocus.layer.borderColor = [UIColor xt_w_dark].CGColor ;
     _btFocus.layer.borderWidth = 1. ;
+    _btFocus.layer.cornerRadius = 5. ;
 }
 
 @end

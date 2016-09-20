@@ -10,6 +10,9 @@
 #import "CuttingViewController.h"
 #import "UserOnDevice.h"
 #import "FVCBannerCell.h"
+#import "FVCKindsCell.h"
+#import "FVCHotTagCell.h"
+#import "FVCRecommendCell.h"
 
 @interface FindController () <UITableViewDataSource,UITableViewDelegate,RootTableViewDelegate>
 
@@ -42,6 +45,9 @@
     _table.xt_Delegate = self ;
     
     [_table registerNib:[UINib nibWithNibName:kID_FVCBannerCell bundle:nil] forCellReuseIdentifier:kID_FVCBannerCell] ;
+    [_table registerNib:[UINib nibWithNibName:kID_FVCKindsCell bundle:nil] forCellReuseIdentifier:kID_FVCKindsCell] ;
+    [_table registerNib:[UINib nibWithNibName:kID_FVCHotTagCell bundle:nil] forCellReuseIdentifier:kID_FVCHotTagCell] ;
+    [_table registerNib:[UINib nibWithNibName:kID_FVCRecommendCell bundle:nil] forCellReuseIdentifier:kID_FVCRecommendCell] ;
 }
 
 - (void)configureUIs
@@ -76,6 +82,12 @@
 
 
 #pragma mark - UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 4 ;
+}
+
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 1 ;
@@ -83,14 +95,46 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    FVCBannerCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_FVCBannerCell] ;
-    return cell ;
+    NSInteger section = indexPath.section ;
+    if (section == 0) {
+        FVCBannerCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_FVCBannerCell] ;
+        return cell ;
+    }
+    else if (section == 1) {
+        FVCKindsCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_FVCKindsCell] ;
+        return cell ;
+    }
+    else if (section == 2) {
+        FVCHotTagCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_FVCHotTagCell] ;
+        return cell ;
+    }
+    else if (section == 3) {
+        FVCRecommendCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_FVCRecommendCell] ;
+        return cell ;
+    }
+    
+    return nil ;
 }
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [FVCBannerCell getHeight] ;
+    NSInteger section = indexPath.section ;
+    if (section == 0) {
+        return [FVCBannerCell getHeight] ;
+    }
+    else if (section == 1) {
+        return 212. ;
+    }
+    else if (section == 2) {
+        return [FVCHotTagCell getHeight] ;
+    }
+    else if (section == 3) {
+        return [FVCRecommendCell getHeightWithCount:8] ;
+    }
+
+    
+    return 0 ;
 }
 
 

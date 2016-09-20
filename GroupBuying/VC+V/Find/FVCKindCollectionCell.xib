@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FVCKindCollectionCell" id="gTV-IL-0wX" customClass="FVCKindCollectionCell">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="97"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="80" height="97"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn_find_1" translatesAutoresizingMaskIntoConstraints="NO" id="9gs-ph-vEH">
+                        <rect key="frame" x="24" y="21" width="33" height="33"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="33" id="WsS-xP-Iku"/>
+                            <constraint firstAttribute="width" constant="33" id="wDn-Rp-gIX"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="护肤" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fex-1f-LK2">
+                        <rect key="frame" x="28" y="70" width="24" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="fex-1f-LK2" firstAttribute="top" secondItem="9gs-ph-vEH" secondAttribute="bottom" constant="16" id="336-9T-7QX"/>
+                <constraint firstItem="9gs-ph-vEH" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="21" id="QAj-bL-DnC"/>
+                <constraint firstItem="fex-1f-LK2" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="VaF-OW-rxi"/>
+                <constraint firstItem="9gs-ph-vEH" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="xBT-3g-8fF"/>
+            </constraints>
+            <size key="customSize" width="118" height="187"/>
+            <connections>
+                <outlet property="imageView" destination="9gs-ph-vEH" id="WsM-LZ-Ofb"/>
+                <outlet property="labelTitle" destination="fex-1f-LK2" id="MNl-Vd-2ZC"/>
+            </connections>
+            <point key="canvasLocation" x="500" y="185.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="btn_find_1" width="33" height="33"/>
+    </resources>
+</document>
