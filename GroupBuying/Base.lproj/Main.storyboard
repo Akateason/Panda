@@ -116,7 +116,7 @@
                                     <constraint firstItem="DBE-Gf-nHf" firstAttribute="leading" secondItem="BS2-a6-3l5" secondAttribute="leading" constant="12" id="dkQ-HX-5qc"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MHV-Mw-k4A">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MHV-Mw-k4A" customClass="RootTableView">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -137,6 +137,7 @@
                     <connections>
                         <outlet property="labelSearchbarText" destination="8Jt-Co-p1u" id="MlC-Oj-dGs"/>
                         <outlet property="searchTouchZoom" destination="DBE-Gf-nHf" id="lhL-ub-4Ej"/>
+                        <outlet property="table" destination="MHV-Mw-k4A" id="aSt-MJ-qNd"/>
                         <outlet property="topBar" destination="BS2-a6-3l5" id="A6V-Y4-jfA"/>
                     </connections>
                 </viewController>

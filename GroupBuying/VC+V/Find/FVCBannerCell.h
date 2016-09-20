@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString *const kID_FVCBannerCell = @"FVCBannerCell" ;
+
 @interface FVCBannerCell : UITableViewCell
 
 

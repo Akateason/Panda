@@ -299,6 +299,8 @@
 		D7886D601D914B58003D6D57 /* TDCProductCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7886D5E1D914B58003D6D57 /* TDCProductCollectionCell.xib */; };
 		D7886D641D915787003D6D57 /* FVCBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7886D621D915787003D6D57 /* FVCBannerCell.m */; };
 		D7886D651D915787003D6D57 /* FVCBannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7886D631D915787003D6D57 /* FVCBannerCell.xib */; };
+		D7886D6B1D9159B8003D6D57 /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = D7886D681D9159B8003D6D57 /* NSTimer+Addition.m */; };
+		D7886D6C1D9159B8003D6D57 /* XTLoopScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7886D6A1D9159B8003D6D57 /* XTLoopScrollView.m */; };
 		D7E0F4B41D87ADF700EA663B /* ArticlePicItemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */; };
 		D7E0F4B71D87B2D100EA663B /* ArticlePicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B61D87B2D100EA663B /* ArticlePicItem.m */; };
 		D7E0F4BA1D87B42D00EA663B /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B91D87B42D00EA663B /* Article.m */; };
@@ -891,6 +893,10 @@
 		D7886D611D915787003D6D57 /* FVCBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FVCBannerCell.h; path = "GroupBuying/VC+V/Find/FVCBannerCell.h"; sourceTree = SOURCE_ROOT; };
 		D7886D621D915787003D6D57 /* FVCBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FVCBannerCell.m; path = "GroupBuying/VC+V/Find/FVCBannerCell.m"; sourceTree = SOURCE_ROOT; };
 		D7886D631D915787003D6D57 /* FVCBannerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FVCBannerCell.xib; path = "GroupBuying/VC+V/Find/FVCBannerCell.xib"; sourceTree = SOURCE_ROOT; };
+		D7886D671D9159B8003D6D57 /* NSTimer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Addition.h"; sourceTree = "<group>"; };
+		D7886D681D9159B8003D6D57 /* NSTimer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Addition.m"; sourceTree = "<group>"; };
+		D7886D691D9159B8003D6D57 /* XTLoopScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTLoopScrollView.h; sourceTree = "<group>"; };
+		D7886D6A1D9159B8003D6D57 /* XTLoopScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTLoopScrollView.m; sourceTree = "<group>"; };
 		D7E0F4B21D87ADF700EA663B /* ArticlePicItemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItemInfo.h; sourceTree = "<group>"; };
 		D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlePicItemInfo.m; sourceTree = "<group>"; };
 		D7E0F4B51D87B2D100EA663B /* ArticlePicItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItem.h; sourceTree = "<group>"; };
@@ -1389,12 +1395,13 @@
 		D75CC4151C2A95DD00E590E6 /* UIs */ = {
 			isa = PBXGroup;
 			children = (
+				D7886D661D9159B8003D6D57 /* XTLoopScroll */,
+				D75CC4221C2A95DD00E590E6 /* XTNetReloader */,
 				D76E84121D7567A70014FDEA /* XTZoomPicture */,
 				60074E0D1D634AA50040C3C0 /* NSObject+Reflection.h */,
 				60074E0E1D634AA50040C3C0 /* NSObject+Reflection.m */,
 				60074E0F1D634AA50040C3C0 /* XTJson.h */,
 				60074E101D634AA50040C3C0 /* XTJson.m */,
-				D75CC4221C2A95DD00E590E6 /* XTNetReloader */,
 				D75CC4161C2A95DD00E590E6 /* MySearchBar.h */,
 				D75CC4171C2A95DD00E590E6 /* MySearchBar.m */,
 				D75CC4181C2A95DD00E590E6 /* MyTabbar.h */,
@@ -2268,6 +2275,17 @@
 			name = TagDetailVC;
 			sourceTree = "<group>";
 		};
+		D7886D661D9159B8003D6D57 /* XTLoopScroll */ = {
+			isa = PBXGroup;
+			children = (
+				D7886D671D9159B8003D6D57 /* NSTimer+Addition.h */,
+				D7886D681D9159B8003D6D57 /* NSTimer+Addition.m */,
+				D7886D691D9159B8003D6D57 /* XTLoopScrollView.h */,
+				D7886D6A1D9159B8003D6D57 /* XTLoopScrollView.m */,
+			);
+			path = XTLoopScroll;
+			sourceTree = "<group>";
+		};
 		D7E0F4B11D87ADBF00EA663B /* Article */ = {
 			isa = PBXGroup;
 			children = (
@@ -2563,6 +2581,7 @@
 				D75CC5B21C2A965000E590E6 /* ASICloudFilesContainerRequest.m in Sources */,
 				D7886D511D90EFAB003D6D57 /* CommentCell.m in Sources */,
 				D75CC5A41C2A965000E590E6 /* AFURLConnectionOperation.m in Sources */,
+				D7886D6C1D9159B8003D6D57 /* XTLoopScrollView.m in Sources */,
 				D74589971D6B18C400835234 /* RankingViewController.m in Sources */,
 				D75CC3C91C2A926100E590E6 /* AppDelegate.m in Sources */,
 				D75CC3C61C2A926100E590E6 /* main.m in Sources */,
@@ -2682,6 +2701,7 @@
 				D7E0F4BE1D87EA7700EA663B /* NoteListViewItem.m in Sources */,
 				D76E84731D780FAC0014FDEA /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				D75CC5A21C2A965000E590E6 /* AFNetworkReachabilityManager.m in Sources */,
+				D7886D6B1D9159B8003D6D57 /* NSTimer+Addition.m in Sources */,
 				D76E848A1D7817A50014FDEA /* YXLTagView.m in Sources */,
 				D75CC5D11C2A965000E590E6 /* MJRefreshHeader.m in Sources */,
 				D75CC6031C2A965000E590E6 /* SIAlertView.m in Sources */,
