@@ -73,13 +73,76 @@
                     <view key="view" contentMode="scaleToFill" id="pyz-6f-GCZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BS2-a6-3l5">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DBE-Gf-nHf" customClass="UIControl">
+                                        <rect key="frame" x="12" y="27" width="576" height="29"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="搜索笔记、商品和用户" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Jt-Co-p1u">
+                                                <rect key="frame" x="12" y="4" width="120" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="findvc_btn_find_search" translatesAutoresizingMaskIntoConstraints="NO" id="S06-ml-iXZ">
+                                                <rect key="frame" x="546" y="4" width="21" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="21" id="7bd-k3-EY4"/>
+                                                    <constraint firstAttribute="height" constant="21" id="mfP-hJ-2Kw"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="8Jt-Co-p1u" secondAttribute="bottom" constant="4" id="23z-d5-ck2"/>
+                                            <constraint firstItem="S06-ml-iXZ" firstAttribute="top" secondItem="DBE-Gf-nHf" secondAttribute="top" constant="4" id="3Sa-xK-IlL"/>
+                                            <constraint firstItem="8Jt-Co-p1u" firstAttribute="top" secondItem="DBE-Gf-nHf" secondAttribute="top" constant="4" id="M6C-PC-QBk"/>
+                                            <constraint firstAttribute="height" constant="29" id="VF3-eV-6jj"/>
+                                            <constraint firstItem="8Jt-Co-p1u" firstAttribute="leading" secondItem="DBE-Gf-nHf" secondAttribute="leading" constant="12" id="kja-T0-hUD"/>
+                                            <constraint firstAttribute="trailing" secondItem="S06-ml-iXZ" secondAttribute="trailing" constant="9" id="s4N-bS-ojW"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="searchBarOnClick:" destination="8bQ-IX-fku" eventType="touchUpInside" id="5cp-Kc-fPJ"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.97254901959999995" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="D77-eE-ocn"/>
+                                    <constraint firstAttribute="trailing" secondItem="DBE-Gf-nHf" secondAttribute="trailing" constant="12" id="LNI-it-Qt6"/>
+                                    <constraint firstAttribute="bottom" secondItem="DBE-Gf-nHf" secondAttribute="bottom" constant="8" id="RfZ-ly-QD5"/>
+                                    <constraint firstItem="DBE-Gf-nHf" firstAttribute="leading" secondItem="BS2-a6-3l5" secondAttribute="leading" constant="12" id="dkQ-HX-5qc"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MHV-Mw-k4A">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BS2-a6-3l5" firstAttribute="top" secondItem="pyz-6f-GCZ" secondAttribute="top" id="952-So-SzD"/>
+                            <constraint firstItem="MHV-Mw-k4A" firstAttribute="leading" secondItem="pyz-6f-GCZ" secondAttribute="leading" id="Pw3-pa-zo0"/>
+                            <constraint firstAttribute="trailing" secondItem="MHV-Mw-k4A" secondAttribute="trailing" id="T8r-jH-I6e"/>
+                            <constraint firstItem="MHV-Mw-k4A" firstAttribute="top" secondItem="BS2-a6-3l5" secondAttribute="bottom" id="aws-J2-orY"/>
+                            <constraint firstItem="BS2-a6-3l5" firstAttribute="leading" secondItem="pyz-6f-GCZ" secondAttribute="leading" id="b8r-ZE-dgk"/>
+                            <constraint firstAttribute="trailing" secondItem="BS2-a6-3l5" secondAttribute="trailing" id="faQ-7F-SJ5"/>
+                            <constraint firstItem="bvg-jB-q9D" firstAttribute="top" secondItem="MHV-Mw-k4A" secondAttribute="bottom" id="mT3-YG-LV6"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Sqv-oT-fq2"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="labelSearchbarText" destination="8Jt-Co-p1u" id="MlC-Oj-dGs"/>
+                        <outlet property="searchTouchZoom" destination="DBE-Gf-nHf" id="lhL-ub-4Ej"/>
+                        <outlet property="topBar" destination="BS2-a6-3l5" id="A6V-Y4-jfA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NRt-0b-AKG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1547" y="-651"/>
+            <point key="canvasLocation" x="1548" y="-651"/>
         </scene>
         <!--Home Page Controller-->
         <scene sceneID="jei-3K-pvv">
@@ -305,5 +368,6 @@
         <image name="btn_ranking" width="25" height="25"/>
         <image name="btn_square" width="25" height="25"/>
         <image name="btn_tile" width="25" height="25"/>
+        <image name="findvc_btn_find_search" width="21" height="21"/>
     </resources>
 </document>

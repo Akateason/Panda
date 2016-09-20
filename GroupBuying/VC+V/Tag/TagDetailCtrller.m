@@ -92,6 +92,7 @@ typedef NS_ENUM(int, TDVC_CollectionCellDisplayType) {
 }
 
 #pragma mark - life
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
