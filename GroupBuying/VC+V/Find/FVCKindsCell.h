@@ -10,6 +10,10 @@
 
 static NSString *const kID_FVCKindsCell = @"FVCKindsCell" ;
 
+typedef void(^Jump2Rank)(void);
+
 @interface FVCKindsCell : UITableViewCell
+
+@property (nonatomic,copy) Jump2Rank    blockRank ;
 
 @end

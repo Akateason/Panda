@@ -8,7 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TDCProductCollectionCell">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TDCProductCollectionCell" id="gTV-IL-0wX" customClass="TDCProductCollectionCell">
             <rect key="frame" x="0.0" y="0.0" width="374" height="500"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -27,7 +27,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥ 288.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytR-sj-QGD">
-                        <rect key="frame" x="12" y="412" width="56" height="16"/>
+                        <rect key="frame" x="12" y="479" width="56" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -36,20 +36,22 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstItem="ytR-sj-QGD" firstAttribute="top" secondItem="8ou-Ty-Wuf" secondAttribute="bottom" constant="17" id="6z1-eC-fZV"/>
                 <constraint firstAttribute="trailing" secondItem="8ou-Ty-Wuf" secondAttribute="trailing" constant="12" id="Ddf-GX-4rP"/>
                 <constraint firstItem="cFF-Qr-Ph6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Dzn-P6-pht"/>
                 <constraint firstItem="8ou-Ty-Wuf" firstAttribute="top" secondItem="cFF-Qr-Ph6" secondAttribute="bottom" constant="5" id="G7i-3D-H3G"/>
                 <constraint firstItem="8ou-Ty-Wuf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="HKS-wc-iRy"/>
                 <constraint firstAttribute="trailing" secondItem="cFF-Qr-Ph6" secondAttribute="trailing" id="SC3-IB-0gg"/>
                 <constraint firstItem="cFF-Qr-Ph6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="dRi-Xq-582"/>
+                <constraint firstAttribute="bottom" secondItem="ytR-sj-QGD" secondAttribute="bottom" constant="5" id="iLy-2K-2Pg"/>
                 <constraint firstItem="ytR-sj-QGD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="xP5-PR-xSE"/>
             </constraints>
+            <size key="customSize" width="374" height="448"/>
             <connections>
                 <outlet property="labelName" destination="8ou-Ty-Wuf" id="2FF-zC-6qv"/>
                 <outlet property="labelPrice" destination="ytR-sj-QGD" id="aRh-i6-ilU"/>
                 <outlet property="productImageView" destination="cFF-Qr-Ph6" id="7x4-yj-k5X"/>
             </connections>
+            <point key="canvasLocation" x="318" y="294"/>
         </collectionViewCell>
     </objects>
     <resources>

@@ -104,6 +104,15 @@
     [self tableConfigure] ;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated] ;
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:NO] ;
+    [self.navigationController setNavigationBarHidden:NO] ;
+}
+
+
 - (void)tableConfigure
 {
     _table.backgroundColor = [UIColor whiteColor] ;

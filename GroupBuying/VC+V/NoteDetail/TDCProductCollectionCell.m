@@ -23,7 +23,7 @@
     // Initialization code
     self.backgroundColor = [UIColor whiteColor] ;
     _labelName.textColor = [UIColor xt_w_comment] ;
-    _labelPrice.textColor = [UIColor xt_mainColor] ;
+    _labelPrice.textColor = [UIColor xt_tabbarRedColor] ;
 }
 
 @end

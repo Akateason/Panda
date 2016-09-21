@@ -13,6 +13,7 @@
 #import "FVCKindsCell.h"
 #import "FVCHotTagCell.h"
 #import "FVCRecommendCell.h"
+#import "RankingViewController.h"
 
 @interface FindController () <UITableViewDataSource,UITableViewDelegate,RootTableViewDelegate>
 
@@ -102,6 +103,11 @@
     }
     else if (section == 1) {
         FVCKindsCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_FVCKindsCell] ;
+        cell.blockRank = ^{
+            RankingViewController *rankCtrller = (RankingViewController *)[RankingViewController getCtrllerFromStory:@"HomePage" controllerIdentifier:@"RankingViewController"] ;
+            [rankCtrller setHidesBottomBarWhenPushed:YES] ;
+            [self.navigationController pushViewController:rankCtrller animated:YES] ;
+        } ;
         return cell ;
     }
     else if (section == 2) {

@@ -10,6 +10,7 @@
 #import "FVCKindCollectionCell.h"
 #import "CHTCollectionViewWaterfallLayout.h"
 
+
 #define kFIND_KINDS_NAME_LIST      @[@"护肤",@"美妆",@"穿搭",@"美食",@"家居"]
 
 @interface FVCKindsCell () <CHTCollectionViewDelegateWaterfallLayout,UICollectionViewDelegate,UICollectionViewDataSource>
@@ -34,6 +35,7 @@
 - (IBAction)zoomRankingOnClick:(id)sender
 {
     NSLog(@"排行榜") ;
+    self.blockRank() ;
 }
 
 - (IBAction)zoomHotOnClick:(id)sender

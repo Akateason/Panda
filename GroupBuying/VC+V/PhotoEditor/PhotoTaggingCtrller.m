@@ -60,7 +60,7 @@
 - (YXLTagEditorImageView *)tagEditorImageView
 {
     if (!_tagEditorImageView) {
-        _tagEditorImageView = [[YXLTagEditorImageView alloc] initWithImage:nil] ;
+        _tagEditorImageView = [[YXLTagEditorImageView alloc] initWithImage:self.image] ;
         _tagEditorImageView.viewC = self ;
         _tagEditorImageView.userInteractionEnabled = YES;
     }
@@ -79,8 +79,8 @@
         make.edges.equalTo(self.view);
     }];
     
-    self.tagEditorImageView.imagePreviews.image = self.image ;
-    [self.tagEditorImageView scaledFrame] ;
+//    self.tagEditorImageView.imagePreviews.image = self.image ;
+//    [self.tagEditorImageView scaledFrame] ;
     
     [_tagEditorImageView addTagViewText:@"哈哈哈哈" Location:CGPointMake(111,222) isPositiveAndNegative:YES type:@"LOCATION"] ;
     [_tagEditorImageView addTagViewText:@"哈哈lalallallal" Location:CGPointMake(222, 111) isPositiveAndNegative:NO type:@"LOCATION"] ;
