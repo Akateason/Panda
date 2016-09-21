@@ -303,6 +303,10 @@ static NSString *const kType = @"NOTE" ;
     {
         TagSearchingCtrller *tagSearchVC = [segue destinationViewController] ;
         tagSearchVC.block = ^(NSString *tagCallback) {
+            if (!tagCallback) {
+                return ;
+            }
+            
             NSMutableArray *tmplist = [self.articleTaglist mutableCopy];
             [tmplist addObject:tagCallback] ;
             self.articleTaglist = tmplist ;

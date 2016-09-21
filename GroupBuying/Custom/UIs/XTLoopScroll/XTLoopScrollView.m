@@ -81,7 +81,11 @@ static int IMAGEVIEW_COUNT = 3 ;
 {
     _imageCount = imageCount ;
     
-    if (imageCount <= 1) return ;
+    if (imageCount <= 1) {
+        _scrollView.scrollEnabled = NO ;
+        return ;
+    }
+    _scrollView.scrollEnabled = YES ;
     self.pageControl.numberOfPages = imageCount ;
     CGSize size = [self.pageControl sizeForNumberOfPages:imageCount];
     self.pageControl.bounds = CGRectMake(0, 0, size.width, size.height);
@@ -179,6 +183,9 @@ static int IMAGEVIEW_COUNT = 3 ;
 
 - (void)loopAction
 {
+    if (_imageCount <= 1) return ;
+
+    
     int leftImageIndex , rightImageIndex ;
     _currentImageIndex = (_currentImageIndex + 1) % _imageCount ;
     _centerImageView.image = [UIImage imageNamed:_imglist[_currentImageIndex]] ;
@@ -212,7 +219,7 @@ static int IMAGEVIEW_COUNT = 3 ;
     CGRect rect = CGRectZero ;
     rect.size = self.frame.size ;
     _scrollView.frame = rect ;
-    
+    _scrollView.bounces = false ;
     _scrollView.delegate = self;
     _scrollView.contentSize = CGSizeMake(IMAGEVIEW_COUNT * _scrollView.frame.size.width, _scrollView.frame.size.height) ;
     //设置当前显示的位置为中间图片
@@ -255,6 +262,10 @@ static int IMAGEVIEW_COUNT = 3 ;
 #pragma mark 设置默认显示图片
 - (void)setDefaultImage
 {
+    if (!_imglist || !_imglist.count) {
+        return ;
+    }
+    
     _centerImageView.image  = [UIImage imageNamed:_imglist[0]] ;
     if (_imageCount > 1)
     {
@@ -292,6 +303,10 @@ static int IMAGEVIEW_COUNT = 3 ;
 #pragma mark 重新加载图片
 - (void)reloadImage
 {
+    if (!_imageCount) {
+        return ;
+    }
+    
     [self resumeTimerWithDelay] ;
     
     int leftImageIndex,rightImageIndex ;

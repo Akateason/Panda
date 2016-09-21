@@ -108,7 +108,7 @@
     else if (indexPath.section == 1)
     {
         cell.cellType = typeDefaultDisplay ;
-        cell.strDisplay = [NSString stringWithFormat:@"zara%ld",indexPath.row] ;
+        cell.strDisplay = [NSString stringWithFormat:@"zara%ld",(long)indexPath.row] ;
     }
     
     return cell ;
