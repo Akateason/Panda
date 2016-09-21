@@ -14,6 +14,7 @@
 #import "FVCHotTagCell.h"
 #import "FVCRecommendCell.h"
 #import "RankingViewController.h"
+#import "HotProductCtrller.h"
 
 @interface FindController () <UITableViewDataSource,UITableViewDelegate,RootTableViewDelegate>
 
@@ -107,6 +108,12 @@
             RankingViewController *rankCtrller = (RankingViewController *)[RankingViewController getCtrllerFromStory:@"HomePage" controllerIdentifier:@"RankingViewController"] ;
             [rankCtrller setHidesBottomBarWhenPushed:YES] ;
             [self.navigationController pushViewController:rankCtrller animated:YES] ;
+        } ;
+        
+        cell.blockHotProduct = ^{
+            HotProductCtrller *hotProductVC = (HotProductCtrller *)[[self class] getCtrllerFromStory:@"Find" controllerIdentifier:@"HotProductCtrller"] ;
+            [hotProductVC setHidesBottomBarWhenPushed:YES] ;
+            [self.navigationController pushViewController:hotProductVC animated:YES] ;
         } ;
         return cell ;
     }

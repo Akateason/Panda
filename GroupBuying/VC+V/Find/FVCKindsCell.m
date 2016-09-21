@@ -41,6 +41,7 @@
 - (IBAction)zoomHotOnClick:(id)sender
 {
     NSLog(@"热门产品") ;
+    self.blockHotProduct() ;
 }
 
 
