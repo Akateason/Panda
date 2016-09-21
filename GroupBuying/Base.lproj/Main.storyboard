@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Mine Controller-->
+        <!--我的-->
         <scene sceneID="UGe-6Y-IvB">
             <objects>
                 <viewController id="Z8l-Y9-CLI" customClass="MineController" sceneMemberID="viewController">
@@ -16,9 +16,23 @@
                     <view key="view" contentMode="scaleToFill" id="8kB-OV-KDU">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebv-AU-bVH">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ebv-AU-bVH" firstAttribute="leading" secondItem="8kB-OV-KDU" secondAttribute="leading" id="8HE-mf-WD2"/>
+                            <constraint firstItem="HTw-cX-xJd" firstAttribute="top" secondItem="ebv-AU-bVH" secondAttribute="bottom" id="Ejv-AE-KQ5"/>
+                            <constraint firstAttribute="trailing" secondItem="ebv-AU-bVH" secondAttribute="trailing" id="IFo-Ht-VJ0"/>
+                            <constraint firstItem="ebv-AU-bVH" firstAttribute="top" secondItem="Jmc-WR-3xG" secondAttribute="bottom" id="Pdi-0g-hfl"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="5mR-Ce-bNH"/>
+                    <navigationItem key="navigationItem" title="我的" id="5mR-Ce-bNH"/>
+                    <connections>
+                        <outlet property="scrollview" destination="ebv-AU-bVH" id="UCv-LE-LsE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="30n-p5-SLb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -36,8 +50,8 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rt7-gK-QTj" customClass="RootTableView">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rt7-gK-QTj" customClass="RootTableView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -70,9 +84,23 @@
                     <view key="view" contentMode="scaleToFill" id="UB2-lI-vh1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZME-f9-Lm3">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZME-f9-Lm3" firstAttribute="top" secondItem="Bkx-nw-g9G" secondAttribute="bottom" id="BZw-ov-CZT"/>
+                            <constraint firstItem="ZME-f9-Lm3" firstAttribute="leading" secondItem="UB2-lI-vh1" secondAttribute="leading" id="CgT-V2-gf7"/>
+                            <constraint firstAttribute="trailing" secondItem="ZME-f9-Lm3" secondAttribute="trailing" id="HoY-Pg-7YS"/>
+                            <constraint firstItem="Cwk-wC-oAs" firstAttribute="top" secondItem="ZME-f9-Lm3" secondAttribute="bottom" id="O0a-Q2-hSO"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="专题" id="tm1-Od-c6e"/>
+                    <connections>
+                        <outlet property="scrollview" destination="ZME-f9-Lm3" id="ZlX-4Q-gSW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gsw-Gr-VSj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
