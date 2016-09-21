@@ -15,6 +15,7 @@
 #import "DigitInformation.h"
 //#import "WXApi.h"
 #import <PhotoEditFramework/PhotoEditFramework.h>
+#import "SVProgressHUD.h"
 
 
 
@@ -56,6 +57,10 @@ NSString *const APPSTORE_APPID  = @"999705868" ;
 {
     //  Setting My Style
     [self setMyStyleWithWindow:self.window] ;
+    
+    // svprogressHUD
+    [SVProgressHUD setMinimumDismissTimeInterval:3.] ;
+    
     //  Get Token and userInfo if loginED (token existed)
 //    [self getTokenAndUser] ;
     //  Umeng SDK Initialization .

@@ -14,7 +14,7 @@
 
 static NSString *kStrHasNewData1 = @"\t\t●" ;
 static NSString *kStrHasNewData2 = @"\t●" ;
-static NSString * kStrAppTitle = @"IBardot⌵" ;
+static NSString * kStrAppTitle = @"盼达网⌵" ;
 static NSString * kStrArrow = @"⌵" ;
 
 

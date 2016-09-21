@@ -228,31 +228,6 @@
 }
 */
 
-//+ (void)getQiniuTokenWithBuckect:(NSString *)bucket
-//                         success:(void (^)(id json))success
-//                            fail:(void (^)())fail
-//{
-//    NSMutableDictionary *paramer = [self getParameters] ;
-//    [paramer setObject:bucket forKey:@"bucket"] ;
-//    
-//    [XTRequest GETWithUrl:[self getFinalUrl:URL_QINIU_TOKEN] parameters:paramer success:^(id json) {
-//        if (success) success(json);
-//    } fail:^{
-//        if (fail) fail();
-//    }] ;
-//}
-//
-//+ (ResultParsered *)getQiniuTokenWithBuckect:(NSString *)bucket
-//{
-//    NSMutableDictionary *paramer = [self getParameters] ;
-//    [paramer setObject:bucket forKey:@"bucket"] ;
-//
-//    return [self getJsonWithURLstr:[self getFinalUrl:URL_QINIU_TOKEN] AndWithParamer:paramer AndWithMode:GET_MODE] ;
-//}
-
-
-
-
 
 
 
@@ -284,10 +259,6 @@
     return [NSMutableDictionary dictionary] ;
 }
 
-+ (NSString *)getToken
-{
-    return [G_TOKEN length] ? G_TOKEN : @"0" ;
-}
 
 
 @end

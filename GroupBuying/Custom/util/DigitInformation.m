@@ -28,43 +28,9 @@ static DigitInformation *instance ;
 
 
 #pragma mark --
-#pragma mark - Setter
 
-#pragma mark --
-#pragma mark - Getter
-- (NSString *)g_token
-{
-    if (!_g_token)
-    {
-        NSString *homePath = NSHomeDirectory() ;
-        NSString *path     = [homePath stringByAppendingPathComponent:PATH_TOKEN_SAVE] ;
-        if ([XTFileManager is_file_exist:path])
-        {
-            NSString *token = [XTFileManager getObjUnarchivePath:path] ;
-            _g_token        = token ;
-            NSLog(@"token : %@",token) ;
-        }
-        else
-        {
-            NSLog(@"未登录") ;
-        }
-    }
-    
-    return _g_token ;
-}
 
-/*
-- (User *)g_currentUser
-{
-    if (!_g_currentUser) {
-        ResultParsered *result = [ServerRequest getMyIndexPersonalInfo] ;
-        if (!result) return nil ;
-        _g_currentUser = [[User alloc] initWithDic:result.info] ;
-    }
-    
-    return _g_currentUser ;
-}
-*/
+
 
 
 #define KEY_UUID            @"uuid"
@@ -85,24 +51,6 @@ static DigitInformation *instance ;
     return _uuid ;
 }
 
-
-#define BUCKECT     @"social"
-//- (NSString *)token_QiNiuUpload
-//{
-//    ResultParsered *result = [ServerRequest getQiniuTokenWithBuckect:BUCKECT] ;
-//    if (!result.errCode)
-//    {
-//        // Success
-//        _token_QiNiuUpload = [result.info objectForKey:@"uptoken"] ;
-//    }
-//    else
-//    {
-//        // Fail
-//        return nil ;
-//    }
-//        
-//    return _token_QiNiuUpload ;
-//}
 
 - (BOOL)appHasInstalledWX
 {

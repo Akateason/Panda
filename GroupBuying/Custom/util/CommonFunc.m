@@ -193,51 +193,6 @@ NSString *const URL_QINIU_HEAD          = @"http://img.subaojiang.com/" ;
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
 }
 
-#pragma mark -- save and login
-+ (void)logSussessedWithResult:(ResultParsered *)result
-             AndWithController:(UIViewController *)contoller
-{
-//    if (result.errCode) {
-//        NSLog(@"err code : %@",result.message) ;
-//        [XTHudManager showWordHudWithTitle:WD_LOGIN_FAILURE] ;
-//        return;
-//    }
-    
-//    G_USER = nil ; // remove current user
-//    G_TOKEN = [result.info objectForKey:@"token"];
-   
-    dispatch_queue_t queue = dispatch_queue_create("saveAndLogin", NULL) ;
-    dispatch_async(queue, ^{
-            
-//        [[DigitInformation shareInstance] g_currentUser] ;
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [contoller dismissViewControllerAnimated:YES completion:^{
-//                [XTHudManager showWordHudWithTitle:WD_LOGIN_SUCCESS] ;
-            }] ;
-
-        }) ;
-        
-        NSString *homePath = NSHomeDirectory() ;
-        NSString *path = [homePath stringByAppendingPathComponent:PATH_TOKEN_SAVE] ;
-        [XTFileManager archiveTheObject:G_TOKEN AndPath:path] ;
-        
-    }) ;
-    
-}
-
-+ (void)exitLog
-{
-    // exit my account
-    G_TOKEN         = nil ;
-//    G_USER          = nil ;
-    // del the archive
-    NSString *homePath = NSHomeDirectory();
-    NSString *path = [homePath stringByAppendingPathComponent:PATH_TOKEN_SAVE];
-    [XTFileManager deleteFileWithFileName:path] ;
-    
-    [CommonFunc bindWithBindMode:0] ;
-}
 
 
 + (void)bindWithBindMode:(MODE_bind)bindMode
