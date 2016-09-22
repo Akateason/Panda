@@ -51,9 +51,9 @@
     }
 }
 
-- (IBAction)btFoucusOnClick:(id)sender
+- (IBAction)btFoucusOnClick:(UIButton *)sender
 {
-    
+    sender.selected = !sender.selected ;
 }
 
 
@@ -67,6 +67,7 @@
     _btFoucus.layer.cornerRadius = 5. ;
     _btFoucus.layer.borderWidth = 1. ;
     _btFoucus.layer.borderColor = [UIColor xt_w_dark].CGColor ;
+    _btFoucus.tintColor = [UIColor xt_w_dark] ;
     
     _headImageView.layer.cornerRadius = _headImageView.frame.size.width / 2. ;
     _headImageView.layer.masksToBounds = YES ;

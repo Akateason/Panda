@@ -29,7 +29,7 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <state key="normal" title="+ 关注"/>
-                    <state key="selected" title="已关注"/>
+                    <state key="selected" title="❤︎已关注"/>
                     <connections>
                         <action selector="btFoucusOnClick:" destination="fWf-7i-rnE" eventType="touchUpInside" id="iRW-eh-sP5"/>
                     </connections>

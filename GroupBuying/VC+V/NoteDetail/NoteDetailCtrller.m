@@ -172,7 +172,7 @@
         DetailTagsCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_DetailTagsCell] ;
         cell.tags = self.noteDetail.articleInfo.tags ;
         cell.clickTagBlock = ^(NSString *tagStr){
-            if (!tagStr) return ;
+            if (!tagStr || !tagStr.length) return ;
             TagDetailCtrller *tagDetailVC = (TagDetailCtrller *)[[self class] getCtrllerFromStory:@"HomePage" controllerIdentifier:@"TagDetailCtrller"] ;
             tagDetailVC.tagStr = tagStr ;
             [self.navigationController pushViewController:tagDetailVC animated:YES] ;
