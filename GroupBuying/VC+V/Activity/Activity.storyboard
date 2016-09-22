@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--活动详情-->
+        <scene sceneID="DwP-Qn-AC7">
+            <objects>
+                <viewController storyboardIdentifier="ActivityInfoCtrl" title="活动详情" id="30S-OF-iQ7" customClass="ActivityInfoCtrl" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="loy-ld-7a8"/>
+                        <viewControllerLayoutGuide type="bottom" id="f7z-o1-ki1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RRb-Qq-a8X">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="543" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RWE-Yq-BUf" customClass="RootTableView">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ActivityInfoCell" rowHeight="543" id="Oz0-Aj-78c" customClass="ActivityInfoCell">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="543"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Oz0-Aj-78c" id="5gb-00-Gwx">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="542"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="简单点, 当网红的方式简单点" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgP-GG-sQf">
+                                                    <rect key="frame" x="12" y="16" width="176" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn_act_time" translatesAutoresizingMaskIntoConstraints="NO" id="BeK-rB-gS5">
+                                                    <rect key="frame" x="12" y="47" width="15" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="15" id="Hol-Qt-tke"/>
+                                                        <constraint firstAttribute="width" constant="15" id="NA6-jR-w9p"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Oc-Ss-cM4">
+                                                    <rect key="frame" x="518" y="16" width="75" height="25"/>
+                                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="75" id="e9d-cM-ou5"/>
+                                                        <constraint firstAttribute="height" constant="25" id="eBR-uQ-weg"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <state key="normal" title="+ 立即参加"/>
+                                                    <connections>
+                                                        <action selector="btJoinOnClick:" destination="Oz0-Aj-78c" eventType="touchUpInside" id="pCp-eL-SsV"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016/8/12~2016/9/30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6g-a0-A4E">
+                                                    <rect key="frame" x="32" y="48" width="115" height="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="线上报名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eva-cx-zza">
+                                                    <rect key="frame" x="32" y="76" width="44" height="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn_act_place" translatesAutoresizingMaskIntoConstraints="NO" id="NcB-08-VVV">
+                                                    <rect key="frame" x="12" y="75" width="15" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="15" id="74s-kp-UMl"/>
+                                                        <constraint firstAttribute="width" constant="15" id="VQz-t8-nNx"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已报名 13万 人" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpG-Pb-mCm">
+                                                    <rect key="frame" x="518" y="49" width="74" height="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test_activity_detail" translatesAutoresizingMaskIntoConstraints="NO" id="1zm-tX-mEP">
+                                                    <rect key="frame" x="18" y="100" width="564" height="802"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="1zm-tX-mEP" secondAttribute="height" multiplier="678:964" id="asd-9o-F84"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="BeK-rB-gS5" firstAttribute="top" secondItem="vgP-GG-sQf" secondAttribute="bottom" constant="14" id="5LQ-ML-1F6"/>
+                                                <constraint firstAttribute="trailing" secondItem="1zm-tX-mEP" secondAttribute="trailing" constant="18" id="6tN-ka-R5t"/>
+                                                <constraint firstItem="BeK-rB-gS5" firstAttribute="leading" secondItem="5gb-00-Gwx" secondAttribute="leading" constant="12" id="JgG-wg-l66"/>
+                                                <constraint firstItem="NcB-08-VVV" firstAttribute="leading" secondItem="5gb-00-Gwx" secondAttribute="leading" constant="12" id="NLP-JP-bmZ"/>
+                                                <constraint firstItem="Eva-cx-zza" firstAttribute="leading" secondItem="NcB-08-VVV" secondAttribute="trailing" constant="5" id="O7A-Mg-2Zb"/>
+                                                <constraint firstItem="NcB-08-VVV" firstAttribute="top" secondItem="BeK-rB-gS5" secondAttribute="bottom" constant="13" id="PUI-O1-0ja"/>
+                                                <constraint firstItem="7Oc-Ss-cM4" firstAttribute="top" secondItem="5gb-00-Gwx" secondAttribute="top" constant="16" id="c9S-pF-8SG"/>
+                                                <constraint firstItem="BpG-Pb-mCm" firstAttribute="leading" secondItem="7Oc-Ss-cM4" secondAttribute="leading" id="d3C-Cd-I54"/>
+                                                <constraint firstItem="vgP-GG-sQf" firstAttribute="leading" secondItem="5gb-00-Gwx" secondAttribute="leading" constant="12" id="hQA-QE-87w"/>
+                                                <constraint firstItem="1zm-tX-mEP" firstAttribute="top" secondItem="5gb-00-Gwx" secondAttribute="top" constant="100" id="ipr-bi-f0t"/>
+                                                <constraint firstItem="BpG-Pb-mCm" firstAttribute="top" secondItem="7Oc-Ss-cM4" secondAttribute="bottom" constant="8" id="jUc-Vb-mR0"/>
+                                                <constraint firstItem="Eva-cx-zza" firstAttribute="top" secondItem="O6g-a0-A4E" secondAttribute="bottom" constant="14" id="lBJ-IB-Xe2"/>
+                                                <constraint firstItem="O6g-a0-A4E" firstAttribute="leading" secondItem="BeK-rB-gS5" secondAttribute="trailing" constant="5" id="vhZ-Vg-li0"/>
+                                                <constraint firstItem="O6g-a0-A4E" firstAttribute="top" secondItem="vgP-GG-sQf" secondAttribute="bottom" constant="15" id="ytn-OV-Zgb"/>
+                                                <constraint firstItem="1zm-tX-mEP" firstAttribute="leading" secondItem="5gb-00-Gwx" secondAttribute="leading" constant="18" id="z47-uM-1tX"/>
+                                                <constraint firstItem="vgP-GG-sQf" firstAttribute="top" secondItem="5gb-00-Gwx" secondAttribute="top" constant="16" id="zFH-1s-uAm"/>
+                                                <constraint firstAttribute="trailing" secondItem="7Oc-Ss-cM4" secondAttribute="trailing" constant="7" id="ziT-rY-S3F"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="baominLabel" destination="Eva-cx-zza" id="QIh-gb-CbR"/>
+                                            <outlet property="btJoin" destination="7Oc-Ss-cM4" id="iDG-fS-kUk"/>
+                                            <outlet property="howmanybaominLabel" destination="BpG-Pb-mCm" id="MT8-5y-Z12"/>
+                                            <outlet property="timeLabel" destination="O6g-a0-A4E" id="7RW-hN-z0y"/>
+                                            <outlet property="titleLabel" destination="vgP-GG-sQf" id="sO8-5z-Yno"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RWE-Yq-BUf" firstAttribute="leading" secondItem="RRb-Qq-a8X" secondAttribute="leading" id="3lc-DR-5qT"/>
+                            <constraint firstItem="f7z-o1-ki1" firstAttribute="top" secondItem="RWE-Yq-BUf" secondAttribute="bottom" id="4YR-Qa-E4H"/>
+                            <constraint firstAttribute="trailing" secondItem="RWE-Yq-BUf" secondAttribute="trailing" id="fkk-Ja-h3H"/>
+                            <constraint firstItem="RWE-Yq-BUf" firstAttribute="top" secondItem="loy-ld-7a8" secondAttribute="bottom" id="ilt-4e-jNM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="table" destination="RWE-Yq-BUf" id="GXh-9A-Jta"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qna-Fj-piO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="310" y="240"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="btn_act_place" width="15" height="15"/>
+        <image name="btn_act_time" width="15" height="15"/>
+        <image name="test_activity_detail" width="678" height="964"/>
+    </resources>
+</document>

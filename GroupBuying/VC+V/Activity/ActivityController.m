@@ -8,6 +8,7 @@
 
 #import "ActivityController.h"
 #import "ActivityPageCell.h"
+#import "ActivityInfoCtrl.h"
 
 @interface ActivityController () <UITableViewDataSource,UITableViewDelegate,RootTableViewDelegate>
 @property (weak, nonatomic) IBOutlet RootTableView *table;
@@ -24,7 +25,7 @@
     
     _table.separatorStyle = 0 ;
     _table.dataSource = self ;
-    _table.delegate  =self ;
+    _table.delegate = self ;
     _table.xt_Delegate = self ;
     [_table registerNib:[UINib nibWithNibName:kID_ActivityPageCell bundle:nil] forCellReuseIdentifier:kID_ActivityPageCell] ;
     
@@ -77,7 +78,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    ActivityInfoCtrl *aInfoCtrl = (ActivityInfoCtrl *)[[self class] getCtrllerFromStory:@"Activity" controllerIdentifier:@"ActivityInfoCtrl"] ;
+    [self.navigationController pushViewController:aInfoCtrl animated:YES] ;
 }
 
 @end

@@ -17,21 +17,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebv-AU-bVH">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9UQ-2G-IRm" customClass="RootTableView">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
-                            </scrollView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ebv-AU-bVH" firstAttribute="leading" secondItem="8kB-OV-KDU" secondAttribute="leading" id="8HE-mf-WD2"/>
-                            <constraint firstItem="HTw-cX-xJd" firstAttribute="top" secondItem="ebv-AU-bVH" secondAttribute="bottom" id="Ejv-AE-KQ5"/>
-                            <constraint firstAttribute="trailing" secondItem="ebv-AU-bVH" secondAttribute="trailing" id="IFo-Ht-VJ0"/>
-                            <constraint firstItem="ebv-AU-bVH" firstAttribute="top" secondItem="Jmc-WR-3xG" secondAttribute="bottom" id="Pdi-0g-hfl"/>
+                            <constraint firstItem="HTw-cX-xJd" firstAttribute="top" secondItem="9UQ-2G-IRm" secondAttribute="bottom" id="0CC-lW-lFE"/>
+                            <constraint firstItem="9UQ-2G-IRm" firstAttribute="top" secondItem="Jmc-WR-3xG" secondAttribute="bottom" id="Zk6-Dn-iYL"/>
+                            <constraint firstItem="9UQ-2G-IRm" firstAttribute="leading" secondItem="8kB-OV-KDU" secondAttribute="leading" id="eQO-lB-yyu"/>
+                            <constraint firstAttribute="trailing" secondItem="9UQ-2G-IRm" secondAttribute="trailing" id="hYl-ok-596"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="我的" id="5mR-Ce-bNH"/>
                     <connections>
-                        <outlet property="scrollview" destination="ebv-AU-bVH" id="UCv-LE-LsE"/>
+                        <outlet property="table" destination="9UQ-2G-IRm" id="iye-ki-eEm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="30n-p5-SLb" userLabel="First Responder" sceneMemberID="firstResponder"/>

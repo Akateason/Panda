@@ -8,12 +8,11 @@
 
 #import "MineController.h"
 #import "UserOnDevice.h"
+#import "MineUserInfoCell.h"
 
+@interface MineController () <UITableViewDataSource,UITableViewDelegate,RootTableViewDelegate>
 
-@interface MineController ()
-
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollview;
-@property (nonatomic,strong) UIImageView *imgView ;
+@property (weak, nonatomic) IBOutlet RootTableView *table;
 
 @end
 
@@ -23,15 +22,12 @@
 {
     [super viewDidLoad] ;
     
-    UIImage *image = [UIImage imageNamed:@"test_m"] ;
-    float imgWid = image.size.width ;
-    float imgHeight = image.size.height ;
-    CGRect rect = CGRectZero ;
-    rect.size = CGSizeMake(APP_WIDTH, APP_WIDTH * imgHeight / imgWid) ;
-    _imgView = [[UIImageView alloc] initWithFrame:rect] ;
-    _imgView.image = image ;
-    [_scrollview addSubview:_imgView] ;
-    _scrollview.contentSize = _imgView.frame.size ;
+    _table.dataSource = self ;
+    _table.delegate = self ;
+    _table.xt_Delegate = self ;
+    _table.separatorStyle = 0 ;
+    [_table registerNib:[UINib nibWithNibName:kID_MineUserInfoCell bundle:nil] forCellReuseIdentifier:kID_MineUserInfoCell] ;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -41,10 +37,90 @@
     [[UIApplication sharedApplication] setStatusBarHidden:NO] ;
     [self.navigationController setNavigationBarHidden:NO] ;
     
-    
-    
-    [UserOnDevice  clean] ;
+//    [UserOnDevice  clean] ;
 }
+
+
+
+#pragma mark - RootTableViewDelegate
+- (void)loadNewData
+{
+    
+}
+
+- (void)loadMoreData
+{
+    
+}
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1 ;
+//    return 5 ;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger section = indexPath.section ;
+    if (section == 0) {
+        MineUserInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_MineUserInfoCell] ;
+        return cell ;
+    }
+    else if (section == 1) {
+        
+    }
+    else if (section == 2) {
+        
+    }
+    else if (section == 3) {
+        
+    }
+    else if (section == 4) {
+        
+    }
+    return nil ;
+}
+
+#pragma mark - UITableViewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger section = indexPath.section ;
+    if (section == 0) {
+        return 143. ;
+    }
+    else if (section == 1) {
+        
+    }
+    else if (section == 2) {
+        
+    }
+    else if (section == 3) {
+        
+    }
+    else if (section == 4) {
+        
+    }
+    return 0. ;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+   
+}
+
+- (nullable UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    return nil ;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 0 ;
+}
+
 
 
 

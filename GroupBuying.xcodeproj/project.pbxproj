@@ -318,6 +318,9 @@
 		D7886D6B1D9159B8003D6D57 /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = D7886D681D9159B8003D6D57 /* NSTimer+Addition.m */; };
 		D7886D6C1D9159B8003D6D57 /* XTLoopScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7886D6A1D9159B8003D6D57 /* XTLoopScrollView.m */; };
 		D7886D741D93774D003D6D57 /* HotProductItemCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7886D731D93774D003D6D57 /* HotProductItemCtrller.m */; };
+		D7886D7C1D93B855003D6D57 /* ActivityInfoCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = D7886D7B1D93B855003D6D57 /* ActivityInfoCtrl.m */; };
+		D7886D7E1D93B8A9003D6D57 /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7886D7D1D93B8A9003D6D57 /* Activity.storyboard */; };
+		D7886D811D93C41A003D6D57 /* ActivityInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7886D801D93C41A003D6D57 /* ActivityInfoCell.m */; };
 		D7E0F4B41D87ADF700EA663B /* ArticlePicItemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */; };
 		D7E0F4B71D87B2D100EA663B /* ArticlePicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B61D87B2D100EA663B /* ArticlePicItem.m */; };
 		D7E0F4BA1D87B42D00EA663B /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B91D87B42D00EA663B /* Article.m */; };
@@ -328,6 +331,8 @@
 		D7E0F4CB1D88033D00EA663B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7E0F4CA1D88033D00EA663B /* Login.storyboard */; };
 		D7E0F4CE1D880E8E00EA663B /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4CD1D880E8E00EA663B /* RegisterViewController.m */; };
 		D7E0F4D11D882A5400EA663B /* UserOnDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4D01D882A5400EA663B /* UserOnDevice.m */; };
+		D7E994621D93D3D700EACDFB /* MineUserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994601D93D3D700EACDFB /* MineUserInfoCell.m */; };
+		D7E994631D93D3D700EACDFB /* MineUserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E994611D93D3D700EACDFB /* MineUserInfoCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -940,6 +945,11 @@
 		D7886D6A1D9159B8003D6D57 /* XTLoopScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTLoopScrollView.m; sourceTree = "<group>"; };
 		D7886D721D93774D003D6D57 /* HotProductItemCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HotProductItemCtrller.h; path = "GroupBuying/VC+V/Find/HotProductItemCtrller.h"; sourceTree = SOURCE_ROOT; };
 		D7886D731D93774D003D6D57 /* HotProductItemCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HotProductItemCtrller.m; path = "GroupBuying/VC+V/Find/HotProductItemCtrller.m"; sourceTree = SOURCE_ROOT; };
+		D7886D7A1D93B855003D6D57 /* ActivityInfoCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityInfoCtrl.h; path = "GroupBuying/VC+V/Activity/ActivityInfoCtrl.h"; sourceTree = SOURCE_ROOT; };
+		D7886D7B1D93B855003D6D57 /* ActivityInfoCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityInfoCtrl.m; path = "GroupBuying/VC+V/Activity/ActivityInfoCtrl.m"; sourceTree = SOURCE_ROOT; };
+		D7886D7D1D93B8A9003D6D57 /* Activity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Activity.storyboard; path = "VC+V/Activity/Activity.storyboard"; sourceTree = "<group>"; };
+		D7886D7F1D93C41A003D6D57 /* ActivityInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityInfoCell.h; path = "GroupBuying/VC+V/Activity/ActivityInfoCell.h"; sourceTree = SOURCE_ROOT; };
+		D7886D801D93C41A003D6D57 /* ActivityInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityInfoCell.m; path = "GroupBuying/VC+V/Activity/ActivityInfoCell.m"; sourceTree = SOURCE_ROOT; };
 		D7E0F4B21D87ADF700EA663B /* ArticlePicItemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItemInfo.h; sourceTree = "<group>"; };
 		D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlePicItemInfo.m; sourceTree = "<group>"; };
 		D7E0F4B51D87B2D100EA663B /* ArticlePicItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItem.h; sourceTree = "<group>"; };
@@ -959,6 +969,9 @@
 		D7E0F4CD1D880E8E00EA663B /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = "GroupBuying/VC+V/Login/RegisterViewController.m"; sourceTree = SOURCE_ROOT; };
 		D7E0F4CF1D882A5400EA663B /* UserOnDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserOnDevice.h; sourceTree = "<group>"; };
 		D7E0F4D01D882A5400EA663B /* UserOnDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserOnDevice.m; sourceTree = "<group>"; };
+		D7E9945F1D93D3D700EACDFB /* MineUserInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MineUserInfoCell.h; path = "GroupBuying/VC+V/Mine/MineUserInfoCell.h"; sourceTree = SOURCE_ROOT; };
+		D7E994601D93D3D700EACDFB /* MineUserInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MineUserInfoCell.m; path = "GroupBuying/VC+V/Mine/MineUserInfoCell.m"; sourceTree = SOURCE_ROOT; };
+		D7E994611D93D3D700EACDFB /* MineUserInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MineUserInfoCell.xib; path = "GroupBuying/VC+V/Mine/MineUserInfoCell.xib"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1023,6 +1036,7 @@
 				D76E83831D6D40D40014FDEA /* Camera.storyboard */,
 				D7E0F4CA1D88033D00EA663B /* Login.storyboard */,
 				60319D931D92C0F100BD094D /* Find.storyboard */,
+				D7886D7D1D93B8A9003D6D57 /* Activity.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -1055,6 +1069,7 @@
 			children = (
 				60074E0A1D60E0180040C3C0 /* MineController.h */,
 				60074E0B1D60E0180040C3C0 /* MineController.m */,
+				D7E9945E1D93D3AC00EACDFB /* MineSubs */,
 			);
 			name = Mine1;
 			sourceTree = "<group>";
@@ -1067,6 +1082,7 @@
 				60319D8A1D91B4D000BD094D /* ActivityPageCell.h */,
 				60319D8B1D91B4D000BD094D /* ActivityPageCell.m */,
 				60319D8C1D91B4D000BD094D /* ActivityPageCell.xib */,
+				D7886D791D93B831003D6D57 /* ActivityInfoCtrl */,
 			);
 			name = Activity1;
 			sourceTree = "<group>";
@@ -2379,6 +2395,17 @@
 			name = HotProductItem;
 			sourceTree = "<group>";
 		};
+		D7886D791D93B831003D6D57 /* ActivityInfoCtrl */ = {
+			isa = PBXGroup;
+			children = (
+				D7886D7A1D93B855003D6D57 /* ActivityInfoCtrl.h */,
+				D7886D7B1D93B855003D6D57 /* ActivityInfoCtrl.m */,
+				D7886D7F1D93C41A003D6D57 /* ActivityInfoCell.h */,
+				D7886D801D93C41A003D6D57 /* ActivityInfoCell.m */,
+			);
+			name = ActivityInfoCtrl;
+			sourceTree = "<group>";
+		};
 		D7E0F4B11D87ADBF00EA663B /* Article */ = {
 			isa = PBXGroup;
 			children = (
@@ -2421,6 +2448,16 @@
 				D7E0F4CD1D880E8E00EA663B /* RegisterViewController.m */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		D7E9945E1D93D3AC00EACDFB /* MineSubs */ = {
+			isa = PBXGroup;
+			children = (
+				D7E9945F1D93D3D700EACDFB /* MineUserInfoCell.h */,
+				D7E994601D93D3D700EACDFB /* MineUserInfoCell.m */,
+				D7E994611D93D3D700EACDFB /* MineUserInfoCell.xib */,
+			);
+			name = MineSubs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2535,6 +2572,7 @@
 				D7886D521D90EFAB003D6D57 /* CommentCell.xib in Resources */,
 				60319D5E1D8F1A9200BD094D /* DetailHisFocusCell.xib in Resources */,
 				D7E0F4CB1D88033D00EA663B /* Login.storyboard in Resources */,
+				D7886D7E1D93B8A9003D6D57 /* Activity.storyboard in Resources */,
 				60319D841D919C9500BD094D /* HotTagCollectionCell.xib in Resources */,
 				D75CC3D11C2A926100E590E6 /* Assets.xcassets in Resources */,
 				D76E84051D7528F70014FDEA /* PostAddPhotoCell.xib in Resources */,
@@ -2560,6 +2598,7 @@
 				D76E84401D76D6A90014FDEA /* EditorPhotosCollectionCell.xib in Resources */,
 				D76E83F11D74359D0014FDEA /* UserFoucusHeaderView.xib in Resources */,
 				D76E841A1D75991D0014FDEA /* PostTagCell.xib in Resources */,
+				D7E994631D93D3D700EACDFB /* MineUserInfoCell.xib in Resources */,
 				D76E83841D6D40D40014FDEA /* Camera.storyboard in Resources */,
 				D75CC3CF1C2A926100E590E6 /* Main.storyboard in Resources */,
 				D74589991D6B190D00835234 /* HomePage.storyboard in Resources */,
@@ -2602,6 +2641,7 @@
 				D75CC4531C2A95DE00E590E6 /* XTRequest.m in Sources */,
 				D7886D741D93774D003D6D57 /* HotProductItemCtrller.m in Sources */,
 				60319D731D91795A00BD094D /* FVCKindsCell.m in Sources */,
+				D7886D7C1D93B855003D6D57 /* ActivityInfoCtrl.m in Sources */,
 				60074E111D634AA50040C3C0 /* NSObject+Reflection.m in Sources */,
 				D76E84721D780FAC0014FDEA /* NSArray+MASAdditions.m in Sources */,
 				D75CC4411C2A95DE00E590E6 /* UIImage+AddFunction.m in Sources */,
@@ -2676,6 +2716,7 @@
 				D76E84861D7817A50014FDEA /* NSTimer+Addition.m in Sources */,
 				D75CC5DA1C2A965000E590E6 /* MJRefreshStateHeader.m in Sources */,
 				D7886D5F1D914B58003D6D57 /* TDCProductCollectionCell.m in Sources */,
+				D7886D811D93C41A003D6D57 /* ActivityInfoCell.m in Sources */,
 				60074E1C1D634AE80040C3C0 /* UIColor+HexString.m in Sources */,
 				D76E84151D7567A70014FDEA /* XTZoomPicture.m in Sources */,
 				D76E83F51D7439950014FDEA /* UserNotesCollectionTableViewCell.m in Sources */,
@@ -2718,6 +2759,7 @@
 				606BF8551D841B7500C503FE /* DetailCoverTitleCell.m in Sources */,
 				D75CC5C61C2A965000E590E6 /* FMDatabaseQueue.m in Sources */,
 				D75CC6C01C2BEB0400E590E6 /* MyNavCtrller.m in Sources */,
+				D7E994621D93D3D700EACDFB /* MineUserInfoCell.m in Sources */,
 				D75CC5B91C2A965000E590E6 /* ASIS3BucketObject.m in Sources */,
 				D75CC5BB1C2A965000E590E6 /* ASIS3ObjectRequest.m in Sources */,
 				D76E84191D75991D0014FDEA /* PostTagCell.m in Sources */,
