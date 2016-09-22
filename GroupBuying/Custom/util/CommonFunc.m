@@ -90,18 +90,6 @@ NSString *const URL_QINIU_HEAD          = @"http://img.subaojiang.com/" ;
     return orgImage ;
 }
 
-#pragma mark -- QiNiuSize
-+ (NSString *)dealQiNiuUrl:(NSString *)str
-               imgViewSize:(CGSize)imgSize
-{
-    if ([str hasPrefix:URL_QINIU_HEAD])
-    {
-        int seeWidth = ((int)imgSize.width * 2 > 640.0) ? 640 : (int)imgSize.width * 2 ;
-        str = IMG_PHONE_WID(str, seeWidth) ;
-    }
-    
-    return str ;
-}
 
 #pragma mark -- sandbox
 + (NSString *)getSandBoxPath

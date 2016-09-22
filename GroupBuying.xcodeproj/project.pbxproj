@@ -46,6 +46,9 @@
 		60319D941D92C0F100BD094D /* Find.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60319D931D92C0F100BD094D /* Find.storyboard */; };
 		60319D981D92C34700BD094D /* HotProductListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319D961D92C34700BD094D /* HotProductListCell.m */; };
 		60319D991D92C34700BD094D /* HotProductListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60319D971D92C34700BD094D /* HotProductListCell.xib */; };
+		60319D9D1D9437E000BD094D /* MineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319D9B1D9437E000BD094D /* MineCell.m */; };
+		60319D9E1D9437E000BD094D /* MineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60319D9C1D9437E000BD094D /* MineCell.xib */; };
+		60319DA01D9438DA00BD094D /* info_mineCell.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60319D9F1D9438DA00BD094D /* info_mineCell.plist */; };
 		6035CF2B1D74B38B00EA590B /* PostContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6035CF2A1D74B38B00EA590B /* PostContentCell.m */; };
 		6035CF2D1D74B3AC00EA590B /* PostContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6035CF2C1D74B3AC00EA590B /* PostContentCell.xib */; };
 		6035CF311D75E64E00EA590B /* TagSearchingCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = 6035CF301D75E64E00EA590B /* TagSearchingCtrller.m */; };
@@ -416,6 +419,10 @@
 		60319D951D92C34700BD094D /* HotProductListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HotProductListCell.h; path = "GroupBuying/VC+V/Find/HotProductListCell.h"; sourceTree = SOURCE_ROOT; };
 		60319D961D92C34700BD094D /* HotProductListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HotProductListCell.m; path = "GroupBuying/VC+V/Find/HotProductListCell.m"; sourceTree = SOURCE_ROOT; };
 		60319D971D92C34700BD094D /* HotProductListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HotProductListCell.xib; path = "GroupBuying/VC+V/Find/HotProductListCell.xib"; sourceTree = SOURCE_ROOT; };
+		60319D9A1D9437E000BD094D /* MineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MineCell.h; path = "GroupBuying/VC+V/Mine/MineCell.h"; sourceTree = SOURCE_ROOT; };
+		60319D9B1D9437E000BD094D /* MineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MineCell.m; path = "GroupBuying/VC+V/Mine/MineCell.m"; sourceTree = SOURCE_ROOT; };
+		60319D9C1D9437E000BD094D /* MineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MineCell.xib; path = "GroupBuying/VC+V/Mine/MineCell.xib"; sourceTree = SOURCE_ROOT; };
+		60319D9F1D9438DA00BD094D /* info_mineCell.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = info_mineCell.plist; path = "GroupBuying/VC+V/Mine/info_mineCell.plist"; sourceTree = SOURCE_ROOT; };
 		6035CF291D74B38B00EA590B /* PostContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostContentCell.h; path = "GroupBuying/VC+V/Post/PostContentCell.h"; sourceTree = SOURCE_ROOT; };
 		6035CF2A1D74B38B00EA590B /* PostContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostContentCell.m; path = "GroupBuying/VC+V/Post/PostContentCell.m"; sourceTree = SOURCE_ROOT; };
 		6035CF2C1D74B3AC00EA590B /* PostContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostContentCell.xib; path = "GroupBuying/VC+V/Post/PostContentCell.xib"; sourceTree = SOURCE_ROOT; };
@@ -2456,6 +2463,10 @@
 				D7E9945F1D93D3D700EACDFB /* MineUserInfoCell.h */,
 				D7E994601D93D3D700EACDFB /* MineUserInfoCell.m */,
 				D7E994611D93D3D700EACDFB /* MineUserInfoCell.xib */,
+				60319D9A1D9437E000BD094D /* MineCell.h */,
+				60319D9B1D9437E000BD094D /* MineCell.m */,
+				60319D9C1D9437E000BD094D /* MineCell.xib */,
+				60319D9F1D9438DA00BD094D /* info_mineCell.plist */,
 			);
 			name = MineSubs;
 			sourceTree = "<group>";
@@ -2571,6 +2582,7 @@
 				D75CC3D41C2A926100E590E6 /* LaunchScreen.storyboard in Resources */,
 				D7886D521D90EFAB003D6D57 /* CommentCell.xib in Resources */,
 				60319D5E1D8F1A9200BD094D /* DetailHisFocusCell.xib in Resources */,
+				60319DA01D9438DA00BD094D /* info_mineCell.plist in Resources */,
 				D7E0F4CB1D88033D00EA663B /* Login.storyboard in Resources */,
 				D7886D7E1D93B8A9003D6D57 /* Activity.storyboard in Resources */,
 				60319D841D919C9500BD094D /* HotTagCollectionCell.xib in Resources */,
@@ -2583,6 +2595,7 @@
 				60319D8E1D91B4D000BD094D /* ActivityPageCell.xib in Resources */,
 				D76E83F61D7439950014FDEA /* UserNotesCollectionTableViewCell.xib in Resources */,
 				D7886D601D914B58003D6D57 /* TDCProductCollectionCell.xib in Resources */,
+				60319D9E1D9437E000BD094D /* MineCell.xib in Resources */,
 				D76E84251D759CD30014FDEA /* PostTagAddCollectionCell.xib in Resources */,
 				60319D691D8F1E8900BD094D /* DetailRecommend Cell.xib in Resources */,
 				D76E838C1D6D48560014FDEA /* AlbumnCell.xib in Resources */,
@@ -2840,6 +2853,7 @@
 				D76E84A91D7997D80014FDEA /* CuttingViewController.m in Sources */,
 				D75CC5D41C2A965000E590E6 /* MJRefreshAutoStateFooter.m in Sources */,
 				D75CC5F61C2A965000E590E6 /* SDWebImageCompat.m in Sources */,
+				60319D9D1D9437E000BD094D /* MineCell.m in Sources */,
 				D75CC7331C2D13C000E590E6 /* NSObject+YYModel.m in Sources */,
 				D76E839A1D6DA6540014FDEA /* CameraGroupCell.m in Sources */,
 				D76E843F1D76D6A90014FDEA /* EditorPhotosCollectionCell.m in Sources */,

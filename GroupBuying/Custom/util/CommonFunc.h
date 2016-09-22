@@ -29,10 +29,6 @@ typedef enum {
 #pragma mark - water mask SubaoJiang
 + (UIImage *)getSuBaoJiangWaterMask:(UIImage *)orgImage ;
 
-#pragma mark - QiNiuSize
-+ (NSString *)dealQiNiuUrl:(NSString *)str
-               imgViewSize:(CGSize)imgSize ;
-
 #pragma mark - sandbox
 + (NSString *)getSandBoxPath ;
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qub-j3-Rpg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qub-j3-Rpg">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9UQ-2G-IRm" customClass="RootTableView">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9UQ-2G-IRm">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -30,7 +30,18 @@
                             <constraint firstAttribute="trailing" secondItem="9UQ-2G-IRm" secondAttribute="trailing" id="hYl-ok-596"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="我的" id="5mR-Ce-bNH"/>
+                    <navigationItem key="navigationItem" title="我的" id="5mR-Ce-bNH">
+                        <barButtonItem key="leftBarButtonItem" image="icon_my_friend" id="h74-3e-d1B">
+                            <connections>
+                                <action selector="addFriendsOnClick:" destination="Z8l-Y9-CLI" id="ou4-3V-Hmh"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="icon_my_set" id="CKY-u8-Y21">
+                            <connections>
+                                <action selector="settingOnClick:" destination="Z8l-Y9-CLI" id="iVm-YE-9oU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="table" destination="9UQ-2G-IRm" id="iye-ki-eEm"/>
                     </connections>
@@ -415,5 +426,7 @@
         <image name="btn_square" width="25" height="25"/>
         <image name="btn_tile" width="25" height="25"/>
         <image name="findvc_btn_find_search" width="21" height="21"/>
+        <image name="icon_my_friend" width="25" height="25"/>
+        <image name="icon_my_set" width="25" height="25"/>
     </resources>
 </document>

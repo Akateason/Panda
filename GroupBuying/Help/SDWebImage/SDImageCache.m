@@ -263,14 +263,6 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
     return [self.memCache objectForKey:key];
 }
 
-
-- (UIImage *)imageFromDiskCacheForKey:(NSString *)key withCacheWidth:(CGFloat)widthForImgView
-{
-    key = [CommonFunc dealQiNiuUrl:key
-                       imgViewSize:CGSizeMake(widthForImgView, 0)] ;
-    return [self imageFromDiskCacheForKey:key] ;
-}
-
 - (UIImage *)imageFromDiskCacheForKey:(NSString *)key {
     // First check the in-memory cache...
     UIImage *image = [self imageFromMemoryCacheForKey:key];

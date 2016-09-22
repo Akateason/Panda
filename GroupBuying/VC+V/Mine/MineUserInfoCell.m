@@ -46,6 +46,8 @@
     [super awakeFromNib];
     // Initialization code
     
+    _userHead.image = IMG_HEAD_NO ;
+    
     _upline.backgroundColor = [UIColor xt_seperate] ;
     _leftline.backgroundColor = [UIColor xt_seperate] ;
     _rightline.backgroundColor = [UIColor xt_seperate] ;

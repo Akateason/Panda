@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MineCell" rowHeight="54" id="KGk-i7-Jjw" customClass="MineCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="53"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_my_act" translatesAutoresizingMaskIntoConstraints="NO" id="cY4-wn-GBP">
+                        <rect key="frame" x="12" y="14" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="CoP-Hk-zmb"/>
+                            <constraint firstAttribute="height" constant="25" id="KP9-Ji-ol3"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="消息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AU9-41-D0D">
+                        <rect key="frame" x="45" y="18" width="28" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_my_right" translatesAutoresizingMaskIntoConstraints="NO" id="QTP-LK-gob">
+                        <rect key="frame" x="302" y="21" width="6" height="10"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="6" id="54o-j2-Zci"/>
+                            <constraint firstAttribute="height" constant="10" id="IY2-Gv-ver"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vye-Vf-IBj">
+                        <rect key="frame" x="302" y="23" width="6" height="6"/>
+                        <color key="backgroundColor" red="0.99497195510000003" green="0.2469716193" blue="0.29821157279999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="6" id="jfK-wt-AAg"/>
+                            <constraint firstAttribute="width" constant="6" id="yt0-X0-Ypq"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="QTP-LK-gob" secondAttribute="trailing" constant="12" id="4S8-Tb-HQO"/>
+                    <constraint firstItem="QTP-LK-gob" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="CnF-50-J81"/>
+                    <constraint firstItem="Vye-Vf-IBj" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="KF6-rG-GKl"/>
+                    <constraint firstItem="cY4-wn-GBP" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Y4Y-Sl-Pph"/>
+                    <constraint firstAttribute="trailing" secondItem="Vye-Vf-IBj" secondAttribute="trailing" constant="12" id="c6a-PO-0uu"/>
+                    <constraint firstItem="AU9-41-D0D" firstAttribute="leading" secondItem="cY4-wn-GBP" secondAttribute="trailing" constant="8" id="qc6-4Q-dLd"/>
+                    <constraint firstItem="cY4-wn-GBP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="r3w-54-4V7"/>
+                    <constraint firstItem="AU9-41-D0D" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="v4a-aD-lrQ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="hasMsgCome" destination="Vye-Vf-IBj" id="fTi-8w-Okn"/>
+                <outlet property="imgDefaultType" destination="QTP-LK-gob" id="UPH-tM-YHN"/>
+                <outlet property="imgView" destination="cY4-wn-GBP" id="De5-Y3-DCi"/>
+                <outlet property="titleLabel" destination="AU9-41-D0D" id="7q6-w5-UYS"/>
+            </connections>
+            <point key="canvasLocation" x="145" y="280"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icon_my_act" width="25" height="25"/>
+        <image name="icon_my_right" width="6" height="10"/>
+    </resources>
+</document>
