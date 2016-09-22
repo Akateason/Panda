@@ -42,10 +42,10 @@
 		60319D891D91AE4300BD094D /* FVCRecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60319D871D91AE4300BD094D /* FVCRecommendCell.xib */; };
 		60319D8D1D91B4D000BD094D /* ActivityPageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319D8B1D91B4D000BD094D /* ActivityPageCell.m */; };
 		60319D8E1D91B4D000BD094D /* ActivityPageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60319D8C1D91B4D000BD094D /* ActivityPageCell.xib */; };
-		60319D921D92C0B800BD094D /* HotProductCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319D911D92C0B800BD094D /* HotProductCtrller.m */; };
+		60319D921D92C0B800BD094D /* HotProductListCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319D911D92C0B800BD094D /* HotProductListCtrller.m */; };
 		60319D941D92C0F100BD094D /* Find.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60319D931D92C0F100BD094D /* Find.storyboard */; };
-		60319D981D92C34700BD094D /* HotProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319D961D92C34700BD094D /* HotProductCell.m */; };
-		60319D991D92C34700BD094D /* HotProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60319D971D92C34700BD094D /* HotProductCell.xib */; };
+		60319D981D92C34700BD094D /* HotProductListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319D961D92C34700BD094D /* HotProductListCell.m */; };
+		60319D991D92C34700BD094D /* HotProductListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60319D971D92C34700BD094D /* HotProductListCell.xib */; };
 		6035CF2B1D74B38B00EA590B /* PostContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6035CF2A1D74B38B00EA590B /* PostContentCell.m */; };
 		6035CF2D1D74B3AC00EA590B /* PostContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6035CF2C1D74B3AC00EA590B /* PostContentCell.xib */; };
 		6035CF311D75E64E00EA590B /* TagSearchingCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = 6035CF301D75E64E00EA590B /* TagSearchingCtrller.m */; };
@@ -317,6 +317,7 @@
 		D7886D651D915787003D6D57 /* FVCBannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7886D631D915787003D6D57 /* FVCBannerCell.xib */; };
 		D7886D6B1D9159B8003D6D57 /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = D7886D681D9159B8003D6D57 /* NSTimer+Addition.m */; };
 		D7886D6C1D9159B8003D6D57 /* XTLoopScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7886D6A1D9159B8003D6D57 /* XTLoopScrollView.m */; };
+		D7886D741D93774D003D6D57 /* HotProductItemCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7886D731D93774D003D6D57 /* HotProductItemCtrller.m */; };
 		D7E0F4B41D87ADF700EA663B /* ArticlePicItemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */; };
 		D7E0F4B71D87B2D100EA663B /* ArticlePicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B61D87B2D100EA663B /* ArticlePicItem.m */; };
 		D7E0F4BA1D87B42D00EA663B /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B91D87B42D00EA663B /* Article.m */; };
@@ -404,12 +405,12 @@
 		60319D8A1D91B4D000BD094D /* ActivityPageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityPageCell.h; path = "GroupBuying/VC+V/Activity/ActivityPageCell.h"; sourceTree = SOURCE_ROOT; };
 		60319D8B1D91B4D000BD094D /* ActivityPageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityPageCell.m; path = "GroupBuying/VC+V/Activity/ActivityPageCell.m"; sourceTree = SOURCE_ROOT; };
 		60319D8C1D91B4D000BD094D /* ActivityPageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ActivityPageCell.xib; path = "GroupBuying/VC+V/Activity/ActivityPageCell.xib"; sourceTree = SOURCE_ROOT; };
-		60319D901D92C0B800BD094D /* HotProductCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HotProductCtrller.h; path = "GroupBuying/VC+V/Find/HotProductCtrller.h"; sourceTree = SOURCE_ROOT; };
-		60319D911D92C0B800BD094D /* HotProductCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HotProductCtrller.m; path = "GroupBuying/VC+V/Find/HotProductCtrller.m"; sourceTree = SOURCE_ROOT; };
+		60319D901D92C0B800BD094D /* HotProductListCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HotProductListCtrller.h; path = "GroupBuying/VC+V/Find/HotProductListCtrller.h"; sourceTree = SOURCE_ROOT; };
+		60319D911D92C0B800BD094D /* HotProductListCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HotProductListCtrller.m; path = "GroupBuying/VC+V/Find/HotProductListCtrller.m"; sourceTree = SOURCE_ROOT; };
 		60319D931D92C0F100BD094D /* Find.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Find.storyboard; path = "VC+V/Find/Find.storyboard"; sourceTree = "<group>"; };
-		60319D951D92C34700BD094D /* HotProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HotProductCell.h; path = "GroupBuying/VC+V/Find/HotProductCell.h"; sourceTree = SOURCE_ROOT; };
-		60319D961D92C34700BD094D /* HotProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HotProductCell.m; path = "GroupBuying/VC+V/Find/HotProductCell.m"; sourceTree = SOURCE_ROOT; };
-		60319D971D92C34700BD094D /* HotProductCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HotProductCell.xib; path = "GroupBuying/VC+V/Find/HotProductCell.xib"; sourceTree = SOURCE_ROOT; };
+		60319D951D92C34700BD094D /* HotProductListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HotProductListCell.h; path = "GroupBuying/VC+V/Find/HotProductListCell.h"; sourceTree = SOURCE_ROOT; };
+		60319D961D92C34700BD094D /* HotProductListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HotProductListCell.m; path = "GroupBuying/VC+V/Find/HotProductListCell.m"; sourceTree = SOURCE_ROOT; };
+		60319D971D92C34700BD094D /* HotProductListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HotProductListCell.xib; path = "GroupBuying/VC+V/Find/HotProductListCell.xib"; sourceTree = SOURCE_ROOT; };
 		6035CF291D74B38B00EA590B /* PostContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostContentCell.h; path = "GroupBuying/VC+V/Post/PostContentCell.h"; sourceTree = SOURCE_ROOT; };
 		6035CF2A1D74B38B00EA590B /* PostContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostContentCell.m; path = "GroupBuying/VC+V/Post/PostContentCell.m"; sourceTree = SOURCE_ROOT; };
 		6035CF2C1D74B3AC00EA590B /* PostContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostContentCell.xib; path = "GroupBuying/VC+V/Post/PostContentCell.xib"; sourceTree = SOURCE_ROOT; };
@@ -937,6 +938,8 @@
 		D7886D681D9159B8003D6D57 /* NSTimer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Addition.m"; sourceTree = "<group>"; };
 		D7886D691D9159B8003D6D57 /* XTLoopScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTLoopScrollView.h; sourceTree = "<group>"; };
 		D7886D6A1D9159B8003D6D57 /* XTLoopScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTLoopScrollView.m; sourceTree = "<group>"; };
+		D7886D721D93774D003D6D57 /* HotProductItemCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HotProductItemCtrller.h; path = "GroupBuying/VC+V/Find/HotProductItemCtrller.h"; sourceTree = SOURCE_ROOT; };
+		D7886D731D93774D003D6D57 /* HotProductItemCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HotProductItemCtrller.m; path = "GroupBuying/VC+V/Find/HotProductItemCtrller.m"; sourceTree = SOURCE_ROOT; };
 		D7E0F4B21D87ADF700EA663B /* ArticlePicItemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItemInfo.h; sourceTree = "<group>"; };
 		D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlePicItemInfo.m; sourceTree = "<group>"; };
 		D7E0F4B51D87B2D100EA663B /* ArticlePicItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItem.h; sourceTree = "<group>"; };
@@ -1083,7 +1086,8 @@
 				60319D7A1D91914F00BD094D /* FindSub */,
 				60074E011D60DFDC0040C3C0 /* FindController.h */,
 				60074E021D60DFDC0040C3C0 /* FindController.m */,
-				60319D8F1D92C07D00BD094D /* HotProduct */,
+				60319D8F1D92C07D00BD094D /* HotProductList */,
+				D7886D711D937724003D6D57 /* HotProductItem */,
 			);
 			name = Find1;
 			sourceTree = "<group>";
@@ -1148,16 +1152,16 @@
 			name = FindSub;
 			sourceTree = "<group>";
 		};
-		60319D8F1D92C07D00BD094D /* HotProduct */ = {
+		60319D8F1D92C07D00BD094D /* HotProductList */ = {
 			isa = PBXGroup;
 			children = (
-				60319D901D92C0B800BD094D /* HotProductCtrller.h */,
-				60319D911D92C0B800BD094D /* HotProductCtrller.m */,
-				60319D951D92C34700BD094D /* HotProductCell.h */,
-				60319D961D92C34700BD094D /* HotProductCell.m */,
-				60319D971D92C34700BD094D /* HotProductCell.xib */,
+				60319D901D92C0B800BD094D /* HotProductListCtrller.h */,
+				60319D911D92C0B800BD094D /* HotProductListCtrller.m */,
+				60319D951D92C34700BD094D /* HotProductListCell.h */,
+				60319D961D92C34700BD094D /* HotProductListCell.m */,
+				60319D971D92C34700BD094D /* HotProductListCell.xib */,
 			);
-			name = HotProduct;
+			name = HotProductList;
 			sourceTree = "<group>";
 		};
 		6035CF2E1D75E62000EA590B /* Tag */ = {
@@ -2366,6 +2370,15 @@
 			path = XTLoopScroll;
 			sourceTree = "<group>";
 		};
+		D7886D711D937724003D6D57 /* HotProductItem */ = {
+			isa = PBXGroup;
+			children = (
+				D7886D721D93774D003D6D57 /* HotProductItemCtrller.h */,
+				D7886D731D93774D003D6D57 /* HotProductItemCtrller.m */,
+			);
+			name = HotProductItem;
+			sourceTree = "<group>";
+		};
 		D7E0F4B11D87ADBF00EA663B /* Article */ = {
 			isa = PBXGroup;
 			children = (
@@ -2539,7 +2552,7 @@
 				D76E84001D7526250014FDEA /* PostPhotoCollectionCell.xib in Resources */,
 				608405811D67F45700B40D68 /* HPProductCollectionCell.xib in Resources */,
 				D76E84931D783B880014FDEA /* pg_edit_sdk_resource.bundle in Resources */,
-				60319D991D92C34700BD094D /* HotProductCell.xib in Resources */,
+				60319D991D92C34700BD094D /* HotProductListCell.xib in Resources */,
 				60319D791D91849600BD094D /* FVCKindCollectionCell.xib in Resources */,
 				608405831D67F62500B40D68 /* HPBigPhotoCollectionCell.xib in Resources */,
 				D76E83C61D7028680014FDEA /* UserInfoView.xib in Resources */,
@@ -2587,6 +2600,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D75CC4531C2A95DE00E590E6 /* XTRequest.m in Sources */,
+				D7886D741D93774D003D6D57 /* HotProductItemCtrller.m in Sources */,
 				60319D731D91795A00BD094D /* FVCKindsCell.m in Sources */,
 				60074E111D634AA50040C3C0 /* NSObject+Reflection.m in Sources */,
 				D76E84721D780FAC0014FDEA /* NSArray+MASAdditions.m in Sources */,
@@ -2745,7 +2759,7 @@
 				D75CC4471C2A95DE00E590E6 /* MyTextView.m in Sources */,
 				D75CC61E1C2A965000E590E6 /* FBShimmeringView.m in Sources */,
 				D75CC43E1C2A95DE00E590E6 /* NSString+Extend.m in Sources */,
-				60319D981D92C34700BD094D /* HotProductCell.m in Sources */,
+				60319D981D92C34700BD094D /* HotProductListCell.m in Sources */,
 				D75CC5E21C2A965000E590E6 /* QNAsyncRun.m in Sources */,
 				D75CC5A51C2A965000E590E6 /* AFURLRequestSerialization.m in Sources */,
 				D75CC6041C2A965000E590E6 /* UICollectionViewLeftAlignedLayout.m in Sources */,
@@ -2803,7 +2817,7 @@
 				60319D5D1D8F1A9200BD094D /* DetailHisFocusCell.m in Sources */,
 				D76E841F1D759CB30014FDEA /* PostTagItemCollectionCell.m in Sources */,
 				D76E83BF1D70175D0014FDEA /* UIImage+ImageEffects.m in Sources */,
-				60319D921D92C0B800BD094D /* HotProductCtrller.m in Sources */,
+				60319D921D92C0B800BD094D /* HotProductListCtrller.m in Sources */,
 				606BF84F1D8415AC00C503FE /* DetailUserInfoView.m in Sources */,
 				D75CC6561C2AA17700E590E6 /* ResultParsered.m in Sources */,
 				D75CC5DF1C2A965000E590E6 /* UIView+MJExtension.m in Sources */,

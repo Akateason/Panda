@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-static NSString *const kID_HotProductCell = @"HotProductCell" ;
+static NSString *const kID_HotProductListCell = @"HotProductListCell" ;
 #define Height_HotProductCell               APP_WIDTH * 465 / 750 + 15
 
-@interface HotProductCell : UITableViewCell
+@interface HotProductListCell : UITableViewCell
 
 @property (nonatomic) int index ;
 

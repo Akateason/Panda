@@ -6,15 +6,15 @@
 //  Copyright © 2016年 teason. All rights reserved.
 //
 
-#import "HotProductCell.h"
+#import "HotProductListCell.h"
 
-@interface HotProductCell ()
+@interface HotProductListCell ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *imgView;
 
 @end
 
-@implementation HotProductCell
+@implementation HotProductListCell
 
 - (void)setIndex:(int)index
 {

@@ -12,4 +12,6 @@ static NSString *const kID_TDCProductCollectionCell = @"TDCProductCollectionCell
 
 @interface TDCProductCollectionCell : UICollectionViewCell
 
++ (CGSize)getSize ;
+
 @end

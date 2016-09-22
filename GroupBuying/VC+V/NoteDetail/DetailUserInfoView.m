@@ -41,9 +41,10 @@
     NSLog(@"头像") ;
 }
 
-- (IBAction)btFoucusOnClick:(id)sender
+- (IBAction)btFoucusOnClick:(UIButton *)sender
 {
     NSLog(@"关注") ;
+    sender.selected = !sender.selected ;
 }
 
 

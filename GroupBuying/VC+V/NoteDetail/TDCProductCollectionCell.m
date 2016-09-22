@@ -26,4 +26,15 @@
     _labelPrice.textColor = [UIColor xt_tabbarRedColor] ;
 }
 
+
++ (CGSize)getSize
+{
+    // 374 / 500 = w / h
+    float width  = ( APP_WIDTH - 3. ) / 2. ;
+    float height = width * 500. / 374. ;
+    
+    return CGSizeMake(width, height) ;
+}
+
+
 @end

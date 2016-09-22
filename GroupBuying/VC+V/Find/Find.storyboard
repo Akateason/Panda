@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -8,7 +8,7 @@
         <!--热门商品-->
         <scene sceneID="efu-BX-E3z">
             <objects>
-                <viewController storyboardIdentifier="HotProductCtrller" title="热门商品" id="xVd-Gz-mGQ" customClass="HotProductCtrller" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HotProductListCtrller" title="热门商品" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xVd-Gz-mGQ" customClass="HotProductListCtrller" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="csc-vy-UfG"/>
                         <viewControllerLayoutGuide type="bottom" id="fOp-hd-7Lo"/>
@@ -34,11 +34,62 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="table" destination="7eW-9F-a77" id="q8J-fI-AQC"/>
+                        <segue destination="Nbg-nn-D6C" kind="push" id="7Ub-EH-9Eu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zse-PX-kiq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="471" y="354"/>
+        </scene>
+        <!--热门产品详情-->
+        <scene sceneID="DhG-wL-p5E">
+            <objects>
+                <viewController storyboardIdentifier="HotProductItemCtrller" id="Nbg-nn-D6C" customClass="HotProductItemCtrller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gck-0d-1ZJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="ngg-Lh-abS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HZF-ts-Mqs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VmS-BG-0y6" customClass="RootCollectionView">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oxT-UZ-pcp">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="TZI-sC-Vf1">
+                                        <rect key="frame" x="0.0" y="64" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ngg-Lh-abS" firstAttribute="top" secondItem="VmS-BG-0y6" secondAttribute="bottom" id="Vrm-nu-U3p"/>
+                            <constraint firstItem="VmS-BG-0y6" firstAttribute="leading" secondItem="HZF-ts-Mqs" secondAttribute="leading" id="cj1-BK-sdW"/>
+                            <constraint firstAttribute="trailing" secondItem="VmS-BG-0y6" secondAttribute="trailing" id="pkE-oI-9BR"/>
+                            <constraint firstItem="VmS-BG-0y6" firstAttribute="top" secondItem="gck-0d-1ZJ" secondAttribute="bottom" id="y2V-nw-RWg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="热门产品详情" id="cVl-1L-yOP"/>
+                    <connections>
+                        <outlet property="collectionView" destination="VmS-BG-0y6" id="pk7-l3-58i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1tn-mj-Kdv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1153" y="354"/>
         </scene>
     </scenes>
 </document>

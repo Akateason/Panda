@@ -51,6 +51,8 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
 @property (nonatomic)        BOOL                   bFirstTime ;
 @property (nonatomic)        HOMEPAGE_SEARCHTYPE    schType ;
 
+@property (nonatomic,strong) UIImageView            *nothingImageView ;
+
 @end
 
 @implementation HomePageController
@@ -109,7 +111,6 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
     RankingViewController *rankCtrller = (RankingViewController *)[RankingViewController getCtrllerFromStory:@"HomePage" controllerIdentifier:@"RankingViewController"] ;
     [rankCtrller setHidesBottomBarWhenPushed:YES] ;
     [self.navigationController pushViewController:rankCtrller animated:YES] ;
-    
 }
 
 - (IBAction)itemCameraOnclick:(id)sender
@@ -140,6 +141,53 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
 }
 
 #pragma mark - prop
+
+- (void)setSchType:(HOMEPAGE_SEARCHTYPE)schType
+{
+    _schType = schType ;
+    
+    switch (schType) {
+        case type_all:
+        {
+            if (self.nothingImageView.superview) {
+                [self.nothingImageView removeFromSuperview] ;
+                self.collectionView.hidden = false ;
+            }
+        }
+            break;
+        case type_myFoucus:
+        {
+            if (!self.nothingImageView.superview) {
+                [self.view addSubview:self.nothingImageView] ;
+                self.collectionView.hidden = true ;
+            }
+        }
+            break;
+        case type_canBuy:
+        {
+            if (!self.nothingImageView.superview) {
+                [self.view addSubview:self.nothingImageView] ;
+                self.collectionView.hidden = true ;
+            }
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+- (UIImageView *)nothingImageView
+{
+    if (!_nothingImageView) {
+        CGRect rect = APPFRAME ;
+        rect.origin.y = 64 ;
+        rect.size.height -= 64 - APP_TABBAR_HEIGHT ;
+        _nothingImageView = [[UIImageView alloc] initWithFrame:rect] ;
+        _nothingImageView.image = [UIImage imageNamed:@"test_nothing"] ;
+        _nothingImageView.contentMode = UIViewContentModeScaleAspectFill ;
+    }
+    return _nothingImageView ;
+}
 
 - (NSArray *)menuItems
 {
@@ -351,7 +399,6 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
     }
     else if (collectionView.collectionViewLayout == self.waterflowLayout) {
         HPProductCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:id_HPProductCollectionCell forIndexPath:indexPath];
-//        cell.index = indexPath.row ;
         cell.noteItem = self.listNote[indexPath.row] ;
         return cell;
     }
@@ -383,7 +430,6 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
     UICollectionReusableView *reusableView = nil ;
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         HPBigPhotoHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:id_HPBigPhotoHeaderView forIndexPath:indexPath];
-//        headerView.index = indexPath.section ;
         headerView.noteItem = self.listNote[indexPath.section] ;
         headerView.delegate = self ;
         return headerView ;

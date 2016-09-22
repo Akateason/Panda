@@ -6,16 +6,17 @@
 //  Copyright © 2016年 teason. All rights reserved.
 //
 
-#import "HotProductCtrller.h"
-#import "HotProductCell.h"
+#import "HotProductListCtrller.h"
+#import "HotProductListCell.h"
+#import "HotProductItemCtrller.h"
 
-@interface HotProductCtrller () <UITableViewDataSource,UITableViewDelegate,RootTableViewDelegate>
+@interface HotProductListCtrller () <UITableViewDataSource,UITableViewDelegate,RootTableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet RootTableView *table;
 
 @end
 
-@implementation HotProductCtrller
+@implementation HotProductListCtrller
 
 - (void)viewDidLoad
 {
@@ -26,7 +27,7 @@
     _table.delegate = self ;
     _table.xt_Delegate = self ;
     _table.separatorStyle = 0 ;
-    [_table registerNib:[UINib nibWithNibName:kID_HotProductCell bundle:nil] forCellReuseIdentifier:kID_HotProductCell] ;
+    [_table registerNib:[UINib nibWithNibName:kID_HotProductListCell bundle:nil] forCellReuseIdentifier:kID_HotProductListCell] ;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -60,7 +61,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    HotProductCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_HotProductCell] ;
+    HotProductListCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_HotProductListCell] ;
     cell.index = indexPath.row + 1 ;
     return cell ;
 }
@@ -71,6 +72,11 @@
     return Height_HotProductCell ;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    HotProductItemCtrller *hotPItemCtrller = (HotProductItemCtrller *)[[HotProductItemCtrller class] getCtrllerFromStory:@"Find" controllerIdentifier:@"HotProductItemCtrller"] ;
+    [self.navigationController pushViewController:hotPItemCtrller animated:YES] ;
+}
 
 
 
