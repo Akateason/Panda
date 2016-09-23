@@ -95,7 +95,6 @@
 		D75CC4451C2A95DE00E590E6 /* MyTabbar.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC4191C2A95DD00E590E6 /* MyTabbar.m */; };
 		D75CC4461C2A95DE00E590E6 /* MyTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC41B1C2A95DD00E590E6 /* MyTextField.m */; };
 		D75CC4471C2A95DE00E590E6 /* MyTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC41D1C2A95DD00E590E6 /* MyTextView.m */; };
-		D75CC4481C2A95DE00E590E6 /* PinkButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC41F1C2A95DD00E590E6 /* PinkButton.m */; };
 		D75CC4491C2A95DE00E590E6 /* PlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC4211C2A95DD00E590E6 /* PlaceHolderTextView.m */; };
 		D75CC44A1C2A95DE00E590E6 /* XTNetReloader.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC4241C2A95DE00E590E6 /* XTNetReloader.m */; };
 		D75CC44B1C2A95DE00E590E6 /* XTSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC4261C2A95DE00E590E6 /* XTSegment.m */; };
@@ -336,6 +335,11 @@
 		D7E0F4D11D882A5400EA663B /* UserOnDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4D01D882A5400EA663B /* UserOnDevice.m */; };
 		D7E994621D93D3D700EACDFB /* MineUserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994601D93D3D700EACDFB /* MineUserInfoCell.m */; };
 		D7E994631D93D3D700EACDFB /* MineUserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E994611D93D3D700EACDFB /* MineUserInfoCell.xib */; };
+		D7E994661D94C9DC00EACDFB /* XTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994651D94C9DC00EACDFB /* XTButton.m */; };
+		D7E9946A1D94CED000EACDFB /* SettingCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994691D94CED000EACDFB /* SettingCtrller.m */; };
+		D7E9946C1D94CEF000EACDFB /* Mine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7E9946B1D94CEF000EACDFB /* Mine.storyboard */; };
+		D7E994701D94D00100EACDFB /* SettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E9946E1D94D00100EACDFB /* SettingCell.m */; };
+		D7E994711D94D00100EACDFB /* SettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E9946F1D94D00100EACDFB /* SettingCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -515,8 +519,6 @@
 		D75CC41B1C2A95DD00E590E6 /* MyTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTextField.m; sourceTree = "<group>"; };
 		D75CC41C1C2A95DD00E590E6 /* MyTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTextView.h; sourceTree = "<group>"; };
 		D75CC41D1C2A95DD00E590E6 /* MyTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTextView.m; sourceTree = "<group>"; };
-		D75CC41E1C2A95DD00E590E6 /* PinkButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinkButton.h; sourceTree = "<group>"; };
-		D75CC41F1C2A95DD00E590E6 /* PinkButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinkButton.m; sourceTree = "<group>"; };
 		D75CC4201C2A95DD00E590E6 /* PlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceHolderTextView.h; sourceTree = "<group>"; };
 		D75CC4211C2A95DD00E590E6 /* PlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceHolderTextView.m; sourceTree = "<group>"; };
 		D75CC4231C2A95DE00E590E6 /* XTNetReloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTNetReloader.h; sourceTree = "<group>"; };
@@ -979,6 +981,14 @@
 		D7E9945F1D93D3D700EACDFB /* MineUserInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MineUserInfoCell.h; path = "GroupBuying/VC+V/Mine/MineUserInfoCell.h"; sourceTree = SOURCE_ROOT; };
 		D7E994601D93D3D700EACDFB /* MineUserInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MineUserInfoCell.m; path = "GroupBuying/VC+V/Mine/MineUserInfoCell.m"; sourceTree = SOURCE_ROOT; };
 		D7E994611D93D3D700EACDFB /* MineUserInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MineUserInfoCell.xib; path = "GroupBuying/VC+V/Mine/MineUserInfoCell.xib"; sourceTree = SOURCE_ROOT; };
+		D7E994641D94C9DC00EACDFB /* XTButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTButton.h; sourceTree = "<group>"; };
+		D7E994651D94C9DC00EACDFB /* XTButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTButton.m; sourceTree = "<group>"; };
+		D7E994681D94CED000EACDFB /* SettingCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingCtrller.h; path = "GroupBuying/VC+V/Setting/SettingCtrller.h"; sourceTree = SOURCE_ROOT; };
+		D7E994691D94CED000EACDFB /* SettingCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingCtrller.m; path = "GroupBuying/VC+V/Setting/SettingCtrller.m"; sourceTree = SOURCE_ROOT; };
+		D7E9946B1D94CEF000EACDFB /* Mine.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Mine.storyboard; path = "VC+V/Mine/Mine.storyboard"; sourceTree = "<group>"; };
+		D7E9946D1D94D00100EACDFB /* SettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingCell.h; path = "GroupBuying/VC+V/Setting/SettingCell.h"; sourceTree = SOURCE_ROOT; };
+		D7E9946E1D94D00100EACDFB /* SettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingCell.m; path = "GroupBuying/VC+V/Setting/SettingCell.m"; sourceTree = SOURCE_ROOT; };
+		D7E9946F1D94D00100EACDFB /* SettingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingCell.xib; path = "GroupBuying/VC+V/Setting/SettingCell.xib"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1044,6 +1054,7 @@
 				D7E0F4CA1D88033D00EA663B /* Login.storyboard */,
 				60319D931D92C0F100BD094D /* Find.storyboard */,
 				D7886D7D1D93B8A9003D6D57 /* Activity.storyboard */,
+				D7E9946B1D94CEF000EACDFB /* Mine.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -1385,6 +1396,7 @@
 		D75CC3F71C2A92B200E590E6 /* VC+V */ = {
 			isa = PBXGroup;
 			children = (
+				D7E994671D94CEA200EACDFB /* Setting */,
 				D7E0F4C61D8801FA00EA663B /* Login */,
 				608075FC1D805D870056573F /* NoteDetail */,
 				D76E84381D76C1590014FDEA /* PhotoEditor */,
@@ -1517,12 +1529,12 @@
 				D75CC41B1C2A95DD00E590E6 /* MyTextField.m */,
 				D75CC41C1C2A95DD00E590E6 /* MyTextView.h */,
 				D75CC41D1C2A95DD00E590E6 /* MyTextView.m */,
-				D75CC41E1C2A95DD00E590E6 /* PinkButton.h */,
-				D75CC41F1C2A95DD00E590E6 /* PinkButton.m */,
 				D75CC4201C2A95DD00E590E6 /* PlaceHolderTextView.h */,
 				D75CC4211C2A95DD00E590E6 /* PlaceHolderTextView.m */,
 				D75CC4251C2A95DE00E590E6 /* XTSegment.h */,
 				D75CC4261C2A95DE00E590E6 /* XTSegment.m */,
+				D7E994641D94C9DC00EACDFB /* XTButton.h */,
+				D7E994651D94C9DC00EACDFB /* XTButton.m */,
 			);
 			path = UIs;
 			sourceTree = "<group>";
@@ -2471,6 +2483,18 @@
 			name = MineSubs;
 			sourceTree = "<group>";
 		};
+		D7E994671D94CEA200EACDFB /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				D7E994681D94CED000EACDFB /* SettingCtrller.h */,
+				D7E994691D94CED000EACDFB /* SettingCtrller.m */,
+				D7E9946D1D94D00100EACDFB /* SettingCell.h */,
+				D7E9946E1D94D00100EACDFB /* SettingCell.m */,
+				D7E9946F1D94D00100EACDFB /* SettingCell.xib */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2599,6 +2623,7 @@
 				D76E84251D759CD30014FDEA /* PostTagAddCollectionCell.xib in Resources */,
 				60319D691D8F1E8900BD094D /* DetailRecommend Cell.xib in Resources */,
 				D76E838C1D6D48560014FDEA /* AlbumnCell.xib in Resources */,
+				D7E9946C1D94CEF000EACDFB /* Mine.storyboard in Resources */,
 				60319D891D91AE4300BD094D /* FVCRecommendCell.xib in Resources */,
 				D76E84001D7526250014FDEA /* PostPhotoCollectionCell.xib in Resources */,
 				608405811D67F45700B40D68 /* HPProductCollectionCell.xib in Resources */,
@@ -2613,6 +2638,7 @@
 				D76E841A1D75991D0014FDEA /* PostTagCell.xib in Resources */,
 				D7E994631D93D3D700EACDFB /* MineUserInfoCell.xib in Resources */,
 				D76E83841D6D40D40014FDEA /* Camera.storyboard in Resources */,
+				D7E994711D94D00100EACDFB /* SettingCell.xib in Resources */,
 				D75CC3CF1C2A926100E590E6 /* Main.storyboard in Resources */,
 				D74589991D6B190D00835234 /* HomePage.storyboard in Resources */,
 				60074E1D1D634AE80040C3C0 /* xtAllColorsList.plist in Resources */,
@@ -2660,6 +2686,7 @@
 				D75CC4411C2A95DE00E590E6 /* UIImage+AddFunction.m in Sources */,
 				D75CC5BA1C2A965000E590E6 /* ASIS3BucketRequest.m in Sources */,
 				D75CC4461C2A95DE00E590E6 /* MyTextField.m in Sources */,
+				D7E9946A1D94CED000EACDFB /* SettingCtrller.m in Sources */,
 				D76E84111D75665F0014FDEA /* PreviewCollectionCell.m in Sources */,
 				D76E83ED1D7435680014FDEA /* UserFoucusHeaderView.m in Sources */,
 				60074E091D60E0040040C3C0 /* ActivityController.m in Sources */,
@@ -2696,7 +2723,6 @@
 				6035CF311D75E64E00EA590B /* TagSearchingCtrller.m in Sources */,
 				D76E83961D6DA3290014FDEA /* CameraGoupCtrller.m in Sources */,
 				D76E83871D6D46300014FDEA /* CameraNavCtrller.m in Sources */,
-				D75CC4481C2A95DE00E590E6 /* PinkButton.m in Sources */,
 				D76E846F1D780FAC0014FDEA /* MASLayoutConstraint.m in Sources */,
 				D75CC5A61C2A965000E590E6 /* AFURLResponseSerialization.m in Sources */,
 				D75CC5CE1C2A965000E590E6 /* MJRefreshBackFooter.m in Sources */,
@@ -2848,9 +2874,11 @@
 				60074E061D60DFEF0040C3C0 /* FeaturesController.m in Sources */,
 				D75CC5DD1C2A965000E590E6 /* UIScrollView+MJExtension.m in Sources */,
 				D76E837E1D6C6EBD0014FDEA /* RankingCell.m in Sources */,
+				D7E994701D94D00100EACDFB /* SettingCell.m in Sources */,
 				D75CC4451C2A95DE00E590E6 /* MyTabbar.m in Sources */,
 				60074E1B1D634AE80040C3C0 /* UIColor+AllColors.m in Sources */,
 				D76E84A91D7997D80014FDEA /* CuttingViewController.m in Sources */,
+				D7E994661D94C9DC00EACDFB /* XTButton.m in Sources */,
 				D75CC5D41C2A965000E590E6 /* MJRefreshAutoStateFooter.m in Sources */,
 				D75CC5F61C2A965000E590E6 /* SDWebImageCompat.m in Sources */,
 				60319D9D1D9437E000BD094D /* MineCell.m in Sources */,

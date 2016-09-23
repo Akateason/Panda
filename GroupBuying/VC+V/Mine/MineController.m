@@ -15,6 +15,7 @@
 #import "UserOnDevice.h"
 #import "MineUserInfoCell.h"
 #import "MineCell.h"
+#import "SettingCtrller.h"
 
 @interface MineController () <UITableViewDataSource,UITableViewDelegate>
 
@@ -35,6 +36,8 @@
 - (IBAction)settingOnClick:(id)sender
 {
     NSLog(@"设置") ;
+    SettingCtrller *setVC = (SettingCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"SettingCtrller"] ;
+    [self.navigationController pushViewController:setVC animated:YES] ;
 }
 
 
