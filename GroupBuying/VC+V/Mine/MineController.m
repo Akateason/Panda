@@ -37,6 +37,7 @@
 {
     NSLog(@"设置") ;
     SettingCtrller *setVC = (SettingCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"SettingCtrller"] ;
+    [setVC setHidesBottomBarWhenPushed:YES] ;
     [self.navigationController pushViewController:setVC animated:YES] ;
 }
 

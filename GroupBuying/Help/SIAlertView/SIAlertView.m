@@ -296,7 +296,7 @@ static SIAlertView *__si_alert_current_view;
 {
     if (!_colorCancel) {
 //        _colorCancel = COLOR_FW_BLUE ;
-        _colorCancel = [UIColor blueColor] ;
+        _colorCancel = [UIColor xt_seperate] ;
     }
     return _colorCancel ;
 }
@@ -304,8 +304,8 @@ static SIAlertView *__si_alert_current_view;
 - (UIColor *)colorDefault
 {
     if (!_colorDefault) {
-//        _colorDefault = COLOR_TABLE_SEP ;
-        _colorDefault = [UIColor lightGrayColor] ;
+        _colorDefault = [UIColor xt_seperate] ;
+//        _colorDefault = [UIColor whiteColor] ;
     }
     return _colorDefault ;
 }
@@ -313,7 +313,7 @@ static SIAlertView *__si_alert_current_view;
 - (UIColor *)colorDestructive
 {
     if (!_colorDestructive) {
-        _colorDestructive = [UIColor xt_mainColor] ;
+        _colorDestructive = [UIColor xt_tabbarRedColor] ;
     }
     return _colorDestructive ;
 }

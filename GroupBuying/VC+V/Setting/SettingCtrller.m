@@ -8,7 +8,8 @@
 
 #import "SettingCtrller.h"
 #import "SettingCell.h"
-
+#import "SIAlertView.h"
+#import "UserOnDevice.h"
 
 @interface SettingCtrller () <UITableViewDataSource,UITableViewDelegate>
 
@@ -88,6 +89,7 @@ static NSString *const identifierExitlogCell = @"exitCell" ;
             cell.textLabel.textAlignment = NSTextAlignmentCenter ;
             cell.textLabel.textColor = [UIColor xt_w_dark] ;
             cell.textLabel.font = Font(14.) ;
+            cell.selectionStyle = 0 ;
         }
         return cell ;
     }
@@ -159,7 +161,12 @@ static NSString *const kIdentifierFooter = @"mycell_footer" ;
     }
     else if (section == 3) {
     // "退出账号" ;
-
+        SIAlertView *alert = [[SIAlertView alloc] initWithTitle:nil andMessage:@"退出登录"] ;
+        [alert addButtonWithTitle:@"确认" type:SIAlertViewButtonTypeDestructive handler:^(SIAlertView *alertView) {
+            [UserOnDevice clean] ;
+        }] ;
+        [alert addButtonWithTitle:@"取消" type:SIAlertViewButtonTypeCancel handler:nil] ;
+        [alert show] ;
     }
 
 }
