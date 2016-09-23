@@ -7,21 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "pch.h"
+#import "Masonry.h"
 
 
 @interface YXLTagEditorImageView : UIView
 
 /**
  *  初始化并添加一张图片
- *
  *  @param image 作为点选标签的底图
  */
-- (id)initWithImage:(UIImage *)image ;
-/**
- *  图片尺寸初始化
- */
-- (void)scaledFrame ;
+- (id)initWithImage:(UIImage *)image frame:(CGRect)frame ;
+- (id)initWithFrame:(CGRect)frame ;
+
+
 /**
  *  添加已有的标签
  *
@@ -36,6 +34,7 @@
  isPositiveAndNegative:(BOOL)isPositiveAndNegative
                   type:(NSString *)typeStr ;
 
+
 /**
  *  获取所有标签信息
  *
@@ -45,6 +44,7 @@
  text                 标签文本
  */
 - (NSMutableArray *)popTagModel ;
+
 
 /**
  *  如果是网络图片在SDWebimage回调中并调用初始化Frame方法

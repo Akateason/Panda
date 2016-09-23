@@ -29,6 +29,7 @@ static NSString * const kUser       = @"userCurrent" ;
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults] ;
     NSString *json = [defaults objectForKey:kUser] ;
+    [defaults synchronize];
     if (!json) {
         return nil ;
     }
@@ -44,6 +45,7 @@ static NSString * const kUser       = @"userCurrent" ;
                  forKey:kName] ;
     [defaults setObject:password
                  forKey:kPassword] ;
+    [defaults synchronize];
 }
 
 + (void)cacheToken:(NSString *)token
@@ -57,7 +59,12 @@ static NSString * const kUser       = @"userCurrent" ;
 + (NSString *)token
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults] ;
+    NSLog(@"defaults  : %@",defaults.dictionaryRepresentation) ;
+    
+    
     NSString *token = [defaults objectForKey:kToken] ;
+    [defaults synchronize];
+    NSLog(@"token : %@",token) ;
     return token ;
 }
 
@@ -85,6 +92,9 @@ static NSString * const kUser       = @"userCurrent" ;
     [defaults removeObjectForKey:kPassword] ;
     [defaults removeObjectForKey:kToken] ;
     [defaults removeObjectForKey:kUser] ;
+    
+    NSLog(@"defaults keys : %@",defaults.dictionaryRepresentation.allKeys) ;
+
 }
 
 

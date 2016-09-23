@@ -73,22 +73,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GroupBuying/VC+V/PhotoEditor/YXLImageLabel/YXLTagEditorImageView.m"
-            timestampString = "496046254.267291"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "486"
-            endingLineNumber = "486"
-            landmarkName = "-getimagePreviews"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "GroupBuying/Help/CropImageView/KICropImageView.m"
             timestampString = "494844406.937674"
             startingColumnNumber = "9223372036854775807"
@@ -202,92 +186,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GroupBuying/VC+V/PhotoEditor/YXLImageLabel/YXLTagEditorImageView.m"
-            timestampString = "496046254.267291"
+            timestampString = "496321210.680663"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "590"
-            endingLineNumber = "590"
+            startingLineNumber = "578"
+            endingLineNumber = "578"
             landmarkName = "-popTagModel"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GroupBuying/VC+V/PhotoEditor/YXLImageLabel/YXLTagEditorImageView.m"
-            timestampString = "496036350.866284"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
-            landmarkName = "-addTagViewText:Location:isPositiveAndNegative:type:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GroupBuying/VC+V/PhotoEditor/YXLImageLabel/YXLTagEditorImageView.m"
-            timestampString = "496046254.267291"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "512"
-            endingLineNumber = "512"
-            landmarkName = "-scaledFrame"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GroupBuying/VC+V/PhotoEditor/YXLImageLabel/YXLTagEditorImageView.m"
-            timestampString = "496046254.267291"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "550"
-            endingLineNumber = "550"
-            landmarkName = "-scaledFrame"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GroupBuying/VC+V/PhotoEditor/YXLImageLabel/YXLTagEditorImageView.m"
-            timestampString = "496046254.267291"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "537"
-            endingLineNumber = "537"
-            landmarkName = "-scaledFrame"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GroupBuying/VC+V/PhotoEditor/YXLImageLabel/YXLTagEditorImageView.m"
-            timestampString = "496046254.267291"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "523"
-            endingLineNumber = "523"
-            landmarkName = "-scaledFrame"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -377,13 +281,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GroupBuying/VC+V/PhotoEditor/YXLImageLabel/YXLTagEditorImageView.m"
-            timestampString = "496118457.302102"
+            filePath = "GroupBuying/Model/UserOnDevice.m"
+            timestampString = "496325368.185388"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "259"
-            endingLineNumber = "259"
-            landmarkName = "-addtagViewimageClickinit:isAddTagView:"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "+token"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -393,13 +297,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GroupBuying/VC+V/PhotoEditor/YXLImageLabel/YXLTagEditorImageView.m"
-            timestampString = "496118474.285336"
+            filePath = "GroupBuying/Model/UserOnDevice.m"
+            timestampString = "496325368.185388"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "261"
-            endingLineNumber = "261"
-            landmarkName = "-addtagViewimageClickinit:isAddTagView:"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "+checkForLoginOrNot:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

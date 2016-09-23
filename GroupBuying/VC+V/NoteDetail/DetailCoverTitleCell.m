@@ -77,7 +77,7 @@
                                                     completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                                                         
                                                         
-        [self.tagEditorImageView scaledFrame] ;
+//        [self.tagEditorImageView scaledFrame] ;
 
         for (int i = 0; i < itemWillDisplay.items.count; i++)
         {
@@ -97,7 +97,9 @@
 - (YXLTagEditorImageView *)tagEditorImageView
 {
     if (!_tagEditorImageView) {
-        _tagEditorImageView = [[YXLTagEditorImageView alloc] initWithImage:nil] ;
+        CGRect rect = CGRectZero ;
+        rect.size = CGSizeMake(APP_WIDTH, APP_WIDTH * 1000 / 750) ;
+        _tagEditorImageView = [[YXLTagEditorImageView alloc] initWithImage:nil frame:rect] ;
         _tagEditorImageView.userInteractionEnabled = NO ;
 //        _tagEditorImageView.viewC = self ;
     }

@@ -59,10 +59,15 @@
 #pragma mark - prop
 - (YXLTagEditorImageView *)tagEditorImageView
 {
-    if (!_tagEditorImageView) {
-        _tagEditorImageView = [[YXLTagEditorImageView alloc] initWithImage:self.image] ;
+    if (!_tagEditorImageView)
+    {
+        CGRect rect = CGRectZero ;
+        rect.size = CGSizeMake(APP_WIDTH, APP_WIDTH * 1000 / 750) ;
+        _tagEditorImageView = [[YXLTagEditorImageView alloc] initWithImage:self.image
+                                                                     frame:rect] ;
         _tagEditorImageView.viewC = self ;
-        _tagEditorImageView.userInteractionEnabled = YES;
+        _tagEditorImageView.userInteractionEnabled = YES ;
+        _tagEditorImageView.center =  self.view.center ;
     }
     return _tagEditorImageView ;
 }
@@ -82,8 +87,8 @@
 //    self.tagEditorImageView.imagePreviews.image = self.image ;
 //    [self.tagEditorImageView scaledFrame] ;
     
-    [_tagEditorImageView addTagViewText:@"哈哈哈哈" Location:CGPointMake(111,222) isPositiveAndNegative:YES type:@"LOCATION"] ;
-    [_tagEditorImageView addTagViewText:@"哈哈lalallallal" Location:CGPointMake(222, 111) isPositiveAndNegative:NO type:@"LOCATION"] ;
+//    [_tagEditorImageView addTagViewText:@"哈哈哈哈" Location:CGPointMake(111,222) isPositiveAndNegative:YES type:@"LOCATION"] ;
+//    [_tagEditorImageView addTagViewText:@"哈哈lalallallal" Location:CGPointMake(222, 111) isPositiveAndNegative:NO type:@"LOCATION"] ;
     
     
     [self configureUIs] ;

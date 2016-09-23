@@ -270,7 +270,7 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
     [KxMenu setTintColor:[UIColor colorWithHexString:@"555555" alpha:0.5]] ;
     
     // login
-    [UserOnDevice checkForLoginOrNot:self] ;
+//    [UserOnDevice checkForLoginOrNot:self] ;
 }
 
 - (void)viewWillAppear:(BOOL)animated

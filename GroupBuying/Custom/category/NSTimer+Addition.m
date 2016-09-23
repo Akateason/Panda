@@ -1,9 +1,9 @@
 //
 //  NSTimer+Addition.m
-//  YXLScrollView
+//  XTLoopScroll
 //
-//  Created by Yexinglong on 14/10/9.
-//  Copyright (c) 2014年 Yexinglong. All rights reserved.
+//  Created by TuTu on 15/11/2.
+//  Copyright © 2015年 teason. All rights reserved.
 //
 
 #import "NSTimer+Addition.h"
