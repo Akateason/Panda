@@ -79,6 +79,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ActivityInfoCtrl *aInfoCtrl = (ActivityInfoCtrl *)[[self class] getCtrllerFromStory:@"Activity" controllerIdentifier:@"ActivityInfoCtrl"] ;
+    [aInfoCtrl setHidesBottomBarWhenPushed:YES] ;
     [self.navigationController pushViewController:aInfoCtrl animated:YES] ;
 }
 

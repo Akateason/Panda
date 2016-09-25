@@ -94,25 +94,12 @@
                         <viewControllerLayoutGuide type="bottom" id="Cwk-wC-oAs"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UB2-lI-vh1">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZME-f9-Lm3">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
-                            </scrollView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ZME-f9-Lm3" firstAttribute="top" secondItem="Bkx-nw-g9G" secondAttribute="bottom" id="BZw-ov-CZT"/>
-                            <constraint firstItem="ZME-f9-Lm3" firstAttribute="leading" secondItem="UB2-lI-vh1" secondAttribute="leading" id="CgT-V2-gf7"/>
-                            <constraint firstAttribute="trailing" secondItem="ZME-f9-Lm3" secondAttribute="trailing" id="HoY-Pg-7YS"/>
-                            <constraint firstItem="Cwk-wC-oAs" firstAttribute="top" secondItem="ZME-f9-Lm3" secondAttribute="bottom" id="O0a-Q2-hSO"/>
-                        </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="专题" id="tm1-Od-c6e"/>
-                    <connections>
-                        <outlet property="scrollview" destination="ZME-f9-Lm3" id="ZlX-4Q-gSW"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gsw-Gr-VSj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

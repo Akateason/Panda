@@ -38,6 +38,6 @@
 
 + (UIColor *)xt_w_find_ad_white ;
 
-
++ (UIColor *)xt_w_red ;
 
 @end

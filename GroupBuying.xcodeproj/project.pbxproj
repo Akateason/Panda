@@ -48,6 +48,11 @@
 		60319D9D1D9437E000BD094D /* MineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319D9B1D9437E000BD094D /* MineCell.m */; };
 		60319D9E1D9437E000BD094D /* MineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60319D9C1D9437E000BD094D /* MineCell.xib */; };
 		60319DA01D9438DA00BD094D /* info_mineCell.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60319D9F1D9438DA00BD094D /* info_mineCell.plist */; };
+		60319DAA1D982E3700BD094D /* XTTableViewRootHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319DA41D982E3700BD094D /* XTTableViewRootHandler.m */; };
+		60319DAB1D982E3700BD094D /* XTMultipleTables.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319DA61D982E3700BD094D /* XTMultipleTables.m */; };
+		60319DAC1D982E3700BD094D /* XTStretchSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319DA91D982E3700BD094D /* XTStretchSegment.m */; };
+		60319DAF1D982F6300BD094D /* CenterTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319DAE1D982F6300BD094D /* CenterTableView.m */; };
+		60319DB21D98319700BD094D /* FeaturesHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319DB11D98319700BD094D /* FeaturesHandler.m */; };
 		6035CF2B1D74B38B00EA590B /* PostContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6035CF2A1D74B38B00EA590B /* PostContentCell.m */; };
 		6035CF2D1D74B3AC00EA590B /* PostContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6035CF2C1D74B3AC00EA590B /* PostContentCell.xib */; };
 		6035CF311D75E64E00EA590B /* TagSearchingCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = 6035CF301D75E64E00EA590B /* TagSearchingCtrller.m */; };
@@ -423,6 +428,16 @@
 		60319D9B1D9437E000BD094D /* MineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MineCell.m; path = "GroupBuying/VC+V/Mine/MineCell.m"; sourceTree = SOURCE_ROOT; };
 		60319D9C1D9437E000BD094D /* MineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MineCell.xib; path = "GroupBuying/VC+V/Mine/MineCell.xib"; sourceTree = SOURCE_ROOT; };
 		60319D9F1D9438DA00BD094D /* info_mineCell.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = info_mineCell.plist; path = "GroupBuying/VC+V/Mine/info_mineCell.plist"; sourceTree = SOURCE_ROOT; };
+		60319DA31D982E3700BD094D /* XTTableViewRootHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTTableViewRootHandler.h; sourceTree = "<group>"; };
+		60319DA41D982E3700BD094D /* XTTableViewRootHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTTableViewRootHandler.m; sourceTree = "<group>"; };
+		60319DA51D982E3700BD094D /* XTMultipleTables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTMultipleTables.h; sourceTree = "<group>"; };
+		60319DA61D982E3700BD094D /* XTMultipleTables.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTMultipleTables.m; sourceTree = "<group>"; };
+		60319DA81D982E3700BD094D /* XTStretchSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTStretchSegment.h; sourceTree = "<group>"; };
+		60319DA91D982E3700BD094D /* XTStretchSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTStretchSegment.m; sourceTree = "<group>"; };
+		60319DAD1D982F6300BD094D /* CenterTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenterTableView.h; sourceTree = "<group>"; };
+		60319DAE1D982F6300BD094D /* CenterTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenterTableView.m; sourceTree = "<group>"; };
+		60319DB01D98319700BD094D /* FeaturesHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeaturesHandler.h; path = "GroupBuying/VC+V/Features/FeaturesHandler.h"; sourceTree = SOURCE_ROOT; };
+		60319DB11D98319700BD094D /* FeaturesHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeaturesHandler.m; path = "GroupBuying/VC+V/Features/FeaturesHandler.m"; sourceTree = SOURCE_ROOT; };
 		6035CF291D74B38B00EA590B /* PostContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostContentCell.h; path = "GroupBuying/VC+V/Post/PostContentCell.h"; sourceTree = SOURCE_ROOT; };
 		6035CF2A1D74B38B00EA590B /* PostContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostContentCell.m; path = "GroupBuying/VC+V/Post/PostContentCell.m"; sourceTree = SOURCE_ROOT; };
 		6035CF2C1D74B3AC00EA590B /* PostContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostContentCell.xib; path = "GroupBuying/VC+V/Post/PostContentCell.xib"; sourceTree = SOURCE_ROOT; };
@@ -1104,6 +1119,8 @@
 			children = (
 				60074E041D60DFEF0040C3C0 /* FeaturesController.h */,
 				60074E051D60DFEF0040C3C0 /* FeaturesController.m */,
+				60319DB01D98319700BD094D /* FeaturesHandler.h */,
+				60319DB11D98319700BD094D /* FeaturesHandler.m */,
 			);
 			name = Features1;
 			sourceTree = "<group>";
@@ -1190,6 +1207,36 @@
 				60319D971D92C34700BD094D /* HotProductListCell.xib */,
 			);
 			name = HotProductList;
+			sourceTree = "<group>";
+		};
+		60319DA11D982E3700BD094D /* XTMultipleTables */ = {
+			isa = PBXGroup;
+			children = (
+				60319DA21D982E3700BD094D /* RootTableHander */,
+				60319DA51D982E3700BD094D /* XTMultipleTables.h */,
+				60319DA61D982E3700BD094D /* XTMultipleTables.m */,
+				60319DAD1D982F6300BD094D /* CenterTableView.h */,
+				60319DAE1D982F6300BD094D /* CenterTableView.m */,
+			);
+			path = XTMultipleTables;
+			sourceTree = "<group>";
+		};
+		60319DA21D982E3700BD094D /* RootTableHander */ = {
+			isa = PBXGroup;
+			children = (
+				60319DA31D982E3700BD094D /* XTTableViewRootHandler.h */,
+				60319DA41D982E3700BD094D /* XTTableViewRootHandler.m */,
+			);
+			path = RootTableHander;
+			sourceTree = "<group>";
+		};
+		60319DA71D982E3700BD094D /* XTStretchSegment */ = {
+			isa = PBXGroup;
+			children = (
+				60319DA81D982E3700BD094D /* XTStretchSegment.h */,
+				60319DA91D982E3700BD094D /* XTStretchSegment.m */,
+			);
+			path = XTStretchSegment;
 			sourceTree = "<group>";
 		};
 		6035CF2E1D75E62000EA590B /* Tag */ = {
@@ -1512,6 +1559,8 @@
 		D75CC4151C2A95DD00E590E6 /* UIs */ = {
 			isa = PBXGroup;
 			children = (
+				60319DA11D982E3700BD094D /* XTMultipleTables */,
+				60319DA71D982E3700BD094D /* XTStretchSegment */,
 				D7886D661D9159B8003D6D57 /* XTLoopScroll */,
 				D75CC4221C2A95DD00E590E6 /* XTNetReloader */,
 				D76E84121D7567A70014FDEA /* XTZoomPicture */,
@@ -2779,6 +2828,7 @@
 				D75CC5F91C2A965000E590E6 /* SDWebImageDownloaderOperation.m in Sources */,
 				D75CC5D91C2A965000E590E6 /* MJRefreshNormalHeader.m in Sources */,
 				D76E838B1D6D48560014FDEA /* AlbumnCell.m in Sources */,
+				60319DAB1D982E3700BD094D /* XTMultipleTables.m in Sources */,
 				D75CC5F51C2A965000E590E6 /* SDImageCache.m in Sources */,
 				60319D531D8ED10A00BD094D /* DetailTagsCell.m in Sources */,
 				60319D6E1D8F219B00BD094D /* ProductRecommendCollectionCell.m in Sources */,
@@ -2827,10 +2877,12 @@
 				D75CC5A11C2A965000E590E6 /* AFHTTPSessionManager.m in Sources */,
 				D75CC4471C2A95DE00E590E6 /* MyTextView.m in Sources */,
 				D75CC61E1C2A965000E590E6 /* FBShimmeringView.m in Sources */,
+				60319DB21D98319700BD094D /* FeaturesHandler.m in Sources */,
 				D75CC43E1C2A95DE00E590E6 /* NSString+Extend.m in Sources */,
 				60319D981D92C34700BD094D /* HotProductListCell.m in Sources */,
 				D75CC5E21C2A965000E590E6 /* QNAsyncRun.m in Sources */,
 				D75CC5A51C2A965000E590E6 /* AFURLRequestSerialization.m in Sources */,
+				60319DAC1D982E3700BD094D /* XTStretchSegment.m in Sources */,
 				D75CC6041C2A965000E590E6 /* UICollectionViewLeftAlignedLayout.m in Sources */,
 				D7886D5B1D912E20003D6D57 /* TagDetailCtrller.m in Sources */,
 				D75CC6021C2A965000E590E6 /* UIView+WebCacheOperation.m in Sources */,
@@ -2898,6 +2950,7 @@
 				D75CC5F01C2A965000E590E6 /* QNUploadOption.m in Sources */,
 				D7E0F4BA1D87B42D00EA663B /* Article.m in Sources */,
 				D76E84711D780FAC0014FDEA /* MASViewConstraint.m in Sources */,
+				60319DAF1D982F6300BD094D /* CenterTableView.m in Sources */,
 				D76E84A51D79883A0014FDEA /* KICropImageView.m in Sources */,
 				D75CC5CC1C2A965000E590E6 /* MBProgressHUD.m in Sources */,
 				D76E846E1D780FAC0014FDEA /* MASConstraintMaker.m in Sources */,
@@ -2911,6 +2964,7 @@
 				6084057C1D64DDDF00B40D68 /* HPProductCollectionCell.m in Sources */,
 				D7E0F4C51D87F21C00EA663B /* Resource.m in Sources */,
 				608076031D8066EE0056573F /* UIAlternativeButton.m in Sources */,
+				60319DAA1D982E3700BD094D /* XTTableViewRootHandler.m in Sources */,
 				D74589871D6A9DCB00835234 /* HPBigPhotoHeaderView.m in Sources */,
 				D75CC5B71C2A965000E590E6 /* Reachability.m in Sources */,
 				D75CC44A1C2A95DE00E590E6 /* XTNetReloader.m in Sources */,

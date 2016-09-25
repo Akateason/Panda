@@ -81,4 +81,9 @@
     return [[XTColorFetcher class] xt_colorWithKey:@"w_find_ad_white"] ;
 }
 
++ (UIColor *)xt_w_red
+{
+    return [[XTColorFetcher class] xt_colorWithKey:@"w_red"] ;
+}
+
 @end

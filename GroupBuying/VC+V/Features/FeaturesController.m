@@ -7,31 +7,84 @@
 //
 
 #import "FeaturesController.h"
+#import "XTStretchSegment.h"
+#import "XTMultipleTables.h"    
+#import "FeaturesHandler.h"
 
-@interface FeaturesController ()
+#define TopRect             CGRectMake(0, 0, APP_WIDTH, 55.)
+#define MainRect            CGRectMake(0, 55., APP_WIDTH, APP_HEIGHT - 44. - 20. - 55. - 49.)
 
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollview;
-@property (nonatomic,strong) UIImageView *imgView ;
+
+@interface FeaturesController () <XTStretchSegmentDelegate, XTMultipleTablesDelegate>
+
+@property (nonatomic,strong) XTStretchSegment *xtStretchSegment ;
+@property (nonatomic,strong) XTMultipleTables *xtMultipleTables ;
 
 @end
 
 @implementation FeaturesController
 
+#pragma mark - prop
+- (XTStretchSegment *)xtStretchSegment
+{
+    if (!_xtStretchSegment)
+    {
+        _xtStretchSegment = [[XTStretchSegment alloc] initWithFrame:TopRect
+                                                           dataList:@[@"全部",@"护肤",@"个人护理",@"美食",@"家居",@"个人护理",@"美食",@"家居"]
+                                                       overlayImage:[UIImage imageNamed:@"btBase"]
+                                                      hasSpliteLine:false
+                                                               type:TypeBaseLine] ;
+        _xtStretchSegment.xtDelegate = self ;
+        if (![_xtStretchSegment superview]) {
+            [self.view addSubview:_xtStretchSegment] ;
+        }
+    }
+    
+    return _xtStretchSegment ;
+}
+
+#pragma mark - life
 - (void)viewDidLoad
 {
     [super viewDidLoad] ;
     
     
-    UIImage *image = [UIImage imageNamed:@"test_a"] ;
-    float imgWid = image.size.width ;
-    float imgHeight = image.size.height ;
-    CGRect rect = CGRectZero ;
-    rect.size = CGSizeMake(APP_WIDTH, APP_WIDTH * imgHeight / imgWid) ;
-    _imgView = [[UIImageView alloc] initWithFrame:rect] ;
-    _imgView.image = image ;
-    [_scrollview addSubview:_imgView] ;
-    _scrollview.contentSize = _imgView.frame.size ;
+    self.xtMultipleTables = [[XTMultipleTables alloc] initWithFrame:MainRect
+                                                           handlers:nil] ;
+    self.xtMultipleTables.xtDelegate = self ;
+    [self.view addSubview:self.xtMultipleTables] ;
+    
+    [self xtStretchSegment] ;
+
 }
+
+
+
+
+
+
+#pragma mark - XTStretchSegmentDelegate
+- (void)xtStretchSegmentMoveToTheIndex:(NSInteger)index
+                              dataItem:(id)item
+{
+    NSLog(@"xtStretchSegmentMoveToTheIndex %@",@(index)) ;
+    [self.xtMultipleTables xtMultipleTableMoveToTheIndex:(int)index] ;
+}
+
+
+
+
+#pragma mark - XTMultipleTablesDelegate
+- (void)moveToIndexCallBack:(int)index
+{
+    NSLog(@"moveToIndexCallBack %@",@(index)) ;
+    self.xtStretchSegment.currentIndex = index ;
+    [self.xtMultipleTables pulldownCenterTableIfNeeded] ;
+}
+
+
+
+
 
 
 @end
