@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FeaturesProductsCell" rowHeight="326" id="KGk-i7-Jjw" customClass="FeaturesProductsCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="326"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="325"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kzt-sd-9jc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="15"/>
+                        <color key="backgroundColor" red="1" green="0.97254901959999995" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="Pfj-I6-ZFx"/>
+                        </constraints>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EuH-SQ-jeo">
+                        <rect key="frame" x="0.0" y="15" width="320" height="178"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="EuH-SQ-jeo" secondAttribute="height" multiplier="750:418" id="n65-iT-q7H"/>
+                        </constraints>
+                    </imageView>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="S2o-DE-eXp">
+                        <rect key="frame" x="0.0" y="193" width="320" height="132"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="S2o-DE-eXp" secondAttribute="height" multiplier="75:31" id="MGI-az-p39"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="X6c-9h-XRf">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Kzt-sd-9jc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="7cJ-Af-SOt"/>
+                    <constraint firstItem="Kzt-sd-9jc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="JjF-Ce-zmK"/>
+                    <constraint firstItem="EuH-SQ-jeo" firstAttribute="top" secondItem="Kzt-sd-9jc" secondAttribute="bottom" id="KSX-hz-rof"/>
+                    <constraint firstAttribute="trailing" secondItem="S2o-DE-eXp" secondAttribute="trailing" id="a14-iK-btH"/>
+                    <constraint firstAttribute="trailing" secondItem="Kzt-sd-9jc" secondAttribute="trailing" id="aKn-IH-Lbl"/>
+                    <constraint firstAttribute="trailing" secondItem="EuH-SQ-jeo" secondAttribute="trailing" id="bcr-YB-afW"/>
+                    <constraint firstItem="S2o-DE-eXp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="cEu-lG-kec"/>
+                    <constraint firstItem="EuH-SQ-jeo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="d2h-ld-kzT"/>
+                    <constraint firstItem="S2o-DE-eXp" firstAttribute="top" secondItem="EuH-SQ-jeo" secondAttribute="bottom" id="jdF-ud-VHU"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="collectionView" destination="S2o-DE-eXp" id="5Tl-ku-MUz"/>
+                <outlet property="imgView" destination="EuH-SQ-jeo" id="Jlo-hn-6tU"/>
+                <outlet property="topline" destination="Kzt-sd-9jc" id="vC3-dL-bNG"/>
+            </connections>
+            <point key="canvasLocation" x="231" y="237"/>
+        </tableViewCell>
+    </objects>
+</document>

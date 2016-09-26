@@ -8,6 +8,9 @@
 
 #import "FeaturesHandler.h"
 #import "RootTableView.h"
+#import "FeaturesProductsCell.h"
+#import "FVCBannerCell.h"
+#import "FeaturesRecommendCell.h"
 
 @interface FeaturesHandler () <RootTableViewDelegate>
 
@@ -34,25 +37,81 @@
 
 
 #pragma mark - tableView datasource and delegate
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 0 ;
+    return 3 ;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (section == 0 )
+    {
+        return 1 ; // banner
+    }
+    else if (section == 1)
+    {
+        return 2 ; // feature product .
+    }
+    else if (section == 2)
+    {
+        return 1 ; // feature recommend
+    }
     
     return 0 ;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSInteger section = indexPath.section ;
+    if (section == 0 )
+    {
+        FVCBannerCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_FVCBannerCell] ;
+        if (!cell) {
+            [tableView registerNib:[UINib nibWithNibName:kID_FVCBannerCell bundle:nil] forCellReuseIdentifier:kID_FVCBannerCell] ;
+            cell = [tableView dequeueReusableCellWithIdentifier:kID_FVCBannerCell] ;
+        }
+        return cell ;
+    }
+    else if (section == 1)
+    {
+        FeaturesProductsCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_FeaturesProductsCell] ;
+        if (!cell) {
+            [tableView registerNib:[UINib nibWithNibName:kID_FeaturesProductsCell bundle:nil] forCellReuseIdentifier:kID_FeaturesProductsCell] ;
+            cell = [tableView dequeueReusableCellWithIdentifier:kID_FeaturesProductsCell] ;
+        }
+        cell.index = indexPath.row ;
+        return cell ;
+    }
+    else if (section == 2)
+    {
+        FeaturesRecommendCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_FeaturesRecommendCell] ;
+        if (!cell) {
+            [tableView registerNib:[UINib nibWithNibName:kID_FeaturesRecommendCell bundle:nil] forCellReuseIdentifier:kID_FeaturesRecommendCell] ;
+            cell = [tableView dequeueReusableCellWithIdentifier:kID_FeaturesRecommendCell] ;
+        }
+        return cell ;
+    }
 
     return nil ;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSInteger section = indexPath.section ;
+    if (section == 0 )
+    {
+        return [FVCBannerCell getHeight] ;
+    }
+    else if (section == 1)
+    {
+        return [FeaturesProductsCell getHeight] ;
+    }
+    else if (section == 2)
+    {
+        return [FeaturesRecommendCell getHeightWithCount:8] ;
+    }
+    
     return 0. ;
 }
 

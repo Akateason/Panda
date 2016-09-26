@@ -1,43 +1,30 @@
 //
-//  FVCRecommendCell.m
+//  FeaturesRecommendCell.m
 //  GroupBuying
 //
-//  Created by teason on 16/9/21.
+//  Created by TuTu on 16/9/26.
 //  Copyright © 2016年 teason. All rights reserved.
 //
 
-#import "FVCRecommendCell.h"
+#import "FeaturesRecommendCell.h"
 #import "CHTCollectionViewWaterfallLayout.h"
-#import "HPProductCollectionCell.h"
+#import "TDCProductCollectionCell.h"
 
-@interface FVCRecommendCell () <UICollectionViewDelegate,UICollectionViewDataSource,CHTCollectionViewDelegateWaterfallLayout>
+@interface FeaturesRecommendCell () <UICollectionViewDelegate,UICollectionViewDataSource,CHTCollectionViewDelegateWaterfallLayout>
 
-@property (weak, nonatomic) IBOutlet UILabel *labelTitle;
+@property (weak, nonatomic) IBOutlet UIView *topline;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @property (nonatomic,strong) CHTCollectionViewWaterfallLayout *waterflowLayout ;
 
 @end
 
-@implementation FVCRecommendCell
+@implementation FeaturesRecommendCell
 
+#pragma mark -
 + (float)getHeightWithCount:(NSInteger)count
 {
-    return 27. + count / 2 * ([HPProductCollectionCell getSize].height + 3.) ;
-}
-
-#pragma mark - prop
-- (CHTCollectionViewWaterfallLayout *)waterflowLayout
-{
-    if (!_waterflowLayout) {
-        _waterflowLayout = [[CHTCollectionViewWaterfallLayout alloc] init];
-        _waterflowLayout.sectionInset = UIEdgeInsetsMake(10, 0, 0, 0);
-        _waterflowLayout.headerHeight = 0;
-        _waterflowLayout.footerHeight = 0;
-        _waterflowLayout.minimumColumnSpacing = 3;
-        _waterflowLayout.minimumInteritemSpacing = 3;
-    }
-    return _waterflowLayout ;
+    return 15. + count / 2 * ([TDCProductCollectionCell getSize].height + 3.) ;
 }
 
 #pragma mark - life
@@ -45,15 +32,31 @@
 {
     [super awakeFromNib];
     // Initialization code
-    
-    _collectionView.backgroundColor = [UIColor whiteColor] ;
+    _topline.backgroundColor        = [UIColor xt_seperate] ;
+    _collectionView.backgroundColor = [UIColor xt_seperate] ;
     _collectionView.scrollEnabled = false ;
     _collectionView.collectionViewLayout = self.waterflowLayout ;
     _collectionView.dataSource = self;
     _collectionView.delegate = self;
-    [_collectionView registerNib:[UINib nibWithNibName:id_HPProductCollectionCell bundle:[NSBundle mainBundle]]
-      forCellWithReuseIdentifier:id_HPProductCollectionCell] ;
-    
+    [_collectionView registerNib:[UINib nibWithNibName:kID_TDCProductCollectionCell bundle:[NSBundle mainBundle]]
+      forCellWithReuseIdentifier:kID_TDCProductCollectionCell] ;
+
+}
+
+
+
+#pragma mark - prop
+- (CHTCollectionViewWaterfallLayout *)waterflowLayout
+{
+    if (!_waterflowLayout) {
+        _waterflowLayout = [[CHTCollectionViewWaterfallLayout alloc] init];
+        _waterflowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
+        _waterflowLayout.headerHeight = 0;
+        _waterflowLayout.footerHeight = 0;
+        _waterflowLayout.minimumColumnSpacing = 3;
+        _waterflowLayout.minimumInteritemSpacing = 3;
+    }
+    return _waterflowLayout ;
 }
 
 
@@ -71,15 +74,14 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    HPProductCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:id_HPProductCollectionCell forIndexPath:indexPath];
-    cell.index = indexPath.row ;
+    TDCProductCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kID_TDCProductCollectionCell forIndexPath:indexPath];
     //    cell.noteItem = self.listNote[indexPath.row] ;
     return cell;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [HPProductCollectionCell getSize] ;
+    return [TDCProductCollectionCell getSize] ;
 }
 
 #pragma mark - collection delegate
@@ -105,9 +107,14 @@
 
 
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
 
+
+
+
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
+    [super setSelected:selected animated:animated];
     // Configure the view for the selected state
 }
 

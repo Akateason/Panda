@@ -343,6 +343,12 @@
 		D7E994711D94D00100EACDFB /* SettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E9946F1D94D00100EACDFB /* SettingCell.xib */; };
 		D7E994B31D9528CB00EACDFB /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994B21D9528CB00EACDFB /* NSTimer+Addition.m */; };
 		D7E994B61D9528F700EACDFB /* NSObject+Reflection.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994B51D9528F700EACDFB /* NSObject+Reflection.m */; };
+		D7E994BA1D98C67F00EACDFB /* FeaturesProductsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994B81D98C67F00EACDFB /* FeaturesProductsCell.m */; };
+		D7E994BB1D98C67F00EACDFB /* FeaturesProductsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E994B91D98C67F00EACDFB /* FeaturesProductsCell.xib */; };
+		D7E994BF1D98C9D800EACDFB /* FeaturesPdtCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994BD1D98C9D800EACDFB /* FeaturesPdtCollectionCell.m */; };
+		D7E994C01D98C9D800EACDFB /* FeaturesPdtCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E994BE1D98C9D800EACDFB /* FeaturesPdtCollectionCell.xib */; };
+		D7E994C51D98F4FD00EACDFB /* FeaturesRecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994C31D98F4FD00EACDFB /* FeaturesRecommendCell.m */; };
+		D7E994C61D98F4FD00EACDFB /* FeaturesRecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E994C41D98F4FD00EACDFB /* FeaturesRecommendCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -998,6 +1004,15 @@
 		D7E994B21D9528CB00EACDFB /* NSTimer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Addition.m"; sourceTree = "<group>"; };
 		D7E994B41D9528F700EACDFB /* NSObject+Reflection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Reflection.h"; sourceTree = "<group>"; };
 		D7E994B51D9528F700EACDFB /* NSObject+Reflection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Reflection.m"; sourceTree = "<group>"; };
+		D7E994B71D98C67F00EACDFB /* FeaturesProductsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeaturesProductsCell.h; path = "GroupBuying/VC+V/Features/FeaturesProductsCell.h"; sourceTree = SOURCE_ROOT; };
+		D7E994B81D98C67F00EACDFB /* FeaturesProductsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeaturesProductsCell.m; path = "GroupBuying/VC+V/Features/FeaturesProductsCell.m"; sourceTree = SOURCE_ROOT; };
+		D7E994B91D98C67F00EACDFB /* FeaturesProductsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FeaturesProductsCell.xib; path = "GroupBuying/VC+V/Features/FeaturesProductsCell.xib"; sourceTree = SOURCE_ROOT; };
+		D7E994BC1D98C9D800EACDFB /* FeaturesPdtCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeaturesPdtCollectionCell.h; path = "GroupBuying/VC+V/Features/FeaturesPdtCollectionCell.h"; sourceTree = SOURCE_ROOT; };
+		D7E994BD1D98C9D800EACDFB /* FeaturesPdtCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeaturesPdtCollectionCell.m; path = "GroupBuying/VC+V/Features/FeaturesPdtCollectionCell.m"; sourceTree = SOURCE_ROOT; };
+		D7E994BE1D98C9D800EACDFB /* FeaturesPdtCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FeaturesPdtCollectionCell.xib; path = "GroupBuying/VC+V/Features/FeaturesPdtCollectionCell.xib"; sourceTree = SOURCE_ROOT; };
+		D7E994C21D98F4FD00EACDFB /* FeaturesRecommendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeaturesRecommendCell.h; path = "GroupBuying/VC+V/Features/FeaturesRecommendCell.h"; sourceTree = SOURCE_ROOT; };
+		D7E994C31D98F4FD00EACDFB /* FeaturesRecommendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeaturesRecommendCell.m; path = "GroupBuying/VC+V/Features/FeaturesRecommendCell.m"; sourceTree = SOURCE_ROOT; };
+		D7E994C41D98F4FD00EACDFB /* FeaturesRecommendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FeaturesRecommendCell.xib; path = "GroupBuying/VC+V/Features/FeaturesRecommendCell.xib"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1121,6 +1136,7 @@
 				60074E051D60DFEF0040C3C0 /* FeaturesController.m */,
 				60319DB01D98319700BD094D /* FeaturesHandler.h */,
 				60319DB11D98319700BD094D /* FeaturesHandler.m */,
+				D7E994C11D98D16500EACDFB /* FeaturesSubs */,
 			);
 			name = Features1;
 			sourceTree = "<group>";
@@ -2534,6 +2550,22 @@
 			name = Setting;
 			sourceTree = "<group>";
 		};
+		D7E994C11D98D16500EACDFB /* FeaturesSubs */ = {
+			isa = PBXGroup;
+			children = (
+				D7E994B71D98C67F00EACDFB /* FeaturesProductsCell.h */,
+				D7E994B81D98C67F00EACDFB /* FeaturesProductsCell.m */,
+				D7E994B91D98C67F00EACDFB /* FeaturesProductsCell.xib */,
+				D7E994BC1D98C9D800EACDFB /* FeaturesPdtCollectionCell.h */,
+				D7E994BD1D98C9D800EACDFB /* FeaturesPdtCollectionCell.m */,
+				D7E994BE1D98C9D800EACDFB /* FeaturesPdtCollectionCell.xib */,
+				D7E994C21D98F4FD00EACDFB /* FeaturesRecommendCell.h */,
+				D7E994C31D98F4FD00EACDFB /* FeaturesRecommendCell.m */,
+				D7E994C41D98F4FD00EACDFB /* FeaturesRecommendCell.xib */,
+			);
+			name = FeaturesSubs;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2650,7 +2682,9 @@
 				D7886D7E1D93B8A9003D6D57 /* Activity.storyboard in Resources */,
 				60319D841D919C9500BD094D /* HotTagCollectionCell.xib in Resources */,
 				D75CC3D11C2A926100E590E6 /* Assets.xcassets in Resources */,
+				D7E994C61D98F4FD00EACDFB /* FeaturesRecommendCell.xib in Resources */,
 				D76E84051D7528F70014FDEA /* PostAddPhotoCell.xib in Resources */,
+				D7E994BB1D98C67F00EACDFB /* FeaturesProductsCell.xib in Resources */,
 				6035CF2D1D74B3AC00EA590B /* PostContentCell.xib in Resources */,
 				60319D741D91795A00BD094D /* FVCKindsCell.xib in Resources */,
 				D76E83FB1D7524BA0014FDEA /* PostPhotosCell.xib in Resources */,
@@ -2662,6 +2696,7 @@
 				D76E84251D759CD30014FDEA /* PostTagAddCollectionCell.xib in Resources */,
 				60319D691D8F1E8900BD094D /* DetailRecommend Cell.xib in Resources */,
 				D76E838C1D6D48560014FDEA /* AlbumnCell.xib in Resources */,
+				D7E994C01D98C9D800EACDFB /* FeaturesPdtCollectionCell.xib in Resources */,
 				D7E9946C1D94CEF000EACDFB /* Mine.storyboard in Resources */,
 				60319D891D91AE4300BD094D /* FVCRecommendCell.xib in Resources */,
 				D76E84001D7526250014FDEA /* PostPhotoCollectionCell.xib in Resources */,
@@ -2856,6 +2891,7 @@
 				D75CC44F1C2A95DE00E590E6 /* ShareUtils.m in Sources */,
 				D76E846C1D780FAC0014FDEA /* MASCompositeConstraint.m in Sources */,
 				D75CC61D1C2A965000E590E6 /* FBShimmeringLayer.m in Sources */,
+				D7E994BA1D98C67F00EACDFB /* FeaturesProductsCell.m in Sources */,
 				D75CC5B11C2A965000E590E6 /* ASICloudFilesContainer.m in Sources */,
 				D75CC5B41C2A965000E590E6 /* ASICloudFilesObject.m in Sources */,
 				D76E848B1D7817A50014FDEA /* YXLWaterFlowImageView.m in Sources */,
@@ -2887,6 +2923,7 @@
 				D7886D5B1D912E20003D6D57 /* TagDetailCtrller.m in Sources */,
 				D75CC6021C2A965000E590E6 /* UIView+WebCacheOperation.m in Sources */,
 				D75CC7341C2D13C000E590E6 /* YYClassInfo.m in Sources */,
+				D7E994C51D98F4FD00EACDFB /* FeaturesRecommendCell.m in Sources */,
 				6035CF341D75EDBA00EA590B /* TagSearchingCell.m in Sources */,
 				D75CC5C11C2A965000E590E6 /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				D75CC5FB1C2A965000E590E6 /* SDWebImagePrefetcher.m in Sources */,
@@ -2894,6 +2931,7 @@
 				D76E83C21D70280F0014FDEA /* UserInfoView.m in Sources */,
 				D76E84511D77CCAC0014FDEA /* PhotoTaggingCtrller.m in Sources */,
 				D75CC5D31C2A965000E590E6 /* MJRefreshAutoNormalFooter.m in Sources */,
+				D7E994BF1D98C9D800EACDFB /* FeaturesPdtCollectionCell.m in Sources */,
 				D75CC5DE1C2A965000E590E6 /* UIScrollView+MJRefresh.m in Sources */,
 				D75CC6591C2B9A1700E590E6 /* AppDelegateInitial.mm in Sources */,
 				D7E994B61D9528F700EACDFB /* NSObject+Reflection.m in Sources */,

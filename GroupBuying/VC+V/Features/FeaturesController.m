@@ -14,6 +14,7 @@
 #define TopRect             CGRectMake(0, 0, APP_WIDTH, 55.)
 #define MainRect            CGRectMake(0, 55., APP_WIDTH, APP_HEIGHT - 44. - 20. - 55. - 49.)
 
+#define kKindlistTEMP       @[@"全部",@"护肤",@"个人护理",@"美食",@"家居",@"个人护理",@"美食",@"家居"]
 
 @interface FeaturesController () <XTStretchSegmentDelegate, XTMultipleTablesDelegate>
 
@@ -30,7 +31,7 @@
     if (!_xtStretchSegment)
     {
         _xtStretchSegment = [[XTStretchSegment alloc] initWithFrame:TopRect
-                                                           dataList:@[@"全部",@"护肤",@"个人护理",@"美食",@"家居",@"个人护理",@"美食",@"家居"]
+                                                           dataList:kKindlistTEMP
                                                        overlayImage:[UIImage imageNamed:@"btBase"]
                                                       hasSpliteLine:false
                                                                type:TypeBaseLine] ;
@@ -48,9 +49,16 @@
 {
     [super viewDidLoad] ;
     
+    NSMutableArray *tmplist = [@[] mutableCopy] ;
+    for (int i = 0; i < kKindlistTEMP.count; i++)
+    {
+        FeaturesHandler *handler = [[FeaturesHandler alloc] init] ;
+        [tmplist addObject:handler] ;
+    }
+    
     
     self.xtMultipleTables = [[XTMultipleTables alloc] initWithFrame:MainRect
-                                                           handlers:nil] ;
+                                                           handlers:tmplist] ;
     self.xtMultipleTables.xtDelegate = self ;
     [self.view addSubview:self.xtMultipleTables] ;
     
