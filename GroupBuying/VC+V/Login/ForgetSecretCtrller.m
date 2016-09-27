@@ -8,6 +8,9 @@
 
 #import "ForgetSecretCtrller.h"
 #import "ResetSecretCtrller.h"
+#import "UIButton+Countdown.h"
+#import "YYModel.h"
+#import "SVProgressHUD.h"
 
 @interface ForgetSecretCtrller ()
 
@@ -22,15 +25,60 @@
 
 - (IBAction)btCodeOnClick:(id)sender
 {
-    
+    NSLog(@"发送验证码") ;
+
+    [ServerRequest sendVerifyCode:_tf_phone.text
+                          success:^(id json) {
+                              ResultParsered *result = [ResultParsered yy_modelWithJSON:json] ;
+                              if (result.code == 1)
+                              {
+                                  //NSString *checkCode = result.data[@"verificationCode"] ;
+                                  
+                                  [sender startWithTime:59
+                                                  title:@"获取验证码"
+                                         countDownTitle:@"(s)"
+                                              mainColor:[UIColor whiteColor]
+                                             countColor:[UIColor xt_seperate]] ;
+                                  
+                              }
+                          } fail:^{
+                              
+                          }] ;
+
 }
 
 - (IBAction)btCommitOnClick:(id)sender
 {
     NSLog(@"提交") ;
     
-    ResetSecretCtrller *resetVC = (ResetSecretCtrller *)[[self class] getCtrllerFromStory:@"Login" controllerIdentifier:@"ResetSecretCtrller"] ;
-    [self.navigationController pushViewController:resetVC animated:YES] ;
+    if (!self.tf_phone.text.length) {
+        [SVProgressHUD showErrorWithStatus:@"请输入手机号"] ;
+        return ;
+    }
+    else if (!self.tf_code.text.length) {
+        [SVProgressHUD showErrorWithStatus:@"请输入验证码"] ;
+        return ;
+    }
+    
+    
+    [ServerRequest validVerifyCode:self.tf_phone.text
+                        verifyCode:self.tf_code.text
+                           success:^(id json) {
+                               ResultParsered *result = [ResultParsered yy_modelWithJSON:json] ;
+                               if (result.code == 1) {
+                                   
+                                   ResetSecretCtrller *resetVC = (ResetSecretCtrller *)[[self class] getCtrllerFromStory:@"Login" controllerIdentifier:@"ResetSecretCtrller"] ;
+                                   [self.navigationController pushViewController:resetVC animated:YES] ;
+                                   
+                               }
+                               else {
+                                   [SVProgressHUD showErrorWithStatus:@"验证码错误"] ;
+                               }
+                           } fail:^{
+                               
+                           }] ;
+    
+    
 }
 
 - (void)viewDidLoad

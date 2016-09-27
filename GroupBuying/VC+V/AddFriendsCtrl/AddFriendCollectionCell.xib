@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddFriendCollectionCell" id="gTV-IL-0wX" customClass="AddFriendCollectionCell">
+            <rect key="frame" x="0.0" y="0.0" width="83" height="84"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="83" height="84"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="7" translatesAutoresizingMaskIntoConstraints="NO" id="dEf-rG-C47">
+                        <rect key="frame" x="0.0" y="0.0" width="83" height="84"/>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="dEf-rG-C47" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="G0h-Sm-MZW"/>
+                <constraint firstAttribute="bottom" secondItem="dEf-rG-C47" secondAttribute="bottom" id="Gct-Fb-cM1"/>
+                <constraint firstAttribute="trailing" secondItem="dEf-rG-C47" secondAttribute="trailing" id="Sgs-Uu-CKv"/>
+                <constraint firstItem="dEf-rG-C47" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="e1u-YK-lTK"/>
+            </constraints>
+            <size key="customSize" width="83" height="84"/>
+            <connections>
+                <outlet property="imgView" destination="dEf-rG-C47" id="o0d-aA-D31"/>
+            </connections>
+            <point key="canvasLocation" x="345.5" y="305"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="7" width="250" height="334"/>
+    </resources>
+</document>

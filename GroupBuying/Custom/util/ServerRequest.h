@@ -22,13 +22,22 @@
                   success:(void (^)(id json))success
                      fail:(void (^)())fail ;
 
-
 + (void)registerWithUserName:(NSString *)name
                     password:(NSString *)password
+                    nickname:(NSString *)nickname
                      success:(void (^)(id json))success
                         fail:(void (^)())fail ;
 
+#pragma - 发送验证码
++ (void)sendVerifyCode:(NSString *)identifier
+               success:(void (^)(id json))success
+                  fail:(void (^)())fail ;
 
+#pragma - 检验验证码是否正确
++ (void)validVerifyCode:(NSString *)identifier
+             verifyCode:(NSString *)code
+                success:(void (^)(id json))success
+                   fail:(void (^)())fail ;
 
 #pragma -  搜索首页笔记信息
 + (void)homelistWithSearchtype:(NSNumber *)typeNumber

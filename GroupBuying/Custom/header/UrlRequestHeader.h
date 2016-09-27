@@ -18,6 +18,12 @@ static NSString *const URL_USERS_LOGIN          = @"/gwn/user/login" ;
 //用户注册
 static NSString *const URL_USERS_REGISTER       = @"/gwn/user/reg" ;
 
+//发送手机验证码
+static NSString *const URL_VERIFYCODE_CREATE    = @"/gwn/verifycode/create" ;
+
+//检验验证码是否正确
+static NSString *const URL_VERIFYCODE_VALID     = @"/gwn/verifycode/valid" ;
+
 //上传资源
 static NSString *const URL_RESOURCE_UPLOAD      = @"/gwn/s/resource" ;
 

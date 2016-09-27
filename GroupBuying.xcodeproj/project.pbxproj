@@ -357,6 +357,13 @@
 		D7E994D91D99202700EACDFB /* ForgetSecretCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994D81D99202700EACDFB /* ForgetSecretCtrller.m */; };
 		D7E994DC1D99274F00EACDFB /* ChangeSecretCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994DB1D99274F00EACDFB /* ChangeSecretCtrller.m */; };
 		D7E994E11D99398A00EACDFB /* ResetSecretCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994E01D99398A00EACDFB /* ResetSecretCtrller.m */; };
+		D7E994E41D9A1D5C00EACDFB /* UIButton+Countdown.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994E31D9A1D5C00EACDFB /* UIButton+Countdown.m */; };
+		D7E994E71D9A521C00EACDFB /* MineEditAddCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994E61D9A521C00EACDFB /* MineEditAddCtrller.m */; };
+		D7E994EB1D9A56C500EACDFB /* AddFriendsCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994EA1D9A56C500EACDFB /* AddFriendsCtrl.m */; };
+		D7E994EF1D9A5E0200EACDFB /* AddFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994ED1D9A5E0200EACDFB /* AddFriendCell.m */; };
+		D7E994F01D9A5E0200EACDFB /* AddFriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E994EE1D9A5E0200EACDFB /* AddFriendCell.xib */; };
+		D7E994F41D9A6A9F00EACDFB /* AddFriendCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994F21D9A6A9F00EACDFB /* AddFriendCollectionCell.m */; };
+		D7E994F51D9A6A9F00EACDFB /* AddFriendCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E994F31D9A6A9F00EACDFB /* AddFriendCollectionCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1035,6 +1042,18 @@
 		D7E994DB1D99274F00EACDFB /* ChangeSecretCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChangeSecretCtrller.m; path = "GroupBuying/VC+V/Login/ChangeSecretCtrller.m"; sourceTree = SOURCE_ROOT; };
 		D7E994DF1D99398A00EACDFB /* ResetSecretCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResetSecretCtrller.h; path = "GroupBuying/VC+V/Login/ResetSecretCtrller.h"; sourceTree = SOURCE_ROOT; };
 		D7E994E01D99398A00EACDFB /* ResetSecretCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResetSecretCtrller.m; path = "GroupBuying/VC+V/Login/ResetSecretCtrller.m"; sourceTree = SOURCE_ROOT; };
+		D7E994E21D9A1D5C00EACDFB /* UIButton+Countdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Countdown.h"; sourceTree = "<group>"; };
+		D7E994E31D9A1D5C00EACDFB /* UIButton+Countdown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Countdown.m"; sourceTree = "<group>"; };
+		D7E994E51D9A521C00EACDFB /* MineEditAddCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MineEditAddCtrller.h; path = "GroupBuying/VC+V/Mine/MineUserEdit/MineEditAddCtrller.h"; sourceTree = SOURCE_ROOT; };
+		D7E994E61D9A521C00EACDFB /* MineEditAddCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MineEditAddCtrller.m; path = "GroupBuying/VC+V/Mine/MineUserEdit/MineEditAddCtrller.m"; sourceTree = SOURCE_ROOT; };
+		D7E994E91D9A56C500EACDFB /* AddFriendsCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddFriendsCtrl.h; path = "GroupBuying/VC+V/AddFriendsCtrl/AddFriendsCtrl.h"; sourceTree = SOURCE_ROOT; };
+		D7E994EA1D9A56C500EACDFB /* AddFriendsCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddFriendsCtrl.m; path = "GroupBuying/VC+V/AddFriendsCtrl/AddFriendsCtrl.m"; sourceTree = SOURCE_ROOT; };
+		D7E994EC1D9A5E0200EACDFB /* AddFriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddFriendCell.h; path = "GroupBuying/VC+V/AddFriendsCtrl/AddFriendCell.h"; sourceTree = SOURCE_ROOT; };
+		D7E994ED1D9A5E0200EACDFB /* AddFriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddFriendCell.m; path = "GroupBuying/VC+V/AddFriendsCtrl/AddFriendCell.m"; sourceTree = SOURCE_ROOT; };
+		D7E994EE1D9A5E0200EACDFB /* AddFriendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddFriendCell.xib; path = "GroupBuying/VC+V/AddFriendsCtrl/AddFriendCell.xib"; sourceTree = SOURCE_ROOT; };
+		D7E994F11D9A6A9F00EACDFB /* AddFriendCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddFriendCollectionCell.h; path = "GroupBuying/VC+V/AddFriendsCtrl/AddFriendCollectionCell.h"; sourceTree = SOURCE_ROOT; };
+		D7E994F21D9A6A9F00EACDFB /* AddFriendCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddFriendCollectionCell.m; path = "GroupBuying/VC+V/AddFriendsCtrl/AddFriendCollectionCell.m"; sourceTree = SOURCE_ROOT; };
+		D7E994F31D9A6A9F00EACDFB /* AddFriendCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddFriendCollectionCell.xib; path = "GroupBuying/VC+V/AddFriendsCtrl/AddFriendCollectionCell.xib"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1476,6 +1495,7 @@
 		D75CC3F71C2A92B200E590E6 /* VC+V */ = {
 			isa = PBXGroup;
 			children = (
+				D7E994E81D9A569A00EACDFB /* AddFriends */,
 				60074DF91D60DEC90040C3C0 /* HomePage1 */,
 				60074E001D60DF410040C3C0 /* Find1 */,
 				60074DFF1D60DF3C0040C3C0 /* Features1 */,
@@ -1576,6 +1596,8 @@
 				D75CC4091C2A95DD00E590E6 /* UILabel+Badges.m */,
 				D75CC40A1C2A95DD00E590E6 /* UIView+Sizes.h */,
 				D75CC40B1C2A95DD00E590E6 /* UIView+Sizes.m */,
+				D7E994E21D9A1D5C00EACDFB /* UIButton+Countdown.h */,
+				D7E994E31D9A1D5C00EACDFB /* UIButton+Countdown.m */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -2606,8 +2628,25 @@
 				D7E994D21D99122C00EACDFB /* MineEditCell.h */,
 				D7E994D31D99122C00EACDFB /* MineEditCell.m */,
 				D7E994D41D99122C00EACDFB /* MineEditCell.xib */,
+				D7E994E51D9A521C00EACDFB /* MineEditAddCtrller.h */,
+				D7E994E61D9A521C00EACDFB /* MineEditAddCtrller.m */,
 			);
 			name = MineUserEdit;
+			sourceTree = "<group>";
+		};
+		D7E994E81D9A569A00EACDFB /* AddFriends */ = {
+			isa = PBXGroup;
+			children = (
+				D7E994E91D9A56C500EACDFB /* AddFriendsCtrl.h */,
+				D7E994EA1D9A56C500EACDFB /* AddFriendsCtrl.m */,
+				D7E994EC1D9A5E0200EACDFB /* AddFriendCell.h */,
+				D7E994ED1D9A5E0200EACDFB /* AddFriendCell.m */,
+				D7E994EE1D9A5E0200EACDFB /* AddFriendCell.xib */,
+				D7E994F11D9A6A9F00EACDFB /* AddFriendCollectionCell.h */,
+				D7E994F21D9A6A9F00EACDFB /* AddFriendCollectionCell.m */,
+				D7E994F31D9A6A9F00EACDFB /* AddFriendCollectionCell.xib */,
+			);
+			name = AddFriends;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2735,6 +2774,7 @@
 				D76E83FB1D7524BA0014FDEA /* PostPhotosCell.xib in Resources */,
 				60319D941D92C0F100BD094D /* Find.storyboard in Resources */,
 				60319D8E1D91B4D000BD094D /* ActivityPageCell.xib in Resources */,
+				D7E994F01D9A5E0200EACDFB /* AddFriendCell.xib in Resources */,
 				D76E83F61D7439950014FDEA /* UserNotesCollectionTableViewCell.xib in Resources */,
 				D7E994D11D990F1C00EACDFB /* MineEditHeadCell.xib in Resources */,
 				D7886D601D914B58003D6D57 /* TDCProductCollectionCell.xib in Resources */,
@@ -2751,6 +2791,7 @@
 				60319D991D92C34700BD094D /* HotProductListCell.xib in Resources */,
 				60319D791D91849600BD094D /* FVCKindCollectionCell.xib in Resources */,
 				608405831D67F62500B40D68 /* HPBigPhotoCollectionCell.xib in Resources */,
+				D7E994F51D9A6A9F00EACDFB /* AddFriendCollectionCell.xib in Resources */,
 				D76E83C61D7028680014FDEA /* UserInfoView.xib in Resources */,
 				D76E839D1D6EA1D90014FDEA /* testUser.plist in Resources */,
 				D76E84401D76D6A90014FDEA /* EditorPhotosCollectionCell.xib in Resources */,
@@ -2813,6 +2854,7 @@
 				D75CC5E91C2A965000E590E6 /* QNSessionManager.m in Sources */,
 				D75CC61F1C2A965000E590E6 /* YXSpritesLoadingView.m in Sources */,
 				D76E83BE1D70175D0014FDEA /* ParallaxHeaderView.m in Sources */,
+				D7E994E71D9A521C00EACDFB /* MineEditAddCtrller.m in Sources */,
 				D7E994D51D99122C00EACDFB /* MineEditCell.m in Sources */,
 				D75CC5FF1C2A965000E590E6 /* UIImage+WebP.m in Sources */,
 				D75CC5AC1C2A965000E590E6 /* ASIFormDataRequest.m in Sources */,
@@ -2936,6 +2978,7 @@
 				D75CC43C1C2A95DE00E590E6 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,
 				D75CC5B51C2A965000E590E6 /* ASICloudFilesObjectRequest.m in Sources */,
 				D75CC6C11C2BEB0400E590E6 /* MyTabbarCtrller.m in Sources */,
+				D7E994EB1D9A56C500EACDFB /* AddFriendsCtrl.m in Sources */,
 				D75CC5B81C2A965000E590E6 /* ASIS3Bucket.m in Sources */,
 				D76E84091D755FDD0014FDEA /* PreviewCtrller.m in Sources */,
 				D75CC44F1C2A95DE00E590E6 /* ShareUtils.m in Sources */,
@@ -2954,6 +2997,7 @@
 				D75CC4511C2A95DE00E590E6 /* XTFileManager.m in Sources */,
 				D75CC5F81C2A965000E590E6 /* SDWebImageDownloader.m in Sources */,
 				D75CC5E81C2A965000E590E6 /* QNResponseInfo.m in Sources */,
+				D7E994F41D9A6A9F00EACDFB /* AddFriendCollectionCell.m in Sources */,
 				D76E83821D6D3F010014FDEA /* CameraViewController.m in Sources */,
 				D75CC5CD1C2A965000E590E6 /* MJRefreshAutoFooter.m in Sources */,
 				D75CC5F41C2A965000E590E6 /* NSData+ImageContentType.m in Sources */,
@@ -3012,6 +3056,7 @@
 				D75CC5F61C2A965000E590E6 /* SDWebImageCompat.m in Sources */,
 				60319D9D1D9437E000BD094D /* MineCell.m in Sources */,
 				D75CC7331C2D13C000E590E6 /* NSObject+YYModel.m in Sources */,
+				D7E994EF1D9A5E0200EACDFB /* AddFriendCell.m in Sources */,
 				D76E839A1D6DA6540014FDEA /* CameraGroupCell.m in Sources */,
 				D76E843F1D76D6A90014FDEA /* EditorPhotosCollectionCell.m in Sources */,
 				D75CC5AE1C2A965000E590E6 /* ASIInputStream.m in Sources */,
@@ -3050,6 +3095,7 @@
 				D75CC6001C2A965000E590E6 /* UIImageView+HighlightedWebCache.m in Sources */,
 				60319D8D1D91B4D000BD094D /* ActivityPageCell.m in Sources */,
 				60074E121D634AA50040C3C0 /* XTJson.m in Sources */,
+				D7E994E41D9A1D5C00EACDFB /* UIButton+Countdown.m in Sources */,
 				D76E838F1D6D49790014FDEA /* AlbumOperation.m in Sources */,
 				6084057C1D64DDDF00B40D68 /* HPProductCollectionCell.m in Sources */,
 				D7E0F4C51D87F21C00EA663B /* Resource.m in Sources */,

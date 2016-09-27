@@ -48,12 +48,16 @@
 
 + (void)registerWithUserName:(NSString *)name
                     password:(NSString *)password
+                    nickname:(NSString *)nickname
                      success:(void (^)(id json))success
                         fail:(void (^)())fail
 {
     NSMutableDictionary *paramer = [self getParameters] ;
     [paramer setObject:name forKey:@"userName"] ;
     [paramer setObject:password forKey:@"password"] ;
+    if (nickname) {
+        [paramer setObject:nickname forKey:@"nickName"] ;
+    }
     
     [XTRequest POSTWithUrl:[self getFinalUrl:URL_USERS_REGISTER]
                parameters:paramer
@@ -63,6 +67,45 @@
         if (fail) fail();
     }] ;
 }
+
++ (void)sendVerifyCode:(NSString *)identifier
+               success:(void (^)(id json))success
+                  fail:(void (^)())fail
+{
+    NSMutableDictionary *paramer = [self getParameters] ;
+    [paramer setObject:identifier forKey:@"identifier"] ;
+    
+    [XTRequest POSTWithUrl:[self getFinalUrl:URL_VERIFYCODE_CREATE]
+                parameters:paramer
+                   success:^(id json) {
+                       if (success) success(json);
+
+                   } fail:^{
+                       if (fail) fail();
+
+                   }] ;
+}
+
++ (void)validVerifyCode:(NSString *)identifier
+             verifyCode:(NSString *)code
+                success:(void (^)(id json))success
+                   fail:(void (^)())fail
+{
+    NSMutableDictionary *paramer = [self getParameters] ;
+    [paramer setObject:identifier forKey:@"identifier"] ;
+    [paramer setObject:code forKey:@"code"] ;
+    
+    [XTRequest POSTWithUrl:[self getFinalUrl:URL_VERIFYCODE_VALID]
+                parameters:paramer
+                   success:^(id json) {
+                       if (success) success(json);
+
+                   } fail:^{
+                       if (fail) fail();
+
+                   }] ;
+}
+
 
 + (void)homelistWithSearchtype:(NSNumber *)typeNumber
                        refresh:(NSNumber *)refreshNumber

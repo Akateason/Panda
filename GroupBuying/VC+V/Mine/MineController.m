@@ -16,6 +16,7 @@
 #import "MineUserInfoCell.h"
 #import "MineCell.h"
 #import "SettingCtrller.h"
+#import "AddFriendsCtrl.h"
 
 @interface MineController () <UITableViewDataSource,UITableViewDelegate>
 
@@ -31,6 +32,9 @@
 - (IBAction)addFriendsOnClick:(id)sender
 {
     NSLog(@"添加好友") ;
+    AddFriendsCtrl *addfriendVC = (AddFriendsCtrl *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"AddFriendsCtrl"] ;
+    [addfriendVC setHidesBottomBarWhenPushed:YES] ;
+    [self.navigationController pushViewController:addfriendVC animated:YES] ;
 }
 
 - (IBAction)settingOnClick:(id)sender
