@@ -17,5 +17,6 @@
 // 打开方式
 @property (nonatomic) CameraViewControllerOpenType  openType ;
 
+- (void)refreshCollectionView ;
 
 @end

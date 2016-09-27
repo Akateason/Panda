@@ -200,13 +200,13 @@ static const CGFloat flexToCenterX      = (widthAndHeight / 2 + 5.) ;
 {
     CGFloat X , Y ;
     if (isPositiveAndNegative) {
-        X = point.x * CGWidth(self.frame) - 8 ;
+        X = (CGFloat)point.x * (CGFloat)CGWidth(self.frame) - 8.f ;
     } else {
-        X = point.x * CGWidth(self.frame) ;
+        X = (CGFloat)point.x * (CGFloat)CGWidth(self.frame) ;
     }
-    Y = point.y * CGHeight(self.frame) ;
+    Y = (CGFloat)point.y * (CGFloat)CGHeight(self.frame) ;
     
-    NSLog(@"X%@,Y%@",@(X),@(Y)) ;
+    NSLog(@"X: %@,Y: %@",@(X),@(Y)) ;
     
     CGPoint pointimageScale = CGPointMake(X, Y + imageLabelIcon.size.height / 2) ;
     [self addtagViewimageClickinit:pointimageScale
@@ -217,7 +217,7 @@ static const CGFloat flexToCenterX      = (widthAndHeight / 2 + 5.) ;
     
     viewTag.typeStr = typeStr ;
     
-    [arrayInitDidView addObject:[NSString stringWithFormat:@"%d",isPositiveAndNegative]] ;
+    [arrayInitDidView addObject:[NSString stringWithFormat:@"%d",isPositiveAndNegative]] ;        
 }
 
 - (void)didMoveToWindow
@@ -475,13 +475,16 @@ static const CGFloat flexToCenterX      = (widthAndHeight / 2 + 5.) ;
             [self clickViewMBP] ;
             return  ;
         }
+        [[UIApplication sharedApplication] setStatusBarHidden:YES] ;
         viewTag.typeStr = kButtonKeys[sender.tag - kTagForButton] ;
         viewTag.imageLabel.labelWaterFlow.text = text;
         viewTag.isImageLabelShow = YES ;
         [self clickViewMBP] ;
         [ws correct:text isPositiveAndNegative:YES] ;
     } ;
-    [self.viewC presentViewController:vc animated:YES completion:nil] ;
+    [self.viewC presentViewController:vc animated:YES completion:^{
+        [[UIApplication sharedApplication] setStatusBarHidden:NO] ;
+    }] ;
 }
 
 
@@ -517,11 +520,11 @@ static const CGFloat flexToCenterX      = (widthAndHeight / 2 + 5.) ;
     UIImageView *image = [UIImageView new] ;
     image.contentMode = UIViewContentModeScaleAspectFit ;
     UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickimagePreviews:)] ;
-    tap.numberOfTapsRequired = 1;
-    tap.numberOfTouchesRequired = 1;
-    tap.delegate = self;
-    [image addGestureRecognizer:tap];
-    return image;
+    tap.numberOfTapsRequired = 1 ;
+    tap.numberOfTouchesRequired = 1 ;
+    tap.delegate = self ;
+    [image addGestureRecognizer:tap] ;
+    return image ;
 }
 
 - (UIButton *)configureButtonWithTag:(NSInteger)btTag
@@ -558,14 +561,14 @@ static const CGFloat flexToCenterX      = (widthAndHeight / 2 + 5.) ;
     for (YXLTagView *tag in arrayTagS)
     {
         positiveAndNegative = @"RIGHT" ;
-        pX = CGOriginX(tag.frame) / CGWidth(self.frame) ;
-        pY = CGOriginY(tag.frame) / CGHeight(self.frame) ;
+        pX = (float)CGOriginX(tag.frame) / (float)CGWidth(self.frame) ;
+        pY = (float)CGOriginY(tag.frame) / (float)CGHeight(self.frame) ;
         
         if(tag.isPositiveAndNegative == YES)
         {
             positiveAndNegative = @"LEFT" ;
-            pX = CGRectGetMaxX(tag.frame) / CGWidth(self.frame) ;
-            pY = CGOriginY(tag.frame) / CGHeight(self.frame) ;
+            pX = (float)CGRectGetMaxX(tag.frame) / (float)CGWidth(self.frame) ;
+            pY = (float)CGOriginY(tag.frame) / (float)CGHeight(self.frame) ;
         }
         NSDictionary *dic = @{@"posType":positiveAndNegative ,
                               @"posX":@(pX) ,

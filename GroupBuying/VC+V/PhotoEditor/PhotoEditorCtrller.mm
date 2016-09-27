@@ -36,16 +36,10 @@
 
 @implementation PhotoEditorCtrller
 
-- (NSArray *)listTagItems
+#pragma mark - func
+- (void)refreshCollectionView
 {
-    if (!_listTagItems) {
-        NSMutableArray *tmpList = [@[] mutableCopy] ;
-        for (int i = 0; i < self.listPhotos.count; i++) {
-            [tmpList addObject:[NSNull null]] ;
-        }
-        _listTagItems = tmpList ;
-    }
-    return _listTagItems ;
+    [_collectionView reloadData] ;
 }
 
 #pragma mark - action
@@ -163,6 +157,20 @@
 }
 
 
+- (NSArray *)listTagItems
+{
+    if (!_listTagItems) {
+        NSMutableArray *tmpList = [@[] mutableCopy] ;
+        for (int i = 0; i < self.listPhotos.count; i++) {
+            [tmpList addObject:[NSNull null]] ;
+        }
+        _listTagItems = tmpList ;
+    }
+    return _listTagItems ;
+}
+
+
+
 #pragma mark - life
 - (void)viewDidLoad
 {
@@ -211,6 +219,7 @@
     EditorPhotosCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:idEditorPhotosCollectionCell
                                                                                  forIndexPath:indexPath] ;
     cell.image = self.listPhotos[indexPath.row] ;
+//    cell.items = self.listTagItems[indexPath.row] ;
     return cell ;
 }
 
@@ -264,6 +273,7 @@
         PhotoTaggingCtrller *tagCtrl = segue.destinationViewController ;
         tagCtrl.editVC = self ;
         tagCtrl.indexInPhotoList = self.currentIndex - 1 ;
+        tagCtrl.items = self.listTagItems[self.currentIndex - 1] ;
         tagCtrl.image = sender ;
     }
     else if ([segue.identifier isEqualToString:@"editor2Post"])

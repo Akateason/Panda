@@ -96,12 +96,12 @@
 
 - (YXLTagEditorImageView *)tagEditorImageView
 {
-    if (!_tagEditorImageView) {
+    if (!_tagEditorImageView)
+    {
         CGRect rect = CGRectZero ;
         rect.size = CGSizeMake(APP_WIDTH, APP_WIDTH * 1000 / 750) ;
         _tagEditorImageView = [[YXLTagEditorImageView alloc] initWithImage:nil frame:rect] ;
         _tagEditorImageView.userInteractionEnabled = NO ;
-//        _tagEditorImageView.viewC = self ;
     }
     return _tagEditorImageView ;
 }

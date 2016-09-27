@@ -36,11 +36,11 @@
 - (IBAction)btSaveOnClick:(id)sender
 {
     NSMutableArray *dicList = [self.tagEditorImageView popTagModel];
-    if (dicList.count == 0)
-    {
-        [self.navigationController popViewControllerAnimated:YES];
-        return;
-    }
+//    if (dicList.count == 0)
+//    {
+//        [self.navigationController popViewControllerAnimated:YES];
+//        return;
+//    }
    
     NSMutableArray *tagItemInfoList = [@[] mutableCopy] ;
     for (NSDictionary *dic in dicList)
@@ -52,7 +52,7 @@
     NSMutableArray *tmplist = [self.editVC.listTagItems mutableCopy] ;
     [tmplist replaceObjectAtIndex:self.indexInPhotoList withObject:tagItemInfoList] ;
     self.editVC.listTagItems = tmplist ;
-
+    [self.editVC refreshCollectionView] ;
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -77,23 +77,31 @@
 {
     [super viewDidLoad];
     
-    
     // Do any additional setup after loading the view.
     [self.view addSubview:self.tagEditorImageView];
     [self.tagEditorImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
     
-//    self.tagEditorImageView.imagePreviews.image = self.image ;
-//    [self.tagEditorImageView scaledFrame] ;
-    
-//    [_tagEditorImageView addTagViewText:@"哈哈哈哈" Location:CGPointMake(111,222) isPositiveAndNegative:YES type:@"LOCATION"] ;
-//    [_tagEditorImageView addTagViewText:@"哈哈lalallallal" Location:CGPointMake(222, 111) isPositiveAndNegative:NO type:@"LOCATION"] ;
-    
-    
     [self configureUIs] ;
-
 }
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated] ;
+    
+    if (self.items != nil && ![self.items isKindOfClass:[NSNull class]]) {
+        for (int i = 0; i < self.items.count; i++)
+        {
+            ArticlePicItemInfo *itemInfo = self.items[i] ;
+            [self.tagEditorImageView addTagViewText:itemInfo.text
+                                           Location:CGPointMake(itemInfo.posX, itemInfo.posY)
+                              isPositiveAndNegative:[itemInfo positiveOrNagitive]
+                                               type:itemInfo.type] ;
+        }
+    }
+}
+
 
 - (void)configureUIs
 {

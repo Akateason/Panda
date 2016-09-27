@@ -13,7 +13,6 @@ static NSString *id_HPBigPhotoCollectionCell = @"HPBigPhotoCollectionCell" ;
 
 @interface HPBigPhotoCollectionCell : UICollectionViewCell
 
-//@property (nonatomic) int index ;
 @property (nonatomic,strong) NoteListViewItem *noteItem ;
 
 + (CGSize)getSizeWithTitleStr:(NSString *)titleStr ;

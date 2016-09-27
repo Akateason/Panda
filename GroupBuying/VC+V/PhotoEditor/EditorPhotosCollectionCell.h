@@ -14,5 +14,6 @@ static NSString * idEditorPhotosCollectionCell = @"EditorPhotosCollectionCell" ;
 @interface EditorPhotosCollectionCell : UICollectionViewCell
 
 @property (nonatomic,strong) UIImage *image ;
+//@property (nonatomic,strong) NSArray *items ;
 
 @end
