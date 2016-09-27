@@ -10,6 +10,7 @@
 #import "SVProgressHUD.h"
 #import "YYModel.h"
 #import "UserOnDevice.h"
+#import "ForgetSecretCtrller.h"
 
 @interface LoginViewController ()
 
@@ -74,7 +75,9 @@
 
 - (IBAction)btForgetOnClick:(id)sender
 {
-    NSLog(@"忘记密码") ;
+    NSLog(@"忘记密码") ;    
+    ForgetSecretCtrller *forgetVC = (ForgetSecretCtrller *)[[self class] getCtrllerFromStory:@"Login" controllerIdentifier:@"ForgetSecretCtrller"] ;
+    [self.navigationController pushViewController:forgetVC animated:YES] ;
 }
 
 

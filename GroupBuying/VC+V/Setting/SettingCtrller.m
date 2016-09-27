@@ -10,6 +10,10 @@
 #import "SettingCell.h"
 #import "SIAlertView.h"
 #import "UserOnDevice.h"
+#import "MineUserEditCtrl.h"
+#import "SDImageCache.h"
+#import "SVProgressHUD.h"
+#import "ChangeSecretCtrller.h"
 
 @interface SettingCtrller () <UITableViewDataSource,UITableViewDelegate>
 
@@ -143,13 +147,26 @@ static NSString *const kIdentifierFooter = @"mycell_footer" ;
     if (section == 0) {
         if (row == 0) {
         // @"个人资料"
+            MineUserEditCtrl *userEditVC = (MineUserEditCtrl *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"MineUserEditCtrl"] ;
+            [self.navigationController pushViewController:userEditVC animated:YES] ;
         }
         else if (row == 1) {
         // @"修改密码"
+            ChangeSecretCtrller * changeSecretVC = (ChangeSecretCtrller *)[[ChangeSecretCtrller class] getCtrllerFromStory:@"Login" controllerIdentifier:@"ChangeSecretCtrller"] ;
+            [self.navigationController pushViewController:changeSecretVC animated:YES] ;
         }
     }
     else if (section == 1) {
-    // @"清楚缓存"] ;
+        // @"清楚缓存"] ;
+        SIAlertView *alert = [[SIAlertView alloc] initWithTitle:nil andMessage:@"确实要清除缓存吗?"] ;
+        [alert addButtonWithTitle:@"确认" type:SIAlertViewButtonTypeDestructive handler:^(SIAlertView *alertView) {
+            [SVProgressHUD show] ;
+            [[SDImageCache sharedImageCache] cleanDiskWithCompletionBlock:^{
+                [SVProgressHUD dismiss] ;
+            }] ;
+        }] ;
+        [alert addButtonWithTitle:@"取消" type:SIAlertViewButtonTypeCancel handler:nil] ;
+        [alert show] ;
     }
     else if (section == 2) {
         if (row == 0) {

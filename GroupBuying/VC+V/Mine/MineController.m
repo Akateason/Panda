@@ -66,8 +66,6 @@
     
     [[UIApplication sharedApplication] setStatusBarHidden:NO] ;
     [self.navigationController setNavigationBarHidden:NO] ;
-    
-//    [UserOnDevice  clean] ;
 }
 
 

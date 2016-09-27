@@ -349,6 +349,14 @@
 		D7E994C01D98C9D800EACDFB /* FeaturesPdtCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E994BE1D98C9D800EACDFB /* FeaturesPdtCollectionCell.xib */; };
 		D7E994C51D98F4FD00EACDFB /* FeaturesRecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994C31D98F4FD00EACDFB /* FeaturesRecommendCell.m */; };
 		D7E994C61D98F4FD00EACDFB /* FeaturesRecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E994C41D98F4FD00EACDFB /* FeaturesRecommendCell.xib */; };
+		D7E994CA1D990C7C00EACDFB /* MineUserEditCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994C91D990C7C00EACDFB /* MineUserEditCtrl.m */; };
+		D7E994D01D990F1C00EACDFB /* MineEditHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994CE1D990F1C00EACDFB /* MineEditHeadCell.m */; };
+		D7E994D11D990F1C00EACDFB /* MineEditHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E994CF1D990F1C00EACDFB /* MineEditHeadCell.xib */; };
+		D7E994D51D99122C00EACDFB /* MineEditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994D31D99122C00EACDFB /* MineEditCell.m */; };
+		D7E994D61D99122C00EACDFB /* MineEditCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E994D41D99122C00EACDFB /* MineEditCell.xib */; };
+		D7E994D91D99202700EACDFB /* ForgetSecretCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994D81D99202700EACDFB /* ForgetSecretCtrller.m */; };
+		D7E994DC1D99274F00EACDFB /* ChangeSecretCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994DB1D99274F00EACDFB /* ChangeSecretCtrller.m */; };
+		D7E994E11D99398A00EACDFB /* ResetSecretCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994E01D99398A00EACDFB /* ResetSecretCtrller.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1013,6 +1021,20 @@
 		D7E994C21D98F4FD00EACDFB /* FeaturesRecommendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeaturesRecommendCell.h; path = "GroupBuying/VC+V/Features/FeaturesRecommendCell.h"; sourceTree = SOURCE_ROOT; };
 		D7E994C31D98F4FD00EACDFB /* FeaturesRecommendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeaturesRecommendCell.m; path = "GroupBuying/VC+V/Features/FeaturesRecommendCell.m"; sourceTree = SOURCE_ROOT; };
 		D7E994C41D98F4FD00EACDFB /* FeaturesRecommendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FeaturesRecommendCell.xib; path = "GroupBuying/VC+V/Features/FeaturesRecommendCell.xib"; sourceTree = SOURCE_ROOT; };
+		D7E994C81D990C7C00EACDFB /* MineUserEditCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MineUserEditCtrl.h; path = "GroupBuying/VC+V/Mine/MineUserEdit/MineUserEditCtrl.h"; sourceTree = SOURCE_ROOT; };
+		D7E994C91D990C7C00EACDFB /* MineUserEditCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MineUserEditCtrl.m; path = "GroupBuying/VC+V/Mine/MineUserEdit/MineUserEditCtrl.m"; sourceTree = SOURCE_ROOT; };
+		D7E994CD1D990F1C00EACDFB /* MineEditHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MineEditHeadCell.h; path = "GroupBuying/VC+V/Mine/MineUserEdit/MineEditHeadCell.h"; sourceTree = SOURCE_ROOT; };
+		D7E994CE1D990F1C00EACDFB /* MineEditHeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MineEditHeadCell.m; path = "GroupBuying/VC+V/Mine/MineUserEdit/MineEditHeadCell.m"; sourceTree = SOURCE_ROOT; };
+		D7E994CF1D990F1C00EACDFB /* MineEditHeadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MineEditHeadCell.xib; path = "GroupBuying/VC+V/Mine/MineUserEdit/MineEditHeadCell.xib"; sourceTree = SOURCE_ROOT; };
+		D7E994D21D99122C00EACDFB /* MineEditCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MineEditCell.h; path = "GroupBuying/VC+V/Mine/MineUserEdit/MineEditCell.h"; sourceTree = SOURCE_ROOT; };
+		D7E994D31D99122C00EACDFB /* MineEditCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MineEditCell.m; path = "GroupBuying/VC+V/Mine/MineUserEdit/MineEditCell.m"; sourceTree = SOURCE_ROOT; };
+		D7E994D41D99122C00EACDFB /* MineEditCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MineEditCell.xib; path = "GroupBuying/VC+V/Mine/MineUserEdit/MineEditCell.xib"; sourceTree = SOURCE_ROOT; };
+		D7E994D71D99202700EACDFB /* ForgetSecretCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForgetSecretCtrller.h; path = "GroupBuying/VC+V/Login/ForgetSecretCtrller.h"; sourceTree = SOURCE_ROOT; };
+		D7E994D81D99202700EACDFB /* ForgetSecretCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ForgetSecretCtrller.m; path = "GroupBuying/VC+V/Login/ForgetSecretCtrller.m"; sourceTree = SOURCE_ROOT; };
+		D7E994DA1D99274F00EACDFB /* ChangeSecretCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangeSecretCtrller.h; path = "GroupBuying/VC+V/Login/ChangeSecretCtrller.h"; sourceTree = SOURCE_ROOT; };
+		D7E994DB1D99274F00EACDFB /* ChangeSecretCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChangeSecretCtrller.m; path = "GroupBuying/VC+V/Login/ChangeSecretCtrller.m"; sourceTree = SOURCE_ROOT; };
+		D7E994DF1D99398A00EACDFB /* ResetSecretCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResetSecretCtrller.h; path = "GroupBuying/VC+V/Login/ResetSecretCtrller.h"; sourceTree = SOURCE_ROOT; };
+		D7E994E01D99398A00EACDFB /* ResetSecretCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResetSecretCtrller.m; path = "GroupBuying/VC+V/Login/ResetSecretCtrller.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1109,9 +1131,10 @@
 		60074DFD1D60DF2F0040C3C0 /* Mine1 */ = {
 			isa = PBXGroup;
 			children = (
+				D7E9945E1D93D3AC00EACDFB /* MineSubs */,
 				60074E0A1D60E0180040C3C0 /* MineController.h */,
 				60074E0B1D60E0180040C3C0 /* MineController.m */,
-				D7E9945E1D93D3AC00EACDFB /* MineSubs */,
+				D7E994C71D990C3000EACDFB /* MineUserEdit */,
 			);
 			name = Mine1;
 			sourceTree = "<group>";
@@ -2520,6 +2543,12 @@
 				D7E0F4C81D88032600EA663B /* LoginViewController.m */,
 				D7E0F4CC1D880E8E00EA663B /* RegisterViewController.h */,
 				D7E0F4CD1D880E8E00EA663B /* RegisterViewController.m */,
+				D7E994DA1D99274F00EACDFB /* ChangeSecretCtrller.h */,
+				D7E994DB1D99274F00EACDFB /* ChangeSecretCtrller.m */,
+				D7E994D71D99202700EACDFB /* ForgetSecretCtrller.h */,
+				D7E994D81D99202700EACDFB /* ForgetSecretCtrller.m */,
+				D7E994DF1D99398A00EACDFB /* ResetSecretCtrller.h */,
+				D7E994E01D99398A00EACDFB /* ResetSecretCtrller.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -2564,6 +2593,21 @@
 				D7E994C41D98F4FD00EACDFB /* FeaturesRecommendCell.xib */,
 			);
 			name = FeaturesSubs;
+			sourceTree = "<group>";
+		};
+		D7E994C71D990C3000EACDFB /* MineUserEdit */ = {
+			isa = PBXGroup;
+			children = (
+				D7E994C81D990C7C00EACDFB /* MineUserEditCtrl.h */,
+				D7E994C91D990C7C00EACDFB /* MineUserEditCtrl.m */,
+				D7E994CD1D990F1C00EACDFB /* MineEditHeadCell.h */,
+				D7E994CE1D990F1C00EACDFB /* MineEditHeadCell.m */,
+				D7E994CF1D990F1C00EACDFB /* MineEditHeadCell.xib */,
+				D7E994D21D99122C00EACDFB /* MineEditCell.h */,
+				D7E994D31D99122C00EACDFB /* MineEditCell.m */,
+				D7E994D41D99122C00EACDFB /* MineEditCell.xib */,
+			);
+			name = MineUserEdit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2679,6 +2723,7 @@
 				60319D5E1D8F1A9200BD094D /* DetailHisFocusCell.xib in Resources */,
 				60319DA01D9438DA00BD094D /* info_mineCell.plist in Resources */,
 				D7E0F4CB1D88033D00EA663B /* Login.storyboard in Resources */,
+				D7E994D61D99122C00EACDFB /* MineEditCell.xib in Resources */,
 				D7886D7E1D93B8A9003D6D57 /* Activity.storyboard in Resources */,
 				60319D841D919C9500BD094D /* HotTagCollectionCell.xib in Resources */,
 				D75CC3D11C2A926100E590E6 /* Assets.xcassets in Resources */,
@@ -2691,6 +2736,7 @@
 				60319D941D92C0F100BD094D /* Find.storyboard in Resources */,
 				60319D8E1D91B4D000BD094D /* ActivityPageCell.xib in Resources */,
 				D76E83F61D7439950014FDEA /* UserNotesCollectionTableViewCell.xib in Resources */,
+				D7E994D11D990F1C00EACDFB /* MineEditHeadCell.xib in Resources */,
 				D7886D601D914B58003D6D57 /* TDCProductCollectionCell.xib in Resources */,
 				60319D9E1D9437E000BD094D /* MineCell.xib in Resources */,
 				D76E84251D759CD30014FDEA /* PostTagAddCollectionCell.xib in Resources */,
@@ -2767,6 +2813,7 @@
 				D75CC5E91C2A965000E590E6 /* QNSessionManager.m in Sources */,
 				D75CC61F1C2A965000E590E6 /* YXSpritesLoadingView.m in Sources */,
 				D76E83BE1D70175D0014FDEA /* ParallaxHeaderView.m in Sources */,
+				D7E994D51D99122C00EACDFB /* MineEditCell.m in Sources */,
 				D75CC5FF1C2A965000E590E6 /* UIImage+WebP.m in Sources */,
 				D75CC5AC1C2A965000E590E6 /* ASIFormDataRequest.m in Sources */,
 				D75CC5B01C2A965000E590E6 /* ASICloudFilesCDNRequest.m in Sources */,
@@ -2870,8 +2917,11 @@
 				D75CC5FA1C2A965000E590E6 /* SDWebImageManager.m in Sources */,
 				D76E84241D759CD30014FDEA /* PostTagAddCollectionCell.m in Sources */,
 				606BF8551D841B7500C503FE /* DetailCoverTitleCell.m in Sources */,
+				D7E994D01D990F1C00EACDFB /* MineEditHeadCell.m in Sources */,
+				D7E994D91D99202700EACDFB /* ForgetSecretCtrller.m in Sources */,
 				D75CC5C61C2A965000E590E6 /* FMDatabaseQueue.m in Sources */,
 				D75CC6C01C2BEB0400E590E6 /* MyNavCtrller.m in Sources */,
+				D7E994DC1D99274F00EACDFB /* ChangeSecretCtrller.m in Sources */,
 				D7E994621D93D3D700EACDFB /* MineUserInfoCell.m in Sources */,
 				D75CC5B91C2A965000E590E6 /* ASIS3BucketObject.m in Sources */,
 				D75CC5BB1C2A965000E590E6 /* ASIS3ObjectRequest.m in Sources */,
@@ -2985,12 +3035,14 @@
 				D75CC5DF1C2A965000E590E6 /* UIView+MJExtension.m in Sources */,
 				60319D581D8ED3B800BD094D /* DetailCommentsCell.m in Sources */,
 				D75CC5E51C2A965000E590E6 /* QNUrlSafeBase64.m in Sources */,
+				D7E994E11D99398A00EACDFB /* ResetSecretCtrller.m in Sources */,
 				D75CC5F01C2A965000E590E6 /* QNUploadOption.m in Sources */,
 				D7E0F4BA1D87B42D00EA663B /* Article.m in Sources */,
 				D76E84711D780FAC0014FDEA /* MASViewConstraint.m in Sources */,
 				60319DAF1D982F6300BD094D /* CenterTableView.m in Sources */,
 				D76E84A51D79883A0014FDEA /* KICropImageView.m in Sources */,
 				D75CC5CC1C2A965000E590E6 /* MBProgressHUD.m in Sources */,
+				D7E994CA1D990C7C00EACDFB /* MineUserEditCtrl.m in Sources */,
 				D76E846E1D780FAC0014FDEA /* MASConstraintMaker.m in Sources */,
 				608405861D69505E00B40D68 /* HomePageController+collectionLayoutSwitch.m in Sources */,
 				6084059A1D74AE6800B40D68 /* PostCtrller.m in Sources */,
