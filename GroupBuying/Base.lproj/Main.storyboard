@@ -99,7 +99,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" title="专题" id="tm1-Od-c6e"/>
+                    <navigationItem key="navigationItem" title="专题" id="tm1-Od-c6e">
+                        <barButtonItem key="rightBarButtonItem" image="btn_spe_shop" id="Ail-T7-MXd">
+                            <connections>
+                                <action selector="shopcarOnClick:" destination="qxn-mn-kW9" id="Ei1-2B-Qyx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="barbt_shopcar" destination="Ail-T7-MXd" id="tBv-M9-BoK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gsw-Gr-VSj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -410,6 +419,7 @@
     <resources>
         <image name="btn_camera" width="25" height="25"/>
         <image name="btn_ranking" width="25" height="25"/>
+        <image name="btn_spe_shop" width="25" height="25"/>
         <image name="btn_square" width="25" height="25"/>
         <image name="btn_tile" width="25" height="25"/>
         <image name="findvc_btn_find_search" width="21" height="21"/>

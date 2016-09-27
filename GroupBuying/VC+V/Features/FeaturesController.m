@@ -20,10 +20,15 @@
 
 @property (nonatomic,strong) XTStretchSegment *xtStretchSegment ;
 @property (nonatomic,strong) XTMultipleTables *xtMultipleTables ;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *barbt_shopcar;
 
 @end
 
 @implementation FeaturesController
+
+#pragma mark - action
+- (IBAction)shopcarOnClick:(id)sender {
+}
 
 #pragma mark - prop
 - (XTStretchSegment *)xtStretchSegment
@@ -48,6 +53,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad] ;
+    
+    _barbt_shopcar.tintColor = [UIColor xt_tabbarRedColor ] ;
     
     NSMutableArray *tmplist = [@[] mutableCopy] ;
     for (int i = 0; i < kKindlistTEMP.count; i++)
