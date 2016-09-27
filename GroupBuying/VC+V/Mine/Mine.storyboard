@@ -33,6 +33,8 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="table" destination="VI9-wH-8IE" id="OdE-pJ-pVa"/>
+                        <segue destination="6P5-2e-JPR" kind="push" id="9Wu-dR-qgn"/>
+                        <segue destination="VMG-fY-tbh" kind="push" identifier="setting2aboutus" id="Y5U-6g-faK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dJW-MB-Ka9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -64,6 +66,7 @@
                             <constraint firstItem="C1A-qN-ITw" firstAttribute="top" secondItem="CqG-FA-sAe" secondAttribute="bottom" id="mD7-xA-m1b"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="kdG-gb-9fh"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="table" destination="CqG-FA-sAe" id="xQs-57-9eI"/>
@@ -72,7 +75,59 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nls-1S-SNt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="212" y="1034"/>
+            <point key="canvasLocation" x="960" y="84"/>
+        </scene>
+        <!--About Us Ctrller-->
+        <scene sceneID="hd7-1B-QHU">
+            <objects>
+                <viewController id="VMG-fY-tbh" customClass="AboutUsCtrller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="20B-YE-JOX"/>
+                        <viewControllerLayoutGuide type="bottom" id="d3P-uh-LS2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zkg-Ui-cml">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FTP-ZU-suo">
+                                <rect key="frame" x="0.0" y="319" width="600" height="281"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_my_about_logo" translatesAutoresizingMaskIntoConstraints="NO" id="PTi-45-r14">
+                                <rect key="frame" x="272" y="114" width="56" height="126"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="126" id="2b6-bN-fzh"/>
+                                    <constraint firstAttribute="width" constant="56" id="LSa-sV-I8Z"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IBardot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tc4-Op-bc6">
+                                <rect key="frame" x="275" y="249" width="50" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="FTP-ZU-suo" secondAttribute="trailing" id="41V-ei-Vdc"/>
+                            <constraint firstItem="Tc4-Op-bc6" firstAttribute="centerX" secondItem="Zkg-Ui-cml" secondAttribute="centerX" id="DuR-AO-j90"/>
+                            <constraint firstItem="FTP-ZU-suo" firstAttribute="top" secondItem="Tc4-Op-bc6" secondAttribute="bottom" constant="52" id="GDE-gn-4Qa"/>
+                            <constraint firstItem="FTP-ZU-suo" firstAttribute="leading" secondItem="Zkg-Ui-cml" secondAttribute="leading" id="KOV-xm-4wB"/>
+                            <constraint firstItem="d3P-uh-LS2" firstAttribute="top" secondItem="FTP-ZU-suo" secondAttribute="bottom" id="R7h-qC-CQi"/>
+                            <constraint firstItem="FTP-ZU-suo" firstAttribute="top" secondItem="20B-YE-JOX" secondAttribute="bottom" constant="255" id="ads-yQ-HpI"/>
+                            <constraint firstItem="PTi-45-r14" firstAttribute="top" secondItem="20B-YE-JOX" secondAttribute="bottom" constant="50" id="qgL-Lv-pfT"/>
+                            <constraint firstItem="PTi-45-r14" firstAttribute="centerX" secondItem="Zkg-Ui-cml" secondAttribute="centerX" id="y3H-Ew-wSb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="c7N-Ao-RwT"/>
+                    <connections>
+                        <outlet property="labelLogo" destination="Tc4-Op-bc6" id="4GQ-kQ-iF4"/>
+                        <outlet property="table" destination="FTP-ZU-suo" id="YcQ-tm-qF7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Udx-ca-aUD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="960" y="839"/>
         </scene>
         <!--Add Friends Ctrl-->
         <scene sceneID="5Zn-pa-t7e">
@@ -153,7 +208,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NOd-S6-c5C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="54" y="1824"/>
+            <point key="canvasLocation" x="-434" y="331"/>
         </scene>
         <!--Mine Edit Add Ctrller-->
         <scene sceneID="Gik-T2-W36">
@@ -220,10 +275,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dwt-Le-lg0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="856" y="1034"/>
+            <point key="canvasLocation" x="1604" y="84"/>
         </scene>
     </scenes>
     <resources>
         <image name="findvc_btn_find_search" width="21" height="21"/>
+        <image name="icon_my_about_logo" width="56" height="126"/>
     </resources>
 </document>

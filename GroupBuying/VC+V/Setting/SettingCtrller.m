@@ -171,6 +171,7 @@ static NSString *const kIdentifierFooter = @"mycell_footer" ;
     else if (section == 2) {
         if (row == 0) {
         // @"关于我们"] ;
+            [self performSegueWithIdentifier:@"setting2aboutus" sender:nil] ;
         }
         else if (row == 1) {
         // @"帮助中心"] ;

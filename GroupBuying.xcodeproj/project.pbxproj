@@ -364,6 +364,7 @@
 		D7E994F01D9A5E0200EACDFB /* AddFriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E994EE1D9A5E0200EACDFB /* AddFriendCell.xib */; };
 		D7E994F41D9A6A9F00EACDFB /* AddFriendCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994F21D9A6A9F00EACDFB /* AddFriendCollectionCell.m */; };
 		D7E994F51D9A6A9F00EACDFB /* AddFriendCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E994F31D9A6A9F00EACDFB /* AddFriendCollectionCell.xib */; };
+		D7E994F91D9A712300EACDFB /* AboutUsCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994F81D9A712300EACDFB /* AboutUsCtrller.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1054,6 +1055,8 @@
 		D7E994F11D9A6A9F00EACDFB /* AddFriendCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddFriendCollectionCell.h; path = "GroupBuying/VC+V/AddFriendsCtrl/AddFriendCollectionCell.h"; sourceTree = SOURCE_ROOT; };
 		D7E994F21D9A6A9F00EACDFB /* AddFriendCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddFriendCollectionCell.m; path = "GroupBuying/VC+V/AddFriendsCtrl/AddFriendCollectionCell.m"; sourceTree = SOURCE_ROOT; };
 		D7E994F31D9A6A9F00EACDFB /* AddFriendCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddFriendCollectionCell.xib; path = "GroupBuying/VC+V/AddFriendsCtrl/AddFriendCollectionCell.xib"; sourceTree = SOURCE_ROOT; };
+		D7E994F71D9A712300EACDFB /* AboutUsCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutUsCtrller.h; path = "GroupBuying/VC+V/AboutUs/AboutUsCtrller.h"; sourceTree = SOURCE_ROOT; };
+		D7E994F81D9A712300EACDFB /* AboutUsCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutUsCtrller.m; path = "GroupBuying/VC+V/AboutUs/AboutUsCtrller.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1151,8 +1154,7 @@
 			isa = PBXGroup;
 			children = (
 				D7E9945E1D93D3AC00EACDFB /* MineSubs */,
-				60074E0A1D60E0180040C3C0 /* MineController.h */,
-				60074E0B1D60E0180040C3C0 /* MineController.m */,
+				D7E994E81D9A569A00EACDFB /* AddFriends */,
 				D7E994C71D990C3000EACDFB /* MineUserEdit */,
 			);
 			name = Mine1;
@@ -1495,7 +1497,6 @@
 		D75CC3F71C2A92B200E590E6 /* VC+V */ = {
 			isa = PBXGroup;
 			children = (
-				D7E994E81D9A569A00EACDFB /* AddFriends */,
 				60074DF91D60DEC90040C3C0 /* HomePage1 */,
 				60074E001D60DF410040C3C0 /* Find1 */,
 				60074DFF1D60DF3C0040C3C0 /* Features1 */,
@@ -2578,6 +2579,8 @@
 		D7E9945E1D93D3AC00EACDFB /* MineSubs */ = {
 			isa = PBXGroup;
 			children = (
+				60074E0A1D60E0180040C3C0 /* MineController.h */,
+				60074E0B1D60E0180040C3C0 /* MineController.m */,
 				D7E9945F1D93D3D700EACDFB /* MineUserInfoCell.h */,
 				D7E994601D93D3D700EACDFB /* MineUserInfoCell.m */,
 				D7E994611D93D3D700EACDFB /* MineUserInfoCell.xib */,
@@ -2597,6 +2600,7 @@
 				D7E9946D1D94D00100EACDFB /* SettingCell.h */,
 				D7E9946E1D94D00100EACDFB /* SettingCell.m */,
 				D7E9946F1D94D00100EACDFB /* SettingCell.xib */,
+				D7E994F61D9A70F600EACDFB /* AboutUs */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
@@ -2647,6 +2651,15 @@
 				D7E994F31D9A6A9F00EACDFB /* AddFriendCollectionCell.xib */,
 			);
 			name = AddFriends;
+			sourceTree = "<group>";
+		};
+		D7E994F61D9A70F600EACDFB /* AboutUs */ = {
+			isa = PBXGroup;
+			children = (
+				D7E994F71D9A712300EACDFB /* AboutUsCtrller.h */,
+				D7E994F81D9A712300EACDFB /* AboutUsCtrller.m */,
+			);
+			name = AboutUs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2938,6 +2951,7 @@
 				D75CC5B61C2A965000E590E6 /* ASICloudFilesRequest.m in Sources */,
 				D75CC5AB1C2A965000E590E6 /* ASIDownloadCache.m in Sources */,
 				D76E846D1D780FAC0014FDEA /* MASConstraint.m in Sources */,
+				D7E994F91D9A712300EACDFB /* AboutUsCtrller.m in Sources */,
 				60319D681D8F1E8900BD094D /* DetailRecommend Cell.m in Sources */,
 				D76E83B61D6FE6000014FDEA /* UserInfoCtrller.m in Sources */,
 				D75CC5E11C2A965000E590E6 /* GTM_Base64.m in Sources */,

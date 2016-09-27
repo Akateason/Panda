@@ -58,7 +58,7 @@
     
     _table.dataSource = self ;
     _table.delegate = self ;
-//    _table.separatorStyle = 0 ;
+    _table.backgroundColor = [UIColor xt_seperate] ;
     _table.separatorColor = [UIColor xt_seperate] ;
     [_table registerNib:[UINib nibWithNibName:kID_MineUserInfoCell bundle:nil] forCellReuseIdentifier:kID_MineUserInfoCell] ;
     [_table registerNib:[UINib nibWithNibName:kID_MineCell bundle:nil] forCellReuseIdentifier:kID_MineCell] ;
