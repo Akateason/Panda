@@ -61,7 +61,7 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
 #pragma mark - HPBigPhotoHeaderViewDelegate
 - (void)userheadOnClick
 {
-    UserInfoCtrller *userCtrl = (UserInfoCtrller *)[[self class] getCtrllerFromStory:@"HomePage" controllerIdentifier:@"UserInfoCtrller"] ;
+    UserInfoCtrller *userCtrl = (UserInfoCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"UserInfoCtrller"] ;
     [userCtrl setHidesBottomBarWhenPushed:YES] ;
     [self.navigationController pushViewController:userCtrl animated:YES] ;
 }
@@ -265,7 +265,7 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
     
     _bFirstTime = true ;
     // nav item position
-    [self.view addSubview:self.collectionView];
+    [self.view addSubview:self.collectionView] ;
     // title pop menu .
     [KxMenu setTintColor:[UIColor colorWithHexString:@"555555" alpha:0.5]] ;
     

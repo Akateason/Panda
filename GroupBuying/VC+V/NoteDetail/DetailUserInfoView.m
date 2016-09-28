@@ -28,6 +28,15 @@
 {
     _note = note ;
     
+    if (!note) {
+        return ;
+    }
+    
+    _headImageView.hidden = false ;
+    _btFoucus.hidden = false ;
+    _labelName.hidden = false ;
+    _lableTime.hidden = false ;
+    
     [_headImageView sd_setImageWithURL:[NSURL URLWithString:note.ownerHeadPic.qiniuUrl]
                       placeholderImage:IMG_HEAD_NO] ;
     _btFoucus.hidden = note.isFollow ;
@@ -53,6 +62,11 @@
 {
     [super awakeFromNib];
     // Initialization code
+    
+    _headImageView.hidden = true ;
+    _btFoucus.hidden = true ;
+    _labelName.hidden = true ;
+    _lableTime.hidden = true ;
     
     [_btFoucus setTitleColor:[UIColor xt_w_dark] forState:0] ;
     _btFoucus.layer.cornerRadius = 5. ;

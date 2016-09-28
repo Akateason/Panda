@@ -17,6 +17,8 @@
 #import "MineCell.h"
 #import "SettingCtrller.h"
 #import "AddFriendsCtrl.h"
+#import "UserInfoCtrller.h"
+#import "MyNoteCtrller.h"
 
 @interface MineController () <UITableViewDataSource,UITableViewDelegate>
 
@@ -107,6 +109,23 @@
     NSInteger row = indexPath.row ;
     if (section == 0) {
         MineUserInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_MineUserInfoCell] ;
+        cell.block_note = ^{
+            MyNoteCtrller *mynoteVC = (MyNoteCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"MyNoteCtrller"] ;
+            [mynoteVC setHidesBottomBarWhenPushed:YES] ;
+            [self.navigationController pushViewController:mynoteVC animated:YES] ;
+        } ;
+        cell.block_focus = ^{
+            
+        } ;
+        cell.block_fans = ^{
+            
+        } ;
+        cell.block_page = ^{
+            UserInfoCtrller *userCtrl = (UserInfoCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"UserInfoCtrller"] ;
+            [userCtrl setHidesBottomBarWhenPushed:YES] ;
+            [self.navigationController pushViewController:userCtrl animated:YES] ;
+        } ;
+        
         return cell ;
     }
     else if (section == 1) {
@@ -121,7 +140,6 @@
         }
         else if (row == 1) {
             return [self getMineCellWithKey:@"order"] ;
-
         }
         else if (row == 2) {
             return [self getMineCellWithKey:@"clear"] ;
@@ -133,7 +151,6 @@
         }
         else if (row == 1) {
             return [self getMineCellWithKey:@"coupon"] ;
-            
         }
         else if (row == 2) {
             return [self getMineCellWithKey:@"points"] ;

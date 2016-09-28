@@ -26,19 +26,28 @@
 
 @implementation MineUserInfoCell
 
-- (IBAction)myNoteOnClick:(id)sender {
+- (IBAction)myNoteOnClick:(id)sender
+{
     NSLog(@"我的笔记") ;
+    self.block_note() ;
 }
-- (IBAction)myFocusOnClick:(id)sender {
+
+- (IBAction)myFocusOnClick:(id)sender
+{
     NSLog(@"我的关注") ;
+    self.block_focus() ;
 }
-- (IBAction)myFansOnClick:(id)sender {
+
+- (IBAction)myFansOnClick:(id)sender
+{
     NSLog(@"我的粉丝") ;
+    self.block_fans() ;
 }
 
 - (IBAction)myHomePageOnClick:(id)sender
 {
     NSLog(@"我的主页") ;
+    self.block_page() ;
 }
 
 - (void)awakeFromNib

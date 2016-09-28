@@ -365,6 +365,7 @@
 		D7E994F41D9A6A9F00EACDFB /* AddFriendCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994F21D9A6A9F00EACDFB /* AddFriendCollectionCell.m */; };
 		D7E994F51D9A6A9F00EACDFB /* AddFriendCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E994F31D9A6A9F00EACDFB /* AddFriendCollectionCell.xib */; };
 		D7E994F91D9A712300EACDFB /* AboutUsCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994F81D9A712300EACDFB /* AboutUsCtrller.m */; };
+		D7E995041D9B7FB700EACDFB /* MyNoteCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E995031D9B7FB700EACDFB /* MyNoteCtrller.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1057,6 +1058,8 @@
 		D7E994F31D9A6A9F00EACDFB /* AddFriendCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddFriendCollectionCell.xib; path = "GroupBuying/VC+V/AddFriendsCtrl/AddFriendCollectionCell.xib"; sourceTree = SOURCE_ROOT; };
 		D7E994F71D9A712300EACDFB /* AboutUsCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutUsCtrller.h; path = "GroupBuying/VC+V/AboutUs/AboutUsCtrller.h"; sourceTree = SOURCE_ROOT; };
 		D7E994F81D9A712300EACDFB /* AboutUsCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutUsCtrller.m; path = "GroupBuying/VC+V/AboutUs/AboutUsCtrller.m"; sourceTree = SOURCE_ROOT; };
+		D7E995021D9B7FB700EACDFB /* MyNoteCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyNoteCtrller.h; path = "GroupBuying/VC+V/Mine/MyNote/MyNoteCtrller.h"; sourceTree = SOURCE_ROOT; };
+		D7E995031D9B7FB700EACDFB /* MyNoteCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyNoteCtrller.m; path = "GroupBuying/VC+V/Mine/MyNote/MyNoteCtrller.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1153,7 +1156,8 @@
 		60074DFD1D60DF2F0040C3C0 /* Mine1 */ = {
 			isa = PBXGroup;
 			children = (
-				D7E9945E1D93D3AC00EACDFB /* MineSubs */,
+				D7E995011D9B6CCB00EACDFB /* MyNote */,
+				D7E9945E1D93D3AC00EACDFB /* Mine */,
 				D7E994E81D9A569A00EACDFB /* AddFriends */,
 				D7E994C71D990C3000EACDFB /* MineUserEdit */,
 			);
@@ -2576,7 +2580,7 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
-		D7E9945E1D93D3AC00EACDFB /* MineSubs */ = {
+		D7E9945E1D93D3AC00EACDFB /* Mine */ = {
 			isa = PBXGroup;
 			children = (
 				60074E0A1D60E0180040C3C0 /* MineController.h */,
@@ -2589,7 +2593,7 @@
 				60319D9C1D9437E000BD094D /* MineCell.xib */,
 				60319D9F1D9438DA00BD094D /* info_mineCell.plist */,
 			);
-			name = MineSubs;
+			name = Mine;
 			sourceTree = "<group>";
 		};
 		D7E994671D94CEA200EACDFB /* Setting */ = {
@@ -2660,6 +2664,15 @@
 				D7E994F81D9A712300EACDFB /* AboutUsCtrller.m */,
 			);
 			name = AboutUs;
+			sourceTree = "<group>";
+		};
+		D7E995011D9B6CCB00EACDFB /* MyNote */ = {
+			isa = PBXGroup;
+			children = (
+				D7E995021D9B7FB700EACDFB /* MyNoteCtrller.h */,
+				D7E995031D9B7FB700EACDFB /* MyNoteCtrller.m */,
+			);
+			name = MyNote;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2929,6 +2942,7 @@
 				608075FF1D805DB00056573F /* NoteDetailCtrller.m in Sources */,
 				D75CC59F1C2A965000E590E6 /* AFHTTPRequestOperation.m in Sources */,
 				D75CC5DA1C2A965000E590E6 /* MJRefreshStateHeader.m in Sources */,
+				D7E995041D9B7FB700EACDFB /* MyNoteCtrller.m in Sources */,
 				D7886D5F1D914B58003D6D57 /* TDCProductCollectionCell.m in Sources */,
 				D7886D811D93C41A003D6D57 /* ActivityInfoCell.m in Sources */,
 				60074E1C1D634AE80040C3C0 /* UIColor+HexString.m in Sources */,
