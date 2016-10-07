@@ -28,6 +28,18 @@
                      success:(void (^)(id json))success
                         fail:(void (^)())fail ;
 
++ (void)changePasswordWithToken:(NSString *)token
+                    oldPassword:(NSString *)oldPassword
+                    newPassword:(NSString *)newPassword
+                        success:(void (^)(id json))success
+                           fail:(void (^)())fail ;
+
++ (void)resetPasswordWithIdentifier:(NSString *)identifier
+                        newpassword:(NSString *)newPassword
+                               code:(NSString *)code
+                            success:(void (^)(id json))success
+                               fail:(void (^)())fail ;
+
 #pragma - 发送验证码
 + (void)sendVerifyCode:(NSString *)identifier
                success:(void (^)(id json))success

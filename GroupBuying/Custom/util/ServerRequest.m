@@ -68,6 +68,51 @@
     }] ;
 }
 
++ (void)changePasswordWithToken:(NSString *)token
+                    oldPassword:(NSString *)oldPassword
+                    newPassword:(NSString *)newPassword
+                        success:(void (^)(id json))success
+                           fail:(void (^)())fail
+{
+    NSMutableDictionary *paramer = [self getParameters] ;
+    [paramer setObject:token forKey:@"token"] ;
+    [paramer setObject:oldPassword forKey:@"oldPassword"] ;
+    [paramer setObject:newPassword forKey:@"newPassword"] ;
+    
+    [XTRequest POSTWithUrl:[self getFinalUrl:URL_USERS_PWCHANGE]
+                parameters:paramer
+                   success:^(id json) {
+                       if (success) success(json);
+                   }
+                      fail:^{
+                          if (fail) fail();
+                      }] ;
+    
+}
+
++ (void)resetPasswordWithIdentifier:(NSString *)identifier
+                        newpassword:(NSString *)newPassword
+                               code:(NSString *)code
+                            success:(void (^)(id json))success
+                               fail:(void (^)())fail
+{
+    NSMutableDictionary *paramer = [self getParameters] ;
+    [paramer setObject:identifier forKey:@"identifier"] ;
+    [paramer setObject:newPassword forKey:@"newPassword"] ;
+    [paramer setObject:code forKey:@"code"] ;
+    
+    [XTRequest POSTWithUrl:[self getFinalUrl:URL_USERS_RESETPW]
+                parameters:paramer
+                   success:^(id json) {
+                       if (success) success(json);
+                   } fail:^{
+                       if (fail) fail();
+                   }] ;
+}
+
+
+
+
 + (void)sendVerifyCode:(NSString *)identifier
                success:(void (^)(id json))success
                   fail:(void (^)())fail

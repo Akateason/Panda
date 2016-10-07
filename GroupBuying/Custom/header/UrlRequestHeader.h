@@ -18,6 +18,13 @@ static NSString *const URL_USERS_LOGIN          = @"/gwn/user/login" ;
 //用户注册
 static NSString *const URL_USERS_REGISTER       = @"/gwn/user/reg" ;
 
+//用户修改密码
+static NSString *const URL_USERS_PWCHANGE       = @"/gwn/s/user/passwordChg" ;
+
+//用户重置密码
+static NSString *const URL_USERS_RESETPW        = @"/gwn/user/passwordReset" ;
+
+
 //发送手机验证码
 static NSString *const URL_VERIFYCODE_CREATE    = @"/gwn/verifycode/create" ;
 

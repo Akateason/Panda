@@ -7,6 +7,9 @@
 //
 
 #import "ChangeSecretCtrller.h"
+#import "SVProgressHUD.h"
+#import "UserOnDevice.h"
+#import "YYModel.h"
 
 @interface ChangeSecretCtrller ()
 
@@ -21,8 +24,41 @@
 
 - (IBAction)btCommitOnClick:(id)sender
 {
+    if (!_tf_old_password.text.length) {
+        [SVProgressHUD showErrorWithStatus:@"请输入旧密码"] ;
+    }
+    else if (!_tf_new_password.text.length) {
+        [SVProgressHUD showErrorWithStatus:@"请输入新密码"] ;
+    }
+    else if (!_tf_new_password2.text.length) {
+        [SVProgressHUD showErrorWithStatus:@"请输入确认密码"] ;
+    }
+    else if (![_tf_new_password.text isEqualToString:_tf_new_password2.text]) {
+        [SVProgressHUD showErrorWithStatus:@"两次输入密码不一致"] ;
+    }
+    
+    NSString *token = [UserOnDevice token] ;
+    [ServerRequest changePasswordWithToken:token
+                               oldPassword:_tf_old_password.text
+                               newPassword:_tf_new_password.text
+                                   success:^(id json) {
+                                       
+                                       ResultParsered *result = [[ResultParsered alloc] initWithDic:json] ;
+                                       if (result.code == 1)
+                                       {
+                                           [SVProgressHUD showSuccessWithStatus:@"修改密码成功"] ;
+                                           [self.navigationController popViewControllerAnimated:YES] ;
+                                       }
+                                       else {
+                                           [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"错误码%ld",result.code]] ;
+                                       }
+                                       
+                                   } fail:^{
+                                       
+                                   }] ;
     
 }
+
 
 - (void)viewDidLoad
 {

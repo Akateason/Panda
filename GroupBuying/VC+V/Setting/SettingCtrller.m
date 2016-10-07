@@ -15,6 +15,7 @@
 #import "SVProgressHUD.h"
 #import "ChangeSecretCtrller.h"
 
+
 @interface SettingCtrller () <UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *table;
@@ -54,7 +55,9 @@
         return 2 ;
     }
     else if (section == 3) {
-        return 1 ;
+        if ([UserOnDevice currentUserOnDevice] != nil) {
+            return 1 ;
+        }
     }
 
     return 0 ;
@@ -182,6 +185,7 @@ static NSString *const kIdentifierFooter = @"mycell_footer" ;
         SIAlertView *alert = [[SIAlertView alloc] initWithTitle:nil andMessage:@"退出登录"] ;
         [alert addButtonWithTitle:@"确认" type:SIAlertViewButtonTypeDestructive handler:^(SIAlertView *alertView) {
             [UserOnDevice clean] ;
+            [self.navigationController popViewControllerAnimated:YES] ;
         }] ;
         [alert addButtonWithTitle:@"取消" type:SIAlertViewButtonTypeCancel handler:nil] ;
         [alert show] ;

@@ -7,6 +7,8 @@
 //
 
 #import "ResetSecretCtrller.h"
+#import "UserOnDevice.h"
+#import "SVProgressHUD.h"
 
 @interface ResetSecretCtrller ()
 
@@ -21,7 +23,26 @@
 
 - (IBAction)btCommitOnClick:(id)sender
 {
+    User *userCurrent = [UserOnDevice currentUserOnDevice] ;
     
+    [ServerRequest resetPasswordWithIdentifier:userCurrent.mobile
+                                   newpassword:_tf_password.text
+                                          code:_code
+                                       success:^(id json) {
+                                           
+                                           ResultParsered *result = [[ResultParsered alloc] initWithDic:json] ;
+                                           if (result.code == 1) {
+                                               [SVProgressHUD showSuccessWithStatus:@"重置密码成功"] ;
+                                               [self dismissViewControllerAnimated:YES
+                                                                        completion:nil] ;
+                                           }
+                                           else {
+                                               [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"错误码%ld",result.code]] ;
+                                           }
+                                           
+                                       } fail:^{
+                                           
+                                       }] ;
 }
 
 - (void)viewDidLoad

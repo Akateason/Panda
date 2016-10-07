@@ -68,6 +68,7 @@
                                if (result.code == 1) {
                                    
                                    ResetSecretCtrller *resetVC = (ResetSecretCtrller *)[[self class] getCtrllerFromStory:@"Login" controllerIdentifier:@"ResetSecretCtrller"] ;
+                                   resetVC.code = self.tf_code.text ;
                                    [self.navigationController pushViewController:resetVC animated:YES] ;
                                    
                                }

@@ -10,4 +10,6 @@
 
 @interface ResetSecretCtrller : RootCtrl
 
+@property (nonatomic,copy) NSString *code ;
+
 @end
