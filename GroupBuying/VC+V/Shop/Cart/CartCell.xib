@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartCell" rowHeight="201" id="KGk-i7-Jjw" customClass="CartCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CartCell" rowHeight="201" id="KGk-i7-Jjw" customClass="CartCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="201"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -32,6 +32,10 @@
                                 </constraints>
                                 <inset key="contentEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" image="cart_icon_choice"/>
+                                <state key="selected" image="cart_icon_select"/>
+                                <connections>
+                                    <action selector="btChooseOnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="RJo-tL-F3D"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="product1" translatesAutoresizingMaskIntoConstraints="NO" id="GmW-pH-wcb">
                                 <rect key="frame" x="30" y="17" width="70" height="70"/>
@@ -65,6 +69,9 @@
                                     <constraint firstAttribute="height" constant="30" id="QGN-xk-4Re"/>
                                 </constraints>
                                 <state key="normal" image="icon_my_trash"/>
+                                <connections>
+                                    <action selector="btDeleteOnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="sV8-DL-tR4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.82229676920000006" blue="0.050859124030000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -160,11 +167,29 @@
                     <constraint firstAttribute="trailing" secondItem="kDw-Kp-ZfI" secondAttribute="trailing" id="xUu-xT-u7a"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="btChoose" destination="4DB-3t-3iC" id="Aqg-ds-wTs"/>
+                <outlet property="btDelete" destination="COM-zj-1Uo" id="8cM-31-4Wu"/>
+                <outlet property="imgProduct" destination="GmW-pH-wcb" id="qbE-sK-VS3"/>
+                <outlet property="lb_price" destination="EIV-VQ-ZNg" id="k36-M2-bX9"/>
+                <outlet property="lb_productName" destination="MNV-I5-Yuw" id="GEs-SN-Fao"/>
+                <outlet property="lb_specification" destination="ffh-MM-yGt" id="xf6-8t-6qW"/>
+                <outlet property="lb_sum" destination="jrw-Lg-0Rq" id="6e0-a1-nqg"/>
+                <outlet property="lb_sumVal" destination="TqT-tX-z88" id="8jc-YN-SNx"/>
+                <outlet property="lb_tax" destination="GhF-XH-a95" id="ZDZ-FX-loO"/>
+                <outlet property="lb_taxVal" destination="Zyv-Df-2yV" id="UfB-aP-LFD"/>
+                <outlet property="v1" destination="kDw-Kp-ZfI" id="af7-HA-qLg"/>
+                <outlet property="v1_line" destination="K0A-rI-dkz" id="JJh-tq-491"/>
+                <outlet property="v2" destination="JQW-wN-lRL" id="99l-k2-p3H"/>
+                <outlet property="v2_line" destination="Wj0-Jl-7Ng" id="EjS-5i-UTn"/>
+                <outlet property="v3" destination="cMr-ar-WLe" id="bBF-Al-33X"/>
+            </connections>
             <point key="canvasLocation" x="307" y="253.5"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="cart_icon_choice" width="13" height="13"/>
+        <image name="cart_icon_select" width="13" height="13"/>
         <image name="icon_my_trash" width="13" height="13"/>
         <image name="product1" width="228" height="216"/>
     </resources>

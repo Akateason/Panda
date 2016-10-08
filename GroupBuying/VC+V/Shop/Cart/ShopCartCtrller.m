@@ -9,6 +9,7 @@
 #import "ShopCartCtrller.h"
 #import "UIAlternativeButton.h"
 #import "CartCell.h"
+#import "CartIntroductionFooterView.h"
 
 @interface ShopCartCtrller () <UITableViewDataSource,UITableViewDelegate,RootTableViewDelegate>
 
@@ -62,6 +63,7 @@
     _table.delegate = self ;
     _table.xt_Delegate = self ;
     [_table registerNib:[UINib nibWithNibName:kID_CartCell bundle:nil] forCellReuseIdentifier:kID_CartCell] ;
+    [_table registerNib:[UINib nibWithNibName:kID_CartIntroductionFooterView bundle:nil] forHeaderFooterViewReuseIdentifier:kID_CartIntroductionFooterView] ;
 }
 
 
@@ -80,7 +82,7 @@
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10 ;
+    return 2 ;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -97,6 +99,17 @@
 }
 
 
+- (nullable UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    CartIntroductionFooterView *footer = [tableView dequeueReusableHeaderFooterViewWithIdentifier:kID_CartIntroductionFooterView] ;
+    
+    return footer ;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 30. ;
+}
 
 
 

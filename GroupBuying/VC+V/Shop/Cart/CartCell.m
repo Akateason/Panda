@@ -10,15 +10,59 @@
 
 @interface CartCell ()
 
+@property (weak, nonatomic) IBOutlet UIView *v1;
+@property (weak, nonatomic) IBOutlet UIView *v2;
+@property (weak, nonatomic) IBOutlet UIView *v3;
+@property (weak, nonatomic) IBOutlet UIView *v1_line;
+@property (weak, nonatomic) IBOutlet UIButton *btChoose;
+@property (weak, nonatomic) IBOutlet UIImageView *imgProduct;
+@property (weak, nonatomic) IBOutlet UILabel *lb_productName;
+@property (weak, nonatomic) IBOutlet UILabel *lb_price;
+@property (weak, nonatomic) IBOutlet UILabel *lb_specification; // 规格
+@property (weak, nonatomic) IBOutlet UIButton *btDelete;
+
+@property (weak, nonatomic) IBOutlet UIView *v2_line;
+@property (weak, nonatomic) IBOutlet UILabel *lb_tax; // 进口税
+@property (weak, nonatomic) IBOutlet UILabel *lb_taxVal;
+
+@property (weak, nonatomic) IBOutlet UILabel *lb_sum; // 小计
+@property (weak, nonatomic) IBOutlet UILabel *lb_sumVal;
+
 @end
 
 @implementation CartCell
+
+- (IBAction)btChooseOnClick:(UIButton *)sender
+{
+    NSLog(@"选中") ;
+    sender.selected = !sender.selected ;
+}
+
+- (IBAction)btDeleteOnClick:(UIButton *)sender
+{
+    NSLog(@"del") ;
+}
 
 - (void)awakeFromNib
 {
     [super awakeFromNib];
     // Initialization code
+    _v1.backgroundColor = [UIColor whiteColor] ;
+    _v2.backgroundColor = [UIColor whiteColor] ;
+    _v3.backgroundColor = [UIColor whiteColor] ;
+    _v1_line.backgroundColor = [UIColor xt_seperate] ;
+    _v2_line.backgroundColor = [UIColor xt_seperate] ;
     
+    _imgProduct.layer.borderColor = [UIColor xt_seperate].CGColor ;
+    _lb_productName.textColor = [UIColor xt_w_dark] ;
+    _lb_price.textColor = [UIColor xt_w_dark] ;
+    _lb_specification.textColor = [UIColor xt_w_light] ;
+    _lb_tax.textColor = [UIColor xt_w_light] ;
+    _lb_taxVal.textColor = [UIColor xt_w_dark] ;
+    _lb_sum.textColor = [UIColor xt_w_light] ;
+    _lb_sumVal.textColor = [UIColor xt_tabbarRedColor] ;
+    
+    self.backgroundColor = [UIColor xt_seperate] ;
 }
 
 

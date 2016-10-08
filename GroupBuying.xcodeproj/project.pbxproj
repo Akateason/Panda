@@ -53,6 +53,8 @@
 		60319DAC1D982E3700BD094D /* XTStretchSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319DA91D982E3700BD094D /* XTStretchSegment.m */; };
 		60319DAF1D982F6300BD094D /* CenterTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319DAE1D982F6300BD094D /* CenterTableView.m */; };
 		60319DB21D98319700BD094D /* FeaturesHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319DB11D98319700BD094D /* FeaturesHandler.m */; };
+		60319DB51DA9224800BD094D /* CartIntroductionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319DB41DA9224800BD094D /* CartIntroductionFooterView.m */; };
+		60319DB71DA922E100BD094D /* CartIntroductionFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60319DB61DA922E100BD094D /* CartIntroductionFooterView.xib */; };
 		6035CF2B1D74B38B00EA590B /* PostContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6035CF2A1D74B38B00EA590B /* PostContentCell.m */; };
 		6035CF2D1D74B3AC00EA590B /* PostContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6035CF2C1D74B3AC00EA590B /* PostContentCell.xib */; };
 		6035CF311D75E64E00EA590B /* TagSearchingCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = 6035CF301D75E64E00EA590B /* TagSearchingCtrller.m */; };
@@ -472,6 +474,9 @@
 		60319DAE1D982F6300BD094D /* CenterTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenterTableView.m; sourceTree = "<group>"; };
 		60319DB01D98319700BD094D /* FeaturesHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeaturesHandler.h; path = "GroupBuying/VC+V/Features/FeaturesHandler.h"; sourceTree = SOURCE_ROOT; };
 		60319DB11D98319700BD094D /* FeaturesHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeaturesHandler.m; path = "GroupBuying/VC+V/Features/FeaturesHandler.m"; sourceTree = SOURCE_ROOT; };
+		60319DB31DA9224800BD094D /* CartIntroductionFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CartIntroductionFooterView.h; path = "GroupBuying/VC+V/Shop/Cart/CartIntroductionFooterView.h"; sourceTree = SOURCE_ROOT; };
+		60319DB41DA9224800BD094D /* CartIntroductionFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CartIntroductionFooterView.m; path = "GroupBuying/VC+V/Shop/Cart/CartIntroductionFooterView.m"; sourceTree = SOURCE_ROOT; };
+		60319DB61DA922E100BD094D /* CartIntroductionFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CartIntroductionFooterView.xib; path = "GroupBuying/VC+V/Shop/Cart/CartIntroductionFooterView.xib"; sourceTree = SOURCE_ROOT; };
 		6035CF291D74B38B00EA590B /* PostContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostContentCell.h; path = "GroupBuying/VC+V/Post/PostContentCell.h"; sourceTree = SOURCE_ROOT; };
 		6035CF2A1D74B38B00EA590B /* PostContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostContentCell.m; path = "GroupBuying/VC+V/Post/PostContentCell.m"; sourceTree = SOURCE_ROOT; };
 		6035CF2C1D74B3AC00EA590B /* PostContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostContentCell.xib; path = "GroupBuying/VC+V/Post/PostContentCell.xib"; sourceTree = SOURCE_ROOT; };
@@ -2663,6 +2668,9 @@
 				D7E4FF1C1DA8FEB900DC0E53 /* CartCell.h */,
 				D7E4FF1D1DA8FEB900DC0E53 /* CartCell.m */,
 				D7E4FF1E1DA8FEB900DC0E53 /* CartCell.xib */,
+				60319DB31DA9224800BD094D /* CartIntroductionFooterView.h */,
+				60319DB41DA9224800BD094D /* CartIntroductionFooterView.m */,
+				60319DB61DA922E100BD094D /* CartIntroductionFooterView.xib */,
 			);
 			name = Cart;
 			sourceTree = "<group>";
@@ -2902,6 +2910,7 @@
 				60319D891D91AE4300BD094D /* FVCRecommendCell.xib in Resources */,
 				D76E84001D7526250014FDEA /* PostPhotoCollectionCell.xib in Resources */,
 				608405811D67F45700B40D68 /* HPProductCollectionCell.xib in Resources */,
+				60319DB71DA922E100BD094D /* CartIntroductionFooterView.xib in Resources */,
 				D76E84931D783B880014FDEA /* pg_edit_sdk_resource.bundle in Resources */,
 				60319D991D92C34700BD094D /* HotProductListCell.xib in Resources */,
 				60319D791D91849600BD094D /* FVCKindCollectionCell.xib in Resources */,
@@ -3044,6 +3053,7 @@
 				60074E1C1D634AE80040C3C0 /* UIColor+HexString.m in Sources */,
 				D76E84151D7567A70014FDEA /* XTZoomPicture.m in Sources */,
 				D76E83F51D7439950014FDEA /* UserNotesCollectionTableViewCell.m in Sources */,
+				60319DB51DA9224800BD094D /* CartIntroductionFooterView.m in Sources */,
 				D75CC5E41C2A965000E590E6 /* QNEtag.m in Sources */,
 				60074E031D60DFDC0040C3C0 /* FindController.m in Sources */,
 				D7886D561D910799003D6D57 /* Comment.m in Sources */,
