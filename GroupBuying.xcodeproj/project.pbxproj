@@ -334,6 +334,22 @@
 		D7E0F4CB1D88033D00EA663B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7E0F4CA1D88033D00EA663B /* Login.storyboard */; };
 		D7E0F4CE1D880E8E00EA663B /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4CD1D880E8E00EA663B /* RegisterViewController.m */; };
 		D7E0F4D11D882A5400EA663B /* UserOnDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4D01D882A5400EA663B /* UserOnDevice.m */; };
+		D7E4FEF41DA8A5F700DC0E53 /* MessageCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E4FEF31DA8A5F700DC0E53 /* MessageCtrller.m */; };
+		D7E4FEF81DA8A85700DC0E53 /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E4FEF61DA8A85700DC0E53 /* MessageCell.m */; };
+		D7E4FEF91DA8A85700DC0E53 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E4FEF71DA8A85700DC0E53 /* MessageCell.xib */; };
+		D7E4FEFD1DA8D71100DC0E53 /* MyCollectionCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E4FEFC1DA8D71100DC0E53 /* MyCollectionCtrller.m */; };
+		D7E4FF031DA8D74800DC0E53 /* MyFansFocusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E4FEFF1DA8D74800DC0E53 /* MyFansFocusCell.m */; };
+		D7E4FF041DA8D74800DC0E53 /* MyFansFocusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E4FF001DA8D74800DC0E53 /* MyFansFocusCell.xib */; };
+		D7E4FF051DA8D74800DC0E53 /* MyFansFocusCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E4FF021DA8D74800DC0E53 /* MyFansFocusCtrller.m */; };
+		D7E4FF0E1DA8D75A00DC0E53 /* AddFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E4FF071DA8D75A00DC0E53 /* AddFriendCell.m */; };
+		D7E4FF0F1DA8D75A00DC0E53 /* AddFriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E4FF081DA8D75A00DC0E53 /* AddFriendCell.xib */; };
+		D7E4FF101DA8D75A00DC0E53 /* AddFriendCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E4FF0A1DA8D75A00DC0E53 /* AddFriendCollectionCell.m */; };
+		D7E4FF111DA8D75A00DC0E53 /* AddFriendCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E4FF0B1DA8D75A00DC0E53 /* AddFriendCollectionCell.xib */; };
+		D7E4FF121DA8D75A00DC0E53 /* AddFriendsCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E4FF0D1DA8D75A00DC0E53 /* AddFriendsCtrl.m */; };
+		D7E4FF161DA8E33200DC0E53 /* Shop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7E4FF151DA8E33200DC0E53 /* Shop.storyboard */; };
+		D7E4FF1A1DA8E37F00DC0E53 /* ShopCartCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E4FF191DA8E37F00DC0E53 /* ShopCartCtrller.m */; };
+		D7E4FF1F1DA8FEB900DC0E53 /* CartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E4FF1D1DA8FEB900DC0E53 /* CartCell.m */; };
+		D7E4FF201DA8FEB900DC0E53 /* CartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E4FF1E1DA8FEB900DC0E53 /* CartCell.xib */; };
 		D7E994621D93D3D700EACDFB /* MineUserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994601D93D3D700EACDFB /* MineUserInfoCell.m */; };
 		D7E994631D93D3D700EACDFB /* MineUserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E994611D93D3D700EACDFB /* MineUserInfoCell.xib */; };
 		D7E994661D94C9DC00EACDFB /* XTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994651D94C9DC00EACDFB /* XTButton.m */; };
@@ -359,11 +375,6 @@
 		D7E994E11D99398A00EACDFB /* ResetSecretCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994E01D99398A00EACDFB /* ResetSecretCtrller.m */; };
 		D7E994E41D9A1D5C00EACDFB /* UIButton+Countdown.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994E31D9A1D5C00EACDFB /* UIButton+Countdown.m */; };
 		D7E994E71D9A521C00EACDFB /* MineEditAddCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994E61D9A521C00EACDFB /* MineEditAddCtrller.m */; };
-		D7E994EB1D9A56C500EACDFB /* AddFriendsCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994EA1D9A56C500EACDFB /* AddFriendsCtrl.m */; };
-		D7E994EF1D9A5E0200EACDFB /* AddFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994ED1D9A5E0200EACDFB /* AddFriendCell.m */; };
-		D7E994F01D9A5E0200EACDFB /* AddFriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E994EE1D9A5E0200EACDFB /* AddFriendCell.xib */; };
-		D7E994F41D9A6A9F00EACDFB /* AddFriendCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994F21D9A6A9F00EACDFB /* AddFriendCollectionCell.m */; };
-		D7E994F51D9A6A9F00EACDFB /* AddFriendCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E994F31D9A6A9F00EACDFB /* AddFriendCollectionCell.xib */; };
 		D7E994F91D9A712300EACDFB /* AboutUsCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994F81D9A712300EACDFB /* AboutUsCtrller.m */; };
 		D7E995041D9B7FB700EACDFB /* MyNoteCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E995031D9B7FB700EACDFB /* MyNoteCtrller.m */; };
 /* End PBXBuildFile section */
@@ -1006,6 +1017,32 @@
 		D7E0F4CD1D880E8E00EA663B /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = "GroupBuying/VC+V/Login/RegisterViewController.m"; sourceTree = SOURCE_ROOT; };
 		D7E0F4CF1D882A5400EA663B /* UserOnDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserOnDevice.h; sourceTree = "<group>"; };
 		D7E0F4D01D882A5400EA663B /* UserOnDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserOnDevice.m; sourceTree = "<group>"; };
+		D7E4FEF21DA8A5F700DC0E53 /* MessageCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageCtrller.h; path = "GroupBuying/VC+V/Mine/Message/MessageCtrller.h"; sourceTree = SOURCE_ROOT; };
+		D7E4FEF31DA8A5F700DC0E53 /* MessageCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageCtrller.m; path = "GroupBuying/VC+V/Mine/Message/MessageCtrller.m"; sourceTree = SOURCE_ROOT; };
+		D7E4FEF51DA8A85700DC0E53 /* MessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageCell.h; path = "GroupBuying/VC+V/Mine/Message/MessageCell.h"; sourceTree = SOURCE_ROOT; };
+		D7E4FEF61DA8A85700DC0E53 /* MessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageCell.m; path = "GroupBuying/VC+V/Mine/Message/MessageCell.m"; sourceTree = SOURCE_ROOT; };
+		D7E4FEF71DA8A85700DC0E53 /* MessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MessageCell.xib; path = "GroupBuying/VC+V/Mine/Message/MessageCell.xib"; sourceTree = SOURCE_ROOT; };
+		D7E4FEFB1DA8D71100DC0E53 /* MyCollectionCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCollectionCtrller.h; path = "GroupBuying/VC+V/Mine/MyCollectionCtrller.h"; sourceTree = SOURCE_ROOT; };
+		D7E4FEFC1DA8D71100DC0E53 /* MyCollectionCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCollectionCtrller.m; path = "GroupBuying/VC+V/Mine/MyCollectionCtrller.m"; sourceTree = SOURCE_ROOT; };
+		D7E4FEFE1DA8D74800DC0E53 /* MyFansFocusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyFansFocusCell.h; path = "GroupBuying/VC+V/Mine/MyFansFocus/MyFansFocusCell.h"; sourceTree = SOURCE_ROOT; };
+		D7E4FEFF1DA8D74800DC0E53 /* MyFansFocusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyFansFocusCell.m; path = "GroupBuying/VC+V/Mine/MyFansFocus/MyFansFocusCell.m"; sourceTree = SOURCE_ROOT; };
+		D7E4FF001DA8D74800DC0E53 /* MyFansFocusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MyFansFocusCell.xib; path = "GroupBuying/VC+V/Mine/MyFansFocus/MyFansFocusCell.xib"; sourceTree = SOURCE_ROOT; };
+		D7E4FF011DA8D74800DC0E53 /* MyFansFocusCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyFansFocusCtrller.h; path = "GroupBuying/VC+V/Mine/MyFansFocus/MyFansFocusCtrller.h"; sourceTree = SOURCE_ROOT; };
+		D7E4FF021DA8D74800DC0E53 /* MyFansFocusCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyFansFocusCtrller.m; path = "GroupBuying/VC+V/Mine/MyFansFocus/MyFansFocusCtrller.m"; sourceTree = SOURCE_ROOT; };
+		D7E4FF061DA8D75A00DC0E53 /* AddFriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddFriendCell.h; path = "GroupBuying/VC+V/Mine/AddFriendsCtrl/AddFriendCell.h"; sourceTree = SOURCE_ROOT; };
+		D7E4FF071DA8D75A00DC0E53 /* AddFriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddFriendCell.m; path = "GroupBuying/VC+V/Mine/AddFriendsCtrl/AddFriendCell.m"; sourceTree = SOURCE_ROOT; };
+		D7E4FF081DA8D75A00DC0E53 /* AddFriendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddFriendCell.xib; path = "GroupBuying/VC+V/Mine/AddFriendsCtrl/AddFriendCell.xib"; sourceTree = SOURCE_ROOT; };
+		D7E4FF091DA8D75A00DC0E53 /* AddFriendCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddFriendCollectionCell.h; path = "GroupBuying/VC+V/Mine/AddFriendsCtrl/AddFriendCollectionCell.h"; sourceTree = SOURCE_ROOT; };
+		D7E4FF0A1DA8D75A00DC0E53 /* AddFriendCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddFriendCollectionCell.m; path = "GroupBuying/VC+V/Mine/AddFriendsCtrl/AddFriendCollectionCell.m"; sourceTree = SOURCE_ROOT; };
+		D7E4FF0B1DA8D75A00DC0E53 /* AddFriendCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddFriendCollectionCell.xib; path = "GroupBuying/VC+V/Mine/AddFriendsCtrl/AddFriendCollectionCell.xib"; sourceTree = SOURCE_ROOT; };
+		D7E4FF0C1DA8D75A00DC0E53 /* AddFriendsCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddFriendsCtrl.h; path = "GroupBuying/VC+V/Mine/AddFriendsCtrl/AddFriendsCtrl.h"; sourceTree = SOURCE_ROOT; };
+		D7E4FF0D1DA8D75A00DC0E53 /* AddFriendsCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddFriendsCtrl.m; path = "GroupBuying/VC+V/Mine/AddFriendsCtrl/AddFriendsCtrl.m"; sourceTree = SOURCE_ROOT; };
+		D7E4FF151DA8E33200DC0E53 /* Shop.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Shop.storyboard; path = "VC+V/Shop/Shop.storyboard"; sourceTree = "<group>"; };
+		D7E4FF181DA8E37F00DC0E53 /* ShopCartCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopCartCtrller.h; path = "GroupBuying/VC+V/Shop/Cart/ShopCartCtrller.h"; sourceTree = SOURCE_ROOT; };
+		D7E4FF191DA8E37F00DC0E53 /* ShopCartCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopCartCtrller.m; path = "GroupBuying/VC+V/Shop/Cart/ShopCartCtrller.m"; sourceTree = SOURCE_ROOT; };
+		D7E4FF1C1DA8FEB900DC0E53 /* CartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CartCell.h; path = "GroupBuying/VC+V/Shop/Cart/CartCell.h"; sourceTree = SOURCE_ROOT; };
+		D7E4FF1D1DA8FEB900DC0E53 /* CartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CartCell.m; path = "GroupBuying/VC+V/Shop/Cart/CartCell.m"; sourceTree = SOURCE_ROOT; };
+		D7E4FF1E1DA8FEB900DC0E53 /* CartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CartCell.xib; path = "GroupBuying/VC+V/Shop/Cart/CartCell.xib"; sourceTree = SOURCE_ROOT; };
 		D7E9945F1D93D3D700EACDFB /* MineUserInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MineUserInfoCell.h; path = "GroupBuying/VC+V/Mine/MineUserInfoCell.h"; sourceTree = SOURCE_ROOT; };
 		D7E994601D93D3D700EACDFB /* MineUserInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MineUserInfoCell.m; path = "GroupBuying/VC+V/Mine/MineUserInfoCell.m"; sourceTree = SOURCE_ROOT; };
 		D7E994611D93D3D700EACDFB /* MineUserInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MineUserInfoCell.xib; path = "GroupBuying/VC+V/Mine/MineUserInfoCell.xib"; sourceTree = SOURCE_ROOT; };
@@ -1048,14 +1085,6 @@
 		D7E994E31D9A1D5C00EACDFB /* UIButton+Countdown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Countdown.m"; sourceTree = "<group>"; };
 		D7E994E51D9A521C00EACDFB /* MineEditAddCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MineEditAddCtrller.h; path = "GroupBuying/VC+V/Mine/MineUserEdit/MineEditAddCtrller.h"; sourceTree = SOURCE_ROOT; };
 		D7E994E61D9A521C00EACDFB /* MineEditAddCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MineEditAddCtrller.m; path = "GroupBuying/VC+V/Mine/MineUserEdit/MineEditAddCtrller.m"; sourceTree = SOURCE_ROOT; };
-		D7E994E91D9A56C500EACDFB /* AddFriendsCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddFriendsCtrl.h; path = "GroupBuying/VC+V/AddFriendsCtrl/AddFriendsCtrl.h"; sourceTree = SOURCE_ROOT; };
-		D7E994EA1D9A56C500EACDFB /* AddFriendsCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddFriendsCtrl.m; path = "GroupBuying/VC+V/AddFriendsCtrl/AddFriendsCtrl.m"; sourceTree = SOURCE_ROOT; };
-		D7E994EC1D9A5E0200EACDFB /* AddFriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddFriendCell.h; path = "GroupBuying/VC+V/AddFriendsCtrl/AddFriendCell.h"; sourceTree = SOURCE_ROOT; };
-		D7E994ED1D9A5E0200EACDFB /* AddFriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddFriendCell.m; path = "GroupBuying/VC+V/AddFriendsCtrl/AddFriendCell.m"; sourceTree = SOURCE_ROOT; };
-		D7E994EE1D9A5E0200EACDFB /* AddFriendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddFriendCell.xib; path = "GroupBuying/VC+V/AddFriendsCtrl/AddFriendCell.xib"; sourceTree = SOURCE_ROOT; };
-		D7E994F11D9A6A9F00EACDFB /* AddFriendCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddFriendCollectionCell.h; path = "GroupBuying/VC+V/AddFriendsCtrl/AddFriendCollectionCell.h"; sourceTree = SOURCE_ROOT; };
-		D7E994F21D9A6A9F00EACDFB /* AddFriendCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddFriendCollectionCell.m; path = "GroupBuying/VC+V/AddFriendsCtrl/AddFriendCollectionCell.m"; sourceTree = SOURCE_ROOT; };
-		D7E994F31D9A6A9F00EACDFB /* AddFriendCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddFriendCollectionCell.xib; path = "GroupBuying/VC+V/AddFriendsCtrl/AddFriendCollectionCell.xib"; sourceTree = SOURCE_ROOT; };
 		D7E994F71D9A712300EACDFB /* AboutUsCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutUsCtrller.h; path = "GroupBuying/VC+V/AboutUs/AboutUsCtrller.h"; sourceTree = SOURCE_ROOT; };
 		D7E994F81D9A712300EACDFB /* AboutUsCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutUsCtrller.m; path = "GroupBuying/VC+V/AboutUs/AboutUsCtrller.m"; sourceTree = SOURCE_ROOT; };
 		D7E995021D9B7FB700EACDFB /* MyNoteCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyNoteCtrller.h; path = "GroupBuying/VC+V/Mine/MyNote/MyNoteCtrller.h"; sourceTree = SOURCE_ROOT; };
@@ -1126,6 +1155,7 @@
 				60319D931D92C0F100BD094D /* Find.storyboard */,
 				D7886D7D1D93B8A9003D6D57 /* Activity.storyboard */,
 				D7E9946B1D94CEF000EACDFB /* Mine.storyboard */,
+				D7E4FF151DA8E33200DC0E53 /* Shop.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -1156,6 +1186,9 @@
 		60074DFD1D60DF2F0040C3C0 /* Mine1 */ = {
 			isa = PBXGroup;
 			children = (
+				D7E4FEFA1DA8D5A200DC0E53 /* MyCollection */,
+				D7E4FEF11DA8A5B800DC0E53 /* Message */,
+				D7E4FEE81DA89A0300DC0E53 /* MyFansFocus */,
 				D7E995011D9B6CCB00EACDFB /* MyNote */,
 				D7E9945E1D93D3AC00EACDFB /* Mine */,
 				D7E994E81D9A569A00EACDFB /* AddFriends */,
@@ -1501,6 +1534,7 @@
 		D75CC3F71C2A92B200E590E6 /* VC+V */ = {
 			isa = PBXGroup;
 			children = (
+				D7E4FF171DA8E34B00DC0E53 /* Shop */,
 				60074DF91D60DEC90040C3C0 /* HomePage1 */,
 				60074E001D60DF410040C3C0 /* Find1 */,
 				60074DFF1D60DF3C0040C3C0 /* Features1 */,
@@ -2580,6 +2614,59 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
+		D7E4FEE81DA89A0300DC0E53 /* MyFansFocus */ = {
+			isa = PBXGroup;
+			children = (
+				D7E4FEFE1DA8D74800DC0E53 /* MyFansFocusCell.h */,
+				D7E4FEFF1DA8D74800DC0E53 /* MyFansFocusCell.m */,
+				D7E4FF001DA8D74800DC0E53 /* MyFansFocusCell.xib */,
+				D7E4FF011DA8D74800DC0E53 /* MyFansFocusCtrller.h */,
+				D7E4FF021DA8D74800DC0E53 /* MyFansFocusCtrller.m */,
+			);
+			name = MyFansFocus;
+			sourceTree = "<group>";
+		};
+		D7E4FEF11DA8A5B800DC0E53 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				D7E4FEF21DA8A5F700DC0E53 /* MessageCtrller.h */,
+				D7E4FEF31DA8A5F700DC0E53 /* MessageCtrller.m */,
+				D7E4FEF51DA8A85700DC0E53 /* MessageCell.h */,
+				D7E4FEF61DA8A85700DC0E53 /* MessageCell.m */,
+				D7E4FEF71DA8A85700DC0E53 /* MessageCell.xib */,
+			);
+			name = Message;
+			sourceTree = "<group>";
+		};
+		D7E4FEFA1DA8D5A200DC0E53 /* MyCollection */ = {
+			isa = PBXGroup;
+			children = (
+				D7E4FEFB1DA8D71100DC0E53 /* MyCollectionCtrller.h */,
+				D7E4FEFC1DA8D71100DC0E53 /* MyCollectionCtrller.m */,
+			);
+			name = MyCollection;
+			sourceTree = "<group>";
+		};
+		D7E4FF171DA8E34B00DC0E53 /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				D7E4FF1B1DA8E38600DC0E53 /* Cart */,
+			);
+			name = Shop;
+			sourceTree = "<group>";
+		};
+		D7E4FF1B1DA8E38600DC0E53 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				D7E4FF181DA8E37F00DC0E53 /* ShopCartCtrller.h */,
+				D7E4FF191DA8E37F00DC0E53 /* ShopCartCtrller.m */,
+				D7E4FF1C1DA8FEB900DC0E53 /* CartCell.h */,
+				D7E4FF1D1DA8FEB900DC0E53 /* CartCell.m */,
+				D7E4FF1E1DA8FEB900DC0E53 /* CartCell.xib */,
+			);
+			name = Cart;
+			sourceTree = "<group>";
+		};
 		D7E9945E1D93D3AC00EACDFB /* Mine */ = {
 			isa = PBXGroup;
 			children = (
@@ -2645,14 +2732,14 @@
 		D7E994E81D9A569A00EACDFB /* AddFriends */ = {
 			isa = PBXGroup;
 			children = (
-				D7E994E91D9A56C500EACDFB /* AddFriendsCtrl.h */,
-				D7E994EA1D9A56C500EACDFB /* AddFriendsCtrl.m */,
-				D7E994EC1D9A5E0200EACDFB /* AddFriendCell.h */,
-				D7E994ED1D9A5E0200EACDFB /* AddFriendCell.m */,
-				D7E994EE1D9A5E0200EACDFB /* AddFriendCell.xib */,
-				D7E994F11D9A6A9F00EACDFB /* AddFriendCollectionCell.h */,
-				D7E994F21D9A6A9F00EACDFB /* AddFriendCollectionCell.m */,
-				D7E994F31D9A6A9F00EACDFB /* AddFriendCollectionCell.xib */,
+				D7E4FF061DA8D75A00DC0E53 /* AddFriendCell.h */,
+				D7E4FF071DA8D75A00DC0E53 /* AddFriendCell.m */,
+				D7E4FF081DA8D75A00DC0E53 /* AddFriendCell.xib */,
+				D7E4FF091DA8D75A00DC0E53 /* AddFriendCollectionCell.h */,
+				D7E4FF0A1DA8D75A00DC0E53 /* AddFriendCollectionCell.m */,
+				D7E4FF0B1DA8D75A00DC0E53 /* AddFriendCollectionCell.xib */,
+				D7E4FF0C1DA8D75A00DC0E53 /* AddFriendsCtrl.h */,
+				D7E4FF0D1DA8D75A00DC0E53 /* AddFriendsCtrl.m */,
 			);
 			name = AddFriends;
 			sourceTree = "<group>";
@@ -2786,6 +2873,8 @@
 				D75CC3D41C2A926100E590E6 /* LaunchScreen.storyboard in Resources */,
 				D7886D521D90EFAB003D6D57 /* CommentCell.xib in Resources */,
 				60319D5E1D8F1A9200BD094D /* DetailHisFocusCell.xib in Resources */,
+				D7E4FF041DA8D74800DC0E53 /* MyFansFocusCell.xib in Resources */,
+				D7E4FF201DA8FEB900DC0E53 /* CartCell.xib in Resources */,
 				60319DA01D9438DA00BD094D /* info_mineCell.plist in Resources */,
 				D7E0F4CB1D88033D00EA663B /* Login.storyboard in Resources */,
 				D7E994D61D99122C00EACDFB /* MineEditCell.xib in Resources */,
@@ -2798,9 +2887,9 @@
 				6035CF2D1D74B3AC00EA590B /* PostContentCell.xib in Resources */,
 				60319D741D91795A00BD094D /* FVCKindsCell.xib in Resources */,
 				D76E83FB1D7524BA0014FDEA /* PostPhotosCell.xib in Resources */,
+				D7E4FEF91DA8A85700DC0E53 /* MessageCell.xib in Resources */,
 				60319D941D92C0F100BD094D /* Find.storyboard in Resources */,
 				60319D8E1D91B4D000BD094D /* ActivityPageCell.xib in Resources */,
-				D7E994F01D9A5E0200EACDFB /* AddFriendCell.xib in Resources */,
 				D76E83F61D7439950014FDEA /* UserNotesCollectionTableViewCell.xib in Resources */,
 				D7E994D11D990F1C00EACDFB /* MineEditHeadCell.xib in Resources */,
 				D7886D601D914B58003D6D57 /* TDCProductCollectionCell.xib in Resources */,
@@ -2817,18 +2906,20 @@
 				60319D991D92C34700BD094D /* HotProductListCell.xib in Resources */,
 				60319D791D91849600BD094D /* FVCKindCollectionCell.xib in Resources */,
 				608405831D67F62500B40D68 /* HPBigPhotoCollectionCell.xib in Resources */,
-				D7E994F51D9A6A9F00EACDFB /* AddFriendCollectionCell.xib in Resources */,
 				D76E83C61D7028680014FDEA /* UserInfoView.xib in Resources */,
+				D7E4FF161DA8E33200DC0E53 /* Shop.storyboard in Resources */,
 				D76E839D1D6EA1D90014FDEA /* testUser.plist in Resources */,
 				D76E84401D76D6A90014FDEA /* EditorPhotosCollectionCell.xib in Resources */,
 				D76E83F11D74359D0014FDEA /* UserFoucusHeaderView.xib in Resources */,
 				D76E841A1D75991D0014FDEA /* PostTagCell.xib in Resources */,
+				D7E4FF111DA8D75A00DC0E53 /* AddFriendCollectionCell.xib in Resources */,
 				D7E994631D93D3D700EACDFB /* MineUserInfoCell.xib in Resources */,
 				D76E83841D6D40D40014FDEA /* Camera.storyboard in Resources */,
 				D7E994711D94D00100EACDFB /* SettingCell.xib in Resources */,
 				D75CC3CF1C2A926100E590E6 /* Main.storyboard in Resources */,
 				D74589991D6B190D00835234 /* HomePage.storyboard in Resources */,
 				60074E1D1D634AE80040C3C0 /* xtAllColorsList.plist in Resources */,
+				D7E4FF0F1DA8D75A00DC0E53 /* AddFriendCell.xib in Resources */,
 				60319D641D8F1D0C00BD094D /* UserItemCollectionCell.xib in Resources */,
 				608405941D74AA6800B40D68 /* SVProgressHUD.bundle in Resources */,
 				D7886D651D915787003D6D57 /* FVCBannerCell.xib in Resources */,
@@ -2877,9 +2968,11 @@
 				D76E83ED1D7435680014FDEA /* UserFoucusHeaderView.m in Sources */,
 				60074E091D60E0040040C3C0 /* ActivityController.m in Sources */,
 				D76E842A1D767A590014FDEA /* User.m in Sources */,
+				D7E4FEF81DA8A85700DC0E53 /* MessageCell.m in Sources */,
 				D75CC5E91C2A965000E590E6 /* QNSessionManager.m in Sources */,
 				D75CC61F1C2A965000E590E6 /* YXSpritesLoadingView.m in Sources */,
 				D76E83BE1D70175D0014FDEA /* ParallaxHeaderView.m in Sources */,
+				D7E4FF051DA8D74800DC0E53 /* MyFansFocusCtrller.m in Sources */,
 				D7E994E71D9A521C00EACDFB /* MineEditAddCtrller.m in Sources */,
 				D7E994D51D99122C00EACDFB /* MineEditCell.m in Sources */,
 				D75CC5FF1C2A965000E590E6 /* UIImage+WebP.m in Sources */,
@@ -2912,6 +3005,7 @@
 				6035CF311D75E64E00EA590B /* TagSearchingCtrller.m in Sources */,
 				D76E83961D6DA3290014FDEA /* CameraGoupCtrller.m in Sources */,
 				D76E83871D6D46300014FDEA /* CameraNavCtrller.m in Sources */,
+				D7E4FEF41DA8A5F700DC0E53 /* MessageCtrller.m in Sources */,
 				D76E846F1D780FAC0014FDEA /* MASLayoutConstraint.m in Sources */,
 				D75CC5A61C2A965000E590E6 /* AFURLResponseSerialization.m in Sources */,
 				D75CC5CE1C2A965000E590E6 /* MJRefreshBackFooter.m in Sources */,
@@ -2923,6 +3017,7 @@
 				D75CC5C81C2A965000E590E6 /* HWWeakTimer.m in Sources */,
 				D75CC6C21C2BEB0400E590E6 /* MyWebController.m in Sources */,
 				608405931D74AA6800B40D68 /* SVProgressAnimatedView.m in Sources */,
+				D7E4FF121DA8D75A00DC0E53 /* AddFriendsCtrl.m in Sources */,
 				D75CC5C91C2A965000E590E6 /* KeyBoardTopBar.m in Sources */,
 				D75CC5D21C2A965000E590E6 /* MJRefreshAutoGifFooter.m in Sources */,
 				60319D7E1D91918400BD094D /* FVCHotTagCell.m in Sources */,
@@ -2939,6 +3034,7 @@
 				D7E0F4C91D88032600EA663B /* LoginViewController.m in Sources */,
 				D7E0F4B71D87B2D100EA663B /* ArticlePicItem.m in Sources */,
 				D75CC4551C2A95DE00E590E6 /* XTVerification.m in Sources */,
+				D7E4FEFD1DA8D71100DC0E53 /* MyCollectionCtrller.m in Sources */,
 				608075FF1D805DB00056573F /* NoteDetailCtrller.m in Sources */,
 				D75CC59F1C2A965000E590E6 /* AFHTTPRequestOperation.m in Sources */,
 				D75CC5DA1C2A965000E590E6 /* MJRefreshStateHeader.m in Sources */,
@@ -2961,6 +3057,7 @@
 				D75CC3C91C2A926100E590E6 /* AppDelegate.m in Sources */,
 				D75CC3C61C2A926100E590E6 /* main.m in Sources */,
 				D75CC5B31C2A965000E590E6 /* ASICloudFilesContainerXMLParserDelegate.m in Sources */,
+				D7E4FF1F1DA8FEB900DC0E53 /* CartCell.m in Sources */,
 				D75CC5D01C2A965000E590E6 /* MJRefreshFooter.m in Sources */,
 				D75CC5B61C2A965000E590E6 /* ASICloudFilesRequest.m in Sources */,
 				D75CC5AB1C2A965000E590E6 /* ASIDownloadCache.m in Sources */,
@@ -3006,7 +3103,6 @@
 				D75CC43C1C2A95DE00E590E6 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,
 				D75CC5B51C2A965000E590E6 /* ASICloudFilesObjectRequest.m in Sources */,
 				D75CC6C11C2BEB0400E590E6 /* MyTabbarCtrller.m in Sources */,
-				D7E994EB1D9A56C500EACDFB /* AddFriendsCtrl.m in Sources */,
 				D75CC5B81C2A965000E590E6 /* ASIS3Bucket.m in Sources */,
 				D76E84091D755FDD0014FDEA /* PreviewCtrller.m in Sources */,
 				D75CC44F1C2A95DE00E590E6 /* ShareUtils.m in Sources */,
@@ -3025,7 +3121,6 @@
 				D75CC4511C2A95DE00E590E6 /* XTFileManager.m in Sources */,
 				D75CC5F81C2A965000E590E6 /* SDWebImageDownloader.m in Sources */,
 				D75CC5E81C2A965000E590E6 /* QNResponseInfo.m in Sources */,
-				D7E994F41D9A6A9F00EACDFB /* AddFriendCollectionCell.m in Sources */,
 				D76E83821D6D3F010014FDEA /* CameraViewController.m in Sources */,
 				D75CC5CD1C2A965000E590E6 /* MJRefreshAutoFooter.m in Sources */,
 				D75CC5F41C2A965000E590E6 /* NSData+ImageContentType.m in Sources */,
@@ -3039,6 +3134,7 @@
 				D75CC43E1C2A95DE00E590E6 /* NSString+Extend.m in Sources */,
 				60319D981D92C34700BD094D /* HotProductListCell.m in Sources */,
 				D75CC5E21C2A965000E590E6 /* QNAsyncRun.m in Sources */,
+				D7E4FF101DA8D75A00DC0E53 /* AddFriendCollectionCell.m in Sources */,
 				D75CC5A51C2A965000E590E6 /* AFURLRequestSerialization.m in Sources */,
 				60319DAC1D982E3700BD094D /* XTStretchSegment.m in Sources */,
 				D75CC6041C2A965000E590E6 /* UICollectionViewLeftAlignedLayout.m in Sources */,
@@ -3063,6 +3159,7 @@
 				D75CC5C01C2A965000E590E6 /* NSString+MD5.m in Sources */,
 				D75CC5BC1C2A965000E590E6 /* ASIS3Request.m in Sources */,
 				D75CC5F71C2A965000E590E6 /* SDWebImageDecoder.m in Sources */,
+				D7E4FF031DA8D74800DC0E53 /* MyFansFocusCell.m in Sources */,
 				D75CC5D81C2A965000E590E6 /* MJRefreshGifHeader.m in Sources */,
 				D76E84881D7817A50014FDEA /* YXLTagEditorImageView.m in Sources */,
 				D75CC5EC1C2A965000E590E6 /* QNConfiguration.m in Sources */,
@@ -3084,7 +3181,6 @@
 				D75CC5F61C2A965000E590E6 /* SDWebImageCompat.m in Sources */,
 				60319D9D1D9437E000BD094D /* MineCell.m in Sources */,
 				D75CC7331C2D13C000E590E6 /* NSObject+YYModel.m in Sources */,
-				D7E994EF1D9A5E0200EACDFB /* AddFriendCell.m in Sources */,
 				D76E839A1D6DA6540014FDEA /* CameraGroupCell.m in Sources */,
 				D76E843F1D76D6A90014FDEA /* EditorPhotosCollectionCell.m in Sources */,
 				D75CC5AE1C2A965000E590E6 /* ASIInputStream.m in Sources */,
@@ -3098,6 +3194,7 @@
 				D76E848A1D7817A50014FDEA /* YXLTagView.m in Sources */,
 				D75CC5D11C2A965000E590E6 /* MJRefreshHeader.m in Sources */,
 				D75CC6031C2A965000E590E6 /* SIAlertView.m in Sources */,
+				D7E4FF1A1DA8E37F00DC0E53 /* ShopCartCtrller.m in Sources */,
 				D75CC5BD1C2A965000E590E6 /* ASIS3ServiceRequest.m in Sources */,
 				60319D5D1D8F1A9200BD094D /* DetailHisFocusCell.m in Sources */,
 				D76E841F1D759CB30014FDEA /* PostTagItemCollectionCell.m in Sources */,
@@ -3121,6 +3218,7 @@
 				6084059A1D74AE6800B40D68 /* PostCtrller.m in Sources */,
 				D76E84041D7528F70014FDEA /* PostAddPhotoCell.m in Sources */,
 				D75CC6001C2A965000E590E6 /* UIImageView+HighlightedWebCache.m in Sources */,
+				D7E4FF0E1DA8D75A00DC0E53 /* AddFriendCell.m in Sources */,
 				60319D8D1D91B4D000BD094D /* ActivityPageCell.m in Sources */,
 				60074E121D634AA50040C3C0 /* XTJson.m in Sources */,
 				D7E994E41D9A1D5C00EACDFB /* UIButton+Countdown.m in Sources */,

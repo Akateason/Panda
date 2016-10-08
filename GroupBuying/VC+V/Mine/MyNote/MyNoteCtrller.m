@@ -53,6 +53,7 @@
     _collectionView.dataSource = self;
     _collectionView.delegate = self;
     _collectionView.xt_delegate = self ;
+    _collectionView.collectionViewLayout = self.waterflowLayout ;
     [_collectionView registerNib:[UINib nibWithNibName:id_HPProductCollectionCell bundle:[NSBundle mainBundle]]
       forCellWithReuseIdentifier:id_HPProductCollectionCell] ;
     

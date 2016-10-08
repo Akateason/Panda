@@ -6,7 +6,7 @@
 //  Copyright © 2016年 teason. All rights reserved.
 //  我的
 // 不需要 tablerefresh .
-// 定时器获取新消息.
+// 定时器获取 新[消息].
 // 缓存获取用户
 
 
@@ -19,6 +19,10 @@
 #import "AddFriendsCtrl.h"
 #import "UserInfoCtrller.h"
 #import "MyNoteCtrller.h"
+#import "MyFansFocusCtrller.h"
+#import "MessageCtrller.h"
+#import "MyCollectionCtrller.h"
+#import "ShopCartCtrller.h"
 
 @interface MineController () <UITableViewDataSource,UITableViewDelegate>
 
@@ -110,17 +114,27 @@
     if (section == 0) {
         MineUserInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_MineUserInfoCell] ;
         cell.block_note = ^{
+            NSLog(@"我的笔记") ;
             MyNoteCtrller *mynoteVC = (MyNoteCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"MyNoteCtrller"] ;
             [mynoteVC setHidesBottomBarWhenPushed:YES] ;
             [self.navigationController pushViewController:mynoteVC animated:YES] ;
         } ;
         cell.block_focus = ^{
-            
+            NSLog(@"我的关注") ;
+            MyFansFocusCtrller *mffVC = (MyFansFocusCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"MyFansFocusCtrller"] ;
+            mffVC.displayType = type_focus ;
+            [mffVC setHidesBottomBarWhenPushed:YES] ;
+            [self.navigationController pushViewController:mffVC animated:YES] ;
         } ;
         cell.block_fans = ^{
-            
+            NSLog(@"我的粉丝") ;
+            MyFansFocusCtrller *mffVC = (MyFansFocusCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"MyFansFocusCtrller"] ;
+            mffVC.displayType = type_fans ;
+            [mffVC setHidesBottomBarWhenPushed:YES] ;
+            [self.navigationController pushViewController:mffVC animated:YES] ;
         } ;
         cell.block_page = ^{
+            NSLog(@"我的主页") ;
             UserInfoCtrller *userCtrl = (UserInfoCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"UserInfoCtrller"] ;
             [userCtrl setHidesBottomBarWhenPushed:YES] ;
             [self.navigationController pushViewController:userCtrl animated:YES] ;
@@ -209,13 +223,22 @@ static NSString *const kIdentifierFooter = @"mycell_footer" ;
 
     if (section == 1) {
         // 消息
+        MessageCtrller *messageVC = (MessageCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"MessageCtrller"] ;
+        [messageVC setHidesBottomBarWhenPushed:YES] ;
+        [self.navigationController pushViewController:messageVC animated:YES] ;
     }
     else if (section == 2) {
         // 收藏
+        MyCollectionCtrller *myCollectionVC = (MyCollectionCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"MyCollectionCtrller"] ;
+        [myCollectionVC setHidesBottomBarWhenPushed:YES] ;
+        [self.navigationController pushViewController:myCollectionVC animated:YES] ;
     }
     else if (section == 3) {
         if (row == 0) {
             // 购物车
+            ShopCartCtrller *cartVC = (ShopCartCtrller *)[[self class] getCtrllerFromStory:@"Shop" controllerIdentifier:@"ShopCartCtrller"] ;
+            [cartVC setHidesBottomBarWhenPushed:YES] ;
+            [self.navigationController pushViewController:cartVC animated:YES] ;
         }
         else if (row == 1) {
             // 订单

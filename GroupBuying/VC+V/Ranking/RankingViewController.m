@@ -48,20 +48,14 @@
 #pragma mark - XTSegmentDelegate 
 - (void)clickSegmentWith:(int)index
 {
-    
+    NSLog(@"index : %d",index) ;
 }
 
 
 #pragma mark - RootTableViewDelegate
 - (void)loadNewData
 {
-//    if (_dataList.count) [self.dataList removeAllObjects] ;
-//    
-//    ResultParsered *result = [ServerRequest getHomePageInfoResultWithSinceID:0 AndMaxID:0 AndCount:20] ;
-//    for (NSDictionary *dicArticle in result.info[@"items"][@"articles"][@"article_list"]) {
-//        Article *article = [Article yy_modelWithJSON:dicArticle] ;
-//        [self.dataList addObject:article] ;
-//    }
+
 }
 
 - (void)loadMoreData

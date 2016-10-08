@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Shop Cart Ctrller-->
+        <scene sceneID="5ic-vm-UOq">
+            <objects>
+                <viewController storyboardIdentifier="ShopCartCtrller" id="eBe-N4-k00" customClass="ShopCartCtrller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TFw-vd-zoe"/>
+                        <viewControllerLayoutGuide type="bottom" id="uga-l8-nSs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Yqj-qg-aOr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="crK-ux-iXN" customClass="RootTableView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="550"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CaE-s2-yx7">
+                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ql9-sw-3De" customClass="UIAlternativeButton">
+                                        <rect key="frame" x="8" y="6" width="40" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="5uT-g5-Hcs"/>
+                                            <constraint firstAttribute="height" constant="38" id="efd-2G-Kt0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <state key="normal" title="全选" image="cart_icon_choice"/>
+                                        <state key="selected" image="cart_icon_select"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="imageViewWidth">
+                                                <real key="value" value="13"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="imageViewRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btAllChooseOnClick:" destination="eBe-N4-k00" eventType="touchUpInside" id="rf9-fa-U4k"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ORP-ZU-A1Q">
+                                        <rect key="frame" x="513" y="10" width="75" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="75" id="Eht-8F-4CY"/>
+                                            <constraint firstAttribute="height" constant="30" id="s13-wi-UIA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="结算"/>
+                                        <connections>
+                                            <action selector="btCompleteOnClick:" destination="eBe-N4-k00" eventType="touchUpInside" id="ZRZ-HY-pfs"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="合计 : ¥33.32" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlA-s3-C6T">
+                                        <rect key="frame" x="417" y="10" width="81" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="不含运费" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IY3-9U-lop">
+                                        <rect key="frame" x="454" y="29" width="44" height="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.82229676920000006" blue="0.050859124030000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="ORP-ZU-A1Q" firstAttribute="leading" secondItem="IY3-9U-lop" secondAttribute="trailing" constant="15" id="005-EY-Eik"/>
+                                    <constraint firstItem="ql9-sw-3De" firstAttribute="leading" secondItem="CaE-s2-yx7" secondAttribute="leading" constant="8" id="3R0-WZ-jYo"/>
+                                    <constraint firstAttribute="trailing" secondItem="ORP-ZU-A1Q" secondAttribute="trailing" constant="12" id="7Iq-QT-CqN"/>
+                                    <constraint firstAttribute="bottom" secondItem="IY3-9U-lop" secondAttribute="bottom" constant="7" id="JbQ-OE-wtx"/>
+                                    <constraint firstItem="ORP-ZU-A1Q" firstAttribute="centerY" secondItem="CaE-s2-yx7" secondAttribute="centerY" id="WMa-hu-JIw"/>
+                                    <constraint firstItem="hlA-s3-C6T" firstAttribute="top" secondItem="CaE-s2-yx7" secondAttribute="top" constant="10" id="WNv-6I-ZMu"/>
+                                    <constraint firstItem="ql9-sw-3De" firstAttribute="centerY" secondItem="CaE-s2-yx7" secondAttribute="centerY" id="e8E-ej-zfm"/>
+                                    <constraint firstItem="ORP-ZU-A1Q" firstAttribute="leading" secondItem="hlA-s3-C6T" secondAttribute="trailing" constant="15" id="hfh-eF-OCB"/>
+                                    <constraint firstAttribute="height" constant="50" id="lKo-Uf-OrV"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CaE-s2-yx7" firstAttribute="leading" secondItem="Yqj-qg-aOr" secondAttribute="leading" id="KzQ-eT-APc"/>
+                            <constraint firstItem="CaE-s2-yx7" firstAttribute="top" secondItem="crK-ux-iXN" secondAttribute="bottom" id="Qhc-pE-awz"/>
+                            <constraint firstAttribute="trailing" secondItem="CaE-s2-yx7" secondAttribute="trailing" id="XyA-tS-UW6"/>
+                            <constraint firstAttribute="trailing" secondItem="crK-ux-iXN" secondAttribute="trailing" id="a7G-v0-OY4"/>
+                            <constraint firstItem="crK-ux-iXN" firstAttribute="leading" secondItem="Yqj-qg-aOr" secondAttribute="leading" id="dP2-OE-o3w"/>
+                            <constraint firstItem="uga-l8-nSs" firstAttribute="top" secondItem="CaE-s2-yx7" secondAttribute="bottom" id="sC4-lw-hIM"/>
+                            <constraint firstItem="crK-ux-iXN" firstAttribute="top" secondItem="Yqj-qg-aOr" secondAttribute="top" id="yIq-Z9-ndQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomBar" destination="CaE-s2-yx7" id="9gX-tC-BR2"/>
+                        <outlet property="btComplete" destination="ORP-ZU-A1Q" id="25J-UE-QOv"/>
+                        <outlet property="bt_AllChoose" destination="ql9-sw-3De" id="EAV-6u-3et"/>
+                        <outlet property="lb_allPrice" destination="hlA-s3-C6T" id="fIz-Zs-Mmb"/>
+                        <outlet property="lb_noFreight" destination="IY3-9U-lop" id="hxl-vc-KH4"/>
+                        <outlet property="table" destination="crK-ux-iXN" id="bQa-JO-uhz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pYd-Nc-Rhq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="361" y="348"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cart_icon_choice" width="13" height="13"/>
+        <image name="cart_icon_select" width="13" height="13"/>
+    </resources>
+</document>
