@@ -55,11 +55,11 @@
 		60319DB21D98319700BD094D /* FeaturesHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319DB11D98319700BD094D /* FeaturesHandler.m */; };
 		60319DB51DA9224800BD094D /* CartIntroductionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319DB41DA9224800BD094D /* CartIntroductionFooterView.m */; };
 		60319DB71DA922E100BD094D /* CartIntroductionFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60319DB61DA922E100BD094D /* CartIntroductionFooterView.xib */; };
-		60319DBA1DAA9E3C00BD094D /* TuSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60319DB81DAA9E3C00BD094D /* TuSDK.framework */; };
-		60319DBB1DAA9E3C00BD094D /* TuSDKGeeV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60319DB91DAA9E3C00BD094D /* TuSDKGeeV1.framework */; };
-		60319DBD1DAA9E5B00BD094D /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60319DBC1DAA9E5B00BD094D /* GPUImage.framework */; };
 		60319DC61DAA9FA900BD094D /* TuSDK.strings in Resources */ = {isa = PBXBuildFile; fileRef = 60319DC81DAA9FA900BD094D /* TuSDK.strings */; };
 		60319DCA1DAA9FF500BD094D /* TuSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 60319DC91DAA9FF500BD094D /* TuSDK.bundle */; };
+		60319DCE1DAAB99C00BD094D /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60319DCB1DAAB99C00BD094D /* GPUImage.framework */; };
+		60319DCF1DAAB99C00BD094D /* TuSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60319DCC1DAAB99C00BD094D /* TuSDK.framework */; };
+		60319DD01DAAB99C00BD094D /* TuSDKGeeV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60319DCD1DAAB99C00BD094D /* TuSDKGeeV1.framework */; };
 		6035CF2B1D74B38B00EA590B /* PostContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6035CF2A1D74B38B00EA590B /* PostContentCell.m */; };
 		6035CF2D1D74B3AC00EA590B /* PostContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6035CF2C1D74B3AC00EA590B /* PostContentCell.xib */; };
 		6035CF311D75E64E00EA590B /* TagSearchingCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = 6035CF301D75E64E00EA590B /* TagSearchingCtrller.m */; };
@@ -482,11 +482,11 @@
 		60319DB31DA9224800BD094D /* CartIntroductionFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CartIntroductionFooterView.h; path = "GroupBuying/VC+V/Shop/Cart/CartIntroductionFooterView.h"; sourceTree = SOURCE_ROOT; };
 		60319DB41DA9224800BD094D /* CartIntroductionFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CartIntroductionFooterView.m; path = "GroupBuying/VC+V/Shop/Cart/CartIntroductionFooterView.m"; sourceTree = SOURCE_ROOT; };
 		60319DB61DA922E100BD094D /* CartIntroductionFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CartIntroductionFooterView.xib; path = "GroupBuying/VC+V/Shop/Cart/CartIntroductionFooterView.xib"; sourceTree = SOURCE_ROOT; };
-		60319DB81DAA9E3C00BD094D /* TuSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TuSDK.framework; sourceTree = "<group>"; };
-		60319DB91DAA9E3C00BD094D /* TuSDKGeeV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TuSDKGeeV1.framework; sourceTree = "<group>"; };
-		60319DBC1DAA9E5B00BD094D /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GPUImage.framework; sourceTree = "<group>"; };
 		60319DC71DAA9FA900BD094D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/TuSDK.strings; sourceTree = "<group>"; };
 		60319DC91DAA9FF500BD094D /* TuSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TuSDK.bundle; sourceTree = "<group>"; };
+		60319DCB1DAAB99C00BD094D /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GPUImage.framework; path = GroupBuying/GPUImage.framework; sourceTree = "<group>"; };
+		60319DCC1DAAB99C00BD094D /* TuSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TuSDK.framework; path = GroupBuying/TuSDK.framework; sourceTree = "<group>"; };
+		60319DCD1DAAB99C00BD094D /* TuSDKGeeV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TuSDKGeeV1.framework; path = GroupBuying/TuSDKGeeV1.framework; sourceTree = "<group>"; };
 		6035CF291D74B38B00EA590B /* PostContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostContentCell.h; path = "GroupBuying/VC+V/Post/PostContentCell.h"; sourceTree = SOURCE_ROOT; };
 		6035CF2A1D74B38B00EA590B /* PostContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostContentCell.m; path = "GroupBuying/VC+V/Post/PostContentCell.m"; sourceTree = SOURCE_ROOT; };
 		6035CF2C1D74B3AC00EA590B /* PostContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostContentCell.xib; path = "GroupBuying/VC+V/Post/PostContentCell.xib"; sourceTree = SOURCE_ROOT; };
@@ -1122,12 +1122,15 @@
 				D75CC6451C2A980D00E590E6 /* SystemConfiguration.framework in Frameworks */,
 				D75CC6431C2A97FE00E590E6 /* CFNetwork.framework in Frameworks */,
 				D75CC6411C2A97F600E590E6 /* MapKit.framework in Frameworks */,
+				60319DCE1DAAB99C00BD094D /* GPUImage.framework in Frameworks */,
 				D76E84911D783B880014FDEA /* pg_edit_sdk_cdb_piratesdk.framework in Frameworks */,
 				D75CC63F1C2A97EC00E590E6 /* MediaPlayer.framework in Frameworks */,
 				D76E84941D783B880014FDEA /* PhotoEditFramework.framework in Frameworks */,
+				60319DCF1DAAB99C00BD094D /* TuSDK.framework in Frameworks */,
 				D75CC63D1C2A97E000E590E6 /* QuartzCore.framework in Frameworks */,
 				D75CC63B1C2A97D600E590E6 /* Security.framework in Frameworks */,
 				D75CC6391C2A97CD00E590E6 /* libiconv.2.4.0.tbd in Frameworks */,
+				60319DD01DAAB99C00BD094D /* TuSDKGeeV1.framework in Frameworks */,
 				D75CC6371C2A97AE00E590E6 /* libstdc++.6.0.9.tbd in Frameworks */,
 				D75CC6351C2A97A200E590E6 /* libxml2.2.tbd in Frameworks */,
 				D75CC6331C2A979800E590E6 /* libicucore.tbd in Frameworks */,
@@ -1136,12 +1139,9 @@
 				D75CC62D1C2A976B00E590E6 /* libz.1.2.5.tbd in Frameworks */,
 				D75CC62B1C2A975E00E590E6 /* AdSupport.framework in Frameworks */,
 				D75CC6291C2A973900E590E6 /* CoreMotion.framework in Frameworks */,
-				60319DBB1DAA9E3C00BD094D /* TuSDKGeeV1.framework in Frameworks */,
 				D75CC6271C2A972800E590E6 /* AVFoundation.framework in Frameworks */,
 				D75CC6251C2A972000E590E6 /* CoreMedia.framework in Frameworks */,
 				D75CC6231C2A970C00E590E6 /* CoreData.framework in Frameworks */,
-				60319DBD1DAA9E5B00BD094D /* GPUImage.framework in Frameworks */,
-				60319DBA1DAA9E3C00BD094D /* TuSDK.framework in Frameworks */,
 				D75CC6211C2A970400E590E6 /* CoreImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2217,9 +2217,9 @@
 		D75CC6521C2A987600E590E6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				60319DBC1DAA9E5B00BD094D /* GPUImage.framework */,
-				60319DB81DAA9E3C00BD094D /* TuSDK.framework */,
-				60319DB91DAA9E3C00BD094D /* TuSDKGeeV1.framework */,
+				60319DCB1DAAB99C00BD094D /* GPUImage.framework */,
+				60319DCC1DAAB99C00BD094D /* TuSDK.framework */,
+				60319DCD1DAAB99C00BD094D /* TuSDKGeeV1.framework */,
 				D75CC65A1C2B9DA100E590E6 /* libsqlite3.0.tbd */,
 				D75CC6501C2A986600E590E6 /* Foundation.framework */,
 				D75CC64E1C2A986000E590E6 /* UIKit.framework */,
@@ -3418,6 +3418,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/GroupBuying/Help/Camera360",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/GroupBuying",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/GroupBuying/PrefixHeader.pch";
@@ -3450,6 +3451,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/GroupBuying/Help/Camera360",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/GroupBuying",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/GroupBuying/PrefixHeader.pch";
