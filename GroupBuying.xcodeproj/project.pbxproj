@@ -484,9 +484,9 @@
 		60319DB61DA922E100BD094D /* CartIntroductionFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CartIntroductionFooterView.xib; path = "GroupBuying/VC+V/Shop/Cart/CartIntroductionFooterView.xib"; sourceTree = SOURCE_ROOT; };
 		60319DC71DAA9FA900BD094D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/TuSDK.strings; sourceTree = "<group>"; };
 		60319DC91DAA9FF500BD094D /* TuSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TuSDK.bundle; sourceTree = "<group>"; };
-		60319DCB1DAAB99C00BD094D /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GPUImage.framework; path = GroupBuying/GPUImage.framework; sourceTree = "<group>"; };
-		60319DCC1DAAB99C00BD094D /* TuSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TuSDK.framework; path = GroupBuying/TuSDK.framework; sourceTree = "<group>"; };
-		60319DCD1DAAB99C00BD094D /* TuSDKGeeV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TuSDKGeeV1.framework; path = GroupBuying/TuSDKGeeV1.framework; sourceTree = "<group>"; };
+		60319DCB1DAAB99C00BD094D /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GPUImage.framework; sourceTree = "<group>"; };
+		60319DCC1DAAB99C00BD094D /* TuSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TuSDK.framework; sourceTree = "<group>"; };
+		60319DCD1DAAB99C00BD094D /* TuSDKGeeV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TuSDKGeeV1.framework; sourceTree = "<group>"; };
 		6035CF291D74B38B00EA590B /* PostContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostContentCell.h; path = "GroupBuying/VC+V/Post/PostContentCell.h"; sourceTree = SOURCE_ROOT; };
 		6035CF2A1D74B38B00EA590B /* PostContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostContentCell.m; path = "GroupBuying/VC+V/Post/PostContentCell.m"; sourceTree = SOURCE_ROOT; };
 		6035CF2C1D74B3AC00EA590B /* PostContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostContentCell.xib; path = "GroupBuying/VC+V/Post/PostContentCell.xib"; sourceTree = SOURCE_ROOT; };
@@ -1525,6 +1525,9 @@
 		D75CC3C41C2A926100E590E6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				60319DCB1DAAB99C00BD094D /* GPUImage.framework */,
+				60319DCC1DAAB99C00BD094D /* TuSDK.framework */,
+				60319DCD1DAAB99C00BD094D /* TuSDKGeeV1.framework */,
 				60319DC91DAA9FF500BD094D /* TuSDK.bundle */,
 				60319DC81DAA9FA900BD094D /* TuSDK.strings */,
 				D75CC6521C2A987600E590E6 /* Frameworks */,
@@ -2217,9 +2220,6 @@
 		D75CC6521C2A987600E590E6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				60319DCB1DAAB99C00BD094D /* GPUImage.framework */,
-				60319DCC1DAAB99C00BD094D /* TuSDK.framework */,
-				60319DCD1DAAB99C00BD094D /* TuSDKGeeV1.framework */,
 				D75CC65A1C2B9DA100E590E6 /* libsqlite3.0.tbd */,
 				D75CC6501C2A986600E590E6 /* Foundation.framework */,
 				D75CC64E1C2A986000E590E6 /* UIKit.framework */,
