@@ -35,7 +35,7 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
 };
 
 
-@interface HomePageController () <UICollectionViewDelegate,UICollectionViewDataSource,CHTCollectionViewDelegateWaterfallLayout,RootCollectionViewDelegate,HPBigPhotoHeaderViewDelegate>
+@interface HomePageController () <UICollectionViewDelegate,UICollectionViewDataSource,CHTCollectionViewDelegateWaterfallLayout,RootCollectionViewDelegate,HPBigPhotoHeaderViewDelegate,HomePageCollectionCellDelegate>
 
 // nav
 @property (weak, nonatomic) IBOutlet UIButton *itemRanking;
@@ -64,6 +64,90 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
     UserInfoCtrller *userCtrl = (UserInfoCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"UserInfoCtrller"] ;
     [userCtrl setHidesBottomBarWhenPushed:YES] ;
     [self.navigationController pushViewController:userCtrl animated:YES] ;
+}
+
+#pragma mark -  HomePageCollectionCellDelegate <NSObject>
+- (void)likeNoteID:(NSString *)noteID addOrRemove:(bool)addOrRemove
+{    
+    BOOL hasLogin = [UserOnDevice checkForLoginOrNot:self] ;
+    if (!hasLogin) return ;
+    
+    if (addOrRemove)
+    {
+        [ServerRequest addLikeWithID:noteID
+                               token:[UserOnDevice token]
+                             success:^(id json) {
+                                 [self.listNote enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem,
+                                                                             NSUInteger idx,
+                                                                             BOOL * _Nonnull stop) {
+                                     if ([noteItem.articleId isEqualToString:noteID])
+                                     {
+                                         noteItem.isUpvote = true ;
+                                         *stop = true ;
+                                     }
+                                 }] ;
+                                 
+                             } fail:^{
+                                 
+                             }] ;
+    }
+    else
+    {
+        [ServerRequest removeLikeWithID:noteID
+                                  token:[UserOnDevice token]
+                                success:^(id json) {
+                                    [self.listNote enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem,
+                                                                                NSUInteger idx,
+                                                                                BOOL * _Nonnull stop) {
+                                        if ([noteItem.articleId isEqualToString:noteID])
+                                        {
+                                            noteItem.isUpvote = false ;
+                                            *stop = true ;
+                                        }
+                                    }] ;
+                                } fail:^{
+                                    
+                                }] ;
+    }
+}
+
+- (void)collectNoteID:(NSString *)noteID addOrRemove:(bool)addOrRemove
+{
+    BOOL hasLogin = [UserOnDevice checkForLoginOrNot:self] ;
+    if (!hasLogin) return ;
+    
+    if (addOrRemove) {
+        [ServerRequest addFavoriteWithID:noteID
+                                 success:^(id json) {
+                                     [self.listNote enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem,
+                                                                                 NSUInteger idx,
+                                                                                 BOOL * _Nonnull stop) {
+                                         if ([noteItem.articleId isEqualToString:noteID])
+                                         {
+                                             noteItem.isFavorite = true ;
+                                             *stop = true ;
+                                         }
+                                     }] ;
+                                 } fail:^{
+                                     
+                                 }] ;
+    }
+    else {
+        [ServerRequest removeFavoriteWithID:noteID
+                                    success:^(id json) {
+                                        [self.listNote enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem,
+                                                                                    NSUInteger idx,
+                                                                                    BOOL * _Nonnull stop) {
+                                            if ([noteItem.articleId isEqualToString:noteID])
+                                            {
+                                                noteItem.isFavorite = false ;
+                                                *stop = true ;
+                                            }
+                                        }] ;
+                                    } fail:^{
+                                        
+                                    }] ;
+    }
 }
 
 
@@ -396,12 +480,14 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
     if (collectionView.collectionViewLayout == self.bplayout) {
         HPBigPhotoCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:id_HPBigPhotoCollectionCell forIndexPath:indexPath] ;
         cell.noteItem = self.listNote[indexPath.section] ;
+        cell.delegate = self ;
         return cell ;
 
     }
     else if (collectionView.collectionViewLayout == self.waterflowLayout) {
         HPProductCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:id_HPProductCollectionCell forIndexPath:indexPath];
         cell.noteItem = self.listNote[indexPath.row] ;
+        cell.delegate = self ;
         return cell;
     }
     return nil ;

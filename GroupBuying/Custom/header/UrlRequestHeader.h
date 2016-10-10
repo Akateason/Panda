@@ -44,6 +44,17 @@ static NSString *const URL_HOME_LIST_SEARCH     = @"/gwn/note/list/home/search" 
 //指定文章ID搜索笔记详情信息
 static NSString *const URL_NOTE_DETAIL          = @"/gwn/note/detail/getById" ;
 
+//添加点赞信息
+static NSString *const URL_UPVOTE_ADD           = @"/gwn/s/upvote/add" ;
+
+//删除点赞信息
+static NSString *const URL_UPVOTE_REMOVE        = @"/gwn/s/upvote/remove" ;
+
+//添加收藏信息
+static NSString *const URL_FAVORITE_ADD         = @"/gwn/s/favorite/add" ;
+
+//删除收藏信息
+static NSString *const URL_FAVORITE_REMOVE      = @"/gwn/s/favorite/remove" ;
 
 
 

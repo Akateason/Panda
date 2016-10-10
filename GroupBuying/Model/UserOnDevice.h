@@ -22,7 +22,7 @@
 
 + (NSString *)token ;
 
-+ (void)checkForLoginOrNot:(UIViewController *)ctrller ;  // if not login . present from ctrller .
++ (BOOL)checkForLoginOrNot:(UIViewController *)ctrller ; // if not login . present from ctrller .
 
 + (void)clean ; // delete name , pass, token .
 

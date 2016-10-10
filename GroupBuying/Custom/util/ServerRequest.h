@@ -40,12 +40,10 @@
                             success:(void (^)(id json))success
                                fail:(void (^)())fail ;
 
-#pragma - 发送验证码
 + (void)sendVerifyCode:(NSString *)identifier
                success:(void (^)(id json))success
                   fail:(void (^)())fail ;
 
-#pragma - 检验验证码是否正确
 + (void)validVerifyCode:(NSString *)identifier
              verifyCode:(NSString *)code
                 success:(void (^)(id json))success
@@ -75,11 +73,36 @@
 + (void)addArticle:(Article *)article
            success:(void (^)(id json))success
               fail:(void (^)())fail ;
-// 上传资源
+
+#pragma - 上传资源
 + (NSURLSessionUploadTask*)uploadTaskWithImage:(UIImage*)image
                                     completion:(void (^)(NSURLResponse *response,
                                                          id responseObject,
                                                          NSError *error))completionBlock ;
+
+#pragma mark - 添加点赞信息
++ (void)addLikeWithID:(NSString *)ID
+                token:(NSString *)token
+              success:(void (^)(id json))success
+                 fail:(void (^)())fail ;
+
+#pragma mark - 删除点赞信息
++ (void)removeLikeWithID:(NSString *)ID
+                   token:(NSString *)token
+                 success:(void (^)(id json))success
+                    fail:(void (^)())fail ;
+
+#pragma mark - 添加收藏信息
++ (void)addFavoriteWithID:(NSString *)ID
+                  success:(void (^)(id json))success
+                     fail:(void (^)())fail ;
+
+#pragma mark - 删除收藏信息
++ (void)removeFavoriteWithID:(NSString *)ID
+                     success:(void (^)(id json))success
+                        fail:(void (^)())fail ;
+
+
 
 
 @end

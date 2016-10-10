@@ -10,7 +10,6 @@
 
 @implementation Upvote
 
-
 + (NSDictionary *)modelCustomPropertyMapper
 {
     return @{

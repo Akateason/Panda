@@ -59,17 +59,15 @@ static NSString * const kUser       = @"userCurrent" ;
 + (NSString *)token
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults] ;
-    NSLog(@"defaults  : %@",defaults.dictionaryRepresentation) ;
-    
-    
+//    NSLog(@"defaults  : %@",defaults.dictionaryRepresentation) ;
     NSString *token = [defaults objectForKey:kToken] ;
     [defaults synchronize];
-    NSLog(@"token : %@",token) ;
+//    NSLog(@"token : %@",token) ;
     return token ;
 }
 
 // if not login . present from ctrller .
-+ (void)checkForLoginOrNot:(UIViewController *)ctrller
++ (BOOL)checkForLoginOrNot:(UIViewController *)ctrller
 {
     if ( ![self token].length )
     {
@@ -77,10 +75,14 @@ static NSString * const kUser       = @"userCurrent" ;
         UINavigationController *navCtrller = (UINavigationController *)[[RootCtrl class] getCtrllerFromStory:@"Login" controllerIdentifier:@"LoginNavCtrller"] ;
         [ctrller presentViewController:navCtrller
                               animated:YES
-                            completion:^{
-            
-        }] ;
+                            completion:nil] ;
+        return false ;
     }
+    else
+    {
+        return true ;
+    }
+    return false ;
 }
 
 

@@ -70,16 +70,21 @@
 - (IBAction)btCollectionOnClick:(UIButton *)sender
 {
     sender.selected = !sender.selected ;
-}
-
-- (IBAction)btCommentOnClick:(id)sender
-{
-    NSLog(@"评论 ") ;
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(collectNoteID:addOrRemove:)]) {
+        [self.delegate collectNoteID:_noteItem.articleId addOrRemove:sender.selected] ;
+    }
 }
 
 - (IBAction)btLikeOnClick:(UIButton *)sender
 {
     sender.selected = !sender.selected ;
+    sender.selected ? _noteItem.upvoteCnt++ : _noteItem.upvoteCnt-- ;
+    [_btLike setTitle:[NSString stringWithFormat:@"%ld",_noteItem.upvoteCnt] forState:0] ;
+
+    if (self.delegate && [self.delegate respondsToSelector:@selector(likeNoteID:addOrRemove:)]) {
+        [self.delegate likeNoteID:_noteItem.articleId addOrRemove:sender.selected] ;
+    }
 }
 
 @end

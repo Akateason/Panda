@@ -27,7 +27,7 @@
 
 @implementation ServerRequest
 
-#pragma mark -
+#pragma - 登录注册
 + (void)loginWithUserName:(NSString *)name
                  password:(NSString *)password
                   success:(void (^)(id json))success
@@ -112,7 +112,7 @@
 
 
 
-
+#pragma - 发送验证码
 + (void)sendVerifyCode:(NSString *)identifier
                success:(void (^)(id json))success
                   fail:(void (^)())fail
@@ -151,7 +151,7 @@
                    }] ;
 }
 
-
+#pragma -  搜索首页笔记信息
 + (void)homelistWithSearchtype:(NSNumber *)typeNumber
                        refresh:(NSNumber *)refreshNumber
                         userID:(NSString *)userID
@@ -204,7 +204,7 @@
     
 }
 
-
+#pragma - 添加文章信息
 + (void)addArticle:(Article *)article
            success:(void (^)(id json))success
               fail:(void (^)())fail
@@ -221,6 +221,7 @@
                         }] ;
 }
 
+#pragma - 上传资源
 + (NSURLSessionUploadTask*)uploadTaskWithImage:(UIImage*)image
                                     completion:(void (^)(NSURLResponse *response, id responseObject, NSError *error))completionBlock
 {
@@ -317,31 +318,102 @@
 */
 
 
+#pragma mark - 添加点赞信息
++ (void)addLikeWithID:(NSString *)ID
+                token:(NSString *)token
+              success:(void (^)(id json))success
+                 fail:(void (^)())fail
+{
+    NSMutableDictionary *paramer = [self getParameters] ;
+    [paramer setObject:token forKey:@"token"] ;
+    [paramer setObject:@"NOTE" forKey:@"objectType"] ;
+    [paramer setObject:ID forKey:@"objectId"] ;
+    [XTRequest POSTWithUrl:[self getFinalUrl:URL_UPVOTE_ADD]
+                       hud:false
+                parameters:paramer
+                   success:^(id json) {
+                       if (success) success(json);
+                   } fail:^{
+                       if (fail) fail();
+                   }] ;
+}
 
+#pragma mark - 删除点赞信息
++ (void)removeLikeWithID:(NSString *)ID
+                   token:(NSString *)token
+                 success:(void (^)(id json))success
+                    fail:(void (^)())fail
+{
+    NSMutableDictionary *paramer = [self getParameters] ;
+    [paramer setObject:token forKey:@"token"] ;
+    [paramer setObject:@"NOTE" forKey:@"objectType"] ;
+    [paramer setObject:ID forKey:@"objectId"] ;
+    [XTRequest POSTWithUrl:[self getFinalUrl:URL_UPVOTE_REMOVE]
+                       hud:false
+                parameters:paramer
+                   success:^(id json) {
+                       if (success) success(json);
+                   } fail:^{
+                       if (fail) fail();
+                   }] ;
+}
 
+#pragma mark - 添加收藏信息
++ (void)addFavoriteWithID:(NSString *)ID
+                  success:(void (^)(id json))success
+                     fail:(void (^)())fail
+{
+    NSMutableDictionary *paramer = [self getParameters] ;
+    [paramer setObject:[UserOnDevice token] forKey:@"token"] ;
+    [paramer setObject:@"NOTE" forKey:@"objectType"] ;
+    [paramer setObject:ID forKey:@"objectId"] ;
+    
+    [XTRequest POSTWithUrl:[self getFinalUrl:URL_FAVORITE_ADD]
+                       hud:false
+                parameters:paramer
+                   success:^(id json) {
+                       if (success) success(json);
+                   } fail:^{
+                       if (fail) fail();
+                   }] ;
+}
 
+#pragma mark - 删除收藏信息
++ (void)removeFavoriteWithID:(NSString *)ID
+                     success:(void (^)(id json))success
+                        fail:(void (^)())fail
+{
+    NSMutableDictionary *paramer = [self getParameters] ;
+    [paramer setObject:[UserOnDevice token] forKey:@"token"] ;
+    [paramer setObject:@"NOTE" forKey:@"objectType"] ;
+    [paramer setObject:ID forKey:@"objectId"] ;
 
-
-
-
+    [XTRequest POSTWithUrl:[self getFinalUrl:URL_FAVORITE_REMOVE]
+                       hud:false
+                parameters:paramer
+                   success:^(id json) {
+                       if (success) {
+                           success(json) ;
+                       }
+                   } fail:^{
+                       if (fail) {
+                           fail() ;
+                       }
+                   }] ;
+}
 
 
 
 
 
 #pragma mark - private
-//privace
+
 + (NSString *)getFinalUrl:(NSString *)urlstr
 {
     NSString *str = [G_IP_SERVER stringByAppendingString:urlstr] ;
     return str ;
 }
 
-
-
-/**
- @paramer : bToken 是否要传token
- */
 + (NSMutableDictionary *)getParameters
 {
     return [NSMutableDictionary dictionary] ;
