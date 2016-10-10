@@ -60,6 +60,7 @@
 		60319DCE1DAAB99C00BD094D /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60319DCB1DAAB99C00BD094D /* GPUImage.framework */; };
 		60319DCF1DAAB99C00BD094D /* TuSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60319DCC1DAAB99C00BD094D /* TuSDK.framework */; };
 		60319DD01DAAB99C00BD094D /* TuSDKGeeV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60319DCD1DAAB99C00BD094D /* TuSDKGeeV1.framework */; };
+		60319DD41DABCAEF00BD094D /* Upvote.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319DD31DABCAEF00BD094D /* Upvote.m */; };
 		6035CF2B1D74B38B00EA590B /* PostContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6035CF2A1D74B38B00EA590B /* PostContentCell.m */; };
 		6035CF2D1D74B3AC00EA590B /* PostContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6035CF2C1D74B3AC00EA590B /* PostContentCell.xib */; };
 		6035CF311D75E64E00EA590B /* TagSearchingCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = 6035CF301D75E64E00EA590B /* TagSearchingCtrller.m */; };
@@ -484,6 +485,8 @@
 		60319DCB1DAAB99C00BD094D /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GPUImage.framework; sourceTree = "<group>"; };
 		60319DCC1DAAB99C00BD094D /* TuSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TuSDK.framework; sourceTree = "<group>"; };
 		60319DCD1DAAB99C00BD094D /* TuSDKGeeV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TuSDKGeeV1.framework; sourceTree = "<group>"; };
+		60319DD21DABCAEF00BD094D /* Upvote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Upvote.h; sourceTree = "<group>"; };
+		60319DD31DABCAEF00BD094D /* Upvote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Upvote.m; sourceTree = "<group>"; };
 		6035CF291D74B38B00EA590B /* PostContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostContentCell.h; path = "GroupBuying/VC+V/Post/PostContentCell.h"; sourceTree = SOURCE_ROOT; };
 		6035CF2A1D74B38B00EA590B /* PostContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostContentCell.m; path = "GroupBuying/VC+V/Post/PostContentCell.m"; sourceTree = SOURCE_ROOT; };
 		6035CF2C1D74B3AC00EA590B /* PostContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostContentCell.xib; path = "GroupBuying/VC+V/Post/PostContentCell.xib"; sourceTree = SOURCE_ROOT; };
@@ -1338,6 +1341,15 @@
 			path = XTStretchSegment;
 			sourceTree = "<group>";
 		};
+		60319DD11DABCACE00BD094D /* Upvote */ = {
+			isa = PBXGroup;
+			children = (
+				60319DD21DABCAEF00BD094D /* Upvote.h */,
+				60319DD31DABCAEF00BD094D /* Upvote.m */,
+			);
+			name = Upvote;
+			sourceTree = "<group>";
+		};
 		6035CF2E1D75E62000EA590B /* Tag */ = {
 			isa = PBXGroup;
 			children = (
@@ -1610,6 +1622,7 @@
 			children = (
 				D75CC6541C2AA17700E590E6 /* ResultParsered.h */,
 				D75CC6551C2AA17700E590E6 /* ResultParsered.m */,
+				60319DD11DABCACE00BD094D /* Upvote */,
 				D7886D531D91077D003D6D57 /* Comment */,
 				D7E0F4C21D87F1E700EA663B /* Resource */,
 				D7E0F4BB1D87EA6600EA663B /* Note */,
@@ -3183,6 +3196,7 @@
 				D75CC5DE1C2A965000E590E6 /* UIScrollView+MJRefresh.m in Sources */,
 				D75CC6591C2B9A1700E590E6 /* AppDelegateInitial.m in Sources */,
 				D7E994B61D9528F700EACDFB /* NSObject+Reflection.m in Sources */,
+				60319DD41DABCAEF00BD094D /* Upvote.m in Sources */,
 				D75CC5E61C2A965000E590E6 /* QNDns.m in Sources */,
 				D75CC5EE1C2A965000E590E6 /* QNResumeUpload.m in Sources */,
 				D75CC5A71C2A965000E590E6 /* AFURLSessionManager.m in Sources */,
