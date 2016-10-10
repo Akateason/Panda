@@ -11,7 +11,6 @@
 #import "AppDelegateInitial.h"
 #import "ServerRequest.h"
 #import "WeiboSDK.h"
-#import <TuSDKGeeV1/TuSDKGeeV1.h>
 
 @interface AppDelegate ()
 
@@ -20,10 +19,9 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
     // Override point for customization after application launch.
-    [TuSDK initSdkWithAppKey:kAPPKEY_TuSDK];
-    
     AppDelegateInitial *appInitial = [[AppDelegateInitial alloc] initWithApplication:application
                                                                              options:launchOptions
                                                                               window:_window] ;
