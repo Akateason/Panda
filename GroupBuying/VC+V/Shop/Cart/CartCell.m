@@ -28,6 +28,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *lb_sum; // 小计
 @property (weak, nonatomic) IBOutlet UILabel *lb_sumVal;
 
+// + -
+@property (weak, nonatomic) IBOutlet UIButton *btNumPlus;
+@property (weak, nonatomic) IBOutlet UIButton *btNumMinus;
+@property (weak, nonatomic) IBOutlet UILabel *lb_Num;
+
 @end
 
 @implementation CartCell
@@ -42,6 +47,22 @@
 {
     NSLog(@"del") ;
 }
+
+- (IBAction)btNumPlusOnClick:(UIButton *)sender
+{
+    NSLog(@"+") ;
+}
+
+- (IBAction)btNumMinusOnClick:(id)sender
+{
+    NSLog(@"-") ;
+}
+
+
+
+
+
+
 
 - (void)awakeFromNib
 {
@@ -63,6 +84,11 @@
     _lb_sumVal.textColor = [UIColor xt_tabbarRedColor] ;
     
     self.backgroundColor = [UIColor xt_seperate] ;
+    
+    _lb_Num.backgroundColor = [UIColor whiteColor] ;
+    _lb_Num.layer.borderColor = [UIColor xt_w_desc].CGColor ;
+    _lb_Num.layer.borderWidth = 0.5f ;
+    _lb_Num.textColor = [UIColor xt_w_dark] ;
 }
 
 

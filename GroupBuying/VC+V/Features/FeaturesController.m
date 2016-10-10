@@ -10,6 +10,7 @@
 #import "XTStretchSegment.h"
 #import "XTMultipleTables.h"    
 #import "FeaturesHandler.h"
+#import "ShopCartCtrller.h"
 
 #define TopRect             CGRectMake(0, 0, APP_WIDTH, 55.)
 #define MainRect            CGRectMake(0, 55., APP_WIDTH, APP_HEIGHT - 44. - 20. - 55. - 49.)
@@ -27,7 +28,12 @@
 @implementation FeaturesController
 
 #pragma mark - action
-- (IBAction)shopcarOnClick:(id)sender {
+- (IBAction)shopcarOnClick:(id)sender
+{
+    // 购物车
+    ShopCartCtrller *cartVC = (ShopCartCtrller *)[[self class] getCtrllerFromStory:@"Shop" controllerIdentifier:@"ShopCartCtrller"] ;
+    [cartVC setHidesBottomBarWhenPushed:YES] ;
+    [self.navigationController pushViewController:cartVC animated:YES] ;
 }
 
 #pragma mark - prop

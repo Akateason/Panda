@@ -1180,15 +1180,7 @@
 				D74589921D6B0C1500835234 /* HomePageController+TitleManager.m */,
 				608405841D69505E00B40D68 /* HomePageController+collectionLayoutSwitch.h */,
 				608405851D69505E00B40D68 /* HomePageController+collectionLayoutSwitch.m */,
-				6084057A1D64DDDF00B40D68 /* HPProductCollectionCell.h */,
-				6084057B1D64DDDF00B40D68 /* HPProductCollectionCell.m */,
-				608405801D67F45700B40D68 /* HPProductCollectionCell.xib */,
-				6084057D1D663CCC00B40D68 /* HPBigPhotoCollectionCell.h */,
-				6084057E1D663CCC00B40D68 /* HPBigPhotoCollectionCell.m */,
-				608405821D67F62500B40D68 /* HPBigPhotoCollectionCell.xib */,
-				D74589841D6A9DCA00835234 /* HPBigPhotoHeaderView.h */,
-				D74589851D6A9DCB00835234 /* HPBigPhotoHeaderView.m */,
-				D74589861D6A9DCB00835234 /* HPBigPhotoHeaderView.xib */,
+				D7CE29CD1DABA6CD00FF452C /* HomePageSubs */,
 			);
 			name = HomePage1;
 			sourceTree = "<group>";
@@ -2575,6 +2567,22 @@
 				D7CE29CA1DAB3D7500FF452C /* EditFilterSampleController.m */,
 			);
 			name = tusdkFilterVC;
+			sourceTree = "<group>";
+		};
+		D7CE29CD1DABA6CD00FF452C /* HomePageSubs */ = {
+			isa = PBXGroup;
+			children = (
+				6084057A1D64DDDF00B40D68 /* HPProductCollectionCell.h */,
+				6084057B1D64DDDF00B40D68 /* HPProductCollectionCell.m */,
+				608405801D67F45700B40D68 /* HPProductCollectionCell.xib */,
+				6084057D1D663CCC00B40D68 /* HPBigPhotoCollectionCell.h */,
+				6084057E1D663CCC00B40D68 /* HPBigPhotoCollectionCell.m */,
+				608405821D67F62500B40D68 /* HPBigPhotoCollectionCell.xib */,
+				D74589841D6A9DCA00835234 /* HPBigPhotoHeaderView.h */,
+				D74589851D6A9DCB00835234 /* HPBigPhotoHeaderView.m */,
+				D74589861D6A9DCB00835234 /* HPBigPhotoHeaderView.xib */,
+			);
+			name = HomePageSubs;
 			sourceTree = "<group>";
 		};
 		D7E0F4B11D87ADBF00EA663B /* Article */ = {

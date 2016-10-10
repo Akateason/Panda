@@ -23,6 +23,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.title = @"个人资料" ;
+    
     _table.dataSource = self ;
     _table.delegate = self ;
     _table.separatorColor = [UIColor xt_seperate] ;

@@ -53,9 +53,6 @@
     
     UIImage *btBgImageRed = [UIImage imageWithColor:[UIColor xt_tabbarRedColor] size:_btLike.frame.size] ;
     UIImage *btBgImageWhite = [UIImage imageWithColor:[UIColor whiteColor] size:_btLike.frame.size] ;
-//    [_bt_coupon setBackgroundImage:btBgImage forState:UIControlStateHighlighted] ;
-//    [_btLike setBackgroundImage:btBgImage forState:UIControlStateHighlighted] ;
-//    [_btComment setBackgroundImage:btBgImage forState:UIControlStateHighlighted] ;
     [_btCollecion setBackgroundImage:btBgImageRed forState:UIControlStateNormal] ;
     [_btCollecion setBackgroundImage:btBgImageWhite forState:UIControlStateSelected] ;
     
@@ -125,7 +122,8 @@
                                        userID:userID
                                       success:^(id json) {
                                           ResultParsered *result = [ResultParsered yy_modelWithJSON:json] ;
-                                          if (result.code == 1) {
+                                          if (result.code == 1)
+                                          {
                                               id jsonobj = result.data[@"noteDetail"] ;
                                               NoteDetailViewItem *detailItem = [NoteDetailViewItem yy_modelWithJSON:jsonobj] ;
                                               self.noteDetail = detailItem ;

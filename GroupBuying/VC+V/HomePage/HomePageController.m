@@ -269,8 +269,7 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
     // title pop menu .
     [KxMenu setTintColor:[UIColor colorWithHexString:@"555555" alpha:0.5]] ;
     
-    // login
-//    [UserOnDevice checkForLoginOrNot:self] ;
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -292,6 +291,9 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
     _collectionView.dataSource = nil ;
     [[NSNotificationCenter defaultCenter] removeObserver:self name:NOTIFICATION_POST_ARTICLE_COMPLETE object:nil] ;
 }
+
+
+
 
 #pragma mark - NOTIFICATION_POST_ARTICLE_COMPLETE
 - (void)articlePostComplete
@@ -461,7 +463,6 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
     CGRect rect = self.view.bounds ;
     rect.size.height -= (APP_TABBAR_HEIGHT + APP_NAVIGATIONBAR_HEIGHT + APP_STATUSBAR_HEIGHT) ;
     rect.origin.y = APP_NAVIGATIONBAR_HEIGHT + APP_STATUSBAR_HEIGHT ;
-    
     return rect ;
 }
 

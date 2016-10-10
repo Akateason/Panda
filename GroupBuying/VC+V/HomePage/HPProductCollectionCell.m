@@ -17,7 +17,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imgView;
 @property (weak, nonatomic) IBOutlet UIButton *btCollect;
 @property (weak, nonatomic) IBOutlet UIButton *btLike;
-@property (weak, nonatomic) IBOutlet UILabel *labelLikeCount;
 
 @end
 
@@ -37,7 +36,7 @@
     [_imgView sd_setImageWithURL:[NSURL URLWithString:noteItem.img.qiniuUrl]] ;
     _btCollect.selected = noteItem.isFavorite ;
     _btLike.selected = noteItem.isUpvote ;
-    _labelLikeCount.text = [NSString stringWithFormat:@"%ld",noteItem.upvoteCnt] ;
+    [_btLike setTitle:[NSString stringWithFormat:@"%ld",noteItem.upvoteCnt] forState:0] ;
 }
 
 

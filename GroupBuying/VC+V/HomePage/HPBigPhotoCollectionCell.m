@@ -21,7 +21,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *btCollection;
 @property (weak, nonatomic) IBOutlet UIButton *btComment;
 @property (weak, nonatomic) IBOutlet UIButton *btLike;
-@property (weak, nonatomic) IBOutlet UILabel *labelLikeNum;
 @property (weak, nonatomic) IBOutlet UILabel *labelCommentNum;
 
 @end
@@ -38,7 +37,7 @@
     _labelTitle.text = noteItem.articleTitle ;
     _btCollection.selected = noteItem.isFavorite ;
     _btLike.selected = noteItem.isUpvote ;
-    _labelLikeNum.text = [NSString stringWithFormat:@"%ld",noteItem.upvoteCnt] ;
+    [_btLike setTitle:[NSString stringWithFormat:@"%ld",noteItem.upvoteCnt] forState:0] ;
     _labelCommentNum.text = [NSString stringWithFormat:@"%ld",noteItem.commentCnt] ;
 }
 
@@ -51,7 +50,7 @@
     self.backgroundColor = [UIColor whiteColor] ;
     _labelTitle.textColor = [UIColor xt_w_dark] ;
     _sepline.backgroundColor = [UIColor xt_seperate] ;
-    _labelLikeNum.textColor = [UIColor xt_w_light] ;
+    [_btLike setTitleColor:[UIColor xt_w_light] forState:0] ;
     _labelCommentNum.textColor = [UIColor xt_w_light] ;
 }
 
