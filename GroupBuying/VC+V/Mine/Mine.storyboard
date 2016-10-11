@@ -103,7 +103,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IBardot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tc4-Op-bc6">
                                 <rect key="frame" x="275" y="249" width="50" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -213,7 +213,7 @@
         <!--Mine Edit Add Ctrller-->
         <scene sceneID="Gik-T2-W36">
             <objects>
-                <viewController id="JWg-tQ-mzl" customClass="MineEditAddCtrller" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MineEditAddCtrller" id="JWg-tQ-mzl" customClass="MineEditAddCtrller" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="daB-sR-WqB"/>
                         <viewControllerLayoutGuide type="bottom" id="ARh-cI-3lV"/>
@@ -226,7 +226,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="43" id="T5n-1X-vEK">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MEDAVCtextfieldCell" rowHeight="43" id="T5n-1X-vEK" customClass="MEDAVCtextfieldCell">
                                         <rect key="frame" x="0.0" y="28" width="600" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T5n-1X-vEK" id="bp3-Un-nXt">
@@ -240,8 +240,11 @@
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="textfield" destination="pv4-So-NOe" id="cc5-IE-HYM"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="97" id="z4C-es-IT8">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MEDAVCtextviewCell" rowHeight="97" id="z4C-es-IT8" customClass="MEDAVCtextviewCell">
                                         <rect key="frame" x="0.0" y="71" width="600" height="97"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z4C-es-IT8" id="bcl-up-IeF">
@@ -258,6 +261,9 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.96470588239999999" green="0.63529411759999999" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="textview" destination="i4k-7k-OTh" id="mdf-Yx-RZ2"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -271,11 +277,20 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" id="Rr0-xq-ytC"/>
+                    <navigationItem key="navigationItem" id="Rr0-xq-ytC">
+                        <barButtonItem key="rightBarButtonItem" title="确定" id="eG4-96-8rP">
+                            <connections>
+                                <action selector="finishBtOnClick:" destination="JWg-tQ-mzl" id="hBA-8a-GvM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="table" destination="wcw-Zp-Q6t" id="zg5-jj-vvF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dwt-Le-lg0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1604" y="84"/>
+            <point key="canvasLocation" x="1693" y="84"/>
         </scene>
         <!--全部笔记-->
         <scene sceneID="kB3-wy-SJP">

@@ -9,14 +9,34 @@
 #import "MineUserEditCtrl.h"
 #import "MineEditHeadCell.h"
 #import "MineEditCell.h"
+#import "MineEditAddCtrller.h"
+#import "UserOnDevice.h"
+#import "User.h"
 
 @interface MineUserEditCtrl () <UITableViewDataSource,UITableViewDelegate>
+{
+    MineEditAddCtrller *editAddVC ;
+}
 
+@property (nonatomic,strong) User *userCurrent ;
 @property (weak, nonatomic) IBOutlet UITableView *table ;
 
 @end
 
 @implementation MineUserEditCtrl
+
+#pragma mark - prop
+- (User *)userCurrent
+{
+    if (!_userCurrent) {
+        _userCurrent = [UserOnDevice currentUserOnDevice] ;
+    }
+    return _userCurrent ;
+}
+
+
+
+#pragma mark - life
 
 - (void)viewDidLoad
 {
@@ -25,6 +45,7 @@
     
     self.title = @"个人资料" ;
     
+    _table.contentInset = UIEdgeInsetsMake(15., 0, 0, 0) ;
     _table.dataSource = self ;
     _table.delegate = self ;
     _table.separatorColor = [UIColor xt_seperate] ;
@@ -53,7 +74,7 @@
         return 4 ;
     }
     else if (section == 2) {
-        return 5 ;
+        return 5 - 2 ;
     }
     
     return 0 ;
@@ -71,10 +92,10 @@
     }
     else if (section == 1) {
         if (row == 0) {
-            return [self getEditCellWithKey:@"昵称" val:nil] ;
+            return [self getEditCellWithKey:@"昵称" val:self.userCurrent.nickName] ;
         }
         else if (row == 1) {
-            return [self getEditCellWithKey:@"性别" val:nil] ;
+            return [self getEditCellWithKey:@"性别" val:self.userCurrent.gender] ;
         }
         else if (row == 2) {
             return [self getEditCellWithKey:@"生日" val:nil] ;
@@ -85,20 +106,20 @@
     }
     else if (section == 2) {
         if (row == 0) {
-            return [self getEditCellWithKey:@"手机号码" val:nil] ;
+            return [self getEditCellWithKey:@"手机号码" val:self.userCurrent.mobile] ;
         }
         else if (row == 1) {
-            return [self getEditCellWithKey:@"真实姓名" val:nil] ;
+            return [self getEditCellWithKey:@"真实姓名" val:self.userCurrent.name] ;
         }
         else if (row == 2) {
             return [self getEditCellWithKey:@"身份证" val:nil] ;
         }
-        else if (row == 3) {
-            return [self getEditCellWithKey:@"支付宝" val:nil] ;
-        }
-        else if (row == 4) {
-            return [self getEditCellWithKey:@"银行卡" val:nil] ;
-        }
+//        else if (row == 3) {
+//            return [self getEditCellWithKey:@"支付宝" val:nil] ;
+//        }
+//        else if (row == 4) {
+//            return [self getEditCellWithKey:@"银行卡" val:nil] ;
+//        }
     }
     
     return nil ;
@@ -149,44 +170,103 @@ static NSString *const kIdentifierFooter = @"mycell_footer" ;
     if (section == 0)
     {
         // 头像
+        
+    }
+    else
+    {
+        editAddVC = [self getEditAddVC] ;
+        MineUserEditCtrl __weak *weakSelf = self ;
+        
+        if (section == 1) {
+            if (row == 0) {
+                //@"昵称"
+                editAddVC.strTitle = @"昵称" ;
+                editAddVC.strVal = self.userCurrent.nickName ;
+                editAddVC.displayType = type_textField_words ;
+                editAddVC.blockValString = ^(NSString *str){
+                    weakSelf.userCurrent.nickName = str ;
+                } ;
+            }
+            else if (row == 1) {
+                //@"性别"
+                editAddVC.strTitle = @"性别" ;
+                editAddVC.strVal = self.userCurrent.gender ;
+                editAddVC.displayType = type_gender_choose ;
+                editAddVC.blockValString = ^(NSString *str){
+                    weakSelf.userCurrent.gender = str ;
+                } ;
+            }
+            else if (row == 2) {
+                //@"生日"
+                editAddVC.strTitle = @"生日" ;
+//                editAddVC.strVal = self.userCurrent.gender ;
+                editAddVC.displayType = type_birth_choose ;
+                editAddVC.blockValString = ^(NSString *str){
+//                    weakSelf.userCurrent.gender = str ;
+                } ;
 
+            }
+            else if (row == 3) {
+                //@"简介"
+                editAddVC.strTitle = @"简介" ;
+//                editAddVC.strVal = self.userCurrent.gender ;
+                editAddVC.displayType = type_textview ;
+                editAddVC.blockValString = ^(NSString *str){
+//                    weakSelf.userCurrent.gender = str ;
+                } ;
+            }
+        }
+        else if (section == 2) {
+            if (row == 0) {
+                //@"手机号码"
+                editAddVC.strTitle = @"手机号码" ;
+                editAddVC.strVal = self.userCurrent.mobile ;
+                editAddVC.displayType = type_textField_number ;
+                editAddVC.blockValString = ^(NSString *str){
+                    weakSelf.userCurrent.mobile = str ;
+                } ;
+            }
+            else if (row == 1) {
+                //@"真实姓名"
+                editAddVC.strTitle = @"真实姓名" ;
+                editAddVC.strVal = self.userCurrent.name ;
+                editAddVC.displayType = type_textField_words ;
+                editAddVC.blockValString = ^(NSString *str){
+                    weakSelf.userCurrent.name = str ;
+                } ;
+            }
+            else if (row == 2) {
+                //@"身份证"
+                editAddVC.strTitle = @"身份证" ;
+//                editAddVC.strVal = self.userCurrent.name ;
+                editAddVC.displayType = type_textField_words ;
+                editAddVC.blockValString = ^(NSString *str){
+//                    weakSelf.userCurrent.name = str ;
+                } ;
+            }
+            else if (row == 3) {
+                //@"支付宝"
+            }
+            else if (row == 4) {
+                //@"银行卡"
+            }
+        }
+        
+        [self.navigationController pushViewController:editAddVC animated:YES] ;
     }
-    else if (section == 1) {
-        if (row == 0) {
-            //@"昵称"
-        }
-        else if (row == 1) {
-            //@"性别"
-        }
-        else if (row == 2) {
-            //@"生日"
-        }
-        else if (row == 3) {
-            //@"简介"
-        }
-    }
-    else if (section == 2) {
-        if (row == 0) {
-            //@"手机号码"
-        }
-        else if (row == 1) {
-            //@"真实姓名"
-        }
-        else if (row == 2) {
-            //@"身份证"
-        }
-        else if (row == 3) {
-            //@"支付宝"
-        }
-        else if (row == 4) {
-            //@"银行卡"
-        }
-    }
+    
+    
 
     
 }
 
 
+
+
+- (MineEditAddCtrller *)getEditAddVC
+{
+    return (MineEditAddCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"MineEditAddCtrller"] ;
+}
 
 
 

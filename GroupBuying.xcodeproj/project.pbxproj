@@ -329,6 +329,8 @@
 		D7886D7E1D93B8A9003D6D57 /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7886D7D1D93B8A9003D6D57 /* Activity.storyboard */; };
 		D7886D811D93C41A003D6D57 /* ActivityInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7886D801D93C41A003D6D57 /* ActivityInfoCell.m */; };
 		D7CE29CB1DAB3D7500FF452C /* EditFilterSampleController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE29CA1DAB3D7500FF452C /* EditFilterSampleController.m */; };
+		D7CE29D21DACDA3A00FF452C /* MEDAVCtextfieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE29D11DACDA3A00FF452C /* MEDAVCtextfieldCell.m */; };
+		D7CE29D81DACDAEB00FF452C /* MEDAVCtextviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE29D71DACDAEB00FF452C /* MEDAVCtextviewCell.m */; };
 		D7E0F4B41D87ADF700EA663B /* ArticlePicItemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */; };
 		D7E0F4B71D87B2D100EA663B /* ArticlePicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B61D87B2D100EA663B /* ArticlePicItem.m */; };
 		D7E0F4BA1D87B42D00EA663B /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B91D87B42D00EA663B /* Article.m */; };
@@ -1013,6 +1015,10 @@
 		D7CE29C91DAB3D7500FF452C /* EditFilterSampleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditFilterSampleController.h; path = "GroupBuying/VC+V/PhotoEditor/EditFilterSampleController.h"; sourceTree = SOURCE_ROOT; };
 		D7CE29CA1DAB3D7500FF452C /* EditFilterSampleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditFilterSampleController.m; path = "GroupBuying/VC+V/PhotoEditor/EditFilterSampleController.m"; sourceTree = SOURCE_ROOT; };
 		D7CE29CE1DACD52A00FF452C /* BigPhotoHeaderViewProtocolHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BigPhotoHeaderViewProtocolHeader.h; path = "GroupBuying/VC+V/HomePage/BigPhotoHeaderViewProtocolHeader.h"; sourceTree = SOURCE_ROOT; };
+		D7CE29D01DACDA3A00FF452C /* MEDAVCtextfieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MEDAVCtextfieldCell.h; path = "GroupBuying/VC+V/Mine/MineUserEdit/MEDAVCtextfieldCell.h"; sourceTree = SOURCE_ROOT; };
+		D7CE29D11DACDA3A00FF452C /* MEDAVCtextfieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MEDAVCtextfieldCell.m; path = "GroupBuying/VC+V/Mine/MineUserEdit/MEDAVCtextfieldCell.m"; sourceTree = SOURCE_ROOT; };
+		D7CE29D61DACDAEB00FF452C /* MEDAVCtextviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MEDAVCtextviewCell.h; path = "GroupBuying/VC+V/Mine/MineUserEdit/MEDAVCtextviewCell.h"; sourceTree = SOURCE_ROOT; };
+		D7CE29D71DACDAEB00FF452C /* MEDAVCtextviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MEDAVCtextviewCell.m; path = "GroupBuying/VC+V/Mine/MineUserEdit/MEDAVCtextviewCell.m"; sourceTree = SOURCE_ROOT; };
 		D7E0F4B21D87ADF700EA663B /* ArticlePicItemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItemInfo.h; sourceTree = "<group>"; };
 		D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlePicItemInfo.m; sourceTree = "<group>"; };
 		D7E0F4B51D87B2D100EA663B /* ArticlePicItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItem.h; sourceTree = "<group>"; };
@@ -2602,6 +2608,19 @@
 			name = HomePageSubs;
 			sourceTree = "<group>";
 		};
+		D7CE29CF1DACD83300FF452C /* MineEditAddVC */ = {
+			isa = PBXGroup;
+			children = (
+				D7E994E51D9A521C00EACDFB /* MineEditAddCtrller.h */,
+				D7E994E61D9A521C00EACDFB /* MineEditAddCtrller.m */,
+				D7CE29D01DACDA3A00FF452C /* MEDAVCtextfieldCell.h */,
+				D7CE29D11DACDA3A00FF452C /* MEDAVCtextfieldCell.m */,
+				D7CE29D61DACDAEB00FF452C /* MEDAVCtextviewCell.h */,
+				D7CE29D71DACDAEB00FF452C /* MEDAVCtextviewCell.m */,
+			);
+			name = MineEditAddVC;
+			sourceTree = "<group>";
+		};
 		D7E0F4B11D87ADBF00EA663B /* Article */ = {
 			isa = PBXGroup;
 			children = (
@@ -2764,8 +2783,7 @@
 				D7E994D21D99122C00EACDFB /* MineEditCell.h */,
 				D7E994D31D99122C00EACDFB /* MineEditCell.m */,
 				D7E994D41D99122C00EACDFB /* MineEditCell.xib */,
-				D7E994E51D9A521C00EACDFB /* MineEditAddCtrller.h */,
-				D7E994E61D9A521C00EACDFB /* MineEditAddCtrller.m */,
+				D7CE29CF1DACD83300FF452C /* MineEditAddVC */,
 			);
 			name = MineUserEdit;
 			sourceTree = "<group>";
@@ -3034,6 +3052,7 @@
 				D75CC6011C2A965000E590E6 /* UIImageView+WebCache.m in Sources */,
 				D75CC5C41C2A965000E590E6 /* FMDatabaseAdditions.m in Sources */,
 				D7E994B31D9528CB00EACDFB /* NSTimer+Addition.m in Sources */,
+				D7CE29D81DACDAEB00FF452C /* MEDAVCtextviewCell.m in Sources */,
 				D75CC4421C2A95DE00E590E6 /* UILabel+Badges.m in Sources */,
 				D745898C1D6AAF9500835234 /* XLPlainFlowLayout.m in Sources */,
 				D75CC44D1C2A95DE00E590E6 /* DigitInformation.m in Sources */,
@@ -3234,6 +3253,7 @@
 				D75CC5AE1C2A965000E590E6 /* ASIInputStream.m in Sources */,
 				D75CC5BF1C2A965000E590E6 /* Base64.m in Sources */,
 				D76E842E1D767DE20014FDEA /* Pic.m in Sources */,
+				D7CE29D21DACDA3A00FF452C /* MEDAVCtextfieldCell.m in Sources */,
 				D75CC4541C2A95DE00E590E6 /* XTTickConvert.m in Sources */,
 				D75CC5EF1C2A965000E590E6 /* QNUploadManager.m in Sources */,
 				D7E0F4BE1D87EA7700EA663B /* NoteListViewItem.m in Sources */,

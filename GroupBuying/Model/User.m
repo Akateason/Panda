@@ -12,8 +12,8 @@
 
 + (NSDictionary *)modelCustomPropertyMapper {
     return @{
-             @"idOwn" : @"id",
-             @"userId" : @"id"
+             @"userId" : @"id" ,
+             @"userIdPanda" : @"userId"
              };
 }
 
