@@ -10,4 +10,7 @@
 
 @interface UserInfoCtrller : RootCtrl
 
+@property (nonatomic,copy) NSString *userID ;
+@property (nonatomic,copy) NSString *userNameDisplay ;
+
 @end

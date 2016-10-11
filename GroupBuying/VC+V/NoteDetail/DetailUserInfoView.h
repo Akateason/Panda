@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BigPhotoHeaderViewProtocolHeader.h"
 
 static NSString *const kID_DetailUserInfoView = @"DetailUserInfoView" ;
 
@@ -14,6 +15,7 @@ static NSString *const kID_DetailUserInfoView = @"DetailUserInfoView" ;
 
 @interface DetailUserInfoView : UITableViewHeaderFooterView
 
+@property (nonatomic,weak)   id <HPBigPhotoHeaderViewDelegate> delegate ;
 @property (nonatomic,strong) NoteDetailViewItem *note ;
 
 @end

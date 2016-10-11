@@ -48,7 +48,6 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
 
 
 @property (nonatomic,strong) NSArray                *listNote ;
-@property (nonatomic)        BOOL                   bFirstTime ;
 @property (nonatomic)        HOMEPAGE_SEARCHTYPE    schType ;
 
 @property (nonatomic,strong) UIImageView            *nothingImageView ;
@@ -59,18 +58,63 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
 
 
 #pragma mark - HPBigPhotoHeaderViewDelegate
-- (void)userheadOnClick
+- (void)userheadOnClickWithUserID:(NSString *)userID userName:(NSString *)name
 {
     UserInfoCtrller *userCtrl = (UserInfoCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"UserInfoCtrller"] ;
+    userCtrl.userID = userID ;
+    userCtrl.userNameDisplay = name ;
     [userCtrl setHidesBottomBarWhenPushed:YES] ;
     [self.navigationController pushViewController:userCtrl animated:YES] ;
 }
 
+- (BOOL)followUserBtOnClickWithCreaterID:(NSString *)createrID followed:(BOOL)bFollow
+{
+    BOOL hasLogin = [UserOnDevice checkForLoginOrNot:self] ;
+    if (!hasLogin) return false ;
+    
+    if (bFollow) {
+        [ServerRequest addFollowWithUserID:createrID
+                                   success:^(id json) {
+                                       ResultParsered *result = [ResultParsered yy_modelWithJSON:json] ;
+                                       if (result.code == 1) {
+                                           [self.listNote enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem, NSUInteger idx, BOOL * _Nonnull stop) {
+                                               if ([noteItem.ownerId isEqualToString:createrID]) {
+                                                   noteItem.isFollow = true ;
+                                               }
+                                           }] ;
+                                           [_collectionView reloadData] ;
+                                       }
+                                   } fail:^{
+                                       
+                                   }] ;
+    }
+    else {
+        [ServerRequest cancelFollowWithUserID:createrID
+                                      success:^(id json) {
+                                          
+                                          ResultParsered *result = [ResultParsered yy_modelWithJSON:json] ;
+                                          if (result.code == 1) {
+                                              [self.listNote enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem, NSUInteger idx, BOOL * _Nonnull stop) {
+                                                  if ([noteItem.ownerId isEqualToString:createrID]) {
+                                                      noteItem.isFollow = false ;
+                                                  }
+                                              }] ;
+                                              [_collectionView reloadData] ;
+                                          }
+                                          
+                                      } fail:^{
+                                          
+                                      }] ;
+    }
+    
+    return true ;
+}
+
 #pragma mark -  HomePageCollectionCellDelegate <NSObject>
-- (void)likeNoteID:(NSString *)noteID addOrRemove:(bool)addOrRemove
+- (BOOL)likeNoteID:(NSString *)noteID addOrRemove:(bool)addOrRemove
 {    
     BOOL hasLogin = [UserOnDevice checkForLoginOrNot:self] ;
-    if (!hasLogin) return ;
+    if (!hasLogin) return false;
     
     if (addOrRemove)
     {
@@ -109,12 +153,13 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
                                     
                                 }] ;
     }
+    return true ;
 }
 
-- (void)collectNoteID:(NSString *)noteID addOrRemove:(bool)addOrRemove
+- (BOOL)collectNoteID:(NSString *)noteID addOrRemove:(bool)addOrRemove
 {
     BOOL hasLogin = [UserOnDevice checkForLoginOrNot:self] ;
-    if (!hasLogin) return ;
+    if (!hasLogin) return false;
     
     if (addOrRemove) {
         [ServerRequest addFavoriteWithID:noteID
@@ -148,6 +193,7 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
                                         
                                     }] ;
     }
+    return true ;
 }
 
 
@@ -202,7 +248,6 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
     // login
     [UserOnDevice checkForLoginOrNot:self] ;
 
-    
     NSLog(@"照相机") ;
     CameraNavCtrller *cNavCtrller = [CameraNavCtrller getNavCtrller] ;
     [cNavCtrller setHidesBottomBarWhenPushed:YES] ;
@@ -347,7 +392,6 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
     
     [super viewDidLoad] ;
     
-    _bFirstTime = true ;
     // nav item position
     [self.view addSubview:self.collectionView] ;
     // title pop menu .
@@ -389,11 +433,11 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
 
 - (void)loadNewData
 {
-    NSString *userID = [UserOnDevice currentUserOnDevice].idOwn ;
+    NSString *userID = [UserOnDevice currentUserOnDevice].userId ;
     NSLog(@"userID : %@",userID) ;
     
     [ServerRequest homelistWithSearchtype:@(self.schType)
-                                  refresh:@(!_bFirstTime)
+                                  refresh:@(1)
                                    userID:userID
                                      from:@(0)
                                   howmany:@(kPageHowmany)
@@ -416,17 +460,15 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
                                       
                                   }] ;
     
-    if (_bFirstTime) _bFirstTime = false ;
-    
 }
 
 - (void)loadMoreData
 {
-    NSString *userID = [UserOnDevice currentUserOnDevice].idOwn ;
+    NSString *userID = [UserOnDevice currentUserOnDevice].userId ;
     NSLog(@"userID : %@",userID) ;
 
     [ServerRequest homelistWithSearchtype:@(self.schType)
-                                  refresh:@(!_bFirstTime)
+                                  refresh:@(1)
                                    userID:userID
                                      from:@(self.listNote.count)
                                   howmany:@(kPageHowmany)
@@ -530,15 +572,53 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
 {
     NoteDetailCtrller *detailCtrller = (NoteDetailCtrller *)[[self class] getCtrllerFromStory:@"HomePage" controllerIdentifier:@"NoteDetailCtrller"] ;
     NSString *articleIDWillSend = nil ;
-    if (collectionView.collectionViewLayout == self.bplayout) {
+    if (collectionView.collectionViewLayout == self.bplayout)
+    {
         NoteListViewItem *note = self.listNote[indexPath.section] ;
         articleIDWillSend = note.articleId ;
     }
-    else if (collectionView.collectionViewLayout == self.waterflowLayout) {
+    else if (collectionView.collectionViewLayout == self.waterflowLayout)
+    {
         NoteListViewItem *note = self.listNote[indexPath.row] ;
         articleIDWillSend = note.articleId ;
     }
     detailCtrller.articleId = articleIDWillSend ;
+    detailCtrller.blockFocus = ^(NSString *userID, BOOL bFocus){
+        [self.listNote enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem,
+                                                    NSUInteger idx,
+                                                    BOOL * _Nonnull stop) {
+            if ([noteItem.ownerId isEqualToString:userID]) {
+                noteItem.isFollow = bFocus ;
+            }
+        }] ;
+        
+        [_collectionView reloadData] ;
+
+    } ;
+    detailCtrller.blockUpvote = ^(NSString *noteID, BOOL bUpvote){
+        [self.listNote enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem,
+                                                    NSUInteger idx,
+                                                    BOOL * _Nonnull stop) {
+            if ([noteItem.articleId isEqualToString:noteID]) {
+                noteItem.isUpvote = bUpvote ;
+                *stop = YES ;
+            }
+        }] ;
+        [_collectionView reloadData] ;
+    } ;
+    
+    detailCtrller.blockFavorite = ^(NSString *noteID, BOOL bFavorite){
+        [self.listNote enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem,
+                                                    NSUInteger idx,
+                                                    BOOL * _Nonnull stop) {
+            if ([noteItem.articleId isEqualToString:noteID]) {
+                noteItem.isFavorite = bFavorite ;
+                *stop = YES ;
+            }
+        }] ;
+        [_collectionView reloadData] ;
+    } ;
+    
     [detailCtrller setHidesBottomBarWhenPushed:YES] ;
     [self.navigationController pushViewController:detailCtrller animated:YES] ;    
 }

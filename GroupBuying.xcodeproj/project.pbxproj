@@ -1012,6 +1012,7 @@
 		D7886D801D93C41A003D6D57 /* ActivityInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityInfoCell.m; path = "GroupBuying/VC+V/Activity/ActivityInfoCell.m"; sourceTree = SOURCE_ROOT; };
 		D7CE29C91DAB3D7500FF452C /* EditFilterSampleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditFilterSampleController.h; path = "GroupBuying/VC+V/PhotoEditor/EditFilterSampleController.h"; sourceTree = SOURCE_ROOT; };
 		D7CE29CA1DAB3D7500FF452C /* EditFilterSampleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditFilterSampleController.m; path = "GroupBuying/VC+V/PhotoEditor/EditFilterSampleController.m"; sourceTree = SOURCE_ROOT; };
+		D7CE29CE1DACD52A00FF452C /* BigPhotoHeaderViewProtocolHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BigPhotoHeaderViewProtocolHeader.h; path = "GroupBuying/VC+V/HomePage/BigPhotoHeaderViewProtocolHeader.h"; sourceTree = SOURCE_ROOT; };
 		D7E0F4B21D87ADF700EA663B /* ArticlePicItemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItemInfo.h; sourceTree = "<group>"; };
 		D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlePicItemInfo.m; sourceTree = "<group>"; };
 		D7E0F4B51D87B2D100EA663B /* ArticlePicItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItem.h; sourceTree = "<group>"; };
@@ -2596,6 +2597,7 @@
 				D74589841D6A9DCA00835234 /* HPBigPhotoHeaderView.h */,
 				D74589851D6A9DCB00835234 /* HPBigPhotoHeaderView.m */,
 				D74589861D6A9DCB00835234 /* HPBigPhotoHeaderView.xib */,
+				D7CE29CE1DACD52A00FF452C /* BigPhotoHeaderViewProtocolHeader.h */,
 			);
 			name = HomePageSubs;
 			sourceTree = "<group>";

@@ -21,11 +21,10 @@
 #import "DetailHisFocusCell.h"
 #import "DetailRecommend Cell.h"
 #import "TagDetailCtrller.h"
+#import "UserInfoCtrller.h"
 
-@interface NoteDetailCtrller () <UITableViewDataSource,UITableViewDelegate,RootTableViewDelegate>
-{
-    BOOL bFirstTime ;
-}
+@interface NoteDetailCtrller () <UITableViewDataSource,UITableViewDelegate,RootTableViewDelegate,HPBigPhotoHeaderViewDelegate>
+
 // storyboard
 @property (weak, nonatomic) IBOutlet UIView *bottomBar;
 @property (weak, nonatomic) IBOutlet RootTableView *table;
@@ -41,6 +40,87 @@
 
 @implementation NoteDetailCtrller
 
+#pragma mark - HPBigPhotoHeaderViewDelegate
+- (void)userheadOnClickWithUserID:(NSString *)userID userName:(NSString *)name
+{
+    UserInfoCtrller *userCtrl = (UserInfoCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"UserInfoCtrller"] ;
+    userCtrl.userID = userID ;
+    userCtrl.userNameDisplay = name ;
+    [userCtrl setHidesBottomBarWhenPushed:YES] ;
+    [self.navigationController pushViewController:userCtrl animated:YES] ;
+}
+
+- (BOOL)followUserBtOnClickWithCreaterID:(NSString *)createrID followed:(BOOL)bFollow
+{
+    BOOL hasLogin = [UserOnDevice checkForLoginOrNot:self] ;
+    if (!hasLogin) return false ;
+    
+    if (bFollow) {
+        [ServerRequest addFollowWithUserID:createrID
+                                   success:^(id json) {
+                                       ResultParsered *result = [ResultParsered yy_modelWithJSON:json] ;
+                                       if (result.code == 1) {
+                                           self.noteDetail.isFollow = true ;
+                                       }
+                                   } fail:^{
+                                       
+                                   }] ;
+    }
+    else {
+        [ServerRequest cancelFollowWithUserID:createrID
+                                      success:^(id json) {
+                                          
+                                          ResultParsered *result = [ResultParsered yy_modelWithJSON:json] ;
+                                          if (result.code == 1) {
+                                              self.noteDetail.isFollow = false ;
+                                          }
+                                          
+                                      } fail:^{
+                                          
+                                      }] ;
+    }
+    
+    self.blockFocus(createrID,bFollow) ;
+    
+    return true ;
+}
+
+
+
+#pragma mark - prop
+- (void)setNoteDetail:(NoteDetailViewItem *)noteDetail
+{
+    _noteDetail = noteDetail ;
+    
+    if ([UserOnDevice hasLogin]) {
+        _btLike.selected = noteDetail.isUpvote ;
+        _btCollecion.selected = noteDetail.isFavorite ;
+    }
+    else {
+        _btLike.selected = false ;
+        _btCollecion.selected = false ;
+    }
+}
+
+
+
+
+#pragma mark - life
+- (void)viewDidLoad
+{
+    self.title = @"笔记详情" ;
+    
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    [self configureUIs] ;
+    [self configureTable] ;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated] ;
+    _bottomBar.hidden = NO ;
+}
 
 - (void)configureUIs
 {
@@ -60,6 +140,7 @@
 
 - (void)configureTable
 {
+    _table.backgroundColor = [UIColor xt_seperate] ;
     _table.delegate = self ;
     _table.dataSource = self ;
     _table.xt_Delegate = self ;
@@ -70,7 +151,12 @@
     [_table registerNib:[UINib nibWithNibName:kID_DetailCommentsCell bundle:nil] forCellReuseIdentifier:kID_DetailCommentsCell] ;
     [_table registerNib:[UINib nibWithNibName:kID_DetailHisFocusCell bundle:nil] forCellReuseIdentifier:kID_DetailHisFocusCell] ;
     [_table registerNib:[UINib nibWithNibName:kID_DetailRecommend_Cell bundle:nil] forCellReuseIdentifier:kID_DetailRecommend_Cell] ;
+    [_table cancelFooterRefreshUI] ;
 }
+
+
+
+
 
 
 #pragma mark - bottom bar actions
@@ -78,47 +164,78 @@
     NSLog(@"优惠券") ;
 }
 
-- (IBAction)btLikeOnClick:(UIAlternativeButton *)button {
+- (IBAction)btLikeOnClick:(UIAlternativeButton *)button
+{
+    BOOL hasLogin = [UserOnDevice checkForLoginOrNot:self] ;
+    if (!hasLogin) return ;
+    
+    if (!button.selected)
+    {
+        [ServerRequest addLikeWithID:self.noteDetail.articleInfo.idArticle
+                               token:[UserOnDevice token]
+                             success:^(id json) {
+                                self.noteDetail.isUpvote = true ;
+                             } fail:^{
+                                 
+                             }] ;
+    }
+    else
+    {
+        [ServerRequest removeLikeWithID:self.noteDetail.articleInfo.idArticle
+                                  token:[UserOnDevice token]
+                                success:^(id json) {
+                                    self.noteDetail.isUpvote = false ;
+                                } fail:^{
+                                    
+                                }] ;
+    }
+    
     button.selected = !button.selected ;
+    self.blockUpvote(self.noteDetail.articleInfo.idArticle,button.selected) ;
 }
 
-- (IBAction)btCommentOnClick:(id)sender {
+- (IBAction)btCommentOnClick:(id)sender
+{
     NSLog(@"评论") ;
 }
 
-- (IBAction)btCollectionOnClick:(UIAlternativeButton *)button {
-    button.selected = !button.selected ;
-}
-
-
-
-#pragma mark - life
-- (void)viewDidLoad
+- (IBAction)btCollectionOnClick:(UIAlternativeButton *)button
 {
-    bFirstTime = YES ;
-    self.title = @"笔记详情" ;
+    BOOL hasLogin = [UserOnDevice checkForLoginOrNot:self] ;
+    if (!hasLogin) return ;
     
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    [self configureUIs] ;
-    [self configureTable] ;
+    if (!button.selected) {
+        [ServerRequest addFavoriteWithID:self.noteDetail.articleInfo.idArticle
+                                 success:^(id json) {
+                                     self.noteDetail.isFavorite = true ;
+                                 } fail:^{
+                                     
+                                 }] ;
+    }
+    else {
+        [ServerRequest removeFavoriteWithID:self.noteDetail.articleInfo.idArticle
+                                    success:^(id json) {
+                                        self.noteDetail.isFavorite = false ;
+                                    } fail:^{
+                                        
+                                    }] ;
+    }
+    
+    button.selected = !button.selected ;
+    self.blockFavorite(self.noteDetail.articleInfo.idArticle,button.selected) ;
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated] ;
-    _bottomBar.hidden = NO ;
-}
+
 
 
 
 #pragma mark - RootTableViewDelegate
 - (void)loadNewData
 {
-    NSString *userID = [UserOnDevice currentUserOnDevice].idOwn ;
+    NSString *userID = [UserOnDevice currentUserOnDevice].userId ;
 
     [ServerRequest articleDetailWithArticleID:self.articleId
-                                      refresh:@(bFirstTime)
+                                      refresh:@(1)
                                        userID:userID
                                       success:^(id json) {
                                           ResultParsered *result = [ResultParsered yy_modelWithJSON:json] ;
@@ -134,13 +251,13 @@
                                          fail:^{
                                              
                                          }] ;
-    bFirstTime = NO ;
+
 }
 
-- (void)loadMoreData
-{
-    
-}
+//- (void)loadMoreData
+//{
+//    
+//}
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -224,6 +341,7 @@
     {
         DetailUserInfoView *headerUser = [tableView dequeueReusableHeaderFooterViewWithIdentifier:kID_DetailUserInfoView] ;
         headerUser.note = self.noteDetail ;
+        headerUser.delegate = self ;
         return headerUser ;
     }
     return nil ;

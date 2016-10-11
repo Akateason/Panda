@@ -11,7 +11,7 @@
 
 @interface User : NSObject
 
-@property (nonatomic,copy)  NSString    *idOwn ;
+//@property (nonatomic,copy)  NSString    *idOwn ;
 @property (nonatomic,copy)  NSString    *userId ;
 @property (nonatomic,copy)  NSString    *nickName ;
 @property (nonatomic,copy)  NSString    *email ;

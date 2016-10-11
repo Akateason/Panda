@@ -7,17 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BigPhotoHeaderViewProtocolHeader.h"
 
 @class NoteListViewItem ;
 
 static NSString *id_HPBigPhotoHeaderView = @"HPBigPhotoHeaderView" ;
-
-@protocol HPBigPhotoHeaderViewDelegate <NSObject>
-
-- (void)userheadOnClick ;
-
-@end
-
 
 @interface HPBigPhotoHeaderView : UICollectionReusableView
 

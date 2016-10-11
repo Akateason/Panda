@@ -12,8 +12,8 @@
 @protocol HomePageCollectionCellDelegate <NSObject>
 
 @optional
-- (void)likeNoteID:(NSString *)noteID addOrRemove:(bool)addOrRemove ;
-- (void)collectNoteID:(NSString *)noteID addOrRemove:(bool)addOrRemove ;
+- (BOOL)likeNoteID:(NSString *)noteID addOrRemove:(bool)addOrRemove ;
+- (BOOL)collectNoteID:(NSString *)noteID addOrRemove:(bool)addOrRemove ;
 
 @end
 

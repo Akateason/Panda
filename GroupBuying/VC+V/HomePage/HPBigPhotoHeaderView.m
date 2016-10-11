@@ -7,11 +7,11 @@
 //
 
 #import "HPBigPhotoHeaderView.h"
-//#import "TestUser.h"
 #import "NoteListViewItem.h"
 #import "UIImageView+WebCache.h"
 #import "XTTickConvert.h"
 #import "Pic.h"
+#import "UserOnDevice.h"
 
 @interface HPBigPhotoHeaderView ()
 
@@ -24,14 +24,6 @@
 
 @implementation HPBigPhotoHeaderView
 
-//- (void)setIndex:(int)index
-//{
-//    _index = index ;
-//    
-//    _headImageView.image = [UIImage imageNamed:[TestUser headImage:index]] ;
-//    _labelName.text = [TestUser username:index] ;
-//    _lableTime.text = @"今天 13 : 32" ;
-//}
 
 - (void)setNoteItem:(NoteListViewItem *)noteItem
 {
@@ -42,18 +34,31 @@
     _lableTime.text = [XTTickConvert timeInfoWithDate:articleCreateDate] ;
     [_headImageView sd_setImageWithURL:[NSURL URLWithString:noteItem.ownerHeadPic.qiniuUrl]
      placeholderImage:IMG_HEAD_NO] ;
+    
+    if ([UserOnDevice hasLogin]) {
+        _btFoucus.selected = noteItem.isFollow ;
+        _btFoucus.hidden = [UserOnDevice checkUserIsOwnerWithUserID:noteItem.ownerId] ;
+    }
+    else {
+        _btFoucus.selected = false ;
+    }
+    
 }
 
 - (IBAction)headOnClick:(id)sender
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(userheadOnClick)]) {
-        [self.delegate userheadOnClick] ;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(userheadOnClickWithUserID:userName:)]) {
+        [self.delegate userheadOnClickWithUserID:_noteItem.ownerId userName:_noteItem.ownerNickName] ;
     }
 }
 
 - (IBAction)btFoucusOnClick:(UIButton *)sender
 {
-    sender.selected = !sender.selected ;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(followUserBtOnClickWithCreaterID:followed:)]) {
+        BOOL haslogin = [self.delegate followUserBtOnClickWithCreaterID:_noteItem.ownerId followed:!sender.selected] ;
+        if (!haslogin) return ;
+        sender.selected = !sender.selected ;                        
+    }
 }
 
 

@@ -110,8 +110,6 @@
                    }] ;
 }
 
-
-
 #pragma - 发送验证码
 + (void)sendVerifyCode:(NSString *)identifier
                success:(void (^)(id json))success
@@ -150,6 +148,44 @@
 
                    }] ;
 }
+
+#pragma - 添加关注
++ (void)addFollowWithUserID:(NSString *)toUserID
+                    success:(void (^)(id json))success
+                       fail:(void (^)())fail
+{
+    NSMutableDictionary *paramer = [self getParameters] ;
+    [paramer setObject:[UserOnDevice token] forKey:@"token"] ;
+    [paramer setObject:toUserID forKey:@"toUserId"] ;
+    [XTRequest POSTWithUrl:[self getFinalUrl:URL_FOLLOW_ADD]
+                       hud:false
+                parameters:paramer
+                   success:^(id json) {
+                       if (success) success(json);
+                   } fail:^{
+                       if (fail) fail();
+                   }] ;
+}
+
+#pragma - 取消关注
++ (void)cancelFollowWithUserID:(NSString *)toUserID
+                       success:(void (^)(id json))success
+                          fail:(void (^)())fail
+{
+    NSMutableDictionary *paramer = [self getParameters] ;
+    [paramer setObject:[UserOnDevice token] forKey:@"token"] ;
+    [paramer setObject:toUserID forKey:@"toUserId"] ;
+    [XTRequest POSTWithUrl:[self getFinalUrl:URL_FOLLOW_CANCEL]
+                       hud:false
+                parameters:paramer
+                   success:^(id json) {
+                       if (success) success(json);
+                   } fail:^{
+                       if (fail) fail();
+                   }] ;
+}
+
+
 
 #pragma -  搜索首页笔记信息
 + (void)homelistWithSearchtype:(NSNumber *)typeNumber
@@ -238,7 +274,7 @@
                                         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
                                         formatter.dateFormat = @"yyyyMMddHHmmss";
                                         NSString *datestr = [formatter stringFromDate:[NSDate date]] ;
-                                        NSString *fileName = [NSString stringWithFormat:@"%@_%@.jpg", datestr,[UserOnDevice currentUserOnDevice].idOwn] ;
+                                        NSString *fileName = [NSString stringWithFormat:@"%@_%@.jpg", datestr,[UserOnDevice currentUserOnDevice].userId] ;
                                         [formData appendPartWithFileData:dataImg
                                                                     name:@"file"
                                                                 fileName:fileName

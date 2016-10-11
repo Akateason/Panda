@@ -31,6 +31,13 @@ static NSString *const URL_VERIFYCODE_CREATE    = @"/gwn/verifycode/create" ;
 //检验验证码是否正确
 static NSString *const URL_VERIFYCODE_VALID     = @"/gwn/verifycode/valid" ;
 
+//添加关注
+static NSString *const URL_FOLLOW_ADD           = @"/gwn/s/follow/add" ;
+
+//取消关注
+static NSString *const URL_FOLLOW_CANCEL        = @"/gwn/s/follow/cancel" ;
+
+
 //上传资源
 static NSString *const URL_RESOURCE_UPLOAD      = @"/gwn/s/resource" ;
 

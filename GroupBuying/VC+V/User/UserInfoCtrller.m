@@ -7,7 +7,6 @@
 //
 
 #import "UserInfoCtrller.h"
-//#import "RootTableView.h"
 #import "ParallaxHeaderView.h"
 #import "ParallaxHeaderView.h"
 #import "UserInfoView.h"
@@ -16,15 +15,24 @@
 
 
 @interface UserInfoCtrller () <UITableViewDelegate,UITableViewDataSource>
-
-@property (weak, nonatomic) IBOutlet UITableView  *table;
+// UI
+@property (weak, nonatomic) IBOutlet UITableView    *table;
 @property (nonatomic,strong) ParallaxHeaderView     *paralax ;
 @property (nonatomic,strong) UserInfoView           *userinfoView ;
+
 @end
 
 @implementation UserInfoCtrller
 
 #pragma mark - prop
+- (void)setUserNameDisplay:(NSString *)userNameDisplay
+{
+    _userNameDisplay = userNameDisplay ;
+    
+    self.title = userNameDisplay ;
+}
+
+
 - (UserInfoView *)userinfoView
 {
     if (!_userinfoView) {
@@ -38,21 +46,28 @@
 }
 
 
+
 #pragma mark - life
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    self.title = @"teason" ;
-    
+    [self configureUI] ;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [(ParallaxHeaderView *)self.table.tableHeaderView refreshBlurViewForNewImage] ;
+    [super viewDidAppear:animated];
+}
+
+- (void)configureUI
+{
     _table.delegate = self ;
     _table.dataSource = self ;
     _table.separatorStyle = 0 ;
-//    _table.xt_Delegate = self ;
     [_table registerNib:[UINib nibWithNibName:idUserNotesCollectionTableViewCell bundle:nil] forCellReuseIdentifier:idUserNotesCollectionTableViewCell] ;
     [_table registerNib:[UINib nibWithNibName:idUserFoucusHeaderView bundle:nil] forHeaderFooterViewReuseIdentifier:idUserFoucusHeaderView] ;
-    
     
     self.paralax = ({
         ParallaxHeaderView *header = [ParallaxHeaderView parallaxHeaderViewWithSubView:self.userinfoView] ;
@@ -60,13 +75,6 @@
     }) ;
     
     [_table setTableHeaderView:self.paralax] ;
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [(ParallaxHeaderView *)self.table.tableHeaderView refreshBlurViewForNewImage] ;
-    
-    [super viewDidAppear:animated];
 }
 
 

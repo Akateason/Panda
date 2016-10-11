@@ -16,6 +16,8 @@
 
 @interface ServerRequest : XTRequest
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 用户
 #pragma - 登录注册
 + (void)loginWithUserName:(NSString *)name
                  password:(NSString *)password
@@ -48,6 +50,21 @@
              verifyCode:(NSString *)code
                 success:(void (^)(id json))success
                    fail:(void (^)())fail ;
+
+#pragma - 添加关注
++ (void)addFollowWithUserID:(NSString *)toUserID
+                    success:(void (^)(id json))success
+                       fail:(void (^)())fail ;
+
+#pragma - 取消关注
++ (void)cancelFollowWithUserID:(NSString *)toUserID
+                       success:(void (^)(id json))success
+                          fail:(void (^)())fail ;
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 笔记
 
 #pragma -  搜索首页笔记信息
 + (void)homelistWithSearchtype:(NSNumber *)typeNumber
@@ -103,7 +120,7 @@
                         fail:(void (^)())fail ;
 
 
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 @end
 

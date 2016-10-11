@@ -28,7 +28,9 @@ static NSString * const kUser       = @"userCurrent" ;
 + (User *)currentUserOnDevice
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults] ;
+//    NSLog(@"defaults  : %@",defaults.dictionaryRepresentation) ;
     NSString *json = [defaults objectForKey:kUser] ;
+//    NSLog(@"userOnDevice : %@",json) ;
     [defaults synchronize];
     if (!json) {
         return nil ;
@@ -66,12 +68,17 @@ static NSString * const kUser       = @"userCurrent" ;
     return token ;
 }
 
++ (BOOL)hasLogin
+{
+    return ([self token].length > 0) ;
+}
+
 // if not login . present from ctrller .
 + (BOOL)checkForLoginOrNot:(UIViewController *)ctrller
 {
-    if ( ![self token].length )
+    if ( ![self hasLogin] )
     {
-        NSLog(@"无登录") ;
+        NSLog(@"未登录") ;
         UINavigationController *navCtrller = (UINavigationController *)[[RootCtrl class] getCtrllerFromStory:@"Login" controllerIdentifier:@"LoginNavCtrller"] ;
         [ctrller presentViewController:navCtrller
                               animated:YES
@@ -97,6 +104,11 @@ static NSString * const kUser       = @"userCurrent" ;
     
     NSLog(@"defaults keys : %@",defaults.dictionaryRepresentation.allKeys) ;
 
+}
+
++ (BOOL)checkUserIsOwnerWithUserID:(NSString *)userID
+{
+    return [userID isEqualToString:[UserOnDevice currentUserOnDevice].userId] ;
 }
 
 

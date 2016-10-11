@@ -35,7 +35,7 @@
                     <state key="normal" title="+ 关注">
                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
-                    <state key="selected" title="❤︎已关注">
+                    <state key="selected" title="已关注">
                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>

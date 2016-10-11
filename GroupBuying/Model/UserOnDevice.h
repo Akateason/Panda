@@ -22,9 +22,12 @@
 
 + (NSString *)token ;
 
++ (BOOL)hasLogin ;
+
 + (BOOL)checkForLoginOrNot:(UIViewController *)ctrller ; // if not login . present from ctrller .
 
 + (void)clean ; // delete name , pass, token .
 
++ (BOOL)checkUserIsOwnerWithUserID:(NSString *)userID ;
 
 @end

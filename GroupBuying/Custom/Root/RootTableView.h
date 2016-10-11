@@ -11,6 +11,7 @@
 
 
 @protocol RootTableViewDelegate <NSObject>
+@optional
 - (void)loadNewData ;
 - (void)loadMoreData ;
 @end
@@ -22,5 +23,7 @@
 @property (nonatomic) BOOL automaticallyLoadMore ;  // DEFAULT IS `NO`  -> MANUALLY LOADING . AUTOMATICALLY LOAD WHEN IT BECOMES `YES`
 @property (nonatomic) BOOL automaticallyLoadNew ;   // DEFAULT IS `YES` -> EVERYTIME INITIAL WITH AUTO LOAD NEW . CHANGE IT TO `NO` IF NECESSARY .
 - (void)pullDownRefreshHeader ;
+
+- (void)cancelFooterRefreshUI ; // 底部不用刷新
 
 @end
