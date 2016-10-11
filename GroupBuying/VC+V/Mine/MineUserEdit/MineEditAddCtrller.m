@@ -10,8 +10,11 @@
 #import "MEDAVCtextfieldCell.h"
 #import "MEDAVCtextviewCell.h"
 
-@interface MineEditAddCtrller () <UITableViewDelegate,UITableViewDataSource>
 
+@interface MineEditAddCtrller () <UITableViewDelegate,UITableViewDataSource>
+{
+    int selectedGender ;
+}
 @property (weak, nonatomic) IBOutlet UITableView *table;
 
 @end
@@ -19,13 +22,21 @@
 
 @implementation MineEditAddCtrller
 
+#pragma mark - 
+- (void)setStrTitle:(NSString *)strTitle
+{
+    _strTitle = strTitle ;
+    
+    self.title = strTitle ;
+}
+
+#pragma mark - finish action
 - (IBAction)finishBtOnClick:(id)sender
 {
     switch (self.displayType)
     {
         case type_textField_words:
         case type_textField_number:
-        case type_gender_choose:
         case type_birth_choose:
         {
             MEDAVCtextfieldCell *cell = [_table cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]] ;
@@ -38,10 +49,16 @@
             self.blockValString(cell.textview.text) ;
         }
             break;
+        case type_gender_choose:
+        {
+            self.blockValString(selectedGender==1 ? @"女" : @"男") ;
+        }
+            break ;
         default:
             break;
     }
     
+    [self.navigationController popViewControllerAnimated:YES] ;
 }
 
 #pragma mark - life
@@ -49,16 +66,23 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _table.contentInset = UIEdgeInsetsMake(15., 0, 0, 0) ;
     _table.separatorStyle = 0 ;
     _table.dataSource = self ;
     _table.delegate = self ;
+    _table.backgroundColor = [UIColor xt_seperate] ;
 }
 
 #pragma mark - 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (self.displayType == type_gender_choose) {
+        return 2 ;
+    }
     return 1 ;
 }
+
+static NSString *const kGenderCell = @"kGenderCell" ;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -88,7 +112,16 @@
             break;
         case type_gender_choose:
         {
-            
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kGenderCell] ;
+            if (!cell) {
+                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kGenderCell] ;
+                cell.textLabel.font = [UIFont systemFontOfSize:14.] ;
+                cell.tintColor = [UIColor xt_tabbarRedColor] ;
+                cell.selectionStyle = 0 ;
+            }
+            cell.textLabel.text = indexPath.row == 0 ? @"男" : @"女" ;
+            cell.accessoryType = (selectedGender == indexPath.row) ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone ;
+            return cell ;
         }
             break ;
         case type_birth_choose:
@@ -124,9 +157,14 @@
     return 0 ;
 }
 
-
-
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.displayType == type_gender_choose)
+    {
+        selectedGender = (int)indexPath.row ;
+        [_table reloadData] ;
+    }
+}
 
 
 

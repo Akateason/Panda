@@ -199,7 +199,7 @@ static NSString *const kIdentifierFooter = @"mycell_footer" ;
             else if (row == 2) {
                 //@"生日"
                 editAddVC.strTitle = @"生日" ;
-//                editAddVC.strVal = self.userCurrent.gender ;
+//                editAddVC.strVal = self.userCurrent.birthday ;
                 editAddVC.displayType = type_birth_choose ;
                 editAddVC.blockValString = ^(NSString *str){
 //                    weakSelf.userCurrent.gender = str ;
@@ -209,10 +209,10 @@ static NSString *const kIdentifierFooter = @"mycell_footer" ;
             else if (row == 3) {
                 //@"简介"
                 editAddVC.strTitle = @"简介" ;
-//                editAddVC.strVal = self.userCurrent.gender ;
+                editAddVC.strVal = self.userCurrent.intruduce ;
                 editAddVC.displayType = type_textview ;
                 editAddVC.blockValString = ^(NSString *str){
-//                    weakSelf.userCurrent.gender = str ;
+                    weakSelf.userCurrent.intruduce = str ;
                 } ;
             }
         }

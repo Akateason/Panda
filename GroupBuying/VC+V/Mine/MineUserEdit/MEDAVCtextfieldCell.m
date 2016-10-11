@@ -18,6 +18,11 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    
+    self.backgroundColor = [UIColor xt_seperate] ;
+    _textfield.layer.cornerRadius = 5. ;
+    _textfield.backgroundColor = [UIColor whiteColor] ;
+    [_textfield becomeFirstResponder] ;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

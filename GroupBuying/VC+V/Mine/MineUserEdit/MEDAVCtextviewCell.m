@@ -14,9 +14,13 @@
 
 @implementation MEDAVCtextviewCell
 
-- (void)awakeFromNib {
+- (void)awakeFromNib
+{
     [super awakeFromNib];
     // Initialization code
+    self.contentView.backgroundColor = [UIColor xt_seperate] ;
+    _textview.layer.cornerRadius = 5. ;
+    [_textview becomeFirstResponder] ;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
