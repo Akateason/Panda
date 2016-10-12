@@ -28,7 +28,7 @@
     [super viewDidLoad];
     
     self.title = @"设置" ;
-    
+    _table.contentInset = UIEdgeInsetsMake(15., 0, 0, 0) ;
     _table.dataSource = self ;
     _table.delegate = self ;
     _table.backgroundColor = [UIColor xt_seperate] ;

@@ -9,7 +9,14 @@
 #ifndef LoadingImagesHeader_h
 #define LoadingImagesHeader_h
 
-#define TABLE_HEADER_IMAGES             @"slice1_"
-#define TABLE_HEADER_IMAGES_COUNT       4
+
+
+#define TABLE_HEADER_IMAGES             @"load"
+#define TABLE_HEADER_IMAGES_COUNT       44
+
+
+#define PULL_IMAGES_HEAD                @"pull"
+#define PULL_IMAGES_COUNT               16
+
 
 #endif /* LoadingImagesHeader_h */

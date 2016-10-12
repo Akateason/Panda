@@ -123,6 +123,7 @@
                  success:(void (^)(id json))success
                     fail:(void (^)())fail
 {
+    NSLog(@"url : %@",url) ;
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager] ;
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];

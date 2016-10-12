@@ -8,14 +8,14 @@
 
 #import "MyTabbarCtrller.h"
 #import "AppDelegate.h"
+#import "MineNavCtrller.h"
+#import "UserOnDevice.h"
 
-@interface MyTabbarCtrller ()
+@interface MyTabbarCtrller () <UITabBarControllerDelegate>
 
 @end
 
 @implementation MyTabbarCtrller
-
-//  static int indexCache = 0 ;
 
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
@@ -23,10 +23,8 @@
     if (self)
     {
         // Set in AppDelegate
-//        ((AppDelegate *)[UIApplication sharedApplication].delegate).tabbarCtrller = self ;
         self.tabBar.tintColor = [UIColor xt_tabbarRedColor] ;
-//        self.delegate = self ;
-//        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent] ;
+        self.delegate = self ;
     }
     return self;
 }
@@ -44,50 +42,24 @@
     }
 }
 
-/*
+
 #pragma mark --
 #pragma mark - tabbar controller delegate
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
 {
-    if ([viewController isMemberOfClass:[NavCameraCtrller class]])
+    if ([viewController isMemberOfClass:[MineNavCtrller class]])
     {
-//        NSLog(@"camera clicked !") ;
-        [NavCameraCtrller jump2NavCameraCtrllerWithOriginCtrller:self.selectedViewController] ;
-        
-        return NO ;
-    }
-    
-    if ([tabBarController.selectedViewController isEqual:viewController])
-    {
-        //double tap item in index page .
-        if ([viewController isMemberOfClass:[NavIndexCtrller class]])
-        {
-            indexCache ++ ;
-            
-            [self performSelectorInBackground:@selector(deleteCacheIndex)
-                                   withObject:nil] ;
-            
-            if (indexCache % 2 == 0)
-            {
-                [self.homePageDelegate doubleTapedHomePage] ;
-            }
+        if ([UserOnDevice hasLogin]) {
+            return YES ;
         }
-        else
-        {
-            indexCache = 0 ;
+        else {
+            [UserOnDevice checkForLoginOrNot:self.selectedViewController] ;
+            return NO ;
         }
-        
-        return NO;
     }
     
     return YES;
 }
 
-- (void)deleteCacheIndex
-{
-    sleep(1) ;
-    indexCache = 0 ;
-}
-*/
 
 @end

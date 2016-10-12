@@ -399,7 +399,7 @@
         <!--我的-->
         <scene sceneID="eVr-MD-paV">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3i7-yI-7di" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3i7-yI-7di" customClass="MineNavCtrller" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="我的" id="LSS-fe-lag"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bfD-aK-VFz">

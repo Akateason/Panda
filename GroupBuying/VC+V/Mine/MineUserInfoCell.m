@@ -7,6 +7,7 @@
 //
 
 #import "MineUserInfoCell.h"
+#import "User.h"
 
 @interface MineUserInfoCell ()
 
@@ -25,6 +26,16 @@
 @end
 
 @implementation MineUserInfoCell
+
+- (void)setCurrentUser:(User *)currentUser
+{
+    _currentUser = currentUser ;
+    
+    if (!currentUser) return ;
+    
+    _labelName.text = currentUser.nickName ;
+    _labelDesc.text = currentUser.intruduce ;    
+}
 
 - (IBAction)myNoteOnClick:(id)sender
 {
@@ -67,6 +78,8 @@
     _lb_myFocus.textColor = [UIColor xt_w_light] ;
     _lb_myFans.textColor = [UIColor xt_w_light] ;
     
+    _labelName.text = @"未登录" ;
+    _labelDesc.text = @"" ;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

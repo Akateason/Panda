@@ -185,6 +185,28 @@
                    }] ;
 }
 
+#pragma - 更新用户信息
++ (void)updateUserInfo:(User *)user
+               success:(void (^)(id json))success
+                  fail:(void (^)())fail
+{
+    NSString *urlStr = [[self getFinalUrl:URL_USER_UPDATE] stringByAppendingString:[NSString stringWithFormat:@"?token=%@",[UserOnDevice token]]] ;
+    NSDictionary *jsonObj = [user yy_modelToJSONObject] ;
+    NSLog(@"json : %@",jsonObj) ;
+    [XTRequest POSTWithTokenUrl:urlStr
+                           body:jsonObj
+                        success:^(id json) {
+                            if (success) {
+                                success(json) ;
+                            }
+                        }
+                           fail:^{
+                               if (fail) {
+                                   fail() ;
+                               }
+                           }] ;
+}
+
 
 
 #pragma -  搜索首页笔记信息

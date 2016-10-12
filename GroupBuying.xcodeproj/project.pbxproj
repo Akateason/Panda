@@ -258,7 +258,6 @@
 		D75CC7331C2D13C000E590E6 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC72F1C2D13C000E590E6 /* NSObject+YYModel.m */; };
 		D75CC7341C2D13C000E590E6 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CC7311C2D13C000E590E6 /* YYClassInfo.m */; };
 		D76E837A1D6C61C60014FDEA /* RootCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E83791D6C61C60014FDEA /* RootCollectionView.m */; };
-		D76E837E1D6C6EBD0014FDEA /* RankingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E837D1D6C6EBD0014FDEA /* RankingCell.m */; };
 		D76E83821D6D3F010014FDEA /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E83811D6D3F010014FDEA /* CameraViewController.m */; };
 		D76E83841D6D40D40014FDEA /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D76E83831D6D40D40014FDEA /* Camera.storyboard */; };
 		D76E83871D6D46300014FDEA /* CameraNavCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E83861D6D46300014FDEA /* CameraNavCtrller.m */; };
@@ -331,6 +330,15 @@
 		D7CE29CB1DAB3D7500FF452C /* EditFilterSampleController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE29CA1DAB3D7500FF452C /* EditFilterSampleController.m */; };
 		D7CE29D21DACDA3A00FF452C /* MEDAVCtextfieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE29D11DACDA3A00FF452C /* MEDAVCtextfieldCell.m */; };
 		D7CE29D81DACDAEB00FF452C /* MEDAVCtextviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE29D71DACDAEB00FF452C /* MEDAVCtextviewCell.m */; };
+		D7CE29DB1DAE3A5600FF452C /* MineNavCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE29DA1DAE3A5600FF452C /* MineNavCtrller.m */; };
+		D7CE29DD1DAE46C100FF452C /* RankingUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7CE29DC1DAE46C100FF452C /* RankingUserCell.xib */; };
+		D7CE29E01DAE470B00FF452C /* RankingUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE29DF1DAE470B00FF452C /* RankingUserCell.m */; };
+		D7CE29E41DAE517C00FF452C /* RankingTodayHotCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE29E21DAE517C00FF452C /* RankingTodayHotCtrl.m */; };
+		D7CE29E51DAE517C00FF452C /* RankingTodayHotCtrl.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7CE29E31DAE517C00FF452C /* RankingTodayHotCtrl.xib */; };
+		D7CE29E91DAE51DD00FF452C /* RankingOverallCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE29E71DAE51DD00FF452C /* RankingOverallCtrl.m */; };
+		D7CE29EA1DAE51DD00FF452C /* RankingOverallCtrl.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7CE29E81DAE51DD00FF452C /* RankingOverallCtrl.xib */; };
+		D7CE29EE1DAE522100FF452C /* RankTodayHotCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE29EC1DAE522100FF452C /* RankTodayHotCollectionCell.m */; };
+		D7CE29EF1DAE522100FF452C /* RankTodayHotCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7CE29ED1DAE522100FF452C /* RankTodayHotCollectionCell.xib */; };
 		D7E0F4B41D87ADF700EA663B /* ArticlePicItemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */; };
 		D7E0F4B71D87B2D100EA663B /* ArticlePicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B61D87B2D100EA663B /* ArticlePicItem.m */; };
 		D7E0F4BA1D87B42D00EA663B /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B91D87B42D00EA663B /* Article.m */; };
@@ -885,8 +893,6 @@
 		D76E83781D6C61C60014FDEA /* RootCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootCollectionView.h; sourceTree = "<group>"; };
 		D76E83791D6C61C60014FDEA /* RootCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootCollectionView.m; sourceTree = "<group>"; };
 		D76E837B1D6C624F0014FDEA /* LoadingImagesHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadingImagesHeader.h; sourceTree = "<group>"; };
-		D76E837C1D6C6EBD0014FDEA /* RankingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RankingCell.h; path = "GroupBuying/VC+V/Ranking/RankingCell.h"; sourceTree = SOURCE_ROOT; };
-		D76E837D1D6C6EBD0014FDEA /* RankingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RankingCell.m; path = "GroupBuying/VC+V/Ranking/RankingCell.m"; sourceTree = SOURCE_ROOT; };
 		D76E83801D6D3F010014FDEA /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraViewController.h; path = "GroupBuying/VC+V/Camera/CameraViewController.h"; sourceTree = SOURCE_ROOT; };
 		D76E83811D6D3F010014FDEA /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraViewController.m; path = "GroupBuying/VC+V/Camera/CameraViewController.m"; sourceTree = SOURCE_ROOT; };
 		D76E83831D6D40D40014FDEA /* Camera.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Camera.storyboard; path = "VC+V/Camera/Camera.storyboard"; sourceTree = "<group>"; };
@@ -1019,6 +1025,20 @@
 		D7CE29D11DACDA3A00FF452C /* MEDAVCtextfieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MEDAVCtextfieldCell.m; path = "GroupBuying/VC+V/Mine/MineUserEdit/MEDAVCtextfieldCell.m"; sourceTree = SOURCE_ROOT; };
 		D7CE29D61DACDAEB00FF452C /* MEDAVCtextviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MEDAVCtextviewCell.h; path = "GroupBuying/VC+V/Mine/MineUserEdit/MEDAVCtextviewCell.h"; sourceTree = SOURCE_ROOT; };
 		D7CE29D71DACDAEB00FF452C /* MEDAVCtextviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MEDAVCtextviewCell.m; path = "GroupBuying/VC+V/Mine/MineUserEdit/MEDAVCtextviewCell.m"; sourceTree = SOURCE_ROOT; };
+		D7CE29D91DAE3A5600FF452C /* MineNavCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MineNavCtrller.h; path = "GroupBuying/VC+V/Mine/MineNavCtrller.h"; sourceTree = SOURCE_ROOT; };
+		D7CE29DA1DAE3A5600FF452C /* MineNavCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MineNavCtrller.m; path = "GroupBuying/VC+V/Mine/MineNavCtrller.m"; sourceTree = SOURCE_ROOT; };
+		D7CE29DC1DAE46C100FF452C /* RankingUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RankingUserCell.xib; path = "GroupBuying/VC+V/Ranking/RankingUserCell.xib"; sourceTree = SOURCE_ROOT; };
+		D7CE29DE1DAE470B00FF452C /* RankingUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RankingUserCell.h; path = "GroupBuying/VC+V/Ranking/RankingUserCell.h"; sourceTree = SOURCE_ROOT; };
+		D7CE29DF1DAE470B00FF452C /* RankingUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RankingUserCell.m; path = "GroupBuying/VC+V/Ranking/RankingUserCell.m"; sourceTree = SOURCE_ROOT; };
+		D7CE29E11DAE517C00FF452C /* RankingTodayHotCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RankingTodayHotCtrl.h; path = "GroupBuying/VC+V/Ranking/RankingTodayHotCtrl.h"; sourceTree = SOURCE_ROOT; };
+		D7CE29E21DAE517C00FF452C /* RankingTodayHotCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RankingTodayHotCtrl.m; path = "GroupBuying/VC+V/Ranking/RankingTodayHotCtrl.m"; sourceTree = SOURCE_ROOT; };
+		D7CE29E31DAE517C00FF452C /* RankingTodayHotCtrl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RankingTodayHotCtrl.xib; path = "GroupBuying/VC+V/Ranking/RankingTodayHotCtrl.xib"; sourceTree = SOURCE_ROOT; };
+		D7CE29E61DAE51DD00FF452C /* RankingOverallCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RankingOverallCtrl.h; path = "GroupBuying/VC+V/Ranking/RankingOverallCtrl.h"; sourceTree = SOURCE_ROOT; };
+		D7CE29E71DAE51DD00FF452C /* RankingOverallCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RankingOverallCtrl.m; path = "GroupBuying/VC+V/Ranking/RankingOverallCtrl.m"; sourceTree = SOURCE_ROOT; };
+		D7CE29E81DAE51DD00FF452C /* RankingOverallCtrl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RankingOverallCtrl.xib; path = "GroupBuying/VC+V/Ranking/RankingOverallCtrl.xib"; sourceTree = SOURCE_ROOT; };
+		D7CE29EB1DAE522100FF452C /* RankTodayHotCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RankTodayHotCollectionCell.h; path = "GroupBuying/VC+V/Ranking/RankTodayHotCollectionCell.h"; sourceTree = SOURCE_ROOT; };
+		D7CE29EC1DAE522100FF452C /* RankTodayHotCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RankTodayHotCollectionCell.m; path = "GroupBuying/VC+V/Ranking/RankTodayHotCollectionCell.m"; sourceTree = SOURCE_ROOT; };
+		D7CE29ED1DAE522100FF452C /* RankTodayHotCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RankTodayHotCollectionCell.xib; path = "GroupBuying/VC+V/Ranking/RankTodayHotCollectionCell.xib"; sourceTree = SOURCE_ROOT; };
 		D7E0F4B21D87ADF700EA663B /* ArticlePicItemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItemInfo.h; sourceTree = "<group>"; };
 		D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlePicItemInfo.m; sourceTree = "<group>"; };
 		D7E0F4B51D87B2D100EA663B /* ArticlePicItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItem.h; sourceTree = "<group>"; };
@@ -1199,11 +1219,11 @@
 		60074DFD1D60DF2F0040C3C0 /* Mine1 */ = {
 			isa = PBXGroup;
 			children = (
+				D7E9945E1D93D3AC00EACDFB /* Mine */,
 				D7E4FEFA1DA8D5A200DC0E53 /* MyCollection */,
 				D7E4FEF11DA8A5B800DC0E53 /* Message */,
 				D7E4FEE81DA89A0300DC0E53 /* MyFansFocus */,
 				D7E995011D9B6CCB00EACDFB /* MyNote */,
-				D7E9945E1D93D3AC00EACDFB /* Mine */,
 				D7E994E81D9A569A00EACDFB /* AddFriends */,
 				D7E994C71D990C3000EACDFB /* MineUserEdit */,
 			);
@@ -1475,8 +1495,8 @@
 			children = (
 				D74589951D6B18C400835234 /* RankingViewController.h */,
 				D74589961D6B18C400835234 /* RankingViewController.m */,
-				D76E837C1D6C6EBD0014FDEA /* RankingCell.h */,
-				D76E837D1D6C6EBD0014FDEA /* RankingCell.m */,
+				D7CE29F01DAE522600FF452C /* TodayHotCtrl */,
+				D7CE29F11DAE523800FF452C /* OverallCtrl */,
 			);
 			name = Ranking;
 			sourceTree = "<group>";
@@ -2621,6 +2641,32 @@
 			name = MineEditAddVC;
 			sourceTree = "<group>";
 		};
+		D7CE29F01DAE522600FF452C /* TodayHotCtrl */ = {
+			isa = PBXGroup;
+			children = (
+				D7CE29E11DAE517C00FF452C /* RankingTodayHotCtrl.h */,
+				D7CE29E21DAE517C00FF452C /* RankingTodayHotCtrl.m */,
+				D7CE29E31DAE517C00FF452C /* RankingTodayHotCtrl.xib */,
+				D7CE29EB1DAE522100FF452C /* RankTodayHotCollectionCell.h */,
+				D7CE29EC1DAE522100FF452C /* RankTodayHotCollectionCell.m */,
+				D7CE29ED1DAE522100FF452C /* RankTodayHotCollectionCell.xib */,
+			);
+			name = TodayHotCtrl;
+			sourceTree = "<group>";
+		};
+		D7CE29F11DAE523800FF452C /* OverallCtrl */ = {
+			isa = PBXGroup;
+			children = (
+				D7CE29E61DAE51DD00FF452C /* RankingOverallCtrl.h */,
+				D7CE29E71DAE51DD00FF452C /* RankingOverallCtrl.m */,
+				D7CE29E81DAE51DD00FF452C /* RankingOverallCtrl.xib */,
+				D7CE29DE1DAE470B00FF452C /* RankingUserCell.h */,
+				D7CE29DF1DAE470B00FF452C /* RankingUserCell.m */,
+				D7CE29DC1DAE46C100FF452C /* RankingUserCell.xib */,
+			);
+			name = OverallCtrl;
+			sourceTree = "<group>";
+		};
 		D7E0F4B11D87ADBF00EA663B /* Article */ = {
 			isa = PBXGroup;
 			children = (
@@ -2739,6 +2785,8 @@
 				60319D9B1D9437E000BD094D /* MineCell.m */,
 				60319D9C1D9437E000BD094D /* MineCell.xib */,
 				60319D9F1D9438DA00BD094D /* info_mineCell.plist */,
+				D7CE29D91DAE3A5600FF452C /* MineNavCtrller.h */,
+				D7CE29DA1DAE3A5600FF452C /* MineNavCtrller.m */,
 			);
 			name = Mine;
 			sourceTree = "<group>";
@@ -2937,6 +2985,7 @@
 				60319D5E1D8F1A9200BD094D /* DetailHisFocusCell.xib in Resources */,
 				D7E4FF041DA8D74800DC0E53 /* MyFansFocusCell.xib in Resources */,
 				D7E4FF201DA8FEB900DC0E53 /* CartCell.xib in Resources */,
+				D7CE29EA1DAE51DD00FF452C /* RankingOverallCtrl.xib in Resources */,
 				60319DA01D9438DA00BD094D /* info_mineCell.plist in Resources */,
 				D7E0F4CB1D88033D00EA663B /* Login.storyboard in Resources */,
 				D7E994D61D99122C00EACDFB /* MineEditCell.xib in Resources */,
@@ -2983,10 +3032,12 @@
 				D74589991D6B190D00835234 /* HomePage.storyboard in Resources */,
 				60074E1D1D634AE80040C3C0 /* xtAllColorsList.plist in Resources */,
 				D7E4FF0F1DA8D75A00DC0E53 /* AddFriendCell.xib in Resources */,
+				D7CE29E51DAE517C00FF452C /* RankingTodayHotCtrl.xib in Resources */,
 				60319D641D8F1D0C00BD094D /* UserItemCollectionCell.xib in Resources */,
 				608405941D74AA6800B40D68 /* SVProgressHUD.bundle in Resources */,
 				D7886D651D915787003D6D57 /* FVCBannerCell.xib in Resources */,
 				60319D541D8ED10A00BD094D /* DetailTagsCell.xib in Resources */,
+				D7CE29DD1DAE46C100FF452C /* RankingUserCell.xib in Resources */,
 				D76E84201D759CB30014FDEA /* PostTagItemCollectionCell.xib in Resources */,
 				60319D6F1D8F219B00BD094D /* ProductRecommendCollectionCell.xib in Resources */,
 				D74589881D6A9DCB00835234 /* HPBigPhotoHeaderView.xib in Resources */,
@@ -2994,6 +3045,7 @@
 				D76E839B1D6DA6540014FDEA /* CameraGroupCell.xib in Resources */,
 				D75CC5CB1C2A965000E590E6 /* WeiboSDK.bundle in Resources */,
 				606BF8561D841B7500C503FE /* DetailCoverTitleCell.xib in Resources */,
+				D7CE29EF1DAE522100FF452C /* RankTodayHotCollectionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3029,6 +3081,7 @@
 				D7E9946A1D94CED000EACDFB /* SettingCtrller.m in Sources */,
 				D76E84111D75665F0014FDEA /* PreviewCollectionCell.m in Sources */,
 				D76E83ED1D7435680014FDEA /* UserFoucusHeaderView.m in Sources */,
+				D7CE29EE1DAE522100FF452C /* RankTodayHotCollectionCell.m in Sources */,
 				60074E091D60E0040040C3C0 /* ActivityController.m in Sources */,
 				D76E842A1D767A590014FDEA /* User.m in Sources */,
 				D7E4FEF81DA8A85700DC0E53 /* MessageCell.m in Sources */,
@@ -3049,6 +3102,7 @@
 				D75CC5C21C2A965000E590E6 /* XHPathCover.m in Sources */,
 				D75CC6C31C2BEB0400E590E6 /* RootCtrl.m in Sources */,
 				D75CC5C31C2A965000E590E6 /* FMDatabase.m in Sources */,
+				D7CE29E91DAE51DD00FF452C /* RankingOverallCtrl.m in Sources */,
 				D75CC6011C2A965000E590E6 /* UIImageView+WebCache.m in Sources */,
 				D75CC5C41C2A965000E590E6 /* FMDatabaseAdditions.m in Sources */,
 				D7E994B31D9528CB00EACDFB /* NSTimer+Addition.m in Sources */,
@@ -3109,6 +3163,7 @@
 				D76E84151D7567A70014FDEA /* XTZoomPicture.m in Sources */,
 				D76E83F51D7439950014FDEA /* UserNotesCollectionTableViewCell.m in Sources */,
 				60319DB51DA9224800BD094D /* CartIntroductionFooterView.m in Sources */,
+				D7CE29E41DAE517C00FF452C /* RankingTodayHotCtrl.m in Sources */,
 				D75CC5E41C2A965000E590E6 /* QNEtag.m in Sources */,
 				60074E031D60DFDC0040C3C0 /* FindController.m in Sources */,
 				D7886D561D910799003D6D57 /* Comment.m in Sources */,
@@ -3210,6 +3265,7 @@
 				D7E994C51D98F4FD00EACDFB /* FeaturesRecommendCell.m in Sources */,
 				6035CF341D75EDBA00EA590B /* TagSearchingCell.m in Sources */,
 				D75CC5C11C2A965000E590E6 /* CHTCollectionViewWaterfallLayout.m in Sources */,
+				D7CE29DB1DAE3A5600FF452C /* MineNavCtrller.m in Sources */,
 				D75CC5FB1C2A965000E590E6 /* SDWebImagePrefetcher.m in Sources */,
 				D75CC5EB1C2A965000E590E6 /* QNFileRecorder.m in Sources */,
 				D76E83C21D70280F0014FDEA /* UserInfoView.m in Sources */,
@@ -3238,8 +3294,8 @@
 				D75CC44B1C2A95DE00E590E6 /* XTSegment.m in Sources */,
 				60074E061D60DFEF0040C3C0 /* FeaturesController.m in Sources */,
 				D75CC5DD1C2A965000E590E6 /* UIScrollView+MJExtension.m in Sources */,
-				D76E837E1D6C6EBD0014FDEA /* RankingCell.m in Sources */,
 				D7E994701D94D00100EACDFB /* SettingCell.m in Sources */,
+				D7CE29E01DAE470B00FF452C /* RankingUserCell.m in Sources */,
 				D75CC4451C2A95DE00E590E6 /* MyTabbar.m in Sources */,
 				60074E1B1D634AE80040C3C0 /* UIColor+AllColors.m in Sources */,
 				D76E84A91D7997D80014FDEA /* CuttingViewController.m in Sources */,

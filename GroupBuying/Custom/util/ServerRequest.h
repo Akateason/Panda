@@ -61,7 +61,10 @@
                        success:(void (^)(id json))success
                           fail:(void (^)())fail ;
 
-
+#pragma - 更新用户信息
++ (void)updateUserInfo:(User *)user
+               success:(void (^)(id json))success
+                  fail:(void (^)())fail ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 笔记

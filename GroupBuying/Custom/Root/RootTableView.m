@@ -14,6 +14,7 @@
 @interface RootTableView ()
 
 @property (nonatomic,strong) NSArray *gifImageList ;
+@property (nonatomic,strong) NSArray *pullGifImageList ;
 
 @end
 
@@ -59,8 +60,8 @@
 
 - (void)MJRefreshConfigure
 {
-    NSArray *idleImages = self.gifImageList ; //@[[self.gifImageList firstObject]] ;
-    NSArray *pullingImages = self.gifImageList ;
+    NSArray *idleImages = self.pullGifImageList ;
+    NSArray *pullingImages = self.pullGifImageList ;
     NSArray *refreshingImages = self.gifImageList ;
     
     MJRefreshGifHeader *header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewDataSelector)];
@@ -125,7 +126,7 @@
     if (!_gifImageList)
     {
         NSMutableArray *tempList = [NSMutableArray array] ;
-        for (int i = 0; i < TABLE_HEADER_IMAGES_COUNT; i++)
+        for (int i = 1; i <= TABLE_HEADER_IMAGES_COUNT; i++)
         {
             UIImage *imgTemp = [UIImage imageNamed:[NSString stringWithFormat:@"%@%d",TABLE_HEADER_IMAGES,i]] ;
             [tempList addObject:imgTemp] ; // DEFAULT MODE IS THIS GIF IMAGES .
@@ -135,6 +136,20 @@
     
     return _gifImageList ;
 }
+
+- (NSArray *)pullGifImageList
+{
+    if (!_pullGifImageList) {
+        NSMutableArray *tempList = [NSMutableArray array] ;
+        for (int i = 1; i <= PULL_IMAGES_COUNT; i++) {
+            UIImage *imgTemp = [UIImage imageNamed:[NSString stringWithFormat:@"%@%d",PULL_IMAGES_HEAD,i]] ;
+            [tempList addObject:imgTemp] ;
+        }
+        _pullGifImageList = [NSArray arrayWithArray:tempList] ;
+    }
+    return _pullGifImageList ;
+}
+
 
 #pragma mark --
 #pragma mark - loading methods

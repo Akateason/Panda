@@ -45,6 +45,13 @@ static NSString *const URL_RESOURCE_UPLOAD      = @"/gwn/s/resource" ;
 //添加文章信息
 static NSString *const URL_ARTICLE_ADD          = @"/gwn/s/article/add" ;
 
+
+//更新用户信息
+static NSString *const URL_USER_UPDATE          = @"/gwn/s/user/update" ;
+
+
+
+
 //搜索首页笔记信息
 static NSString *const URL_HOME_LIST_SEARCH     = @"/gwn/note/list/home/search" ;
 

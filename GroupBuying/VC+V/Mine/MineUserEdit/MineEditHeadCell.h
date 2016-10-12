@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class Pic ;
 static NSString *const kID_MineEditHeadCell = @"MineEditHeadCell" ;
+
 
 @interface MineEditHeadCell : UITableViewCell
 
-@property (nonatomic,strong) UIImage *head ;
-
+@property (nonatomic,strong) Pic     *headPic ;
 
 @end

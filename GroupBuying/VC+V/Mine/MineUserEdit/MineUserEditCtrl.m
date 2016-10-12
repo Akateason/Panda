@@ -12,13 +12,22 @@
 #import "MineEditAddCtrller.h"
 #import "UserOnDevice.h"
 #import "User.h"
+#import "XTTickConvert.h"
+#import "SIAlertView.h"
+#import "UIImage+AddFunction.h"
+#import "Resource.h"
+#import "YYModel.h"
+#import "Pic.h"
+#import "SVProgressHUD.h"
 
-@interface MineUserEditCtrl () <UITableViewDataSource,UITableViewDelegate>
+@interface MineUserEditCtrl () <UITableViewDataSource,UITableViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 {
     MineEditAddCtrller *editAddVC ;
+    UIImage            *imgHeadOrigin ;
+    NSArray            *list_keypathWillBeObservered ;
 }
 
-@property (nonatomic,strong) User *userCurrent ;
+@property (nonatomic,strong)         User        *userCurrent ;
 @property (weak, nonatomic) IBOutlet UITableView *table ;
 
 @end
@@ -38,13 +47,57 @@
 
 #pragma mark - life
 
+- (void)dealloc
+{
+    for (NSString *keypath in list_keypathWillBeObservered)
+    {
+        [self removeObserver:self
+                  forKeyPath:keypath
+                     context:nil] ;
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     self.title = @"个人资料" ;
-    
+    list_keypathWillBeObservered = @[@"userCurrent.headPic",@"userCurrent.nickName",@"userCurrent.gender",@"userCurrent.birthday",@"userCurrent.intruduce",@"userCurrent.mobile",@"userCurrent.name"] ;
+    [self configureUI] ;
+    [self addUserCurrentObserver] ;
+}
+
+- (void)addUserCurrentObserver
+{
+    for (NSString *keypath in list_keypathWillBeObservered) {
+        [self addObserver:self
+               forKeyPath:keypath
+                  options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld
+                  context:nil] ;
+    }
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary<NSString *,id> *)change
+                       context:(void *)context
+{
+    if ([list_keypathWillBeObservered containsObject:keyPath]) {
+        [self uploadCurrentUser] ;
+    }
+    else {
+        [super observeValueForKeyPath:keyPath
+                             ofObject:object
+                               change:change
+                              context:context] ;
+    }
+}
+
+
+
+- (void)configureUI
+{
     _table.contentInset = UIEdgeInsetsMake(15., 0, 0, 0) ;
     _table.dataSource = self ;
     _table.delegate = self ;
@@ -52,7 +105,6 @@
     _table.backgroundColor = [UIColor xt_seperate] ;
     [_table registerNib:[UINib nibWithNibName:kID_MineEditHeadCell bundle:nil] forCellReuseIdentifier:kID_MineEditHeadCell] ;
     [_table registerNib:[UINib nibWithNibName:kID_MineEditCell bundle:nil] forCellReuseIdentifier:kID_MineEditCell] ;
-    
 }
 
 
@@ -74,7 +126,7 @@
         return 4 ;
     }
     else if (section == 2) {
-        return 5 - 2 ;
+        return 2 ;  // 5 ;
     }
     
     return 0 ;
@@ -88,6 +140,7 @@
     {
         // 头像
         MineEditHeadCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_MineEditHeadCell] ;
+        cell.headPic = self.userCurrent.headPic ;
         return cell ;
     }
     else if (section == 1) {
@@ -98,10 +151,15 @@
             return [self getEditCellWithKey:@"性别" val:self.userCurrent.gender] ;
         }
         else if (row == 2) {
-            return [self getEditCellWithKey:@"生日" val:nil] ;
+            NSString *strDate = (self.userCurrent.birthday > 0) ?
+            [XTTickConvert getDateWithTick:self.userCurrent.birthday
+                            AndWithFormart:TIME_STR_FORMAT_1]
+            :
+            @"" ;
+            return [self getEditCellWithKey:@"生日" val:strDate] ;
         }
         else if (row == 3) {
-            return [self getEditCellWithKey:@"简介" val:nil] ;
+            return [self getEditCellWithKey:@"简介" val:self.userCurrent.intruduce] ;
         }
     }
     else if (section == 2) {
@@ -111,9 +169,9 @@
         else if (row == 1) {
             return [self getEditCellWithKey:@"真实姓名" val:self.userCurrent.name] ;
         }
-        else if (row == 2) {
-            return [self getEditCellWithKey:@"身份证" val:nil] ;
-        }
+//        else if (row == 2) {
+//            return [self getEditCellWithKey:@"身份证" val:nil] ;
+//        }
 //        else if (row == 3) {
 //            return [self getEditCellWithKey:@"支付宝" val:nil] ;
 //        }
@@ -170,7 +228,17 @@ static NSString *const kIdentifierFooter = @"mycell_footer" ;
     if (section == 0)
     {
         // 头像
-        
+        SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:nil andMessage:nil] ;
+        [alertView addButtonWithTitle:@"取消" type:SIAlertViewButtonTypeDestructive handler:nil] ;
+        [alertView addButtonWithTitle:@"拍照" type:SIAlertViewButtonTypeDefault handler:^(SIAlertView *alertView){
+            [self startCameraControllerFromViewController:self
+                                            usingDelegate:self];
+        }] ;
+        [alertView addButtonWithTitle:@"本地相册" type:SIAlertViewButtonTypeDefault handler:^(SIAlertView *alertView){
+            [self startAlbum] ;
+        }] ;
+        alertView.positionStyle = SIALertViewPositionBottom ;
+        [alertView show] ;
     }
     else
     {
@@ -185,6 +253,7 @@ static NSString *const kIdentifierFooter = @"mycell_footer" ;
                 editAddVC.displayType = type_textField_words ;
                 editAddVC.blockValString = ^(NSString *str){
                     weakSelf.userCurrent.nickName = str ;
+                    [weakSelf.table reloadData] ;
                 } ;
             }
             else if (row == 1) {
@@ -194,15 +263,23 @@ static NSString *const kIdentifierFooter = @"mycell_footer" ;
                 editAddVC.displayType = type_gender_choose ;
                 editAddVC.blockValString = ^(NSString *str){
                     weakSelf.userCurrent.gender = str ;
+                    [weakSelf.table reloadData] ;
                 } ;
             }
             else if (row == 2) {
                 //@"生日"
                 editAddVC.strTitle = @"生日" ;
-//                editAddVC.strVal = self.userCurrent.birthday ;
+                NSString *strDate = [XTTickConvert getDateWithTick:self.userCurrent.birthday
+                                                    AndWithFormart:TIME_STR_FORMAT_1] ;
+                if (self.userCurrent.birthday == 0) strDate = @"" ;
+                editAddVC.strVal = strDate ;
                 editAddVC.displayType = type_birth_choose ;
                 editAddVC.blockValString = ^(NSString *str){
-//                    weakSelf.userCurrent.gender = str ;
+                    NSDate *dateBirth = [XTTickConvert getNSDateWithDateStr:str
+                                                              AndWithFormat:TIME_STR_FORMAT_1] ;
+                    long long tick = [XTTickConvert getTickWithDate:dateBirth] ;
+                    weakSelf.userCurrent.birthday = tick ;
+                    [weakSelf.table reloadData] ;
                 } ;
 
             }
@@ -213,6 +290,7 @@ static NSString *const kIdentifierFooter = @"mycell_footer" ;
                 editAddVC.displayType = type_textview ;
                 editAddVC.blockValString = ^(NSString *str){
                     weakSelf.userCurrent.intruduce = str ;
+                    [weakSelf.table reloadData] ;
                 } ;
             }
         }
@@ -224,6 +302,7 @@ static NSString *const kIdentifierFooter = @"mycell_footer" ;
                 editAddVC.displayType = type_textField_number ;
                 editAddVC.blockValString = ^(NSString *str){
                     weakSelf.userCurrent.mobile = str ;
+                    [weakSelf.table reloadData] ;
                 } ;
             }
             else if (row == 1) {
@@ -233,16 +312,17 @@ static NSString *const kIdentifierFooter = @"mycell_footer" ;
                 editAddVC.displayType = type_textField_words ;
                 editAddVC.blockValString = ^(NSString *str){
                     weakSelf.userCurrent.name = str ;
+                    [weakSelf.table reloadData] ;
                 } ;
             }
             else if (row == 2) {
                 //@"身份证"
-                editAddVC.strTitle = @"身份证" ;
-//                editAddVC.strVal = self.userCurrent.name ;
-                editAddVC.displayType = type_textField_words ;
-                editAddVC.blockValString = ^(NSString *str){
-//                    weakSelf.userCurrent.name = str ;
-                } ;
+//                editAddVC.strTitle = @"身份证" ;
+////                editAddVC.strVal = self.userCurrent.name ;
+//                editAddVC.displayType = type_textField_words ;
+//                editAddVC.blockValString = ^(NSString *str){
+////                    weakSelf.userCurrent.name = str ;
+//                } ;
             }
             else if (row == 3) {
                 //@"支付宝"
@@ -255,19 +335,96 @@ static NSString *const kIdentifierFooter = @"mycell_footer" ;
         [self.navigationController pushViewController:editAddVC animated:YES] ;
     }
     
-    
+}
 
+- (BOOL)startCameraControllerFromViewController: (UIViewController*) controller
+                                  usingDelegate: (id <UIImagePickerControllerDelegate,
+                                                   UINavigationControllerDelegate>) delegate
+{
+    // here, check the device is available  or not
+    if (([UIImagePickerController isSourceTypeAvailable:
+          UIImagePickerControllerSourceTypeCamera] == NO)
+        || (delegate == nil)|| (controller == nil)) return NO;
     
+    UIImagePickerController *cameraUI = [[UIImagePickerController alloc] init];
+    
+    cameraUI.sourceType = UIImagePickerControllerSourceTypeCamera;
+    // Hides the controls for moving & scaling pictures, or for
+    // trimming movies. To instead show the controls, use YES.
+    cameraUI.allowsEditing = YES;
+    cameraUI.delegate = delegate;
+    [controller presentViewController:cameraUI animated:YES completion:^{}];
+    
+    return YES;
+}
+- (void)startAlbum
+{
+    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+    imagePickerController.delegate = self;
+    imagePickerController.allowsEditing = YES;
+    imagePickerController.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    [self presentViewController:imagePickerController animated:YES completion:^{}];
+}
+
+#pragma mark --
+#pragma mark - imagePickerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    [SVProgressHUD show] ;
+    imgHeadOrigin = [info objectForKey:UIImagePickerControllerEditedImage];
+
+    NSURLSessionUploadTask* uploadTask =
+    [ServerRequest uploadTaskWithImage:imgHeadOrigin
+                            completion:^(NSURLResponse *response, NSDictionary *responseObject, NSError *error) {
+                                [SVProgressHUD dismiss] ;
+                                if ([responseObject[@"code"] integerValue] == 1) {
+                                    Resource *resource = [Resource yy_modelWithJSON:responseObject[@"data"][@"resource"]] ;
+                                    Pic *aPic = [[Pic alloc] initWithResource:resource] ;
+                                    self.userCurrent.headPic = aPic ;
+                                    
+                                    [self dismissViewControllerAnimated:YES
+                                                             completion:^{
+                                                                 NSLog(@"head geted") ;
+                                                                 [_table reloadData] ;
+                                                             }];
+                                }
+                                else {
+                                    [SVProgressHUD showErrorWithStatus:@"图片上传失败"] ;
+                                }
+                                
+                            }] ;
+    [uploadTask resume] ;
 }
 
 
 
 
+
+
+
+
+
+
+
+#pragma mark - private
 - (MineEditAddCtrller *)getEditAddVC
 {
     return (MineEditAddCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"MineEditAddCtrller"] ;
 }
 
+- (void)uploadCurrentUser
+{
+    [ServerRequest updateUserInfo:self.userCurrent
+                          success:^(id json) {
+                              ResultParsered *result = [ResultParsered yy_modelWithJSON:json] ;
+                              
+                              // cache on device ..
+                              [UserOnDevice cacheUserCurrent:self.userCurrent] ;
+                              
+                          } fail:^{
+                              
+                          }] ;
+}
 
 
 

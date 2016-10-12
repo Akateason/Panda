@@ -15,7 +15,6 @@
 #import "UserOnDevice.h"
 #import "MineUserInfoCell.h"
 #import "MineCell.h"
-#import "SettingCtrller.h"
 #import "AddFriendsCtrl.h"
 #import "UserInfoCtrller.h"
 #import "MyNoteCtrller.h"
@@ -23,6 +22,7 @@
 #import "MessageCtrller.h"
 #import "MyCollectionCtrller.h"
 #import "ShopCartCtrller.h"
+#import "SettingCtrller.h"
 
 @interface MineController () <UITableViewDataSource,UITableViewDelegate>
 
@@ -46,9 +46,9 @@
 - (IBAction)settingOnClick:(id)sender
 {
     NSLog(@"设置") ;
-    SettingCtrller *setVC = (SettingCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"SettingCtrller"] ;
-    [setVC setHidesBottomBarWhenPushed:YES] ;
-    [self.navigationController pushViewController:setVC animated:YES] ;
+    SettingCtrller *settingVC = (SettingCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"SettingCtrller"] ;
+    [settingVC setHidesBottomBarWhenPushed:YES] ;
+    [self.navigationController pushViewController:settingVC animated:YES] ;
 }
 
 
@@ -113,6 +113,7 @@
     NSInteger row = indexPath.row ;
     if (section == 0) {
         MineUserInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_MineUserInfoCell] ;
+        cell.currentUser = [UserOnDevice currentUserOnDevice] ;
         cell.block_note = ^{
             NSLog(@"我的笔记") ;
             MyNoteCtrller *mynoteVC = (MyNoteCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"MyNoteCtrller"] ;

@@ -15,7 +15,11 @@ typedef void(^ToMyFoucus)(void) ;
 typedef void(^ToMyFans)(void) ;
 typedef void(^ToMyPage)(void) ;
 
+
+@class User ;
 @interface MineUserInfoCell : UITableViewCell
+
+@property (nonatomic,strong) User       *currentUser ;
 
 @property (nonatomic,copy) ToMyNotes    block_note ;
 @property (nonatomic,copy) ToMyFoucus   block_focus ;

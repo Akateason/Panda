@@ -9,20 +9,22 @@
 #import "MineEditAddCtrller.h"
 #import "MEDAVCtextfieldCell.h"
 #import "MEDAVCtextviewCell.h"
-
+#import "XTTickConvert.h"
 
 @interface MineEditAddCtrller () <UITableViewDelegate,UITableViewDataSource>
 {
-    int selectedGender ;
+    int         selectedGender ;
+    long long   ticker_birthday ;
 }
-@property (weak, nonatomic) IBOutlet UITableView *table;
+@property (weak, nonatomic) IBOutlet UITableView    *table;
+@property (weak, nonatomic) IBOutlet UIDatePicker   *datePicker;
 
 @end
 
 
 @implementation MineEditAddCtrller
 
-#pragma mark - 
+#pragma mark - prop
 - (void)setStrTitle:(NSString *)strTitle
 {
     _strTitle = strTitle ;
@@ -30,14 +32,14 @@
     self.title = strTitle ;
 }
 
-#pragma mark - finish action
+
+#pragma mark - action
 - (IBAction)finishBtOnClick:(id)sender
 {
     switch (self.displayType)
     {
         case type_textField_words:
         case type_textField_number:
-        case type_birth_choose:
         {
             MEDAVCtextfieldCell *cell = [_table cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]] ;
             self.blockValString(cell.textfield.text) ;
@@ -51,7 +53,14 @@
             break;
         case type_gender_choose:
         {
-            self.blockValString(selectedGender==1 ? @"女" : @"男") ;
+            self.blockValString(selectedGender == 1 ? @"女" : @"男") ;
+        }
+            break ;
+        case type_birth_choose:
+        {
+            NSString *strDate = [XTTickConvert getDateWithTick:ticker_birthday
+                                                AndWithFormart:TIME_STR_FORMAT_1] ;
+            self.blockValString(strDate) ;
         }
             break ;
         default:
@@ -60,6 +69,20 @@
     
     [self.navigationController popViewControllerAnimated:YES] ;
 }
+
+
+- (IBAction)pickDateValChange:(UIDatePicker *)datePicker
+{
+    NSDate *date = [datePicker date] ;
+    NSLog(@"date : %@",date) ;
+    ticker_birthday = [XTTickConvert getTickWithDate:date] ;
+    NSString *strDate = [XTTickConvert getDateWithTick:ticker_birthday
+                                        AndWithFormart:TIME_STR_FORMAT_1] ;
+    self.strVal = strDate ;
+    [_table reloadData] ;
+}
+
+
 
 #pragma mark - life
 - (void)viewDidLoad
@@ -71,6 +94,18 @@
     _table.dataSource = self ;
     _table.delegate = self ;
     _table.backgroundColor = [UIColor xt_seperate] ;
+    
+    
+    if (self.displayType == type_birth_choose) {
+        _datePicker.hidden = false ;
+        _datePicker.maximumDate = [NSDate date] ;
+        if (self.strVal.length > 0)
+        {
+            NSDate *dateBirthSend = [XTTickConvert getNSDateWithDateStr:self.strVal
+                                                          AndWithFormat:TIME_STR_FORMAT_1] ;
+            _datePicker.date = dateBirthSend ;
+        }        
+    }    
 }
 
 #pragma mark - 
@@ -91,6 +126,7 @@ static NSString *const kGenderCell = @"kGenderCell" ;
         {
             MEDAVCtextfieldCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_MEDAVCtextfieldCell] ;
             cell.textfield.keyboardType = UIKeyboardTypeDefault ;
+            cell.textfield.placeholder = [@"请输入" stringByAppendingString:_strTitle] ;
             cell.textfield.text = self.strVal ;
             return cell ;
         }
@@ -99,6 +135,7 @@ static NSString *const kGenderCell = @"kGenderCell" ;
         {
             MEDAVCtextfieldCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_MEDAVCtextfieldCell] ;
             cell.textfield.keyboardType = UIKeyboardTypeNumberPad ;
+            cell.textfield.placeholder = [@"请输入" stringByAppendingString:_strTitle] ;
             cell.textfield.text = self.strVal ;
             return cell ;
         }
@@ -126,7 +163,14 @@ static NSString *const kGenderCell = @"kGenderCell" ;
             break ;
         case type_birth_choose:
         {
-            
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kGenderCell] ;
+            if (!cell) {
+                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kGenderCell] ;
+                cell.textLabel.font = [UIFont systemFontOfSize:14.] ;
+                cell.selectionStyle = 0 ;
+            }
+            cell.textLabel.text = self.strVal ;
+            return cell ;
         }
             break ;
         default:

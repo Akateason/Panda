@@ -8,7 +8,7 @@
 
 #import "RankingViewController.h"
 #import "XTSegment.h"
-#import "RankingCell.h"
+
 
 @interface RankingViewController () <XTSegmentDelegate,UITableViewDataSource,UITableViewDelegate,RootTableViewDelegate>
 
@@ -52,40 +52,40 @@
 }
 
 
-#pragma mark - RootTableViewDelegate
-- (void)loadNewData
-{
+//#pragma mark - RootTableViewDelegate
+//- (void)loadNewData
+//{
+//
+//}
+//
+//- (void)loadMoreData
+//{
+//    
+//}
 
-}
-
-- (void)loadMoreData
-{
-    
-}
-
-
-#pragma mark - UITableViewDataSource
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 10 ;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    RankingCell *cell = [tableView dequeueReusableCellWithIdentifier:id_rankingCell] ;
-    if (!cell) {
-        cell = [tableView dequeueReusableCellWithIdentifier:id_rankingCell] ;
-    }
-    cell.index = indexPath.row ;
-    
-    return cell ;
-}
-
-#pragma mark - UITableViewDelegate
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 120. ;
-}
+//
+//#pragma mark - UITableViewDataSource
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+//{
+//    return 10 ;
+//}
+//
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    RankingCell *cell = [tableView dequeueReusableCellWithIdentifier:id_rankingCell] ;
+//    if (!cell) {
+//        cell = [tableView dequeueReusableCellWithIdentifier:id_rankingCell] ;
+//    }
+//    cell.index = indexPath.row ;
+//    
+//    return cell ;
+//}
+//
+//#pragma mark - UITableViewDelegate
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return 120. ;
+//}
 
 #pragma mark -
 - (void)viewDidLoad
@@ -95,7 +95,7 @@
     
     self.title = @"排行榜" ;
     [self segment] ;
-    [self tableConfigure] ;
+//    [self tableConfigure] ;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -107,14 +107,14 @@
 }
 
 
-- (void)tableConfigure
-{
-    _table.backgroundColor = [UIColor whiteColor] ;
-    _table.separatorStyle = UITableViewCellSeparatorStyleNone ;
-    _table.delegate = self ;
-    _table.dataSource = self ;
-    _table.xt_Delegate = self ;
-}
+//- (void)tableConfigure
+//{
+//    _table.backgroundColor = [UIColor whiteColor] ;
+//    _table.separatorStyle = UITableViewCellSeparatorStyleNone ;
+//    _table.delegate = self ;
+//    _table.dataSource = self ;
+//    _table.xt_Delegate = self ;
+//}
 
 
 - (void)didReceiveMemoryWarning {

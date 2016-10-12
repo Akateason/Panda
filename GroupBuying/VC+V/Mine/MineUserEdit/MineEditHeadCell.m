@@ -7,6 +7,8 @@
 //
 
 #import "MineEditHeadCell.h"
+#import "Pic.h"
+#import "UIImageView+WebCache.h"
 
 @interface MineEditHeadCell ()
 
@@ -17,12 +19,15 @@
 
 @implementation MineEditHeadCell
 
-- (void)setHead:(UIImage *)head
+- (void)setHeadPic:(Pic *)headPic
 {
-    _head = head ;
+    _headPic = headPic ;
     
-    
+    if (!headPic) return ;
+    [_imgHead sd_setImageWithURL:[NSURL URLWithString:headPic.qiniuUrl] placeholderImage:IMG_HEAD_NO] ;
 }
+
+
 
 - (void)awakeFromNib
 {

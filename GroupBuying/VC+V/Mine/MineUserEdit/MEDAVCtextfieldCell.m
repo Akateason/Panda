@@ -15,7 +15,8 @@
 
 @implementation MEDAVCtextfieldCell
 
-- (void)awakeFromNib {
+- (void)awakeFromNib
+{
     [super awakeFromNib];
     // Initialization code
     
@@ -24,6 +25,14 @@
     _textfield.backgroundColor = [UIColor whiteColor] ;
     [_textfield becomeFirstResponder] ;
 }
+
+- (void)setPlaceholder:(NSString *)placeholder
+{
+    _placeholder = placeholder ;
+    _textfield.placeholder = placeholder ;
+}
+
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
