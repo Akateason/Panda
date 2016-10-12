@@ -8,31 +8,40 @@
 
 #import "RankingViewController.h"
 #import "XTSegment.h"
+#import "RankingTodayHotCtrl.h"
+#import "RankingOverallCtrl.h"
 
 
-@interface RankingViewController () <XTSegmentDelegate,UITableViewDataSource,UITableViewDelegate,RootTableViewDelegate>
+static const float kHeightSegment = 45. ;
 
-@property (weak, nonatomic) IBOutlet UIButton *bt2top;
-@property (weak, nonatomic) IBOutlet RootTableView *table;
-@property (nonatomic,strong) XTSegment *segment ;
+
+
+@interface RankingViewController () <XTSegmentDelegate>
+@property (nonatomic,strong)            RankingTodayHotCtrl *todayVC ; // 今日最热
+@property (nonatomic,strong)            RankingOverallCtrl  *overallVC ; //总排行
+// UIs
+@property (weak, nonatomic) IBOutlet    UIButton           *bt2top ;
+@property (nonatomic,strong)            XTSegment          *segment ;
+
 @end
 
 @implementation RankingViewController
 
-#pragma mark -
+
+#pragma mark - prop
 - (XTSegment *)segment
 {
     if (!_segment) {
         _segment = [[XTSegment alloc] initWithDataList:@[@"今日热门",@"总排行榜"]
                                                  imgBg:[UIImage imageNamed:@"btBase"]
-                                                height:45.
+                                                height:kHeightSegment
                                            normalColor:[UIColor xt_w_light]
                                            selectColor:[UIColor xt_tabbarRedColor]
                                                   font:[UIFont systemFontOfSize:14.]
                                                  frame:APPFRAME] ;
         _segment.backgroundColor = [UIColor whiteColor] ;
         _segment.delegate = self ;
-        _segment.frame = CGRectMake(0, 0, APP_WIDTH, 45.) ;
+        _segment.frame = CGRectMake(0, 0, APP_WIDTH, kHeightSegment) ;
         if (!_segment.superview) {
             [self.view addSubview:_segment] ;
         }
@@ -40,54 +49,47 @@
     return _segment ;
 }
 
+- (RankingTodayHotCtrl *)todayVC
+{
+    if (!_todayVC) {
+        _todayVC = [[RankingTodayHotCtrl alloc] initWithNibName:@"RankingTodayHotCtrl" bundle:nil] ;
+    }
+    return _todayVC ;
+}
+
+- (RankingOverallCtrl *)overallVC
+{
+    if (!_overallVC) {
+        _overallVC = [[RankingOverallCtrl alloc] initWithNibName:@"RankingOverallCtrl" bundle:nil] ;
+    }
+    return _overallVC ;
+}
+
+
+#pragma mark - action top BT
 - (IBAction)back2topOnClick:(id)sender
 {
-    [_table setContentOffset:CGPointZero animated:YES] ;
+    NSLog(@"回到最顶") ;
 }
 
 #pragma mark - XTSegmentDelegate 
 - (void)clickSegmentWith:(int)index
 {
     NSLog(@"index : %d",index) ;
+    if (index == 0) {
+        self.todayVC.view.frame = [[self class] contentRect] ;
+        self.overallVC.view.frame = [[self class] hideRect] ;
+    }
+    else {
+        self.todayVC.view.frame = [[self class] hideRect] ;
+        self.overallVC.view.frame = [[self class] contentRect] ;
+    }
 }
 
 
-//#pragma mark - RootTableViewDelegate
-//- (void)loadNewData
-//{
-//
-//}
-//
-//- (void)loadMoreData
-//{
-//    
-//}
 
-//
-//#pragma mark - UITableViewDataSource
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-//{
-//    return 10 ;
-//}
-//
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    RankingCell *cell = [tableView dequeueReusableCellWithIdentifier:id_rankingCell] ;
-//    if (!cell) {
-//        cell = [tableView dequeueReusableCellWithIdentifier:id_rankingCell] ;
-//    }
-//    cell.index = indexPath.row ;
-//    
-//    return cell ;
-//}
-//
-//#pragma mark - UITableViewDelegate
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    return 120. ;
-//}
 
-#pragma mark -
+#pragma mark - LIFE
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -95,7 +97,12 @@
     
     self.title = @"排行榜" ;
     [self segment] ;
-//    [self tableConfigure] ;
+    
+    self.todayVC.view.frame = [[self class] contentRect] ;
+    self.overallVC.view.frame = [[self class] hideRect] ;
+    [self.view addSubview:self.overallVC.view] ;
+    [self.view addSubview:self.todayVC.view] ;
+    [self.view bringSubviewToFront:self.bt2top] ;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -107,14 +114,31 @@
 }
 
 
-//- (void)tableConfigure
-//{
-//    _table.backgroundColor = [UIColor whiteColor] ;
-//    _table.separatorStyle = UITableViewCellSeparatorStyleNone ;
-//    _table.delegate = self ;
-//    _table.dataSource = self ;
-//    _table.xt_Delegate = self ;
-//}
+
+
+#pragma mark - util
++ (CGRect)contentRect
+{
+    return CGRectMake(0,
+                      kHeightSegment,
+                      APP_WIDTH,
+                      APP_HEIGHT - kHeightSegment) ; /// - APP_STATUSBAR_HEIGHT - APP_NAVIGATIONBAR_HEIGHT
+}
+
++ (CGRect)hideRect
+{
+    return CGRectMake(APP_WIDTH,
+                      kHeightSegment,
+                      APP_WIDTH,
+                      APP_HEIGHT - kHeightSegment) ; /// - APP_STATUSBAR_HEIGHT - APP_NAVIGATIONBAR_HEIGHT
+}
+
+
+
+
+
+
+
 
 
 - (void)didReceiveMemoryWarning {

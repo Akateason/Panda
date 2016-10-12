@@ -10,14 +10,69 @@
 
 @interface RankingOverallCtrl ()
 
+@property (weak, nonatomic) IBOutlet RootTableView *table;
+
 @end
 
 @implementation RankingOverallCtrl
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
+
+//- (void)tableConfigure
+//{
+//    _table.backgroundColor = [UIColor whiteColor] ;
+//    _table.separatorStyle = UITableViewCellSeparatorStyleNone ;
+//    _table.delegate = self ;
+//    _table.dataSource = self ;
+//    _table.xt_Delegate = self ;
+//}
+
+//#pragma mark - RootTableViewDelegate
+//- (void)loadNewData
+//{
+//
+//}
+//
+//- (void)loadMoreData
+//{
+//
+//}
+
+//
+//#pragma mark - UITableViewDataSource
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+//{
+//    return 10 ;
+//}
+//
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    RankingCell *cell = [tableView dequeueReusableCellWithIdentifier:id_rankingCell] ;
+//    if (!cell) {
+//        cell = [tableView dequeueReusableCellWithIdentifier:id_rankingCell] ;
+//    }
+//    cell.index = indexPath.row ;
+//
+//    return cell ;
+//}
+//
+//#pragma mark - UITableViewDelegate
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return 120. ;
+//}
+
+
+
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

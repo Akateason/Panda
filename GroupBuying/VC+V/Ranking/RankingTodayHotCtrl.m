@@ -7,16 +7,22 @@
 //
 
 #import "RankingTodayHotCtrl.h"
+#import "RootCollectionView.h"
 
 @interface RankingTodayHotCtrl ()
+
+@property (weak, nonatomic) IBOutlet RootCollectionView *collectionView;
 
 @end
 
 @implementation RankingTodayHotCtrl
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    _collectionView.backgroundColor = [UIColor xt_seperate] ;
 }
 
 - (void)didReceiveMemoryWarning {
