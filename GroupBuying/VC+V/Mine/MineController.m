@@ -60,7 +60,6 @@
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"info_mineCell" ofType:@"plist"] ;
     self.dictionResource = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath] ;
 
-    
     [super viewDidLoad] ;
     
     _table.dataSource = self ;
@@ -77,6 +76,8 @@
     
     [[UIApplication sharedApplication] setStatusBarHidden:NO] ;
     [self.navigationController setNavigationBarHidden:NO] ;
+    
+    [_table reloadData] ;
 }
 
 

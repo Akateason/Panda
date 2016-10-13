@@ -23,6 +23,8 @@
             [CommonFunc exitLog] ;
         }
         _data = dict[@"data"] ;
+        
+        _errMsg = dict[@"errMsg"] ;
     }
 
     return self;
@@ -41,6 +43,7 @@
         [CommonFunc exitLog] ;
     }
     _data = dic[@"data"] ;
+    _errMsg = dic[@"errMsg"] ;
 
     return YES;
 }

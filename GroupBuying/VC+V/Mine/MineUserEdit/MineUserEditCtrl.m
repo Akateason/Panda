@@ -417,10 +417,10 @@ static NSString *const kIdentifierFooter = @"mycell_footer" ;
     [ServerRequest updateUserInfo:self.userCurrent
                           success:^(id json) {
                               ResultParsered *result = [ResultParsered yy_modelWithJSON:json] ;
-                              
-                              // cache on device ..
-                              [UserOnDevice cacheUserCurrent:self.userCurrent] ;
-                              
+                              if (result.code == 1) {
+                                  // cache on device ..
+                                  [UserOnDevice cacheUserCurrent:self.userCurrent] ;
+                              }
                           } fail:^{
                               
                           }] ;

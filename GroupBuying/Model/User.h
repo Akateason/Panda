@@ -26,7 +26,7 @@
 @property (nonatomic)       long long   lastLoginTime ;
 @property (nonatomic,strong)Pic         *headPic ;
 @property (nonatomic,copy)  NSString    *deviceID ; // 设备ID（推送用）
-@property (nonatomic)       BOOL        isIOS ; // 是否是iOS操作系统（0 不是 1是）
+@property (nonatomic)       int         isIOS ; // 是否是iOS操作系统（0 不是 1是）
 @property (nonatomic,copy)  NSString    *osVersion ; // 操作系统版本信息
 //@property (nonatomic,copy)  NSString    *signature ; // 个性签名
 @property (nonatomic,copy)  NSString    *intruduce ; // 简介

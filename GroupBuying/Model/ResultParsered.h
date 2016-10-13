@@ -12,6 +12,7 @@
 
 @property (nonatomic)           NSInteger       code        ;
 @property (nonatomic,strong)    NSDictionary    *data       ;
+@property (nonatomic,strong)    NSString        *errMsg     ;
 
 - (instancetype)initWithDic:(NSDictionary *)dict            ;
 
