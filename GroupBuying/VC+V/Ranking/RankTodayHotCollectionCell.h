@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString *const kID_RankTodayHotCollectionCell = @"RankTodayHotCollectionCell" ;
+
 @interface RankTodayHotCollectionCell : UICollectionViewCell
+
+@property (nonatomic)   int     idxRank ;
++ (CGSize)getSize ;
 
 @end

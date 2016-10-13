@@ -10,4 +10,6 @@
 
 @interface RankingOverallCtrl : RootCtrl
 
+- (void)scroll2Top ;
+
 @end

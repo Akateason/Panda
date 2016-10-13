@@ -37,7 +37,7 @@
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <inset key="titleEdgeInsets" minX="9" minY="-1" maxX="0.0" maxY="0.0"/>
-                        <state key="normal" title="9" image="hp_btn_like_n"/>
+                        <state key="normal" title="0" image="hp_btn_like_n"/>
                         <state key="selected" image="hp_btn_like_s"/>
                         <connections>
                             <action selector="btLikeOnClick:" destination="15C-nz-BpT" eventType="touchUpInside" id="qth-NS-6vc"/>

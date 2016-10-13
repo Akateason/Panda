@@ -17,6 +17,9 @@ static const float kHeightSegment = 45. ;
 
 
 @interface RankingViewController () <XTSegmentDelegate>
+{
+    int currentSegmentIdx ;
+}
 @property (nonatomic,strong)            RankingTodayHotCtrl *todayVC ; // 今日最热
 @property (nonatomic,strong)            RankingOverallCtrl  *overallVC ; //总排行
 // UIs
@@ -70,19 +73,26 @@ static const float kHeightSegment = 45. ;
 - (IBAction)back2topOnClick:(id)sender
 {
     NSLog(@"回到最顶") ;
+    if (currentSegmentIdx == 0) {
+        [self.todayVC scroll2Top] ;
+    }
+    else if (currentSegmentIdx == 1) {
+        [self.overallVC scroll2Top] ;
+    }
 }
 
 #pragma mark - XTSegmentDelegate 
 - (void)clickSegmentWith:(int)index
 {
     NSLog(@"index : %d",index) ;
+    currentSegmentIdx = index ;
     if (index == 0) {
-        self.todayVC.view.frame = [[self class] contentRect] ;
-        self.overallVC.view.frame = [[self class] hideRect] ;
+        self.todayVC.view.frame = [self contentRect] ;
+        self.overallVC.view.frame = [self hideRect] ;
     }
     else {
-        self.todayVC.view.frame = [[self class] hideRect] ;
-        self.overallVC.view.frame = [[self class] contentRect] ;
+        self.todayVC.view.frame = [self hideRect] ;
+        self.overallVC.view.frame = [self contentRect] ;
     }
 }
 
@@ -98,11 +108,13 @@ static const float kHeightSegment = 45. ;
     self.title = @"排行榜" ;
     [self segment] ;
     
-    self.todayVC.view.frame = [[self class] contentRect] ;
-    self.overallVC.view.frame = [[self class] hideRect] ;
+    
     [self.view addSubview:self.overallVC.view] ;
     [self.view addSubview:self.todayVC.view] ;
     [self.view bringSubviewToFront:self.bt2top] ;
+    self.todayVC.view.frame = [self contentRect] ;
+    self.overallVC.view.frame = [self hideRect] ;
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -113,24 +125,31 @@ static const float kHeightSegment = 45. ;
     [self.navigationController setNavigationBarHidden:NO] ;
 }
 
-
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated] ;
+    
+    CGRect frameTmp = self.todayVC.view.frame ;
+    frameTmp.size.height = APP_HEIGHT - kHeightSegment - APP_STATUSBAR_HEIGHT - APP_NAVIGATIONBAR_HEIGHT ;
+    self.todayVC.view.frame = frameTmp ;
+}
 
 
 #pragma mark - util
-+ (CGRect)contentRect
+- (CGRect)contentRect
 {
     return CGRectMake(0,
                       kHeightSegment,
                       APP_WIDTH,
-                      APP_HEIGHT - kHeightSegment) ; /// - APP_STATUSBAR_HEIGHT - APP_NAVIGATIONBAR_HEIGHT
+                      APP_HEIGHT - kHeightSegment - APP_STATUSBAR_HEIGHT - APP_NAVIGATIONBAR_HEIGHT) ; /// - APP_STATUSBAR_HEIGHT - APP_NAVIGATIONBAR_HEIGHT
 }
 
-+ (CGRect)hideRect
+- (CGRect)hideRect
 {
     return CGRectMake(APP_WIDTH,
                       kHeightSegment,
                       APP_WIDTH,
-                      APP_HEIGHT - kHeightSegment) ; /// - APP_STATUSBAR_HEIGHT - APP_NAVIGATIONBAR_HEIGHT
+                      APP_HEIGHT - kHeightSegment - APP_STATUSBAR_HEIGHT - APP_NAVIGATIONBAR_HEIGHT) ; /// - APP_STATUSBAR_HEIGHT - APP_NAVIGATIONBAR_HEIGHT
 }
 
 

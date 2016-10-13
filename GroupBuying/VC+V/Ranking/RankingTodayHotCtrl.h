@@ -10,4 +10,6 @@
 
 @interface RankingTodayHotCtrl : RootCtrl
 
+- (void)scroll2Top ;
+
 @end

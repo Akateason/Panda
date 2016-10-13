@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString *const kID_RankingUserCell = @"RankingUserCell" ;
+
 @interface RankingUserCell : UITableViewCell
 
 @property (nonatomic) int index ;
