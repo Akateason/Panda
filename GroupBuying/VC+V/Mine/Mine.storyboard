@@ -580,6 +580,72 @@
             </objects>
             <point key="canvasLocation" x="201" y="4809"/>
         </scene>
+        <!--My Coupon Code Ctrller-->
+        <scene sceneID="Z65-qu-0z8">
+            <objects>
+                <viewController storyboardIdentifier="MyCouponCodeCtrller" id="prp-QI-P41" customClass="MyCouponCodeCtrller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="reu-on-4zR"/>
+                        <viewControllerLayoutGuide type="bottom" id="hwA-lZ-2yA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VuE-1j-X8k">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KRZ-te-4LS" customClass="RootTableView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KRZ-te-4LS" firstAttribute="leading" secondItem="VuE-1j-X8k" secondAttribute="leading" id="BLM-JB-Ukq"/>
+                            <constraint firstAttribute="trailing" secondItem="KRZ-te-4LS" secondAttribute="trailing" id="Lc3-qw-gqm"/>
+                            <constraint firstItem="KRZ-te-4LS" firstAttribute="top" secondItem="VuE-1j-X8k" secondAttribute="top" id="Vf9-zE-JEK"/>
+                            <constraint firstItem="hwA-lZ-2yA" firstAttribute="top" secondItem="KRZ-te-4LS" secondAttribute="bottom" id="Xgt-BY-bRa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="table" destination="KRZ-te-4LS" id="EtP-6D-vzT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="smS-hx-IPF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="201" y="5477"/>
+        </scene>
+        <!--My Points Ctrller-->
+        <scene sceneID="KqN-vF-vko">
+            <objects>
+                <viewController storyboardIdentifier="MyPointsCtrller" id="CH4-qS-LqZ" customClass="MyPointsCtrller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3Ft-C3-Swf"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zj9-Gw-mkH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kfC-cw-Kh1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dc7-ZO-cqI" customClass="RootTableView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dc7-ZO-cqI" secondAttribute="trailing" id="4vr-jl-uIe"/>
+                            <constraint firstItem="dc7-ZO-cqI" firstAttribute="leading" secondItem="kfC-cw-Kh1" secondAttribute="leading" id="87z-bw-edQ"/>
+                            <constraint firstItem="Zj9-Gw-mkH" firstAttribute="top" secondItem="dc7-ZO-cqI" secondAttribute="bottom" id="PVi-0n-9Sh"/>
+                            <constraint firstItem="dc7-ZO-cqI" firstAttribute="top" secondItem="kfC-cw-Kh1" secondAttribute="top" id="tdT-qk-qTQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="table" destination="dc7-ZO-cqI" id="HPU-cS-s4o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vbn-ti-VHm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="201" y="6175"/>
+        </scene>
         <!--User Info Ctrller-->
         <scene sceneID="ZGb-D4-0VB">
             <objects>

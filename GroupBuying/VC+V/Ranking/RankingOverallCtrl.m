@@ -40,7 +40,7 @@ static const float kHeightSegment = 45. ;
 {
     if (!_segment) {
         _segment = [[XTSegment alloc] initWithDataList:@[@"综合",@"按月",@"按人气",@"按笔记数"]
-                                                 imgBg:[UIImage imageNamed:@"btBase"]
+                                                 imgBg:[UIImage imageNamed:@"btbg"]
                                                 height:kHeightSegment
                                            normalColor:[UIColor xt_w_light]
                                            selectColor:[UIColor whiteColor]

@@ -339,6 +339,15 @@
 		D7CE29EA1DAE51DD00FF452C /* RankingOverallCtrl.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7CE29E81DAE51DD00FF452C /* RankingOverallCtrl.xib */; };
 		D7CE29EE1DAE522100FF452C /* RankTodayHotCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE29EC1DAE522100FF452C /* RankTodayHotCollectionCell.m */; };
 		D7CE29EF1DAE522100FF452C /* RankTodayHotCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7CE29ED1DAE522100FF452C /* RankTodayHotCollectionCell.xib */; };
+		D7CE2A051DAF85E600FF452C /* MyCouponCodeCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A041DAF85E600FF452C /* MyCouponCodeCtrller.m */; };
+		D7CE2A091DAF871400FF452C /* MyCouponCodeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A071DAF871400FF452C /* MyCouponCodeCell.m */; };
+		D7CE2A0A1DAF871400FF452C /* MyCouponCodeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7CE2A081DAF871400FF452C /* MyCouponCodeCell.xib */; };
+		D7CE2A0E1DAF93AE00FF452C /* MyPointsCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A0D1DAF93AE00FF452C /* MyPointsCtrller.m */; };
+		D7CE2A121DAF9C0A00FF452C /* MyPointsInfomationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A101DAF9C0A00FF452C /* MyPointsInfomationCell.m */; };
+		D7CE2A131DAF9C0A00FF452C /* MyPointsInfomationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7CE2A111DAF9C0A00FF452C /* MyPointsInfomationCell.xib */; };
+		D7CE2A161DAF9FA700FF452C /* MyPointDetailHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A151DAF9FA700FF452C /* MyPointDetailHeader.m */; };
+		D7CE2A1A1DAFA02700FF452C /* PointsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A181DAFA02700FF452C /* PointsCell.m */; };
+		D7CE2A1B1DAFA02700FF452C /* PointsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7CE2A191DAFA02700FF452C /* PointsCell.xib */; };
 		D7E0F4B41D87ADF700EA663B /* ArticlePicItemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */; };
 		D7E0F4B71D87B2D100EA663B /* ArticlePicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B61D87B2D100EA663B /* ArticlePicItem.m */; };
 		D7E0F4BA1D87B42D00EA663B /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B91D87B42D00EA663B /* Article.m */; };
@@ -1039,6 +1048,21 @@
 		D7CE29EB1DAE522100FF452C /* RankTodayHotCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RankTodayHotCollectionCell.h; path = "GroupBuying/VC+V/Ranking/RankTodayHotCollectionCell.h"; sourceTree = SOURCE_ROOT; };
 		D7CE29EC1DAE522100FF452C /* RankTodayHotCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RankTodayHotCollectionCell.m; path = "GroupBuying/VC+V/Ranking/RankTodayHotCollectionCell.m"; sourceTree = SOURCE_ROOT; };
 		D7CE29ED1DAE522100FF452C /* RankTodayHotCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RankTodayHotCollectionCell.xib; path = "GroupBuying/VC+V/Ranking/RankTodayHotCollectionCell.xib"; sourceTree = SOURCE_ROOT; };
+		D7CE2A031DAF85E600FF452C /* MyCouponCodeCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCouponCodeCtrller.h; path = "GroupBuying/VC+V/Mine/MyCouponCode/MyCouponCodeCtrller.h"; sourceTree = SOURCE_ROOT; };
+		D7CE2A041DAF85E600FF452C /* MyCouponCodeCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCouponCodeCtrller.m; path = "GroupBuying/VC+V/Mine/MyCouponCode/MyCouponCodeCtrller.m"; sourceTree = SOURCE_ROOT; };
+		D7CE2A061DAF871400FF452C /* MyCouponCodeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCouponCodeCell.h; path = "GroupBuying/VC+V/Mine/MyCouponCode/MyCouponCodeCell.h"; sourceTree = SOURCE_ROOT; };
+		D7CE2A071DAF871400FF452C /* MyCouponCodeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCouponCodeCell.m; path = "GroupBuying/VC+V/Mine/MyCouponCode/MyCouponCodeCell.m"; sourceTree = SOURCE_ROOT; };
+		D7CE2A081DAF871400FF452C /* MyCouponCodeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MyCouponCodeCell.xib; path = "GroupBuying/VC+V/Mine/MyCouponCode/MyCouponCodeCell.xib"; sourceTree = SOURCE_ROOT; };
+		D7CE2A0C1DAF93AE00FF452C /* MyPointsCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyPointsCtrller.h; path = "GroupBuying/VC+V/Mine/MyPoints/MyPointsCtrller.h"; sourceTree = SOURCE_ROOT; };
+		D7CE2A0D1DAF93AE00FF452C /* MyPointsCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyPointsCtrller.m; path = "GroupBuying/VC+V/Mine/MyPoints/MyPointsCtrller.m"; sourceTree = SOURCE_ROOT; };
+		D7CE2A0F1DAF9C0A00FF452C /* MyPointsInfomationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyPointsInfomationCell.h; path = "GroupBuying/VC+V/Mine/MyPoints/MyPointsInfomationCell.h"; sourceTree = SOURCE_ROOT; };
+		D7CE2A101DAF9C0A00FF452C /* MyPointsInfomationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyPointsInfomationCell.m; path = "GroupBuying/VC+V/Mine/MyPoints/MyPointsInfomationCell.m"; sourceTree = SOURCE_ROOT; };
+		D7CE2A111DAF9C0A00FF452C /* MyPointsInfomationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MyPointsInfomationCell.xib; path = "GroupBuying/VC+V/Mine/MyPoints/MyPointsInfomationCell.xib"; sourceTree = SOURCE_ROOT; };
+		D7CE2A141DAF9FA700FF452C /* MyPointDetailHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyPointDetailHeader.h; path = "GroupBuying/VC+V/Mine/MyPoints/MyPointDetailHeader.h"; sourceTree = SOURCE_ROOT; };
+		D7CE2A151DAF9FA700FF452C /* MyPointDetailHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyPointDetailHeader.m; path = "GroupBuying/VC+V/Mine/MyPoints/MyPointDetailHeader.m"; sourceTree = SOURCE_ROOT; };
+		D7CE2A171DAFA02700FF452C /* PointsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PointsCell.h; path = "GroupBuying/VC+V/Mine/MyPoints/PointsCell.h"; sourceTree = SOURCE_ROOT; };
+		D7CE2A181DAFA02700FF452C /* PointsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PointsCell.m; path = "GroupBuying/VC+V/Mine/MyPoints/PointsCell.m"; sourceTree = SOURCE_ROOT; };
+		D7CE2A191DAFA02700FF452C /* PointsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PointsCell.xib; path = "GroupBuying/VC+V/Mine/MyPoints/PointsCell.xib"; sourceTree = SOURCE_ROOT; };
 		D7E0F4B21D87ADF700EA663B /* ArticlePicItemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItemInfo.h; sourceTree = "<group>"; };
 		D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlePicItemInfo.m; sourceTree = "<group>"; };
 		D7E0F4B51D87B2D100EA663B /* ArticlePicItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItem.h; sourceTree = "<group>"; };
@@ -1219,6 +1243,8 @@
 		60074DFD1D60DF2F0040C3C0 /* Mine1 */ = {
 			isa = PBXGroup;
 			children = (
+				D7CE2A0B1DAF937700FF452C /* MyPoints */,
+				D7CE2A021DAF85A900FF452C /* MyCouponCode */,
 				D7E9945E1D93D3AC00EACDFB /* Mine */,
 				D7E4FEFA1DA8D5A200DC0E53 /* MyCollection */,
 				D7E4FEF11DA8A5B800DC0E53 /* Message */,
@@ -2667,6 +2693,35 @@
 			name = OverallCtrl;
 			sourceTree = "<group>";
 		};
+		D7CE2A021DAF85A900FF452C /* MyCouponCode */ = {
+			isa = PBXGroup;
+			children = (
+				D7CE2A031DAF85E600FF452C /* MyCouponCodeCtrller.h */,
+				D7CE2A041DAF85E600FF452C /* MyCouponCodeCtrller.m */,
+				D7CE2A061DAF871400FF452C /* MyCouponCodeCell.h */,
+				D7CE2A071DAF871400FF452C /* MyCouponCodeCell.m */,
+				D7CE2A081DAF871400FF452C /* MyCouponCodeCell.xib */,
+			);
+			name = MyCouponCode;
+			sourceTree = "<group>";
+		};
+		D7CE2A0B1DAF937700FF452C /* MyPoints */ = {
+			isa = PBXGroup;
+			children = (
+				D7CE2A0C1DAF93AE00FF452C /* MyPointsCtrller.h */,
+				D7CE2A0D1DAF93AE00FF452C /* MyPointsCtrller.m */,
+				D7CE2A0F1DAF9C0A00FF452C /* MyPointsInfomationCell.h */,
+				D7CE2A101DAF9C0A00FF452C /* MyPointsInfomationCell.m */,
+				D7CE2A111DAF9C0A00FF452C /* MyPointsInfomationCell.xib */,
+				D7CE2A141DAF9FA700FF452C /* MyPointDetailHeader.h */,
+				D7CE2A151DAF9FA700FF452C /* MyPointDetailHeader.m */,
+				D7CE2A171DAFA02700FF452C /* PointsCell.h */,
+				D7CE2A181DAFA02700FF452C /* PointsCell.m */,
+				D7CE2A191DAFA02700FF452C /* PointsCell.xib */,
+			);
+			name = MyPoints;
+			sourceTree = "<group>";
+		};
 		D7E0F4B11D87ADBF00EA663B /* Article */ = {
 			isa = PBXGroup;
 			children = (
@@ -2982,6 +3037,7 @@
 				60319D7F1D91918400BD094D /* FVCHotTagCell.xib in Resources */,
 				D75CC3D41C2A926100E590E6 /* LaunchScreen.storyboard in Resources */,
 				D7886D521D90EFAB003D6D57 /* CommentCell.xib in Resources */,
+				D7CE2A0A1DAF871400FF452C /* MyCouponCodeCell.xib in Resources */,
 				60319D5E1D8F1A9200BD094D /* DetailHisFocusCell.xib in Resources */,
 				D7E4FF041DA8D74800DC0E53 /* MyFansFocusCell.xib in Resources */,
 				D7E4FF201DA8FEB900DC0E53 /* CartCell.xib in Resources */,
@@ -3033,6 +3089,7 @@
 				60074E1D1D634AE80040C3C0 /* xtAllColorsList.plist in Resources */,
 				D7E4FF0F1DA8D75A00DC0E53 /* AddFriendCell.xib in Resources */,
 				D7CE29E51DAE517C00FF452C /* RankingTodayHotCtrl.xib in Resources */,
+				D7CE2A131DAF9C0A00FF452C /* MyPointsInfomationCell.xib in Resources */,
 				60319D641D8F1D0C00BD094D /* UserItemCollectionCell.xib in Resources */,
 				608405941D74AA6800B40D68 /* SVProgressHUD.bundle in Resources */,
 				D7886D651D915787003D6D57 /* FVCBannerCell.xib in Resources */,
@@ -3046,6 +3103,7 @@
 				D75CC5CB1C2A965000E590E6 /* WeiboSDK.bundle in Resources */,
 				606BF8561D841B7500C503FE /* DetailCoverTitleCell.xib in Resources */,
 				D7CE29EF1DAE522100FF452C /* RankTodayHotCollectionCell.xib in Resources */,
+				D7CE2A1B1DAFA02700FF452C /* PointsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3078,6 +3136,7 @@
 				D75CC4411C2A95DE00E590E6 /* UIImage+AddFunction.m in Sources */,
 				D75CC5BA1C2A965000E590E6 /* ASIS3BucketRequest.m in Sources */,
 				D75CC4461C2A95DE00E590E6 /* MyTextField.m in Sources */,
+				D7CE2A1A1DAFA02700FF452C /* PointsCell.m in Sources */,
 				D7E9946A1D94CED000EACDFB /* SettingCtrller.m in Sources */,
 				D76E84111D75665F0014FDEA /* PreviewCollectionCell.m in Sources */,
 				D76E83ED1D7435680014FDEA /* UserFoucusHeaderView.m in Sources */,
@@ -3239,6 +3298,7 @@
 				D75CC5C71C2A965000E590E6 /* FMResultSet.m in Sources */,
 				D75CC5BE1C2A965000E590E6 /* UIBarButtonItem+Badge.m in Sources */,
 				D75CC5A01C2A965000E590E6 /* AFHTTPRequestOperationManager.m in Sources */,
+				D7CE2A0E1DAF93AE00FF452C /* MyPointsCtrller.m in Sources */,
 				D75CC4511C2A95DE00E590E6 /* XTFileManager.m in Sources */,
 				D75CC5F81C2A965000E590E6 /* SDWebImageDownloader.m in Sources */,
 				D75CC5E81C2A965000E590E6 /* QNResponseInfo.m in Sources */,
@@ -3252,6 +3312,7 @@
 				D75CC4471C2A95DE00E590E6 /* MyTextView.m in Sources */,
 				D75CC61E1C2A965000E590E6 /* FBShimmeringView.m in Sources */,
 				60319DB21D98319700BD094D /* FeaturesHandler.m in Sources */,
+				D7CE2A091DAF871400FF452C /* MyCouponCodeCell.m in Sources */,
 				D75CC43E1C2A95DE00E590E6 /* NSString+Extend.m in Sources */,
 				60319D981D92C34700BD094D /* HotProductListCell.m in Sources */,
 				D75CC5E21C2A965000E590E6 /* QNAsyncRun.m in Sources */,
@@ -3270,6 +3331,7 @@
 				D75CC5EB1C2A965000E590E6 /* QNFileRecorder.m in Sources */,
 				D76E83C21D70280F0014FDEA /* UserInfoView.m in Sources */,
 				D76E84511D77CCAC0014FDEA /* PhotoTaggingCtrller.m in Sources */,
+				D7CE2A121DAF9C0A00FF452C /* MyPointsInfomationCell.m in Sources */,
 				D75CC5D31C2A965000E590E6 /* MJRefreshAutoNormalFooter.m in Sources */,
 				D7E994BF1D98C9D800EACDFB /* FeaturesPdtCollectionCell.m in Sources */,
 				D75CC5DE1C2A965000E590E6 /* UIScrollView+MJRefresh.m in Sources */,
@@ -3318,6 +3380,8 @@
 				D76E848A1D7817A50014FDEA /* YXLTagView.m in Sources */,
 				D75CC5D11C2A965000E590E6 /* MJRefreshHeader.m in Sources */,
 				D75CC6031C2A965000E590E6 /* SIAlertView.m in Sources */,
+				D7CE2A051DAF85E600FF452C /* MyCouponCodeCtrller.m in Sources */,
+				D7CE2A161DAF9FA700FF452C /* MyPointDetailHeader.m in Sources */,
 				D7E4FF1A1DA8E37F00DC0E53 /* ShopCartCtrller.m in Sources */,
 				D75CC5BD1C2A965000E590E6 /* ASIS3ServiceRequest.m in Sources */,
 				60319D5D1D8F1A9200BD094D /* DetailHisFocusCell.m in Sources */,

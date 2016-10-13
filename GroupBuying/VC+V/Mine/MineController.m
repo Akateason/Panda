@@ -23,6 +23,7 @@
 #import "MyCollectionCtrller.h"
 #import "ShopCartCtrller.h"
 #import "SettingCtrller.h"
+#import "MyCouponCodeCtrller.h"
 
 @interface MineController () <UITableViewDataSource,UITableViewDelegate>
 
@@ -205,7 +206,7 @@ static NSString *const kIdentifierFooter = @"mycell_footer" ;
     if (!footer) {
         footer = [[UITableViewHeaderFooterView alloc] initWithReuseIdentifier:kIdentifierFooter] ;
         UIView *bView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, APP_WIDTH, 15.)] ;
-        bView.backgroundColor = [UIColor xt_seperate] ;
+        bView.backgroundColor = [UIColor clearColor] ;
         footer.backgroundView = bView ;
     }
     return footer ;
@@ -255,6 +256,9 @@ static NSString *const kIdentifierFooter = @"mycell_footer" ;
         }
         else if (row == 1) {
             // 邀请码
+            MyCouponCodeCtrller *myCouponVC = (MyCouponCodeCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"MyCouponCodeCtrller"] ;
+            [myCouponVC setHidesBottomBarWhenPushed:YES] ;
+            [self.navigationController pushViewController:myCouponVC animated:YES] ;
         }
         else if (row == 2) {
             // 积分
