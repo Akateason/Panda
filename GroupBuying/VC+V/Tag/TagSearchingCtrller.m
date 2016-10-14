@@ -86,6 +86,11 @@
 
 #pragma mark - UISearchBarDelegate <UIBarPositioningDelegate>
 // called when text changes (including clear)
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    [self.searchHandler searchWithText:searchBar.text] ;
+}
+
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
     [self.searchHandler searchWithText:searchText] ;

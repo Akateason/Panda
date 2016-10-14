@@ -33,7 +33,7 @@
 
 - (void)searchWithText:(NSString *)searchText
 {
-    if (searchText.length >= 2)
+//    if (searchText.length > 0)
     {
         /// cancel all previous tasks
         [self.arrayOfTasks enumerateObjectsUsingBlock:^(NSURLSessionDataTask *taskObj, NSUInteger idx, BOOL *stop) {
@@ -47,7 +47,7 @@
         NSURLSessionDataTask *task = [ServerRequest searchArticleTagWithSearchKey:searchText
                                                                           manager:self.manager
                                                                           success:^(NSURLSessionDataTask *task, id responseObject) {
-                                                                              
+                                                                              NSLog(@"%@",responseObject) ;
                                                                               self.searchComplete(task,responseObject) ;
                                                                               
                                                                           } fail:^(NSURLSessionDataTask *task, NSError *error) {
