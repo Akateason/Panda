@@ -26,7 +26,6 @@
         self.manager = [[AFHTTPSessionManager alloc] init] ;
         self.manager.responseSerializer = [AFJSONResponseSerializer serializer] ;
         self.arrayOfTasks = [NSMutableArray new] ;
-
     }
     return self;
 }
@@ -56,8 +55,7 @@
                                                                           }] ;
         
         /// add the task to our arrayOfTasks
-        [self.arrayOfTasks addObject:task];
-        
+        [self.arrayOfTasks addObject:task] ;
     }
 }
 

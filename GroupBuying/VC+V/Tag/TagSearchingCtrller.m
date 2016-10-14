@@ -145,8 +145,6 @@
     TagSearchingCell *cell = [tableView cellForRowAtIndexPath:indexPath] ;
     NSLog(@"你将要添加的是 : %@",cell.strDisplay) ;
     
-    
-    
     if (cell.strDisplay.length) {
         self.block(cell.strDisplay) ;
         [self dismissViewControllerAnimated:YES completion:nil] ;
