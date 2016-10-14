@@ -12,7 +12,7 @@
 #import "XTRequest.h"
 #import "ResultParsered.h"
 #import "PublicEnum.h"
-@class User,Article ;
+@class User,Article,AFHTTPSessionManager ;
 
 @interface ServerRequest : XTRequest
 
@@ -68,7 +68,6 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 笔记
-
 #pragma -  搜索首页笔记信息
 + (void)homelistWithSearchtype:(NSNumber *)typeNumber
                        refresh:(NSNumber *)refreshNumber
@@ -78,16 +77,12 @@
                        success:(void (^)(id json))success
                           fail:(void (^)())fail ;
 
-
 #pragma - 指定文章ID搜索笔记详情信息
 + (void)articleDetailWithArticleID:(NSString *)articleID
                            refresh:(NSNumber *)refreshNumber
                             userID:(NSString *)userID
                            success:(void (^)(id json))success
                               fail:(void (^)())fail ;
-
-
-
 
 #pragma - 添加文章信息
 + (void)addArticle:(Article *)article
@@ -121,6 +116,15 @@
 + (void)removeFavoriteWithID:(NSString *)ID
                      success:(void (^)(id json))success
                         fail:(void (^)())fail ;
+
+
+#pragma mark - 搜索文章标签信息
++ (NSURLSessionDataTask *)searchArticleTagWithSearchKey:(NSString *)searchKey
+                                                manager:(AFHTTPSessionManager *)manager
+                                                success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
+                                                   fail:(void (^)(NSURLSessionDataTask *task, NSError *error))fail ;
+
+
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -105,7 +105,16 @@
                                                           AndWithFormat:TIME_STR_FORMAT_1] ;
             _datePicker.date = dateBirthSend ;
         }        
-    }    
+    }
+    else if (self.displayType == type_gender_choose) {
+        selectedGender = 0 ;
+        if (self.strVal.length > 0)
+        {
+            if ([self.strVal isEqualToString:@"女"]) {
+                selectedGender = 1 ;
+            }
+        }
+    }
 }
 
 #pragma mark - 

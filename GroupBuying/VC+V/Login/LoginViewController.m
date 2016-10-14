@@ -7,10 +7,9 @@
 //
 
 #import "LoginViewController.h"
-#import "SVProgressHUD.h"
-#import "YYModel.h"
 #import "UserOnDevice.h"
 #import "ForgetSecretCtrller.h"
+#import "NotificationCenterHeader.h"
 
 @interface LoginViewController ()
 
@@ -56,7 +55,7 @@
                                      [UserOnDevice cacheUserName:user.mobile
                                                         password:self.tf_password.text] ;
                                      [UserOnDevice cacheUserCurrent:user] ;
-                                     
+                                     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_USER_LOGIN object:nil] ;
                                      [self dismissViewControllerAnimated:YES
                                                               completion:^{
                                                               }] ;

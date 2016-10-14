@@ -101,7 +101,8 @@ static NSString * const kUser       = @"userCurrent" ;
     [defaults removeObjectForKey:kPassword] ;
     [defaults removeObjectForKey:kToken] ;
     [defaults removeObjectForKey:kUser] ;
-    
+    [defaults synchronize];
+
     NSLog(@"defaults keys : %@",defaults.dictionaryRepresentation.allKeys) ;
 
 }

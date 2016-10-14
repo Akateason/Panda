@@ -7,9 +7,8 @@
 //
 
 #import "ChangeSecretCtrller.h"
-#import "SVProgressHUD.h"
 #import "UserOnDevice.h"
-#import "YYModel.h"
+
 
 @interface ChangeSecretCtrller ()
 

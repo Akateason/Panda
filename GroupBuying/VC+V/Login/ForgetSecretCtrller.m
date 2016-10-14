@@ -9,8 +9,7 @@
 #import "ForgetSecretCtrller.h"
 #import "ResetSecretCtrller.h"
 #import "UIButton+Countdown.h"
-#import "YYModel.h"
-#import "SVProgressHUD.h"
+
 
 @interface ForgetSecretCtrller ()
 

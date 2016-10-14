@@ -14,8 +14,6 @@
 #import "Article.h"
 #import "Resource.h"
 #import "Pic.h"
-#import "YYModel.h"
-#import "SVProgressHUD.h"
 #import "ArticlePicItem.h"
 #import "ArticlePicItemInfo.h"
 #import "TagSearchingCtrller.h"

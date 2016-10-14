@@ -8,7 +8,6 @@
 
 #import "ResetSecretCtrller.h"
 #import "UserOnDevice.h"
-#import "SVProgressHUD.h"
 
 @interface ResetSecretCtrller ()
 

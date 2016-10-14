@@ -13,7 +13,6 @@
 #import "AlbumnCell.h"
 #import "AlbumOperation.h"
 #import "CameraGoupCtrller.h"
-#import "SVProgressHUD.h"
 #import "CommonFunc.h"
 #import "PreviewCtrller.h"
 #import "CuttingViewController.h"

@@ -12,8 +12,8 @@
 #import "UserOnDevice.h"
 #import "MineUserEditCtrl.h"
 #import "SDImageCache.h"
-#import "SVProgressHUD.h"
 #import "ChangeSecretCtrller.h"
+#import "NotificationCenterHeader.h"
 
 
 @interface SettingCtrller () <UITableViewDataSource,UITableViewDelegate>
@@ -23,6 +23,13 @@
 @end
 
 @implementation SettingCtrller
+
+- (IBAction)btBackOnClick:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }] ;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -185,7 +192,11 @@ static NSString *const kIdentifierFooter = @"mycell_footer" ;
         SIAlertView *alert = [[SIAlertView alloc] initWithTitle:nil andMessage:@"退出登录"] ;
         [alert addButtonWithTitle:@"确认" type:SIAlertViewButtonTypeDestructive handler:^(SIAlertView *alertView) {
             [UserOnDevice clean] ;
-            [self.navigationController popViewControllerAnimated:YES] ;
+            [self dismissViewControllerAnimated:YES
+                                     completion:^{}] ;
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_USER_LOGOUT
+                                                                object:nil] ;
         }] ;
         [alert addButtonWithTitle:@"取消" type:SIAlertViewButtonTypeCancel handler:nil] ;
         [alert show] ;

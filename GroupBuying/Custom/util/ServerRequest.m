@@ -460,6 +460,27 @@
                    }] ;
 }
 
+#pragma mark - 搜索文章标签信息
++ (NSURLSessionDataTask *)searchArticleTagWithSearchKey:(NSString *)searchKey
+                                                manager:(AFHTTPSessionManager *)manager
+                                                success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
+                                                   fail:(void (^)(NSURLSessionDataTask *task, NSError *error))fail
+{
+    NSMutableDictionary *paramer = [self getParameters] ;
+    [paramer setObject:@"NOTE" forKey:@"type"] ;
+    [paramer setObject:searchKey forKey:@"searchKey"] ;
+    
+    NSURLSessionDataTask *task = [manager GET:[self getFinalUrl:URL_ARTICLETAG_SEARCH]
+                                   parameters:paramer
+                                      success:^(NSURLSessionDataTask *task, id responseObject) {
+                                           if (success) success(task,responseObject) ;
+                                      } failure:^(NSURLSessionDataTask *task, NSError *error) {
+                                           if (fail) fail(task,error) ;
+                                       }] ;
+    return task ;
+}
+
+
 
 
 

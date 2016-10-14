@@ -9,9 +9,13 @@
 #ifndef subao_NoticicationCenterHeader_h
 #define subao_NoticicationCenterHeader_h
 
-//后台获取
-static NSString *const NOTIFICATION_POST_ARTICLE_COMPLETE      = @"NOTIFICATION_POST_ARTICLE_COMPLETE" ;
+// 文章发布完成
+static NSString *const NOTIFICATION_POST_ARTICLE_COMPLETE       = @"NOTIFICATION_POST_ARTICLE_COMPLETE" ;
 
+// 退出登录
+static NSString *const NOTIFICATION_USER_LOGOUT                 = @"NOTIFICATION_USER_LOGOUT" ;
 
+// 登录完成
+static NSString *const NOTIFICATION_USER_LOGIN                  = @"NOTIFICATION_USER_LOGIN" ;
 
 #endif

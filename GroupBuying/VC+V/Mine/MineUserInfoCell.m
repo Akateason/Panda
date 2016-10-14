@@ -8,6 +8,8 @@
 
 #import "MineUserInfoCell.h"
 #import "User.h"
+#import "UIImageView+WebCache.h"
+#import "Pic.h"
 
 @interface MineUserInfoCell ()
 
@@ -34,7 +36,9 @@
     if (!currentUser) return ;
     
     _labelName.text = currentUser.nickName ;
-    _labelDesc.text = currentUser.intruduce ;    
+    _labelDesc.text = currentUser.intruduce ;
+    [_userHead sd_setImageWithURL:[NSURL URLWithString:currentUser.headPic.qiniuUrl]
+                 placeholderImage:IMG_HEAD_NO] ;
 }
 
 - (IBAction)myNoteOnClick:(id)sender
@@ -66,7 +70,8 @@
     [super awakeFromNib];
     // Initialization code
     
-    _userHead.image = IMG_HEAD_NO ;
+    _userHead.layer.cornerRadius = CGWidth(_userHead.frame) / 2. ;
+    _userHead.layer.masksToBounds = YES ;
     
     _upline.backgroundColor = [UIColor xt_seperate] ;
     _leftline.backgroundColor = [UIColor xt_seperate] ;
@@ -80,6 +85,7 @@
     
     _labelName.text = @"未登录" ;
     _labelDesc.text = @"" ;
+    _userHead.image = IMG_HEAD_NO ;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

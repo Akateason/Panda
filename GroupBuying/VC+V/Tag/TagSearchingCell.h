@@ -13,11 +13,12 @@ typedef NS_ENUM(NSUInteger, TypeOfTagCell) {
     typeConfirmAddTag                   //   点击添加 xxx
 };
 
+
 static NSString *idTagSearchingCell = @"TagSearchingCell" ;
 
 @interface TagSearchingCell : UITableViewCell
 
-@property (nonatomic) TypeOfTagCell cellType ;
-@property (nonatomic,copy) NSString *strDisplay ;
+@property (nonatomic)       TypeOfTagCell           cellType ;
+@property (nonatomic,copy)  NSString                *strDisplay ;
 
 @end

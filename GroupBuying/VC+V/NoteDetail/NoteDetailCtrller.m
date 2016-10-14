@@ -12,7 +12,6 @@
 #import "RootTableView.h"
 #import "NoteDetailViewItem.h"
 #import "UserOnDevice.h"
-#import "YYModel.h"
 #import "DetailUserInfoView.h"
 #import "DetailCoverTitleCell.h"
 #import "DetailTagsCell.h"

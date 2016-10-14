@@ -348,6 +348,8 @@
 		D7CE2A161DAF9FA700FF452C /* MyPointDetailHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A151DAF9FA700FF452C /* MyPointDetailHeader.m */; };
 		D7CE2A1A1DAFA02700FF452C /* PointsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A181DAFA02700FF452C /* PointsCell.m */; };
 		D7CE2A1B1DAFA02700FF452C /* PointsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7CE2A191DAFA02700FF452C /* PointsCell.xib */; };
+		D7CE2A1E1DB0E70200FF452C /* XTSearchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A1D1DB0E70200FF452C /* XTSearchHandler.m */; };
+		D7CE2A211DB0F2C900FF452C /* ArticleTag.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A201DB0F2C900FF452C /* ArticleTag.m */; };
 		D7E0F4B41D87ADF700EA663B /* ArticlePicItemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */; };
 		D7E0F4B71D87B2D100EA663B /* ArticlePicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B61D87B2D100EA663B /* ArticlePicItem.m */; };
 		D7E0F4BA1D87B42D00EA663B /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B91D87B42D00EA663B /* Article.m */; };
@@ -1063,6 +1065,10 @@
 		D7CE2A171DAFA02700FF452C /* PointsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PointsCell.h; path = "GroupBuying/VC+V/Mine/MyPoints/PointsCell.h"; sourceTree = SOURCE_ROOT; };
 		D7CE2A181DAFA02700FF452C /* PointsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PointsCell.m; path = "GroupBuying/VC+V/Mine/MyPoints/PointsCell.m"; sourceTree = SOURCE_ROOT; };
 		D7CE2A191DAFA02700FF452C /* PointsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PointsCell.xib; path = "GroupBuying/VC+V/Mine/MyPoints/PointsCell.xib"; sourceTree = SOURCE_ROOT; };
+		D7CE2A1C1DB0E70200FF452C /* XTSearchHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTSearchHandler.h; sourceTree = "<group>"; };
+		D7CE2A1D1DB0E70200FF452C /* XTSearchHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTSearchHandler.m; sourceTree = "<group>"; };
+		D7CE2A1F1DB0F2C900FF452C /* ArticleTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleTag.h; sourceTree = "<group>"; };
+		D7CE2A201DB0F2C900FF452C /* ArticleTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleTag.m; sourceTree = "<group>"; };
 		D7E0F4B21D87ADF700EA663B /* ArticlePicItemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItemInfo.h; sourceTree = "<group>"; };
 		D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlePicItemInfo.m; sourceTree = "<group>"; };
 		D7E0F4B51D87B2D100EA663B /* ArticlePicItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItem.h; sourceTree = "<group>"; };
@@ -1243,9 +1249,9 @@
 		60074DFD1D60DF2F0040C3C0 /* Mine1 */ = {
 			isa = PBXGroup;
 			children = (
+				D7E9945E1D93D3AC00EACDFB /* Mine */,
 				D7CE2A0B1DAF937700FF452C /* MyPoints */,
 				D7CE2A021DAF85A900FF452C /* MyCouponCode */,
-				D7E9945E1D93D3AC00EACDFB /* Mine */,
 				D7E4FEFA1DA8D5A200DC0E53 /* MyCollection */,
 				D7E4FEF11DA8A5B800DC0E53 /* Message */,
 				D7E4FEE81DA89A0300DC0E53 /* MyFansFocus */,
@@ -1787,6 +1793,8 @@
 				D75CC4391C2A95DE00E590E6 /* XTTickConvert.m */,
 				D75CC43A1C2A95DE00E590E6 /* XTVerification.h */,
 				D75CC43B1C2A95DE00E590E6 /* XTVerification.m */,
+				D7CE2A1C1DB0E70200FF452C /* XTSearchHandler.h */,
+				D7CE2A1D1DB0E70200FF452C /* XTSearchHandler.m */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -2731,6 +2739,8 @@
 				D7E0F4B61D87B2D100EA663B /* ArticlePicItem.m */,
 				D7E0F4B21D87ADF700EA663B /* ArticlePicItemInfo.h */,
 				D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */,
+				D7CE2A1F1DB0F2C900FF452C /* ArticleTag.h */,
+				D7CE2A201DB0F2C900FF452C /* ArticleTag.m */,
 			);
 			name = Article;
 			sourceTree = "<group>";
@@ -3203,6 +3213,7 @@
 				D76E84741D780FAC0014FDEA /* View+MASAdditions.m in Sources */,
 				D75CC4441C2A95DE00E590E6 /* MySearchBar.m in Sources */,
 				D76E843B1D76C3010014FDEA /* PhotoEditorCtrller.m in Sources */,
+				D7CE2A211DB0F2C900FF452C /* ArticleTag.m in Sources */,
 				D75CC5E71C2A965000E590E6 /* QNHttpManager.m in Sources */,
 				D75CC5CF1C2A965000E590E6 /* MJRefreshComponent.m in Sources */,
 				D75CC44C1C2A95DE00E590E6 /* CommonFunc.m in Sources */,
@@ -3254,6 +3265,7 @@
 				D75CC4491C2A95DE00E590E6 /* PlaceHolderTextView.m in Sources */,
 				D75CC5D51C2A965000E590E6 /* MJRefreshBackGifFooter.m in Sources */,
 				D75CC5F91C2A965000E590E6 /* SDWebImageDownloaderOperation.m in Sources */,
+				D7CE2A1E1DB0E70200FF452C /* XTSearchHandler.m in Sources */,
 				D75CC5D91C2A965000E590E6 /* MJRefreshNormalHeader.m in Sources */,
 				D76E838B1D6D48560014FDEA /* AlbumnCell.m in Sources */,
 				60319DAB1D982E3700BD094D /* XTMultipleTables.m in Sources */,

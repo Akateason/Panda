@@ -8,7 +8,10 @@
 
 #import "TagSearchingCtrller.h"
 #import "TagSearchingCell.h"
-#import "SVProgressHUD.h"
+#import "AFNetworking.h"
+#import "XTSearchHandler.h"
+#import "ArticleTag.h"
+#import "Pic.h"
 
 @interface TagSearchingCtrller () <UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate>
 
@@ -17,10 +20,14 @@
 @property (weak, nonatomic) IBOutlet UIView *topView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
+@property (nonatomic,strong) XTSearchHandler    *searchHandler ;
+@property (nonatomic,strong) NSArray            *listTag ;
+
 @end
 
 @implementation TagSearchingCtrller
 
+#pragma mark -
 - (IBAction)btCancelOnClick:(id)sender
 {
     if (!_searchBar.text.length) {
@@ -34,15 +41,37 @@
 
 
 #pragma mark -
-
-
-
-#pragma mark -
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     // Do any additional setup after loading the view.
+
+    self.searchBar.text = self.strWillEdit ;
+    [self configureUI] ;
+    
+    self.searchHandler = [[XTSearchHandler alloc] init] ;
+    TagSearchingCtrller * __weak weakSelf = self ;
+    
+    self.searchHandler.searchComplete = ^(NSURLSessionDataTask *task, id responseObject){
+        ResultParsered *result = [ResultParsered yy_modelWithJSON:responseObject] ;
+        if (result.code == 1) {
+            NSMutableArray *tmplist = [@[] mutableCopy] ;
+            NSArray *listDict = result.data[@"articleTagList"] ;
+            for (NSDictionary *dic in listDict)
+            {
+                ArticleTag *aTag = [ArticleTag yy_modelWithDictionary:dic] ;
+                [tmplist addObject:aTag] ;
+            }
+            
+            weakSelf.listTag = tmplist ;
+            [weakSelf.table reloadData] ;
+        }
+    } ;
+}
+
+- (void)configureUI
+{
     _topView.backgroundColor = [UIColor whiteColor] ;
     [_btCancel setTitleColor:[UIColor xt_w_dark] forState:0] ;
     
@@ -52,23 +81,14 @@
     _table.separatorStyle = 0 ;
     _table.dataSource = self ;
     _table.delegate = self ;
-    
-    self.searchBar.text = self.strWillEdit ;
 }
 
 
 #pragma mark - UISearchBarDelegate <UIBarPositioningDelegate>
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
-{
-    // do request .  reload table.
-}
-
 // called when text changes (including clear)
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-    if (searchBar.text.length) {
-        [self.table reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationNone] ;
-    }
+    [self.searchHandler searchWithText:searchText] ;
 }
 
 
@@ -86,7 +106,7 @@
         return 1 ;
     }
     else if (section == 1) {
-        return 3 ; // fake
+        return self.listTag.count ;
     }
     
     return 0 ;
@@ -108,7 +128,7 @@
     else if (indexPath.section == 1)
     {
         cell.cellType = typeDefaultDisplay ;
-        cell.strDisplay = [NSString stringWithFormat:@"zara%ld",(long)indexPath.row] ;
+        cell.strDisplay = ((ArticleTag *)self.listTag[indexPath.row]).name ;
     }
     
     return cell ;
@@ -124,6 +144,9 @@
 {
     TagSearchingCell *cell = [tableView cellForRowAtIndexPath:indexPath] ;
     NSLog(@"你将要添加的是 : %@",cell.strDisplay) ;
+    
+    
+    
     if (cell.strDisplay.length) {
         self.block(cell.strDisplay) ;
         [self dismissViewControllerAnimated:YES completion:nil] ;

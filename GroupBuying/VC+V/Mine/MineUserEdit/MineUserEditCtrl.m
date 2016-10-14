@@ -271,7 +271,9 @@ static NSString *const kIdentifierFooter = @"mycell_footer" ;
                 editAddVC.strTitle = @"生日" ;
                 NSString *strDate = [XTTickConvert getDateWithTick:self.userCurrent.birthday
                                                     AndWithFormart:TIME_STR_FORMAT_1] ;
-                if (self.userCurrent.birthday == 0) strDate = @"" ;
+                if (self.userCurrent.birthday == 0) {
+                    strDate = [XTTickConvert getStrWithNSDate:[NSDate date] AndWithFormat:TIME_STR_FORMAT_1] ;
+                }
                 editAddVC.strVal = strDate ;
                 editAddVC.displayType = type_birth_choose ;
                 editAddVC.blockValString = ^(NSString *str){

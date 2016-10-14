@@ -24,6 +24,8 @@
 #import "ShopCartCtrller.h"
 #import "SettingCtrller.h"
 #import "MyCouponCodeCtrller.h"
+#import "MyPointsCtrller.h"
+#import "NotificationCenterHeader.h"
 
 @interface MineController () <UITableViewDataSource,UITableViewDelegate>
 
@@ -47,21 +49,38 @@
 - (IBAction)settingOnClick:(id)sender
 {
     NSLog(@"设置") ;
-    SettingCtrller *settingVC = (SettingCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"SettingCtrller"] ;
-    [settingVC setHidesBottomBarWhenPushed:YES] ;
-    [self.navigationController pushViewController:settingVC animated:YES] ;
+    UINavigationController *settingNavVC = (UINavigationController *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"NavSetting"] ;
+    [self presentViewController:settingNavVC
+                       animated:YES
+                     completion:^{
+                         
+                     }] ;
 }
 
 
 
 #pragma markk - life
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:NOTIFICATION_USER_LOGOUT
+                                                  object:nil] ;
+}
+
 - (void)viewDidLoad
 {
+    // get titles
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"info_mineCell" ofType:@"plist"] ;
     self.dictionResource = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath] ;
 
     [super viewDidLoad] ;
     
+    [self configureTable] ;
+    [self configureNotificationCenter] ;
+}
+
+- (void)configureTable
+{
     _table.dataSource = self ;
     _table.delegate = self ;
     _table.backgroundColor = [UIColor xt_seperate] ;
@@ -69,6 +88,16 @@
     [_table registerNib:[UINib nibWithNibName:kID_MineUserInfoCell bundle:nil] forCellReuseIdentifier:kID_MineUserInfoCell] ;
     [_table registerNib:[UINib nibWithNibName:kID_MineCell bundle:nil] forCellReuseIdentifier:kID_MineCell] ;
 }
+
+- (void)configureNotificationCenter
+
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(noteForUserLogout)
+                                                 name:NOTIFICATION_USER_LOGOUT
+                                               object:nil] ;
+}
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -80,6 +109,14 @@
     [_table reloadData] ;
 }
 
+#pragma mark - notification
+- (void)noteForUserLogout
+{
+    [_table reloadSections:[NSIndexSet indexSetWithIndex:0]
+          withRowAnimation:UITableViewRowAnimationNone] ;
+    
+    self.tabBarController.selectedIndex = 0 ;
+}
 
 
 #pragma mark - UITableViewDataSource
@@ -263,6 +300,9 @@ static NSString *const kIdentifierFooter = @"mycell_footer" ;
         }
         else if (row == 2) {
             // 积分
+            MyPointsCtrller *pointsVC = (MyPointsCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"MyPointsCtrller"] ;
+            [pointsVC setHidesBottomBarWhenPushed:YES] ;
+            [self.navigationController pushViewController:pointsVC animated:YES] ;
         }
         else if (row == 3) {
             // 活动

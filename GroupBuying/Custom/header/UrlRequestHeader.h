@@ -70,6 +70,7 @@ static NSString *const URL_FAVORITE_ADD         = @"/gwn/s/favorite/add" ;
 //删除收藏信息
 static NSString *const URL_FAVORITE_REMOVE      = @"/gwn/s/favorite/remove" ;
 
-
+//搜索文章标签信息
+static NSString *const URL_ARTICLETAG_SEARCH    = @"/gwn/articleTag/search" ;
 
 #endif

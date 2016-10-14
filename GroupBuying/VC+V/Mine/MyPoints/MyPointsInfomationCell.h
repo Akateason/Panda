@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString *const kID_MyPointsInfomationCell = @"MyPointsInfomationCell" ;
+
 @interface MyPointsInfomationCell : UITableViewCell
 
 @end

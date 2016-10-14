@@ -12,6 +12,8 @@
 @class XTAnimation ;
 #import "ServerRequest.h"
 #import "RootTableView.h"
+#import "YYModel.h"
+#import "SVProgressHUD.h"
 
 
 

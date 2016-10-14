@@ -22,7 +22,6 @@
 #import "UserInfoCtrller.h"
 #import "NoteDetailCtrller.h"
 #import "UserOnDevice.h"
-#import "YYModel.h"
 #import "NoteListViewItem.h"
 #import "NotificationCenterHeader.h"
 
@@ -382,22 +381,47 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
 }
 
 #pragma mark - life
+- (void)dealloc
+{
+    _collectionView.delegate = nil ;
+    _collectionView.dataSource = nil ;
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NOTIFICATION_POST_ARTICLE_COMPLETE object:nil] ;
+    [[NSNotificationCenter defaultCenter] removeObserver:self  name:NOTIFICATION_USER_LOGOUT object:nil] ;
+    [[NSNotificationCenter defaultCenter] removeObserver:self  name:NOTIFICATION_USER_LOGIN object:nil] ;
+}
 
 - (void)viewDidLoad
+{
+    [super viewDidLoad] ;
+    
+    [self configureUIs] ;
+    [self configureNotifications] ;
+}
+
+- (void)configureUIs
+{
+    // nav item position
+    [self.view addSubview:self.collectionView] ;
+    // title pop menu .
+    [KxMenu setTintColor:[UIColor colorWithHexString:@"555555" alpha:0.5]] ;
+}
+
+- (void)configureNotifications
 {
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(articlePostComplete)
                                                  name:NOTIFICATION_POST_ARTICLE_COMPLETE
                                                object:nil] ;
     
-    [super viewDidLoad] ;
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(noteForUserLogout)
+                                                 name:NOTIFICATION_USER_LOGOUT
+                                               object:nil] ;
     
-    // nav item position
-    [self.view addSubview:self.collectionView] ;
-    // title pop menu .
-    [KxMenu setTintColor:[UIColor colorWithHexString:@"555555" alpha:0.5]] ;
-    
-
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(noteForUserLogin)
+                                                 name:NOTIFICATION_USER_LOGIN
+                                               object:nil] ;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -413,12 +437,6 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
     [self.navigationController setNavigationBarHidden:NO] ;
 }
 
-- (void)dealloc
-{
-    _collectionView.delegate = nil ;
-    _collectionView.dataSource = nil ;
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:NOTIFICATION_POST_ARTICLE_COMPLETE object:nil] ;
-}
 
 
 
@@ -428,6 +446,17 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
 {
     [_collectionView pullDownRefreshHeader] ;
 }
+
+- (void)noteForUserLogout
+{
+    [_collectionView pullDownRefreshHeader] ;
+}
+
+- (void)noteForUserLogin
+{
+    [_collectionView pullDownRefreshHeader] ;
+}
+
 
 #pragma mark - RootCollectionViewDelegate
 
