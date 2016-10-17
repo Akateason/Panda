@@ -2,8 +2,7 @@
 //  YXLTagEditorImageView.m
 //  YXLImageLabelDemo
 //
-//  Created by 叶星龙 on 15/10/26.
-//  Copyright © 2015年 叶星龙. All rights reserved.
+
 //
 
 #import "YXLTagEditorImageView.h"
@@ -20,21 +19,20 @@ static const CGFloat flexToCenterX      = (widthAndHeight / 2 + 5.) ;
 
 @interface YXLTagEditorImageView ()<UIGestureRecognizerDelegate>
 {
-    NSMutableArray  *arrayTagS;
-//    UIView          *viewCover;
-//    UIView          *viewMBP;
+    NSMutableArray  *arrayTagS ;
     
-//    UIButton *btLocation ;
-//    UIButton *btBrand ;
-//    UIButton *btPrice ;
-//    UIButton *btSKU ;
+    UIView          *viewCover ;
+    UIView          *viewMBP ;
+    UIButton        *btLocation ;
+    UIButton        *btBrand ;
+    UIButton        *btPrice ;
+    UIButton        *btSKU ;
     
-    YXLTagView      *viewTag;
-    
-    UIImage         *imageLabelIcon;
-    CGFloat         viewTagLeft;
-    NSMutableArray  *arrayInitDidView;
-    BOOL            isViewDidLoad;
+    YXLTagView      *viewTag ;
+    UIImage         *imageLabelIcon ;
+    CGFloat         viewTagLeft ;
+    NSMutableArray  *arrayInitDidView ;
+    BOOL            isViewDidLoad ;
 }
 @end
 
@@ -60,7 +58,6 @@ static const CGFloat flexToCenterX      = (widthAndHeight / 2 + 5.) ;
         }
         
         _imagePreviews.image = image ;
-        
         [self initTagUI] ;
     }
     return self;
@@ -149,9 +146,9 @@ static const CGFloat flexToCenterX      = (widthAndHeight / 2 + 5.) ;
         make.centerY.equalTo(self);
         make.size.mas_equalTo(CGSizeMake(widthAndHeight, widthAndHeight));
     }];
-    
-    
 }
+
+
 /**
  *  mbp界面的动画
  */
@@ -188,7 +185,6 @@ static const CGFloat flexToCenterX      = (widthAndHeight / 2 + 5.) ;
             }
         }] ;
     }
-    
 }
 
 #pragma mark - 添加已知标签
@@ -280,7 +276,7 @@ static const CGFloat flexToCenterX      = (widthAndHeight / 2 + 5.) ;
     if (!isAdd) {
         [self mbpAnimation:YES];
     }else{
-        viewTagNew.isImageLabelShow=YES;
+        viewTagNew.isImageLabelShow = YES ;
     }
 }
 
@@ -456,7 +452,7 @@ static const CGFloat flexToCenterX      = (widthAndHeight / 2 + 5.) ;
 }
 
 
-#pragma - 点击
+#pragma - 点击MBP
 - (void)clickViewMBP
 {
     [self mbpAnimation:NO] ;
@@ -547,17 +543,17 @@ static const CGFloat flexToCenterX      = (widthAndHeight / 2 + 5.) ;
     NSString *positiveAndNegative ;
     float pX, pY ;
     
-    if (viewCover.alpha==1)
+    if (viewCover.alpha == 1)
     {
-        if (arrayTagS.count !=0) {
-            YXLTagView *tag =[arrayTagS lastObject] ;
+        if (arrayTagS.count != 0) {
+            YXLTagView *tag = [arrayTagS lastObject] ;
             if (!tag.isImageLabelShow) {
                 [tag removeFromSuperview] ;
                 [arrayTagS removeLastObject] ;
             }
         }
     }
-    
+
     for (YXLTagView *tag in arrayTagS)
     {
         positiveAndNegative = @"RIGHT" ;
