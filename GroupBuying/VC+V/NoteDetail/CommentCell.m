@@ -9,9 +9,10 @@
 #import "CommentCell.h"
 #import "UIImage+Addfunction.h"
 #import "Comment.h"
-#import "UIImageView+WebCache.h"
 #import "XTTickConvert.h"
 #import "NSString+Extend.h"
+
+
 
 @interface CommentCell ()
 
@@ -56,8 +57,7 @@
     
     
     _userHead.image = IMG_HEAD_NO ;
-//    [_userHead sd_setImageWithURL:[NSURL URLWithString:aComment.]
-//                 placeholderImage:IMG_HEAD_NO] ;
+
     _nameLabel.text = aComment.createName ;
     _timeLabel.text = [XTTickConvert getDateWithTick:aComment.createTime AndWithFormart:TIME_STR_FORMAT_3] ;
     _commentLabel.text = aComment.content ;

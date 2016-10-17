@@ -350,6 +350,7 @@
 		D7CE2A1B1DAFA02700FF452C /* PointsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7CE2A191DAFA02700FF452C /* PointsCell.xib */; };
 		D7CE2A1E1DB0E70200FF452C /* XTSearchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A1D1DB0E70200FF452C /* XTSearchHandler.m */; };
 		D7CE2A211DB0F2C900FF452C /* ArticleTag.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A201DB0F2C900FF452C /* ArticleTag.m */; };
+		D7CE2A251DB47C8500FF452C /* UIImageView+SDQN.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A241DB47C8500FF452C /* UIImageView+SDQN.m */; };
 		D7E0F4B41D87ADF700EA663B /* ArticlePicItemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */; };
 		D7E0F4B71D87B2D100EA663B /* ArticlePicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B61D87B2D100EA663B /* ArticlePicItem.m */; };
 		D7E0F4BA1D87B42D00EA663B /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B91D87B42D00EA663B /* Article.m */; };
@@ -1069,6 +1070,8 @@
 		D7CE2A1D1DB0E70200FF452C /* XTSearchHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTSearchHandler.m; sourceTree = "<group>"; };
 		D7CE2A1F1DB0F2C900FF452C /* ArticleTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleTag.h; sourceTree = "<group>"; };
 		D7CE2A201DB0F2C900FF452C /* ArticleTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleTag.m; sourceTree = "<group>"; };
+		D7CE2A231DB47C8500FF452C /* UIImageView+SDQN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+SDQN.h"; sourceTree = "<group>"; };
+		D7CE2A241DB47C8500FF452C /* UIImageView+SDQN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+SDQN.m"; sourceTree = "<group>"; };
 		D7E0F4B21D87ADF700EA663B /* ArticlePicItemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItemInfo.h; sourceTree = "<group>"; };
 		D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlePicItemInfo.m; sourceTree = "<group>"; };
 		D7E0F4B51D87B2D100EA663B /* ArticlePicItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItem.h; sourceTree = "<group>"; };
@@ -1696,6 +1699,8 @@
 		D75CC3FB1C2A95DD00E590E6 /* category */ = {
 			isa = PBXGroup;
 			children = (
+				D7CE2A231DB47C8500FF452C /* UIImageView+SDQN.h */,
+				D7CE2A241DB47C8500FF452C /* UIImageView+SDQN.m */,
 				D7E994B41D9528F700EACDFB /* NSObject+Reflection.h */,
 				D7E994B51D9528F700EACDFB /* NSObject+Reflection.m */,
 				D7E994B11D9528CB00EACDFB /* NSTimer+Addition.h */,
@@ -3152,6 +3157,7 @@
 				D76E83ED1D7435680014FDEA /* UserFoucusHeaderView.m in Sources */,
 				D7CE29EE1DAE522100FF452C /* RankTodayHotCollectionCell.m in Sources */,
 				60074E091D60E0040040C3C0 /* ActivityController.m in Sources */,
+				D7CE2A251DB47C8500FF452C /* UIImageView+SDQN.m in Sources */,
 				D76E842A1D767A590014FDEA /* User.m in Sources */,
 				D7E4FEF81DA8A85700DC0E53 /* MessageCell.m in Sources */,
 				D75CC5E91C2A965000E590E6 /* QNSessionManager.m in Sources */,

@@ -8,7 +8,7 @@
 
 #import "MineEditHeadCell.h"
 #import "Pic.h"
-#import "UIImageView+WebCache.h"
+#import "UIImageView+SDQN.h"
 
 @interface MineEditHeadCell ()
 
@@ -24,7 +24,8 @@
     _headPic = headPic ;
     
     if (!headPic) return ;
-    [_imgHead sd_setImageWithURL:[NSURL URLWithString:headPic.qiniuUrl] placeholderImage:IMG_HEAD_NO] ;
+    
+    [_imgHead xt_setImageWithPic:headPic placeHolderImage:IMG_HEAD_NO] ;
 }
 
 

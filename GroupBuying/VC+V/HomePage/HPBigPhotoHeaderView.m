@@ -8,7 +8,7 @@
 
 #import "HPBigPhotoHeaderView.h"
 #import "NoteListViewItem.h"
-#import "UIImageView+WebCache.h"
+#import "UIImageView+SDQN.h"
 #import "XTTickConvert.h"
 #import "Pic.h"
 #import "UserOnDevice.h"
@@ -32,8 +32,9 @@
     _labelName.text = noteItem.ownerNickName ;
     NSDate *articleCreateDate = [XTTickConvert getNSDateWithTick:noteItem.articleCreateTime] ;
     _lableTime.text = [XTTickConvert timeInfoWithDate:articleCreateDate] ;
-    [_headImageView sd_setImageWithURL:[NSURL URLWithString:noteItem.ownerHeadPic.qiniuUrl]
-     placeholderImage:IMG_HEAD_NO] ;
+    
+    [_headImageView xt_setImageWithPic:noteItem.ownerHeadPic
+                      placeHolderImage:IMG_HEAD_NO] ;
     
     if ([UserOnDevice hasLogin]) {
         _btFoucus.selected = noteItem.isFollow ;

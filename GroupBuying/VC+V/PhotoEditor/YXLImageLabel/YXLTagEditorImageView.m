@@ -21,13 +21,13 @@ static const CGFloat flexToCenterX      = (widthAndHeight / 2 + 5.) ;
 @interface YXLTagEditorImageView ()<UIGestureRecognizerDelegate>
 {
     NSMutableArray  *arrayTagS;
-    UIView          *viewCover;
-    UIView          *viewMBP;
+//    UIView          *viewCover;
+//    UIView          *viewMBP;
     
-    UIButton *btLocation ;
-    UIButton *btBrand ;
-    UIButton *btPrice ;
-    UIButton *btSKU ;
+//    UIButton *btLocation ;
+//    UIButton *btBrand ;
+//    UIButton *btPrice ;
+//    UIButton *btSKU ;
     
     YXLTagView      *viewTag;
     
@@ -191,7 +191,7 @@ static const CGFloat flexToCenterX      = (widthAndHeight / 2 + 5.) ;
     
 }
 
-#pragma -mark 添加已知标签
+#pragma mark - 添加已知标签
 // xy 要比例.
 - (void)addTagViewText:(NSString *)text
               Location:(CGPoint )point
@@ -456,7 +456,7 @@ static const CGFloat flexToCenterX      = (widthAndHeight / 2 + 5.) ;
 }
 
 
-#pragma -mark 点击
+#pragma - 点击
 - (void)clickViewMBP
 {
     [self mbpAnimation:NO] ;

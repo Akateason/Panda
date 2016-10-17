@@ -20,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;
 // code
 @property (nonatomic,strong)YXLTagEditorImageView *tagEditorImageView;
-
+@property (nonatomic,strong)UILabel               *labelTips ;
 @end
 
 @implementation PhotoTaggingCtrller
@@ -53,7 +53,7 @@
     [tmplist replaceObjectAtIndex:self.indexInPhotoList withObject:tagItemInfoList] ;
     self.editVC.listTagItems = tmplist ;
     [self.editVC refreshCollectionView] ;
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES] ;
 }
 
 #pragma mark - prop
@@ -72,12 +72,30 @@
     return _tagEditorImageView ;
 }
 
+- (UILabel *)labelTips
+{
+    if (!_labelTips)
+    {
+        _labelTips = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 50)] ;
+        _labelTips.text = @"点击照片\n选择添加相关信息" ;
+        _labelTips.font = [UIFont systemFontOfSize:14] ;
+        _labelTips.textColor = [UIColor whiteColor] ;
+        _labelTips.numberOfLines = 2 ;
+        _labelTips.textAlignment = NSTextAlignmentCenter ;
+        float lengthLess = APP_HEIGHT - APP_WIDTH * 1000 / 750 ;
+        _labelTips.center = CGPointMake(self.view.center.x, APP_WIDTH * 1000 / 750 + lengthLess / 2) ;
+    }
+    return _labelTips ;
+}
+
+
 #pragma mark - life
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     // Do any additional setup after loading the view.
+    [self.view addSubview:self.labelTips] ;
     [self.view addSubview:self.tagEditorImageView];
     [self.tagEditorImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
@@ -112,7 +130,6 @@
     _labelTitle.textColor = [UIColor xt_editor_w] ;
     _labelTitle.text = @"添加标签" ;
     [self.view bringSubviewToFront:self.topView] ;
-
 }
 
 

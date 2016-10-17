@@ -57,6 +57,13 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_my_integral_details" translatesAutoresizingMaskIntoConstraints="NO" id="woY-cm-oxU">
+                        <rect key="frame" x="270" y="12" width="50" height="75"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="75" id="CEn-et-zbH"/>
+                            <constraint firstAttribute="width" constant="50" id="rz6-sg-DSc"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="kB6-X6-bAw" firstAttribute="top" secondItem="J3h-aP-PYS" secondAttribute="bottom" constant="11" id="A9u-Kd-PLA"/>
@@ -65,6 +72,7 @@
                     <constraint firstItem="kB6-X6-bAw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="Lce-Lv-UsL"/>
                     <constraint firstItem="J3h-aP-PYS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="101" id="UX4-zD-6SV"/>
                     <constraint firstItem="SIR-Bp-i5R" firstAttribute="leading" secondItem="aUA-Fd-eyb" secondAttribute="leading" id="YL3-0U-ZiN"/>
+                    <constraint firstItem="woY-cm-oxU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="czF-2Z-S2N"/>
                     <constraint firstItem="Yzf-ZC-DbE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="gYw-Y9-PLw"/>
                     <constraint firstItem="SIR-Bp-i5R" firstAttribute="top" secondItem="aUA-Fd-eyb" secondAttribute="bottom" constant="9" id="ixe-sf-Xii"/>
                     <constraint firstItem="p5f-KB-Pwc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="kad-ch-tSS"/>
@@ -72,6 +80,7 @@
                     <constraint firstItem="J3h-aP-PYS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="qNn-AM-Nm9"/>
                     <constraint firstAttribute="trailing" secondItem="J3h-aP-PYS" secondAttribute="trailing" id="sIl-9Z-zEk"/>
                     <constraint firstItem="Yzf-ZC-DbE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="sQ0-9g-lAe"/>
+                    <constraint firstAttribute="trailing" secondItem="woY-cm-oxU" secondAttribute="trailing" id="tQh-Go-Tpe"/>
                     <constraint firstItem="aUA-Fd-eyb" firstAttribute="top" secondItem="J3h-aP-PYS" secondAttribute="bottom" constant="11" id="tXG-Gt-Qw8"/>
                     <constraint firstItem="p5f-KB-Pwc" firstAttribute="top" secondItem="kB6-X6-bAw" secondAttribute="bottom" constant="9" id="zLV-Ul-Zc5"/>
                 </constraints>
@@ -87,4 +96,7 @@
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="icon_my_integral_details" width="50" height="75"/>
+    </resources>
 </document>

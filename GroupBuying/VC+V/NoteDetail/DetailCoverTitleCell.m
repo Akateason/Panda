@@ -15,7 +15,7 @@
 #import "ArticlePicItem.h"
 #import "ArticlePicItemInfo.h"
 #import "Pic.h"
-#import "UIImageView+WebCache.h"
+#import "UIImageView+SDQN.h"
 
 @interface DetailCoverTitleCell ()
 
@@ -73,22 +73,22 @@
     _descriptLabel.text = noteItem.articleInfo.content ;
     
     ArticlePicItem *itemWillDisplay = [noteItem.articleInfo.picItems firstObject] ;
-    [self.tagEditorImageView.imagePreviews sd_setImageWithURL:[NSURL URLWithString:itemWillDisplay.img.qiniuUrl]
+    
+    [self.tagEditorImageView.imagePreviews xt_setImageWithPic:itemWillDisplay.img
                                                     completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                                                        
-                                                        
-//        [self.tagEditorImageView scaledFrame] ;
+                                                    
+                                                    //        [self.tagEditorImageView scaledFrame] ;
+                                                    for (int i = 0; i < itemWillDisplay.items.count; i++)
+                                                    {
+                                                        ArticlePicItemInfo *itemInfo = itemWillDisplay.items[i] ;
+                                                        [self.tagEditorImageView addTagViewText:itemInfo.text
+                                                                                       Location:CGPointMake(itemInfo.posX, itemInfo.posY)
+                                                                          isPositiveAndNegative:[itemInfo positiveOrNagitive]
+                                                                                           type:itemInfo.type] ;
+                                                    }
+                                                    
+                                                }] ;
 
-        for (int i = 0; i < itemWillDisplay.items.count; i++)
-        {
-            ArticlePicItemInfo *itemInfo = itemWillDisplay.items[i] ;
-            [self.tagEditorImageView addTagViewText:itemInfo.text
-                                           Location:CGPointMake(itemInfo.posX, itemInfo.posY)
-                              isPositiveAndNegative:[itemInfo positiveOrNagitive]
-                                               type:itemInfo.type] ;
-        }
-                                                        
-    }] ;
     
 
 }

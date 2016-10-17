@@ -10,7 +10,7 @@
 #import "TestUser.h"
 #import "NoteListViewItem.h"
 #import "Pic.h"
-#import "UIImageView+WebCache.h"
+#import "UIImageView+SDQN.h"
 
 @interface HPProductCollectionCell ()
 
@@ -32,8 +32,8 @@
 - (void)setNoteItem:(NoteListViewItem *)noteItem
 {
     _noteItem = noteItem ;
-    
-    [_imgView sd_setImageWithURL:[NSURL URLWithString:noteItem.img.qiniuUrl]] ;
+    //    
+    [_imgView xt_setImageWithPic:noteItem.img] ;
     _btCollect.selected = noteItem.isFavorite ;
     _btLike.selected = noteItem.isUpvote ;
     [_btLike setTitle:[NSString stringWithFormat:@"%ld",noteItem.upvoteCnt] forState:0] ;

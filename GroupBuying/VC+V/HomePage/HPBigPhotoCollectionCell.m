@@ -9,7 +9,7 @@
 #import "HPBigPhotoCollectionCell.h"
 #import "TestUser.h"
 #import "NoteListViewItem.h"
-#import "UIImageView+WebCache.h"
+#import "UIImageView+SDQN.h"
 #import "Pic.h"
 
 
@@ -33,7 +33,8 @@
     _noteItem = noteItem ;
     
 //    
-    [_imgView sd_setImageWithURL:[NSURL URLWithString:noteItem.img.qiniuUrl]] ;
+    [_imgView xt_setImageWithPic:noteItem.img] ;
+    
     _labelTitle.text = noteItem.articleTitle ;
     _btCollection.selected = noteItem.isFavorite ;
     _btLike.selected = noteItem.isUpvote ;

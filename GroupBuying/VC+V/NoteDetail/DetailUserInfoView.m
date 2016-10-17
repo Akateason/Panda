@@ -7,7 +7,7 @@
 //
 
 #import "DetailUserInfoView.h"
-#import "UIImageView+WebCache.h"
+#import "UIImageView+SDQN.h"
 #import "NoteDetailViewItem.h"
 #import "Pic.h"
 #import "XTTickConvert.h"
@@ -35,8 +35,10 @@
     _btFoucus.hidden = false ;
     _labelName.hidden = false ;
     _lableTime.hidden = false ;
-    [_headImageView sd_setImageWithURL:[NSURL URLWithString:note.ownerHeadPic.qiniuUrl]
-                      placeholderImage:IMG_HEAD_NO] ;
+    
+    [_headImageView xt_setImageWithPic:note.ownerHeadPic
+                      placeHolderImage:IMG_HEAD_NO] ;
+    
     _lableTime.text = [XTTickConvert timeInfoWithDate:[XTTickConvert getNSDateWithTick:note.articleInfo.createTime]] ;
     _labelName.text = note.ownerNickName ;
     

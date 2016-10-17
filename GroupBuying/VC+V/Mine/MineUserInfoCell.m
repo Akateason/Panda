@@ -8,7 +8,7 @@
 
 #import "MineUserInfoCell.h"
 #import "User.h"
-#import "UIImageView+WebCache.h"
+#import "UIImageView+SDQN.h"
 #import "Pic.h"
 
 @interface MineUserInfoCell ()
@@ -37,8 +37,9 @@
     
     _labelName.text = currentUser.nickName ;
     _labelDesc.text = currentUser.intruduce ;
-    [_userHead sd_setImageWithURL:[NSURL URLWithString:currentUser.headPic.qiniuUrl]
-                 placeholderImage:IMG_HEAD_NO] ;
+    
+    [_userHead xt_setImageWithPic:currentUser.headPic
+                 placeHolderImage:IMG_HEAD_NO] ;
 }
 
 - (IBAction)myNoteOnClick:(id)sender
