@@ -59,8 +59,6 @@ static float kMAX_SELECT_COUNT = 10. ;
     else if (self.openType == typeEdit) {
         [self.navigationController popViewControllerAnimated:YES] ;
     }
-    
-
 }
 
 - (IBAction)btTitleOnClick:(id)sender {
@@ -76,7 +74,6 @@ static float kMAX_SELECT_COUNT = 10. ;
     }
     
     [self performSegueWithIdentifier:@"camera2cut" sender:self.resultImgList] ;
-    
 }
 
 - (IBAction)btPreviewOnClick:(id)sender {
@@ -131,7 +128,7 @@ static float kMAX_SELECT_COUNT = 10. ;
     {
         ALAsset *asset = (ALAsset *)self.imageList[[number intValue] - 1] ;
         ALAssetRepresentation* representation = [asset defaultRepresentation] ;
-        CGImageRef imgref = [representation fullResolutionImage] ;
+        CGImageRef imgref = [representation fullScreenImage] ; // fullResolutionImage] ;
         UIImage *imageTmp = [UIImage imageWithCGImage:imgref] ;
         [_resultImgList addObject:imageTmp] ;
     }

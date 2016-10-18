@@ -7,7 +7,7 @@
 //
 
 #import "PhotoTaggingCtrller.h"
-#import "YXLTagEditorImageView.h"
+//#import "YXLTagEditorImageView.h"
 #import "ArticlePicItemInfo.h"
 #import "YYModel.h"
 
@@ -19,8 +19,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *btSave;
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;
 // code
-@property (nonatomic,strong)YXLTagEditorImageView *tagEditorImageView;
+//@property (nonatomic,strong)YXLTagEditorImageView *tagEditorImageView;
 @property (nonatomic,strong)UILabel               *labelTips ;
+
+@property (nonatomic,strong)UIImageView           *imageViewBG ;
+
 @end
 
 @implementation PhotoTaggingCtrller
@@ -32,45 +35,40 @@
     [self.navigationController popViewControllerAnimated:YES] ;
 }
 
-// 确定并pop    返回这个图片所有的标签地址内容，是否翻转样式的数组   坐标为这个图片的真实坐标
+// 确定并pop
+// 返回这个图片所有的标签地址内容，是否翻转样式的数组   坐标为这个图片的真实坐标
 - (IBAction)btSaveOnClick:(id)sender
 {
-    NSMutableArray *dicList = [self.tagEditorImageView popTagModel];
-//    if (dicList.count == 0)
+//    NSMutableArray *dicList = [self.tagEditorImageView popTagModel] ;
+//    NSMutableArray *tagItemInfoList = [@[] mutableCopy] ;
+//    for (NSDictionary *dic in dicList)
 //    {
-//        [self.navigationController popViewControllerAnimated:YES];
-//        return;
+//        ArticlePicItemInfo *itemInfo = [ArticlePicItemInfo yy_modelWithDictionary:dic] ;
+//        [tagItemInfoList addObject:itemInfo] ;
 //    }
-   
-    NSMutableArray *tagItemInfoList = [@[] mutableCopy] ;
-    for (NSDictionary *dic in dicList)
-    {
-        ArticlePicItemInfo *itemInfo = [ArticlePicItemInfo yy_modelWithDictionary:dic] ;
-        [tagItemInfoList addObject:itemInfo] ;
-    }
     
-    NSMutableArray *tmplist = [self.editVC.listTagItems mutableCopy] ;
-    [tmplist replaceObjectAtIndex:self.indexInPhotoList withObject:tagItemInfoList] ;
-    self.editVC.listTagItems = tmplist ;
-    [self.editVC refreshCollectionView] ;
-    [self.navigationController popViewControllerAnimated:YES] ;
+//    NSMutableArray *tmplist = [self.editVC.listTagItems mutableCopy] ;
+//    [tmplist replaceObjectAtIndex:self.indexInPhotoList withObject:tagItemInfoList] ;
+//    self.editVC.listTagItems = tmplist ;
+//    [self.editVC refreshCollectionView] ;
+//    [self.navigationController popViewControllerAnimated:YES] ;
 }
 
 #pragma mark - prop
-- (YXLTagEditorImageView *)tagEditorImageView
-{
-    if (!_tagEditorImageView)
-    {
-        CGRect rect = CGRectZero ;
-        rect.size = CGSizeMake(APP_WIDTH, APP_WIDTH * 1000 / 750) ;
-        _tagEditorImageView = [[YXLTagEditorImageView alloc] initWithImage:self.image
-                                                                     frame:rect] ;
-        _tagEditorImageView.viewC = self ;
-        _tagEditorImageView.userInteractionEnabled = YES ;
-        _tagEditorImageView.center =  self.view.center ;
-    }
-    return _tagEditorImageView ;
-}
+//- (YXLTagEditorImageView *)tagEditorImageView
+//{
+//    if (!_tagEditorImageView)
+//    {
+//        CGRect rect = CGRectZero ;
+//        rect.size = CGSizeMake(APP_WIDTH, APP_WIDTH * 1000 / 750) ;
+//        _tagEditorImageView = [[YXLTagEditorImageView alloc] initWithImage:self.image
+//                                                                     frame:rect] ;
+//        _tagEditorImageView.viewC = self ;
+//        _tagEditorImageView.userInteractionEnabled = YES ;
+//        _tagEditorImageView.center =  self.view.center ;
+//    }
+//    return _tagEditorImageView ;
+//}
 
 - (UILabel *)labelTips
 {
@@ -88,6 +86,27 @@
     return _labelTips ;
 }
 
+- (UIImageView *)imageViewBG
+{
+    if (!_imageViewBG) {
+        CGRect rect = CGRectZero ;
+        rect.size = CGSizeMake(APP_WIDTH, APP_WIDTH * 1000 / 750) ;
+        _imageViewBG = [[UIImageView alloc] initWithFrame:rect] ;
+        _imageViewBG.userInteractionEnabled = YES ;
+        _imageViewBG.image = self.image ;
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBG:)] ;
+        [_imageViewBG addGestureRecognizer:tapGesture] ;
+    }
+    return _imageViewBG ;
+}
+
+- (void)tapBG:(UITapGestureRecognizer *)tapGesture
+{
+    CGPoint pt = [tapGesture locationInView:self.imageViewBG] ;
+    NSLog(@"pt in bg : %@ \nWILL ADD LABEL",NSStringFromCGPoint(pt)) ;
+    
+}
+
 
 #pragma mark - life
 - (void)viewDidLoad
@@ -95,11 +114,16 @@
     [super viewDidLoad];
     
     // Do any additional setup after loading the view.
+    // tip
     [self.view addSubview:self.labelTips] ;
-    [self.view addSubview:self.tagEditorImageView];
-    [self.tagEditorImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
-    }];
+    // bg
+    [self.view addSubview:self.imageViewBG] ;
+    
+//    [self.view addSubview:self.tagEditorImageView];
+//    [self.tagEditorImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.edges.equalTo(self.view);
+//    }];
+    
     
     [self configureUIs] ;
 }
@@ -108,16 +132,16 @@
 {
     [super viewDidAppear:animated] ;
     
-    if (self.items != nil && ![self.items isKindOfClass:[NSNull class]]) {
-        for (int i = 0; i < self.items.count; i++)
-        {
-            ArticlePicItemInfo *itemInfo = self.items[i] ;
-            [self.tagEditorImageView addTagViewText:itemInfo.text
-                                           Location:CGPointMake(itemInfo.posX, itemInfo.posY)
-                              isPositiveAndNegative:[itemInfo positiveOrNagitive]
-                                               type:itemInfo.type] ;
-        }
-    }
+//    if (self.items != nil && ![self.items isKindOfClass:[NSNull class]]) {
+//        for (int i = 0; i < self.items.count; i++)
+//        {
+//            ArticlePicItemInfo *itemInfo = self.items[i] ;
+//            [self.tagEditorImageView addTagViewText:itemInfo.text
+//                                           Location:CGPointMake(itemInfo.posX, itemInfo.posY)
+//                              isPositiveAndNegative:[itemInfo positiveOrNagitive]
+//                                               type:itemInfo.type] ;
+//        }
+//    }
 }
 
 

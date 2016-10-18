@@ -351,6 +351,9 @@
 		D7CE2A1E1DB0E70200FF452C /* XTSearchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A1D1DB0E70200FF452C /* XTSearchHandler.m */; };
 		D7CE2A211DB0F2C900FF452C /* ArticleTag.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A201DB0F2C900FF452C /* ArticleTag.m */; };
 		D7CE2A251DB47C8500FF452C /* UIImageView+SDQN.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A241DB47C8500FF452C /* UIImageView+SDQN.m */; };
+		D7CE2A401DB637B700FF452C /* MaxLightingView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A3B1DB637B700FF452C /* MaxLightingView.m */; };
+		D7CE2A411DB637B700FF452C /* MaxShapeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A3D1DB637B700FF452C /* MaxShapeView.m */; };
+		D7CE2A421DB637B700FF452C /* NSString+SizeWithFont.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A3F1DB637B700FF452C /* NSString+SizeWithFont.m */; };
 		D7E0F4B41D87ADF700EA663B /* ArticlePicItemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */; };
 		D7E0F4B71D87B2D100EA663B /* ArticlePicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B61D87B2D100EA663B /* ArticlePicItem.m */; };
 		D7E0F4BA1D87B42D00EA663B /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B91D87B42D00EA663B /* Article.m */; };
@@ -1072,6 +1075,12 @@
 		D7CE2A201DB0F2C900FF452C /* ArticleTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleTag.m; sourceTree = "<group>"; };
 		D7CE2A231DB47C8500FF452C /* UIImageView+SDQN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+SDQN.h"; sourceTree = "<group>"; };
 		D7CE2A241DB47C8500FF452C /* UIImageView+SDQN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+SDQN.m"; sourceTree = "<group>"; };
+		D7CE2A3A1DB637B700FF452C /* MaxLightingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaxLightingView.h; sourceTree = "<group>"; };
+		D7CE2A3B1DB637B700FF452C /* MaxLightingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaxLightingView.m; sourceTree = "<group>"; };
+		D7CE2A3C1DB637B700FF452C /* MaxShapeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaxShapeView.h; sourceTree = "<group>"; };
+		D7CE2A3D1DB637B700FF452C /* MaxShapeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaxShapeView.m; sourceTree = "<group>"; };
+		D7CE2A3E1DB637B700FF452C /* NSString+SizeWithFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SizeWithFont.h"; sourceTree = "<group>"; };
+		D7CE2A3F1DB637B700FF452C /* NSString+SizeWithFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SizeWithFont.m"; sourceTree = "<group>"; };
 		D7E0F4B21D87ADF700EA663B /* ArticlePicItemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItemInfo.h; sourceTree = "<group>"; };
 		D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlePicItemInfo.m; sourceTree = "<group>"; };
 		D7E0F4B51D87B2D100EA663B /* ArticlePicItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItem.h; sourceTree = "<group>"; };
@@ -2533,6 +2542,7 @@
 			children = (
 				D76E844F1D77CCAC0014FDEA /* PhotoTaggingCtrller.h */,
 				D76E84501D77CCAC0014FDEA /* PhotoTaggingCtrller.m */,
+				D7CE2A391DB637B700FF452C /* XHS_MaxShapeView */,
 				D76E84761D7817A50014FDEA /* YXLImageLabel */,
 			);
 			name = TaggingPhoto;
@@ -2734,6 +2744,20 @@
 			);
 			name = MyPoints;
 			sourceTree = "<group>";
+		};
+		D7CE2A391DB637B700FF452C /* XHS_MaxShapeView */ = {
+			isa = PBXGroup;
+			children = (
+				D7CE2A3A1DB637B700FF452C /* MaxLightingView.h */,
+				D7CE2A3B1DB637B700FF452C /* MaxLightingView.m */,
+				D7CE2A3C1DB637B700FF452C /* MaxShapeView.h */,
+				D7CE2A3D1DB637B700FF452C /* MaxShapeView.m */,
+				D7CE2A3E1DB637B700FF452C /* NSString+SizeWithFont.h */,
+				D7CE2A3F1DB637B700FF452C /* NSString+SizeWithFont.m */,
+			);
+			name = XHS_MaxShapeView;
+			path = GroupBuying/Help/XHS_MaxShapeView;
+			sourceTree = SOURCE_ROOT;
 		};
 		D7E0F4B11D87ADBF00EA663B /* Article */ = {
 			isa = PBXGroup;
@@ -3162,6 +3186,7 @@
 				D7E4FEF81DA8A85700DC0E53 /* MessageCell.m in Sources */,
 				D75CC5E91C2A965000E590E6 /* QNSessionManager.m in Sources */,
 				D75CC61F1C2A965000E590E6 /* YXSpritesLoadingView.m in Sources */,
+				D7CE2A411DB637B700FF452C /* MaxShapeView.m in Sources */,
 				D76E83BE1D70175D0014FDEA /* ParallaxHeaderView.m in Sources */,
 				D7E4FF051DA8D74800DC0E53 /* MyFansFocusCtrller.m in Sources */,
 				D7E994E71D9A521C00EACDFB /* MineEditAddCtrller.m in Sources */,
@@ -3318,6 +3343,7 @@
 				D75CC5A01C2A965000E590E6 /* AFHTTPRequestOperationManager.m in Sources */,
 				D7CE2A0E1DAF93AE00FF452C /* MyPointsCtrller.m in Sources */,
 				D75CC4511C2A95DE00E590E6 /* XTFileManager.m in Sources */,
+				D7CE2A401DB637B700FF452C /* MaxLightingView.m in Sources */,
 				D75CC5F81C2A965000E590E6 /* SDWebImageDownloader.m in Sources */,
 				D75CC5E81C2A965000E590E6 /* QNResponseInfo.m in Sources */,
 				D76E83821D6D3F010014FDEA /* CameraViewController.m in Sources */,
@@ -3416,6 +3442,7 @@
 				D7E0F4BA1D87B42D00EA663B /* Article.m in Sources */,
 				D76E84711D780FAC0014FDEA /* MASViewConstraint.m in Sources */,
 				60319DAF1D982F6300BD094D /* CenterTableView.m in Sources */,
+				D7CE2A421DB637B700FF452C /* NSString+SizeWithFont.m in Sources */,
 				D76E84A51D79883A0014FDEA /* KICropImageView.m in Sources */,
 				D75CC5CC1C2A965000E590E6 /* MBProgressHUD.m in Sources */,
 				D7E994CA1D990C7C00EACDFB /* MineUserEditCtrl.m in Sources */,
