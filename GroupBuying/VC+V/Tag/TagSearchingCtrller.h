@@ -7,10 +7,13 @@
 //
 
 #import "RootCtrl.h"
+#import "PublicEnum.h"
 
 @interface TagSearchingCtrller : RootCtrl
 
 @property (nonatomic,copy) NSString *strWillEdit ;
 @property (nonatomic,copy) void (^block)(NSString *text) ;
+
+@property (nonatomic) TypeOfTagInformationTextfield tagInfomationType ;
 
 @end

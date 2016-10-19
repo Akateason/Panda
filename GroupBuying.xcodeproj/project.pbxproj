@@ -354,6 +354,7 @@
 		D7CE2A401DB637B700FF452C /* MaxLightingView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A3B1DB637B700FF452C /* MaxLightingView.m */; };
 		D7CE2A411DB637B700FF452C /* MaxShapeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A3D1DB637B700FF452C /* MaxShapeView.m */; };
 		D7CE2A421DB637B700FF452C /* NSString+SizeWithFont.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A3F1DB637B700FF452C /* NSString+SizeWithFont.m */; };
+		D7CE2A461DB70F5600FF452C /* TagInfomationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A441DB70F5600FF452C /* TagInfomationViewController.m */; };
 		D7E0F4B41D87ADF700EA663B /* ArticlePicItemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */; };
 		D7E0F4B71D87B2D100EA663B /* ArticlePicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B61D87B2D100EA663B /* ArticlePicItem.m */; };
 		D7E0F4BA1D87B42D00EA663B /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B91D87B42D00EA663B /* Article.m */; };
@@ -1081,6 +1082,8 @@
 		D7CE2A3D1DB637B700FF452C /* MaxShapeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaxShapeView.m; sourceTree = "<group>"; };
 		D7CE2A3E1DB637B700FF452C /* NSString+SizeWithFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SizeWithFont.h"; sourceTree = "<group>"; };
 		D7CE2A3F1DB637B700FF452C /* NSString+SizeWithFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SizeWithFont.m"; sourceTree = "<group>"; };
+		D7CE2A431DB70F5600FF452C /* TagInfomationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagInfomationViewController.h; path = "GroupBuying/VC+V/Tag/TagInfomationViewController.h"; sourceTree = SOURCE_ROOT; };
+		D7CE2A441DB70F5600FF452C /* TagInfomationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagInfomationViewController.m; path = "GroupBuying/VC+V/Tag/TagInfomationViewController.m"; sourceTree = SOURCE_ROOT; };
 		D7E0F4B21D87ADF700EA663B /* ArticlePicItemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItemInfo.h; sourceTree = "<group>"; };
 		D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlePicItemInfo.m; sourceTree = "<group>"; };
 		D7E0F4B51D87B2D100EA663B /* ArticlePicItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItem.h; sourceTree = "<group>"; };
@@ -2542,6 +2545,8 @@
 			children = (
 				D76E844F1D77CCAC0014FDEA /* PhotoTaggingCtrller.h */,
 				D76E84501D77CCAC0014FDEA /* PhotoTaggingCtrller.m */,
+				D7CE2A431DB70F5600FF452C /* TagInfomationViewController.h */,
+				D7CE2A441DB70F5600FF452C /* TagInfomationViewController.m */,
 				D7CE2A391DB637B700FF452C /* XHS_MaxShapeView */,
 				D76E84761D7817A50014FDEA /* YXLImageLabel */,
 			);
@@ -3279,6 +3284,7 @@
 				D75CC3C61C2A926100E590E6 /* main.m in Sources */,
 				D75CC5B31C2A965000E590E6 /* ASICloudFilesContainerXMLParserDelegate.m in Sources */,
 				D7E4FF1F1DA8FEB900DC0E53 /* CartCell.m in Sources */,
+				D7CE2A461DB70F5600FF452C /* TagInfomationViewController.m in Sources */,
 				D75CC5D01C2A965000E590E6 /* MJRefreshFooter.m in Sources */,
 				D75CC5B61C2A965000E590E6 /* ASICloudFilesRequest.m in Sources */,
 				D75CC5AB1C2A965000E590E6 /* ASIDownloadCache.m in Sources */,
@@ -3564,6 +3570,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = GroupBuying;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -3601,6 +3608,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = GroupBuying;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

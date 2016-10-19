@@ -27,7 +27,16 @@
 
 @implementation TagSearchingCtrller
 
-#pragma mark -
+#pragma - prop
+- (void)setTagInfomationType:(TypeOfTagInformationTextfield)tagInfomationType
+{
+    _tagInfomationType = tagInfomationType ;
+    
+    NSLog(@"tagInfomationType : %ld",tagInfomationType) ;
+}
+
+
+#pragma mark - action
 - (IBAction)btCancelOnClick:(id)sender
 {
     if (!_searchBar.text.length) {
@@ -40,7 +49,7 @@
 }
 
 
-#pragma mark -
+#pragma mark - life
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -84,8 +93,7 @@
 }
 
 
-#pragma mark - UISearchBarDelegate <UIBarPositioningDelegate>
-// called when text changes (including clear)
+#pragma mark - UISearchBarDelegate
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
     [self.searchHandler searchWithText:searchBar.text] ;

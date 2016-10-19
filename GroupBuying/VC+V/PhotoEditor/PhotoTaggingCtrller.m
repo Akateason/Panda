@@ -10,6 +10,9 @@
 //#import "YXLTagEditorImageView.h"
 #import "ArticlePicItemInfo.h"
 #import "YYModel.h"
+#import "TagInfomationViewController.h"
+#import "TagSearchingCtrller.h"
+
 
 @interface PhotoTaggingCtrller ()<UIGestureRecognizerDelegate>
 
@@ -21,8 +24,9 @@
 // code
 //@property (nonatomic,strong)YXLTagEditorImageView *tagEditorImageView;
 @property (nonatomic,strong)UILabel               *labelTips ;
-
 @property (nonatomic,strong)UIImageView           *imageViewBG ;
+@property (nonatomic,strong)TagInfomationViewController *taginfoVC ;
+
 
 @end
 
@@ -39,6 +43,9 @@
 // 返回这个图片所有的标签地址内容，是否翻转样式的数组   坐标为这个图片的真实坐标
 - (IBAction)btSaveOnClick:(id)sender
 {
+    
+    
+    
 //    NSMutableArray *dicList = [self.tagEditorImageView popTagModel] ;
 //    NSMutableArray *tagItemInfoList = [@[] mutableCopy] ;
 //    for (NSDictionary *dic in dicList)
@@ -104,6 +111,22 @@
 {
     CGPoint pt = [tapGesture locationInView:self.imageViewBG] ;
     NSLog(@"pt in bg : %@ \nWILL ADD LABEL",NSStringFromCGPoint(pt)) ;
+    
+    self.taginfoVC = (TagInfomationViewController *)[[RootCtrl class] getCtrllerFromStory:@"Camera" controllerIdentifier:@"TagInfomationViewController"] ;
+    __weak PhotoTaggingCtrller *weakSelf = self ;
+    self.taginfoVC.inputBlock = ^(NSString *strVal, TypeOfTagInformationTextfield type){
+        TagSearchingCtrller *tagSearchVC = (TagSearchingCtrller *)[[RootCtrl class] getCtrllerFromStory:@"Camera" controllerIdentifier:@"TagSearchingCtrller"] ;
+        tagSearchVC.block = ^(NSString *text){
+            [weakSelf.taginfoVC refreshTextFieldWithType:type string:text] ;
+        } ;
+        [weakSelf.navigationController presentViewController:tagSearchVC
+                                                    animated:YES
+                                                  completion:^{
+            
+        }] ;
+    } ;
+    [self.view addSubview:self.taginfoVC.view] ;
+
     
 }
 

@@ -16,16 +16,17 @@ typedef NS_ENUM(NSUInteger, CameraViewControllerOpenType) {
     typeEdit    , // 多图 . [编辑]    点继续,进入cutVC -> editorVC <- PostVC (popback)
 } ;
 
+static const NSUInteger kTAG_TagInfomation_textfield = 43421 ;
 
-/**
- category
- 用户分类，1为微信，2为微博，3为用户名密码登录
- */
-typedef NS_ENUM(NSInteger , MODE_LOGIN_CATE)
-{
-    mode_WeiXin = 1 ,
-    mode_WeiBo  ,
-    mode_Local
+typedef NS_ENUM(NSUInteger, TypeOfTagInformationTextfield) {
+    t_brand = kTAG_TagInfomation_textfield ,
+    t_name ,
+    t_moneyType ,
+    t_price ,
+    t_coutry ,
+    t_location ,
 } ;
+
+
 
 #endif
