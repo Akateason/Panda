@@ -81,10 +81,10 @@
                                                     for (int i = 0; i < itemWillDisplay.items.count; i++)
                                                     {
                                                         ArticlePicItemInfo *itemInfo = itemWillDisplay.items[i] ;
-                                                        [self.tagEditorImageView addTagViewText:itemInfo.text
-                                                                                       Location:CGPointMake(itemInfo.posX, itemInfo.posY)
-                                                                          isPositiveAndNegative:[itemInfo positiveOrNagitive]
-                                                                                           type:itemInfo.type] ;
+//                                                        [self.tagEditorImageView addTagViewText:itemInfo.text
+//                                                                                       Location:CGPointMake(itemInfo.posX, itemInfo.posY)
+//                                                                          isPositiveAndNegative:[itemInfo positiveOrNagitive]
+//                                                                                           type:itemInfo.type] ;
                                                     }
                                                     
                                                 }] ;

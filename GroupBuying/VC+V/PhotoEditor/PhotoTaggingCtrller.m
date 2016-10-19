@@ -12,7 +12,8 @@
 #import "YYModel.h"
 #import "TagInfomationViewController.h"
 #import "TagSearchingCtrller.h"
-
+#import "MaxShapeView.h"
+#import "MaxLightingView.h"
 
 @interface PhotoTaggingCtrller ()<UIGestureRecognizerDelegate>
 
@@ -147,11 +148,30 @@
         itemInfo.price = listResultStr[3] ;
         itemInfo.nation = listResultStr[4] ;
         itemInfo.location = listResultStr[5] ;
-        
         itemInfo.posX = pt.x ;
         itemInfo.posY = pt.y ;
         
-        ?
+        NSArray *tagGroup = @[ @"Moschino", @"裤子", @"¥2000" ];
+
+        MaxShapeView *pathShapeView = [[MaxShapeView alloc] initWithFrame:CGRectZero
+                                                                    point:pt
+                                                                 tagGroup:tagGroup
+                                                                  tagType:kMaxTagGroupTypeDefault
+                                                               superFrame:weakSelf.view.frame] ;
+        [weakSelf.view addSubview:pathShapeView] ;
+        
+        pathShapeView.tapBlock = ^(MaxShapeView *shapeView, UILabel *tapLabel) {
+            if (tapLabel)
+            {
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"选择后标签个数" message:@"" delegate:weakSelf cancelButtonTitle:@"取消" otherButtonTitles:@"0", @"1", @"2", @"3", nil];
+                [alertView show];
+            }
+        };
+        
+        pathShapeView.longPressBlock = ^(MaxShapeView *shapeView){
+            //长按
+            NSLog(@"%s__%d", __func__, __LINE__);
+        };
     } ;
 
     
