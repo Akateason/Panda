@@ -77,6 +77,14 @@
 //    return _tagEditorImageView ;
 //}
 
+- (TagInfomationViewController *)taginfoVC
+{
+    if (!_taginfoVC) {
+        _taginfoVC = (TagInfomationViewController *)[[RootCtrl class] getCtrllerFromStory:@"Camera" controllerIdentifier:@"TagInfomationViewController"] ;
+    }
+    return _taginfoVC ;
+}
+
 - (UILabel *)labelTips
 {
     if (!_labelTips)
@@ -112,20 +120,39 @@
     CGPoint pt = [tapGesture locationInView:self.imageViewBG] ;
     NSLog(@"pt in bg : %@ \nWILL ADD LABEL",NSStringFromCGPoint(pt)) ;
     
-    self.taginfoVC = (TagInfomationViewController *)[[RootCtrl class] getCtrllerFromStory:@"Camera" controllerIdentifier:@"TagInfomationViewController"] ;
+    [self.view addSubview:self.taginfoVC.view] ;
+    
     __weak PhotoTaggingCtrller *weakSelf = self ;
     self.taginfoVC.inputBlock = ^(NSString *strVal, TypeOfTagInformationTextfield type){
+        
         TagSearchingCtrller *tagSearchVC = (TagSearchingCtrller *)[[RootCtrl class] getCtrllerFromStory:@"Camera" controllerIdentifier:@"TagSearchingCtrller"] ;
         tagSearchVC.block = ^(NSString *text){
             [weakSelf.taginfoVC refreshTextFieldWithType:type string:text] ;
         } ;
+        
         [weakSelf.navigationController presentViewController:tagSearchVC
                                                     animated:YES
                                                   completion:^{
             
         }] ;
+        
     } ;
-    [self.view addSubview:self.taginfoVC.view] ;
+    
+    self.taginfoVC.outputBlock = ^(NSArray *listResultStr) {
+       
+        ArticlePicItemInfo *itemInfo = [[ArticlePicItemInfo alloc] init] ;
+        itemInfo.brand = listResultStr[0] ;
+        itemInfo.sku = listResultStr[1] ;
+        itemInfo.currency = listResultStr[2] ;
+        itemInfo.price = listResultStr[3] ;
+        itemInfo.nation = listResultStr[4] ;
+        itemInfo.location = listResultStr[5] ;
+        
+        itemInfo.posX = pt.x ;
+        itemInfo.posY = pt.y ;
+        
+        ?
+    } ;
 
     
 }

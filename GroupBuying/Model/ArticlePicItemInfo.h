@@ -14,7 +14,7 @@
 
 @property (nonatomic,copy)  NSString    *id_ArticlePicItemInfo ;
 
-@property (nonatomic,copy)  NSString    *type ; //文章图片信息类型(产地，品牌，价格，型号) 允许值: "LOCATION", "BRAND", "PRICE", "SKU"
+//@property (nonatomic,copy)  NSString    *type ; //文章图片信息类型(产地，品牌，价格，型号) 允许值: "LOCATION", "BRAND", "PRICE", "SKU"
 
 @property (nonatomic,copy)  NSString    *brand ;    // 品牌（type为BRAND）
 @property (nonatomic,copy)  NSString    *sku ;      // 规格（type为BRAND）

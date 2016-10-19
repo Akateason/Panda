@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "PublicEnum.h"
 
+
 @class RootCtrl ;
 
 @interface TagInfomationViewController : UIViewController
 
 @property (nonatomic,copy) void(^inputBlock)(NSString *strVal, TypeOfTagInformationTextfield type) ;
+@property (nonatomic,copy) void(^outputBlock)(NSArray *listResultStr) ;
 
 - (void)refreshTextFieldWithType:(TypeOfTagInformationTextfield)type string:(NSString *)strText ;
 

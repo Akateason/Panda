@@ -49,7 +49,15 @@
 
 - (IBAction)btFinishOnClick:(id)sender
 {
-    ?
+    BOOL bHasChanged = false ;
+    NSMutableArray *tmplist = [@[] mutableCopy] ;
+    for (int i = kTAG_TagInfomation_textfield; i < kTAG_TagInfomation_textfield + 6; i++) {
+        UITextField *tf = [self.view viewWithTag:i] ;
+        [tmplist addObject:tf.text] ;
+        if (tf.text.length > 0) bHasChanged = true ;
+    }
+    
+    if (bHasChanged) self.outputBlock(tmplist) ;
     
     [self.view removeFromSuperview] ;
 }
