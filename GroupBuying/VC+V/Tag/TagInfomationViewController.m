@@ -24,13 +24,23 @@
 @property (weak, nonatomic) IBOutlet UIButton *btCancel;
 @property (weak, nonatomic) IBOutlet UIButton *btComplete;
 
+
 @property (nonatomic,strong) NSArray *tflist ;
+@property (nonatomic)      BOOL     bAddOrEdit ;
 
 @end
 
 @implementation TagInfomationViewController
 
 #pragma - public
+
+- (void)showInView:(UIView *)view
+         addOrEdit:(BOOL)addOrEdit
+{
+    self.bAddOrEdit = addOrEdit ;
+    [view addSubview:self.view] ;
+}
+
 - (void)refreshTextFieldWithType:(TypeOfTagInformationTextfield)type
                           string:(NSString *)strText
 {
@@ -43,6 +53,17 @@
         }
     }
 }
+
+- (void)refreshUIsWithArticlePicItemInfo:(ArticlePicItemInfo *)itemInfo
+{
+    self.tf_brand.text = itemInfo.brand ;
+    self.tf_name.text = itemInfo.sku ;
+    self.tf_moneyType.text = itemInfo.currency ;
+    self.tf_price.text = itemInfo.price ;
+    self.tf_countryCity.text = itemInfo.nation ;
+    self.tf_locationDetail.text = itemInfo.location ;
+}
+
 
 
 #pragma - action
@@ -57,7 +78,7 @@
         if (tf.text.length > 0) bHasChanged = true ;
     }
     
-    if (bHasChanged) self.outputBlock(tmplist) ;
+    if (bHasChanged) self.outputBlock(tmplist, self.bAddOrEdit) ;
     
     [self.view removeFromSuperview] ;
 }
@@ -65,7 +86,11 @@
 - (IBAction)btCancelOnClick:(id)sender
 {
     for (UITextField *tf in self.tflist) { tf.text = @"" ; }
+    
+    self.cancelBlock() ;
+    
     [self.view removeFromSuperview] ;
+    
 }
 
 

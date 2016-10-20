@@ -31,6 +31,10 @@
 @property (nonatomic,copy)  NSString    *articlePicItemId ; //所属文章图片ID
 @property (nonatomic)       long long   createTime ;
 
+
+
 - (BOOL)positiveOrNagitive ;
+- (NSArray *)tagGroup ;
+
 
 @end

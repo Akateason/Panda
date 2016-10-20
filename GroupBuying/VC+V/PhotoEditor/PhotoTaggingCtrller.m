@@ -27,7 +27,7 @@
 @property (nonatomic,strong)UILabel               *labelTips ;
 @property (nonatomic,strong)UIImageView           *imageViewBG ;
 @property (nonatomic,strong)TagInfomationViewController *taginfoVC ;
-
+@property (nonatomic,strong)NSMutableArray        *listMShapeViews ;
 
 @end
 
@@ -78,6 +78,14 @@
 //    return _tagEditorImageView ;
 //}
 
+- (NSMutableArray *)listMShapeViews
+{
+    if (!_listMShapeViews) {
+        _listMShapeViews = [@[] mutableCopy] ;
+    }
+    return _listMShapeViews ;
+}
+
 - (TagInfomationViewController *)taginfoVC
 {
     if (!_taginfoVC) {
@@ -110,21 +118,25 @@
         _imageViewBG = [[UIImageView alloc] initWithFrame:rect] ;
         _imageViewBG.userInteractionEnabled = YES ;
         _imageViewBG.image = self.image ;
-        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBG:)] ;
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapImagesBG:)] ;
         [_imageViewBG addGestureRecognizer:tapGesture] ;
     }
     return _imageViewBG ;
 }
 
-- (void)tapBG:(UITapGestureRecognizer *)tapGesture
+- (void)tapImagesBG:(UITapGestureRecognizer *)tapGesture
 {
     CGPoint pt = [tapGesture locationInView:self.imageViewBG] ;
     NSLog(@"pt in bg : %@ \nWILL ADD LABEL",NSStringFromCGPoint(pt)) ;
     
-    [self.view addSubview:self.taginfoVC.view] ;
-    
+    //1 SHOW TAGINFO VIEW
+    [self.taginfoVC showInView:self.view
+                     addOrEdit:YES] ;
+
     __weak PhotoTaggingCtrller *weakSelf = self ;
-    self.taginfoVC.inputBlock = ^(NSString *strVal, TypeOfTagInformationTextfield type){
+    
+    // WILL INPUT PROPERTY .
+    self.taginfoVC.inputBlock = ^(NSString *strVal, TypeOfTagInformationTextfield type) {
         
         TagSearchingCtrller *tagSearchVC = (TagSearchingCtrller *)[[RootCtrl class] getCtrllerFromStory:@"Camera" controllerIdentifier:@"TagSearchingCtrller"] ;
         tagSearchVC.block = ^(NSString *text){
@@ -139,8 +151,10 @@
         
     } ;
     
-    self.taginfoVC.outputBlock = ^(NSArray *listResultStr) {
-       
+    
+    // FINISHED .
+    self.taginfoVC.outputBlock = ^(NSArray *listResultStr, BOOL bAddOrEdit) {
+        
         ArticlePicItemInfo *itemInfo = [[ArticlePicItemInfo alloc] init] ;
         itemInfo.brand = listResultStr[0] ;
         itemInfo.sku = listResultStr[1] ;
@@ -151,30 +165,49 @@
         itemInfo.posX = pt.x ;
         itemInfo.posY = pt.y ;
         
-        NSArray *tagGroup = @[ @"Moschino", @"裤子", @"¥2000" ];
-
         MaxShapeView *pathShapeView = [[MaxShapeView alloc] initWithFrame:CGRectZero
                                                                     point:pt
-                                                                 tagGroup:tagGroup
+                                                                 tagGroup:[itemInfo tagGroup]
                                                                   tagType:kMaxTagGroupTypeDefault
                                                                superFrame:weakSelf.view.frame] ;
-        [weakSelf.view addSubview:pathShapeView] ;
+        
+        
+        if (bAddOrEdit) {
+            //add
+            [weakSelf.view addSubview:pathShapeView] ;
+            [weakSelf.listMShapeViews addObject:pathShapeView] ;
+        }
+        else {
+            //edit
+            
+        }
+        
+        
+        
+        
+        
         
         pathShapeView.tapBlock = ^(MaxShapeView *shapeView, UILabel *tapLabel) {
             if (tapLabel)
             {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"选择后标签个数" message:@"" delegate:weakSelf cancelButtonTitle:@"取消" otherButtonTitles:@"0", @"1", @"2", @"3", nil];
-                [alertView show];
+                //单击 编辑
+                [weakSelf.taginfoVC showInView:weakSelf.view
+                                     addOrEdit:NO] ;
+                [weakSelf.taginfoVC refreshUIsWithArticlePicItemInfo:itemInfo] ;
             }
         };
         
         pathShapeView.longPressBlock = ^(MaxShapeView *shapeView){
-            //长按
-            NSLog(@"%s__%d", __func__, __LINE__);
+            //长按 删除
+            NSLog(@"%s__%d", __func__, __LINE__) ;
         };
     } ;
 
     
+    // CANCELED .
+    self.taginfoVC.cancelBlock = ^(void) {
+        weakSelf.taginfoVC = nil ;
+    } ;
 }
 
 
@@ -225,6 +258,17 @@
     _labelTitle.text = @"添加标签" ;
     [self.view bringSubviewToFront:self.topView] ;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 - (void)didReceiveMemoryWarning {

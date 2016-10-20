@@ -10,6 +10,9 @@
 
 @interface NSString (Extend)
 
+// 去除收尾空格
+- (NSString *)strMinusSpaceInPrefixAndTail ;
+
 // 去除空格.
 - (NSString *)minusSpaceStr ;
 

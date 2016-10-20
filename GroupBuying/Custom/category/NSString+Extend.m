@@ -10,6 +10,15 @@
 
 @implementation NSString (Extend)
 
+- (NSString *)strMinusSpaceInPrefixAndTail
+{
+    if ([self hasPrefix:@" "]) {
+        return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] ;
+    }
+    return self ;
+}
+
+
 - (NSString *)minusSpaceStr
 {
     NSCharacterSet *whitespaces = [NSCharacterSet whitespaceCharacterSet] ;
