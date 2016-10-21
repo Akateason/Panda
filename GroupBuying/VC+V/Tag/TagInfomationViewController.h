@@ -12,17 +12,26 @@
 
 @class RootCtrl ;
 
-@interface TagInfomationViewController : UIViewController
+@protocol TagInfomationViewControllerDelegate <NSObject>
 
 // will input go to searchTagVC
-@property (nonatomic,copy) void(^inputBlock)(NSString *strVal, TypeOfTagInformationTextfield type) ;
+- (void)inputTextFieldWithStrVal:(NSString *)strVal type:(TypeOfTagInformationTextfield)type ;
 // finish
-@property (nonatomic,copy) void(^outputBlock)(NSArray *listResultStr, BOOL bAddOrEdit) ;
+- (void)outputWithResultStrList:(NSArray *)listResultStr clientID:(int)clientID ;
 // cancel
-@property (nonatomic,copy) void(^cancelBlock)(void) ;
+- (void)cancel ;
+
+@end
+
+
+
+@interface TagInfomationViewController : UIViewController
+
+@property (nonatomic,weak) id <TagInfomationViewControllerDelegate> delegate ;
 
 // show
-- (void)showInView:(UIView *)view addOrEdit:(BOOL)addOrEdit ;
+- (void)showInView:(UIView *)view
+          clientID:(int)clientID ;
 
 // refresh all textfield
 - (void)refreshUIsWithArticlePicItemInfo:(ArticlePicItemInfo *)itemInfo ;

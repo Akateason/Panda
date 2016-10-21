@@ -10,7 +10,8 @@
 #import "NoteDetailViewItem.h"
 #import "Article.h"
 #import "Pic.h"
-#import "YXLTagEditorImageView.h"
+#import "MaxShapeView.h"
+#import "MaxLightingView.h"
 #import "Article.h"
 #import "ArticlePicItem.h"
 #import "ArticlePicItemInfo.h"
@@ -25,7 +26,7 @@
 @property (weak, nonatomic) IBOutlet UIView *sepline;
 
 // code
-@property (nonatomic,strong)YXLTagEditorImageView *tagEditorImageView;
+@property (nonatomic,strong)UIImageView           *imageViewBG ;
 
 @end
 
@@ -74,37 +75,43 @@
     
     ArticlePicItem *itemWillDisplay = [noteItem.articleInfo.picItems firstObject] ;
     
-    [self.tagEditorImageView.imagePreviews xt_setImageWithPic:itemWillDisplay.img
-                                                    completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                                                    
-                                                    //        [self.tagEditorImageView scaledFrame] ;
-                                                    for (int i = 0; i < itemWillDisplay.items.count; i++)
-                                                    {
-                                                        ArticlePicItemInfo *itemInfo = itemWillDisplay.items[i] ;
-//                                                        [self.tagEditorImageView addTagViewText:itemInfo.text
-//                                                                                       Location:CGPointMake(itemInfo.posX, itemInfo.posY)
-//                                                                          isPositiveAndNegative:[itemInfo positiveOrNagitive]
-//                                                                                           type:itemInfo.type] ;
-                                                    }
-                                                    
-                                                }] ;
+    [self.imageViewBG xt_setImageWithPic:itemWillDisplay.img
+                               completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                   
+                                   for (int i = 0; i < itemWillDisplay.items.count; i++)
+                                   {
+                                       ArticlePicItemInfo *itemInfo = itemWillDisplay.items[i] ;
+                                       
+                                       MaxShapeView *tagView = [[MaxShapeView alloc] initWithFrame:CGRectZero
+                                                                                             point:CGPointMake(itemInfo.posX, itemInfo.posY)
+                                                                                          tagGroup:[itemInfo tagGroup]
+                                                                                           tagType:kMaxTagGroupTypeDefault
+                                                                                        superFrame:self.imageViewBG.frame] ;
+                                       tagView.itemInfo = itemInfo ;
+                                       
+                                       [self.imageViewBG addSubview:tagView] ;
+                                       
+                                   }
+
+                               }] ;
+    
+
 
     
 
 }
 
 
-- (YXLTagEditorImageView *)tagEditorImageView
+- (UIImageView *)imageViewBG
 {
-    if (!_tagEditorImageView)
-    {
+    if (!_imageViewBG) {
         CGRect rect = CGRectZero ;
         rect.size = CGSizeMake(APP_WIDTH, APP_WIDTH * 1000 / 750) ;
-        _tagEditorImageView = [[YXLTagEditorImageView alloc] initWithImage:nil frame:rect] ;
-        _tagEditorImageView.userInteractionEnabled = NO ;
+        _imageViewBG = [[UIImageView alloc] initWithFrame:rect] ;
     }
-    return _tagEditorImageView ;
+    return _imageViewBG ;
 }
+
 
 
 - (void)awakeFromNib
@@ -119,11 +126,7 @@
     _descriptLabel.textColor = [UIColor xt_w_content] ;
     _sepline.backgroundColor = [UIColor xt_seperate] ;
     
-    [_imgContainer addSubview:self.tagEditorImageView] ;
-    [self.tagEditorImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(_imgContainer) ;
-    }];
-    
+    [_imgContainer addSubview:self.imageViewBG] ;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

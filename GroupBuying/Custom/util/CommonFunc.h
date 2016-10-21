@@ -44,9 +44,9 @@ typedef enum {
 
 #pragma mark --
 #pragma mark - save and login
-+ (void)logSussessedWithResult:(ResultParsered *)result
-             AndWithController:(UIViewController *)contoller ;
-+ (void)exitLog ;
+//+ (void)logSussessedWithResult:(ResultParsered *)result
+//             AndWithController:(UIViewController *)contoller ;
+//+ (void)exitLog ;
 
 #pragma mark - bind
 // bind save

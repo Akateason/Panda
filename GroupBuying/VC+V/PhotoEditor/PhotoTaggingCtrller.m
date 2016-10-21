@@ -7,7 +7,6 @@
 //
 
 #import "PhotoTaggingCtrller.h"
-//#import "YXLTagEditorImageView.h"
 #import "ArticlePicItemInfo.h"
 #import "YYModel.h"
 #import "TagInfomationViewController.h"
@@ -15,23 +14,87 @@
 #import "MaxShapeView.h"
 #import "MaxLightingView.h"
 
-@interface PhotoTaggingCtrller ()<UIGestureRecognizerDelegate>
-
+@interface PhotoTaggingCtrller ()<UIGestureRecognizerDelegate,TagInfomationViewControllerDelegate>
+{
+    CGPoint tapPt ;
+}
 // story board
 @property (weak, nonatomic) IBOutlet UIView *topView;
 @property (weak, nonatomic) IBOutlet UIButton *btback;
 @property (weak, nonatomic) IBOutlet UIButton *btSave;
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;
 // code
-//@property (nonatomic,strong)YXLTagEditorImageView *tagEditorImageView;
 @property (nonatomic,strong)UILabel               *labelTips ;
 @property (nonatomic,strong)UIImageView           *imageViewBG ;
 @property (nonatomic,strong)TagInfomationViewController *taginfoVC ;
 @property (nonatomic,strong)NSMutableArray        *listMShapeViews ;
-
+@property (nonatomic)       int                   currentMSClientIDWillAdd ;
 @end
 
 @implementation PhotoTaggingCtrller
+
+
+#pragma mark - TagInfomationViewControllerDelegate <NSObject>
+
+// will input go to searchTagVC
+- (void)inputTextFieldWithStrVal:(NSString *)strVal
+                            type:(TypeOfTagInformationTextfield)type
+{
+    TagSearchingCtrller *tagSearchVC = (TagSearchingCtrller *)[[RootCtrl class] getCtrllerFromStory:@"Camera" controllerIdentifier:@"TagSearchingCtrller"] ;
+    tagSearchVC.block = ^(NSString *text){
+        [self.taginfoVC refreshTextFieldWithType:type string:text] ;
+    } ;
+    [self.navigationController presentViewController:tagSearchVC
+                                                animated:YES
+                                              completion:^{}] ;
+
+}
+
+// finish
+- (void)outputWithResultStrList:(NSArray *)listResultStr
+                       clientID:(int)clientID
+{
+    ArticlePicItemInfo *itemInfo = [[ArticlePicItemInfo alloc] init] ;
+    itemInfo.brand = listResultStr[0] ;
+    itemInfo.sku = listResultStr[1] ;
+    itemInfo.currency = listResultStr[2] ;
+    itemInfo.price = [listResultStr[3] doubleValue] ;
+    itemInfo.nation = listResultStr[4] ;
+    itemInfo.location = listResultStr[5] ;
+    itemInfo.posX = tapPt.x ;
+    itemInfo.posY = tapPt.y ;
+    
+    if (clientID == self.currentMSClientIDWillAdd)
+    {
+        //add tagview
+        itemInfo.posType = @"RIGHT" ;
+        [self addTagViewWithItemInfo:itemInfo
+                            clientID:clientID] ;
+    }
+    else
+    {
+        //edit tagview
+        [self.listMShapeViews enumerateObjectsUsingBlock:^(MaxShapeView *tmpTagView, NSUInteger idx, BOOL * _Nonnull stop) {
+            if (tmpTagView.clientMaxShapeViewID == clientID) {
+                tmpTagView.itemInfo = itemInfo ;
+                [tmpTagView drawLine] ;
+                *stop = YES ;
+            }
+        }] ;
+    }
+    
+    // clear infoVC
+    self.taginfoVC = nil ;
+}
+
+
+// cancel
+- (void)cancel
+{
+    // clear infoVC
+    self.taginfoVC = nil ;
+}
+
 
 
 #pragma mark - action
@@ -44,39 +107,19 @@
 // 返回这个图片所有的标签地址内容，是否翻转样式的数组   坐标为这个图片的真实坐标
 - (IBAction)btSaveOnClick:(id)sender
 {
+    NSMutableArray *tagItemInfoList = [@[] mutableCopy] ;
+    [self.listMShapeViews enumerateObjectsUsingBlock:^(MaxShapeView *tagView, NSUInteger idx, BOOL * _Nonnull stop) {
+        [tagItemInfoList addObject:tagView.itemInfo] ;
+    }] ;
     
-    
-    
-//    NSMutableArray *dicList = [self.tagEditorImageView popTagModel] ;
-//    NSMutableArray *tagItemInfoList = [@[] mutableCopy] ;
-//    for (NSDictionary *dic in dicList)
-//    {
-//        ArticlePicItemInfo *itemInfo = [ArticlePicItemInfo yy_modelWithDictionary:dic] ;
-//        [tagItemInfoList addObject:itemInfo] ;
-//    }
-    
-//    NSMutableArray *tmplist = [self.editVC.listTagItems mutableCopy] ;
-//    [tmplist replaceObjectAtIndex:self.indexInPhotoList withObject:tagItemInfoList] ;
-//    self.editVC.listTagItems = tmplist ;
-//    [self.editVC refreshCollectionView] ;
-//    [self.navigationController popViewControllerAnimated:YES] ;
+    NSMutableArray *tmplist = [self.editVC.listTagItems mutableCopy] ;
+    [tmplist replaceObjectAtIndex:self.indexInPhotoList withObject:tagItemInfoList] ;
+    self.editVC.listTagItems = tmplist ;
+    [self.editVC refreshCollectionView] ;
+    [self.navigationController popViewControllerAnimated:YES] ;
 }
 
 #pragma mark - prop
-//- (YXLTagEditorImageView *)tagEditorImageView
-//{
-//    if (!_tagEditorImageView)
-//    {
-//        CGRect rect = CGRectZero ;
-//        rect.size = CGSizeMake(APP_WIDTH, APP_WIDTH * 1000 / 750) ;
-//        _tagEditorImageView = [[YXLTagEditorImageView alloc] initWithImage:self.image
-//                                                                     frame:rect] ;
-//        _tagEditorImageView.viewC = self ;
-//        _tagEditorImageView.userInteractionEnabled = YES ;
-//        _tagEditorImageView.center =  self.view.center ;
-//    }
-//    return _tagEditorImageView ;
-//}
 
 - (NSMutableArray *)listMShapeViews
 {
@@ -91,6 +134,7 @@
     if (!_taginfoVC) {
         _taginfoVC = (TagInfomationViewController *)[[RootCtrl class] getCtrllerFromStory:@"Camera" controllerIdentifier:@"TagInfomationViewController"] ;
     }
+    _taginfoVC.delegate = self ;
     return _taginfoVC ;
 }
 
@@ -124,91 +168,69 @@
     return _imageViewBG ;
 }
 
+// imageBG tap ACTION  --> add tagView
 - (void)tapImagesBG:(UITapGestureRecognizer *)tapGesture
 {
-    CGPoint pt = [tapGesture locationInView:self.imageViewBG] ;
-    NSLog(@"pt in bg : %@ \nWILL ADD LABEL",NSStringFromCGPoint(pt)) ;
-    
+    tapPt = [tapGesture locationInView:self.imageViewBG] ;
+    NSLog(@"pt in bg : %@ \nWILL ADD LABEL",NSStringFromCGPoint(tapPt)) ;
     //1 SHOW TAGINFO VIEW
     [self.taginfoVC showInView:self.view
-                     addOrEdit:YES] ;
+                     clientID:self.currentMSClientIDWillAdd] ;
+}
 
-    __weak PhotoTaggingCtrller *weakSelf = self ;
+
+#pragma mark - util
+- (void)addTagViewWithItemInfo:(ArticlePicItemInfo *)itemInfo
+                      clientID:(int)clientID
+{
+    MaxShapeView *tagView = [[MaxShapeView alloc] initWithFrame:CGRectZero
+                                                          point:CGPointMake(itemInfo.posX, itemInfo.posY)
+                                                       tagGroup:[itemInfo tagGroup]
+                                                        tagType:kMaxTagGroupTypeDefault
+                                                     superFrame:self.view.frame] ;
+    tagView.clientMaxShapeViewID = clientID ;
+    tagView.itemInfo = itemInfo ;
+    tagView.dragDoneBlock = ^(MaxShapeView *shapeView) {
+        NSLog(@"shapeView.point : %@",NSStringFromCGPoint(shapeView.point)) ;
+        tapPt = shapeView.point ;
+    } ;
     
-    // WILL INPUT PROPERTY .
-    self.taginfoVC.inputBlock = ^(NSString *strVal, TypeOfTagInformationTextfield type) {
-        
-        TagSearchingCtrller *tagSearchVC = (TagSearchingCtrller *)[[RootCtrl class] getCtrllerFromStory:@"Camera" controllerIdentifier:@"TagSearchingCtrller"] ;
-        tagSearchVC.block = ^(NSString *text){
-            [weakSelf.taginfoVC refreshTextFieldWithType:type string:text] ;
-        } ;
-        
-        [weakSelf.navigationController presentViewController:tagSearchVC
-                                                    animated:YES
-                                                  completion:^{
+    tagView.tapBlock = ^(MaxShapeView *shapeView, UILabel *tapLabel) {
+        // NSLog(@"cid : %d",shapeView.clientMaxShapeViewID) ;
+        if (tapLabel)
+        {
+            self.taginfoVC = nil ;
+            //单击 编辑模式
+            [self.taginfoVC showInView:self.view
+                              clientID:shapeView.clientMaxShapeViewID] ;
+            [self.taginfoVC refreshUIsWithArticlePicItemInfo:shapeView.itemInfo] ;
+        }
+    } ;
+    
+    tagView.longPressBlock = ^(MaxShapeView *shapeView){
+        //长按 删除
+        NSLog(@"cid : %d",shapeView.clientMaxShapeViewID) ;
+        SIAlertView *alert = [[SIAlertView alloc] initWithTitle:nil andMessage:@"删除此标签"] ;
+        [alert addButtonWithTitle:@"确认" type:SIAlertViewButtonTypeDestructive handler:^(SIAlertView *alertView) {
+            [self.listMShapeViews enumerateObjectsUsingBlock:^(MaxShapeView *tmpTagView, NSUInteger idx, BOOL * _Nonnull stop) {
+                if (tmpTagView.clientMaxShapeViewID == shapeView.clientMaxShapeViewID) {
+                    [tmpTagView removeFromSuperview] ;
+                    [self.listMShapeViews removeObjectAtIndex:idx] ;
+                    *stop = YES ;
+                }
+            }] ;
             
         }] ;
-        
-    } ;
+        [alert addButtonWithTitle:@"取消" type:SIAlertViewButtonTypeCancel handler:nil] ;
+        [alert show] ;
+    };
     
-    
-    // FINISHED .
-    self.taginfoVC.outputBlock = ^(NSArray *listResultStr, BOOL bAddOrEdit) {
-        
-        ArticlePicItemInfo *itemInfo = [[ArticlePicItemInfo alloc] init] ;
-        itemInfo.brand = listResultStr[0] ;
-        itemInfo.sku = listResultStr[1] ;
-        itemInfo.currency = listResultStr[2] ;
-        itemInfo.price = listResultStr[3] ;
-        itemInfo.nation = listResultStr[4] ;
-        itemInfo.location = listResultStr[5] ;
-        itemInfo.posX = pt.x ;
-        itemInfo.posY = pt.y ;
-        
-        MaxShapeView *pathShapeView = [[MaxShapeView alloc] initWithFrame:CGRectZero
-                                                                    point:pt
-                                                                 tagGroup:[itemInfo tagGroup]
-                                                                  tagType:kMaxTagGroupTypeDefault
-                                                               superFrame:weakSelf.view.frame] ;
-        
-        
-        if (bAddOrEdit) {
-            //add
-            [weakSelf.view addSubview:pathShapeView] ;
-            [weakSelf.listMShapeViews addObject:pathShapeView] ;
-        }
-        else {
-            //edit
-            
-        }
-        
-        
-        
-        
-        
-        
-        pathShapeView.tapBlock = ^(MaxShapeView *shapeView, UILabel *tapLabel) {
-            if (tapLabel)
-            {
-                //单击 编辑
-                [weakSelf.taginfoVC showInView:weakSelf.view
-                                     addOrEdit:NO] ;
-                [weakSelf.taginfoVC refreshUIsWithArticlePicItemInfo:itemInfo] ;
-            }
-        };
-        
-        pathShapeView.longPressBlock = ^(MaxShapeView *shapeView){
-            //长按 删除
-            NSLog(@"%s__%d", __func__, __LINE__) ;
-        };
-    } ;
-
-    
-    // CANCELED .
-    self.taginfoVC.cancelBlock = ^(void) {
-        weakSelf.taginfoVC = nil ;
-    } ;
+    [self.view addSubview:tagView] ;
+    [self.listMShapeViews addObject:tagView] ; // addobj in list .
+    self.currentMSClientIDWillAdd ++ ;
 }
+
+
 
 
 #pragma mark - life
@@ -216,18 +238,13 @@
 {
     [super viewDidLoad];
     
-    // Do any additional setup after loading the view.
+    // tagview clientID
+    self.currentMSClientIDWillAdd = 1 ;
     // tip
     [self.view addSubview:self.labelTips] ;
     // bg
     [self.view addSubview:self.imageViewBG] ;
-    
-//    [self.view addSubview:self.tagEditorImageView];
-//    [self.tagEditorImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.edges.equalTo(self.view);
-//    }];
-    
-    
+    // configure
     [self configureUIs] ;
 }
 
@@ -235,16 +252,15 @@
 {
     [super viewDidAppear:animated] ;
     
-//    if (self.items != nil && ![self.items isKindOfClass:[NSNull class]]) {
-//        for (int i = 0; i < self.items.count; i++)
-//        {
-//            ArticlePicItemInfo *itemInfo = self.items[i] ;
-//            [self.tagEditorImageView addTagViewText:itemInfo.text
-//                                           Location:CGPointMake(itemInfo.posX, itemInfo.posY)
-//                              isPositiveAndNegative:[itemInfo positiveOrNagitive]
-//                                               type:itemInfo.type] ;
-//        }
-//    }
+    if (self.items != nil && ![self.items isKindOfClass:[NSNull class]]) {
+        for (int i = 0; i < self.items.count; i++)
+        {
+            ArticlePicItemInfo *itemInfo = self.items[i] ;
+            tapPt = CGPointMake(itemInfo.posX, itemInfo.posY) ;
+            [self addTagViewWithItemInfo:itemInfo
+                                clientID:self.currentMSClientIDWillAdd] ;
+        }
+    }
 }
 
 

@@ -19,7 +19,7 @@
 @property (nonatomic,copy)  NSString    *brand ;    // 品牌（type为BRAND）
 @property (nonatomic,copy)  NSString    *sku ;      // 规格（type为BRAND）
 @property (nonatomic,copy)  NSString    *currency ; // 币种（type为PRICE）
-@property (nonatomic,copy)  NSString    *price ;    // 价格（type为PRICE）
+@property (nonatomic)       double      price ;    // 价格（type为PRICE）
 @property (nonatomic,copy)  NSString    *nation ;   // 国家（type为LOCATION）
 @property (nonatomic,copy)  NSString    *location ; // 地点（type为LOCATION）
 
@@ -33,7 +33,8 @@
 
 
 
-- (BOOL)positiveOrNagitive ;
+- (BOOL)leftOrRight ;
+- (void)changeLeftAndRight ;
 - (NSArray *)tagGroup ;
 
 

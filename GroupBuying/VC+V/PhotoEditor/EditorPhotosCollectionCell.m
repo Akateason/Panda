@@ -7,31 +7,20 @@
 //
 
 #import "EditorPhotosCollectionCell.h"
-#import "YXLTagEditorImageView.h"
+//#import "MaxShapeView.h"
+//#import "MaxLightingView.h"
 #import "Article.h"
-//#import "ArticlePicItem.h"
 #import "ArticlePicItemInfo.h"
 
 
 @interface EditorPhotosCollectionCell ()
 
 @property (weak, nonatomic) IBOutlet UIView *imgContainer;
-@property (nonatomic,strong)YXLTagEditorImageView *tagEditorImageView;
+@property (nonatomic,strong)UIImageView     *imageViewBG ;
 
 @end
 
 @implementation EditorPhotosCollectionCell
-
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-    // Initialization code
-    _imgContainer.backgroundColor = [UIColor clearColor] ;
-    [self.imgContainer addSubview:self.tagEditorImageView] ;
-    [self.tagEditorImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.imgContainer) ;
-    }];
-}
 
 
 - (void)setImage:(UIImage *)image
@@ -41,40 +30,28 @@
     if (!image) {
         return ;
     }
-    
-    self.tagEditorImageView.imagePreviews.image = image ;
+    self.imageViewBG.image = image ;
 }
 
-//- (void)setItems:(NSArray *)items
-//{
-//    _items = items ;
-//    
-//    if (!items || [items isKindOfClass:[NSNull class]]) {
-//        return ;
-//    }
-//
-//    self.tagEditorImageView = nil ;
-//
-//    for (int i = 0; i < items.count; i++)
-//    {
-//        ArticlePicItemInfo *itemInfo = items[i] ;
-//        [self.tagEditorImageView addTagViewText:itemInfo.text
-//                                       Location:CGPointMake(itemInfo.posX, itemInfo.posY)
-//                          isPositiveAndNegative:[itemInfo positiveOrNagitive]
-//                                           type:itemInfo.type] ;
-//    }
-//}
-
-- (YXLTagEditorImageView *)tagEditorImageView
+- (UIImageView *)imageViewBG
 {
-    if (!_tagEditorImageView)
-    {
-        _tagEditorImageView = [[YXLTagEditorImageView alloc] initWithImage:nil
-                                                                     frame:CGRectMake(0, 0, APP_WIDTH - 20., APP_HEIGHT - 105 - 44 - 20)] ;
-        _tagEditorImageView.userInteractionEnabled = NO ;
+    if (!_imageViewBG) {
+        CGRect rect = CGRectMake(0, 0, APP_WIDTH - 20., APP_HEIGHT - 105 - 44 - 20) ;
+        _imageViewBG = [[UIImageView alloc] initWithFrame:rect] ;
+        _imageViewBG.userInteractionEnabled = YES ;
+        _imageViewBG.image = self.image ;
     }
-    return _tagEditorImageView ;
+    return _imageViewBG ;
 }
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    // Initialization code
+    _imgContainer.backgroundColor = [UIColor clearColor] ;
+    [_imgContainer addSubview:self.imageViewBG] ;
+}
+
 
 
 @end

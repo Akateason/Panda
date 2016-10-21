@@ -18,13 +18,26 @@
              };
 }
 
-- (BOOL)positiveOrNagitive
+- (BOOL)leftOrRight
 {
     if ([self.posType isEqualToString:@"RIGHT"]) {
         return false ;
     }
     return true ;
 }
+
+- (void)changeLeftAndRight
+{
+    if ([self.posType isEqualToString:@"RIGHT"]) {
+        self.posType = @"LEFT" ;
+    }
+    else {
+        self.posType = @"RIGHT" ;
+    }
+}
+
+
+
 
 - (NSArray *)tagGroup
 {
@@ -33,8 +46,8 @@
         NSString *strRes = [NSString stringWithFormat:@"%@ %@",self.brand,self.sku] ;
         [tmplist addObject:[strRes strMinusSpaceInPrefixAndTail]] ;
     }
-    if (self.currency.length > 0 || self.price.length > 0) {
-        NSString *strRes = [NSString stringWithFormat:@"%@ %@",self.currency,self.price] ;
+    if (self.currency.length > 0 || self.price > 0) {
+        NSString *strRes = [NSString stringWithFormat:@"%.1lf %@",self.price,self.currency] ;
         [tmplist addObject:[strRes strMinusSpaceInPrefixAndTail]] ;
     }
     if (self.nation.length > 0 || self.location.length > 0) {

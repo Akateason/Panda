@@ -173,21 +173,24 @@ typedef enum : NSUInteger {
   kMaxTagGroupThreeTagTypeLeft,
 } kMaxTagGroupType;
 
+
+@class ArticlePicItemInfo ;
+
 @interface MaxShapeView : UIView
 
-@property(nonatomic, readonly) CAShapeLayer *shapeLayer;
+@property(nonatomic)    int clientMaxShapeViewID ;
+@property(nonatomic,strong) ArticlePicItemInfo *itemInfo ;
 
+
+@property(nonatomic, readonly) CAShapeLayer *shapeLayer;
 @property(nonatomic, assign) BOOL reverse;
 @property(nonatomic, assign) kMaxTagGroupType type;
 @property(assign, nonatomic) CGPoint point;        //中心点
 @property(strong, nonatomic) NSArray *tagGroup;    //标签数组
 @property(strong, nonatomic) NSArray *oneTagGroup; //多的一侧的标签
 @property(strong, nonatomic) NSArray *twoTagGroup; //少的一侧的标签
-
 @property(strong, nonatomic) NSMutableArray *tagPointsArry; //点数组
-
 @property(strong, nonatomic) NSMutableArray *animationGroup; //动画数组
-
 @property(nonatomic, copy) void (^longPressBlock)(MaxShapeView *tagView);
 @property(nonatomic, copy) void (^tapBlock)(MaxShapeView *tagView, UILabel *tapLabel);
 @property(nonatomic, copy) void (^doubleTapBlock)(MaxShapeView *tagView);
@@ -201,5 +204,10 @@ typedef enum : NSUInteger {
          superFrame:(CGRect)superFrame;
 
 - (void)drawLine;
+
+
+
+
+
 
 @end

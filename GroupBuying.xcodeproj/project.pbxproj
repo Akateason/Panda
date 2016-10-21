@@ -309,9 +309,6 @@
 		D76E84731D780FAC0014FDEA /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E84661D780FAC0014FDEA /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		D76E84741D780FAC0014FDEA /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E84681D780FAC0014FDEA /* View+MASAdditions.m */; };
 		D76E84751D780FAC0014FDEA /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E846B1D780FAC0014FDEA /* ViewController+MASAdditions.m */; };
-		D76E84881D7817A50014FDEA /* YXLTagEditorImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E847E1D7817A50014FDEA /* YXLTagEditorImageView.m */; };
-		D76E848A1D7817A50014FDEA /* YXLTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E84821D7817A50014FDEA /* YXLTagView.m */; };
-		D76E848B1D7817A50014FDEA /* YXLWaterFlowImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E84841D7817A50014FDEA /* YXLWaterFlowImageView.m */; };
 		D76E84A51D79883A0014FDEA /* KICropImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E84A21D79883A0014FDEA /* KICropImageView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D76E84A91D7997D80014FDEA /* CuttingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E84A81D7997D80014FDEA /* CuttingViewController.m */; };
 		D7886D511D90EFAB003D6D57 /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7886D4F1D90EFAB003D6D57 /* CommentCell.m */; };
@@ -1002,12 +999,6 @@
 		D76E84691D780FAC0014FDEA /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		D76E846A1D780FAC0014FDEA /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		D76E846B1D780FAC0014FDEA /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
-		D76E847D1D7817A50014FDEA /* YXLTagEditorImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLTagEditorImageView.h; sourceTree = "<group>"; };
-		D76E847E1D7817A50014FDEA /* YXLTagEditorImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLTagEditorImageView.m; sourceTree = "<group>"; };
-		D76E84811D7817A50014FDEA /* YXLTagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLTagView.h; sourceTree = "<group>"; };
-		D76E84821D7817A50014FDEA /* YXLTagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLTagView.m; sourceTree = "<group>"; };
-		D76E84831D7817A50014FDEA /* YXLWaterFlowImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLWaterFlowImageView.h; sourceTree = "<group>"; };
-		D76E84841D7817A50014FDEA /* YXLWaterFlowImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLWaterFlowImageView.m; sourceTree = "<group>"; };
 		D76E84A11D79883A0014FDEA /* KICropImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KICropImageView.h; sourceTree = "<group>"; };
 		D76E84A21D79883A0014FDEA /* KICropImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KICropImageView.m; sourceTree = "<group>"; };
 		D76E84A71D7997D80014FDEA /* CuttingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CuttingViewController.h; path = "GroupBuying/VC+V/PhotoEditor/Cut/CuttingViewController.h"; sourceTree = SOURCE_ROOT; };
@@ -2526,20 +2517,6 @@
 			path = Masonry;
 			sourceTree = "<group>";
 		};
-		D76E84761D7817A50014FDEA /* YXLImageLabel */ = {
-			isa = PBXGroup;
-			children = (
-				D76E847D1D7817A50014FDEA /* YXLTagEditorImageView.h */,
-				D76E847E1D7817A50014FDEA /* YXLTagEditorImageView.m */,
-				D76E84811D7817A50014FDEA /* YXLTagView.h */,
-				D76E84821D7817A50014FDEA /* YXLTagView.m */,
-				D76E84831D7817A50014FDEA /* YXLWaterFlowImageView.h */,
-				D76E84841D7817A50014FDEA /* YXLWaterFlowImageView.m */,
-			);
-			name = YXLImageLabel;
-			path = "GroupBuying/VC+V/PhotoEditor/YXLImageLabel";
-			sourceTree = SOURCE_ROOT;
-		};
 		D76E84951D7845ED0014FDEA /* TaggingPhoto */ = {
 			isa = PBXGroup;
 			children = (
@@ -2548,7 +2525,6 @@
 				D7CE2A431DB70F5600FF452C /* TagInfomationViewController.h */,
 				D7CE2A441DB70F5600FF452C /* TagInfomationViewController.m */,
 				D7CE2A391DB637B700FF452C /* XHS_MaxShapeView */,
-				D76E84761D7817A50014FDEA /* YXLImageLabel */,
 			);
 			name = TaggingPhoto;
 			sourceTree = "<group>";
@@ -3340,7 +3316,6 @@
 				D75CC5B11C2A965000E590E6 /* ASICloudFilesContainer.m in Sources */,
 				D75CC5B41C2A965000E590E6 /* ASICloudFilesObject.m in Sources */,
 				D7CE29CB1DAB3D7500FF452C /* EditFilterSampleController.m in Sources */,
-				D76E848B1D7817A50014FDEA /* YXLWaterFlowImageView.m in Sources */,
 				60074E1E1D634AE80040C3C0 /* XTColorFetcher.m in Sources */,
 				D76E83FA1D7524BA0014FDEA /* PostPhotosCell.m in Sources */,
 				D7886D641D915787003D6D57 /* FVCBannerCell.m in Sources */,
@@ -3396,7 +3371,6 @@
 				D75CC5F71C2A965000E590E6 /* SDWebImageDecoder.m in Sources */,
 				D7E4FF031DA8D74800DC0E53 /* MyFansFocusCell.m in Sources */,
 				D75CC5D81C2A965000E590E6 /* MJRefreshGifHeader.m in Sources */,
-				D76E84881D7817A50014FDEA /* YXLTagEditorImageView.m in Sources */,
 				D75CC5EC1C2A965000E590E6 /* QNConfiguration.m in Sources */,
 				D75CC5A31C2A965000E590E6 /* AFSecurityPolicy.m in Sources */,
 				D75CC5EA1C2A965000E590E6 /* QNUserAgent.m in Sources */,
@@ -3427,7 +3401,6 @@
 				D7E0F4BE1D87EA7700EA663B /* NoteListViewItem.m in Sources */,
 				D76E84731D780FAC0014FDEA /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				D75CC5A21C2A965000E590E6 /* AFNetworkReachabilityManager.m in Sources */,
-				D76E848A1D7817A50014FDEA /* YXLTagView.m in Sources */,
 				D75CC5D11C2A965000E590E6 /* MJRefreshHeader.m in Sources */,
 				D75CC6031C2A965000E590E6 /* SIAlertView.m in Sources */,
 				D7CE2A051DAF85E600FF452C /* MyCouponCodeCtrller.m in Sources */,

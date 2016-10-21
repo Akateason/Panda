@@ -7,7 +7,7 @@
 //
 
 #import "ResultParsered.h"
-#import "CommonFunc.h"
+#import "UserOnDevice.h"
 
 @implementation ResultParsered
 
@@ -20,7 +20,7 @@
         if (_code == -53)
         {
             // token失效
-            [CommonFunc exitLog] ;
+            [UserOnDevice clean] ;
         }
         _data = dict[@"data"] ;
         
@@ -40,7 +40,7 @@
     if (_code == -53)
     {
         // token失效
-        [CommonFunc exitLog] ;
+        [UserOnDevice clean] ;
     }
     _data = dic[@"data"] ;
     _errMsg = dic[@"errMsg"] ;

@@ -13,7 +13,6 @@
 #import "UserOnDevice.h"
 #import "User.h"
 #import "XTTickConvert.h"
-#import "SIAlertView.h"
 #import "UIImage+AddFunction.h"
 #import "Resource.h"
 #import "YYModel.h"

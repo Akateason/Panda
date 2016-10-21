@@ -9,6 +9,7 @@
 #import "MaxLightingView.h"
 #import "MaxShapeView.h"
 #import "NSString+SizeWithFont.h"
+#import "ArticlePicItemInfo.h"
 //
 #define kHeight50DPDistance 25
 #define kHegiht60DPDistance 30
@@ -57,6 +58,30 @@
 
 @implementation MaxShapeView
 
+- (void)setItemInfo:(ArticlePicItemInfo *)itemInfo
+{
+    _itemInfo = itemInfo ;
+    
+    self.tagGroup = [itemInfo tagGroup] ;
+}
+
+- (void)setTagGroup:(NSArray *)tagGroup
+{
+    _tagGroup = tagGroup ;
+    
+    // reset type
+    if (tagGroup.count == 1) {
+        self.type = ![self.itemInfo leftOrRight] ? kMaxTagGroupOneTagTypeRight : kMaxTagGroupOneTagTypeLeft ;
+    } else if (tagGroup.count == 2) {
+        self.type = ![self.itemInfo leftOrRight] ? kMaxTagGroupTwoTagTypeRight : kMaxTagGroupTwoTagTypeLeft ;
+    } else if (tagGroup.count == 3) {
+        self.type = ![self.itemInfo leftOrRight] ? kMaxTagGroupThreeTagTypeRight : kMaxTagGroupThreeTagTypeLeft ;
+    }
+    
+}
+
+
+
 + (Class)layerClass {
     return [CAShapeLayer class];
 }
@@ -87,14 +112,13 @@
         self.type = type;
         
         if (type == kMaxTagGroupTypeDefault) {
-            
-            if (tagGroup.count == 1) {
-                self.type = kMaxTagGroupOneTagTypeRight;
-            } else if (tagGroup.count == 2) {
-                self.type = kMaxTagGroupTwoTagTypeBrokenRight;
-            } else if (tagGroup.count == 3) {
-                self.type = kMaxTagGroupThreeTagTypeLeftBottom;
-            }
+//            if (tagGroup.count == 1) {
+//                self.type = kMaxTagGroupOneTagTypeRight;
+//            } else if (tagGroup.count == 2) {
+//                self.type = kMaxTagGroupTwoTagTypeBrokenRight;
+//            } else if (tagGroup.count == 3) {
+//                self.type = kMaxTagGroupThreeTagTypeLeftBottom;
+//            }
         }
         
         self.opaque = NO;
@@ -123,12 +147,40 @@
     return self;
 }
 
-- (void)drawLine {
+- (void)drawLine
+{
+    if (_lineLayer0) {
+        [_lineLayer0 removeFromSuperlayer];
+        _lineLayer0 = nil;
+        [_linePoint0 removeFromSuperlayer];
+        _linePoint0 = nil;
+        [_lineLabel0 removeFromSuperview];
+        _lineLabel0 = nil;
+    }
+    if (_lineLayer1) {
+        [_lineLayer1 removeFromSuperlayer];
+        _lineLayer1 = nil;
+        [_linePoint1 removeFromSuperlayer];
+        _linePoint1 = nil;
+        [_lineLabel1 removeFromSuperview];
+        _lineLabel1 = nil;
+    }
+    if (_lineLayer2) {
+        [_lineLayer2 removeFromSuperlayer];
+        _lineLayer2 = nil;
+        [_linePoint2 removeFromSuperlayer];
+        _linePoint2 = nil;
+        [_lineLabel2 removeFromSuperview];
+        _lineLabel2 = nil;
+    }
+    
+    if (self.tagGroup.count == 0) return ;
+    
     if (self.tagGroup.count == 1) {
         [self drawLineOne];
     } else if (self.tagGroup.count == 2) {
         [self drawLineTwo];
-    } else {
+    } else if (self.tagGroup.count == 3) {
         [self drawLineThree];
     }
 }
@@ -466,6 +518,7 @@
                                 2 * kHeight50DPDistance + kLabelHeight);
         
         point = CGPointMake(0, CGRectGetHeight(self.frame) / 2);
+        
         for (int idx = 0; idx < self.tagGroup.count; idx++) {
             //      CGFloat lineWidth =
             //          [NSString widthWithAttributes:nil text:self.tagGroup[idx]];
@@ -613,7 +666,7 @@
                 lineLayer = _lineLayer0;
                 linePoint = _linePoint0;
                 textlabel = _lineLabel0;
-                currentTagIndex = 0;
+                currentTagIndex = idx;
             } break;
             case 1: {
                 if (!_lineLayer1) {
@@ -634,7 +687,7 @@
                 lineLayer = _lineLayer1;
                 linePoint = _linePoint1;
                 textlabel = _lineLabel1;
-                currentTagIndex = 1;
+                currentTagIndex = idx;
             } break;
             default:
                 lineLayer = [CAShapeLayer layer];
@@ -709,16 +762,15 @@
                 break;
         }
         
-        textlabel.text = self.tagGroup[currentTagIndex];
+        textlabel.text = self.tagGroup[idx];
         textlabel.font = [UIFont systemFontOfSize:12];
         textlabel.hidden = YES;
     }];
 }
 
 - (void)drawLineThree {
-    CGPoint point;
+    CGPoint point = CGPointMake(0, 0);
     //添加 文字显示
-    
     CGFloat maxTotleMaxLength =
     [NSString maxestWidthWithStringArray:self.tagGroup];
     CGFloat maxSingleSideLength = [NSString
@@ -1599,7 +1651,7 @@
             value = kMaxTagGroupOneTagTypeRight;
         }
         value++;
-        if (value == kMaxTagGroupOneTagTypeLeftBottom+1)
+        if (value == kMaxTagGroupOneTagTypeLeft+1)
         {
             value = kMaxTagGroupOneTagTypeRight;
         }
@@ -1610,12 +1662,12 @@
         value = self.type;
         if (value == kMaxTagGroupTypeDefault)
         {
-            value = kMaxTagGroupTwoTagTypeBrokenRight;
+            value = kMaxTagGroupTwoTagTypeRight;
         }
         value++;
         if (value == kMaxTagGroupTwoTagTypeLeft+1)
         {
-            value = kMaxTagGroupTwoTagTypeBrokenRight;
+            value = kMaxTagGroupTwoTagTypeRight;
         }
         self.type = value;
     }
@@ -1624,15 +1676,22 @@
         value = self.type;
         if (value == kMaxTagGroupTypeDefault)
         {
-            value = kMaxTagGroupThreeTagTypeLeftBottom;
+            value = kMaxTagGroupThreeTagTypeRight;
         }
         value++;
         if (value == kMaxTagGroupThreeTagTypeLeft+1)
         {
-            value = kMaxTagGroupThreeTagTypeLeftBottom;
+            value = kMaxTagGroupThreeTagTypeRight;
         }
         self.type = value;
     }
+    //
+    [self.itemInfo changeLeftAndRight] ;
+    //
     [self drawLine];
 }
+
 @end
+
+
+

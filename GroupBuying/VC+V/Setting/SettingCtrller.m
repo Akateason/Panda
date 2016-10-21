@@ -8,7 +8,6 @@
 
 #import "SettingCtrller.h"
 #import "SettingCell.h"
-#import "SIAlertView.h"
 #import "UserOnDevice.h"
 #import "MineUserEditCtrl.h"
 #import "SDImageCache.h"

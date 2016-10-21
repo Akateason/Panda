@@ -26,7 +26,7 @@
 
 
 @property (nonatomic,strong) NSArray *tflist ;
-@property (nonatomic)      BOOL     bAddOrEdit ;
+@property (nonatomic)        int     maxShapeView_clientID ;
 
 @end
 
@@ -35,9 +35,9 @@
 #pragma - public
 
 - (void)showInView:(UIView *)view
-         addOrEdit:(BOOL)addOrEdit
+          clientID:(int)clientID
 {
-    self.bAddOrEdit = addOrEdit ;
+    self.maxShapeView_clientID = clientID ;
     [view addSubview:self.view] ;
 }
 
@@ -59,7 +59,7 @@
     self.tf_brand.text = itemInfo.brand ;
     self.tf_name.text = itemInfo.sku ;
     self.tf_moneyType.text = itemInfo.currency ;
-    self.tf_price.text = itemInfo.price ;
+    self.tf_price.text = [NSString stringWithFormat:@"%lf",itemInfo.price] ;     
     self.tf_countryCity.text = itemInfo.nation ;
     self.tf_locationDetail.text = itemInfo.location ;
 }
@@ -78,7 +78,12 @@
         if (tf.text.length > 0) bHasChanged = true ;
     }
     
-    if (bHasChanged) self.outputBlock(tmplist, self.bAddOrEdit) ;
+    if (bHasChanged)
+    {
+        if (self.delegate && [self.delegate respondsToSelector:@selector(outputWithResultStrList:clientID:)]) {
+            [self.delegate outputWithResultStrList:tmplist clientID:self.maxShapeView_clientID] ;
+        }
+    }
     
     [self.view removeFromSuperview] ;
 }
@@ -87,7 +92,9 @@
 {
     for (UITextField *tf in self.tflist) { tf.text = @"" ; }
     
-    self.cancelBlock() ;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(cancel)]) {
+        [self.delegate cancel] ;
+    }
     
     [self.view removeFromSuperview] ;
     
@@ -133,9 +140,14 @@
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
     NSLog(@"placeholder : %@",textField.placeholder) ;
+    NSLog(@"text : %@",textField.text) ;
     
     if (!bClearBtClcked) {
-        self.inputBlock(textField.text, textField.tag) ;
+        
+        if (self.delegate && [self.delegate respondsToSelector:@selector(inputTextFieldWithStrVal:type:)]) {
+            [self.delegate inputTextFieldWithStrVal:textField.text type:textField.tag] ;
+        }
+        
     }
     else {
         bClearBtClcked = NO ;
