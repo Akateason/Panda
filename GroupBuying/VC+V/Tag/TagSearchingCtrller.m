@@ -21,7 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIView         *topView;
 @property (weak, nonatomic) IBOutlet UISearchBar    *searchBar;
 
-@property (nonatomic,strong) XTSearchHandler        *searchHandler ;
+@property (nonatomic,strong) XTSearchHandler        *searchHandler ; // 笔记标签
 @property (nonatomic,strong) NSArray                *listTag ;
 @property (nonatomic,strong) CurrencyAndCountryHandler  *currencyAndCountryHandler ;
 
@@ -127,10 +127,14 @@
 - (void)schWithText:(NSString *)searchText
 {
     switch (self.tagInfomationType) {
+        case t_note_Tag:
+        {
+            [self.searchHandler searchWithText:searchText] ;
+        }
+            break;
         case t_brand:
         {
-            // server
-            [self.searchHandler searchWithText:searchText] ;
+            // not
         }
             break;
         case t_name:
@@ -203,10 +207,10 @@
     else if (indexPath.section == 1)
     {
         cell.cellType = typeDefaultDisplay ;
-        if (self.tagInfomationType == t_brand) {
+        if (self.tagInfomationType == t_note_Tag) { // 笔记标签
             cell.strDisplay = ((ArticleTag *)self.listTag[indexPath.row]).name ;
         }
-        else {
+        else { // 图片标签
             cell.strDisplay = self.listTag[indexPath.row] ;
         }
         

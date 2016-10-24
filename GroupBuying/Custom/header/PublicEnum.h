@@ -19,6 +19,9 @@ typedef NS_ENUM(NSUInteger, CameraViewControllerOpenType) {
 static const NSUInteger kTAG_TagInfomation_textfield = 43421 ;
 
 typedef NS_ENUM(NSUInteger, TypeOfTagInformationTextfield) {
+    t_note_Tag = 0 , // 笔记标签
+    
+    // 图片标签
     t_brand = kTAG_TagInfomation_textfield ,
     t_name ,
     t_moneyType ,
