@@ -12,16 +12,18 @@
 #import "XTSearchHandler.h"
 #import "ArticleTag.h"
 #import "Pic.h"
+#import "CurrencyAndCountryHandler.h"
 
 @interface TagSearchingCtrller () <UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate>
 
-@property (weak, nonatomic) IBOutlet UITableView *table;
-@property (weak, nonatomic) IBOutlet UIButton *btCancel;
-@property (weak, nonatomic) IBOutlet UIView *topView;
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UITableView    *table;
+@property (weak, nonatomic) IBOutlet UIButton       *btCancel;
+@property (weak, nonatomic) IBOutlet UIView         *topView;
+@property (weak, nonatomic) IBOutlet UISearchBar    *searchBar;
 
-@property (nonatomic,strong) XTSearchHandler    *searchHandler ;
-@property (nonatomic,strong) NSArray            *listTag ;
+@property (nonatomic,strong) XTSearchHandler        *searchHandler ;
+@property (nonatomic,strong) NSArray                *listTag ;
+@property (nonatomic,strong) CurrencyAndCountryHandler  *currencyAndCountryHandler ;
 
 @end
 
@@ -32,17 +34,49 @@
 {
     _tagInfomationType = tagInfomationType ;
     
-    NSLog(@"tagInfomationType : %ld",tagInfomationType) ;
+    NSLog(@"tagInfomationType : %ld",(unsigned long)tagInfomationType) ;
+}
+
+- (XTSearchHandler *)searchHandler
+{
+    if (!_searchHandler) {
+        _searchHandler = [[XTSearchHandler alloc] init] ;
+        TagSearchingCtrller * __weak weakSelf = self ;
+        
+        _searchHandler.searchComplete = ^(NSURLSessionDataTask *task, id responseObject){
+            ResultParsered *result = [ResultParsered yy_modelWithJSON:responseObject] ;
+            if (result.code == 1) {
+                NSMutableArray *tmplist = [@[] mutableCopy] ;
+                NSArray *listDict = result.data[@"articleTagList"] ;
+                for (NSDictionary *dic in listDict)
+                {
+                    ArticleTag *aTag = [ArticleTag yy_modelWithDictionary:dic] ;
+                    [tmplist addObject:aTag] ;
+                }
+                weakSelf.listTag = tmplist ;
+                [weakSelf.table reloadData] ;
+            }
+        } ;
+    }
+    return _searchHandler ;
+}
+
+- (CurrencyAndCountryHandler *)currencyAndCountryHandler
+{
+    if (!_currencyAndCountryHandler) {
+        _currencyAndCountryHandler = [[CurrencyAndCountryHandler alloc] init] ;
+    }
+    return _currencyAndCountryHandler ;
 }
 
 
 #pragma mark - action
 - (IBAction)btCancelOnClick:(id)sender
 {
-    if (!_searchBar.text.length) {
-        [SVProgressHUD showErrorWithStatus:@"请输入标签哦"] ;
-        return ;
-    }
+//    if (!_searchBar.text.length) {
+//        [SVProgressHUD showErrorWithStatus:@"请输入标签哦"] ;
+//        return ;
+//    }
     
     _block(nil) ;
     [self dismissViewControllerAnimated:YES completion:nil] ;
@@ -59,24 +93,9 @@
     self.searchBar.text = self.strWillEdit ;
     [self configureUI] ;
     
-    self.searchHandler = [[XTSearchHandler alloc] init] ;
-    TagSearchingCtrller * __weak weakSelf = self ;
-    
-    self.searchHandler.searchComplete = ^(NSURLSessionDataTask *task, id responseObject){
-        ResultParsered *result = [ResultParsered yy_modelWithJSON:responseObject] ;
-        if (result.code == 1) {
-            NSMutableArray *tmplist = [@[] mutableCopy] ;
-            NSArray *listDict = result.data[@"articleTagList"] ;
-            for (NSDictionary *dic in listDict)
-            {
-                ArticleTag *aTag = [ArticleTag yy_modelWithDictionary:dic] ;
-                [tmplist addObject:aTag] ;
-            }
-            
-            weakSelf.listTag = tmplist ;
-            [weakSelf.table reloadData] ;
-        }
-    } ;
+    if (self.tagInfomationType == t_price) {
+        _searchBar.keyboardType = UIKeyboardTypeNumberPad ;
+    }
 }
 
 - (void)configureUI
@@ -96,14 +115,57 @@
 #pragma mark - UISearchBarDelegate
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
-    [self.searchHandler searchWithText:searchBar.text] ;
+    [self schWithText:searchBar.text] ;
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-    [self.searchHandler searchWithText:searchText] ;
+    [self schWithText:searchText] ;
 }
 
+
+- (void)schWithText:(NSString *)searchText
+{
+    switch (self.tagInfomationType) {
+        case t_brand:
+        {
+            // server
+            [self.searchHandler searchWithText:searchText] ;
+        }
+            break;
+        case t_name:
+        {
+            // not
+        }
+            break;
+        case t_moneyType:
+        {
+            // plist
+            self.listTag = [self.currencyAndCountryHandler schCurrency:searchText] ;
+        }
+            break;
+        case t_price:
+        {
+            // not
+        }
+            break;
+        case t_coutry:
+        {
+            // plist
+            self.listTag = [self.currencyAndCountryHandler schCountry:searchText] ;
+        }
+            break;
+        case t_location:
+        {
+            // not
+        }
+            break;
+        default:
+            break;
+    }
+    
+    [_table reloadData] ;
+}
 
 
 
@@ -141,7 +203,13 @@
     else if (indexPath.section == 1)
     {
         cell.cellType = typeDefaultDisplay ;
-        cell.strDisplay = ((ArticleTag *)self.listTag[indexPath.row]).name ;
+        if (self.tagInfomationType == t_brand) {
+            cell.strDisplay = ((ArticleTag *)self.listTag[indexPath.row]).name ;
+        }
+        else {
+            cell.strDisplay = self.listTag[indexPath.row] ;
+        }
+        
     }
     
     return cell ;

@@ -352,6 +352,8 @@
 		D7CE2A411DB637B700FF452C /* MaxShapeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A3D1DB637B700FF452C /* MaxShapeView.m */; };
 		D7CE2A421DB637B700FF452C /* NSString+SizeWithFont.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A3F1DB637B700FF452C /* NSString+SizeWithFont.m */; };
 		D7CE2A461DB70F5600FF452C /* TagInfomationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A441DB70F5600FF452C /* TagInfomationViewController.m */; };
+		D7CE2A4D1DBDAB5800FF452C /* CurrencyAndCountry.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7CE2A4C1DBDAB5800FF452C /* CurrencyAndCountry.plist */; };
+		D7CE2A501DBDBE3700FF452C /* CurrencyAndCountryHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A4F1DBDBE3700FF452C /* CurrencyAndCountryHandler.m */; };
 		D7E0F4B41D87ADF700EA663B /* ArticlePicItemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */; };
 		D7E0F4B71D87B2D100EA663B /* ArticlePicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B61D87B2D100EA663B /* ArticlePicItem.m */; };
 		D7E0F4BA1D87B42D00EA663B /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B91D87B42D00EA663B /* Article.m */; };
@@ -1075,6 +1077,9 @@
 		D7CE2A3F1DB637B700FF452C /* NSString+SizeWithFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SizeWithFont.m"; sourceTree = "<group>"; };
 		D7CE2A431DB70F5600FF452C /* TagInfomationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagInfomationViewController.h; path = "GroupBuying/VC+V/Tag/TagInfomationViewController.h"; sourceTree = SOURCE_ROOT; };
 		D7CE2A441DB70F5600FF452C /* TagInfomationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagInfomationViewController.m; path = "GroupBuying/VC+V/Tag/TagInfomationViewController.m"; sourceTree = SOURCE_ROOT; };
+		D7CE2A4C1DBDAB5800FF452C /* CurrencyAndCountry.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CurrencyAndCountry.plist; path = "GroupBuying/VC+V/Tag/CurrencyAndCountry.plist"; sourceTree = SOURCE_ROOT; };
+		D7CE2A4E1DBDBE3700FF452C /* CurrencyAndCountryHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CurrencyAndCountryHandler.h; path = "GroupBuying/VC+V/Tag/CurrencyAndCountryHandler.h"; sourceTree = SOURCE_ROOT; };
+		D7CE2A4F1DBDBE3700FF452C /* CurrencyAndCountryHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CurrencyAndCountryHandler.m; path = "GroupBuying/VC+V/Tag/CurrencyAndCountryHandler.m"; sourceTree = SOURCE_ROOT; };
 		D7E0F4B21D87ADF700EA663B /* ArticlePicItemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItemInfo.h; sourceTree = "<group>"; };
 		D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlePicItemInfo.m; sourceTree = "<group>"; };
 		D7E0F4B51D87B2D100EA663B /* ArticlePicItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItem.h; sourceTree = "<group>"; };
@@ -1654,6 +1659,7 @@
 		D75CC3F91C2A92B200E590E6 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				D7CE2A391DB637B700FF452C /* XHS_MaxShapeView */,
 				608076001D8066EE0056573F /* UIAlternaiveButton */,
 				D76E84A01D79883A0014FDEA /* CropImageView */,
 				D76E84521D780FAC0014FDEA /* Masonry */,
@@ -2522,9 +2528,7 @@
 			children = (
 				D76E844F1D77CCAC0014FDEA /* PhotoTaggingCtrller.h */,
 				D76E84501D77CCAC0014FDEA /* PhotoTaggingCtrller.m */,
-				D7CE2A431DB70F5600FF452C /* TagInfomationViewController.h */,
-				D7CE2A441DB70F5600FF452C /* TagInfomationViewController.m */,
-				D7CE2A391DB637B700FF452C /* XHS_MaxShapeView */,
+				D7CE2A4B1DBDAA4C00FF452C /* TagInfoVC */,
 			);
 			name = TaggingPhoto;
 			sourceTree = "<group>";
@@ -2582,6 +2586,9 @@
 		D7886D571D912DEE003D6D57 /* TagSearchVC */ = {
 			isa = PBXGroup;
 			children = (
+				D7CE2A4C1DBDAB5800FF452C /* CurrencyAndCountry.plist */,
+				D7CE2A4E1DBDBE3700FF452C /* CurrencyAndCountryHandler.h */,
+				D7CE2A4F1DBDBE3700FF452C /* CurrencyAndCountryHandler.m */,
 				6035CF2F1D75E64E00EA590B /* TagSearchingCtrller.h */,
 				6035CF301D75E64E00EA590B /* TagSearchingCtrller.m */,
 				6035CF321D75EDBA00EA590B /* TagSearchingCell.h */,
@@ -2739,6 +2746,15 @@
 			name = XHS_MaxShapeView;
 			path = GroupBuying/Help/XHS_MaxShapeView;
 			sourceTree = SOURCE_ROOT;
+		};
+		D7CE2A4B1DBDAA4C00FF452C /* TagInfoVC */ = {
+			isa = PBXGroup;
+			children = (
+				D7CE2A431DB70F5600FF452C /* TagInfomationViewController.h */,
+				D7CE2A441DB70F5600FF452C /* TagInfomationViewController.m */,
+			);
+			name = TagInfoVC;
+			sourceTree = "<group>";
 		};
 		D7E0F4B11D87ADBF00EA663B /* Article */ = {
 			isa = PBXGroup;
@@ -3085,6 +3101,7 @@
 				60319D691D8F1E8900BD094D /* DetailRecommend Cell.xib in Resources */,
 				D76E838C1D6D48560014FDEA /* AlbumnCell.xib in Resources */,
 				D7E994C01D98C9D800EACDFB /* FeaturesPdtCollectionCell.xib in Resources */,
+				D7CE2A4D1DBDAB5800FF452C /* CurrencyAndCountry.plist in Resources */,
 				D7E9946C1D94CEF000EACDFB /* Mine.storyboard in Resources */,
 				60319D891D91AE4300BD094D /* FVCRecommendCell.xib in Resources */,
 				D76E84001D7526250014FDEA /* PostPhotoCollectionCell.xib in Resources */,
@@ -3193,6 +3210,7 @@
 				D75CC44D1C2A95DE00E590E6 /* DigitInformation.m in Sources */,
 				D75CC6C41C2BEB0400E590E6 /* RootTableView.m in Sources */,
 				D76E83FF1D7526250014FDEA /* PostPhotoCollectionCell.m in Sources */,
+				D7CE2A501DBDBE3700FF452C /* CurrencyAndCountryHandler.m in Sources */,
 				D75CC5A81C2A965000E590E6 /* ASIAuthenticationDialog.m in Sources */,
 				D75CC5FD1C2A965000E590E6 /* UIImage+GIF.m in Sources */,
 				D75CC5E31C2A965000E590E6 /* QNCrc32.m in Sources */,

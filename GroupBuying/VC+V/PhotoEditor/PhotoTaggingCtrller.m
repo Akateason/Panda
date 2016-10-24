@@ -41,6 +41,7 @@
                             type:(TypeOfTagInformationTextfield)type
 {
     TagSearchingCtrller *tagSearchVC = (TagSearchingCtrller *)[[RootCtrl class] getCtrllerFromStory:@"Camera" controllerIdentifier:@"TagSearchingCtrller"] ;
+    tagSearchVC.tagInfomationType = type ;
     tagSearchVC.block = ^(NSString *text){
         [self.taginfoVC refreshTextFieldWithType:type string:text] ;
     } ;
