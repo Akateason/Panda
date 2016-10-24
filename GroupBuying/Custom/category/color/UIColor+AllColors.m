@@ -86,4 +86,10 @@
     return [[XTColorFetcher class] xt_colorWithKey:@"w_red"] ;
 }
 
++ (UIColor *)xt_w_desc2
+{
+    return [[XTColorFetcher class] xt_colorWithKey:@"w_desc2"] ;
+}
+
+
 @end

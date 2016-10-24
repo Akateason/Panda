@@ -354,6 +354,8 @@
 		D7CE2A461DB70F5600FF452C /* TagInfomationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A441DB70F5600FF452C /* TagInfomationViewController.m */; };
 		D7CE2A4D1DBDAB5800FF452C /* CurrencyAndCountry.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7CE2A4C1DBDAB5800FF452C /* CurrencyAndCountry.plist */; };
 		D7CE2A501DBDBE3700FF452C /* CurrencyAndCountryHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A4F1DBDBE3700FF452C /* CurrencyAndCountryHandler.m */; };
+		D7CE2A541DBDEFC100FF452C /* CommentsListCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A531DBDEFC100FF452C /* CommentsListCtrller.m */; };
+		D7CE2A571DBDEFF900FF452C /* CommentsPostCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A561DBDEFF900FF452C /* CommentsPostCtrller.m */; };
 		D7E0F4B41D87ADF700EA663B /* ArticlePicItemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */; };
 		D7E0F4B71D87B2D100EA663B /* ArticlePicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B61D87B2D100EA663B /* ArticlePicItem.m */; };
 		D7E0F4BA1D87B42D00EA663B /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B91D87B42D00EA663B /* Article.m */; };
@@ -1080,6 +1082,10 @@
 		D7CE2A4C1DBDAB5800FF452C /* CurrencyAndCountry.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CurrencyAndCountry.plist; path = "GroupBuying/VC+V/Tag/CurrencyAndCountry.plist"; sourceTree = SOURCE_ROOT; };
 		D7CE2A4E1DBDBE3700FF452C /* CurrencyAndCountryHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CurrencyAndCountryHandler.h; path = "GroupBuying/VC+V/Tag/CurrencyAndCountryHandler.h"; sourceTree = SOURCE_ROOT; };
 		D7CE2A4F1DBDBE3700FF452C /* CurrencyAndCountryHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CurrencyAndCountryHandler.m; path = "GroupBuying/VC+V/Tag/CurrencyAndCountryHandler.m"; sourceTree = SOURCE_ROOT; };
+		D7CE2A521DBDEFC100FF452C /* CommentsListCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentsListCtrller.h; path = "GroupBuying/VC+V/Comments/CommentsListCtrller.h"; sourceTree = SOURCE_ROOT; };
+		D7CE2A531DBDEFC100FF452C /* CommentsListCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentsListCtrller.m; path = "GroupBuying/VC+V/Comments/CommentsListCtrller.m"; sourceTree = SOURCE_ROOT; };
+		D7CE2A551DBDEFF900FF452C /* CommentsPostCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentsPostCtrller.h; path = "GroupBuying/VC+V/Comments/CommentsPostCtrller.h"; sourceTree = SOURCE_ROOT; };
+		D7CE2A561DBDEFF900FF452C /* CommentsPostCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentsPostCtrller.m; path = "GroupBuying/VC+V/Comments/CommentsPostCtrller.m"; sourceTree = SOURCE_ROOT; };
 		D7E0F4B21D87ADF700EA663B /* ArticlePicItemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItemInfo.h; sourceTree = "<group>"; };
 		D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlePicItemInfo.m; sourceTree = "<group>"; };
 		D7E0F4B51D87B2D100EA663B /* ArticlePicItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItem.h; sourceTree = "<group>"; };
@@ -1624,6 +1630,7 @@
 		D75CC3F71C2A92B200E590E6 /* VC+V */ = {
 			isa = PBXGroup;
 			children = (
+				D7CE2A511DBDEF5700FF452C /* Comments */,
 				D7E4FF171DA8E34B00DC0E53 /* Shop */,
 				60074DF91D60DEC90040C3C0 /* HomePage1 */,
 				60074E001D60DF410040C3C0 /* Find1 */,
@@ -2756,6 +2763,17 @@
 			name = TagInfoVC;
 			sourceTree = "<group>";
 		};
+		D7CE2A511DBDEF5700FF452C /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				D7CE2A521DBDEFC100FF452C /* CommentsListCtrller.h */,
+				D7CE2A531DBDEFC100FF452C /* CommentsListCtrller.m */,
+				D7CE2A551DBDEFF900FF452C /* CommentsPostCtrller.h */,
+				D7CE2A561DBDEFF900FF452C /* CommentsPostCtrller.m */,
+			);
+			name = Comments;
+			sourceTree = "<group>";
+		};
 		D7E0F4B11D87ADBF00EA663B /* Article */ = {
 			isa = PBXGroup;
 			children = (
@@ -3267,6 +3285,7 @@
 				D75CC5E41C2A965000E590E6 /* QNEtag.m in Sources */,
 				60074E031D60DFDC0040C3C0 /* FindController.m in Sources */,
 				D7886D561D910799003D6D57 /* Comment.m in Sources */,
+				D7CE2A571DBDEFF900FF452C /* CommentsPostCtrller.m in Sources */,
 				D75CC5D61C2A965000E590E6 /* MJRefreshBackNormalFooter.m in Sources */,
 				D74589901D6AE3D700835234 /* KxMenu.m in Sources */,
 				D75CC5B21C2A965000E590E6 /* ASICloudFilesContainerRequest.m in Sources */,
@@ -3367,6 +3386,7 @@
 				D75CC6021C2A965000E590E6 /* UIView+WebCacheOperation.m in Sources */,
 				D75CC7341C2D13C000E590E6 /* YYClassInfo.m in Sources */,
 				D7E994C51D98F4FD00EACDFB /* FeaturesRecommendCell.m in Sources */,
+				D7CE2A541DBDEFC100FF452C /* CommentsListCtrller.m in Sources */,
 				6035CF341D75EDBA00EA590B /* TagSearchingCell.m in Sources */,
 				D75CC5C11C2A965000E590E6 /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				D7CE29DB1DAE3A5600FF452C /* MineNavCtrller.m in Sources */,

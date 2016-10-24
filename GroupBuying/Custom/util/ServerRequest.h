@@ -12,7 +12,7 @@
 #import "XTRequest.h"
 #import "ResultParsered.h"
 #import "PublicEnum.h"
-@class User,Article,AFHTTPSessionManager ;
+@class User,Article,AFHTTPSessionManager,Comment ;
 
 @interface ServerRequest : XTRequest
 
@@ -123,6 +123,19 @@
                                                 manager:(AFHTTPSessionManager *)manager
                                                 success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
                                                    fail:(void (^)(NSURLSessionDataTask *task, NSError *error))fail ;
+
+#pragma mark - 添加评论信息
++ (void)addComment:(Comment *)comment
+           success:(void (^)(id json))success
+              fail:(void (^)())fail ;
+
+#pragma mark - 指定对象ID搜索评论信息
++ (void)getCommentsListByObjectId:(NSString *)objectId
+                             From:(int)from
+                          howmany:(int)howmany
+                          refresh:(int)refresh
+                          success:(void (^)(id json))success
+                             fail:(void (^)())fail ;
 
 
 

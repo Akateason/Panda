@@ -21,6 +21,7 @@
 #import "DetailRecommend Cell.h"
 #import "TagDetailCtrller.h"
 #import "UserInfoCtrller.h"
+#import "CommentsListCtrller.h"
 
 @interface NoteDetailCtrller () <UITableViewDataSource,UITableViewDelegate,RootTableViewDelegate,HPBigPhotoHeaderViewDelegate>
 
@@ -196,6 +197,10 @@
 - (IBAction)btCommentOnClick:(id)sender
 {
     NSLog(@"评论") ;
+    CommentsListCtrller *commentListVC = (CommentsListCtrller *)[[self class] getCtrllerFromStory:@"HomePage" controllerIdentifier:@"CommentsListCtrller"] ;
+    commentListVC.articleId = self.articleId ;
+    [self.navigationController pushViewController:commentListVC animated:YES] ;
+    
 }
 
 - (IBAction)btCollectionOnClick:(UIAlternativeButton *)button

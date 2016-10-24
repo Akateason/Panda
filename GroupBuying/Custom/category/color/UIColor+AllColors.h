@@ -40,4 +40,6 @@
 
 + (UIColor *)xt_w_red ;
 
++ (UIColor *)xt_w_desc2 ;
+
 @end

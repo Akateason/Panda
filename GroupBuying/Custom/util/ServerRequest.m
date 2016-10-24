@@ -19,6 +19,7 @@
 #import "AFNetworking.h"
 #import "SVProgressHUD.h"
 #import "YYModel.h"
+#import "Comment.h"
 
 
 #define ACCEPTABLE_CONTENT_TYPES        @"application/json", @"text/html", @"text/json", @"text/javascript",@"text/plain"
@@ -479,6 +480,52 @@
                                        }] ;
     return task ;
 }
+
+
+#pragma mark - 添加评论信息
++ (void)addComment:(Comment *)comment
+           success:(void (^)(id json))success
+              fail:(void (^)())fail
+{
+    NSString *urlStr = [[self getFinalUrl:URL_COMMENT_ADD] stringByAppendingString:[NSString stringWithFormat:@"?token=%@",[UserOnDevice token]]] ;
+    NSDictionary *jsonObj = [comment yy_modelToJSONObject] ;
+    
+    [XTRequest POSTWithTokenUrl:urlStr
+                           body:jsonObj
+                        success:^(id json) {
+                            if (success) success(json);
+                        } fail:^{
+                            if (fail) fail();
+                        }] ;
+}
+
+#pragma mark - 指定对象ID搜索评论信息
++ (void)getCommentsListByObjectId:(NSString *)objectId
+                             From:(int)from
+                          howmany:(int)howmany
+                          refresh:(int)refresh
+                          success:(void (^)(id json))success
+                             fail:(void (^)())fail
+{
+    NSMutableDictionary *paramer = [self getParameters] ;
+    [paramer setObject:[UserOnDevice token] forKey:@"token"] ;
+    [paramer setObject:@"CommentObjectType" forKey:@"objectType"] ;
+    [paramer setObject:objectId forKey:@"objectId"] ;
+    [paramer setObject:@(from) forKey:@"from"] ;
+    [paramer setObject:@(howmany) forKey:@"howmany"] ;
+    [paramer setObject:@(refresh) forKey:@"refresh"] ;
+    
+    [XTRequest GETWithUrl:[self getFinalUrl:URL_COMMENT_SEARCHBYID]
+               parameters:paramer
+                  success:^(id json) {
+                      if (success) success(json);
+                  } fail:^{
+                      if (fail) fail();
+                  }] ;
+    
+}
+
+
 
 
 

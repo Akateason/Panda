@@ -73,4 +73,13 @@ static NSString *const URL_FAVORITE_REMOVE      = @"/gwn/s/favorite/remove" ;
 //搜索文章标签信息
 static NSString *const URL_ARTICLETAG_SEARCH    = @"/gwn/articleTag/search" ;
 
+
+
+//添加评论信息
+static NSString *const URL_COMMENT_ADD          = @"/gwn/s/comment/add" ;
+
+//指定对象ID搜索评论信息
+static NSString *const URL_COMMENT_SEARCHBYID   = @"/gwn/comment/searchByObjectId" ;
+
+
 #endif
