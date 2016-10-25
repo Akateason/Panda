@@ -35,7 +35,7 @@
     if (self.openType == typeDefault) {
         [self dismissViewControllerAnimated:YES completion:nil] ;
     }
-    else if (self.openType == typeEdit) {
+    else if (self.openType == typeAddAgain) {
         [self.navigationController popViewControllerAnimated:YES] ;
     }
 }

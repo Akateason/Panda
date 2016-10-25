@@ -14,8 +14,8 @@ static NSString * const TIME_STR_FORMAT_5 =      @"YYYY-MM-dd" ;
 static NSString * const TIME_STR_FORMAT_6 =      @"YYYY-MM-dd HH:mm" ;
 static NSString * const TIME_STR_FORMAT_7 =      @"MM-dd" ;
 static NSString * const TIME_STR_FORMAT_8 =      @"MM-dd HH:mm" ;
-static const float  TICK_S_OR_SS_1 = 1000.0 ;
-static const float  TICK_S_OR_SS_2 = 1.0 ;
+static const int  TICK_S_OR_SS_1 = 1000 ;
+static const int  TICK_S_OR_SS_2 = 1 ;
 
 #import <Foundation/Foundation.h>
 

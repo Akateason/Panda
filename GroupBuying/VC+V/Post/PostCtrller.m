@@ -19,6 +19,7 @@
 #import "TagSearchingCtrller.h"
 #import "NotificationCenterHeader.h"
 #import "UserOnDevice.h"
+#import "PhotoEditorCtrller.h"
 
 
 static NSString *const kType = @"NOTE" ;
@@ -50,7 +51,7 @@ static NSString *const kType = @"NOTE" ;
 {
     NSLog(@"再添加图片") ;
     CameraViewController *cameraVC = (CameraViewController *)[[self class] getCtrllerFromStory:@"Camera" controllerIdentifier:@"CameraViewController"] ;
-    cameraVC.openType = typeEdit ;
+    cameraVC.openType = typeAddAgain ;
     cameraVC.existedSubArticleCount = (int)self.photoList.count ;
     cameraVC.postCtrl = self ;
     [self.navigationController pushViewController:cameraVC animated:YES] ;
@@ -65,6 +66,16 @@ static NSString *const kType = @"NOTE" ;
     self.photoTagList = tmplist ;
 }
 
+- (void)editWithPhotoIdx:(int)idx
+{
+    NSLog(@"编辑图片") ;
+    PhotoEditorCtrller *pEditCtrller = (PhotoEditorCtrller *)[[self class] getCtrllerFromStory:@"Camera" controllerIdentifier:@"PhotoEditorCtrller"] ;
+    pEditCtrller.openType = typeEdit ;
+    pEditCtrller.listPhotos = self.photoList ;
+    pEditCtrller.listTagItems = self.photoTagList ;
+    pEditCtrller.moveToIdx = idx ;
+    [self.navigationController pushViewController:pEditCtrller animated:YES] ;
+}
 
 
 

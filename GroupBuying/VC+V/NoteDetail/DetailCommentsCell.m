@@ -108,7 +108,7 @@
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [CommentCell calculateHeight:self.comments[indexPath.row]] ;
+    return [CommentCell calculateHeight:(Comment *)self.comments[indexPath.row]] ;
 }
 
 

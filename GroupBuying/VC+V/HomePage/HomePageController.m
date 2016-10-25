@@ -497,7 +497,7 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
     NSLog(@"userID : %@",userID) ;
 
     [ServerRequest homelistWithSearchtype:@(self.schType)
-                                  refresh:@(1)
+                                  refresh:@(0)
                                    userID:userID
                                      from:@(self.listNote.count)
                                   howmany:@(kPageHowmany)

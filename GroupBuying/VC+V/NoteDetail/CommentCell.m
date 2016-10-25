@@ -11,8 +11,8 @@
 #import "Comment.h"
 #import "XTTickConvert.h"
 #import "NSString+Extend.h"
-
-
+#import "UIImageView+SDQN.h"
+#import "Pic.h"
 
 @interface CommentCell ()
 
@@ -55,8 +55,7 @@
     
     if (!aComment) return ;
     
-    
-    _userHead.image = IMG_HEAD_NO ;
+    [_userHead xt_setImageWithPic:aComment.createrHead placeHolderImage:IMG_HEAD_NO] ;
 
     _nameLabel.text = aComment.createName ;
     _timeLabel.text = [XTTickConvert getDateWithTick:aComment.createTime AndWithFormart:TIME_STR_FORMAT_3] ;

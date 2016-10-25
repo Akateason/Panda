@@ -7,6 +7,7 @@
 //
 
 #import "Comment.h"
+#import "Pic.h"
 
 @implementation Comment
 

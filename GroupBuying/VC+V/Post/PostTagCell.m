@@ -99,7 +99,7 @@
 {
     if (self.listTags.count == indexPath.row) {
         // (@"add tag .") ;
-        return CGSizeMake(74., 30.) ;
+        return CGSizeMake(74., 29.) ;
     }
     else {
         // (@"tags click") ;

@@ -48,7 +48,7 @@
                                           attributes:@{NSFontAttributeName : font}
                                              context:nil].size ;
     
-    return  CGSizeMake(9. + labelsize.width + 30. - 7., 30.) ;
+    return  CGSizeMake(9. + labelsize.width + 30. - 7., 29.) ;
 }
 
 @end

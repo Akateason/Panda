@@ -86,8 +86,7 @@
     {
         // click add .
         NSLog(@"add photo") ;
-        if (self.delegate && [self.delegate respondsToSelector:@selector(addPhoto)])
-        {
+        if (self.delegate && [self.delegate respondsToSelector:@selector(addPhoto)]) {
             [self.delegate addPhoto] ;
         }
     }
@@ -95,9 +94,18 @@
     {
         // click photos
         NSLog(@"click photos") ;
+        if (self.delegate && [self.delegate respondsToSelector:@selector(editWithPhotoIdx:)]) {
+            [self.delegate editWithPhotoIdx:(int)indexPath.row] ;
+        }
     }
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout*)collectionViewLayout
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(90.,89.) ;
+}
 
 
 

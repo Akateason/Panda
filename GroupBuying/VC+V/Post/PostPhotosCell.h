@@ -14,6 +14,7 @@ static NSString *idPostPhotosCell = @"PostPhotosCell" ;
 
 - (void)addPhoto ;
 - (void)deletePhotoWithList:(NSArray *)list index:(NSInteger)indexDelete ;
+- (void)editWithPhotoIdx:(int)idx ;
 
 @end
 

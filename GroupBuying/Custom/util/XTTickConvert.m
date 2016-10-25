@@ -25,16 +25,16 @@
 + (NSString *)getDateWithTick:(long long)_tick AndWithFormart:(NSString *)formatStr
 {
     NSTimeInterval timeInterval = _tick / TICK_S_OR_SS_1;
-    NSDate *date111 = [NSDate dateWithTimeIntervalSince1970:timeInterval];
+    NSDate *date111 = [NSDate dateWithTimeIntervalSince1970:timeInterval] ;
     //    NSLog(@"date:%@",date111);
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateStyle:NSDateFormatterMediumStyle];
-    [formatter setTimeStyle:NSDateFormatterShortStyle];
-    [formatter setDateFormat:formatStr];//@"yyyy年MM月dd日 HH:mm:ss"
-    [formatter setLocale:[NSLocale currentLocale]];
-    NSString* confromTimespStr = [formatter stringFromDate:date111];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
+    [formatter setDateStyle:NSDateFormatterFullStyle] ;
+    [formatter setTimeStyle:NSDateFormatterFullStyle] ;
+    [formatter setDateFormat:formatStr] ;
+    [formatter setLocale:[NSLocale currentLocale]] ;
+    NSString* confromTimespStr = [formatter stringFromDate:date111] ;
     //    NSLog(@"str:%@",confromTimespStr);
-    return confromTimespStr;
+    return confromTimespStr ;
 }
 
 //转tick,转出NsDate
@@ -48,7 +48,7 @@
 + (NSDate *)getNSDateWithDateStr:(NSString *)dateStr AndWithFormat:(NSString *)format
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    //    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]] ;
+//    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]] ;
     dateFormatter.dateFormat = format;
     
     return [dateFormatter dateFromString:dateStr] ;

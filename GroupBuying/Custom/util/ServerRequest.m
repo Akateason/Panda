@@ -508,8 +508,7 @@
                              fail:(void (^)())fail
 {
     NSMutableDictionary *paramer = [self getParameters] ;
-    [paramer setObject:[UserOnDevice token] forKey:@"token"] ;
-    [paramer setObject:@"CommentObjectType" forKey:@"objectType"] ;
+    [paramer setObject:@"NOTE" forKey:@"objectType"] ;
     [paramer setObject:objectId forKey:@"objectId"] ;
     [paramer setObject:@(from) forKey:@"from"] ;
     [paramer setObject:@(howmany) forKey:@"howmany"] ;

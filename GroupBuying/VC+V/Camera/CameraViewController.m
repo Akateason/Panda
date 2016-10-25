@@ -56,7 +56,7 @@ static float kMAX_SELECT_COUNT = 10. ;
                                      completion:nil] ;
         }
     }
-    else if (self.openType == typeEdit) {
+    else if (self.openType == typeAddAgain) {
         [self.navigationController popViewControllerAnimated:YES] ;
     }
 }

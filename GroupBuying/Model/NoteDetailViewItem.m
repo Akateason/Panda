@@ -7,10 +7,15 @@
 //
 
 #import "NoteDetailViewItem.h"
+#import "Comment.h"
 
 @implementation NoteDetailViewItem
 
-
-
++ (NSDictionary *)modelContainerPropertyGenericClass
+{
+    return @{
+             @"commentList" : [Comment class],
+             };
+}
 
 @end

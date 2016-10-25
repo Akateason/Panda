@@ -10,4 +10,7 @@
 
 @interface CommentsPostCtrller : RootCtrl
 
+@property (nonatomic,copy) NSString *objectID ; // 文章ID
+@property (nonatomic,copy) NSString *strReplyToWho ;
+
 @end

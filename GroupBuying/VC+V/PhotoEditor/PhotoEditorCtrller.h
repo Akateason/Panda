@@ -17,6 +17,11 @@
 // 打开方式
 @property (nonatomic) CameraViewControllerOpenType  openType ;
 
+//移动到
+@property (nonatomic) int moveToIdx ;
+
+
+//
 - (void)refreshCollectionView ;
 
 @end
