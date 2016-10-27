@@ -8,10 +8,6 @@
 
 #import "RootCtrl.h"
 
-typedef NS_ENUM(NSUInteger, DISPLAY_TYPE_MFFVC) {
-    type_focus,
-    type_fans
-};
 
 @interface MyFansFocusCtrller : RootCtrl
 

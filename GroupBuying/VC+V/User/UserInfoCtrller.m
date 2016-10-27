@@ -14,6 +14,7 @@
 #import "UserNotesCollectionTableViewCell.h"
 #import "UserOnDevice.h"
 #import "UserViewItem.h"
+#import "MyFansFocusCtrller.h"
 
 @interface UserInfoCtrller () <UITableViewDelegate,UITableViewDataSource,RootTableViewDelegate>
 // UI
@@ -79,6 +80,21 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    __weak UserInfoCtrller *weakSelf = self ;
+    self.userinfoView.hisFocus = ^{
+        MyFansFocusCtrller *mffVC = (MyFansFocusCtrller *)[[MyFansFocusCtrller class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"MyFansFocusCtrller"] ;
+        mffVC.displayType = type_focus ;
+        mffVC.userID = [UserOnDevice currentUserOnDevice].userId ;
+        [weakSelf.navigationController pushViewController:mffVC animated:YES] ;
+    } ;
+    self.userinfoView.hisFans = ^{
+        MyFansFocusCtrller *mffVC = (MyFansFocusCtrller *)[[MyFansFocusCtrller class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"MyFansFocusCtrller"] ;
+        mffVC.displayType = type_fans ;
+        mffVC.userID = [UserOnDevice currentUserOnDevice].userId ;
+        [weakSelf.navigationController pushViewController:mffVC animated:YES] ;
+    } ;
+    
     [self configureUI] ;
 }
 

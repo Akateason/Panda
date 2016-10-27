@@ -11,5 +11,7 @@
 
 @interface UserInfoView : UIView
 @property (nonatomic,strong) User *aUser ;
+@property (nonatomic,copy)  void(^hisFocus)(void) ;
+@property (nonatomic,copy)  void(^hisFans)(void) ;
 + (CGFloat)getHeight ;
 @end

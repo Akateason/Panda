@@ -11,11 +11,14 @@
 #import "UserOnDevice.h"
 #import "UserFollowViewItem.h"
 #import "User.h"
+#import "PublicEnum.h"
 
 static const int kHowmany = 20 ;
 
 @interface MyFansFocusCtrller () <UITableViewDataSource,UITableViewDelegate,RootTableViewDelegate>
-
+{
+    NSString *currentUserID ;
+}
 @property (weak, nonatomic) IBOutlet RootTableView *table;
 @property (weak, nonatomic) IBOutlet UIView *topbarbg;
 @property (weak, nonatomic) IBOutlet UIView *topbarbg2;
@@ -41,17 +44,19 @@ static const int kHowmany = 20 ;
 
 - (void)viewDidLoad
 {
+    currentUserID = ([UserOnDevice hasLogin]) ? [UserOnDevice currentUserOnDevice].userId : nil ;
+
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     _topbarbg.backgroundColor = [UIColor xt_seperate] ;
     _topbarbg2.layer.cornerRadius = 5. ;
-    
+
+    [_table registerNib:[UINib nibWithNibName:kID_MyFansFocusCell bundle:nil] forCellReuseIdentifier:kID_MyFansFocusCell] ;
     _table.separatorColor = [UIColor xt_seperate] ;
     _table.dataSource = self ;
     _table.delegate = self ;
     _table.xt_Delegate = self ;
-    [_table registerNib:[UINib nibWithNibName:kID_MyFansFocusCell bundle:nil] forCellReuseIdentifier:kID_MyFansFocusCell] ;
 }
 
 
@@ -59,54 +64,93 @@ static const int kHowmany = 20 ;
 #pragma mark - RootTableViewDelegate
 - (void)loadNewData
 {
-//    NSString *currentUserID =
-    
     if (self.displayType == type_focus) {
-        
         [ServerRequest getFollowerSearchByID:self.userID
-                               currentUserID:nil
-                                        from:(int)self.listUsers.count
+                               currentUserID:currentUserID
+                                        from:0
                                      howmany:kHowmany
                                      success:^(id json) {
-                                         
+                                         ResultParsered *result = [ResultParsered yy_modelWithJSON:json] ;
+                                         [self makeListWithOriginList:@[] result:result] ;
                                      }
                                         fail:^{
                                             
                                         }] ;
     }
     else if (self.displayType == type_fans) {
-        
         [ServerRequest getFansSearchByID:self.userID
-                           currentUserID:nil
-                                    from:(int)self.listUsers.count
+                           currentUserID:currentUserID
+                                    from:0
                                  howmany:kHowmany
                                  success:^(id json) {
-                                     
+                                     ResultParsered *result = [ResultParsered yy_modelWithJSON:json] ;
+                                     [self makeListWithOriginList:@[] result:result] ;
                                  } fail:^{
                                      
                                  }] ;
-        
     }
 
 }
 
 - (void)loadMoreData
 {
-    
+    if (self.displayType == type_focus) {
+        [ServerRequest getFollowerSearchByID:self.userID
+                               currentUserID:currentUserID
+                                        from:(int)self.listUsers.count
+                                     howmany:kHowmany
+                                     success:^(id json) {
+                                         ResultParsered *result = [ResultParsered yy_modelWithJSON:json] ;
+                                         [self makeListWithOriginList:self.listUsers result:result] ;
+                                     }
+                                        fail:^{
+                                            
+                                        }] ;
+    }
+    else if (self.displayType == type_fans) {
+        [ServerRequest getFansSearchByID:self.userID
+                           currentUserID:currentUserID
+                                    from:(int)self.listUsers.count
+                                 howmany:kHowmany
+                                 success:^(id json) {
+                                     ResultParsered *result = [ResultParsered yy_modelWithJSON:json] ;
+                                     [self makeListWithOriginList:self.listUsers result:result] ;
+                                 } fail:^{
+                                     
+                                 }] ;
+    }
 }
+
+
+- (void)makeListWithOriginList:(NSArray *)orgList
+                        result:(ResultParsered *)result
+{
+    NSMutableArray *tmplist = [orgList mutableCopy] ;
+    if (result.code == 1) {
+        NSArray *diclist = result.data[@"userFollowList"] ;
+        for (NSDictionary *dic in diclist) {
+            UserFollowViewItem *viewItem = [UserFollowViewItem yy_modelWithJSON:dic] ;
+            [tmplist addObject:viewItem] ;
+        }
+        self.listUsers = tmplist ;
+        [_table reloadData] ;
+    }
+}
+
 
 
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3 ;
+    return self.listUsers.count ;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MyFansFocusCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_MyFansFocusCell] ;
-    [cell setIndex:indexPath.row + 1] ;
+    cell.displayType = self.displayType ;
+    cell.userViewItem = self.listUsers[indexPath.row] ;
     return cell ;
 }
 

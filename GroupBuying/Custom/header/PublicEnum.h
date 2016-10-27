@@ -31,6 +31,11 @@ typedef NS_ENUM(NSUInteger, TypeOfTagInformationTextfield) {
     t_location ,
 } ;
 
+// 我的关注, 我的粉丝.
+typedef NS_ENUM(NSUInteger, DISPLAY_TYPE_MFFVC) {
+    type_focus,
+    type_fans
+};
 
 
 #endif

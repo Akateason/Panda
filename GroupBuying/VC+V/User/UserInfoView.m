@@ -63,11 +63,17 @@
 - (IBAction)btFansOnClick:(id)sender
 {
     NSLog(@"他的粉丝") ;
+    if (self.hisFans) {
+        self.hisFans() ;
+    }
 }
 
 - (IBAction)btFocusOnClick:(id)sender
 {
     NSLog(@"他的关注") ;
+    if (self.hisFocus) {
+        self.hisFocus() ;
+    }
 }
 
 #pragma -

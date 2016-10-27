@@ -59,38 +59,6 @@
             endingLineNumber = "129"
             landmarkName = "-btPostOnClick:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[PostCtrller btPostOnClick:]"
-                  moduleName = "GroupBuying"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/teason/Documents/iOS_project/Groupbuying/GroupBuying/VC+V/Post/PostCtrller.m"
-                  timestampString = "498576407.130081"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "130"
-                  endingLineNumber = "130"
-                  offsetFromSymbolStart = "1707">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__29-[PostCtrller btPostOnClick:]_block_invoke.143"
-                  moduleName = "GroupBuying"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/teason/Documents/iOS_project/Groupbuying/GroupBuying/VC+V/Post/PostCtrller.m"
-                  timestampString = "498576407.130302"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "130"
-                  endingLineNumber = "130"
-                  offsetFromSymbolStart = "32">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -105,7 +73,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
             endingLineNumber = "56"
-            landmarkName = "-btSaveOnClick:"
+            landmarkName = "-outputWithResultStrList:clientID:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -123,6 +91,38 @@
             endingLineNumber = "140"
             landmarkName = "-btPostOnClick:"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[PostCtrller btPostOnClick:]"
+                  moduleName = "GroupBuying"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/teason/Documents/iOS_project/Groupbuying/GroupBuying/VC+V/Post/PostCtrller.m"
+                  timestampString = "499269231.925781"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "141"
+                  endingLineNumber = "141"
+                  offsetFromSymbolStart = "1707">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__29-[PostCtrller btPostOnClick:]_block_invoke.153"
+                  moduleName = "GroupBuying"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/teason/Documents/iOS_project/Groupbuying/GroupBuying/VC+V/Post/PostCtrller.m"
+                  timestampString = "499269231.926076"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "141"
+                  endingLineNumber = "141"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -171,6 +171,38 @@
             endingLineNumber = "163"
             landmarkName = "-btPostOnClick:"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__29-[PostCtrller btPostOnClick:]_block_invoke.153"
+                  moduleName = "GroupBuying"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/teason/Documents/iOS_project/Groupbuying/GroupBuying/VC+V/Post/PostCtrller.m"
+                  timestampString = "499269231.944043"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "163"
+                  endingLineNumber = "163"
+                  offsetFromSymbolStart = "1191">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__29-[PostCtrller btPostOnClick:]_block_invoke.153"
+                  moduleName = "GroupBuying"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/teason/Documents/iOS_project/Groupbuying/GroupBuying/VC+V/Post/PostCtrller.m"
+                  timestampString = "499269231.944578"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "163"
+                  endingLineNumber = "163"
+                  offsetFromSymbolStart = "1262">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

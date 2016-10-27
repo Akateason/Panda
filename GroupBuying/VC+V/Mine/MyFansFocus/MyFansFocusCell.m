@@ -7,7 +7,10 @@
 //
 
 #import "MyFansFocusCell.h"
-#import "TestUser.h"
+#import "UserFollowViewItem.h"
+#import "UserFollow.h"
+#import "User.h"
+#import "UIImageView+SDQN.h"
 
 @interface MyFansFocusCell ()
 @property (weak, nonatomic) IBOutlet UILabel *lb_name;
@@ -19,20 +22,36 @@
 
 @implementation MyFansFocusCell
 
-- (void)setIndex:(int)index
+
+- (void)setUserViewItem:(UserFollowViewItem *)userViewItem
 {
-    _img_userhead.image = [UIImage imageNamed:[TestUser headImage:index]] ;
-    _lb_name.text = [TestUser username:index] ;
-    _lb_desc.text = @"嘻嘻嘻嘻嘻,个人简介" ;
+    _userViewItem = userViewItem ;
+    
+    
+    if (self.displayType == type_focus) {
+        [_img_userhead xt_setImageWithPic:userViewItem.followInfo.toUserInfo.headPic
+                         placeHolderImage:IMG_HEAD_NO] ;
+        _lb_name.text = userViewItem.followInfo.toUserInfo.nickName ;
+        _lb_desc.text = userViewItem.followInfo.toUserInfo.intruduce ;
+    }
+    else if (self.displayType == type_fans) {
+        [_img_userhead xt_setImageWithPic:userViewItem.followInfo.fromUserInfo.headPic
+                         placeHolderImage:IMG_HEAD_NO] ;
+        _lb_name.text = userViewItem.followInfo.fromUserInfo.nickName ;
+        _lb_desc.text = userViewItem.followInfo.fromUserInfo.intruduce ;
+    }
+    
+    _btFocus.selected = userViewItem.isFollow ;
 }
-
-
 
 
 
 - (IBAction)btFocusOnClick:(id)sender
 {
     NSLog(@"btfocus ") ;
+    
+    
+    
 }
 
 - (void)awakeFromNib
