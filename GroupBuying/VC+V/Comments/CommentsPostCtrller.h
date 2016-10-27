@@ -7,10 +7,12 @@
 //
 
 #import "RootCtrl.h"
+@class Comment ;
 
 @interface CommentsPostCtrller : RootCtrl
 
 @property (nonatomic,copy) NSString *objectID ; // 文章ID
-@property (nonatomic,copy) NSString *strReplyToWho ;
+@property (nonatomic,copy) NSString *strReplyToWho ; // 回复谁 .
+@property (nonatomic,copy) void(^blockAddCommentComplete)(Comment *acomment) ; 
 
 @end

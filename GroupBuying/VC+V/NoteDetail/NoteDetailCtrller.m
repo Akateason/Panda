@@ -23,7 +23,7 @@
 #import "UserInfoCtrller.h"
 #import "CommentsListCtrller.h"
 
-@interface NoteDetailCtrller () <UITableViewDataSource,UITableViewDelegate,RootTableViewDelegate,HPBigPhotoHeaderViewDelegate>
+@interface NoteDetailCtrller () <UITableViewDataSource,UITableViewDelegate,RootTableViewDelegate,HPBigPhotoHeaderViewDelegate,DetailCommentsCellDelegate>
 
 // storyboard
 @property (weak, nonatomic) IBOutlet UIView *bottomBar;
@@ -39,6 +39,22 @@
 @end
 
 @implementation NoteDetailCtrller
+
+
+#pragma mark - DetailCommentsCellDelegate <NSObject>
+- (void)moreComments
+{
+    [self jump2CommentListVC] ;
+}
+
+- (void)clickCommentsUserHead:(NSString *)createrID
+{
+    UserInfoCtrller *userCtrl = (UserInfoCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"UserInfoCtrller"] ;
+    userCtrl.userID = createrID ;
+    [self.navigationController pushViewController:userCtrl animated:YES] ;
+}
+
+
 
 #pragma mark - HPBigPhotoHeaderViewDelegate
 - (void)userheadOnClickWithUserID:(NSString *)userID userName:(NSString *)name
@@ -197,10 +213,14 @@
 - (IBAction)btCommentOnClick:(id)sender
 {
     NSLog(@"评论") ;
+    [self jump2CommentListVC] ;
+}
+
+- (void)jump2CommentListVC
+{
     CommentsListCtrller *commentListVC = (CommentsListCtrller *)[[self class] getCtrllerFromStory:@"HomePage" controllerIdentifier:@"CommentsListCtrller"] ;
     commentListVC.articleId = self.articleId ;
     [self.navigationController pushViewController:commentListVC animated:YES] ;
-    
 }
 
 - (IBAction)btCollectionOnClick:(UIAlternativeButton *)button
@@ -301,6 +321,7 @@
     else if (section == 2) {
         DetailCommentsCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_DetailCommentsCell] ;
         cell.comments = self.noteDetail.commentList ;
+        cell.delegate = self ;
         return cell ;
     }
     else if (section == 3) {

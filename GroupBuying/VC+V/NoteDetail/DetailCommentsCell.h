@@ -10,10 +10,15 @@
 
 static NSString *const kID_DetailCommentsCell = @"DetailCommentsCell" ;
 
+@protocol DetailCommentsCellDelegate <NSObject>
+- (void)moreComments ;
+@optional
+- (void)clickCommentsUserHead:(NSString *)createrID ;
+@end
+
+
 @interface DetailCommentsCell : UITableViewCell
-
 @property (nonatomic,strong) NSArray *comments ;
-
+@property (nonatomic,weak) id <DetailCommentsCellDelegate> delegate ;
 + (CGFloat)calculateHeight:(NSArray *)comments ;
-
 @end

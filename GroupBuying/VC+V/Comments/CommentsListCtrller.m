@@ -10,6 +10,10 @@
 #import "CommentCell.h"
 #import "Comment.h"
 #import "CommentsPostCtrller.h"
+#import "UserInfoCtrller.h"
+#import "UserOnDevice.h"
+
+
 
 static const NSInteger kHowmany = 20 ;
 
@@ -28,14 +32,27 @@ static const NSInteger kHowmany = 20 ;
 @implementation CommentsListCtrller
 
 
+#pragma mark - util
+- (void)addCommentCallback:(Comment *)comment
+{
+    NSMutableArray *tmplist = [self.listComments mutableCopy] ;
+    [tmplist insertObject:comment atIndex:0] ;
+    self.listComments = tmplist ;
+    [_table reloadData] ;
+}
 
 
 #pragma mark - action
 - (IBAction)btCommentOnClick:(id)sender
 {
+    if (![UserOnDevice checkForLoginOrNot:self]) return ;
+    
     NSLog(@"发布评论") ;
     CommentsPostCtrller *postCmtVC = (CommentsPostCtrller *)[[self class] getCtrllerFromStory:@"HomePage" controllerIdentifier:@"CommentsPostCtrller"] ;
     postCmtVC.objectID = self.articleId ;
+    postCmtVC.blockAddCommentComplete = ^(Comment *comment) {
+        [self addCommentCallback:comment] ;
+    } ;
     [self.navigationController pushViewController:postCmtVC animated:YES] ;
 }
 
@@ -62,6 +79,7 @@ static const NSInteger kHowmany = 20 ;
     _table.delegate = self ;
     _table.separatorStyle = 0 ;
     _table.xt_Delegate = self ;
+    _table.backgroundColor = [UIColor xt_seperate] ;
     [_table registerNib:[UINib nibWithNibName:kID_CommentCell bundle:nil] forCellReuseIdentifier:kID_CommentCell] ;
 }
 
@@ -137,7 +155,27 @@ static const NSInteger kHowmany = 20 ;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CommentCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_CommentCell] ;
-    cell.aComment = self.listComments[indexPath.row] ;
+    Comment *aCmt = self.listComments[indexPath.row] ;
+    cell.aComment = aCmt ;
+    cell.blockTapHead = ^(NSString *createrID) {
+        UserInfoCtrller *userCtrl = (UserInfoCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"UserInfoCtrller"] ;
+        userCtrl.userID = createrID ;
+        [self.navigationController pushViewController:userCtrl animated:YES] ;
+    } ;
+    cell.blockReply = ^(NSString *replyToWho) {
+        NSLog(@"回复评论") ;
+        if (![UserOnDevice checkForLoginOrNot:self]) return ;
+        
+        if ([aCmt.createrId isEqualToString:[UserOnDevice currentUserOnDevice].userId]) return ; // 自己不能回复自己
+        
+        CommentsPostCtrller *postCmtVC = (CommentsPostCtrller *)[[self class] getCtrllerFromStory:@"HomePage" controllerIdentifier:@"CommentsPostCtrller"] ;
+        postCmtVC.objectID = self.articleId ;
+        postCmtVC.strReplyToWho = replyToWho ;
+        postCmtVC.blockAddCommentComplete = ^(Comment *comment) {
+            [self addCommentCallback:comment] ;
+        } ;
+        [self.navigationController pushViewController:postCmtVC animated:YES] ;
+    } ;
     return cell ;
 }
 

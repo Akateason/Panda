@@ -40,6 +40,9 @@
 - (IBAction)btMoreOnClick:(id)sender
 {
     NSLog(@"更多") ;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(moreComments)]) {
+        [self.delegate moreComments] ;
+    }
 }
 
 - (void)setComments:(NSArray *)comments
@@ -89,9 +92,6 @@
     
 }
 
-
-
-
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -100,8 +100,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CommentCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_CommentCell] ;
+    CommentCell *cell = (CommentCell *)[tableView dequeueReusableCellWithIdentifier:kID_CommentCell] ;
     cell.aComment = self.comments[indexPath.row] ;
+    cell.blockTapHead = ^(NSString *createrID) {
+        if (self.delegate && [self.delegate respondsToSelector:@selector(clickCommentsUserHead:)]) {
+            [self.delegate clickCommentsUserHead:createrID] ;
+        }
+    } ;
     return cell ;
 }
 

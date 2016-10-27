@@ -12,9 +12,8 @@
 static NSString *const kID_CommentCell = @"CommentCell" ;
 
 @interface CommentCell : UITableViewCell
-
 @property (nonatomic,strong) Comment *aComment ;
-
+@property (nonatomic,copy) void(^blockTapHead)(NSString *createrID) ;
+@property (nonatomic,copy) void(^blockReply)(NSString *replyToWho) ;
 + (CGFloat)calculateHeight:(Comment *)comment ;
-
 @end
