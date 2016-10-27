@@ -11,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="Abd-zR-CjG">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner1" translatesAutoresizingMaskIntoConstraints="NO" id="Abd-zR-CjG">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="185"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3rC-SW-8He">
@@ -51,6 +51,9 @@
                     <state key="normal" title="TA的关注">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="btFocusOnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="rTq-hn-PbG"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yA-fN-tJV">
                     <rect key="frame" x="515" y="137" width="85" height="35"/>
@@ -63,6 +66,9 @@
                     <state key="normal" title="TA的粉丝">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="btFansOnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="iOs-0v-J2Q"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="descrip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b38-7W-DBH">
                     <rect key="frame" x="14" y="156" width="46" height="16"/>
@@ -147,7 +153,7 @@
         </view>
     </objects>
     <resources>
-        <image name="1" width="250" height="334"/>
+        <image name="banner1" width="750" height="520"/>
         <image name="t_h_1" width="36" height="36"/>
     </resources>
 </document>

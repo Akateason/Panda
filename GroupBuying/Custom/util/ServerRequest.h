@@ -66,6 +66,29 @@
                success:(void (^)(id json))success
                   fail:(void (^)())fail ;
 
+#pragma - 指定用户ID取得用户信息
++ (void)getUserSearchByID:(NSString *)userID
+            currentUserID:(NSString *)currentUserID
+                  success:(void (^)(id json))success
+                     fail:(void (^)())fail ;
+
+#pragma - 指定发起用户ID搜索关注信息
++ (void)getFansSearchByID:(NSString *)userID
+            currentUserID:(NSString *)currentUserID
+                     from:(int)from
+                  howmany:(int)howmany
+                  success:(void (^)(id json))success
+                     fail:(void (^)())fail ;
+
+#pragma - 指定被关注用户ID搜索关注信息
++ (void)getFollowerSearchByID:(NSString *)userID
+                currentUserID:(NSString *)currentUserID
+                         from:(int)from
+                      howmany:(int)howmany
+                      success:(void (^)(id json))success
+                         fail:(void (^)())fail ;
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 笔记
 #pragma -  搜索首页笔记信息

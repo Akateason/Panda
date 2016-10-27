@@ -362,6 +362,9 @@
 		D7CE2A6E1DC1D54A00FF452C /* WPTappableLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A661DC1D54A00FF452C /* WPTappableLabel.m */; };
 		D7CE2A6F1DC1D54A00FF452C /* NSMutableString+TagReplace.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A691DC1D54A00FF452C /* NSMutableString+TagReplace.m */; };
 		D7CE2A701DC1D54A00FF452C /* NSString+WPAttributedMarkup.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A6B1DC1D54A00FF452C /* NSString+WPAttributedMarkup.m */; };
+		D7CE2A731DC1F5BA00FF452C /* UserViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A721DC1F5BA00FF452C /* UserViewItem.m */; };
+		D7CE2A761DC2129900FF452C /* UserFollow.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A751DC2129900FF452C /* UserFollow.m */; };
+		D7CE2A791DC213B100FF452C /* UserFollowViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A781DC213B100FF452C /* UserFollowViewItem.m */; };
 		D7E0F4B41D87ADF700EA663B /* ArticlePicItemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */; };
 		D7E0F4B71D87B2D100EA663B /* ArticlePicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B61D87B2D100EA663B /* ArticlePicItem.m */; };
 		D7E0F4BA1D87B42D00EA663B /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B91D87B42D00EA663B /* Article.m */; };
@@ -1104,6 +1107,12 @@
 		D7CE2A691DC1D54A00FF452C /* NSMutableString+TagReplace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+TagReplace.m"; sourceTree = "<group>"; };
 		D7CE2A6A1DC1D54A00FF452C /* NSString+WPAttributedMarkup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WPAttributedMarkup.h"; sourceTree = "<group>"; };
 		D7CE2A6B1DC1D54A00FF452C /* NSString+WPAttributedMarkup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WPAttributedMarkup.m"; sourceTree = "<group>"; };
+		D7CE2A711DC1F5BA00FF452C /* UserViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewItem.h; sourceTree = "<group>"; };
+		D7CE2A721DC1F5BA00FF452C /* UserViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewItem.m; sourceTree = "<group>"; };
+		D7CE2A741DC2129900FF452C /* UserFollow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserFollow.h; sourceTree = "<group>"; };
+		D7CE2A751DC2129900FF452C /* UserFollow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserFollow.m; sourceTree = "<group>"; };
+		D7CE2A771DC213B100FF452C /* UserFollowViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserFollowViewItem.h; sourceTree = "<group>"; };
+		D7CE2A781DC213B100FF452C /* UserFollowViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserFollowViewItem.m; sourceTree = "<group>"; };
 		D7E0F4B21D87ADF700EA663B /* ArticlePicItemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItemInfo.h; sourceTree = "<group>"; };
 		D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlePicItemInfo.m; sourceTree = "<group>"; };
 		D7E0F4B51D87B2D100EA663B /* ArticlePicItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItem.h; sourceTree = "<group>"; };
@@ -2494,6 +2503,12 @@
 				D76E84291D767A590014FDEA /* User.m */,
 				D7E0F4CF1D882A5400EA663B /* UserOnDevice.h */,
 				D7E0F4D01D882A5400EA663B /* UserOnDevice.m */,
+				D7CE2A711DC1F5BA00FF452C /* UserViewItem.h */,
+				D7CE2A721DC1F5BA00FF452C /* UserViewItem.m */,
+				D7CE2A741DC2129900FF452C /* UserFollow.h */,
+				D7CE2A751DC2129900FF452C /* UserFollow.m */,
+				D7CE2A771DC213B100FF452C /* UserFollowViewItem.h */,
+				D7CE2A781DC213B100FF452C /* UserFollowViewItem.m */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -2883,11 +2898,11 @@
 		D7E4FEE81DA89A0300DC0E53 /* MyFansFocus */ = {
 			isa = PBXGroup;
 			children = (
+				D7E4FF011DA8D74800DC0E53 /* MyFansFocusCtrller.h */,
+				D7E4FF021DA8D74800DC0E53 /* MyFansFocusCtrller.m */,
 				D7E4FEFE1DA8D74800DC0E53 /* MyFansFocusCell.h */,
 				D7E4FEFF1DA8D74800DC0E53 /* MyFansFocusCell.m */,
 				D7E4FF001DA8D74800DC0E53 /* MyFansFocusCell.xib */,
-				D7E4FF011DA8D74800DC0E53 /* MyFansFocusCtrller.h */,
-				D7E4FF021DA8D74800DC0E53 /* MyFansFocusCtrller.m */,
 			);
 			name = MyFansFocus;
 			sourceTree = "<group>";
@@ -3239,6 +3254,7 @@
 			files = (
 				D75CC4531C2A95DE00E590E6 /* XTRequest.m in Sources */,
 				D7886D741D93774D003D6D57 /* HotProductItemCtrller.m in Sources */,
+				D7CE2A731DC1F5BA00FF452C /* UserViewItem.m in Sources */,
 				60319D731D91795A00BD094D /* FVCKindsCell.m in Sources */,
 				D7886D7C1D93B855003D6D57 /* ActivityInfoCtrl.m in Sources */,
 				D76E84721D780FAC0014FDEA /* NSArray+MASAdditions.m in Sources */,
@@ -3305,6 +3321,7 @@
 				D75CC5A91C2A965000E590E6 /* ASIDataCompressor.m in Sources */,
 				D75CC5E01C2A965000E590E6 /* NSObject+MKBlockTimer.m in Sources */,
 				D75CC5D71C2A965000E590E6 /* MJRefreshBackStateFooter.m in Sources */,
+				D7CE2A791DC213B100FF452C /* UserFollowViewItem.m in Sources */,
 				D75CC5C81C2A965000E590E6 /* HWWeakTimer.m in Sources */,
 				D75CC6C21C2BEB0400E590E6 /* MyWebController.m in Sources */,
 				608405931D74AA6800B40D68 /* SVProgressAnimatedView.m in Sources */,
@@ -3337,6 +3354,7 @@
 				D76E84151D7567A70014FDEA /* XTZoomPicture.m in Sources */,
 				D76E83F51D7439950014FDEA /* UserNotesCollectionTableViewCell.m in Sources */,
 				60319DB51DA9224800BD094D /* CartIntroductionFooterView.m in Sources */,
+				D7CE2A761DC2129900FF452C /* UserFollow.m in Sources */,
 				D7CE29E41DAE517C00FF452C /* RankingTodayHotCtrl.m in Sources */,
 				D75CC5E41C2A965000E590E6 /* QNEtag.m in Sources */,
 				60074E031D60DFDC0040C3C0 /* FindController.m in Sources */,

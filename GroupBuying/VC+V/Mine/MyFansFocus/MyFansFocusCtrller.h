@@ -15,6 +15,7 @@ typedef NS_ENUM(NSUInteger, DISPLAY_TYPE_MFFVC) {
 
 @interface MyFansFocusCtrller : RootCtrl
 
-@property (nonatomic) DISPLAY_TYPE_MFFVC displayType ;
+@property (nonatomic)       DISPLAY_TYPE_MFFVC displayType ;
+@property (nonatomic,copy)  NSString           *userID ;
 
 @end

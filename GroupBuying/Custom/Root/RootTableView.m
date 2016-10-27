@@ -31,6 +31,11 @@
     self.mj_footer = nil ;
 }
 
+- (void)cancelHeaderRefreshUI
+{
+    self.mj_header = nil ;
+}
+
 #pragma mark --
 #pragma mark - Initialization
 

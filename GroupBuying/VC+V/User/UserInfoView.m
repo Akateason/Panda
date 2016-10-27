@@ -7,6 +7,8 @@
 //
 
 #import "UserInfoView.h"
+#import "UIImageView+SDQN.h"
+#import "User.h"
 
 @interface UserInfoView ()
 
@@ -28,8 +30,26 @@
 
 @implementation UserInfoView
 
+#pragma -
+- (void)setAUser:(User *)aUser
+{
+    _aUser = aUser ;
+    if (!aUser) return ;
+    
+    [_userHeadImageView xt_setImageWithPic:aUser.headPic placeHolderImage:IMG_HEAD_NO] ;
+    _labelName.text = aUser.nickName ;
+
+    _labelDescription.text = aUser.intruduce ;
+    _labelFocus.text = [NSString stringWithFormat:@"%d",aUser.followCnt] ;
+    _labelFans.text = [NSString stringWithFormat:@"%d",aUser.fansCnt] ;
+}
+
+#pragma -
 - (void)awakeFromNib
 {
+    _levelImageView.hidden = YES ;
+    _labelPosition.hidden = YES ;
+    
     self.backgroundColor = [UIColor clearColor] ;
     _userHeadImageView.layer.cornerRadius = _userHeadImageView.frame.size.height / 2. ;
     _userHeadImageView.layer.masksToBounds = YES ;
@@ -37,9 +57,9 @@
     _btFocus.backgroundColor = [UIColor clearColor] ;
     _mid_seperateLine.backgroundColor = [UIColor whiteColor] ;
     _baseLine.backgroundColor = [UIColor xt_seperate] ;
-    
 }
 
+#pragma -
 - (IBAction)btFansOnClick:(id)sender
 {
     NSLog(@"他的粉丝") ;
@@ -50,6 +70,7 @@
     NSLog(@"他的关注") ;
 }
 
+#pragma -
 + (CGFloat)getHeight
 {
     //  pic                      + baseline

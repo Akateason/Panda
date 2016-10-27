@@ -208,6 +208,87 @@
                            }] ;
 }
 
+#pragma - 指定用户ID取得用户信息
++ (void)getUserSearchByID:(NSString *)userID
+            currentUserID:(NSString *)currentUserID
+                  success:(void (^)(id json))success
+                     fail:(void (^)())fail
+{
+    NSMutableDictionary *paramer = [self getParameters] ;
+    [paramer setObject:userID forKey:@"searchUserId"] ;
+    if (currentUserID) {
+        [paramer setObject:currentUserID forKey:@"userId"] ;
+    }
+    
+    [XTRequest GETWithUrl:[self getFinalUrl:URL_USER_SEARCH_BY_ID]
+               parameters:paramer
+                  success:^(id json) {
+                      if (success) success(json);
+                  } fail:^{
+                      if (fail) fail();
+                  }] ;
+    
+}
+
+#pragma - 指定发起用户ID搜索关注信息
++ (void)getFansSearchByID:(NSString *)userID
+            currentUserID:(NSString *)currentUserID
+                     from:(int)from
+                  howmany:(int)howmany
+                  success:(void (^)(id json))success
+                     fail:(void (^)())fail
+{
+    NSMutableDictionary *paramer = [self getParameters] ;
+    [paramer setObject:userID forKey:@"fromUserId"] ;
+    if (currentUserID) {
+        [paramer setObject:currentUserID forKey:@"userId"] ;
+    }
+    [paramer setObject:@(from) forKey:@"from"] ;
+    [paramer setObject:@(howmany) forKey:@"howmany"] ;
+    
+    [XTRequest GETWithUrl:[self getFinalUrl:URL_FANS_BY_ID]
+               parameters:paramer
+                  success:^(id json) {
+                      if (success) {
+                          success(json) ;
+                      }
+                  }
+                     fail:^{
+                         if (fail) {
+                             fail() ;
+                         }
+                     }] ;
+}
+
+#pragma - 指定被关注用户ID搜索关注信息
++ (void)getFollowerSearchByID:(NSString *)userID
+                currentUserID:(NSString *)currentUserID
+                         from:(int)from
+                      howmany:(int)howmany
+                      success:(void (^)(id json))success
+                         fail:(void (^)())fail
+{
+    NSMutableDictionary *paramer = [self getParameters] ;
+    [paramer setObject:userID forKey:@"toUserId"] ;
+    if (currentUserID) {
+        [paramer setObject:currentUserID forKey:@"userId"] ;
+    }
+    [paramer setObject:@(from) forKey:@"from"] ;
+    [paramer setObject:@(howmany) forKey:@"howmany"] ;
+    
+    [XTRequest GETWithUrl:[self getFinalUrl:URL_FOLLOWERS_BY_ID]
+               parameters:paramer
+                  success:^(id json) {
+                      if (success) {
+                          success(json) ;
+                      }
+                  }
+                     fail:^{
+                         if (fail) {
+                             fail() ;
+                         }
+                     }] ;
+}
 
 
 #pragma -  搜索首页笔记信息

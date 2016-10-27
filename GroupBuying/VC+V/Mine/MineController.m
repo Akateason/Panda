@@ -163,6 +163,7 @@
             NSLog(@"我的关注") ;
             MyFansFocusCtrller *mffVC = (MyFansFocusCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"MyFansFocusCtrller"] ;
             mffVC.displayType = type_focus ;
+            mffVC.userID = [UserOnDevice currentUserOnDevice].userId ;
             [mffVC setHidesBottomBarWhenPushed:YES] ;
             [self.navigationController pushViewController:mffVC animated:YES] ;
         } ;
@@ -170,6 +171,7 @@
             NSLog(@"我的粉丝") ;
             MyFansFocusCtrller *mffVC = (MyFansFocusCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"MyFansFocusCtrller"] ;
             mffVC.displayType = type_fans ;
+            mffVC.userID = [UserOnDevice currentUserOnDevice].userId ;
             [mffVC setHidesBottomBarWhenPushed:YES] ;
             [self.navigationController pushViewController:mffVC animated:YES] ;
         } ;

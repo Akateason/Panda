@@ -10,7 +10,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ParallaxHeaderView : UIView
-//@property (nonatomic) IBOutlet UILabel *headerTitleLabel;
 @property (nonatomic) UIImage *headerImage;
 
 + (id)parallaxHeaderViewWithImage:(UIImage *)image forSize:(CGSize)headerSize;

@@ -8,14 +8,20 @@
 
 #import "MyFansFocusCtrller.h"
 #import "MyFansFocusCell.h"
+#import "UserOnDevice.h"
+#import "UserFollowViewItem.h"
+#import "User.h"
+
+static const int kHowmany = 20 ;
 
 @interface MyFansFocusCtrller () <UITableViewDataSource,UITableViewDelegate,RootTableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet RootTableView *table;
-
 @property (weak, nonatomic) IBOutlet UIView *topbarbg;
 @property (weak, nonatomic) IBOutlet UIView *topbarbg2;
 @property (weak, nonatomic) IBOutlet UITextField *tf_search;
+
+@property (nonatomic,strong) NSArray *listUsers ;
 
 @end
 
@@ -38,7 +44,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
     _topbarbg.backgroundColor = [UIColor xt_seperate] ;
     _topbarbg2.layer.cornerRadius = 5. ;
     
@@ -47,8 +52,6 @@
     _table.delegate = self ;
     _table.xt_Delegate = self ;
     [_table registerNib:[UINib nibWithNibName:kID_MyFansFocusCell bundle:nil] forCellReuseIdentifier:kID_MyFansFocusCell] ;
-    
-    
 }
 
 
@@ -56,8 +59,35 @@
 #pragma mark - RootTableViewDelegate
 - (void)loadNewData
 {
+//    NSString *currentUserID =
     
-    
+    if (self.displayType == type_focus) {
+        
+        [ServerRequest getFollowerSearchByID:self.userID
+                               currentUserID:nil
+                                        from:(int)self.listUsers.count
+                                     howmany:kHowmany
+                                     success:^(id json) {
+                                         
+                                     }
+                                        fail:^{
+                                            
+                                        }] ;
+    }
+    else if (self.displayType == type_fans) {
+        
+        [ServerRequest getFansSearchByID:self.userID
+                           currentUserID:nil
+                                    from:(int)self.listUsers.count
+                                 howmany:kHowmany
+                                 success:^(id json) {
+                                     
+                                 } fail:^{
+                                     
+                                 }] ;
+        
+    }
+
 }
 
 - (void)loadMoreData

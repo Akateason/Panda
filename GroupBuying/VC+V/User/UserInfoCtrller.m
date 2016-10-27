@@ -12,19 +12,46 @@
 #import "UserInfoView.h"
 #import "UserFoucusHeaderView.h"
 #import "UserNotesCollectionTableViewCell.h"
+#import "UserOnDevice.h"
+#import "UserViewItem.h"
 
-
-@interface UserInfoCtrller () <UITableViewDelegate,UITableViewDataSource>
+@interface UserInfoCtrller () <UITableViewDelegate,UITableViewDataSource,RootTableViewDelegate>
 // UI
-@property (weak, nonatomic) IBOutlet UITableView    *table;
+@property (weak, nonatomic) IBOutlet RootTableView    *table ;
 @property (nonatomic,strong) ParallaxHeaderView     *paralax ;
 @property (nonatomic,strong) UserInfoView           *userinfoView ;
+
+@property (nonatomic,strong) UserViewItem           *userItem ;
 
 @end
 
 @implementation UserInfoCtrller
 
 #pragma mark - prop
+- (void)setUserID:(NSString *)userID
+{
+    _userID = userID ;
+    
+    if (!userID) return ;
+
+    NSString *currentUserID = ([UserOnDevice hasLogin]) ? [UserOnDevice currentUserOnDevice].userId : nil ;
+    [ServerRequest getUserSearchByID:userID
+                       currentUserID:currentUserID
+                             success:^(id json) {
+                                 ResultParsered *result = [ResultParsered yy_modelWithJSON:json] ;
+                                 if (result.code == 1) {
+                                     self.userItem = [UserViewItem yy_modelWithJSON:result.data[@"userView"]] ;
+                                     if (self.title.length == 0) self.title = self.userItem.userInfo.nickName ;
+                                     self.userinfoView.aUser = self.userItem.userInfo ;
+                                     [_table reloadData] ;
+                                 }
+                             }
+                                fail:^{
+                                    
+                                }] ;
+}
+
+
 - (void)setUserNameDisplay:(NSString *)userNameDisplay
 {
     _userNameDisplay = userNameDisplay ;
@@ -63,11 +90,13 @@
 
 - (void)configureUI
 {
-    _table.delegate = self ;
-    _table.dataSource = self ;
-    _table.separatorStyle = 0 ;
     [_table registerNib:[UINib nibWithNibName:idUserNotesCollectionTableViewCell bundle:nil] forCellReuseIdentifier:idUserNotesCollectionTableViewCell] ;
     [_table registerNib:[UINib nibWithNibName:idUserFoucusHeaderView bundle:nil] forHeaderFooterViewReuseIdentifier:idUserFoucusHeaderView] ;
+    _table.delegate = self ;
+    _table.dataSource = self ;
+    _table.xt_Delegate = self ;
+    _table.separatorStyle = 0 ;
+    [_table cancelHeaderRefreshUI] ;
     
     self.paralax = ({
         ParallaxHeaderView *header = [ParallaxHeaderView parallaxHeaderViewWithSubView:self.userinfoView] ;
@@ -77,18 +106,15 @@
     [_table setTableHeaderView:self.paralax] ;
 }
 
-
-//#pragma mark - RootTableViewDelegate
+#pragma mark - RootTableViewDelegate
 //- (void)loadNewData
-//{
-//
-//}
-//
-//- (void)loadMoreData
 //{
 //    
 //}
-
+- (void)loadMoreData
+{
+    
+}
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -105,7 +131,6 @@
     return cell ;
 }
 
-// custom view for header. will be adjusted to default or specified header height
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UserFoucusHeaderView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:idUserFoucusHeaderView] ;

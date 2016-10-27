@@ -80,7 +80,7 @@ static CGFloat kParallaxDeltaFactor = 0.5f;
 
 - (void)refreshBlurViewForNewImage
 {
-    UIImage *screenShot = [self screenShotOfView:self];
+    UIImage *screenShot = [self screenShotOfView:self] ;
     screenShot = [screenShot applyBlurWithRadius:5 tintColor:[UIColor colorWithWhite:0.6 alpha:0.2] saturationDeltaFactor:1.0 maskImage:nil];
     self.bluredImageView.image = screenShot;
 }
@@ -98,20 +98,6 @@ static CGFloat kParallaxDeltaFactor = 0.5f;
     imageView.image = self.headerImage;
     self.imageView = imageView;
     [self.imageScrollView addSubview:imageView];
-    
-//    CGRect labelRect = self.imageScrollView.bounds;
-//    labelRect.origin.x = labelRect.origin.y = kLabelPaddingDist;
-//    labelRect.size.width = labelRect.size.width - 2 * kLabelPaddingDist;
-//    labelRect.size.height = labelRect.size.height - 2 * kLabelPaddingDist;
-//    UILabel *headerLabel = [[UILabel alloc] initWithFrame:labelRect];
-//    headerLabel.textAlignment = NSTextAlignmentCenter;
-//    headerLabel.numberOfLines = 0;
-//    headerLabel.lineBreakMode = NSLineBreakByWordWrapping;
-//    headerLabel.autoresizingMask = imageView.autoresizingMask;
-//    headerLabel.textColor = [UIColor whiteColor];
-//    headerLabel.font = [UIFont fontWithName:@"AvenirNextCondensed-Regular" size:23];
-//    self.headerTitleLabel = headerLabel;
-//    [self.imageScrollView addSubview:self.headerTitleLabel];
     
     self.bluredImageView = [[UIImageView alloc] initWithFrame:self.imageView.frame];
     self.bluredImageView.autoresizingMask = self.imageView.autoresizingMask;

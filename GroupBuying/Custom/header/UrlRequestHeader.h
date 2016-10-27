@@ -49,6 +49,15 @@ static NSString *const URL_ARTICLE_ADD          = @"/gwn/s/article/add" ;
 //更新用户信息
 static NSString *const URL_USER_UPDATE          = @"/gwn/s/user/update" ;
 
+//指定用户ID取得用户信息
+static NSString *const URL_USER_SEARCH_BY_ID    = @"/gwn/user/searchById" ;
+
+//指定发起用户ID搜索关注信息
+static NSString *const URL_FANS_BY_ID           = @"/gwn/follow/searchByFromUserId" ;
+
+//指定被关注用户ID搜索关注信息
+static NSString *const URL_FOLLOWERS_BY_ID      = @"/gwn/follow/searchByToUserId" ;
+
 
 
 

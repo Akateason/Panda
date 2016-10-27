@@ -24,6 +24,7 @@
 @property (nonatomic) BOOL automaticallyLoadNew ;   // DEFAULT IS `YES` -> EVERYTIME INITIAL WITH AUTO LOAD NEW . CHANGE IT TO `NO` IF NECESSARY .
 - (void)pullDownRefreshHeader ;
 
+- (void)cancelHeaderRefreshUI ; // 顶部不用刷新
 - (void)cancelFooterRefreshUI ; // 底部不用刷新
 
 @end

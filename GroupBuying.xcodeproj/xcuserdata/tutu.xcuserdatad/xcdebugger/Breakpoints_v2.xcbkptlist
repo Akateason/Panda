@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GroupBuying/Custom/util/ServerRequest.m"
-            timestampString = "499058579.621717"
+            timestampString = "499258580.537199"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "228"
-            endingLineNumber = "228"
+            startingLineNumber = "309"
+            endingLineNumber = "309"
             landmarkName = "+homelistWithSearchtype:refresh:userID:from:howmany:success:fail:"
             landmarkType = "5">
          </BreakpointContent>
@@ -260,12 +260,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GroupBuying/Custom/util/ServerRequest.m"
-            timestampString = "499058955.073348"
+            timestampString = "499258580.537199"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "516"
-            endingLineNumber = "516"
+            startingLineNumber = "597"
+            endingLineNumber = "597"
             landmarkName = "+getCommentsListByObjectId:From:howmany:refresh:success:fail:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GroupBuying/VC+V/User/UserInfoView.m"
+            timestampString = "499255245.369701"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "-btFansOnClick:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GroupBuying/VC+V/User/UserInfoView.m"
+            timestampString = "499255246.418287"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "-btFocusOnClick:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

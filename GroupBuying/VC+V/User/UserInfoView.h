@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+@class User ;
 
 @interface UserInfoView : UIView
-
+@property (nonatomic,strong) User *aUser ;
 + (CGFloat)getHeight ;
-
 @end
