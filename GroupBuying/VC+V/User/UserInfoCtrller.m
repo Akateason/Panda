@@ -85,13 +85,13 @@
     self.userinfoView.hisFocus = ^{
         MyFansFocusCtrller *mffVC = (MyFansFocusCtrller *)[[MyFansFocusCtrller class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"MyFansFocusCtrller"] ;
         mffVC.displayType = type_focus ;
-        mffVC.userID = [UserOnDevice currentUserOnDevice].userId ;
+        mffVC.userID = weakSelf.userID ;
         [weakSelf.navigationController pushViewController:mffVC animated:YES] ;
     } ;
     self.userinfoView.hisFans = ^{
         MyFansFocusCtrller *mffVC = (MyFansFocusCtrller *)[[MyFansFocusCtrller class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"MyFansFocusCtrller"] ;
         mffVC.displayType = type_fans ;
-        mffVC.userID = [UserOnDevice currentUserOnDevice].userId ;
+        mffVC.userID = weakSelf.userID ;
         [weakSelf.navigationController pushViewController:mffVC animated:YES] ;
     } ;
     
