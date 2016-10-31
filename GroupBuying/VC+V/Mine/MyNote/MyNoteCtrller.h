@@ -11,4 +11,6 @@
 
 @interface MyNoteCtrller : RootCtrl
 
+@property (nonatomic,copy) NSString *userID ;
+
 @end

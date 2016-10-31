@@ -156,6 +156,7 @@
         cell.block_note = ^{
             NSLog(@"我的笔记") ;
             MyNoteCtrller *mynoteVC = (MyNoteCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"MyNoteCtrller"] ;
+            mynoteVC.userID = [UserOnDevice currentUserOnDevice].userId ;
             [mynoteVC setHidesBottomBarWhenPushed:YES] ;
             [self.navigationController pushViewController:mynoteVC animated:YES] ;
         } ;
@@ -178,6 +179,7 @@
         cell.block_page = ^{
             NSLog(@"我的主页") ;
             UserInfoCtrller *userCtrl = (UserInfoCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"UserInfoCtrller"] ;
+            userCtrl.userID = [UserOnDevice currentUserOnDevice].userId ;
             [userCtrl setHidesBottomBarWhenPushed:YES] ;
             [self.navigationController pushViewController:userCtrl animated:YES] ;
         } ;

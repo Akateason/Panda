@@ -100,12 +100,12 @@
                   moduleName = "GroupBuying"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/teason/Documents/iOS_project/Groupbuying/GroupBuying/VC+V/Post/PostCtrller.m"
-                  timestampString = "499529179.903206"
+                  timestampString = "499614874.441235"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "141"
                   endingLineNumber = "141"
-                  offsetFromSymbolStart = "1707">
+                  offsetFromSymbolStart = "1500">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -115,12 +115,12 @@
                   moduleName = "GroupBuying"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/teason/Documents/iOS_project/Groupbuying/GroupBuying/VC+V/Post/PostCtrller.m"
-                  timestampString = "499529179.903423"
+                  timestampString = "499614874.441455"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "141"
                   endingLineNumber = "141"
-                  offsetFromSymbolStart = "32">
+                  offsetFromSymbolStart = "40">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -180,12 +180,12 @@
                   moduleName = "GroupBuying"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/teason/Documents/iOS_project/Groupbuying/GroupBuying/VC+V/Post/PostCtrller.m"
-                  timestampString = "499529179.905372"
+                  timestampString = "499614874.473787"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "163"
                   endingLineNumber = "163"
-                  offsetFromSymbolStart = "1191">
+                  offsetFromSymbolStart = "1132">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -195,12 +195,12 @@
                   moduleName = "GroupBuying"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/teason/Documents/iOS_project/Groupbuying/GroupBuying/VC+V/Post/PostCtrller.m"
-                  timestampString = "499529179.905636"
+                  timestampString = "499614874.474042"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "163"
                   endingLineNumber = "163"
-                  offsetFromSymbolStart = "1262">
+                  offsetFromSymbolStart = "1204">
                </Location>
             </Locations>
          </BreakpointContent>
