@@ -22,6 +22,7 @@
 #import "TagDetailCtrller.h"
 #import "UserInfoCtrller.h"
 #import "CommentsListCtrller.h"
+#import "FocusHandler.h"
 
 @interface NoteDetailCtrller () <UITableViewDataSource,UITableViewDelegate,RootTableViewDelegate,HPBigPhotoHeaderViewDelegate,DetailCommentsCellDelegate>
 
@@ -72,28 +73,23 @@
     if (!hasLogin) return false ;
     
     if (bFollow) {
-        [ServerRequest addFollowWithUserID:createrID
-                                   success:^(id json) {
-                                       ResultParsered *result = [ResultParsered yy_modelWithJSON:json] ;
-                                       if (result.code == 1) {
-                                           self.noteDetail.isFollow = true ;
-                                       }
-                                   } fail:^{
-                                       
-                                   }] ;
+        
+        [FocusHandler addFocus:createrID
+                      complete:^(ResultParsered *result) {
+                          if (result.code == 1) {
+                              self.noteDetail.isFollow = true ;
+                          }
+                      }] ;
     }
     else {
-        [ServerRequest cancelFollowWithUserID:createrID
-                                      success:^(id json) {
-                                          
-                                          ResultParsered *result = [ResultParsered yy_modelWithJSON:json] ;
-                                          if (result.code == 1) {
-                                              self.noteDetail.isFollow = false ;
-                                          }
-                                          
-                                      } fail:^{
-                                          
-                                      }] ;
+        
+        [FocusHandler cancelFocus:createrID
+                         complete:^(ResultParsered *result) {
+                             if (result.code == 1) {
+                                 self.noteDetail.isFollow = false ;
+                             }
+                         }] ;
+
     }
     
     self.blockFocus(createrID,bFollow) ;

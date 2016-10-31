@@ -24,6 +24,7 @@
 #import "UserOnDevice.h"
 #import "NoteListViewItem.h"
 #import "NotificationCenterHeader.h"
+#import "FocusHandler.h"
 
 static NSInteger const kPageHowmany = 20 ;
 
@@ -72,38 +73,30 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
     if (!hasLogin) return false ;
     
     if (bFollow) {
-        [ServerRequest addFollowWithUserID:createrID
-                                   success:^(id json) {
-                                       ResultParsered *result = [ResultParsered yy_modelWithJSON:json] ;
-                                       if (result.code == 1) {
-                                           [self.listNote enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem, NSUInteger idx, BOOL * _Nonnull stop) {
-                                               if ([noteItem.ownerId isEqualToString:createrID]) {
-                                                   noteItem.isFollow = true ;
-                                               }
-                                           }] ;
-                                           [_collectionView reloadData] ;
-                                       }
-                                   } fail:^{
-                                       
-                                   }] ;
+        [FocusHandler addFocus:createrID
+                      complete:^(ResultParsered *result) {
+                          if (result.code == 1) {
+                              [self.listNote enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem, NSUInteger idx, BOOL * _Nonnull stop) {
+                                  if ([noteItem.ownerId isEqualToString:createrID]) {
+                                      noteItem.isFollow = true ;
+                                  }
+                              }] ;
+                              [_collectionView reloadData] ;
+                          }
+                      }] ;
     }
     else {
-        [ServerRequest cancelFollowWithUserID:createrID
-                                      success:^(id json) {
-                                          
-                                          ResultParsered *result = [ResultParsered yy_modelWithJSON:json] ;
-                                          if (result.code == 1) {
-                                              [self.listNote enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem, NSUInteger idx, BOOL * _Nonnull stop) {
-                                                  if ([noteItem.ownerId isEqualToString:createrID]) {
-                                                      noteItem.isFollow = false ;
-                                                  }
-                                              }] ;
-                                              [_collectionView reloadData] ;
-                                          }
-                                          
-                                      } fail:^{
-                                          
-                                      }] ;
+        [FocusHandler cancelFocus:createrID
+                         complete:^(ResultParsered *result) {
+                             if (result.code == 1) {
+                                 [self.listNote enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem, NSUInteger idx, BOOL * _Nonnull stop) {
+                                     if ([noteItem.ownerId isEqualToString:createrID]) {
+                                         noteItem.isFollow = false ;
+                                     }
+                                 }] ;
+                                 [_collectionView reloadData] ;
+                             }
+                         }] ;
     }
     
     return true ;

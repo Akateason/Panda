@@ -9,6 +9,10 @@
 #import "UserNotesCollectionTableViewCell.h"
 #import "CHTCollectionViewWaterfallLayout.h"
 #import "HPProductCollectionCell.h"
+#import "UserViewItem.h"
+#import "NoteListViewItem.h"
+
+#define kLengthOfRow        ([HPProductCollectionCell getSize].height + 3.)
 
 @interface UserNotesCollectionTableViewCell () <UICollectionViewDelegate,UICollectionViewDataSource,CHTCollectionViewDelegateWaterfallLayout>
 
@@ -19,10 +23,19 @@
 
 @implementation UserNotesCollectionTableViewCell
 
+- (void)setNoteItems:(NSArray *)noteItems
+{
+    _noteItems = noteItems ;
+    
+    if (!noteItems) return ;
+    [_collectionView reloadData] ;
+}
+
+
 #pragma mark -
 + (float)getHeightWithCount:(NSInteger)count
 {
-    return 10 + count / 2 * ([HPProductCollectionCell getSize].height + 3.) ;
+    return 10 + (count / 2 + count % 2) * kLengthOfRow ;
 }
 
 #pragma mark -
@@ -65,13 +78,13 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 10 ;
+    return self.noteItems.count ;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     HPProductCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:id_HPProductCollectionCell forIndexPath:indexPath];
-    cell.index = indexPath.row ;
+    cell.noteItem = self.noteItems[indexPath.row] ;
     return cell;
 }
 

@@ -15,18 +15,56 @@
 #import "UserOnDevice.h"
 #import "UserViewItem.h"
 #import "MyFansFocusCtrller.h"
+#import "BigPhotoHeaderViewProtocolHeader.h"
+#import "FocusHandler.h"
+#import "NoteListViewItem.h"
 
-@interface UserInfoCtrller () <UITableViewDelegate,UITableViewDataSource,RootTableViewDelegate>
+
+static const int kHowmany = 20 ;
+
+@interface UserInfoCtrller () <UITableViewDelegate,UITableViewDataSource,RootTableViewDelegate,HPBigPhotoHeaderViewDelegate>
+{
+    NSString *currentUserID ;
+}
+
 // UI
 @property (weak, nonatomic) IBOutlet RootTableView    *table ;
 @property (nonatomic,strong) ParallaxHeaderView     *paralax ;
 @property (nonatomic,strong) UserInfoView           *userinfoView ;
-
+// code
 @property (nonatomic,strong) UserViewItem           *userItem ;
-
+@property (nonatomic,strong) NSArray                *listNote ;
 @end
 
 @implementation UserInfoCtrller
+
+#pragma mark - HPBigPhotoHeaderViewDelegate
+- (BOOL)followUserBtOnClickWithCreaterID:(NSString *)createrID
+                                followed:(BOOL)bFollow
+{
+    BOOL hasLogin = [UserOnDevice checkForLoginOrNot:self] ;
+    if (!hasLogin) return false ;
+    
+    if (bFollow) {
+        [FocusHandler addFocus:createrID complete:^(ResultParsered *result) {
+            if (result.code == 1) {
+                self.userItem.isFollow = bFollow ;
+                [_table reloadData] ;
+            }
+        }] ;
+    }
+    else {
+        [FocusHandler cancelFocus:createrID complete:^(ResultParsered *result) {
+            if (result.code == 1) {
+                self.userItem.isFollow = bFollow ;
+                [_table reloadData] ;
+            }
+        }] ;
+    }
+    
+    return true ;
+}
+
 
 #pragma mark - prop
 - (void)setUserID:(NSString *)userID
@@ -34,8 +72,8 @@
     _userID = userID ;
     
     if (!userID) return ;
-
-    NSString *currentUserID = ([UserOnDevice hasLogin]) ? [UserOnDevice currentUserOnDevice].userId : nil ;
+    
+    // get user
     [ServerRequest getUserSearchByID:userID
                        currentUserID:currentUserID
                              success:^(id json) {
@@ -48,8 +86,32 @@
                                  }
                              }
                                 fail:^{
-                                    
                                 }] ;
+    
+    // get noteitems from user .
+    [ServerRequest searchNoteListByUser:self.userID
+                                refresh:1
+                            currentUser:currentUserID
+                                   from:0
+                                howmany:kHowmany
+                                success:^(id json) {
+                                    
+                                    ResultParsered *result = [ResultParsered yy_modelWithJSON:json] ;
+                                    if (result.code == 1) {
+                                        NSMutableArray *tmplist = [self.listNote mutableCopy] ;
+                                        NSArray *diclist = result.data[@"noteList"] ;
+                                        for (NSDictionary *dic in diclist) {
+                                            NoteListViewItem *item = [NoteListViewItem yy_modelWithJSON:dic] ;
+                                            [tmplist addObject:item] ;
+                                        }
+                                        self.listNote = tmplist ;
+                                        if (tmplist.count > 0) {
+                                            [_table reloadData] ;
+                                        }
+                                    }
+                                }
+                                   fail:^{
+                                   }] ;
 }
 
 
@@ -73,6 +135,13 @@
     return _userinfoView ;
 }
 
+- (NSArray *)listNote
+{
+    if (!_listNote) {
+        _listNote = @[] ;
+    }
+    return _listNote ;
+}
 
 
 #pragma mark - life
@@ -80,6 +149,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    currentUserID = [UserOnDevice currentUserOnDevice].userId ;
+    
     
     __weak UserInfoCtrller *weakSelf = self ;
     self.userinfoView.hisFocus = ^{
@@ -100,8 +171,8 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [(ParallaxHeaderView *)self.table.tableHeaderView refreshBlurViewForNewImage] ;
     [super viewDidAppear:animated];
+    [(ParallaxHeaderView *)self.table.tableHeaderView refreshBlurViewForNewImage] ;
 }
 
 - (void)configureUI
@@ -112,6 +183,7 @@
     _table.dataSource = self ;
     _table.xt_Delegate = self ;
     _table.separatorStyle = 0 ;
+    _table.backgroundColor = [UIColor xt_seperate] ;
     [_table cancelHeaderRefreshUI] ;
     
     self.paralax = ({
@@ -127,9 +199,30 @@
 //{
 //    
 //}
+
 - (void)loadMoreData
 {
-    
+    [ServerRequest searchNoteListByUser:self.userID
+                                refresh:0
+                            currentUser:currentUserID
+                                   from:(int)self.listNote.count
+                                howmany:kHowmany
+                                success:^(id json) {
+                                    
+                                    ResultParsered *result = [ResultParsered yy_modelWithJSON:json] ;
+                                    if (result.code == 1) {
+                                        NSMutableArray *tmplist = [self.listNote mutableCopy] ;
+                                        NSArray *diclist = result.data[@"noteList"] ;
+                                        for (NSDictionary *dic in diclist) {
+                                            NoteListViewItem *item = [NoteListViewItem yy_modelWithJSON:dic] ;
+                                            [tmplist addObject:item] ;
+                                        }
+                                        self.listNote = tmplist ;
+                                        [_table reloadData] ;
+                                    }
+                                }
+                                   fail:^{
+                                   }] ;
 }
 
 #pragma mark - UITableViewDataSource
@@ -141,22 +234,22 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UserNotesCollectionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:idUserNotesCollectionTableViewCell] ;
-    if (!cell) {
-        cell = [tableView dequeueReusableCellWithIdentifier:idUserNotesCollectionTableViewCell] ;
-    }
+    cell.noteItems = self.listNote ;
     return cell ;
 }
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UserFoucusHeaderView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:idUserFoucusHeaderView] ;
+    header.delegate = self;
+    header.userItem = self.userItem ;
     return header ;
 }
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [UserNotesCollectionTableViewCell getHeightWithCount:10] ;
+    return [UserNotesCollectionTableViewCell getHeightWithCount:self.listNote.count] ;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

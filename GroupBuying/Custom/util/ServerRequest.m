@@ -320,6 +320,36 @@
     
 }
 
+#pragma - 指定用户搜索笔记信息
++ (void)searchNoteListByUser:(NSString *)userID
+                     refresh:(int)refresh
+                 currentUser:(NSString *)currentUserID
+                        from:(int)from
+                     howmany:(int)howmany
+                     success:(void (^)(id json))success
+                        fail:(void (^)())fail
+{
+    NSMutableDictionary *paramer = [self getParameters] ;
+    [paramer setObject:userID forKey:@"searchUserId"] ;
+    [paramer setObject:@(refresh) forKey:@"refresh"] ;
+    if (currentUserID != nil) {
+        [paramer setObject:currentUserID forKey:@"userId"] ;
+    }
+    [paramer setObject:@(from) forKey:@"from"] ;
+    [paramer setObject:@(howmany) forKey:@"howmany"] ;
+    
+    [XTRequest GETWithUrl:[self getFinalUrl:URL_NOTELIST_BY_USER]
+               parameters:paramer
+                  success:^(id json) {
+                      if (success) success(json) ;
+                  } fail:^{
+                      if (fail) fail() ;
+                  }] ;
+    
+}
+
+
+
 #pragma - 指定文章ID搜索笔记详情信息
 + (void)articleDetailWithArticleID:(NSString *)articleID
                            refresh:(NSNumber *)refreshNumber

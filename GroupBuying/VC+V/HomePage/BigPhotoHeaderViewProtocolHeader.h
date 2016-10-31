@@ -11,6 +11,7 @@
 
 @protocol HPBigPhotoHeaderViewDelegate <NSObject>
 
+@optional
 - (void)userheadOnClickWithUserID:(NSString *)userID userName:(NSString *)name ;
 - (BOOL)followUserBtOnClickWithCreaterID:(NSString *)createrID followed:(BOOL)bFollow ;
 

@@ -100,6 +100,18 @@
                        success:(void (^)(id json))success
                           fail:(void (^)())fail ;
 
+#pragma - 指定用户搜索笔记信息
++ (void)searchNoteListByUser:(NSString *)userID
+                     refresh:(int)refresh
+                 currentUser:(NSString *)currentUserID
+                        from:(int)from
+                     howmany:(int)howmany
+                     success:(void (^)(id json))success
+                        fail:(void (^)())fail ;
+
+
+
+
 #pragma - 指定文章ID搜索笔记详情信息
 + (void)articleDetailWithArticleID:(NSString *)articleID
                            refresh:(NSNumber *)refreshNumber
@@ -147,6 +159,8 @@
                                                 success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
                                                    fail:(void (^)(NSURLSessionDataTask *task, NSError *error))fail ;
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 评论
 #pragma mark - 添加评论信息
 + (void)addComment:(Comment *)comment
            success:(void (^)(id json))success

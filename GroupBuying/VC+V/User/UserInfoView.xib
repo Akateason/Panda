@@ -11,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner1" translatesAutoresizingMaskIntoConstraints="NO" id="Abd-zR-CjG">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgUserInfo" translatesAutoresizingMaskIntoConstraints="NO" id="Abd-zR-CjG">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="185"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3rC-SW-8He">
@@ -27,7 +27,7 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="t_h_1" translatesAutoresizingMaskIntoConstraints="NO" id="yII-kW-qJ6">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_head" translatesAutoresizingMaskIntoConstraints="NO" id="yII-kW-qJ6">
                     <rect key="frame" x="12" y="16" width="60" height="60"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="60" id="7zZ-WY-Ll9"/>
@@ -153,7 +153,7 @@
         </view>
     </objects>
     <resources>
-        <image name="banner1" width="750" height="520"/>
-        <image name="t_h_1" width="36" height="36"/>
+        <image name="bgUserInfo" width="375" height="175"/>
+        <image name="icon_head" width="55" height="55"/>
     </resources>
 </document>

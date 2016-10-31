@@ -10,11 +10,10 @@
 #import <QuartzCore/QuartzCore.h>
 
 #import "ParallaxHeaderView.h"
-#import "UIImage+ImageEffects.h"
+#import "UIImage+AddFunction.h"
 
 @interface ParallaxHeaderView ()
 @property (weak, nonatomic) IBOutlet UIScrollView *imageScrollView;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIView *subView;
 @property (nonatomic) IBOutlet UIImageView *bluredImageView;
 @end
@@ -27,15 +26,6 @@ static CGFloat kParallaxDeltaFactor = 0.5f;
 
 @implementation ParallaxHeaderView
 
-+ (id)parallaxHeaderViewWithImage:(UIImage *)image forSize:(CGSize)headerSize;
-{
-    ParallaxHeaderView *headerView = [[ParallaxHeaderView alloc] initWithFrame:CGRectMake(0, 0, headerSize.width, headerSize.height)];
-    headerView.headerImage = image;
-    [headerView initialSetupForDefaultHeader];
-    return headerView;
-    
-}
-
 + (id)parallaxHeaderViewWithSubView:(UIView *)subView
 {
     ParallaxHeaderView *headerView = [[ParallaxHeaderView alloc] initWithFrame:CGRectMake(0, 0, subView.frame.size.width, subView.frame.size.height)];
@@ -45,11 +35,7 @@ static CGFloat kParallaxDeltaFactor = 0.5f;
 
 - (void)awakeFromNib
 {
-    if (self.subView)
-        [self initialSetupForCustomSubView:self.subView];
-    else
-        [self initialSetupForDefaultHeader];
-    
+    [self initialSetupForCustomSubView:self.subView];
     [self refreshBlurViewForNewImage];
 }
 
@@ -80,34 +66,18 @@ static CGFloat kParallaxDeltaFactor = 0.5f;
 
 - (void)refreshBlurViewForNewImage
 {
-    UIImage *screenShot = [self screenShotOfView:self] ;
-    screenShot = [screenShot applyBlurWithRadius:5 tintColor:[UIColor colorWithWhite:0.6 alpha:0.2] saturationDeltaFactor:1.0 maskImage:nil];
-    self.bluredImageView.image = screenShot;
+    dispatch_queue_t queue = dispatch_queue_create("makeBlur", NULL) ;
+    dispatch_async(queue, ^{
+        UIImage *blurScreenShot = [[self screenShotOfView:self] blur] ;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.bluredImageView.image = blurScreenShot ;
+        }) ;
+    }) ;
 }
 
 #pragma mark -
 #pragma mark Private
 
-- (void)initialSetupForDefaultHeader
-{
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
-    self.imageScrollView = scrollView;
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:scrollView.bounds];
-    imageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    imageView.contentMode = UIViewContentModeScaleAspectFill;
-    imageView.image = self.headerImage;
-    self.imageView = imageView;
-    [self.imageScrollView addSubview:imageView];
-    
-    self.bluredImageView = [[UIImageView alloc] initWithFrame:self.imageView.frame];
-    self.bluredImageView.autoresizingMask = self.imageView.autoresizingMask;
-    self.bluredImageView.alpha = 0.0f;
-    [self.imageScrollView addSubview:self.bluredImageView];
-    
-    [self addSubview:self.imageScrollView];
-    
-    [self refreshBlurViewForNewImage];
-}
 
 - (void)initialSetupForCustomSubView:(UIView *)subView
 {
@@ -123,15 +93,8 @@ static CGFloat kParallaxDeltaFactor = 0.5f;
     [self.imageScrollView addSubview:self.bluredImageView];
     
     [self addSubview:self.imageScrollView];
-    [self refreshBlurViewForNewImage];
 }
 
-- (void)setHeaderImage:(UIImage *)headerImage
-{
-    _headerImage = headerImage;
-    self.imageView.image = headerImage;
-    [self refreshBlurViewForNewImage];
-}
 
 - (UIImage *)screenShotOfView:(UIView *)view
 {
@@ -139,8 +102,10 @@ static CGFloat kParallaxDeltaFactor = 0.5f;
     [self drawViewHierarchyInRect:kDefaultHeaderFrame afterScreenUpdates:NO];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    
+
     return image;
 }
+
+
 
 @end

@@ -82,6 +82,7 @@
 		608405951D74AA6800B40D68 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6084058F1D74AA6800B40D68 /* SVProgressHUD.m */; };
 		608405961D74AA6800B40D68 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 608405911D74AA6800B40D68 /* SVRadialGradientLayer.m */; };
 		6084059A1D74AE6800B40D68 /* PostCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = 608405991D74AE6800B40D68 /* PostCtrller.m */; };
+		D7387A961DC712AE002F4229 /* FocusHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D7387A951DC712AE002F4229 /* FocusHandler.m */; };
 		D74589871D6A9DCB00835234 /* HPBigPhotoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D74589851D6A9DCB00835234 /* HPBigPhotoHeaderView.m */; };
 		D74589881D6A9DCB00835234 /* HPBigPhotoHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D74589861D6A9DCB00835234 /* HPBigPhotoHeaderView.xib */; };
 		D745898C1D6AAF9500835234 /* XLPlainFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D745898B1D6AAF9500835234 /* XLPlainFlowLayout.m */; };
@@ -561,6 +562,8 @@
 		608405911D74AA6800B40D68 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
 		608405981D74AE6800B40D68 /* PostCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostCtrller.h; path = "GroupBuying/VC+V/Post/PostCtrller.h"; sourceTree = SOURCE_ROOT; };
 		608405991D74AE6800B40D68 /* PostCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostCtrller.m; path = "GroupBuying/VC+V/Post/PostCtrller.m"; sourceTree = SOURCE_ROOT; };
+		D7387A941DC712AE002F4229 /* FocusHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusHandler.h; sourceTree = "<group>"; };
+		D7387A951DC712AE002F4229 /* FocusHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusHandler.m; sourceTree = "<group>"; };
 		D74589841D6A9DCA00835234 /* HPBigPhotoHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPBigPhotoHeaderView.h; path = "GroupBuying/VC+V/HomePage/HPBigPhotoHeaderView.h"; sourceTree = SOURCE_ROOT; };
 		D74589851D6A9DCB00835234 /* HPBigPhotoHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPBigPhotoHeaderView.m; path = "GroupBuying/VC+V/HomePage/HPBigPhotoHeaderView.m"; sourceTree = SOURCE_ROOT; };
 		D74589861D6A9DCB00835234 /* HPBigPhotoHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HPBigPhotoHeaderView.xib; path = "GroupBuying/VC+V/HomePage/HPBigPhotoHeaderView.xib"; sourceTree = SOURCE_ROOT; };
@@ -1657,6 +1660,8 @@
 		D75CC3F71C2A92B200E590E6 /* VC+V */ = {
 			isa = PBXGroup;
 			children = (
+				60319DD51DAC061600BD094D /* HomePageCollectionCellHeader.h */,
+				D7CE29CE1DACD52A00FF452C /* BigPhotoHeaderViewProtocolHeader.h */,
 				D7CE2A511DBDEF5700FF452C /* Comments */,
 				D7E4FF171DA8E34B00DC0E53 /* Shop */,
 				60074DF91D60DEC90040C3C0 /* HomePage1 */,
@@ -1729,6 +1734,8 @@
 			children = (
 				D75CC6541C2AA17700E590E6 /* ResultParsered.h */,
 				D75CC6551C2AA17700E590E6 /* ResultParsered.m */,
+				D7387A941DC712AE002F4229 /* FocusHandler.h */,
+				D7387A951DC712AE002F4229 /* FocusHandler.m */,
 				60319DD11DABCACE00BD094D /* Upvote */,
 				D7886D531D91077D003D6D57 /* Comment */,
 				D7E0F4C21D87F1E700EA663B /* Resource */,
@@ -2693,7 +2700,6 @@
 		D7CE29CD1DABA6CD00FF452C /* HomePageSubs */ = {
 			isa = PBXGroup;
 			children = (
-				60319DD51DAC061600BD094D /* HomePageCollectionCellHeader.h */,
 				6084057A1D64DDDF00B40D68 /* HPProductCollectionCell.h */,
 				6084057B1D64DDDF00B40D68 /* HPProductCollectionCell.m */,
 				608405801D67F45700B40D68 /* HPProductCollectionCell.xib */,
@@ -2703,7 +2709,6 @@
 				D74589841D6A9DCA00835234 /* HPBigPhotoHeaderView.h */,
 				D74589851D6A9DCB00835234 /* HPBigPhotoHeaderView.m */,
 				D74589861D6A9DCB00835234 /* HPBigPhotoHeaderView.xib */,
-				D7CE29CE1DACD52A00FF452C /* BigPhotoHeaderViewProtocolHeader.h */,
 			);
 			name = HomePageSubs;
 			sourceTree = "<group>";
@@ -3334,6 +3339,7 @@
 				D76E84741D780FAC0014FDEA /* View+MASAdditions.m in Sources */,
 				D75CC4441C2A95DE00E590E6 /* MySearchBar.m in Sources */,
 				D76E843B1D76C3010014FDEA /* PhotoEditorCtrller.m in Sources */,
+				D7387A961DC712AE002F4229 /* FocusHandler.m in Sources */,
 				D7CE2A211DB0F2C900FF452C /* ArticleTag.m in Sources */,
 				D75CC5E71C2A965000E590E6 /* QNHttpManager.m in Sources */,
 				D75CC5CF1C2A965000E590E6 /* MJRefreshComponent.m in Sources */,

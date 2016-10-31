@@ -12,6 +12,9 @@
 #import "UserFollowViewItem.h"
 #import "User.h"
 #import "PublicEnum.h"
+#import "FocusHandler.h"
+#import "UserFollow.h"
+#import "UserInfoCtrller.h"
 
 static const int kHowmany = 20 ;
 
@@ -30,6 +33,68 @@ static const int kHowmany = 20 ;
 
 @implementation MyFansFocusCtrller
 
+#pragma mark - HPBigPhotoHeaderViewDelegate
+- (void)userheadOnClickWithUserID:(NSString *)userID userName:(NSString *)name
+{
+    UserInfoCtrller *userCtrl = (UserInfoCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"UserInfoCtrller"] ;
+    userCtrl.userID = userID ;
+    [self.navigationController pushViewController:userCtrl animated:YES] ;
+}
+
+- (BOOL)followUserBtOnClickWithCreaterID:(NSString *)createrID followed:(BOOL)bFollow
+{
+    BOOL hasLogin = [UserOnDevice checkForLoginOrNot:self] ;
+    if (!hasLogin) return false ;
+    
+    if (bFollow) {
+        [FocusHandler addFocus:createrID complete:^(ResultParsered *result) {
+            
+            if (result.code == 1) {
+                [self.listUsers enumerateObjectsUsingBlock:^(UserFollowViewItem *item, NSUInteger idx, BOOL * _Nonnull stop) {
+                    if (self.displayType == type_focus) {
+                        if ([item.followInfo.toUserId isEqualToString:createrID]) {
+                            item.isFollow = YES ;
+                        }
+                    }
+                    else if (self.displayType == type_fans) {
+                        if ([item.followInfo.fromUserId isEqualToString:createrID]) {
+                            item.isFollow = YES ;
+                        }
+                    }
+                }] ;
+                [_table reloadData] ;
+            }
+        }] ;
+    }
+    else {
+        [FocusHandler cancelFocus:createrID complete:^(ResultParsered *result) {
+            
+            if (result.code == 1) {
+                [self.listUsers enumerateObjectsUsingBlock:^(UserFollowViewItem *item, NSUInteger idx, BOOL * _Nonnull stop) {
+                    if (self.displayType == type_focus) {
+                        if ([item.followInfo.toUserId isEqualToString:createrID]) {
+                            item.isFollow = NO ;
+                        }
+                    }
+                    else if (self.displayType == type_fans) {
+                        if ([item.followInfo.fromUserId isEqualToString:createrID]) {
+                            item.isFollow = NO ;
+                        }
+                    }
+                }] ;
+                [_table reloadData] ;
+            }
+        }] ;
+    }
+    
+    return true ;
+}
+
+
+
+
+
+#pragma mark -
 - (void)setDisplayType:(DISPLAY_TYPE_MFFVC)displayType
 {
     _displayType = displayType ;
@@ -151,6 +216,7 @@ static const int kHowmany = 20 ;
     MyFansFocusCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_MyFansFocusCell] ;
     cell.displayType = self.displayType ;
     cell.userViewItem = self.listUsers[indexPath.row] ;
+    cell.delegate = self ;
     return cell ;
 }
 

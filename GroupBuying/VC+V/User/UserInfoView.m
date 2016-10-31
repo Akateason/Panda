@@ -57,6 +57,10 @@
     _btFocus.backgroundColor = [UIColor clearColor] ;
     _mid_seperateLine.backgroundColor = [UIColor whiteColor] ;
     _baseLine.backgroundColor = [UIColor xt_seperate] ;
+    
+    _labelName.text = @"" ;
+    _labelPosition.text = @"" ;
+    _labelDescription.text = @"" ;
 }
 
 #pragma -

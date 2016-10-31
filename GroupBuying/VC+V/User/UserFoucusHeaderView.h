@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BigPhotoHeaderViewProtocolHeader.h"
+@class UserViewItem ;
 
 static NSString *idUserFoucusHeaderView = @"UserFoucusHeaderView" ;
 
 @interface UserFoucusHeaderView : UITableViewHeaderFooterView
-
+@property (nonatomic,weak) id <HPBigPhotoHeaderViewDelegate> delegate ;
+@property (nonatomic,strong) UserViewItem *userItem ;
 @end

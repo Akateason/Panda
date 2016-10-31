@@ -58,7 +58,7 @@
     if (self.delegate && [self.delegate respondsToSelector:@selector(followUserBtOnClickWithCreaterID:followed:)]) {
         BOOL haslogin = [self.delegate followUserBtOnClickWithCreaterID:_noteItem.ownerId followed:!sender.selected] ;
         if (!haslogin) return ;
-        sender.selected = !sender.selected ;                        
+        sender.selected = !sender.selected ;
     }
 }
 

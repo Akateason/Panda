@@ -11,7 +11,6 @@
 static NSString *idUserNotesCollectionTableViewCell = @"UserNotesCollectionTableViewCell" ;
 
 @interface UserNotesCollectionTableViewCell : UITableViewCell
-
+@property (nonatomic,strong) NSArray *noteItems ;
 + (float)getHeightWithCount:(NSInteger)count ;
-
 @end
