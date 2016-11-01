@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BigPhotoHeaderViewProtocolHeader.h"
 
 static NSString *kID_UserItemCollectionCell = @"UserItemCollectionCell" ;
 
-@interface UserItemCollectionCell : UICollectionViewCell
+@class UserFollowViewItem ;
 
-@property (nonatomic) int index ;
+
+@interface UserItemCollectionCell : UICollectionViewCell
+@property (nonatomic,weak) id <HPBigPhotoHeaderViewDelegate> delegate ;
+@property (nonatomic,strong) UserFollowViewItem *followItem ;
 @end

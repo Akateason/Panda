@@ -7,7 +7,11 @@
 //
 
 #import "UserItemCollectionCell.h"
-#import "TestUser.h"
+#import "UserFollowViewItem.h"
+#import "UserFollow.h"
+#import "User.h"
+#import "UIImageView+SDQN.h"
+#import "FocusHandler.h"
 
 @interface UserItemCollectionCell ()
 
@@ -19,17 +23,35 @@
 
 @implementation UserItemCollectionCell
 
-- (void)setIndex:(int)index
+
+- (void)setFollowItem:(UserFollowViewItem *)followItem
 {
-    _index = index ;
+    _followItem = followItem ;
     
-    _userHeadPic.image = [UIImage imageNamed:[TestUser headImage:index]] ;
-    _usernameLabel.text = [TestUser username:index] ;
+    _usernameLabel.text = followItem.followInfo.toUserInfo.nickName ;
+    [_userHeadPic xt_setImageWithPic:followItem.followInfo.toUserInfo.headPic placeHolderImage:IMG_HEAD_NO] ;
+    _btFocus.selected = followItem.isFollow ;
 }
 
-- (IBAction)btFoucusOnClick:(id)sender
+
+- (IBAction)btFoucusOnClick:(UIButton *)sender
 {
-    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(followUserBtOnClickWithCreaterID:followed:)]) {
+        BOOL hasLogin = [self.delegate followUserBtOnClickWithCreaterID:self.followItem.followInfo.toUserId followed:!sender.selected] ;
+        if (hasLogin) {
+            sender.selected = !sender.selected ;
+            NSLog(@"btfocus ") ;
+        }
+    }
+}
+
+- (void)tapHeadImg
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(userheadOnClickWithUserID:userName:)]) {
+        [self.delegate userheadOnClickWithUserID:self.followItem.followInfo.toUserId
+                                        userName:self.followItem.followInfo.toUserInfo.nickName] ;
+        NSLog(@"头像") ;
+    }
 }
 
 - (void)awakeFromNib
@@ -44,6 +66,10 @@
     _btFocus.layer.borderColor = [UIColor xt_w_dark].CGColor ;
     _btFocus.layer.borderWidth = 1. ;
     _btFocus.layer.cornerRadius = 5. ;
+    [FocusHandler configureFocusButtonsTitlesWithButton:_btFocus] ;
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapHeadImg)] ;
+    [_userHeadPic addGestureRecognizer:tapGesture] ;
 }
 
 @end

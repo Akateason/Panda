@@ -63,7 +63,6 @@
     UserInfoCtrller *userCtrl = (UserInfoCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"UserInfoCtrller"] ;
     userCtrl.userID = userID ;
     userCtrl.userNameDisplay = name ;
-    [userCtrl setHidesBottomBarWhenPushed:YES] ;
     [self.navigationController pushViewController:userCtrl animated:YES] ;
 }
 
@@ -292,6 +291,11 @@
             return 0 ; // 无标签. 不显示
         }
     }
+    else if (section == 3) {
+        if (!self.noteDetail.followList.count) {
+            return 0 ; // 无关注的人, 不显示
+        }
+    }
     return 1 ;
 }
 
@@ -322,7 +326,8 @@
     }
     else if (section == 3) {
         DetailHisFocusCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_DetailHisFocusCell] ;
-        
+        cell.listFollowers = self.noteDetail.followList ;
+        cell.delegate = self ;
         return cell ;
     }
     else if (section == 4) {

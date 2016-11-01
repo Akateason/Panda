@@ -83,6 +83,8 @@
 		608405961D74AA6800B40D68 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 608405911D74AA6800B40D68 /* SVRadialGradientLayer.m */; };
 		6084059A1D74AE6800B40D68 /* PostCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = 608405991D74AE6800B40D68 /* PostCtrller.m */; };
 		D7387A961DC712AE002F4229 /* FocusHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D7387A951DC712AE002F4229 /* FocusHandler.m */; };
+		D7387A9A1DC83F73002F4229 /* DetailPicCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7387A981DC83F73002F4229 /* DetailPicCollectionCell.m */; };
+		D7387A9B1DC83F73002F4229 /* DetailPicCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7387A991DC83F73002F4229 /* DetailPicCollectionCell.xib */; };
 		D74589871D6A9DCB00835234 /* HPBigPhotoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D74589851D6A9DCB00835234 /* HPBigPhotoHeaderView.m */; };
 		D74589881D6A9DCB00835234 /* HPBigPhotoHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D74589861D6A9DCB00835234 /* HPBigPhotoHeaderView.xib */; };
 		D745898C1D6AAF9500835234 /* XLPlainFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D745898B1D6AAF9500835234 /* XLPlainFlowLayout.m */; };
@@ -564,6 +566,9 @@
 		608405991D74AE6800B40D68 /* PostCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostCtrller.m; path = "GroupBuying/VC+V/Post/PostCtrller.m"; sourceTree = SOURCE_ROOT; };
 		D7387A941DC712AE002F4229 /* FocusHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusHandler.h; sourceTree = "<group>"; };
 		D7387A951DC712AE002F4229 /* FocusHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusHandler.m; sourceTree = "<group>"; };
+		D7387A971DC83F73002F4229 /* DetailPicCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailPicCollectionCell.h; path = "GroupBuying/VC+V/NoteDetail/DetailPicCollectionCell.h"; sourceTree = SOURCE_ROOT; };
+		D7387A981DC83F73002F4229 /* DetailPicCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailPicCollectionCell.m; path = "GroupBuying/VC+V/NoteDetail/DetailPicCollectionCell.m"; sourceTree = SOURCE_ROOT; };
+		D7387A991DC83F73002F4229 /* DetailPicCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailPicCollectionCell.xib; path = "GroupBuying/VC+V/NoteDetail/DetailPicCollectionCell.xib"; sourceTree = SOURCE_ROOT; };
 		D74589841D6A9DCA00835234 /* HPBigPhotoHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPBigPhotoHeaderView.h; path = "GroupBuying/VC+V/HomePage/HPBigPhotoHeaderView.h"; sourceTree = SOURCE_ROOT; };
 		D74589851D6A9DCB00835234 /* HPBigPhotoHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPBigPhotoHeaderView.m; path = "GroupBuying/VC+V/HomePage/HPBigPhotoHeaderView.m"; sourceTree = SOURCE_ROOT; };
 		D74589861D6A9DCB00835234 /* HPBigPhotoHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HPBigPhotoHeaderView.xib; path = "GroupBuying/VC+V/HomePage/HPBigPhotoHeaderView.xib"; sourceTree = SOURCE_ROOT; };
@@ -1531,6 +1536,9 @@
 				606BF8521D841B7500C503FE /* DetailCoverTitleCell.h */,
 				606BF8531D841B7500C503FE /* DetailCoverTitleCell.m */,
 				606BF8541D841B7500C503FE /* DetailCoverTitleCell.xib */,
+				D7387A971DC83F73002F4229 /* DetailPicCollectionCell.h */,
+				D7387A981DC83F73002F4229 /* DetailPicCollectionCell.m */,
+				D7387A991DC83F73002F4229 /* DetailPicCollectionCell.xib */,
 				60319D501D8ED10A00BD094D /* DetailTagsCell.h */,
 				60319D511D8ED10A00BD094D /* DetailTagsCell.m */,
 				60319D521D8ED10A00BD094D /* DetailTagsCell.xib */,
@@ -3174,6 +3182,7 @@
 				D7E0F4CB1D88033D00EA663B /* Login.storyboard in Resources */,
 				D7E994D61D99122C00EACDFB /* MineEditCell.xib in Resources */,
 				D7886D7E1D93B8A9003D6D57 /* Activity.storyboard in Resources */,
+				D7387A9B1DC83F73002F4229 /* DetailPicCollectionCell.xib in Resources */,
 				60319D841D919C9500BD094D /* HotTagCollectionCell.xib in Resources */,
 				D75CC3D11C2A926100E590E6 /* Assets.xcassets in Resources */,
 				D7E994C61D98F4FD00EACDFB /* FeaturesRecommendCell.xib in Resources */,
@@ -3328,6 +3337,7 @@
 				D75CC5D71C2A965000E590E6 /* MJRefreshBackStateFooter.m in Sources */,
 				D7CE2A791DC213B100FF452C /* UserFollowViewItem.m in Sources */,
 				D75CC5C81C2A965000E590E6 /* HWWeakTimer.m in Sources */,
+				D7387A9A1DC83F73002F4229 /* DetailPicCollectionCell.m in Sources */,
 				D75CC6C21C2BEB0400E590E6 /* MyWebController.m in Sources */,
 				608405931D74AA6800B40D68 /* SVProgressAnimatedView.m in Sources */,
 				D7E4FF121DA8D75A00DC0E53 /* AddFriendsCtrl.m in Sources */,

@@ -8,8 +8,9 @@
 
 #import "DetailHisFocusCell.h"
 #import "UserItemCollectionCell.h"
+#import "UserFollowViewItem.h"
 
-@interface DetailHisFocusCell () <UICollectionViewDataSource,UICollectionViewDelegate>
+@interface DetailHisFocusCell () <UICollectionViewDataSource,UICollectionViewDelegate,HPBigPhotoHeaderViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *seperateline;
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;
@@ -21,11 +22,25 @@
 
 @implementation DetailHisFocusCell
 
-- (IBAction)btMoreOnClick:(id)sender
+#pragma mark - prop
+- (void)setListFollowers:(NSArray *)listFollowers
 {
+    _listFollowers = listFollowers ;
+    
+    if (!listFollowers) return ;
+    
+    [_collectionView reloadData] ;
     
 }
 
+
+#pragma mark - action
+- (IBAction)btMoreOnClick:(id)sender
+{
+    NSLog(@"more") ;
+}
+
+#pragma mark - life
 - (void)awakeFromNib
 {
     [super awakeFromNib];
@@ -35,7 +50,7 @@
     [_btMore setTitleColor:[UIColor xt_w_light] forState:0] ;
     _baseline.backgroundColor = [UIColor xt_seperate] ;
     _collectionView.backgroundColor = [UIColor whiteColor] ;
-    
+    //
     _collectionView.dataSource = self ;
     _collectionView.delegate = self ;
     [_collectionView registerNib:[UINib nibWithNibName:kID_UserItemCollectionCell bundle:nil] forCellWithReuseIdentifier:kID_UserItemCollectionCell] ;
@@ -46,13 +61,14 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 6 ;
+    return self.listFollowers.count ;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     UserItemCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kID_UserItemCollectionCell forIndexPath:indexPath] ;
-    cell.index = (int)indexPath.row ;
+    cell.followItem = self.listFollowers[indexPath.row] ;
+    cell.delegate = self ;
     return cell ;
 }
 
@@ -68,8 +84,16 @@
 }
 
 
+#pragma mark -
+- (void)userheadOnClickWithUserID:(NSString *)userID userName:(NSString *)name
+{
+    [self.delegate userheadOnClickWithUserID:userID userName:name] ;
+}
 
-
+- (BOOL)followUserBtOnClickWithCreaterID:(NSString *)createrID followed:(BOOL)bFollow
+{
+    return [self.delegate followUserBtOnClickWithCreaterID:createrID followed:bFollow] ;
+}
 
 
 

@@ -8,13 +8,15 @@
 
 #import "NoteDetailViewItem.h"
 #import "Comment.h"
+#import "UserFollowViewItem.h"
 
 @implementation NoteDetailViewItem
 
 + (NSDictionary *)modelContainerPropertyGenericClass
 {
     return @{
-             @"commentList" : [Comment class],
+             @"commentList" : [Comment class] ,
+             @"followList" : [UserFollowViewItem class] ,
              };
 }
 

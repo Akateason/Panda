@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@class Article , Pic ;
+@class Article , Pic , UserFollowViewItem ;
 
 @interface NoteDetailViewItem : NSObject
 
@@ -19,5 +19,6 @@
 @property (nonatomic)        int        isFavorite ; //是否已收藏该文章（0 未收藏 1已收藏）
 @property (nonatomic)        int        isUpvote ; //是否已点赞该文章（0 未点赞 1已点赞）
 @property (nonatomic,strong) NSArray    *commentList ; //评论列表（Comment对象List）
+@property (nonatomic,strong) NSArray    *followList ; // 关注信息列表 UserFollowViewItem对象List
 
 @end
