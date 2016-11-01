@@ -23,6 +23,7 @@
 #import "UserInfoCtrller.h"
 #import "CommentsListCtrller.h"
 #import "FocusHandler.h"
+#import "MyFansFocusCtrller.h"
 
 @interface NoteDetailCtrller () <UITableViewDataSource,UITableViewDelegate,RootTableViewDelegate,HPBigPhotoHeaderViewDelegate,DetailCommentsCellDelegate>
 
@@ -215,6 +216,9 @@
 {
     CommentsListCtrller *commentListVC = (CommentsListCtrller *)[[self class] getCtrllerFromStory:@"HomePage" controllerIdentifier:@"CommentsListCtrller"] ;
     commentListVC.articleId = self.articleId ;
+    commentListVC.hasCommentAdded = ^(void){
+        [self.table pullDownRefreshHeader] ;
+    } ;
     [self.navigationController pushViewController:commentListVC animated:YES] ;
 }
 
@@ -263,7 +267,6 @@
                                               id jsonobj = result.data[@"noteDetail"] ;
                                               NoteDetailViewItem *detailItem = [NoteDetailViewItem yy_modelWithJSON:jsonobj] ;
                                               self.noteDetail = detailItem ;
-                                              
                                               [_table reloadData] ;
                                           }
                                       }
@@ -281,6 +284,9 @@
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+    if (self.noteDetail == nil) {
+        return 0 ; // error .
+    }
     return 5 ;
 }
 
@@ -328,6 +334,12 @@
         DetailHisFocusCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_DetailHisFocusCell] ;
         cell.listFollowers = self.noteDetail.followList ;
         cell.delegate = self ;
+        cell.moreBtBlock = ^ {
+            MyFansFocusCtrller *mffVC = (MyFansFocusCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"MyFansFocusCtrller"] ;
+            mffVC.displayType = type_focus ;
+            mffVC.userID = [UserOnDevice currentUserOnDevice].userId ;
+            [self.navigationController pushViewController:mffVC animated:YES] ;
+        } ;
         return cell ;
     }
     else if (section == 4) {

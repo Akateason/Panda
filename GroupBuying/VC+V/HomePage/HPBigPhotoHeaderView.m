@@ -33,8 +33,8 @@
     NSDate *articleCreateDate = [XTTickConvert getNSDateWithTick:noteItem.articleCreateTime] ;
     _lableTime.text = [XTTickConvert timeInfoWithDate:articleCreateDate] ;
     
-    [_headImageView xt_setImageWithPic:noteItem.ownerHeadPic
-                      placeHolderImage:IMG_HEAD_NO] ;
+    [_headImageView xt_setCircleImageWithPic:noteItem.ownerHeadPic
+                            placeHolderImage:IMG_HEAD_NO] ;
     
     if ([UserOnDevice hasLogin]) {
         _btFoucus.selected = noteItem.isFollow ;

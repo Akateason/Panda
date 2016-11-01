@@ -9,6 +9,7 @@
 #import "UIImageView+SDQN.h"
 #import "UIImageView+WebCache.h"
 #import "Pic.h"
+#import "UIImage+AddFunction.h"
 
 static NSString *const kQiniuImgStrTail = @"?imageView2/0/w/%d/h/%d/q/100" ;
 
@@ -55,6 +56,22 @@ static NSString *const kQiniuImgStrTail = @"?imageView2/0/w/%d/h/%d/q/100" ;
                    }] ;
 }
 
+- (void)xt_setCircleImageWithPic:(Pic *)pic
+                placeHolderImage:(UIImage *)placeHolderImage
+{
+    NSString *resultStr = [self getUrlStringWithPic:pic] ;
+    [self sd_setImageWithURL:[NSURL URLWithString:resultStr]
+            placeholderImage:placeHolderImage
+                   completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                       if (image == nil) {
+                           image = IMG_HEAD_NO ;
+                       }
+                       else {
+                           image = [image imageWithCornerRadius:image.size.width] ;
+                       }
+                       self.image = image ;
+                   }] ;
+}
 
 
 

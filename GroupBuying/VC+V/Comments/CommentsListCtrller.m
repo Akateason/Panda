@@ -39,6 +39,10 @@ static const NSInteger kHowmany = 20 ;
     [tmplist insertObject:comment atIndex:0] ;
     self.listComments = tmplist ;
     [_table reloadData] ;
+    
+    if (self.hasCommentAdded) {
+        self.hasCommentAdded() ;
+    }
 }
 
 
@@ -63,7 +67,6 @@ static const NSInteger kHowmany = 20 ;
 {
     [super viewDidLoad] ;
     
-    //
     [self configureUIs] ;
 }
 

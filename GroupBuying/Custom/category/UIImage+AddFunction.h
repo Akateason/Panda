@@ -14,6 +14,8 @@
 
 #pragma mark -- 
 #pragma mark - style
+- (UIImage*)imageWithCornerRadius:(CGFloat)radius ;
+
 //1.裁剪圆形 + 边框
 - (UIImage *)cutImageWithCircleWithBorderWidth:(CGFloat)margin
                             AndWithBorderColor:(UIColor *)borderColor ;

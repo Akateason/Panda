@@ -11,5 +11,6 @@
 @interface CommentsListCtrller : RootCtrl
 
 @property (nonatomic,copy)  NSString            *articleId ;
+@property (nonatomic,copy)  void(^hasCommentAdded)(void) ;
 
 @end

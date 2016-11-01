@@ -38,6 +38,9 @@
 - (IBAction)btMoreOnClick:(id)sender
 {
     NSLog(@"more") ;
+    if (self.moreBtBlock) {
+        self.moreBtBlock() ;
+    }
 }
 
 #pragma mark - life

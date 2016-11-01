@@ -12,6 +12,7 @@
 #import "User.h"
 #import "UIImageView+SDQN.h"
 #import "FocusHandler.h"
+#import "UIImage+AddFunction.h"
 
 @interface UserItemCollectionCell ()
 
@@ -29,7 +30,10 @@
     _followItem = followItem ;
     
     _usernameLabel.text = followItem.followInfo.toUserInfo.nickName ;
-    [_userHeadPic xt_setImageWithPic:followItem.followInfo.toUserInfo.headPic placeHolderImage:IMG_HEAD_NO] ;
+    
+    [_userHeadPic xt_setCircleImageWithPic:followItem.followInfo.toUserInfo.headPic
+                          placeHolderImage:IMG_HEAD_NO] ;
+    
     _btFocus.selected = followItem.isFollow ;
 }
 
@@ -58,8 +62,9 @@
 {
     [super awakeFromNib];
     // Initialization code
-    _userHeadPic.layer.cornerRadius = _userHeadPic.frame.size.width / 2 ;
-    _userHeadPic.layer.masksToBounds = YES ;
+    
+//    _userHeadPic.layer.cornerRadius = _userHeadPic.frame.size.width / 2 ;
+//    _userHeadPic.layer.masksToBounds = YES ;
     _usernameLabel.textColor = [UIColor xt_w_dark] ;
     [_btFocus setTitleColor:[UIColor xt_w_dark] forState:0] ;
     _btFocus.backgroundColor = [UIColor whiteColor] ;

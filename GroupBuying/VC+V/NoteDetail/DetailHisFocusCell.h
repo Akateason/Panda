@@ -16,5 +16,5 @@ static float    kHeight_HisFocusCell    = 166. ;
 @interface DetailHisFocusCell : UITableViewCell
 @property (nonatomic,weak) id <HPBigPhotoHeaderViewDelegate> delegate ;
 @property (nonatomic,strong) NSArray *listFollowers ;
-@property (nonatomic,copy) (void)(^moreBtBlock(void)) ;
+@property (nonatomic,copy) void(^moreBtBlock)(void) ;
 @end

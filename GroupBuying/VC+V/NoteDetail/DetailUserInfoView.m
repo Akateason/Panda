@@ -36,8 +36,8 @@
     _labelName.hidden = false ;
     _lableTime.hidden = false ;
     
-    [_headImageView xt_setImageWithPic:note.ownerHeadPic
-                      placeHolderImage:IMG_HEAD_NO] ;
+    [_headImageView xt_setCircleImageWithPic:note.ownerHeadPic
+                            placeHolderImage:IMG_HEAD_NO] ;
     
     _lableTime.text = [XTTickConvert timeInfoWithDate:[XTTickConvert getNSDateWithTick:note.articleInfo.createTime]] ;
     _labelName.text = note.ownerNickName ;

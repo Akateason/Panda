@@ -80,7 +80,7 @@
     
     if (!aComment) return ;
     
-    [_userHead xt_setImageWithPic:aComment.createrHead placeHolderImage:IMG_HEAD_NO] ;
+    [_userHead xt_setCircleImageWithPic:aComment.createrHead placeHolderImage:IMG_HEAD_NO] ;    
 
     _nameLabel.text = aComment.createrName ;
     _timeLabel.text = [XTTickConvert getDateWithTick:aComment.createTime AndWithFormart:TIME_STR_FORMAT_3] ;

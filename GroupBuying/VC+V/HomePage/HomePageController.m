@@ -420,14 +420,20 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated] ;
-    [self.navigationController setNavigationBarHidden:YES] ;
-    [[UIApplication sharedApplication] setStatusBarHidden:NO] ;
+    
+    if (self.navigationController.navigationBarHidden == NO) {
+        [self.navigationController setNavigationBarHidden:YES animated:NO] ;
+        [[UIApplication sharedApplication] setStatusBarHidden:NO] ;
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated] ;
-    [self.navigationController setNavigationBarHidden:NO] ;
+    
+    if (self.navigationController.navigationBarHidden == YES) {
+        [self.navigationController setNavigationBarHidden:NO animated:NO] ;
+    }    
 }
 
 

@@ -23,4 +23,7 @@
 - (void)xt_setImageWithPic:(Pic *)pic
           placeHolderImage:(UIImage *)placeHolderImage
                  completed:(SDWebImageCompletionBlock)completedBlock ;
+
+- (void)xt_setCircleImageWithPic:(Pic *)pic
+                placeHolderImage:(UIImage *)placeHolderImage ;
 @end

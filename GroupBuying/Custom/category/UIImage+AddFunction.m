@@ -10,6 +10,26 @@
 
 @implementation UIImage (AddFunction)
 
+- (UIImage *)imageWithCornerRadius:(CGFloat)radius
+{
+    // Begin a new image that will be the new image with the rounded corners
+    // (here with the size of an UIImageView)
+    UIGraphicsBeginImageContextWithOptions(self.size, NO, 1.0) ;
+    CGRect rect = CGRectMake(0, 0, self.size.width, self.size.height) ;
+    // Add a clip before drawing anything, in the shape of an rounded rect
+    [[UIBezierPath bezierPathWithRoundedRect:rect
+                                cornerRadius:self.size.width / 2.0] addClip] ;
+    // Draw your image
+    [self drawInRect:rect];
+    // Get the image, here setting the UIImageView image
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    // Lets forget about that we were drawing
+    UIGraphicsEndImageContext();
+    
+    return img ;
+}
+
+
 //图片剪切
 - (UIImage *)cutImageWithCircleWithBorderWidth:(CGFloat)margin
                             AndWithBorderColor:(UIColor *)borderColor
