@@ -12,7 +12,7 @@
 #import "CommentsPostCtrller.h"
 #import "UserInfoCtrller.h"
 #import "UserOnDevice.h"
-
+#import "NotificationCenterHeader.h"
 
 
 static const NSInteger kHowmany = 20 ;
@@ -33,16 +33,13 @@ static const NSInteger kHowmany = 20 ;
 
 
 #pragma mark - util
-- (void)addCommentCallback:(Comment *)comment
+- (void)addCommentCallback:(NSNotification *)notification
 {
+    Comment *comment = notification.object ;
     NSMutableArray *tmplist = [self.listComments mutableCopy] ;
     [tmplist insertObject:comment atIndex:0] ;
     self.listComments = tmplist ;
     [_table reloadData] ;
-    
-    if (self.hasCommentAdded) {
-        self.hasCommentAdded() ;
-    }
 }
 
 
@@ -54,20 +51,27 @@ static const NSInteger kHowmany = 20 ;
     NSLog(@"发布评论") ;
     CommentsPostCtrller *postCmtVC = (CommentsPostCtrller *)[[self class] getCtrllerFromStory:@"HomePage" controllerIdentifier:@"CommentsPostCtrller"] ;
     postCmtVC.objectID = self.articleId ;
-    postCmtVC.blockAddCommentComplete = ^(Comment *comment) {
-        [self addCommentCallback:comment] ;
-    } ;
     [self.navigationController pushViewController:postCmtVC animated:YES] ;
 }
 
 
 
 #pragma mark - life
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NOTIFICATION_COMMENT_ADD_COMPLETE object:nil] ;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad] ;
     
     [self configureUIs] ;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(addCommentCallback:)
+                                                 name:NOTIFICATION_COMMENT_ADD_COMPLETE
+                                               object:nil] ;
 }
 
 - (void)configureUIs
@@ -174,9 +178,6 @@ static const NSInteger kHowmany = 20 ;
         CommentsPostCtrller *postCmtVC = (CommentsPostCtrller *)[[self class] getCtrllerFromStory:@"HomePage" controllerIdentifier:@"CommentsPostCtrller"] ;
         postCmtVC.objectID = self.articleId ;
         postCmtVC.strReplyToWho = replyToWho ;
-        postCmtVC.blockAddCommentComplete = ^(Comment *comment) {
-            [self addCommentCallback:comment] ;
-        } ;
         [self.navigationController pushViewController:postCmtVC animated:YES] ;
     } ;
     return cell ;

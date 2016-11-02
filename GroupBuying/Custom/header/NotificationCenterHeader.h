@@ -18,4 +18,8 @@ static NSString *const NOTIFICATION_USER_LOGOUT                 = @"NOTIFICATION
 // 登录完成
 static NSString *const NOTIFICATION_USER_LOGIN                  = @"NOTIFICATION_USER_LOGIN" ;
 
+// 评论发布完成
+static NSString *const NOTIFICATION_COMMENT_ADD_COMPLETE        = @"NOTIFICATION_COMMENT_ADD_COMPLETE" ;
+
+
 #endif

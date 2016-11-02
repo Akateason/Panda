@@ -13,6 +13,5 @@
 
 @property (nonatomic,copy) NSString *objectID ; // 文章ID
 @property (nonatomic,copy) NSString *strReplyToWho ; // 回复谁 .
-@property (nonatomic,copy) void(^blockAddCommentComplete)(Comment *acomment) ; 
 
 @end

@@ -10,6 +10,7 @@
 #import "Comment.h"
 #import "UserOnDevice.h"
 #import "Comment+Reply.h"
+#import "NotificationCenterHeader.h"
 
 @interface CommentsPostCtrller () <UITextViewDelegate>
 
@@ -43,9 +44,10 @@
                               NSDictionary *dic = result.data[@"comment"] ;
                               Comment *commentUploaded = [Comment yy_modelWithJSON:dic] ;
                               NSLog(@"get comment and pop %@",commentUploaded) ;
-                              if (self.blockAddCommentComplete) {
-                                  self.blockAddCommentComplete(commentUploaded) ;
-                              }
+                            
+                              [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_COMMENT_ADD_COMPLETE
+                                                                                  object:commentUploaded] ;
+                              
                               [self.navigationController popViewControllerAnimated:YES] ;
                           }
                           

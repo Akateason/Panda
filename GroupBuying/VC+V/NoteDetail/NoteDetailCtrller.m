@@ -24,9 +24,9 @@
 #import "CommentsListCtrller.h"
 #import "FocusHandler.h"
 #import "MyFansFocusCtrller.h"
+#import "NotificationCenterHeader.h"
 
 @interface NoteDetailCtrller () <UITableViewDataSource,UITableViewDelegate,RootTableViewDelegate,HPBigPhotoHeaderViewDelegate,DetailCommentsCellDelegate>
-
 // storyboard
 @property (weak, nonatomic) IBOutlet UIView *bottomBar;
 @property (weak, nonatomic) IBOutlet RootTableView *table;
@@ -34,11 +34,14 @@
 @property (weak, nonatomic) IBOutlet UIAlternativeButton *btLike;
 @property (weak, nonatomic) IBOutlet UIAlternativeButton *btComment;
 @property (weak, nonatomic) IBOutlet UIAlternativeButton *btCollecion;
+@end
 
+@interface NoteDetailCtrller ()
 // data
 @property (nonatomic,strong) NoteDetailViewItem *noteDetail ;
-
 @end
+
+
 
 @implementation NoteDetailCtrller
 
@@ -118,6 +121,11 @@
 
 
 #pragma mark - life
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NOTIFICATION_COMMENT_ADD_COMPLETE object:nil] ;
+}
+
 - (void)viewDidLoad
 {
     self.title = @"笔记详情" ;
@@ -126,6 +134,11 @@
     // Do any additional setup after loading the view.
     [self configureUIs] ;
     [self configureTable] ;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(addCommentCallback:)
+                                                 name:NOTIFICATION_COMMENT_ADD_COMPLETE
+                                               object:nil] ;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -167,6 +180,15 @@
 }
 
 
+#pragma mark - notification
+- (void)addCommentCallback:(NSNotification *)notification
+{
+    Comment *comment = notification.object ;
+    NSMutableArray *tmplist = [self.noteDetail.commentList mutableCopy] ;
+    [tmplist insertObject:comment atIndex:0] ;
+    self.noteDetail.commentList = tmplist ;
+    [_table reloadData] ;
+}
 
 
 
@@ -216,9 +238,6 @@
 {
     CommentsListCtrller *commentListVC = (CommentsListCtrller *)[[self class] getCtrllerFromStory:@"HomePage" controllerIdentifier:@"CommentsListCtrller"] ;
     commentListVC.articleId = self.articleId ;
-    commentListVC.hasCommentAdded = ^(void){
-        [self.table pullDownRefreshHeader] ;
-    } ;
     [self.navigationController pushViewController:commentListVC animated:YES] ;
 }
 
