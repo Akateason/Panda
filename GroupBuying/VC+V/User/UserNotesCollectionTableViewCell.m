@@ -14,7 +14,7 @@
 
 #define kLengthOfRow        ([HPProductCollectionCell getSize].height + 3.)
 
-@interface UserNotesCollectionTableViewCell () <UICollectionViewDelegate,UICollectionViewDataSource,CHTCollectionViewDelegateWaterfallLayout>
+@interface UserNotesCollectionTableViewCell () <UICollectionViewDelegate,UICollectionViewDataSource,CHTCollectionViewDelegateWaterfallLayout,HomePageCollectionCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic,strong) CHTCollectionViewWaterfallLayout *waterflowLayout ;
@@ -85,6 +85,7 @@
 {
     HPProductCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:id_HPProductCollectionCell forIndexPath:indexPath];
     cell.noteItem = self.noteItems[indexPath.row] ;
+    cell.delegate = self ;
     return cell;
 }
 
@@ -96,9 +97,19 @@
 #pragma mark - collection delegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    [self.delegate noteSelected:self.noteItems[indexPath.row] ] ;
 }
 
+
+#pragma mark - HomePageCollectionCellDelegate
+- (BOOL)likeNoteID:(NSString *)noteID addOrRemove:(bool)addOrRemove
+{
+    return [self.delegate likeNoteID:noteID addOrRemove:addOrRemove] ;
+}
+- (BOOL)collectNoteID:(NSString *)noteID addOrRemove:(bool)addOrRemove
+{
+    return [self.delegate collectNoteID:noteID addOrRemove:addOrRemove] ;
+}
 
 
 

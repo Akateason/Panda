@@ -18,20 +18,19 @@
 #import "BigPhotoHeaderViewProtocolHeader.h"
 #import "FocusHandler.h"
 #import "NoteListViewItem.h"
-
+#import "NoteDetailCtrller.h"
 
 static const int kHowmany = 20 ;
 
-@interface UserInfoCtrller () <UITableViewDelegate,UITableViewDataSource,RootTableViewDelegate,HPBigPhotoHeaderViewDelegate>
-{
-    NSString *currentUserID ;
-}
-
 // UI
+@interface UserInfoCtrller () <UITableViewDelegate,UITableViewDataSource,RootTableViewDelegate,HPBigPhotoHeaderViewDelegate,UserNotesCollectionTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet RootTableView    *table ;
 @property (nonatomic,strong) ParallaxHeaderView     *paralax ;
 @property (nonatomic,strong) UserInfoView           *userinfoView ;
+@end
+
 // code
+@interface UserInfoCtrller ()
 @property (nonatomic,strong) UserViewItem           *userItem ;
 @property (nonatomic,strong) NSArray                *listNote ;
 @end
@@ -75,7 +74,7 @@ static const int kHowmany = 20 ;
     
     // get user
     [ServerRequest getUserSearchByID:userID
-                       currentUserID:currentUserID
+                       currentUserID:[UserOnDevice currentUserOnDevice].userId
                              success:^(id json) {
                                  ResultParsered *result = [ResultParsered yy_modelWithJSON:json] ;
                                  if (result.code == 1) {
@@ -91,7 +90,7 @@ static const int kHowmany = 20 ;
     // get noteitems from user .
     [ServerRequest searchNoteListByUser:self.userID
                                 refresh:1
-                            currentUser:currentUserID
+                            currentUser:[UserOnDevice currentUserOnDevice].userId
                                    from:0
                                 howmany:kHowmany
                                 success:^(id json) {
@@ -149,7 +148,6 @@ static const int kHowmany = 20 ;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    currentUserID = [UserOnDevice currentUserOnDevice].userId ;
     
     
     __weak UserInfoCtrller *weakSelf = self ;
@@ -204,7 +202,7 @@ static const int kHowmany = 20 ;
 {
     [ServerRequest searchNoteListByUser:self.userID
                                 refresh:0
-                            currentUser:currentUserID
+                            currentUser:[UserOnDevice currentUserOnDevice].userId
                                    from:(int)self.listNote.count
                                 howmany:kHowmany
                                 success:^(id json) {
@@ -235,6 +233,7 @@ static const int kHowmany = 20 ;
 {
     UserNotesCollectionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:idUserNotesCollectionTableViewCell] ;
     cell.noteItems = self.listNote ;
+    cell.delegate = self ;
     return cell ;
 }
 
@@ -266,7 +265,139 @@ static const int kHowmany = 20 ;
 
 
 
+#pragma mark --
+#pragma mark - UserNotesCollectionTableViewCellDelegate <HomePageCollectionCellDelegate>
+- (void)noteSelected:(NoteListViewItem *)note
+{
+    NoteDetailCtrller *detailCtrller = (NoteDetailCtrller *)[[self class] getCtrllerFromStory:@"HomePage" controllerIdentifier:@"NoteDetailCtrller"] ;
+    NSString *articleIDWillSend = nil ;
+    articleIDWillSend = note.articleId ;
 
+    detailCtrller.articleId = articleIDWillSend ;
+    detailCtrller.blockFocus = ^(NSString *userID, BOOL bFocus){
+        [self.listNote enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem,
+                                                    NSUInteger idx,
+                                                    BOOL * _Nonnull stop) {
+            if ([noteItem.ownerId isEqualToString:userID]) {
+                noteItem.isFollow = bFocus ; // 关注
+            }
+        }] ;
+        
+        [_table reloadData] ;
+        
+    } ;
+    detailCtrller.blockUpvote = ^(NSString *noteID, BOOL bUpvote){
+        [self.listNote enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem,
+                                                    NSUInteger idx,
+                                                    BOOL * _Nonnull stop) {
+            if ([noteItem.articleId isEqualToString:noteID]) {
+                noteItem.isUpvote = bUpvote ; // 点赞
+                noteItem.upvoteCnt = bUpvote ? ++noteItem.upvoteCnt : --noteItem.upvoteCnt ; // 点赞数
+                *stop = YES ;
+            }
+        }] ;
+        [_table reloadData] ;
+    } ;
+    
+    detailCtrller.blockFavorite = ^(NSString *noteID, BOOL bFavorite){
+        [self.listNote enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem,
+                                                    NSUInteger idx,
+                                                    BOOL * _Nonnull stop) {
+            if ([noteItem.articleId isEqualToString:noteID]) {
+                noteItem.isFavorite = bFavorite ; // 收藏
+                *stop = YES ;
+            }
+        }] ;
+        [_table reloadData] ;
+    } ;
+    
+    [self.navigationController pushViewController:detailCtrller animated:YES] ;
+}
+
+- (BOOL)likeNoteID:(NSString *)noteID addOrRemove:(bool)addOrRemove
+{
+    BOOL hasLogin = [UserOnDevice checkForLoginOrNot:self] ;
+    if (!hasLogin) return false;
+    
+    if (addOrRemove)
+    {
+        [ServerRequest addLikeWithID:noteID
+                               token:[UserOnDevice token]
+                             success:^(id json) {
+                                 [self.listNote enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem,
+                                                                             NSUInteger idx,
+                                                                             BOOL * _Nonnull stop) {
+                                     if ([noteItem.articleId isEqualToString:noteID])
+                                     {
+                                         noteItem.isUpvote = true ;
+                                         *stop = true ;
+                                     }
+                                 }] ;
+                                 
+                             } fail:^{
+                                 
+                             }] ;
+    }
+    else
+    {
+        [ServerRequest removeLikeWithID:noteID
+                                  token:[UserOnDevice token]
+                                success:^(id json) {
+                                    [self.listNote enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem,
+                                                                                NSUInteger idx,
+                                                                                BOOL * _Nonnull stop) {
+                                        if ([noteItem.articleId isEqualToString:noteID])
+                                        {
+                                            noteItem.isUpvote = false ;
+                                            *stop = true ;
+                                        }
+                                    }] ;
+                                } fail:^{
+                                    
+                                }] ;
+    }
+    return true ;
+}
+
+- (BOOL)collectNoteID:(NSString *)noteID addOrRemove:(bool)addOrRemove
+{
+    BOOL hasLogin = [UserOnDevice checkForLoginOrNot:self] ;
+    if (!hasLogin) return false;
+    
+    if (addOrRemove) {
+        [ServerRequest addFavoriteWithID:noteID
+                                 success:^(id json) {
+                                     [self.listNote enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem,
+                                                                                 NSUInteger idx,
+                                                                                 BOOL * _Nonnull stop) {
+                                         if ([noteItem.articleId isEqualToString:noteID])
+                                         {
+                                             noteItem.isFavorite = true ;
+                                             *stop = true ;
+                                         }
+                                     }] ;
+                                 } fail:^{
+                                     
+                                 }] ;
+    }
+    else {
+        [ServerRequest removeFavoriteWithID:noteID
+                                    success:^(id json) {
+                                        [self.listNote enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem,
+                                                                                    NSUInteger idx,
+                                                                                    BOOL * _Nonnull stop) {
+                                            if ([noteItem.articleId isEqualToString:noteID])
+                                            {
+                                                noteItem.isFavorite = false ;
+                                                *stop = true ;
+                                            }
+                                        }] ;
+                                    } fail:^{
+                                        
+                                    }] ;
+    }
+    return true ;
+}
 
 
 

@@ -62,7 +62,7 @@
     // Do any additional setup after loading the view.
     
     self.title = @"个人资料" ;
-    list_keypathWillBeObservered = @[@"userCurrent.headPic",@"userCurrent.nickName",@"userCurrent.gender",@"userCurrent.birthday",@"userCurrent.intruduce",@"userCurrent.mobile",@"userCurrent.name"] ;
+    list_keypathWillBeObservered = @[@"userCurrent.headPic",@"userCurrent.nickName",@"userCurrent.gender",@"userCurrent.birthday",@"userCurrent.intruduce",@"userCurrent.mobile",@"userCurrent.name",@"userCurrent.signature"] ;
     [self configureUI] ;
     [self addUserCurrentObserver] ;
 }
@@ -122,7 +122,7 @@
         return 1 ;
     }
     else if (section == 1) {
-        return 4 ;
+        return 5 ;
     }
     else if (section == 2) {
         return 2 ;  // 5 ;
@@ -159,6 +159,9 @@
         }
         else if (row == 3) {
             return [self getEditCellWithKey:@"简介" val:self.userCurrent.intruduce] ;
+        }
+        else if (row == 4) {
+            return [self getEditCellWithKey:@"个性签名" val:self.userCurrent.signature] ;
         }
     }
     else if (section == 2) {
@@ -291,6 +294,16 @@ static NSString *const kIdentifierFooter = @"mycell_footer" ;
                 editAddVC.displayType = type_textview ;
                 editAddVC.blockValString = ^(NSString *str){
                     weakSelf.userCurrent.intruduce = str ;
+                    [weakSelf.table reloadData] ;
+                } ;
+            }
+            else if (row == 4) {
+                // 个性签名
+                editAddVC.strTitle = @"个性签名" ;
+                editAddVC.strVal = self.userCurrent.signature ;
+                editAddVC.displayType = type_textview ;
+                editAddVC.blockValString = ^(NSString *str){
+                    weakSelf.userCurrent.signature = str ;
                     [weakSelf.table reloadData] ;
                 } ;
             }

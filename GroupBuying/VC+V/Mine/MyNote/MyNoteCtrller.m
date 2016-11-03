@@ -12,16 +12,18 @@
 #import "RootCollectionView.h"
 #import "NoteListViewItem.h"
 #import "UserOnDevice.h"
+#import "NoteDetailCtrller.h"
 
-@interface MyNoteCtrller () <UICollectionViewDataSource,UICollectionViewDelegate,CHTCollectionViewDelegateWaterfallLayout,RootCollectionViewDelegate>
+@interface MyNoteCtrller () <UICollectionViewDataSource,UICollectionViewDelegate,CHTCollectionViewDelegateWaterfallLayout,RootCollectionViewDelegate,HomePageCollectionCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *topbarbg;
 @property (weak, nonatomic) IBOutlet UIView *topbarbg2;
 @property (weak, nonatomic) IBOutlet UITextField *tf_search;
 @property (weak, nonatomic) IBOutlet RootCollectionView *collectionView;
-//
+
 @property (nonatomic,strong) CHTCollectionViewWaterfallLayout *waterflowLayout ;
 @property (nonatomic,strong) NSArray *listNotes ;
+
 @end
 
 @implementation MyNoteCtrller
@@ -130,12 +132,150 @@ static const int kHowmany = 20 ;
 {
     HPProductCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:id_HPProductCollectionCell forIndexPath:indexPath] ;
     cell.noteItem = self.listNotes[indexPath.row] ;
+    cell.delegate = self ;
     return cell ;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     return [HPProductCollectionCell getSize] ;
+}
+
+
+#pragma mark - collection delegate
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NoteDetailCtrller *detailCtrller = (NoteDetailCtrller *)[[self class] getCtrllerFromStory:@"HomePage" controllerIdentifier:@"NoteDetailCtrller"] ;
+    NSString *articleIDWillSend = nil ;
+    NoteListViewItem *note = self.listNotes[indexPath.row] ;
+    articleIDWillSend = note.articleId ;
+    
+    detailCtrller.articleId = articleIDWillSend ;
+    detailCtrller.blockFocus = ^(NSString *userID, BOOL bFocus){
+        [self.listNotes enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem,
+                                                    NSUInteger idx,
+                                                    BOOL * _Nonnull stop) {
+            if ([noteItem.ownerId isEqualToString:userID]) {
+                noteItem.isFollow = bFocus ; // 关注
+            }
+        }] ;
+        
+        [_collectionView reloadData] ;
+        
+    } ;
+    detailCtrller.blockUpvote = ^(NSString *noteID, BOOL bUpvote){
+        [self.listNotes enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem,
+                                                    NSUInteger idx,
+                                                    BOOL * _Nonnull stop) {
+            if ([noteItem.articleId isEqualToString:noteID]) {
+                noteItem.isUpvote = bUpvote ; // 点赞
+                noteItem.upvoteCnt = bUpvote ? ++noteItem.upvoteCnt : --noteItem.upvoteCnt ; // 点赞数
+                *stop = YES ;
+            }
+        }] ;
+        [_collectionView reloadData] ;
+    } ;
+    
+    detailCtrller.blockFavorite = ^(NSString *noteID, BOOL bFavorite){
+        [self.listNotes enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem,
+                                                    NSUInteger idx,
+                                                    BOOL * _Nonnull stop) {
+            if ([noteItem.articleId isEqualToString:noteID]) {
+                noteItem.isFavorite = bFavorite ; // 收藏
+                *stop = YES ;
+            }
+        }] ;
+        [_collectionView reloadData] ;
+    } ;
+    
+    [self.navigationController pushViewController:detailCtrller animated:YES] ;
+}
+
+
+#pragma mark - HomePageCollectionCellDelegate <NSObject>
+- (BOOL)likeNoteID:(NSString *)noteID addOrRemove:(bool)addOrRemove
+{
+    BOOL hasLogin = [UserOnDevice checkForLoginOrNot:self] ;
+    if (!hasLogin) return false;
+    
+    if (addOrRemove)
+    {
+        [ServerRequest addLikeWithID:noteID
+                               token:[UserOnDevice token]
+                             success:^(id json) {
+                                 [self.listNotes enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem,
+                                                                             NSUInteger idx,
+                                                                             BOOL * _Nonnull stop) {
+                                     if ([noteItem.articleId isEqualToString:noteID])
+                                     {
+                                         noteItem.isUpvote = true ;
+                                         *stop = true ;
+                                     }
+                                 }] ;
+                                 
+                             } fail:^{
+                                 
+                             }] ;
+    }
+    else
+    {
+        [ServerRequest removeLikeWithID:noteID
+                                  token:[UserOnDevice token]
+                                success:^(id json) {
+                                    [self.listNotes enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem,
+                                                                                NSUInteger idx,
+                                                                                BOOL * _Nonnull stop) {
+                                        if ([noteItem.articleId isEqualToString:noteID])
+                                        {
+                                            noteItem.isUpvote = false ;
+                                            *stop = true ;
+                                        }
+                                    }] ;
+                                } fail:^{
+                                    
+                                }] ;
+    }
+    return true ;
+}
+
+- (BOOL)collectNoteID:(NSString *)noteID addOrRemove:(bool)addOrRemove
+{
+    BOOL hasLogin = [UserOnDevice checkForLoginOrNot:self] ;
+    if (!hasLogin) return false;
+    
+    if (addOrRemove) {
+        [ServerRequest addFavoriteWithID:noteID
+                                 success:^(id json) {
+                                     [self.listNotes enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem,
+                                                                                 NSUInteger idx,
+                                                                                 BOOL * _Nonnull stop) {
+                                         if ([noteItem.articleId isEqualToString:noteID])
+                                         {
+                                             noteItem.isFavorite = true ;
+                                             *stop = true ;
+                                         }
+                                     }] ;
+                                 } fail:^{
+                                     
+                                 }] ;
+    }
+    else {
+        [ServerRequest removeFavoriteWithID:noteID
+                                    success:^(id json) {
+                                        [self.listNotes enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem,
+                                                                                    NSUInteger idx,
+                                                                                    BOOL * _Nonnull stop) {
+                                            if ([noteItem.articleId isEqualToString:noteID])
+                                            {
+                                                noteItem.isFavorite = false ;
+                                                *stop = true ;
+                                            }
+                                        }] ;
+                                    } fail:^{
+                                        
+                                    }] ;
+    }
+    return true ;
 }
 
 

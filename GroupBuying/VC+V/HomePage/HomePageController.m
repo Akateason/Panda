@@ -616,7 +616,7 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
                                                     NSUInteger idx,
                                                     BOOL * _Nonnull stop) {
             if ([noteItem.ownerId isEqualToString:userID]) {
-                noteItem.isFollow = bFocus ;
+                noteItem.isFollow = bFocus ; // 关注
             }
         }] ;
         
@@ -628,7 +628,8 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
                                                     NSUInteger idx,
                                                     BOOL * _Nonnull stop) {
             if ([noteItem.articleId isEqualToString:noteID]) {
-                noteItem.isUpvote = bUpvote ;
+                noteItem.isUpvote = bUpvote ; // 点赞
+                noteItem.upvoteCnt = bUpvote ? ++noteItem.upvoteCnt : --noteItem.upvoteCnt ; // 点赞数
                 *stop = YES ;
             }
         }] ;
@@ -640,7 +641,7 @@ typedef NS_ENUM(NSUInteger, HOMEPAGE_SEARCHTYPE) {
                                                     NSUInteger idx,
                                                     BOOL * _Nonnull stop) {
             if ([noteItem.articleId isEqualToString:noteID]) {
-                noteItem.isFavorite = bFavorite ;
+                noteItem.isFavorite = bFavorite ; // 收藏
                 *stop = YES ;
             }
         }] ;

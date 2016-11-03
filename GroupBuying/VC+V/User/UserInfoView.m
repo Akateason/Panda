@@ -40,6 +40,7 @@
     _labelName.text = aUser.nickName ;
 
     _labelDescription.text = aUser.intruduce ;
+    _labelPosition.text = aUser.signature ;
     _labelFocus.text = [NSString stringWithFormat:@"%d",aUser.followCnt] ;
     _labelFans.text = [NSString stringWithFormat:@"%d",aUser.fansCnt] ;
 }
@@ -48,7 +49,6 @@
 - (void)awakeFromNib
 {
     _levelImageView.hidden = YES ;
-    _labelPosition.hidden = YES ;
     
     self.backgroundColor = [UIColor clearColor] ;
     _userHeadImageView.layer.cornerRadius = _userHeadImageView.frame.size.height / 2. ;
