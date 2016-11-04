@@ -82,6 +82,10 @@
 		608405951D74AA6800B40D68 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6084058F1D74AA6800B40D68 /* SVProgressHUD.m */; };
 		608405961D74AA6800B40D68 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 608405911D74AA6800B40D68 /* SVRadialGradientLayer.m */; };
 		6084059A1D74AE6800B40D68 /* PostCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = 608405991D74AE6800B40D68 /* PostCtrller.m */; };
+		D71099B71DCC834100F16471 /* SearchConditionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D71099B51DCC834100F16471 /* SearchConditionCell.m */; };
+		D71099B81DCC834100F16471 /* SearchConditionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D71099B61DCC834100F16471 /* SearchConditionCell.xib */; };
+		D71099BC1DCC83B500F16471 /* SearchConditionTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D71099BB1DCC83B500F16471 /* SearchConditionTableView.m */; };
+		D71099BF1DCC951400F16471 /* SearchConditionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D71099BE1DCC951400F16471 /* SearchConditionView.m */; };
 		D7387A961DC712AE002F4229 /* FocusHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D7387A951DC712AE002F4229 /* FocusHandler.m */; };
 		D7387A9A1DC83F73002F4229 /* DetailPicCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7387A981DC83F73002F4229 /* DetailPicCollectionCell.m */; };
 		D7387A9B1DC83F73002F4229 /* DetailPicCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7387A991DC83F73002F4229 /* DetailPicCollectionCell.xib */; };
@@ -564,6 +568,13 @@
 		608405911D74AA6800B40D68 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
 		608405981D74AE6800B40D68 /* PostCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostCtrller.h; path = "GroupBuying/VC+V/Post/PostCtrller.h"; sourceTree = SOURCE_ROOT; };
 		608405991D74AE6800B40D68 /* PostCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostCtrller.m; path = "GroupBuying/VC+V/Post/PostCtrller.m"; sourceTree = SOURCE_ROOT; };
+		D71099B41DCC834100F16471 /* SearchConditionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchConditionCell.h; path = "GroupBuying/VC+V/Tag/SearchConditionCell.h"; sourceTree = SOURCE_ROOT; };
+		D71099B51DCC834100F16471 /* SearchConditionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchConditionCell.m; path = "GroupBuying/VC+V/Tag/SearchConditionCell.m"; sourceTree = SOURCE_ROOT; };
+		D71099B61DCC834100F16471 /* SearchConditionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchConditionCell.xib; path = "GroupBuying/VC+V/Tag/SearchConditionCell.xib"; sourceTree = SOURCE_ROOT; };
+		D71099BA1DCC83B500F16471 /* SearchConditionTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchConditionTableView.h; path = "GroupBuying/VC+V/Tag/SearchConditionTableView.h"; sourceTree = SOURCE_ROOT; };
+		D71099BB1DCC83B500F16471 /* SearchConditionTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchConditionTableView.m; path = "GroupBuying/VC+V/Tag/SearchConditionTableView.m"; sourceTree = SOURCE_ROOT; };
+		D71099BD1DCC951400F16471 /* SearchConditionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchConditionView.h; path = "GroupBuying/VC+V/Tag/SearchConditionView.h"; sourceTree = SOURCE_ROOT; };
+		D71099BE1DCC951400F16471 /* SearchConditionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchConditionView.m; path = "GroupBuying/VC+V/Tag/SearchConditionView.m"; sourceTree = SOURCE_ROOT; };
 		D7387A941DC712AE002F4229 /* FocusHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusHandler.h; sourceTree = "<group>"; };
 		D7387A951DC712AE002F4229 /* FocusHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusHandler.m; sourceTree = "<group>"; };
 		D7387A971DC83F73002F4229 /* DetailPicCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailPicCollectionCell.h; path = "GroupBuying/VC+V/NoteDetail/DetailPicCollectionCell.h"; sourceTree = SOURCE_ROOT; };
@@ -1465,6 +1476,7 @@
 		6035CF2E1D75E62000EA590B /* Tag */ = {
 			isa = PBXGroup;
 			children = (
+				D71099B91DCC836E00F16471 /* SearchConditionHandler */,
 				D7886D581D912DFA003D6D57 /* TagDetailVC */,
 				D7886D571D912DEE003D6D57 /* TagSearchVC */,
 			);
@@ -1525,6 +1537,20 @@
 				D76E84261D75A3CC0014FDEA /* PostTagCellSubs */,
 			);
 			name = Post;
+			sourceTree = "<group>";
+		};
+		D71099B91DCC836E00F16471 /* SearchConditionHandler */ = {
+			isa = PBXGroup;
+			children = (
+				D71099BD1DCC951400F16471 /* SearchConditionView.h */,
+				D71099BE1DCC951400F16471 /* SearchConditionView.m */,
+				D71099BA1DCC83B500F16471 /* SearchConditionTableView.h */,
+				D71099BB1DCC83B500F16471 /* SearchConditionTableView.m */,
+				D71099B41DCC834100F16471 /* SearchConditionCell.h */,
+				D71099B51DCC834100F16471 /* SearchConditionCell.m */,
+				D71099B61DCC834100F16471 /* SearchConditionCell.xib */,
+			);
+			name = SearchConditionHandler;
 			sourceTree = "<group>";
 		};
 		D7428EF41D8F873C00E64D65 /* NoteDetailSubviews */ = {
@@ -3176,6 +3202,7 @@
 				D7CE2A0A1DAF871400FF452C /* MyCouponCodeCell.xib in Resources */,
 				60319D5E1D8F1A9200BD094D /* DetailHisFocusCell.xib in Resources */,
 				D7E4FF041DA8D74800DC0E53 /* MyFansFocusCell.xib in Resources */,
+				D71099B81DCC834100F16471 /* SearchConditionCell.xib in Resources */,
 				D7E4FF201DA8FEB900DC0E53 /* CartCell.xib in Resources */,
 				D7CE29EA1DAE51DD00FF452C /* RankingOverallCtrl.xib in Resources */,
 				60319DA01D9438DA00BD094D /* info_mineCell.plist in Resources */,
@@ -3267,6 +3294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D75CC4531C2A95DE00E590E6 /* XTRequest.m in Sources */,
+				D71099BF1DCC951400F16471 /* SearchConditionView.m in Sources */,
 				D7886D741D93774D003D6D57 /* HotProductItemCtrller.m in Sources */,
 				D7CE2A731DC1F5BA00FF452C /* UserViewItem.m in Sources */,
 				60319D731D91795A00BD094D /* FVCKindsCell.m in Sources */,
@@ -3445,6 +3473,7 @@
 				D75CC5B41C2A965000E590E6 /* ASICloudFilesObject.m in Sources */,
 				D7CE29CB1DAB3D7500FF452C /* EditFilterSampleController.m in Sources */,
 				60074E1E1D634AE80040C3C0 /* XTColorFetcher.m in Sources */,
+				D71099B71DCC834100F16471 /* SearchConditionCell.m in Sources */,
 				D76E83FA1D7524BA0014FDEA /* PostPhotosCell.m in Sources */,
 				D7886D641D915787003D6D57 /* FVCBannerCell.m in Sources */,
 				D75CC5C71C2A965000E590E6 /* FMResultSet.m in Sources */,
@@ -3460,6 +3489,7 @@
 				D75CC5CD1C2A965000E590E6 /* MJRefreshAutoFooter.m in Sources */,
 				D75CC5F41C2A965000E590E6 /* NSData+ImageContentType.m in Sources */,
 				D75CC43F1C2A95DE00E590E6 /* UIButton+Badges.m in Sources */,
+				D71099BC1DCC83B500F16471 /* SearchConditionTableView.m in Sources */,
 				6084057F1D663CCC00B40D68 /* HPBigPhotoCollectionCell.m in Sources */,
 				D75CC5F11C2A965000E590E6 /* QNUpToken.m in Sources */,
 				D75CC5A11C2A965000E590E6 /* AFHTTPSessionManager.m in Sources */,

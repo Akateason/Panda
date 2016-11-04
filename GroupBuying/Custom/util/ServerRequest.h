@@ -119,6 +119,17 @@
                            success:(void (^)(id json))success
                               fail:(void (^)())fail ;
 
+#pragma - 指定标签搜索笔记信息
++ (void)searchNotesByTagWithSortType:(int)sortType
+                                 tag:(NSString *)tag
+                             refresh:(int)refresh
+                              userId:(NSString *)currentUserID
+                                from:(int)from
+                             howmany:(int)howmany
+                             success:(void (^)(id json))success
+                                fail:(void (^)())fail ;
+
+
 #pragma - 添加文章信息
 + (void)addArticle:(Article *)article
            success:(void (^)(id json))success

@@ -13,28 +13,38 @@
 #import "HPProductCollectionCell.h"
 #import "NoteDetailCtrller.h"
 #import "TDCProductCollectionCell.h"
+#import "SearchConditionView.h"
+#import "UserOnDevice.h"
+#import "NoteListViewItem.h"
+
+static const int kHowmany = 20 ;
 
 typedef NS_ENUM(int, TDVC_CollectionCellDisplayType) {
-    status_note,
-    status_product
+    status_note ,        // 笔记
+    status_product       // 商品
 };
 
+// UIs
 @interface TagDetailCtrller () <XTSegmentDelegate,UICollectionViewDelegate,UICollectionViewDataSource,RootCollectionViewDelegate,CHTCollectionViewDelegateWaterfallLayout>
-
 @property (weak, nonatomic) IBOutlet RootCollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UIView *toolView;
 @property (weak, nonatomic) IBOutlet UIView *seg_containerView;
 @property (weak, nonatomic) IBOutlet UIButton *btSortWay;
-
 @property (nonatomic,strong) XTSegment *segment ;
 @property (nonatomic,strong) CHTCollectionViewWaterfallLayout   *waterflowLayout ;
 @property (nonatomic)        TDVC_CollectionCellDisplayType     type_CellDisplay ;
+@property (nonatomic,strong) SearchConditionView                *schConditionView ;
+@end
 
+// Datas
+@interface TagDetailCtrller ()
+@property (nonatomic,strong) NSArray *listNote ;
 @end
 
 @implementation TagDetailCtrller
 
 #pragma mark - XTSegmentDelegate
+
 - (void)clickSegmentWith:(int)index
 {
     self.type_CellDisplay = index ;
@@ -44,13 +54,29 @@ typedef NS_ENUM(int, TDVC_CollectionCellDisplayType) {
 
 
 #pragma mark - action
-- (IBAction)btSortWayOnClick:(id)sender
+
+- (IBAction)btSortWayOnClick:(UIButton *)buttonSortWay
 {
-    NSLog(@"sort bt") ;
+    NSLog(@"sort condition bt") ;
+    if (!self.schConditionView.superview) {
+        [self.schConditionView showInView:self.view] ;
+    }
+    else {
+        [self.schConditionView dismiss] ;
+    }
 }
 
 
 #pragma mark - prop
+- (SearchConditionView *)schConditionView
+{
+    if (!_schConditionView) {
+        _schConditionView = [[SearchConditionView alloc] initWithFrame:CGRectMake(0, CGHeight(self.seg_containerView.frame), APP_WIDTH, APP_HEIGHT - CGHeight(self.seg_containerView.frame) - APP_NAVIGATIONBAR_HEIGHT - APP_STATUSBAR_HEIGHT)] ;
+        [_schConditionView.schTable setListConditions:@[@"综合排序",@"按时间",@"按热度"]] ;
+    }
+    return _schConditionView ;
+}
+
 
 - (void)setTagStr:(NSString *)tagStr
 {
@@ -120,35 +146,88 @@ typedef NS_ENUM(int, TDVC_CollectionCellDisplayType) {
 
 - (void)loadNewData
 {
+    [ServerRequest searchNotesByTagWithSortType:[self.schConditionView.schTable resultSelectedIndex]
+                                            tag:self.tagStr
+                                        refresh:1
+                                         userId:[UserOnDevice currentUserOnDevice].userId
+                                           from:0
+                                        howmany:kHowmany
+                                        success:^(id json) {
+                                            
+                                            ResultParsered *result = [ResultParsered yy_modelWithJSON:json] ;
+                                            if (result.code == 1)
+                                            {
+                                                NSMutableArray *tmplist = [@[] mutableCopy] ;
+                                                NSArray *dicList = result.data[@"noteList"] ;
+                                                for (NSDictionary *dic in dicList) {
+                                                    NoteListViewItem *item = [NoteListViewItem yy_modelWithJSON:dic] ;
+                                                    [tmplist addObject:item] ;
+                                                }
+                                                self.listNote = tmplist ;
+                                                
+                                                [_collectionView reloadData] ;
+                                            }
+                                            
+                                        } fail:^{
+                                            
+                                        }] ;
+    
     
 }
 
 - (void)loadMoreData
 {
-    
+    [ServerRequest searchNotesByTagWithSortType:[self.schConditionView.schTable resultSelectedIndex]
+                                            tag:self.tagStr
+                                        refresh:0
+                                         userId:[UserOnDevice currentUserOnDevice].userId
+                                           from:(int)self.listNote.count
+                                        howmany:kHowmany
+                                        success:^(id json) {
+                                            
+                                            ResultParsered *result = [ResultParsered yy_modelWithJSON:json] ;
+                                            if (result.code == 1)
+                                            {
+                                                NSMutableArray *tmplist = [self.listNote mutableCopy] ;
+                                                NSArray *dicList = result.data[@"noteList"] ;
+                                                for (NSDictionary *dic in dicList) {
+                                                    NoteListViewItem *item = [NoteListViewItem yy_modelWithJSON:dic] ;
+                                                    [tmplist addObject:item] ;
+                                                }
+                                                self.listNote = tmplist ;
+                                                
+                                                [_collectionView reloadData] ;
+                                            }
+                                            
+                                        } fail:^{
+                                            
+                                        }] ;
 }
 
 #pragma mark - collection dataSourse
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-{
-    return 1 ;
-}
-
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-//    return self.listNote.count ;
-    return 8 ;
+    if (self.type_CellDisplay == status_note)
+    {
+        return self.listNote.count ;
+    }
+    else if (self.type_CellDisplay == status_product)
+    {
+        return 8 ;
+    }
+    return 0 ;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.type_CellDisplay == status_note) {
+    if (self.type_CellDisplay == status_note)
+    {
         HPProductCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:id_HPProductCollectionCell forIndexPath:indexPath];
-        cell.index = indexPath.row ;
-        //    cell.noteItem = self.listNote[indexPath.row] ;
+        cell.noteItem = self.listNote[indexPath.row] ;
         return cell;
     }
-    else if (self.type_CellDisplay == status_product) {
+    else if (self.type_CellDisplay == status_product)
+    {
         TDCProductCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kID_TDCProductCollectionCell forIndexPath:indexPath] ;
         return cell ;
     }
@@ -176,6 +255,7 @@ typedef NS_ENUM(int, TDVC_CollectionCellDisplayType) {
 //    detailCtrller.articleId = articleIDWillSend ;
 //    [detailCtrller setHidesBottomBarWhenPushed:YES] ;
 //    [self.navigationController pushViewController:detailCtrller animated:YES] ;
+    
 }
 
 

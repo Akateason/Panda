@@ -206,7 +206,7 @@
                                             <constraint firstAttribute="height" constant="30" id="sWZ-oM-HK2"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <state key="normal" title="综合排序 ↓"/>
+                                        <state key="normal" title="综合排序 ▾"/>
                                         <connections>
                                             <action selector="btSortWayOnClick:" destination="0Zl-2Z-5rR" eventType="touchUpInside" id="WPj-xj-4dT"/>
                                         </connections>

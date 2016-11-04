@@ -374,6 +374,39 @@
     
 }
 
+#pragma - 指定标签搜索笔记信息
++ (void)searchNotesByTagWithSortType:(int)sortType
+                                 tag:(NSString *)tag
+                             refresh:(int)refresh
+                              userId:(NSString *)currentUserID
+                                from:(int)from
+                             howmany:(int)howmany
+                             success:(void (^)(id json))success
+                                fail:(void (^)())fail
+{
+    NSMutableDictionary *paramer = [self getParameters] ;
+    [paramer setObject:@(sortType) forKey:@"sortType"] ;
+    [paramer setObject:tag forKey:@"tag"] ;
+    [paramer setObject:@(refresh) forKey:@"refresh"] ;
+    if (currentUserID != nil) {
+        [paramer setObject:currentUserID forKey:@"userId"] ;
+    }
+    [paramer setObject:@(from) forKey:@"from"] ;
+    [paramer setObject:@(howmany) forKey:@"howmany"] ;
+    
+    [XTRequest GETWithUrl:[self getFinalUrl:URL_NOTELIST_SCH_BY_TAG]
+               parameters:paramer
+                  success:^(id json) {
+                      if (success) success(json) ;
+                  }
+                     fail:^{
+                         if (fail) fail() ;
+                     }] ;
+    
+}
+
+
+
 #pragma - 添加文章信息
 + (void)addArticle:(Article *)article
            success:(void (^)(id json))success

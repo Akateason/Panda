@@ -36,7 +36,7 @@
                                                                         completion:nil] ;
                                            }
                                            else {
-                                               [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"错误码%ld",result.code]] ;
+                                               [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"错误码%@",@(result.code)]] ;
                                            }
                                            
                                        } fail:^{
