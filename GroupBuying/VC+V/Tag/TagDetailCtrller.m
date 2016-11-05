@@ -24,8 +24,13 @@ typedef NS_ENUM(int, TDVC_CollectionCellDisplayType) {
     status_product       // 商品
 };
 
+#define kLIST_SEARCH_CONDITION      @[@"综合排序",@"按时间",@"按热度"]
+
+#define kLIST_SEGMENT_TITLE         @[@"笔记",@"商品"]
+
+
 // UIs
-@interface TagDetailCtrller () <XTSegmentDelegate,UICollectionViewDelegate,UICollectionViewDataSource,RootCollectionViewDelegate,CHTCollectionViewDelegateWaterfallLayout>
+@interface TagDetailCtrller () <XTSegmentDelegate,UICollectionViewDelegate,UICollectionViewDataSource,RootCollectionViewDelegate,CHTCollectionViewDelegateWaterfallLayout,HomePageCollectionCellDelegate>
 @property (weak, nonatomic) IBOutlet RootCollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UIView *toolView;
 @property (weak, nonatomic) IBOutlet UIView *seg_containerView;
@@ -42,6 +47,93 @@ typedef NS_ENUM(int, TDVC_CollectionCellDisplayType) {
 @end
 
 @implementation TagDetailCtrller
+
+#pragma mark - HomePageCollectionCellDelegate <NSObject>
+- (BOOL)likeNoteID:(NSString *)noteID addOrRemove:(bool)addOrRemove
+{
+    BOOL hasLogin = [UserOnDevice checkForLoginOrNot:self] ;
+    if (!hasLogin) return false;
+    
+    if (addOrRemove)
+    {
+        [ServerRequest addLikeWithID:noteID
+                               token:[UserOnDevice token]
+                             success:^(id json) {
+                                 [self.listNote enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem,
+                                                                             NSUInteger idx,
+                                                                             BOOL * _Nonnull stop) {
+                                     if ([noteItem.articleId isEqualToString:noteID])
+                                     {
+                                         noteItem.isUpvote = true ;
+                                         *stop = true ;
+                                     }
+                                 }] ;
+                                 
+                             } fail:^{
+                                 
+                             }] ;
+    }
+    else
+    {
+        [ServerRequest removeLikeWithID:noteID
+                                  token:[UserOnDevice token]
+                                success:^(id json) {
+                                    [self.listNote enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem,
+                                                                                NSUInteger idx,
+                                                                                BOOL * _Nonnull stop) {
+                                        if ([noteItem.articleId isEqualToString:noteID])
+                                        {
+                                            noteItem.isUpvote = false ;
+                                            *stop = true ;
+                                        }
+                                    }] ;
+                                } fail:^{
+                                    
+                                }] ;
+    }
+    return true ;
+}
+
+- (BOOL)collectNoteID:(NSString *)noteID addOrRemove:(bool)addOrRemove
+{
+    BOOL hasLogin = [UserOnDevice checkForLoginOrNot:self] ;
+    if (!hasLogin) return false;
+    
+    if (addOrRemove) {
+        [ServerRequest addFavoriteWithID:noteID
+                                 success:^(id json) {
+                                     [self.listNote enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem,
+                                                                                 NSUInteger idx,
+                                                                                 BOOL * _Nonnull stop) {
+                                         if ([noteItem.articleId isEqualToString:noteID])
+                                         {
+                                             noteItem.isFavorite = true ;
+                                             *stop = true ;
+                                         }
+                                     }] ;
+                                 } fail:^{
+                                     
+                                 }] ;
+    }
+    else {
+        [ServerRequest removeFavoriteWithID:noteID
+                                    success:^(id json) {
+                                        [self.listNote enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem,
+                                                                                    NSUInteger idx,
+                                                                                    BOOL * _Nonnull stop) {
+                                            if ([noteItem.articleId isEqualToString:noteID])
+                                            {
+                                                noteItem.isFavorite = false ;
+                                                *stop = true ;
+                                            }
+                                        }] ;
+                                    } fail:^{
+                                        
+                                    }] ;
+    }
+    return true ;
+}
+
 
 #pragma mark - XTSegmentDelegate
 
@@ -72,7 +164,13 @@ typedef NS_ENUM(int, TDVC_CollectionCellDisplayType) {
 {
     if (!_schConditionView) {
         _schConditionView = [[SearchConditionView alloc] initWithFrame:CGRectMake(0, CGHeight(self.seg_containerView.frame), APP_WIDTH, APP_HEIGHT - CGHeight(self.seg_containerView.frame) - APP_NAVIGATIONBAR_HEIGHT - APP_STATUSBAR_HEIGHT)] ;
-        [_schConditionView.schTable setListConditions:@[@"综合排序",@"按时间",@"按热度"]] ;
+        [_schConditionView.schTable setListConditions:kLIST_SEARCH_CONDITION] ;
+        
+        __weak TagDetailCtrller *weakSelf = self ;
+        _schConditionView.schTable.changedCondition = ^(int index, NSString *searchConditionStr) {
+            [weakSelf.btSortWay setTitle:[searchConditionStr stringByAppendingString:@" ▾"] forState:0] ;
+            [weakSelf.collectionView pullDownRefreshHeader] ;
+        } ;
     }
     return _schConditionView ;
 }
@@ -88,7 +186,7 @@ typedef NS_ENUM(int, TDVC_CollectionCellDisplayType) {
 - (XTSegment *)segment
 {
     if (!_segment) {
-        _segment = [[XTSegment alloc] initWithDataList:@[@"笔记",@"商品"]
+        _segment = [[XTSegment alloc] initWithDataList:kLIST_SEGMENT_TITLE
                                                  imgBg:[UIImage imageNamed:@"btBase"]
                                                 height:45.
                                            normalColor:[UIColor xt_w_light]
@@ -125,7 +223,11 @@ typedef NS_ENUM(int, TDVC_CollectionCellDisplayType) {
     // Do any additional setup after loading the view.
     
     [self segment] ;
-    
+    [self configureUIs] ;
+}
+
+- (void)configureUIs
+{
     _toolView.backgroundColor = [UIColor whiteColor] ;
     _seg_containerView.backgroundColor = [UIColor whiteColor] ;
     [_btSortWay setTitleColor:[UIColor xt_w_dark] forState:0] ;
@@ -139,8 +241,8 @@ typedef NS_ENUM(int, TDVC_CollectionCellDisplayType) {
     [_collectionView registerNib:[UINib nibWithNibName:id_HPProductCollectionCell bundle:[NSBundle mainBundle]]
       forCellWithReuseIdentifier:id_HPProductCollectionCell] ;
     [_collectionView registerNib:[UINib nibWithNibName:kID_TDCProductCollectionCell bundle:nil] forCellWithReuseIdentifier:kID_TDCProductCollectionCell] ;
-
 }
+
 
 #pragma mark - reload 
 
@@ -224,6 +326,7 @@ typedef NS_ENUM(int, TDVC_CollectionCellDisplayType) {
     {
         HPProductCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:id_HPProductCollectionCell forIndexPath:indexPath];
         cell.noteItem = self.listNote[indexPath.row] ;
+        cell.delegate = self ;
         return cell;
     }
     else if (self.type_CellDisplay == status_product)
@@ -242,20 +345,56 @@ typedef NS_ENUM(int, TDVC_CollectionCellDisplayType) {
 #pragma mark - collection delegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-//    NoteDetailCtrller *detailCtrller = (NoteDetailCtrller *)[[self class] getCtrllerFromStory:@"HomePage" controllerIdentifier:@"NoteDetailCtrller"] ;
-//    NSString *articleIDWillSend = nil ;
-//    if (collectionView.collectionViewLayout == self.bplayout) {
-//        NoteListViewItem *note = self.listNote[indexPath.section] ;
-//        articleIDWillSend = note.articleId ;
-//    }
-//    else if (collectionView.collectionViewLayout == self.waterflowLayout) {
-//        NoteListViewItem *note = self.listNote[indexPath.row] ;
-//        articleIDWillSend = note.articleId ;
-//    }
-//    detailCtrller.articleId = articleIDWillSend ;
-//    [detailCtrller setHidesBottomBarWhenPushed:YES] ;
-//    [self.navigationController pushViewController:detailCtrller animated:YES] ;
-    
+    if (self.type_CellDisplay == status_note)
+    {
+        NoteDetailCtrller *detailCtrller = (NoteDetailCtrller *)[[self class] getCtrllerFromStory:@"HomePage" controllerIdentifier:@"NoteDetailCtrller"] ;
+        NoteListViewItem *note = self.listNote[indexPath.row] ;
+        NSString *articleIDWillSend = note.articleId ;
+        detailCtrller.articleId = articleIDWillSend ;
+        detailCtrller.blockFocus = ^(NSString *userID, BOOL bFocus){
+            [self.listNote enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem,
+                                                        NSUInteger idx,
+                                                        BOOL * _Nonnull stop) {
+                if ([noteItem.ownerId isEqualToString:userID]) {
+                    noteItem.isFollow = bFocus ; // 关注
+                }
+            }] ;
+            
+            [_collectionView reloadData] ;
+            
+        } ;
+        detailCtrller.blockUpvote = ^(NSString *noteID, BOOL bUpvote){
+            [self.listNote enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem,
+                                                        NSUInteger idx,
+                                                        BOOL * _Nonnull stop) {
+                if ([noteItem.articleId isEqualToString:noteID]) {
+                    noteItem.isUpvote = bUpvote ; // 点赞
+                    noteItem.upvoteCnt = bUpvote ? ++noteItem.upvoteCnt : --noteItem.upvoteCnt ; // 点赞数
+                    *stop = YES ;
+                }
+            }] ;
+            [_collectionView reloadData] ;
+        } ;
+        
+        detailCtrller.blockFavorite = ^(NSString *noteID, BOOL bFavorite){
+            [self.listNote enumerateObjectsUsingBlock:^(NoteListViewItem *noteItem,
+                                                        NSUInteger idx,
+                                                        BOOL * _Nonnull stop) {
+                if ([noteItem.articleId isEqualToString:noteID]) {
+                    noteItem.isFavorite = bFavorite ; // 收藏
+                    *stop = YES ;
+                }
+            }] ;
+            [_collectionView reloadData] ;
+        } ;
+        
+        [self.navigationController pushViewController:detailCtrller animated:YES] ;
+    }
+    else if (self.type_CellDisplay == status_product)
+    {
+        
+    }
+
 }
 
 

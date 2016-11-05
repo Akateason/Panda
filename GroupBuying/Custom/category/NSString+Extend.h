@@ -25,6 +25,7 @@
                  systemFontSize:(CGFloat)fontNumber ;
 
 
+- (NSString *)URLEncodedString ;
 
 
 

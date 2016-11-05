@@ -54,11 +54,37 @@
         self.dataSource = self ;
         self.delegate = self ;
         self.separatorStyle = 0 ;
-        
         self.selectedIndex = 0 ; //综合 .
+        [self addObserver:self forKeyPath:@"selectedIndex" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil] ;
     }
     return self ;
 }
+
+- (void)dealloc
+{
+    [self removeObserver:self forKeyPath:@"selectedIndex" context:nil] ;
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary<NSString *,id> *)change
+                       context:(void *)context
+{
+    if ([keyPath isEqualToString:@"selectedIndex"]) {
+        
+        int new = [change[NSKeyValueChangeNewKey] intValue] ;
+        int old = [change[NSKeyValueChangeOldKey] intValue] ;
+        if (new != old) {
+            if (self.changedCondition) {
+                self.changedCondition(self.selectedIndex,self.listConditions[self.selectedIndex]) ;
+            }
+        }
+    }
+    else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context] ;
+    }
+}
+
 
 #pragma - UITableViewDataSource<NSObject>
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -83,6 +109,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self makeIndexBeChoosen:(int)indexPath.row] ;
+    
+    if (self.dismiss) self.dismiss() ;    
 }
 
 

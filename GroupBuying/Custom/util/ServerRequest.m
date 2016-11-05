@@ -20,6 +20,7 @@
 #import "SVProgressHUD.h"
 #import "YYModel.h"
 #import "Comment.h"
+#import "NSString+Extend.h"
 
 
 #define ACCEPTABLE_CONTENT_TYPES        @"application/json", @"text/html", @"text/json", @"text/javascript",@"text/plain"
@@ -386,7 +387,9 @@
 {
     NSMutableDictionary *paramer = [self getParameters] ;
     [paramer setObject:@(sortType) forKey:@"sortType"] ;
-    [paramer setObject:tag forKey:@"tag"] ;
+    
+    [paramer setObject:[tag URLEncodedString] forKey:@"tag"] ;
+    
     [paramer setObject:@(refresh) forKey:@"refresh"] ;
     if (currentUserID != nil) {
         [paramer setObject:currentUserID forKey:@"userId"] ;

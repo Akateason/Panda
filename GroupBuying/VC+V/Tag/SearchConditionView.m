@@ -31,6 +31,10 @@
         [self addSubview:bgButton] ;
         
         self.schTable = [[SearchConditionTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain] ;
+        __weak SearchConditionView *weakSelf = self ;
+        self.schTable.dismiss = ^ {
+            [weakSelf dismiss] ;
+        } ;
 //        [self.schTable setListConditions:@[@"综合排序",@"按时间",@"按热度"]] ;  // 在外部调用
         [self addSubview:self.schTable] ;
     }

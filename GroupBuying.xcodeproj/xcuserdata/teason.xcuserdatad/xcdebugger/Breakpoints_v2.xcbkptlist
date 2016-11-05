@@ -100,27 +100,27 @@
                   moduleName = "GroupBuying"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/teason/Documents/iOS_project/Groupbuying/GroupBuying/VC+V/Post/PostCtrller.m"
-                  timestampString = "499710987.398345"
+                  timestampString = "500036982.035818"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "141"
                   endingLineNumber = "141"
-                  offsetFromSymbolStart = "1500">
+                  offsetFromSymbolStart = "1707">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__29-[PostCtrller btPostOnClick:]_block_invoke.153"
+                  symbolName = "__29-[PostCtrller btPostOnClick:]_block_invoke.155"
                   moduleName = "GroupBuying"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/teason/Documents/iOS_project/Groupbuying/GroupBuying/VC+V/Post/PostCtrller.m"
-                  timestampString = "499710987.398575"
+                  timestampString = "500036982.036171"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "141"
                   endingLineNumber = "141"
-                  offsetFromSymbolStart = "40">
+                  offsetFromSymbolStart = "32">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -176,31 +176,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__29-[PostCtrller btPostOnClick:]_block_invoke.153"
+                  symbolName = "__29-[PostCtrller btPostOnClick:]_block_invoke.155"
                   moduleName = "GroupBuying"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/teason/Documents/iOS_project/Groupbuying/GroupBuying/VC+V/Post/PostCtrller.m"
-                  timestampString = "499710987.400495"
+                  timestampString = "500036982.039297"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "163"
                   endingLineNumber = "163"
-                  offsetFromSymbolStart = "1132">
+                  offsetFromSymbolStart = "1191">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__29-[PostCtrller btPostOnClick:]_block_invoke.153"
+                  symbolName = "__29-[PostCtrller btPostOnClick:]_block_invoke.155"
                   moduleName = "GroupBuying"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/teason/Documents/iOS_project/Groupbuying/GroupBuying/VC+V/Post/PostCtrller.m"
-                  timestampString = "499710987.400683"
+                  timestampString = "500036982.039755"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "163"
                   endingLineNumber = "163"
-                  offsetFromSymbolStart = "1204">
+                  offsetFromSymbolStart = "1262">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -212,11 +212,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GroupBuying/Custom/util/ServerRequest.m"
-            timestampString = "497555593.915486"
+            timestampString = "499961350.950088"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "+validVerifyCode:verifyCode:success:fail:"
             landmarkType = "5">
          </BreakpointContent>

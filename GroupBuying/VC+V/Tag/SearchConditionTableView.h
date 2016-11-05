@@ -10,6 +10,9 @@
 
 @interface SearchConditionTableView : UITableView
 
+@property (nonatomic,copy) void(^changedCondition)(int index, NSString *title) ; // search condition Value Changed .
+@property (nonatomic,copy) void(^dismiss)(void) ; 
+
 - (instancetype)initWithFrame:(CGRect)frame
                         style:(UITableViewStyle)style ;
 
