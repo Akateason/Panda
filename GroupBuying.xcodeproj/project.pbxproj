@@ -61,6 +61,8 @@
 		60319DCF1DAAB99C00BD094D /* TuSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60319DCC1DAAB99C00BD094D /* TuSDK.framework */; };
 		60319DD01DAAB99C00BD094D /* TuSDKGeeV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60319DCD1DAAB99C00BD094D /* TuSDKGeeV1.framework */; };
 		60319DD41DABCAEF00BD094D /* Upvote.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319DD31DABCAEF00BD094D /* Upvote.m */; };
+		60319DDA1DCE00F900BD094D /* CouponCodeGetCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319DD81DCE00F900BD094D /* CouponCodeGetCtrller.m */; };
+		60319DDB1DCE00F900BD094D /* CouponCodeGetCtrller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60319DD91DCE00F900BD094D /* CouponCodeGetCtrller.xib */; };
 		6035CF2B1D74B38B00EA590B /* PostContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6035CF2A1D74B38B00EA590B /* PostContentCell.m */; };
 		6035CF2D1D74B3AC00EA590B /* PostContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6035CF2C1D74B3AC00EA590B /* PostContentCell.xib */; };
 		6035CF311D75E64E00EA590B /* TagSearchingCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = 6035CF301D75E64E00EA590B /* TagSearchingCtrller.m */; };
@@ -531,6 +533,9 @@
 		60319DD21DABCAEF00BD094D /* Upvote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Upvote.h; sourceTree = "<group>"; };
 		60319DD31DABCAEF00BD094D /* Upvote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Upvote.m; sourceTree = "<group>"; };
 		60319DD51DAC061600BD094D /* HomePageCollectionCellHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HomePageCollectionCellHeader.h; path = "GroupBuying/VC+V/HomePage/HomePageCollectionCellHeader.h"; sourceTree = SOURCE_ROOT; };
+		60319DD71DCE00F900BD094D /* CouponCodeGetCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CouponCodeGetCtrller.h; path = "GroupBuying/VC+V/NoteDetail/CouponCodeGetCtrller.h"; sourceTree = SOURCE_ROOT; };
+		60319DD81DCE00F900BD094D /* CouponCodeGetCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CouponCodeGetCtrller.m; path = "GroupBuying/VC+V/NoteDetail/CouponCodeGetCtrller.m"; sourceTree = SOURCE_ROOT; };
+		60319DD91DCE00F900BD094D /* CouponCodeGetCtrller.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CouponCodeGetCtrller.xib; path = "GroupBuying/VC+V/NoteDetail/CouponCodeGetCtrller.xib"; sourceTree = SOURCE_ROOT; };
 		6035CF291D74B38B00EA590B /* PostContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostContentCell.h; path = "GroupBuying/VC+V/Post/PostContentCell.h"; sourceTree = SOURCE_ROOT; };
 		6035CF2A1D74B38B00EA590B /* PostContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostContentCell.m; path = "GroupBuying/VC+V/Post/PostContentCell.m"; sourceTree = SOURCE_ROOT; };
 		6035CF2C1D74B3AC00EA590B /* PostContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostContentCell.xib; path = "GroupBuying/VC+V/Post/PostContentCell.xib"; sourceTree = SOURCE_ROOT; };
@@ -1473,6 +1478,16 @@
 			name = Upvote;
 			sourceTree = "<group>";
 		};
+		60319DD61DCE006100BD094D /* CouponCodeView */ = {
+			isa = PBXGroup;
+			children = (
+				60319DD71DCE00F900BD094D /* CouponCodeGetCtrller.h */,
+				60319DD81DCE00F900BD094D /* CouponCodeGetCtrller.m */,
+				60319DD91DCE00F900BD094D /* CouponCodeGetCtrller.xib */,
+			);
+			name = CouponCodeView;
+			sourceTree = "<group>";
+		};
 		6035CF2E1D75E62000EA590B /* Tag */ = {
 			isa = PBXGroup;
 			children = (
@@ -1486,6 +1501,7 @@
 		608075FC1D805D870056573F /* NoteDetail */ = {
 			isa = PBXGroup;
 			children = (
+				60319DD61DCE006100BD094D /* CouponCodeView */,
 				608075FD1D805DB00056573F /* NoteDetailCtrller.h */,
 				608075FE1D805DB00056573F /* NoteDetailCtrller.m */,
 				D7428EF41D8F873C00E64D65 /* NoteDetailSubviews */,
@@ -3216,6 +3232,7 @@
 				D76E84051D7528F70014FDEA /* PostAddPhotoCell.xib in Resources */,
 				D7E994BB1D98C67F00EACDFB /* FeaturesProductsCell.xib in Resources */,
 				6035CF2D1D74B3AC00EA590B /* PostContentCell.xib in Resources */,
+				60319DDB1DCE00F900BD094D /* CouponCodeGetCtrller.xib in Resources */,
 				60319D741D91795A00BD094D /* FVCKindsCell.xib in Resources */,
 				D76E83FB1D7524BA0014FDEA /* PostPhotosCell.xib in Resources */,
 				D7E4FEF91DA8A85700DC0E53 /* MessageCell.xib in Resources */,
@@ -3573,6 +3590,7 @@
 				D76E83BF1D70175D0014FDEA /* UIImage+ImageEffects.m in Sources */,
 				60319D921D92C0B800BD094D /* HotProductListCtrller.m in Sources */,
 				606BF84F1D8415AC00C503FE /* DetailUserInfoView.m in Sources */,
+				60319DDA1DCE00F900BD094D /* CouponCodeGetCtrller.m in Sources */,
 				D75CC6561C2AA17700E590E6 /* ResultParsered.m in Sources */,
 				D75CC5DF1C2A965000E590E6 /* UIView+MJExtension.m in Sources */,
 				60319D581D8ED3B800BD094D /* DetailCommentsCell.m in Sources */,

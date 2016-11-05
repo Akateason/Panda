@@ -25,15 +25,17 @@
 #import "FocusHandler.h"
 #import "MyFansFocusCtrller.h"
 #import "NotificationCenterHeader.h"
+#import "CouponCodeGetCtrller.h"
 
 @interface NoteDetailCtrller () <UITableViewDataSource,UITableViewDelegate,RootTableViewDelegate,HPBigPhotoHeaderViewDelegate,DetailCommentsCellDelegate>
-// storyboard
+// UIs
 @property (weak, nonatomic) IBOutlet UIView *bottomBar;
 @property (weak, nonatomic) IBOutlet RootTableView *table;
 @property (weak, nonatomic) IBOutlet UIAlternativeButton *bt_coupon;
 @property (weak, nonatomic) IBOutlet UIAlternativeButton *btLike;
 @property (weak, nonatomic) IBOutlet UIAlternativeButton *btComment;
 @property (weak, nonatomic) IBOutlet UIAlternativeButton *btCollecion;
+@property (nonatomic,strong) CouponCodeGetCtrller *couponCodeCtrller ;
 @end
 
 @interface NoteDetailCtrller ()
@@ -117,6 +119,14 @@
     }
 }
 
+- (CouponCodeGetCtrller *)couponCodeCtrller
+{
+    if (!_couponCodeCtrller) {
+        _couponCodeCtrller = [[CouponCodeGetCtrller alloc] initWithNibName:@"CouponCodeGetCtrller" bundle:nil] ;
+        _couponCodeCtrller.view.frame = APPFRAME ;
+    }
+    return _couponCodeCtrller ;
+}
 
 
 
@@ -196,6 +206,12 @@
 #pragma mark - bottom bar actions
 - (IBAction)btCouponOnClick:(id)sender {
     NSLog(@"优惠券") ;
+    if (!self.couponCodeCtrller.view.superview) {
+        [self.couponCodeCtrller showCouponCodeView:self.view.window] ;
+    }
+    else {
+        [self.couponCodeCtrller dismiss] ;
+    }
 }
 
 - (IBAction)btLikeOnClick:(UIAlternativeButton *)button
