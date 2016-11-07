@@ -26,6 +26,9 @@
 #import "MyCouponCodeCtrller.h"
 #import "MyPointsCtrller.h"
 #import "NotificationCenterHeader.h"
+#import "MyActivityCtrller.h"
+#import "MyOrderListCtrller.h"
+#import "MyAddressCtrller.h"
 
 @interface MineController () <UITableViewDataSource,UITableViewDelegate>
 
@@ -286,7 +289,9 @@ static NSString *const kIdentifierFooter = @"mycell_footer" ;
         }
         else if (row == 1) {
             // 订单
-            
+            MyOrderListCtrller *orderListVC = (MyOrderListCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"MyOrderListCtrller"] ;
+            [orderListVC setHidesBottomBarWhenPushed:YES] ;
+            [self.navigationController pushViewController:orderListVC animated:YES] ;
         }
         else if (row == 2) {
             // 结算
@@ -295,6 +300,9 @@ static NSString *const kIdentifierFooter = @"mycell_footer" ;
     else if (section == 4) {
         if (row == 0) {
             // 地址
+            MyAddressCtrller *addressVC = (MyAddressCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"MyAddressCtrller"] ;
+            [addressVC setHidesBottomBarWhenPushed:YES] ;
+            [self.navigationController pushViewController:addressVC animated:YES] ;
         }
         else if (row == 1) {
             // 邀请码
@@ -310,6 +318,9 @@ static NSString *const kIdentifierFooter = @"mycell_footer" ;
         }
         else if (row == 3) {
             // 活动
+            MyActivityCtrller *myActivityVC = (MyActivityCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"MyActivityCtrller"] ;
+            [myActivityVC setHidesBottomBarWhenPushed:YES] ;
+            [self.navigationController pushViewController:myActivityVC animated:YES] ;
         }
     }
 }

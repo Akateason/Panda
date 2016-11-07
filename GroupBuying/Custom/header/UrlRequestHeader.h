@@ -74,6 +74,9 @@ static NSString *const URL_NOTE_DETAIL          = @"/gwn/note/detail/getById" ;
 //指定标签搜索笔记信息
 static NSString *const URL_NOTELIST_SCH_BY_TAG  = @"/gwn/note/list/searchByTag" ;
 
+//搜索用户收藏的笔记信息
+static NSString *const URL_USERS_COLLECTIONS    = @"/gwn/s/note/list/searchByUserFavorite" ;
+
 //添加点赞信息
 static NSString *const URL_UPVOTE_ADD           = @"/gwn/s/upvote/add" ;
 

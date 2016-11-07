@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyActivityCell" rowHeight="258" id="Gbu-in-5BM" customClass="MyActivityCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="258"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gbu-in-5BM" id="ylx-UT-gtw">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="257"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zh-rP-chN">
+                        <rect key="frame" x="15" y="15" width="31" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sQ2-bN-FW7">
+                        <rect key="frame" x="0.0" y="35" width="320" height="222"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="sQ2-bN-FW7" secondAttribute="height" multiplier="75:52" id="z2y-Gy-ixx"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="sQ2-bN-FW7" firstAttribute="top" secondItem="2Zh-rP-chN" secondAttribute="bottom" constant="5" id="1jI-yW-68O"/>
+                    <constraint firstItem="sQ2-bN-FW7" firstAttribute="leading" secondItem="ylx-UT-gtw" secondAttribute="leading" id="96E-AF-5Eh"/>
+                    <constraint firstItem="2Zh-rP-chN" firstAttribute="leading" secondItem="ylx-UT-gtw" secondAttribute="leading" constant="15" id="NbM-PP-ET7"/>
+                    <constraint firstItem="2Zh-rP-chN" firstAttribute="top" secondItem="ylx-UT-gtw" secondAttribute="top" constant="15" id="aBq-uW-Ikm"/>
+                    <constraint firstAttribute="trailing" secondItem="sQ2-bN-FW7" secondAttribute="trailing" id="ytB-Sp-G8g"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imgViewActivity" destination="sQ2-bN-FW7" id="Cja-hf-NXL"/>
+                <outlet property="lbStatus" destination="2Zh-rP-chN" id="zei-zG-m2f"/>
+            </connections>
+            <point key="canvasLocation" x="377" y="392"/>
+        </tableViewCell>
+    </objects>
+</document>

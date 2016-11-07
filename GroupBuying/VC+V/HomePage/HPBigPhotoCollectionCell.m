@@ -32,8 +32,8 @@
 {
     _noteItem = noteItem ;
     
-//    
-    [_imgView xt_setImageWithPic:noteItem.img] ;
+
+    [_imgView xt_setOriginalImageWithPic:noteItem.img] ;
     
     _labelTitle.text = noteItem.articleTitle ;
     _btCollection.selected = noteItem.isFavorite ;

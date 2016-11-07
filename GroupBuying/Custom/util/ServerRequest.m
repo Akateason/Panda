@@ -408,7 +408,26 @@
     
 }
 
-
+#pragma - 搜索用户收藏的笔记信息
++ (void)userCollectionlistByToken:(NSString *)token
+                             from:(int)from
+                          howmany:(int)howmany
+                          success:(void (^)(id json))success
+                             fail:(void (^)())fail
+{
+    NSMutableDictionary *paramer = [self getParameters] ;
+    [paramer setObject:token forKey:@"token"] ;
+    [paramer setObject:@(from) forKey:@"from"] ;
+    [paramer setObject:@(howmany) forKey:@"howmany"] ;
+    
+    [XTRequest GETWithUrl:[self getFinalUrl:URL_USERS_COLLECTIONS]
+               parameters:paramer
+                  success:^(id json) {
+                      if (success) success(json) ;
+                  } fail:^{
+                      if (fail) fail() ;
+                  }] ;
+}
 
 #pragma - 添加文章信息
 + (void)addArticle:(Article *)article

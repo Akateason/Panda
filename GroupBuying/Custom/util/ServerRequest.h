@@ -129,6 +129,13 @@
                              success:(void (^)(id json))success
                                 fail:(void (^)())fail ;
 
+#pragma - 搜索用户收藏的笔记信息
++ (void)userCollectionlistByToken:(NSString *)token
+                             from:(int)from
+                          howmany:(int)howmany
+                          success:(void (^)(id json))success
+                             fail:(void (^)())fail ;
+
 
 #pragma - 添加文章信息
 + (void)addArticle:(Article *)article

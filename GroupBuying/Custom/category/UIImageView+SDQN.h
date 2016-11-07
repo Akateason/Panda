@@ -26,4 +26,7 @@
 
 - (void)xt_setCircleImageWithPic:(Pic *)pic
                 placeHolderImage:(UIImage *)placeHolderImage ;
+
+- (void)xt_setOriginalImageWithPic:(Pic *)pic ;
+
 @end

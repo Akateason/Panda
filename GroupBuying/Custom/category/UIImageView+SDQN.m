@@ -73,6 +73,12 @@ static NSString *const kQiniuImgStrTail = @"?imageView2/0/w/%d/h/%d/q/100" ;
                    }] ;
 }
 
+- (void)xt_setOriginalImageWithPic:(Pic *)pic
+{
+    NSString *resultStr = [self getUrlStringWithPic:pic] ;
+    [self sd_setImageWithURL:[NSURL URLWithString:resultStr]] ;
+}
+
 
 
 #pragma mark - private

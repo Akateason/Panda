@@ -88,6 +88,17 @@
 		D71099B81DCC834100F16471 /* SearchConditionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D71099B61DCC834100F16471 /* SearchConditionCell.xib */; };
 		D71099BC1DCC83B500F16471 /* SearchConditionTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D71099BB1DCC83B500F16471 /* SearchConditionTableView.m */; };
 		D71099BF1DCC951400F16471 /* SearchConditionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D71099BE1DCC951400F16471 /* SearchConditionView.m */; };
+		D71099C41DD015BE00F16471 /* MyActivityCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D71099C31DD015BE00F16471 /* MyActivityCtrller.m */; };
+		D71099C71DD015E000F16471 /* MyActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D71099C61DD015E000F16471 /* MyActivityCell.m */; };
+		D71099C91DD0160900F16471 /* MyActivityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D71099C81DD0160900F16471 /* MyActivityCell.xib */; };
+		D71099CD1DD02D4500F16471 /* MyOrderListCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D71099CC1DD02D4500F16471 /* MyOrderListCtrller.m */; };
+		D71099D11DD0359600F16471 /* OrderlListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D71099CF1DD0359600F16471 /* OrderlListCell.m */; };
+		D71099D21DD0359600F16471 /* OrderlListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D71099D01DD0359600F16471 /* OrderlListCell.xib */; };
+		D71099D61DD03D7600F16471 /* OrderListProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D71099D41DD03D7600F16471 /* OrderListProductCell.m */; };
+		D71099D71DD03D7600F16471 /* OrderListProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D71099D51DD03D7600F16471 /* OrderListProductCell.xib */; };
+		D71099DB1DD08F3700F16471 /* MyAddressCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D71099DA1DD08F3700F16471 /* MyAddressCtrller.m */; };
+		D71099DF1DD0947300F16471 /* AddressManageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D71099DD1DD0947300F16471 /* AddressManageCell.m */; };
+		D71099E01DD0947300F16471 /* AddressManageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D71099DE1DD0947300F16471 /* AddressManageCell.xib */; };
 		D7387A961DC712AE002F4229 /* FocusHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D7387A951DC712AE002F4229 /* FocusHandler.m */; };
 		D7387A9A1DC83F73002F4229 /* DetailPicCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7387A981DC83F73002F4229 /* DetailPicCollectionCell.m */; };
 		D7387A9B1DC83F73002F4229 /* DetailPicCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7387A991DC83F73002F4229 /* DetailPicCollectionCell.xib */; };
@@ -580,6 +591,24 @@
 		D71099BB1DCC83B500F16471 /* SearchConditionTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchConditionTableView.m; path = "GroupBuying/VC+V/Tag/SearchConditionTableView.m"; sourceTree = SOURCE_ROOT; };
 		D71099BD1DCC951400F16471 /* SearchConditionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchConditionView.h; path = "GroupBuying/VC+V/Tag/SearchConditionView.h"; sourceTree = SOURCE_ROOT; };
 		D71099BE1DCC951400F16471 /* SearchConditionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchConditionView.m; path = "GroupBuying/VC+V/Tag/SearchConditionView.m"; sourceTree = SOURCE_ROOT; };
+		D71099C21DD015BE00F16471 /* MyActivityCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyActivityCtrller.h; path = "GroupBuying/VC+V/Mine/MyActivity/MyActivityCtrller.h"; sourceTree = SOURCE_ROOT; };
+		D71099C31DD015BE00F16471 /* MyActivityCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyActivityCtrller.m; path = "GroupBuying/VC+V/Mine/MyActivity/MyActivityCtrller.m"; sourceTree = SOURCE_ROOT; };
+		D71099C51DD015E000F16471 /* MyActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyActivityCell.h; path = "GroupBuying/VC+V/Mine/MyActivity/MyActivityCell.h"; sourceTree = SOURCE_ROOT; };
+		D71099C61DD015E000F16471 /* MyActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyActivityCell.m; path = "GroupBuying/VC+V/Mine/MyActivity/MyActivityCell.m"; sourceTree = SOURCE_ROOT; };
+		D71099C81DD0160900F16471 /* MyActivityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MyActivityCell.xib; path = "GroupBuying/VC+V/Mine/MyActivity/MyActivityCell.xib"; sourceTree = SOURCE_ROOT; };
+		D71099CB1DD02D4500F16471 /* MyOrderListCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyOrderListCtrller.h; path = "GroupBuying/VC+V/Mine/MyOrderList/MyOrderListCtrller.h"; sourceTree = SOURCE_ROOT; };
+		D71099CC1DD02D4500F16471 /* MyOrderListCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyOrderListCtrller.m; path = "GroupBuying/VC+V/Mine/MyOrderList/MyOrderListCtrller.m"; sourceTree = SOURCE_ROOT; };
+		D71099CE1DD0359600F16471 /* OrderlListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrderlListCell.h; path = "GroupBuying/VC+V/Order/OrderlListCell.h"; sourceTree = SOURCE_ROOT; };
+		D71099CF1DD0359600F16471 /* OrderlListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderlListCell.m; path = "GroupBuying/VC+V/Order/OrderlListCell.m"; sourceTree = SOURCE_ROOT; };
+		D71099D01DD0359600F16471 /* OrderlListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OrderlListCell.xib; path = "GroupBuying/VC+V/Order/OrderlListCell.xib"; sourceTree = SOURCE_ROOT; };
+		D71099D31DD03D7600F16471 /* OrderListProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrderListProductCell.h; path = "GroupBuying/VC+V/Order/OrderListProductCell.h"; sourceTree = SOURCE_ROOT; };
+		D71099D41DD03D7600F16471 /* OrderListProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderListProductCell.m; path = "GroupBuying/VC+V/Order/OrderListProductCell.m"; sourceTree = SOURCE_ROOT; };
+		D71099D51DD03D7600F16471 /* OrderListProductCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OrderListProductCell.xib; path = "GroupBuying/VC+V/Order/OrderListProductCell.xib"; sourceTree = SOURCE_ROOT; };
+		D71099D91DD08F3700F16471 /* MyAddressCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyAddressCtrller.h; path = "GroupBuying/VC+V/Mine/MyAddress/MyAddressCtrller.h"; sourceTree = SOURCE_ROOT; };
+		D71099DA1DD08F3700F16471 /* MyAddressCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyAddressCtrller.m; path = "GroupBuying/VC+V/Mine/MyAddress/MyAddressCtrller.m"; sourceTree = SOURCE_ROOT; };
+		D71099DC1DD0947300F16471 /* AddressManageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddressManageCell.h; path = "GroupBuying/VC+V/Mine/MyAddress/AddressManageCell.h"; sourceTree = SOURCE_ROOT; };
+		D71099DD1DD0947300F16471 /* AddressManageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddressManageCell.m; path = "GroupBuying/VC+V/Mine/MyAddress/AddressManageCell.m"; sourceTree = SOURCE_ROOT; };
+		D71099DE1DD0947300F16471 /* AddressManageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddressManageCell.xib; path = "GroupBuying/VC+V/Mine/MyAddress/AddressManageCell.xib"; sourceTree = SOURCE_ROOT; };
 		D7387A941DC712AE002F4229 /* FocusHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusHandler.h; sourceTree = "<group>"; };
 		D7387A951DC712AE002F4229 /* FocusHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusHandler.m; sourceTree = "<group>"; };
 		D7387A971DC83F73002F4229 /* DetailPicCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailPicCollectionCell.h; path = "GroupBuying/VC+V/NoteDetail/DetailPicCollectionCell.h"; sourceTree = SOURCE_ROOT; };
@@ -1317,7 +1346,10 @@
 		60074DFD1D60DF2F0040C3C0 /* Mine1 */ = {
 			isa = PBXGroup;
 			children = (
+				D71099D81DD08F0400F16471 /* MyAddress */,
 				D7E9945E1D93D3AC00EACDFB /* Mine */,
+				D71099CA1DD02D1C00F16471 /* MyOrderList */,
+				D71099C01DD0157C00F16471 /* MyActivity */,
 				D7CE2A0B1DAF937700FF452C /* MyPoints */,
 				D7CE2A021DAF85A900FF452C /* MyCouponCode */,
 				D7E4FEFA1DA8D5A200DC0E53 /* MyCollection */,
@@ -1569,6 +1601,45 @@
 			name = SearchConditionHandler;
 			sourceTree = "<group>";
 		};
+		D71099C01DD0157C00F16471 /* MyActivity */ = {
+			isa = PBXGroup;
+			children = (
+				D71099C21DD015BE00F16471 /* MyActivityCtrller.h */,
+				D71099C31DD015BE00F16471 /* MyActivityCtrller.m */,
+				D71099C51DD015E000F16471 /* MyActivityCell.h */,
+				D71099C61DD015E000F16471 /* MyActivityCell.m */,
+				D71099C81DD0160900F16471 /* MyActivityCell.xib */,
+			);
+			name = MyActivity;
+			sourceTree = "<group>";
+		};
+		D71099CA1DD02D1C00F16471 /* MyOrderList */ = {
+			isa = PBXGroup;
+			children = (
+				D71099CB1DD02D4500F16471 /* MyOrderListCtrller.h */,
+				D71099CC1DD02D4500F16471 /* MyOrderListCtrller.m */,
+				D71099CE1DD0359600F16471 /* OrderlListCell.h */,
+				D71099CF1DD0359600F16471 /* OrderlListCell.m */,
+				D71099D01DD0359600F16471 /* OrderlListCell.xib */,
+				D71099D31DD03D7600F16471 /* OrderListProductCell.h */,
+				D71099D41DD03D7600F16471 /* OrderListProductCell.m */,
+				D71099D51DD03D7600F16471 /* OrderListProductCell.xib */,
+			);
+			name = MyOrderList;
+			sourceTree = "<group>";
+		};
+		D71099D81DD08F0400F16471 /* MyAddress */ = {
+			isa = PBXGroup;
+			children = (
+				D71099D91DD08F3700F16471 /* MyAddressCtrller.h */,
+				D71099DA1DD08F3700F16471 /* MyAddressCtrller.m */,
+				D71099DC1DD0947300F16471 /* AddressManageCell.h */,
+				D71099DD1DD0947300F16471 /* AddressManageCell.m */,
+				D71099DE1DD0947300F16471 /* AddressManageCell.xib */,
+			);
+			name = MyAddress;
+			sourceTree = "<group>";
+		};
 		D7428EF41D8F873C00E64D65 /* NoteDetailSubviews */ = {
 			isa = PBXGroup;
 			children = (
@@ -1712,13 +1783,13 @@
 			children = (
 				60319DD51DAC061600BD094D /* HomePageCollectionCellHeader.h */,
 				D7CE29CE1DACD52A00FF452C /* BigPhotoHeaderViewProtocolHeader.h */,
-				D7CE2A511DBDEF5700FF452C /* Comments */,
-				D7E4FF171DA8E34B00DC0E53 /* Shop */,
 				60074DF91D60DEC90040C3C0 /* HomePage1 */,
 				60074E001D60DF410040C3C0 /* Find1 */,
 				60074DFF1D60DF3C0040C3C0 /* Features1 */,
 				60074DFE1D60DF390040C3C0 /* Activity1 */,
 				60074DFD1D60DF2F0040C3C0 /* Mine1 */,
+				D7CE2A511DBDEF5700FF452C /* Comments */,
+				D7E4FF171DA8E34B00DC0E53 /* Shop */,
 				D7E994671D94CEA200EACDFB /* Setting */,
 				D7E0F4C61D8801FA00EA663B /* Login */,
 				608075FC1D805D870056573F /* NoteDetail */,
@@ -3213,6 +3284,7 @@
 				60319D591D8ED3B800BD094D /* DetailCommentsCell.xib in Resources */,
 				606BF8511D84164200C503FE /* DetailUserInfoView.xib in Resources */,
 				60319D7F1D91918400BD094D /* FVCHotTagCell.xib in Resources */,
+				D71099D21DD0359600F16471 /* OrderlListCell.xib in Resources */,
 				D75CC3D41C2A926100E590E6 /* LaunchScreen.storyboard in Resources */,
 				D7886D521D90EFAB003D6D57 /* CommentCell.xib in Resources */,
 				D7CE2A0A1DAF871400FF452C /* MyCouponCodeCell.xib in Resources */,
@@ -3233,9 +3305,11 @@
 				D7E994BB1D98C67F00EACDFB /* FeaturesProductsCell.xib in Resources */,
 				6035CF2D1D74B3AC00EA590B /* PostContentCell.xib in Resources */,
 				60319DDB1DCE00F900BD094D /* CouponCodeGetCtrller.xib in Resources */,
+				D71099C91DD0160900F16471 /* MyActivityCell.xib in Resources */,
 				60319D741D91795A00BD094D /* FVCKindsCell.xib in Resources */,
 				D76E83FB1D7524BA0014FDEA /* PostPhotosCell.xib in Resources */,
 				D7E4FEF91DA8A85700DC0E53 /* MessageCell.xib in Resources */,
+				D71099E01DD0947300F16471 /* AddressManageCell.xib in Resources */,
 				60319D941D92C0F100BD094D /* Find.storyboard in Resources */,
 				60319D8E1D91B4D000BD094D /* ActivityPageCell.xib in Resources */,
 				D76E83F61D7439950014FDEA /* UserNotesCollectionTableViewCell.xib in Resources */,
@@ -3257,6 +3331,7 @@
 				608405831D67F62500B40D68 /* HPBigPhotoCollectionCell.xib in Resources */,
 				D76E83C61D7028680014FDEA /* UserInfoView.xib in Resources */,
 				D7E4FF161DA8E33200DC0E53 /* Shop.storyboard in Resources */,
+				D71099D71DD03D7600F16471 /* OrderListProductCell.xib in Resources */,
 				D76E839D1D6EA1D90014FDEA /* testUser.plist in Resources */,
 				D76E84401D76D6A90014FDEA /* EditorPhotosCollectionCell.xib in Resources */,
 				D76E83F11D74359D0014FDEA /* UserFoucusHeaderView.xib in Resources */,
@@ -3335,6 +3410,7 @@
 				D76E83BE1D70175D0014FDEA /* ParallaxHeaderView.m in Sources */,
 				D7E4FF051DA8D74800DC0E53 /* MyFansFocusCtrller.m in Sources */,
 				D7E994E71D9A521C00EACDFB /* MineEditAddCtrller.m in Sources */,
+				D71099DB1DD08F3700F16471 /* MyAddressCtrller.m in Sources */,
 				D7E994D51D99122C00EACDFB /* MineEditCell.m in Sources */,
 				D75CC5FF1C2A965000E590E6 /* UIImage+WebP.m in Sources */,
 				D75CC5AC1C2A965000E590E6 /* ASIFormDataRequest.m in Sources */,
@@ -3364,6 +3440,7 @@
 				D75CC5FD1C2A965000E590E6 /* UIImage+GIF.m in Sources */,
 				D75CC5E31C2A965000E590E6 /* QNCrc32.m in Sources */,
 				60319D781D91849600BD094D /* FVCKindCollectionCell.m in Sources */,
+				D71099C41DD015BE00F16471 /* MyActivityCtrller.m in Sources */,
 				D7E0F4CE1D880E8E00EA663B /* RegisterViewController.m in Sources */,
 				D75CC5AF1C2A965000E590E6 /* ASINetworkQueue.m in Sources */,
 				60074E0C1D60E0180040C3C0 /* MineController.m in Sources */,
@@ -3493,6 +3570,7 @@
 				D71099B71DCC834100F16471 /* SearchConditionCell.m in Sources */,
 				D76E83FA1D7524BA0014FDEA /* PostPhotosCell.m in Sources */,
 				D7886D641D915787003D6D57 /* FVCBannerCell.m in Sources */,
+				D71099C71DD015E000F16471 /* MyActivityCell.m in Sources */,
 				D75CC5C71C2A965000E590E6 /* FMResultSet.m in Sources */,
 				D75CC5BE1C2A965000E590E6 /* UIBarButtonItem+Badge.m in Sources */,
 				D75CC5A01C2A965000E590E6 /* AFHTTPRequestOperationManager.m in Sources */,
@@ -3504,11 +3582,13 @@
 				D75CC5E81C2A965000E590E6 /* QNResponseInfo.m in Sources */,
 				D76E83821D6D3F010014FDEA /* CameraViewController.m in Sources */,
 				D75CC5CD1C2A965000E590E6 /* MJRefreshAutoFooter.m in Sources */,
+				D71099CD1DD02D4500F16471 /* MyOrderListCtrller.m in Sources */,
 				D75CC5F41C2A965000E590E6 /* NSData+ImageContentType.m in Sources */,
 				D75CC43F1C2A95DE00E590E6 /* UIButton+Badges.m in Sources */,
 				D71099BC1DCC83B500F16471 /* SearchConditionTableView.m in Sources */,
 				6084057F1D663CCC00B40D68 /* HPBigPhotoCollectionCell.m in Sources */,
 				D75CC5F11C2A965000E590E6 /* QNUpToken.m in Sources */,
+				D71099DF1DD0947300F16471 /* AddressManageCell.m in Sources */,
 				D75CC5A11C2A965000E590E6 /* AFHTTPSessionManager.m in Sources */,
 				D75CC4471C2A95DE00E590E6 /* MyTextView.m in Sources */,
 				D75CC61E1C2A965000E590E6 /* FBShimmeringView.m in Sources */,
@@ -3519,6 +3599,7 @@
 				D75CC5E21C2A965000E590E6 /* QNAsyncRun.m in Sources */,
 				D7E4FF101DA8D75A00DC0E53 /* AddFriendCollectionCell.m in Sources */,
 				D75CC5A51C2A965000E590E6 /* AFURLRequestSerialization.m in Sources */,
+				D71099D61DD03D7600F16471 /* OrderListProductCell.m in Sources */,
 				60319DAC1D982E3700BD094D /* XTStretchSegment.m in Sources */,
 				D75CC6041C2A965000E590E6 /* UICollectionViewLeftAlignedLayout.m in Sources */,
 				D7886D5B1D912E20003D6D57 /* TagDetailCtrller.m in Sources */,
@@ -3546,6 +3627,7 @@
 				D75CC5C01C2A965000E590E6 /* NSString+MD5.m in Sources */,
 				D75CC5BC1C2A965000E590E6 /* ASIS3Request.m in Sources */,
 				D75CC5F71C2A965000E590E6 /* SDWebImageDecoder.m in Sources */,
+				D71099D11DD0359600F16471 /* OrderlListCell.m in Sources */,
 				D7E4FF031DA8D74800DC0E53 /* MyFansFocusCell.m in Sources */,
 				D75CC5D81C2A965000E590E6 /* MJRefreshGifHeader.m in Sources */,
 				D75CC5EC1C2A965000E590E6 /* QNConfiguration.m in Sources */,
