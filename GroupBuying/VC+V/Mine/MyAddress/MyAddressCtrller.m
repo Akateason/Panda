@@ -28,10 +28,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"地址管理" ;
     self.view.backgroundColor = [UIColor xt_seperate] ;
     
     [_table registerNib:[UINib nibWithNibName:kID_AddressManageCell bundle:nil] forCellReuseIdentifier:kID_AddressManageCell] ;
     _table.backgroundColor = [UIColor xt_seperate] ;
+    _table.separatorStyle = 0 ;
     _table.delegate = self ;
     _table.dataSource = self ;
     _table.xt_Delegate = self ;

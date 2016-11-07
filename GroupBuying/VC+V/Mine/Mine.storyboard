@@ -735,7 +735,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xmz-R7-u0c" customClass="RootTableView">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="521"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bG2-8p-Kto">
@@ -754,7 +754,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xmz-R7-u0c" firstAttribute="leading" secondItem="XBp-Me-DyI" secondAttribute="leading" id="3k3-lX-GkN"/>
-                            <constraint firstItem="bG2-8p-Kto" firstAttribute="top" secondItem="xmz-R7-u0c" secondAttribute="bottom" id="IHA-Rr-ENh"/>
+                            <constraint firstItem="bG2-8p-Kto" firstAttribute="top" secondItem="xmz-R7-u0c" secondAttribute="bottom" constant="15" id="IHA-Rr-ENh"/>
                             <constraint firstAttribute="trailing" secondItem="xmz-R7-u0c" secondAttribute="trailing" id="KjU-k0-XUt"/>
                             <constraint firstItem="FiP-j0-ChR" firstAttribute="top" secondItem="bG2-8p-Kto" secondAttribute="bottom" constant="15" id="NuB-9R-saF"/>
                             <constraint firstItem="bG2-8p-Kto" firstAttribute="leading" secondItem="XBp-Me-DyI" secondAttribute="leading" constant="12" id="Vte-36-tLc"/>
