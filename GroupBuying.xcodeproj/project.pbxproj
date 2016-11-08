@@ -99,6 +99,11 @@
 		D71099DB1DD08F3700F16471 /* MyAddressCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D71099DA1DD08F3700F16471 /* MyAddressCtrller.m */; };
 		D71099DF1DD0947300F16471 /* AddressManageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D71099DD1DD0947300F16471 /* AddressManageCell.m */; };
 		D71099E01DD0947300F16471 /* AddressManageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D71099DE1DD0947300F16471 /* AddressManageCell.xib */; };
+		D71099E31DD16E3E00F16471 /* AddAddressCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D71099E21DD16E3E00F16471 /* AddAddressCtrller.m */; };
+		D71099E71DD170EF00F16471 /* AddAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D71099E51DD170EF00F16471 /* AddAddressCell.m */; };
+		D71099E81DD170EF00F16471 /* AddAddressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D71099E61DD170EF00F16471 /* AddAddressCell.xib */; };
+		D71099EC1DD17BAA00F16471 /* DefaultAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D71099EA1DD17BAA00F16471 /* DefaultAddressCell.m */; };
+		D71099ED1DD17BAA00F16471 /* DefaultAddressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D71099EB1DD17BAA00F16471 /* DefaultAddressCell.xib */; };
 		D7387A961DC712AE002F4229 /* FocusHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D7387A951DC712AE002F4229 /* FocusHandler.m */; };
 		D7387A9A1DC83F73002F4229 /* DetailPicCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7387A981DC83F73002F4229 /* DetailPicCollectionCell.m */; };
 		D7387A9B1DC83F73002F4229 /* DetailPicCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7387A991DC83F73002F4229 /* DetailPicCollectionCell.xib */; };
@@ -609,6 +614,14 @@
 		D71099DC1DD0947300F16471 /* AddressManageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddressManageCell.h; path = "GroupBuying/VC+V/Mine/MyAddress/AddressManageCell.h"; sourceTree = SOURCE_ROOT; };
 		D71099DD1DD0947300F16471 /* AddressManageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddressManageCell.m; path = "GroupBuying/VC+V/Mine/MyAddress/AddressManageCell.m"; sourceTree = SOURCE_ROOT; };
 		D71099DE1DD0947300F16471 /* AddressManageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddressManageCell.xib; path = "GroupBuying/VC+V/Mine/MyAddress/AddressManageCell.xib"; sourceTree = SOURCE_ROOT; };
+		D71099E11DD16E3E00F16471 /* AddAddressCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddAddressCtrller.h; path = "GroupBuying/VC+V/Mine/MyAddress/AddAddressCtrller.h"; sourceTree = SOURCE_ROOT; };
+		D71099E21DD16E3E00F16471 /* AddAddressCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddAddressCtrller.m; path = "GroupBuying/VC+V/Mine/MyAddress/AddAddressCtrller.m"; sourceTree = SOURCE_ROOT; };
+		D71099E41DD170EF00F16471 /* AddAddressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddAddressCell.h; path = "GroupBuying/VC+V/Mine/MyAddress/AddAddressCell.h"; sourceTree = SOURCE_ROOT; };
+		D71099E51DD170EF00F16471 /* AddAddressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddAddressCell.m; path = "GroupBuying/VC+V/Mine/MyAddress/AddAddressCell.m"; sourceTree = SOURCE_ROOT; };
+		D71099E61DD170EF00F16471 /* AddAddressCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddAddressCell.xib; path = "GroupBuying/VC+V/Mine/MyAddress/AddAddressCell.xib"; sourceTree = SOURCE_ROOT; };
+		D71099E91DD17BAA00F16471 /* DefaultAddressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DefaultAddressCell.h; path = "GroupBuying/VC+V/Mine/MyAddress/DefaultAddressCell.h"; sourceTree = SOURCE_ROOT; };
+		D71099EA1DD17BAA00F16471 /* DefaultAddressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DefaultAddressCell.m; path = "GroupBuying/VC+V/Mine/MyAddress/DefaultAddressCell.m"; sourceTree = SOURCE_ROOT; };
+		D71099EB1DD17BAA00F16471 /* DefaultAddressCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DefaultAddressCell.xib; path = "GroupBuying/VC+V/Mine/MyAddress/DefaultAddressCell.xib"; sourceTree = SOURCE_ROOT; };
 		D7387A941DC712AE002F4229 /* FocusHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusHandler.h; sourceTree = "<group>"; };
 		D7387A951DC712AE002F4229 /* FocusHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusHandler.m; sourceTree = "<group>"; };
 		D7387A971DC83F73002F4229 /* DetailPicCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailPicCollectionCell.h; path = "GroupBuying/VC+V/NoteDetail/DetailPicCollectionCell.h"; sourceTree = SOURCE_ROOT; };
@@ -1346,8 +1359,8 @@
 		60074DFD1D60DF2F0040C3C0 /* Mine1 */ = {
 			isa = PBXGroup;
 			children = (
-				D71099D81DD08F0400F16471 /* MyAddress */,
 				D7E9945E1D93D3AC00EACDFB /* Mine */,
+				D71099D81DD08F0400F16471 /* MyAddress */,
 				D71099CA1DD02D1C00F16471 /* MyOrderList */,
 				D71099C01DD0157C00F16471 /* MyActivity */,
 				D7CE2A0B1DAF937700FF452C /* MyPoints */,
@@ -1636,6 +1649,14 @@
 				D71099DC1DD0947300F16471 /* AddressManageCell.h */,
 				D71099DD1DD0947300F16471 /* AddressManageCell.m */,
 				D71099DE1DD0947300F16471 /* AddressManageCell.xib */,
+				D71099E11DD16E3E00F16471 /* AddAddressCtrller.h */,
+				D71099E21DD16E3E00F16471 /* AddAddressCtrller.m */,
+				D71099E41DD170EF00F16471 /* AddAddressCell.h */,
+				D71099E51DD170EF00F16471 /* AddAddressCell.m */,
+				D71099E61DD170EF00F16471 /* AddAddressCell.xib */,
+				D71099E91DD17BAA00F16471 /* DefaultAddressCell.h */,
+				D71099EA1DD17BAA00F16471 /* DefaultAddressCell.m */,
+				D71099EB1DD17BAA00F16471 /* DefaultAddressCell.xib */,
 			);
 			name = MyAddress;
 			sourceTree = "<group>";
@@ -3308,6 +3329,7 @@
 				D71099C91DD0160900F16471 /* MyActivityCell.xib in Resources */,
 				60319D741D91795A00BD094D /* FVCKindsCell.xib in Resources */,
 				D76E83FB1D7524BA0014FDEA /* PostPhotosCell.xib in Resources */,
+				D71099ED1DD17BAA00F16471 /* DefaultAddressCell.xib in Resources */,
 				D7E4FEF91DA8A85700DC0E53 /* MessageCell.xib in Resources */,
 				D71099E01DD0947300F16471 /* AddressManageCell.xib in Resources */,
 				60319D941D92C0F100BD094D /* Find.storyboard in Resources */,
@@ -3360,6 +3382,7 @@
 				D75CC5CB1C2A965000E590E6 /* WeiboSDK.bundle in Resources */,
 				606BF8561D841B7500C503FE /* DetailCoverTitleCell.xib in Resources */,
 				D7CE29EF1DAE522100FF452C /* RankTodayHotCollectionCell.xib in Resources */,
+				D71099E81DD170EF00F16471 /* AddAddressCell.xib in Resources */,
 				D7CE2A1B1DAFA02700FF452C /* PointsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3391,6 +3414,7 @@
 				D7CE2A731DC1F5BA00FF452C /* UserViewItem.m in Sources */,
 				60319D731D91795A00BD094D /* FVCKindsCell.m in Sources */,
 				D7886D7C1D93B855003D6D57 /* ActivityInfoCtrl.m in Sources */,
+				D71099E71DD170EF00F16471 /* AddAddressCell.m in Sources */,
 				D76E84721D780FAC0014FDEA /* NSArray+MASAdditions.m in Sources */,
 				D75CC4411C2A95DE00E590E6 /* UIImage+AddFunction.m in Sources */,
 				D75CC5BA1C2A965000E590E6 /* ASIS3BucketRequest.m in Sources */,
@@ -3650,6 +3674,7 @@
 				60319D9D1D9437E000BD094D /* MineCell.m in Sources */,
 				D75CC7331C2D13C000E590E6 /* NSObject+YYModel.m in Sources */,
 				D76E839A1D6DA6540014FDEA /* CameraGroupCell.m in Sources */,
+				D71099EC1DD17BAA00F16471 /* DefaultAddressCell.m in Sources */,
 				D76E843F1D76D6A90014FDEA /* EditorPhotosCollectionCell.m in Sources */,
 				D7CE2A6F1DC1D54A00FF452C /* NSMutableString+TagReplace.m in Sources */,
 				D75CC5AE1C2A965000E590E6 /* ASIInputStream.m in Sources */,
@@ -3662,6 +3687,7 @@
 				D76E84731D780FAC0014FDEA /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				D75CC5A21C2A965000E590E6 /* AFNetworkReachabilityManager.m in Sources */,
 				D75CC5D11C2A965000E590E6 /* MJRefreshHeader.m in Sources */,
+				D71099E31DD16E3E00F16471 /* AddAddressCtrller.m in Sources */,
 				D75CC6031C2A965000E590E6 /* SIAlertView.m in Sources */,
 				D7CE2A051DAF85E600FF452C /* MyCouponCodeCtrller.m in Sources */,
 				D7CE2A161DAF9FA700FF452C /* MyPointDetailHeader.m in Sources */,

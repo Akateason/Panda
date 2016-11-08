@@ -276,6 +276,7 @@ typedef NS_ENUM(int, MCVC_CollectionCellDisplayType) {
     if (self.type_CellDisplay == status_note) {
         HPProductCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:id_HPProductCollectionCell forIndexPath:indexPath];
         cell.noteItem = self.listNotes[indexPath.row] ;
+        cell.delegate = self ;
         return cell;
     }
     else if (self.type_CellDisplay == status_product) {

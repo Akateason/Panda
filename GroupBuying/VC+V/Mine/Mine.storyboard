@@ -748,6 +748,7 @@
                                 <state key="normal" title="添加新地址"/>
                                 <connections>
                                     <action selector="btAddAddressOnclick:" destination="L5n-Dc-P3H" eventType="touchUpInside" id="SJv-Ul-vjr"/>
+                                    <segue destination="DyT-Uk-4ms" kind="push" id="L89-hd-oD7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -770,6 +771,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="75a-UT-GSk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="202" y="8322"/>
+        </scene>
+        <!--Add Address Ctrller-->
+        <scene sceneID="UtL-gp-4w1">
+            <objects>
+                <viewController storyboardIdentifier="AddAddressCtrller" id="DyT-Uk-4ms" customClass="AddAddressCtrller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nwz-Hp-dy1"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Fu-WU-CQp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eKf-PB-Unj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0ra-4e-m1i">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0ra-4e-m1i" firstAttribute="top" secondItem="eKf-PB-Unj" secondAttribute="top" id="BF9-Jf-LvO"/>
+                            <constraint firstItem="0ra-4e-m1i" firstAttribute="leading" secondItem="eKf-PB-Unj" secondAttribute="leading" id="PdP-2z-nxE"/>
+                            <constraint firstItem="5Fu-WU-CQp" firstAttribute="top" secondItem="0ra-4e-m1i" secondAttribute="bottom" id="VNw-fp-Vxu"/>
+                            <constraint firstAttribute="trailing" secondItem="0ra-4e-m1i" secondAttribute="trailing" id="ojv-41-N7C"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Lxz-wq-FdL"/>
+                    <connections>
+                        <outlet property="table" destination="0ra-4e-m1i" id="aQh-eC-iHC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ev1-LH-SF3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="880" y="8322"/>
         </scene>
         <!--User Info Ctrller-->
         <scene sceneID="ZGb-D4-0VB">

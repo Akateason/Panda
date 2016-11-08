@@ -39,7 +39,7 @@
            success:(void (^)(id json))success
               fail:(void (^)())fail
 {
-    [self GETWithUrl:url hud:YES parameters:dict success:success fail:fail] ;
+    [self GETWithUrl:url hud:NO parameters:dict success:success fail:fail] ;
 }
 
 + (void)GETWithUrl:(NSString *)url
@@ -115,7 +115,7 @@
             success:(void (^)(id json))success
                fail:(void (^)())fail
 {
-    [self POSTWithUrl:url hud:YES parameters:dict success:success fail:fail] ;
+    [self POSTWithUrl:url hud:NO parameters:dict success:success fail:fail] ;
 }
 
 + (void)POSTWithTokenUrl:(NSString *)url
