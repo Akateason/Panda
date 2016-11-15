@@ -9,7 +9,7 @@
 #import "MyOrderListCtrller.h"
 #import "XTSegment.h"
 #import "OrderlListCell.h"
-
+#import "OrderDetailCtrller.h"
 
 
 
@@ -99,6 +99,11 @@
     return [OrderlListCell getHeight] ;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    OrderDetailCtrller *orderDetailVC = (OrderDetailCtrller *)[[self class] getCtrllerFromStory:@"Mine" controllerIdentifier:@"OrderDetailCtrller"] ;
+    [self.navigationController pushViewController:orderDetailVC animated:YES] ;
+}
 
 
 

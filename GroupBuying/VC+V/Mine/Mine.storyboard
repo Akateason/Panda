@@ -722,6 +722,39 @@
             </objects>
             <point key="canvasLocation" x="201" y="7607"/>
         </scene>
+        <!--Order Detail Ctrller-->
+        <scene sceneID="ssH-k0-oOU">
+            <objects>
+                <viewController storyboardIdentifier="OrderDetailCtrller" id="pNQ-Pk-j8X" customClass="OrderDetailCtrller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gpM-hf-Mlt"/>
+                        <viewControllerLayoutGuide type="bottom" id="WMQ-bh-C8N"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="awV-p2-fos">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5VR-L1-0A7" customClass="RootTableView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5VR-L1-0A7" firstAttribute="leading" secondItem="awV-p2-fos" secondAttribute="leading" id="lHs-zc-Vxn"/>
+                            <constraint firstItem="WMQ-bh-C8N" firstAttribute="top" secondItem="5VR-L1-0A7" secondAttribute="bottom" id="pqt-nB-t4j"/>
+                            <constraint firstAttribute="trailing" secondItem="5VR-L1-0A7" secondAttribute="trailing" id="rid-ZR-SlR"/>
+                            <constraint firstItem="5VR-L1-0A7" firstAttribute="top" secondItem="awV-p2-fos" secondAttribute="top" id="u2O-D1-8TX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="table" destination="5VR-L1-0A7" id="dwC-Nn-G84"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PGw-mX-6Wl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="852" y="7607"/>
+        </scene>
         <!--My Address Ctrller-->
         <scene sceneID="Ms3-Ud-Xbc">
             <objects>

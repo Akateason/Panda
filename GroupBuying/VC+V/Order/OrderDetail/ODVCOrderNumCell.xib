@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ODVCOrderNumCell" rowHeight="83" id="KGk-i7-Jjw" customClass="ODVCOrderNumCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="83"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="订单编号 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEv-gk-B8T">
+                        <rect key="frame" x="11" y="15" width="60" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="订单日期 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0G-l7-hQA">
+                        <rect key="frame" x="11" y="43" width="60" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I2U-H4-4G5">
+                        <rect key="frame" x="0.0" y="67" width="320" height="15"/>
+                        <color key="backgroundColor" red="1" green="0.97254901959999995" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="d2b-Ri-aaq"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="I2U-H4-4G5" secondAttribute="trailing" id="2Fm-YK-XRi"/>
+                    <constraint firstItem="s0G-l7-hQA" firstAttribute="top" secondItem="vEv-gk-B8T" secondAttribute="bottom" constant="12" id="6Qp-EA-0W4"/>
+                    <constraint firstItem="vEv-gk-B8T" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="AAL-vT-eeY"/>
+                    <constraint firstItem="I2U-H4-4G5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="hMy-7n-nvr"/>
+                    <constraint firstItem="vEv-gk-B8T" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="hmr-9o-BLN"/>
+                    <constraint firstItem="s0G-l7-hQA" firstAttribute="leading" secondItem="vEv-gk-B8T" secondAttribute="leading" id="km3-VN-5lW"/>
+                    <constraint firstAttribute="bottom" secondItem="I2U-H4-4G5" secondAttribute="bottom" id="uda-2M-Fmt"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="baseBar" destination="I2U-H4-4G5" id="eyr-IP-hhn"/>
+                <outlet property="lbOrderDate" destination="s0G-l7-hQA" id="9VR-9j-2dd"/>
+                <outlet property="lbOrderNumber" destination="vEv-gk-B8T" id="SFV-4U-UcA"/>
+            </connections>
+            <point key="canvasLocation" x="379" y="352.5"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -80,6 +80,8 @@
     _bt1.layer.cornerRadius = 5. ;
     _bt2.layer.cornerRadius = 5. ;
     
+    [_bt1 setTitle:@"去支付" forState:0] ;
+    [_bt2 setTitle:@"取消订单" forState:0] ;
 }
 
 - (void)configureTable
@@ -89,6 +91,7 @@
     _table.dataSource = self ;
     _table.delegate = self ;
     _table.scrollEnabled = false ;
+    _table.userInteractionEnabled = false ;
 }
 
 

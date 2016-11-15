@@ -390,6 +390,15 @@
 		D7CE2A731DC1F5BA00FF452C /* UserViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A721DC1F5BA00FF452C /* UserViewItem.m */; };
 		D7CE2A761DC2129900FF452C /* UserFollow.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A751DC2129900FF452C /* UserFollow.m */; };
 		D7CE2A791DC213B100FF452C /* UserFollowViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2A781DC213B100FF452C /* UserFollowViewItem.m */; };
+		D7D79FB11DDAA975004E52FC /* OrderDetailCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D79FB01DDAA975004E52FC /* OrderDetailCtrller.m */; };
+		D7D79FB51DDAAB3C004E52FC /* ODVCAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D79FB31DDAAB3C004E52FC /* ODVCAddressCell.m */; };
+		D7D79FB61DDAAB3C004E52FC /* ODVCAddressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7D79FB41DDAAB3C004E52FC /* ODVCAddressCell.xib */; };
+		D7D79FBA1DDAB3C7004E52FC /* ODVCOrderNumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D79FB81DDAB3C7004E52FC /* ODVCOrderNumCell.m */; };
+		D7D79FBB1DDAB3C7004E52FC /* ODVCOrderNumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7D79FB91DDAB3C7004E52FC /* ODVCOrderNumCell.xib */; };
+		D7D79FBF1DDAB7D1004E52FC /* ODVCProductListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D79FBD1DDAB7D1004E52FC /* ODVCProductListCell.m */; };
+		D7D79FC01DDAB7D1004E52FC /* ODVCProductListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7D79FBE1DDAB7D1004E52FC /* ODVCProductListCell.xib */; };
+		D7D79FC41DDABA2F004E52FC /* ODVCProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D79FC21DDABA2F004E52FC /* ODVCProductCell.m */; };
+		D7D79FC51DDABA2F004E52FC /* ODVCProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7D79FC31DDABA2F004E52FC /* ODVCProductCell.xib */; };
 		D7E0F4B41D87ADF700EA663B /* ArticlePicItemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */; };
 		D7E0F4B71D87B2D100EA663B /* ArticlePicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B61D87B2D100EA663B /* ArticlePicItem.m */; };
 		D7E0F4BA1D87B42D00EA663B /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B91D87B42D00EA663B /* Article.m */; };
@@ -1179,6 +1188,20 @@
 		D7CE2A751DC2129900FF452C /* UserFollow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserFollow.m; sourceTree = "<group>"; };
 		D7CE2A771DC213B100FF452C /* UserFollowViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserFollowViewItem.h; sourceTree = "<group>"; };
 		D7CE2A781DC213B100FF452C /* UserFollowViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserFollowViewItem.m; sourceTree = "<group>"; };
+		D7D79FAF1DDAA975004E52FC /* OrderDetailCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrderDetailCtrller.h; path = "GroupBuying/VC+V/Order/OrderDetail/OrderDetailCtrller.h"; sourceTree = SOURCE_ROOT; };
+		D7D79FB01DDAA975004E52FC /* OrderDetailCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderDetailCtrller.m; path = "GroupBuying/VC+V/Order/OrderDetail/OrderDetailCtrller.m"; sourceTree = SOURCE_ROOT; };
+		D7D79FB21DDAAB3C004E52FC /* ODVCAddressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ODVCAddressCell.h; path = "GroupBuying/VC+V/Order/OrderDetail/ODVCAddressCell.h"; sourceTree = SOURCE_ROOT; };
+		D7D79FB31DDAAB3C004E52FC /* ODVCAddressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ODVCAddressCell.m; path = "GroupBuying/VC+V/Order/OrderDetail/ODVCAddressCell.m"; sourceTree = SOURCE_ROOT; };
+		D7D79FB41DDAAB3C004E52FC /* ODVCAddressCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ODVCAddressCell.xib; path = "GroupBuying/VC+V/Order/OrderDetail/ODVCAddressCell.xib"; sourceTree = SOURCE_ROOT; };
+		D7D79FB71DDAB3C7004E52FC /* ODVCOrderNumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ODVCOrderNumCell.h; path = "GroupBuying/VC+V/Order/OrderDetail/ODVCOrderNumCell.h"; sourceTree = SOURCE_ROOT; };
+		D7D79FB81DDAB3C7004E52FC /* ODVCOrderNumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ODVCOrderNumCell.m; path = "GroupBuying/VC+V/Order/OrderDetail/ODVCOrderNumCell.m"; sourceTree = SOURCE_ROOT; };
+		D7D79FB91DDAB3C7004E52FC /* ODVCOrderNumCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ODVCOrderNumCell.xib; path = "GroupBuying/VC+V/Order/OrderDetail/ODVCOrderNumCell.xib"; sourceTree = SOURCE_ROOT; };
+		D7D79FBC1DDAB7D1004E52FC /* ODVCProductListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ODVCProductListCell.h; path = "GroupBuying/VC+V/Order/OrderDetail/ODVCProductListCell.h"; sourceTree = SOURCE_ROOT; };
+		D7D79FBD1DDAB7D1004E52FC /* ODVCProductListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ODVCProductListCell.m; path = "GroupBuying/VC+V/Order/OrderDetail/ODVCProductListCell.m"; sourceTree = SOURCE_ROOT; };
+		D7D79FBE1DDAB7D1004E52FC /* ODVCProductListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ODVCProductListCell.xib; path = "GroupBuying/VC+V/Order/OrderDetail/ODVCProductListCell.xib"; sourceTree = SOURCE_ROOT; };
+		D7D79FC11DDABA2F004E52FC /* ODVCProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ODVCProductCell.h; path = "GroupBuying/VC+V/Order/OrderDetail/ODVCProductCell.h"; sourceTree = SOURCE_ROOT; };
+		D7D79FC21DDABA2F004E52FC /* ODVCProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ODVCProductCell.m; path = "GroupBuying/VC+V/Order/OrderDetail/ODVCProductCell.m"; sourceTree = SOURCE_ROOT; };
+		D7D79FC31DDABA2F004E52FC /* ODVCProductCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ODVCProductCell.xib; path = "GroupBuying/VC+V/Order/OrderDetail/ODVCProductCell.xib"; sourceTree = SOURCE_ROOT; };
 		D7E0F4B21D87ADF700EA663B /* ArticlePicItemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItemInfo.h; sourceTree = "<group>"; };
 		D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlePicItemInfo.m; sourceTree = "<group>"; };
 		D7E0F4B51D87B2D100EA663B /* ArticlePicItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItem.h; sourceTree = "<group>"; };
@@ -1637,6 +1660,7 @@
 				D71099D31DD03D7600F16471 /* OrderListProductCell.h */,
 				D71099D41DD03D7600F16471 /* OrderListProductCell.m */,
 				D71099D51DD03D7600F16471 /* OrderListProductCell.xib */,
+				D7D79FAE1DDAA930004E52FC /* OrderDetail */,
 			);
 			name = MyOrderList;
 			sourceTree = "<group>";
@@ -2990,6 +3014,27 @@
 			path = WPAttributedMarkup;
 			sourceTree = "<group>";
 		};
+		D7D79FAE1DDAA930004E52FC /* OrderDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D7D79FAF1DDAA975004E52FC /* OrderDetailCtrller.h */,
+				D7D79FB01DDAA975004E52FC /* OrderDetailCtrller.m */,
+				D7D79FB21DDAAB3C004E52FC /* ODVCAddressCell.h */,
+				D7D79FB31DDAAB3C004E52FC /* ODVCAddressCell.m */,
+				D7D79FB41DDAAB3C004E52FC /* ODVCAddressCell.xib */,
+				D7D79FB71DDAB3C7004E52FC /* ODVCOrderNumCell.h */,
+				D7D79FB81DDAB3C7004E52FC /* ODVCOrderNumCell.m */,
+				D7D79FB91DDAB3C7004E52FC /* ODVCOrderNumCell.xib */,
+				D7D79FBC1DDAB7D1004E52FC /* ODVCProductListCell.h */,
+				D7D79FBD1DDAB7D1004E52FC /* ODVCProductListCell.m */,
+				D7D79FBE1DDAB7D1004E52FC /* ODVCProductListCell.xib */,
+				D7D79FC11DDABA2F004E52FC /* ODVCProductCell.h */,
+				D7D79FC21DDABA2F004E52FC /* ODVCProductCell.m */,
+				D7D79FC31DDABA2F004E52FC /* ODVCProductCell.xib */,
+			);
+			name = OrderDetail;
+			sourceTree = "<group>";
+		};
 		D7E0F4B11D87ADBF00EA663B /* Article */ = {
 			isa = PBXGroup;
 			children = (
@@ -3320,6 +3365,7 @@
 				D7886D7E1D93B8A9003D6D57 /* Activity.storyboard in Resources */,
 				D7387A9B1DC83F73002F4229 /* DetailPicCollectionCell.xib in Resources */,
 				60319D841D919C9500BD094D /* HotTagCollectionCell.xib in Resources */,
+				D7D79FBB1DDAB3C7004E52FC /* ODVCOrderNumCell.xib in Resources */,
 				D75CC3D11C2A926100E590E6 /* Assets.xcassets in Resources */,
 				D7E994C61D98F4FD00EACDFB /* FeaturesRecommendCell.xib in Resources */,
 				D76E84051D7528F70014FDEA /* PostAddPhotoCell.xib in Resources */,
@@ -3327,6 +3373,7 @@
 				6035CF2D1D74B3AC00EA590B /* PostContentCell.xib in Resources */,
 				60319DDB1DCE00F900BD094D /* CouponCodeGetCtrller.xib in Resources */,
 				D71099C91DD0160900F16471 /* MyActivityCell.xib in Resources */,
+				D7D79FB61DDAAB3C004E52FC /* ODVCAddressCell.xib in Resources */,
 				60319D741D91795A00BD094D /* FVCKindsCell.xib in Resources */,
 				D76E83FB1D7524BA0014FDEA /* PostPhotosCell.xib in Resources */,
 				D71099ED1DD17BAA00F16471 /* DefaultAddressCell.xib in Resources */,
@@ -3368,6 +3415,7 @@
 				60074E1D1D634AE80040C3C0 /* xtAllColorsList.plist in Resources */,
 				D7E4FF0F1DA8D75A00DC0E53 /* AddFriendCell.xib in Resources */,
 				D7CE29E51DAE517C00FF452C /* RankingTodayHotCtrl.xib in Resources */,
+				D7D79FC01DDAB7D1004E52FC /* ODVCProductListCell.xib in Resources */,
 				D7CE2A131DAF9C0A00FF452C /* MyPointsInfomationCell.xib in Resources */,
 				60319D641D8F1D0C00BD094D /* UserItemCollectionCell.xib in Resources */,
 				608405941D74AA6800B40D68 /* SVProgressHUD.bundle in Resources */,
@@ -3375,6 +3423,7 @@
 				60319D541D8ED10A00BD094D /* DetailTagsCell.xib in Resources */,
 				D7CE29DD1DAE46C100FF452C /* RankingUserCell.xib in Resources */,
 				D76E84201D759CB30014FDEA /* PostTagItemCollectionCell.xib in Resources */,
+				D7D79FC51DDABA2F004E52FC /* ODVCProductCell.xib in Resources */,
 				60319D6F1D8F219B00BD094D /* ProductRecommendCollectionCell.xib in Resources */,
 				D74589881D6A9DCB00835234 /* HPBigPhotoHeaderView.xib in Resources */,
 				D75CC5DB1C2A965000E590E6 /* MJRefresh.bundle in Resources */,
@@ -3421,6 +3470,7 @@
 				D75CC4461C2A95DE00E590E6 /* MyTextField.m in Sources */,
 				D7CE2A1A1DAFA02700FF452C /* PointsCell.m in Sources */,
 				D7E9946A1D94CED000EACDFB /* SettingCtrller.m in Sources */,
+				D7D79FBF1DDAB7D1004E52FC /* ODVCProductListCell.m in Sources */,
 				D76E84111D75665F0014FDEA /* PreviewCollectionCell.m in Sources */,
 				D76E83ED1D7435680014FDEA /* UserFoucusHeaderView.m in Sources */,
 				D7CE29EE1DAE522100FF452C /* RankTodayHotCollectionCell.m in Sources */,
@@ -3563,6 +3613,7 @@
 				D76E84241D759CD30014FDEA /* PostTagAddCollectionCell.m in Sources */,
 				606BF8551D841B7500C503FE /* DetailCoverTitleCell.m in Sources */,
 				D7E994D01D990F1C00EACDFB /* MineEditHeadCell.m in Sources */,
+				D7D79FC41DDABA2F004E52FC /* ODVCProductCell.m in Sources */,
 				D7E994D91D99202700EACDFB /* ForgetSecretCtrller.m in Sources */,
 				D75CC5C61C2A965000E590E6 /* FMDatabaseQueue.m in Sources */,
 				D75CC6C01C2BEB0400E590E6 /* MyNavCtrller.m in Sources */,
@@ -3614,6 +3665,7 @@
 				D75CC5F11C2A965000E590E6 /* QNUpToken.m in Sources */,
 				D71099DF1DD0947300F16471 /* AddressManageCell.m in Sources */,
 				D75CC5A11C2A965000E590E6 /* AFHTTPSessionManager.m in Sources */,
+				D7D79FBA1DDAB3C7004E52FC /* ODVCOrderNumCell.m in Sources */,
 				D75CC4471C2A95DE00E590E6 /* MyTextView.m in Sources */,
 				D75CC61E1C2A965000E590E6 /* FBShimmeringView.m in Sources */,
 				60319DB21D98319700BD094D /* FeaturesHandler.m in Sources */,
@@ -3694,6 +3746,7 @@
 				D7E4FF1A1DA8E37F00DC0E53 /* ShopCartCtrller.m in Sources */,
 				D75CC5BD1C2A965000E590E6 /* ASIS3ServiceRequest.m in Sources */,
 				60319D5D1D8F1A9200BD094D /* DetailHisFocusCell.m in Sources */,
+				D7D79FB51DDAAB3C004E52FC /* ODVCAddressCell.m in Sources */,
 				D76E841F1D759CB30014FDEA /* PostTagItemCollectionCell.m in Sources */,
 				D76E83BF1D70175D0014FDEA /* UIImage+ImageEffects.m in Sources */,
 				60319D921D92C0B800BD094D /* HotProductListCtrller.m in Sources */,
@@ -3719,6 +3772,7 @@
 				D75CC6001C2A965000E590E6 /* UIImageView+HighlightedWebCache.m in Sources */,
 				D7CE2A6D1DC1D54A00FF452C /* WPHotspotLabel.m in Sources */,
 				D7E4FF0E1DA8D75A00DC0E53 /* AddFriendCell.m in Sources */,
+				D7D79FB11DDAA975004E52FC /* OrderDetailCtrller.m in Sources */,
 				60319D8D1D91B4D000BD094D /* ActivityPageCell.m in Sources */,
 				60074E121D634AA50040C3C0 /* XTJson.m in Sources */,
 				D7E994E41D9A1D5C00EACDFB /* UIButton+Countdown.m in Sources */,
