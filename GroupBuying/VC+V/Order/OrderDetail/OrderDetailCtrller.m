@@ -10,9 +10,15 @@
 #import "ODVCAddressCell.h"
 #import "ODVCOrderNumCell.h"
 #import "ODVCProductListCell.h"
+#import "ODVCSumCell.h"
 
 @interface OrderDetailCtrller () <UITableViewDataSource,UITableViewDelegate,RootTableViewDelegate>
 @property (weak, nonatomic) IBOutlet RootTableView *table;
+
+@property (weak, nonatomic) IBOutlet UIView *bottomBar;
+@property (weak, nonatomic) IBOutlet UIButton *bt2;
+@property (weak, nonatomic) IBOutlet UIButton *bt1;
+
 @end
 
 @implementation OrderDetailCtrller
@@ -22,18 +28,36 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"订单详情" ;
+    [self configureUIs] ;
+
+    _bottomBar.backgroundColor = [UIColor whiteColor] ;
+    _bt2.layer.borderColor = [UIColor xt_w_light].CGColor ;
+    _bt2.layer.borderWidth = 1. ;
+    _bt2.layer.cornerRadius = 5. ;
+    [_bt2 setTitleColor:[UIColor xt_w_light] forState:0] ;
+    _bt2.backgroundColor = [UIColor whiteColor] ;
     
+    _bt1.layer.borderColor = [UIColor xt_tabbarRedColor].CGColor ;
+    _bt1.layer.borderWidth = 1. ;
+    _bt1.layer.cornerRadius = 5. ;
+    [_bt1 setTitleColor:[UIColor xt_tabbarRedColor] forState:0] ;
+    _bt1.backgroundColor = [UIColor whiteColor] ;
+    
+}
+
+- (void)configureUIs
+{
     _table.backgroundColor = [UIColor xt_seperate] ;
     [_table registerNib:[UINib nibWithNibName:kID_ODVCAddressCell bundle:nil] forCellReuseIdentifier:kID_ODVCAddressCell] ;
     [_table registerNib:[UINib nibWithNibName:kID_ODVCOrderNumCell bundle:nil] forCellReuseIdentifier:kID_ODVCOrderNumCell] ;
     [_table registerNib:[UINib nibWithNibName:kID_ODVCProductListCell bundle:nil] forCellReuseIdentifier:kID_ODVCProductListCell] ;
+    [_table registerNib:[UINib nibWithNibName:kID_ODVCSumCell bundle:nil] forCellReuseIdentifier:kID_ODVCSumCell] ;
     _table.dataSource = self ;
     _table.delegate = self ;
     _table.xt_Delegate = self ;
     _table.separatorStyle = 0 ;
-    
+    [_table cancelFooterRefreshUI] ;
 }
-
 
 
 #pragma mark - roottabledelegate
@@ -50,7 +74,7 @@
 #pragma mark - tableview datasource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3 ;
+    return 4 ;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -73,6 +97,10 @@
         ODVCProductListCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_ODVCProductListCell] ;
         return cell ;
     }
+    else if (section == 3) { // 总计
+        ODVCSumCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_ODVCSumCell] ;
+        return cell ;
+    }
     return nil ;
 }
 
@@ -88,6 +116,9 @@
     }
     else if (section == 2) { // 商品
         return [ODVCProductListCell getHeight] ;
+    }
+    else if (section == 3) { // 总计
+        return kHeight_SumCell ;
     }
     
     return 0 ;

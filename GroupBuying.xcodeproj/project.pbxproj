@@ -399,6 +399,8 @@
 		D7D79FC01DDAB7D1004E52FC /* ODVCProductListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7D79FBE1DDAB7D1004E52FC /* ODVCProductListCell.xib */; };
 		D7D79FC41DDABA2F004E52FC /* ODVCProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D79FC21DDABA2F004E52FC /* ODVCProductCell.m */; };
 		D7D79FC51DDABA2F004E52FC /* ODVCProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7D79FC31DDABA2F004E52FC /* ODVCProductCell.xib */; };
+		D7D79FC91DDAE660004E52FC /* ODVCSumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D79FC71DDAE660004E52FC /* ODVCSumCell.m */; };
+		D7D79FCA1DDAE660004E52FC /* ODVCSumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7D79FC81DDAE660004E52FC /* ODVCSumCell.xib */; };
 		D7E0F4B41D87ADF700EA663B /* ArticlePicItemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */; };
 		D7E0F4B71D87B2D100EA663B /* ArticlePicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B61D87B2D100EA663B /* ArticlePicItem.m */; };
 		D7E0F4BA1D87B42D00EA663B /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0F4B91D87B42D00EA663B /* Article.m */; };
@@ -1202,6 +1204,9 @@
 		D7D79FC11DDABA2F004E52FC /* ODVCProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ODVCProductCell.h; path = "GroupBuying/VC+V/Order/OrderDetail/ODVCProductCell.h"; sourceTree = SOURCE_ROOT; };
 		D7D79FC21DDABA2F004E52FC /* ODVCProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ODVCProductCell.m; path = "GroupBuying/VC+V/Order/OrderDetail/ODVCProductCell.m"; sourceTree = SOURCE_ROOT; };
 		D7D79FC31DDABA2F004E52FC /* ODVCProductCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ODVCProductCell.xib; path = "GroupBuying/VC+V/Order/OrderDetail/ODVCProductCell.xib"; sourceTree = SOURCE_ROOT; };
+		D7D79FC61DDAE660004E52FC /* ODVCSumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ODVCSumCell.h; path = "GroupBuying/VC+V/Order/OrderDetail/ODVCSumCell.h"; sourceTree = SOURCE_ROOT; };
+		D7D79FC71DDAE660004E52FC /* ODVCSumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ODVCSumCell.m; path = "GroupBuying/VC+V/Order/OrderDetail/ODVCSumCell.m"; sourceTree = SOURCE_ROOT; };
+		D7D79FC81DDAE660004E52FC /* ODVCSumCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ODVCSumCell.xib; path = "GroupBuying/VC+V/Order/OrderDetail/ODVCSumCell.xib"; sourceTree = SOURCE_ROOT; };
 		D7E0F4B21D87ADF700EA663B /* ArticlePicItemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItemInfo.h; sourceTree = "<group>"; };
 		D7E0F4B31D87ADF700EA663B /* ArticlePicItemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlePicItemInfo.m; sourceTree = "<group>"; };
 		D7E0F4B51D87B2D100EA663B /* ArticlePicItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlePicItem.h; sourceTree = "<group>"; };
@@ -3031,6 +3036,9 @@
 				D7D79FC11DDABA2F004E52FC /* ODVCProductCell.h */,
 				D7D79FC21DDABA2F004E52FC /* ODVCProductCell.m */,
 				D7D79FC31DDABA2F004E52FC /* ODVCProductCell.xib */,
+				D7D79FC61DDAE660004E52FC /* ODVCSumCell.h */,
+				D7D79FC71DDAE660004E52FC /* ODVCSumCell.m */,
+				D7D79FC81DDAE660004E52FC /* ODVCSumCell.xib */,
 			);
 			name = OrderDetail;
 			sourceTree = "<group>";
@@ -3363,6 +3371,7 @@
 				D7E0F4CB1D88033D00EA663B /* Login.storyboard in Resources */,
 				D7E994D61D99122C00EACDFB /* MineEditCell.xib in Resources */,
 				D7886D7E1D93B8A9003D6D57 /* Activity.storyboard in Resources */,
+				D7D79FCA1DDAE660004E52FC /* ODVCSumCell.xib in Resources */,
 				D7387A9B1DC83F73002F4229 /* DetailPicCollectionCell.xib in Resources */,
 				60319D841D919C9500BD094D /* HotTagCollectionCell.xib in Resources */,
 				D7D79FBB1DDAB3C7004E52FC /* ODVCOrderNumCell.xib in Resources */,
@@ -3666,6 +3675,7 @@
 				D71099DF1DD0947300F16471 /* AddressManageCell.m in Sources */,
 				D75CC5A11C2A965000E590E6 /* AFHTTPSessionManager.m in Sources */,
 				D7D79FBA1DDAB3C7004E52FC /* ODVCOrderNumCell.m in Sources */,
+				D7D79FC91DDAE660004E52FC /* ODVCSumCell.m in Sources */,
 				D75CC4471C2A95DE00E590E6 /* MyTextView.m in Sources */,
 				D75CC61E1C2A965000E590E6 /* FBShimmeringView.m in Sources */,
 				60319DB21D98319700BD094D /* FeaturesHandler.m in Sources */,

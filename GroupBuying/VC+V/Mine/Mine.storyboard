@@ -735,19 +735,63 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5VR-L1-0A7" customClass="RootTableView">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="550"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xVl-AK-hnD">
+                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pgt-JH-IBe">
+                                        <rect key="frame" x="206" y="10" width="89" height="29"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="89" id="iy3-93-9u8"/>
+                                            <constraint firstAttribute="height" constant="29" id="xS0-ZG-YVx"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <state key="normal" title="取消订单">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4QP-ZQ-v8T">
+                                        <rect key="frame" x="305" y="10" width="89" height="29"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="89" id="IwG-6s-wZl"/>
+                                            <constraint firstAttribute="height" constant="29" id="Z4k-JN-7zc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <state key="normal" title="去支付">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.97254901959999995" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="4QP-ZQ-v8T" firstAttribute="centerY" secondItem="xVl-AK-hnD" secondAttribute="centerY" id="ANi-Ku-JF5"/>
+                                    <constraint firstItem="4QP-ZQ-v8T" firstAttribute="centerX" secondItem="xVl-AK-hnD" secondAttribute="centerX" constant="49.5" id="B0b-hE-YsA"/>
+                                    <constraint firstItem="4QP-ZQ-v8T" firstAttribute="leading" secondItem="Pgt-JH-IBe" secondAttribute="trailing" constant="10" id="UMD-ds-1XC"/>
+                                    <constraint firstAttribute="height" constant="50" id="XLB-KN-lTP"/>
+                                    <constraint firstItem="Pgt-JH-IBe" firstAttribute="centerX" secondItem="xVl-AK-hnD" secondAttribute="centerX" constant="-49.5" id="lgn-4B-aIl"/>
+                                    <constraint firstItem="Pgt-JH-IBe" firstAttribute="centerY" secondItem="xVl-AK-hnD" secondAttribute="centerY" id="qJc-tr-BgQ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="xVl-AK-hnD" firstAttribute="leading" secondItem="awV-p2-fos" secondAttribute="leading" id="AL8-g3-p4R"/>
+                            <constraint firstAttribute="trailing" secondItem="xVl-AK-hnD" secondAttribute="trailing" id="QYw-Gr-Jyj"/>
                             <constraint firstItem="5VR-L1-0A7" firstAttribute="leading" secondItem="awV-p2-fos" secondAttribute="leading" id="lHs-zc-Vxn"/>
-                            <constraint firstItem="WMQ-bh-C8N" firstAttribute="top" secondItem="5VR-L1-0A7" secondAttribute="bottom" id="pqt-nB-t4j"/>
+                            <constraint firstItem="WMQ-bh-C8N" firstAttribute="top" secondItem="xVl-AK-hnD" secondAttribute="bottom" id="nBy-nk-F9i"/>
+                            <constraint firstItem="WMQ-bh-C8N" firstAttribute="top" secondItem="5VR-L1-0A7" secondAttribute="bottom" constant="50" id="pqt-nB-t4j"/>
                             <constraint firstAttribute="trailing" secondItem="5VR-L1-0A7" secondAttribute="trailing" id="rid-ZR-SlR"/>
                             <constraint firstItem="5VR-L1-0A7" firstAttribute="top" secondItem="awV-p2-fos" secondAttribute="top" id="u2O-D1-8TX"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomBar" destination="xVl-AK-hnD" id="i7L-Vk-AzK"/>
+                        <outlet property="bt1" destination="4QP-ZQ-v8T" id="TUS-YF-Xcq"/>
+                        <outlet property="bt2" destination="Pgt-JH-IBe" id="sSA-Gy-U7W"/>
                         <outlet property="table" destination="5VR-L1-0A7" id="dwC-Nn-G84"/>
                     </connections>
                 </viewController>

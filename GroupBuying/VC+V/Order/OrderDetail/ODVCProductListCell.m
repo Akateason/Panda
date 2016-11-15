@@ -21,7 +21,7 @@
 #pragma -
 + (CGFloat)getHeight
 {
-    return 249 ;
+    return 222.0 ;
 }
 
 

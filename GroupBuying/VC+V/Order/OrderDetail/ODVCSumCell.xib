@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ODVCSumCell" rowHeight="103" id="KGk-i7-Jjw" customClass="ODVCSumCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="103"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="102"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="订单总额 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UbM-En-CXE">
+                        <rect key="frame" x="11" y="15" width="60" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXK-QC-dVs">
+                        <rect key="frame" x="276" y="15" width="33" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品总计 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6z-ol-VAR">
+                        <rect key="frame" x="11" y="43" width="60" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Apk-Jm-tJO">
+                        <rect key="frame" x="276" y="43" width="33" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="运费总计 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubH-el-ln1">
+                        <rect key="frame" x="11" y="71" width="60" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZsK-eJ-CdT">
+                        <rect key="frame" x="276" y="71" width="33" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Apk-Jm-tJO" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="9dw-U5-NFK"/>
+                    <constraint firstItem="j6z-ol-VAR" firstAttribute="leading" secondItem="UbM-En-CXE" secondAttribute="leading" id="CkQ-Kj-i3z"/>
+                    <constraint firstItem="UbM-En-CXE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="LcP-ok-OcE"/>
+                    <constraint firstItem="j6z-ol-VAR" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="UXO-8E-PQ1"/>
+                    <constraint firstItem="UbM-En-CXE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="XDd-5U-UOx"/>
+                    <constraint firstItem="Apk-Jm-tJO" firstAttribute="trailing" secondItem="uXK-QC-dVs" secondAttribute="trailing" id="Yi5-9T-pOq"/>
+                    <constraint firstItem="ZsK-eJ-CdT" firstAttribute="trailing" secondItem="uXK-QC-dVs" secondAttribute="trailing" id="bwd-NR-9y0"/>
+                    <constraint firstAttribute="bottom" secondItem="ubH-el-ln1" secondAttribute="bottom" constant="15" id="jOf-Hd-cdU"/>
+                    <constraint firstItem="ubH-el-ln1" firstAttribute="leading" secondItem="UbM-En-CXE" secondAttribute="leading" id="kj4-lM-S6W"/>
+                    <constraint firstAttribute="bottom" secondItem="ZsK-eJ-CdT" secondAttribute="bottom" constant="15" id="tW3-4i-MyQ"/>
+                    <constraint firstItem="uXK-QC-dVs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="ucQ-3B-WUy"/>
+                    <constraint firstAttribute="trailing" secondItem="uXK-QC-dVs" secondAttribute="trailing" constant="11" id="vb0-xg-yAf"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="lb_t_freight" destination="ubH-el-ln1" id="eCt-Ec-bZd"/>
+                <outlet property="lb_t_orderSum" destination="UbM-En-CXE" id="jjc-Ba-pbW"/>
+                <outlet property="lb_t_productSum" destination="j6z-ol-VAR" id="Ed0-Za-8kG"/>
+                <outlet property="lb_v_freight" destination="ZsK-eJ-CdT" id="Cn2-e9-ZaD"/>
+                <outlet property="lb_v_orderSum" destination="uXK-QC-dVs" id="nyB-l1-0tD"/>
+                <outlet property="lb_v_productSum" destination="Apk-Jm-tJO" id="qk1-8L-IPL"/>
+            </connections>
+            <point key="canvasLocation" x="379" y="385.5"/>
+        </tableViewCell>
+    </objects>
+</document>
