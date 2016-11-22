@@ -51,15 +51,50 @@
     return labelSize ;
 }
 
-- (NSString *)URLEncodedString
+
+
++(NSString*)encodeString:(NSString*)unencodedString
 {
-    NSString *encodedString = (NSString *)
+    
+    // CharactersToBeEscaped = @":/?&=;+!@#$()~',*";
+    
+    // CharactersToLeaveUnescaped = @"[].";
+    
+    NSString*encodedString=(NSString*)
+    
     CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
-                                                              (CFStringRef)self,
-                                                              (CFStringRef)@"!$&'()*+,-./:;=?@_~%#[]",
+                                                              
+                                                              (CFStringRef)unencodedString,
+                                                              
                                                               NULL,
+                                                              
+                                                              (CFStringRef)@"!*'();:@&=+$,/?%#[]",
+                                                              
                                                               kCFStringEncodingUTF8));
+    
     return encodedString;
+    
 }
+
+//URLDEcode
+
+-(NSString*)decodeString:(NSString*)encodedString
+
+{
+    
+    //NSString *decodedString = [encodedString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding ];
+    
+    NSString *decodedString=(__bridge_transfer NSString*)CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL,
+                                                                                                                 
+                                                                                                                 (__bridge CFStringRef)encodedString,
+                                                                                                                 
+                                                                                                                 CFSTR(""),
+                                                                                                                 
+                                                                                                                 CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
+    
+    return decodedString;
+    
+}
+
 
 @end

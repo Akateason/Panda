@@ -388,7 +388,7 @@
     NSMutableDictionary *paramer = [self getParameters] ;
     [paramer setObject:@(sortType) forKey:@"sortType"] ;
     
-    [paramer setObject:[tag URLEncodedString] forKey:@"tag"] ;
+    [paramer setObject:[NSString encodeString:tag] forKey:@"tag"] ;
     
     [paramer setObject:@(refresh) forKey:@"refresh"] ;
     if (currentUserID != nil) {

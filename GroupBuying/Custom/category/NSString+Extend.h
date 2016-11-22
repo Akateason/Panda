@@ -24,9 +24,8 @@
 - (CGSize)calculateWithOverSize:(CGSize)overSize
                  systemFontSize:(CGFloat)fontNumber ;
 
-
-- (NSString *)URLEncodedString ;
-
++(NSString*)encodeString:(NSString*)unencodedString ;
+-(NSString*)decodeString:(NSString*)encodedString ;
 
 
 @end
