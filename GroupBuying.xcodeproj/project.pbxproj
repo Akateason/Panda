@@ -336,6 +336,9 @@
 		D76E84751D780FAC0014FDEA /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E846B1D780FAC0014FDEA /* ViewController+MASAdditions.m */; };
 		D76E84A51D79883A0014FDEA /* KICropImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E84A21D79883A0014FDEA /* KICropImageView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D76E84A91D7997D80014FDEA /* CuttingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D76E84A81D7997D80014FDEA /* CuttingViewController.m */; };
+		D7798C9B1DE54D3800336B00 /* ConfirmOrderCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7798C9A1DE54D3800336B00 /* ConfirmOrderCtrller.m */; };
+		D7798C9F1DE59FEB00336B00 /* COVCPostCostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7798C9D1DE59FEB00336B00 /* COVCPostCostCell.m */; };
+		D7798CA01DE59FEB00336B00 /* COVCPostCostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7798C9E1DE59FEB00336B00 /* COVCPostCostCell.xib */; };
 		D7886D511D90EFAB003D6D57 /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7886D4F1D90EFAB003D6D57 /* CommentCell.m */; };
 		D7886D521D90EFAB003D6D57 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7886D501D90EFAB003D6D57 /* CommentCell.xib */; };
 		D7886D561D910799003D6D57 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = D7886D551D910799003D6D57 /* Comment.m */; };
@@ -454,6 +457,10 @@
 		D7E994E71D9A521C00EACDFB /* MineEditAddCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994E61D9A521C00EACDFB /* MineEditAddCtrller.m */; };
 		D7E994F91D9A712300EACDFB /* AboutUsCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994F81D9A712300EACDFB /* AboutUsCtrller.m */; };
 		D7E995041D9B7FB700EACDFB /* MyNoteCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E995031D9B7FB700EACDFB /* MyNoteCtrller.m */; };
+		D7FBF2CE1DE5AEAE00B3136D /* COVCPaywayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FBF2CC1DE5AEAE00B3136D /* COVCPaywayCell.m */; };
+		D7FBF2CF1DE5AEAF00B3136D /* COVCPaywayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7FBF2CD1DE5AEAE00B3136D /* COVCPaywayCell.xib */; };
+		D7FBF2D31DE5B11200B3136D /* PaywayItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FBF2D11DE5B11200B3136D /* PaywayItemCell.m */; };
+		D7FBF2D41DE5B11200B3136D /* PaywayItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7FBF2D21DE5B11200B3136D /* PaywayItemCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1093,6 +1100,11 @@
 		D76E84A21D79883A0014FDEA /* KICropImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KICropImageView.m; sourceTree = "<group>"; };
 		D76E84A71D7997D80014FDEA /* CuttingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CuttingViewController.h; path = "GroupBuying/VC+V/PhotoEditor/Cut/CuttingViewController.h"; sourceTree = SOURCE_ROOT; };
 		D76E84A81D7997D80014FDEA /* CuttingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CuttingViewController.m; path = "GroupBuying/VC+V/PhotoEditor/Cut/CuttingViewController.m"; sourceTree = SOURCE_ROOT; };
+		D7798C991DE54D3800336B00 /* ConfirmOrderCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConfirmOrderCtrller.h; path = "GroupBuying/VC+V/Shop/ConfirmOrder/ConfirmOrderCtrller.h"; sourceTree = SOURCE_ROOT; };
+		D7798C9A1DE54D3800336B00 /* ConfirmOrderCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConfirmOrderCtrller.m; path = "GroupBuying/VC+V/Shop/ConfirmOrder/ConfirmOrderCtrller.m"; sourceTree = SOURCE_ROOT; };
+		D7798C9C1DE59FEB00336B00 /* COVCPostCostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = COVCPostCostCell.h; path = "GroupBuying/VC+V/Shop/ConfirmOrder/COVCPostCostCell.h"; sourceTree = SOURCE_ROOT; };
+		D7798C9D1DE59FEB00336B00 /* COVCPostCostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = COVCPostCostCell.m; path = "GroupBuying/VC+V/Shop/ConfirmOrder/COVCPostCostCell.m"; sourceTree = SOURCE_ROOT; };
+		D7798C9E1DE59FEB00336B00 /* COVCPostCostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = COVCPostCostCell.xib; path = "GroupBuying/VC+V/Shop/ConfirmOrder/COVCPostCostCell.xib"; sourceTree = SOURCE_ROOT; };
 		D7886D4E1D90EFAB003D6D57 /* CommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentCell.h; path = "GroupBuying/VC+V/NoteDetail/CommentCell.h"; sourceTree = SOURCE_ROOT; };
 		D7886D4F1D90EFAB003D6D57 /* CommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentCell.m; path = "GroupBuying/VC+V/NoteDetail/CommentCell.m"; sourceTree = SOURCE_ROOT; };
 		D7886D501D90EFAB003D6D57 /* CommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommentCell.xib; path = "GroupBuying/VC+V/NoteDetail/CommentCell.xib"; sourceTree = SOURCE_ROOT; };
@@ -1298,6 +1310,12 @@
 		D7E994F81D9A712300EACDFB /* AboutUsCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutUsCtrller.m; path = "GroupBuying/VC+V/AboutUs/AboutUsCtrller.m"; sourceTree = SOURCE_ROOT; };
 		D7E995021D9B7FB700EACDFB /* MyNoteCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyNoteCtrller.h; path = "GroupBuying/VC+V/Mine/MyNote/MyNoteCtrller.h"; sourceTree = SOURCE_ROOT; };
 		D7E995031D9B7FB700EACDFB /* MyNoteCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyNoteCtrller.m; path = "GroupBuying/VC+V/Mine/MyNote/MyNoteCtrller.m"; sourceTree = SOURCE_ROOT; };
+		D7FBF2CB1DE5AEAE00B3136D /* COVCPaywayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = COVCPaywayCell.h; path = "GroupBuying/VC+V/Shop/ConfirmOrder/COVCPaywayCell.h"; sourceTree = SOURCE_ROOT; };
+		D7FBF2CC1DE5AEAE00B3136D /* COVCPaywayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = COVCPaywayCell.m; path = "GroupBuying/VC+V/Shop/ConfirmOrder/COVCPaywayCell.m"; sourceTree = SOURCE_ROOT; };
+		D7FBF2CD1DE5AEAE00B3136D /* COVCPaywayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = COVCPaywayCell.xib; path = "GroupBuying/VC+V/Shop/ConfirmOrder/COVCPaywayCell.xib"; sourceTree = SOURCE_ROOT; };
+		D7FBF2D01DE5B11200B3136D /* PaywayItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PaywayItemCell.h; path = "GroupBuying/VC+V/Shop/ConfirmOrder/PaywayItemCell.h"; sourceTree = SOURCE_ROOT; };
+		D7FBF2D11DE5B11200B3136D /* PaywayItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PaywayItemCell.m; path = "GroupBuying/VC+V/Shop/ConfirmOrder/PaywayItemCell.m"; sourceTree = SOURCE_ROOT; };
+		D7FBF2D21DE5B11200B3136D /* PaywayItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PaywayItemCell.xib; path = "GroupBuying/VC+V/Shop/ConfirmOrder/PaywayItemCell.xib"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2783,6 +2801,24 @@
 			name = Editor;
 			sourceTree = "<group>";
 		};
+		D7798C981DE54CF700336B00 /* ConfirmOrder */ = {
+			isa = PBXGroup;
+			children = (
+				D7798C991DE54D3800336B00 /* ConfirmOrderCtrller.h */,
+				D7798C9A1DE54D3800336B00 /* ConfirmOrderCtrller.m */,
+				D7798C9C1DE59FEB00336B00 /* COVCPostCostCell.h */,
+				D7798C9D1DE59FEB00336B00 /* COVCPostCostCell.m */,
+				D7798C9E1DE59FEB00336B00 /* COVCPostCostCell.xib */,
+				D7FBF2CB1DE5AEAE00B3136D /* COVCPaywayCell.h */,
+				D7FBF2CC1DE5AEAE00B3136D /* COVCPaywayCell.m */,
+				D7FBF2CD1DE5AEAE00B3136D /* COVCPaywayCell.xib */,
+				D7FBF2D01DE5B11200B3136D /* PaywayItemCell.h */,
+				D7FBF2D11DE5B11200B3136D /* PaywayItemCell.m */,
+				D7FBF2D21DE5B11200B3136D /* PaywayItemCell.xib */,
+			);
+			name = ConfirmOrder;
+			sourceTree = "<group>";
+		};
 		D7886D4D1D90EF83003D6D57 /* CommentCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -3131,6 +3167,7 @@
 		D7E4FF171DA8E34B00DC0E53 /* Shop */ = {
 			isa = PBXGroup;
 			children = (
+				D7798C981DE54CF700336B00 /* ConfirmOrder */,
 				D7E4FF1B1DA8E38600DC0E53 /* Cart */,
 			);
 			name = Shop;
@@ -3370,6 +3407,7 @@
 				60319DA01D9438DA00BD094D /* info_mineCell.plist in Resources */,
 				D7E0F4CB1D88033D00EA663B /* Login.storyboard in Resources */,
 				D7E994D61D99122C00EACDFB /* MineEditCell.xib in Resources */,
+				D7FBF2D41DE5B11200B3136D /* PaywayItemCell.xib in Resources */,
 				D7886D7E1D93B8A9003D6D57 /* Activity.storyboard in Resources */,
 				D7D79FCA1DDAE660004E52FC /* ODVCSumCell.xib in Resources */,
 				D7387A9B1DC83F73002F4229 /* DetailPicCollectionCell.xib in Resources */,
@@ -3419,9 +3457,11 @@
 				60319DCA1DAA9FF500BD094D /* TuSDK.bundle in Resources */,
 				D76E83841D6D40D40014FDEA /* Camera.storyboard in Resources */,
 				D7E994711D94D00100EACDFB /* SettingCell.xib in Resources */,
+				D7FBF2CF1DE5AEAF00B3136D /* COVCPaywayCell.xib in Resources */,
 				D75CC3CF1C2A926100E590E6 /* Main.storyboard in Resources */,
 				D74589991D6B190D00835234 /* HomePage.storyboard in Resources */,
 				60074E1D1D634AE80040C3C0 /* xtAllColorsList.plist in Resources */,
+				D7798CA01DE59FEB00336B00 /* COVCPostCostCell.xib in Resources */,
 				D7E4FF0F1DA8D75A00DC0E53 /* AddFriendCell.xib in Resources */,
 				D7CE29E51DAE517C00FF452C /* RankingTodayHotCtrl.xib in Resources */,
 				D7D79FC01DDAB7D1004E52FC /* ODVCProductListCell.xib in Resources */,
@@ -3483,6 +3523,7 @@
 				D76E84111D75665F0014FDEA /* PreviewCollectionCell.m in Sources */,
 				D76E83ED1D7435680014FDEA /* UserFoucusHeaderView.m in Sources */,
 				D7CE29EE1DAE522100FF452C /* RankTodayHotCollectionCell.m in Sources */,
+				D7FBF2D31DE5B11200B3136D /* PaywayItemCell.m in Sources */,
 				60074E091D60E0040040C3C0 /* ActivityController.m in Sources */,
 				D7CE2A251DB47C8500FF452C /* UIImageView+SDQN.m in Sources */,
 				D76E842A1D767A590014FDEA /* User.m in Sources */,
@@ -3701,6 +3742,7 @@
 				D76E83C21D70280F0014FDEA /* UserInfoView.m in Sources */,
 				D76E84511D77CCAC0014FDEA /* PhotoTaggingCtrller.m in Sources */,
 				D7CE2A121DAF9C0A00FF452C /* MyPointsInfomationCell.m in Sources */,
+				D7798C9B1DE54D3800336B00 /* ConfirmOrderCtrller.m in Sources */,
 				D75CC5D31C2A965000E590E6 /* MJRefreshAutoNormalFooter.m in Sources */,
 				D7E994BF1D98C9D800EACDFB /* FeaturesPdtCollectionCell.m in Sources */,
 				D75CC5DE1C2A965000E590E6 /* UIScrollView+MJRefresh.m in Sources */,
@@ -3726,6 +3768,7 @@
 				60074E061D60DFEF0040C3C0 /* FeaturesController.m in Sources */,
 				D75CC5DD1C2A965000E590E6 /* UIScrollView+MJExtension.m in Sources */,
 				D7E994701D94D00100EACDFB /* SettingCell.m in Sources */,
+				D7798C9F1DE59FEB00336B00 /* COVCPostCostCell.m in Sources */,
 				D7CE29E01DAE470B00FF452C /* RankingUserCell.m in Sources */,
 				D75CC4451C2A95DE00E590E6 /* MyTabbar.m in Sources */,
 				60074E1B1D634AE80040C3C0 /* UIColor+AllColors.m in Sources */,
@@ -3734,6 +3777,7 @@
 				D75CC5D41C2A965000E590E6 /* MJRefreshAutoStateFooter.m in Sources */,
 				D75CC5F61C2A965000E590E6 /* SDWebImageCompat.m in Sources */,
 				60319D9D1D9437E000BD094D /* MineCell.m in Sources */,
+				D7FBF2CE1DE5AEAE00B3136D /* COVCPaywayCell.m in Sources */,
 				D75CC7331C2D13C000E590E6 /* NSObject+YYModel.m in Sources */,
 				D76E839A1D6DA6540014FDEA /* CameraGroupCell.m in Sources */,
 				D71099EC1DD17BAA00F16471 /* DefaultAddressCell.m in Sources */,

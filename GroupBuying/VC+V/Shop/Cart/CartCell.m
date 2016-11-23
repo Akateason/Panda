@@ -33,6 +33,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *btNumMinus;
 @property (weak, nonatomic) IBOutlet UILabel *lb_Num;
 
+//
+@property (weak, nonatomic) IBOutlet UILabel *lb_offSale; //已下架
+
 @end
 
 @implementation CartCell
@@ -89,6 +92,9 @@
     _lb_Num.layer.borderColor = [UIColor xt_w_desc].CGColor ;
     _lb_Num.layer.borderWidth = 0.5f ;
     _lb_Num.textColor = [UIColor xt_w_dark] ;
+    
+    _lb_offSale.textColor = [UIColor whiteColor] ;
+    _lb_offSale.backgroundColor = [UIColor colorWithWhite:0.5 alpha:0.7] ;
 }
 
 

@@ -10,6 +10,7 @@
 #import "UIAlternativeButton.h"
 #import "CartCell.h"
 #import "CartIntroductionFooterView.h"
+#import "ConfirmOrderCtrller.h"
 
 @interface ShopCartCtrller () <UITableViewDataSource,UITableViewDelegate,RootTableViewDelegate>
 
@@ -36,6 +37,9 @@
 - (IBAction)btCompleteOnClick:(id)sender
 {
     NSLog(@"结算") ;
+    
+    ConfirmOrderCtrller *confirmOrderCtrller = (ConfirmOrderCtrller *)[[self class] getCtrllerFromStory:@"Shop" controllerIdentifier:@"ConfirmOrderCtrller"] ;
+    [self.navigationController pushViewController:confirmOrderCtrller animated:YES] ;
 }
 
 #pragma mark - life

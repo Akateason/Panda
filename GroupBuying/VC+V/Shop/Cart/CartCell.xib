@@ -108,6 +108,16 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已下架" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcu-vh-cx5">
+                                <rect key="frame" x="30" y="67" width="70" height="20"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="IIA-XY-TK8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="1" green="0.29734353200000002" blue="0.46808931720000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.82229676920000006" blue="0.050859124030000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -123,8 +133,11 @@
                             <constraint firstItem="K9O-Nj-srM" firstAttribute="leading" secondItem="9sR-YC-1Fc" secondAttribute="trailing" id="Hco-Ko-UJd"/>
                             <constraint firstItem="GmW-pH-wcb" firstAttribute="centerY" secondItem="kDw-Kp-ZfI" secondAttribute="centerY" id="JCH-ak-OLf"/>
                             <constraint firstItem="MNV-I5-Yuw" firstAttribute="top" secondItem="kDw-Kp-ZfI" secondAttribute="top" constant="17" id="Peg-eY-57B"/>
+                            <constraint firstItem="gcu-vh-cx5" firstAttribute="trailing" secondItem="GmW-pH-wcb" secondAttribute="trailing" id="R3Q-oY-DPn"/>
                             <constraint firstAttribute="trailing" secondItem="K0A-rI-dkz" secondAttribute="trailing" constant="12" id="UMB-Pe-4iX"/>
                             <constraint firstAttribute="trailing" secondItem="COM-zj-1Uo" secondAttribute="trailing" constant="2" id="WzX-ne-AFC"/>
+                            <constraint firstItem="gcu-vh-cx5" firstAttribute="bottom" secondItem="GmW-pH-wcb" secondAttribute="bottom" id="cUh-Xc-0HU"/>
+                            <constraint firstItem="gcu-vh-cx5" firstAttribute="leading" secondItem="GmW-pH-wcb" secondAttribute="leading" id="cyZ-jd-oEK"/>
                             <constraint firstAttribute="height" constant="105" id="geU-a3-7Cb"/>
                             <constraint firstAttribute="bottom" secondItem="ffh-MM-yGt" secondAttribute="bottom" constant="18" id="iGl-36-s1e"/>
                             <constraint firstItem="9sR-YC-1Fc" firstAttribute="bottom" secondItem="P73-Ph-SlR" secondAttribute="bottom" constant="-7" id="jD5-RJ-4ND"/>
@@ -216,6 +229,7 @@
                 <outlet property="btNumPlus" destination="K9O-Nj-srM" id="zuK-x5-vWi"/>
                 <outlet property="imgProduct" destination="GmW-pH-wcb" id="qbE-sK-VS3"/>
                 <outlet property="lb_Num" destination="9sR-YC-1Fc" id="Bfq-lH-alT"/>
+                <outlet property="lb_offSale" destination="gcu-vh-cx5" id="wjl-1I-EnI"/>
                 <outlet property="lb_price" destination="EIV-VQ-ZNg" id="k36-M2-bX9"/>
                 <outlet property="lb_productName" destination="MNV-I5-Yuw" id="GEs-SN-Fao"/>
                 <outlet property="lb_specification" destination="ffh-MM-yGt" id="xf6-8t-6qW"/>
