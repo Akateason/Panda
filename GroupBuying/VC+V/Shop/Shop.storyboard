@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Shop Cart Ctrller-->
@@ -107,7 +108,106 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pYd-Nc-Rhq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="361" y="348"/>
+            <point key="canvasLocation" x="405" y="348"/>
+        </scene>
+        <!--Product Detail Ctrller-->
+        <scene sceneID="TPV-tP-WcX">
+            <objects>
+                <viewController storyboardIdentifier="ProductDetailCtrller" id="7rq-7q-dhi" customClass="ProductDetailCtrller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4Fv-1X-cXc"/>
+                        <viewControllerLayoutGuide type="bottom" id="6d4-ae-Eys"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="H28-5w-zh8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OwA-3M-W6o">
+                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sXO-1U-cBE">
+                                        <rect key="frame" x="344" y="0.0" width="256" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="加入购物车"/>
+                                        <connections>
+                                            <action selector="btAddToShopCartOnClick:" destination="7rq-7q-dhi" eventType="touchUpInside" id="m5H-T6-Qa2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRw-on-EtX">
+                                        <rect key="frame" x="0.0" y="0.0" width="171" height="50"/>
+                                        <color key="backgroundColor" red="0.2941176593" green="0.7607843876" blue="0.24313727020000001" alpha="1" colorSpace="deviceRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="ksS-BV-qLB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="收藏">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btCollectionOnClick:" destination="7rq-7q-dhi" eventType="touchUpInside" id="7ZU-oL-ckX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tyk-yT-IP8">
+                                        <rect key="frame" x="172" y="0.0" width="171" height="50"/>
+                                        <color key="backgroundColor" red="0.2941176593" green="0.7607843876" blue="0.24313727020000001" alpha="1" colorSpace="deviceRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="F6p-jh-x5A"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="立即购买">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btBuyNowOnClick:" destination="7rq-7q-dhi" eventType="touchUpInside" id="fbd-KM-plv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.97254901959999995" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Tyk-yT-IP8" firstAttribute="top" secondItem="OwA-3M-W6o" secondAttribute="top" id="1HY-Xx-FGa"/>
+                                    <constraint firstAttribute="trailing" secondItem="sXO-1U-cBE" secondAttribute="trailing" id="2xK-Gp-cIs"/>
+                                    <constraint firstItem="Tyk-yT-IP8" firstAttribute="width" secondItem="OwA-3M-W6o" secondAttribute="width" multiplier="214:750" id="QSS-h3-l8Z"/>
+                                    <constraint firstItem="NRw-on-EtX" firstAttribute="leading" secondItem="OwA-3M-W6o" secondAttribute="leading" id="ROi-m6-ZYe"/>
+                                    <constraint firstItem="sXO-1U-cBE" firstAttribute="width" secondItem="OwA-3M-W6o" secondAttribute="width" multiplier="32:75" id="W51-1k-Ujz"/>
+                                    <constraint firstAttribute="bottom" secondItem="NRw-on-EtX" secondAttribute="bottom" id="Z8F-Qa-LGa"/>
+                                    <constraint firstAttribute="height" constant="50" id="bwP-ii-XAB"/>
+                                    <constraint firstItem="sXO-1U-cBE" firstAttribute="leading" secondItem="Tyk-yT-IP8" secondAttribute="trailing" constant="1" id="hMp-lt-yLK"/>
+                                    <constraint firstItem="NRw-on-EtX" firstAttribute="width" secondItem="OwA-3M-W6o" secondAttribute="width" multiplier="214:750" id="nv1-xv-6z7"/>
+                                    <constraint firstItem="Tyk-yT-IP8" firstAttribute="leading" secondItem="NRw-on-EtX" secondAttribute="trailing" constant="1" id="rA0-bI-DDQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="sXO-1U-cBE" secondAttribute="bottom" id="soU-sw-RbC"/>
+                                    <constraint firstItem="sXO-1U-cBE" firstAttribute="top" secondItem="OwA-3M-W6o" secondAttribute="top" id="tFi-Hg-kWj"/>
+                                    <constraint firstItem="NRw-on-EtX" firstAttribute="top" secondItem="OwA-3M-W6o" secondAttribute="top" id="wc7-BF-aiJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="Tyk-yT-IP8" secondAttribute="bottom" id="zly-H7-O38"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NiP-sE-B27" customClass="RootTableView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="550"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6d4-ae-Eys" firstAttribute="top" secondItem="OwA-3M-W6o" secondAttribute="bottom" id="9Mk-I8-6Yv"/>
+                            <constraint firstAttribute="trailing" secondItem="OwA-3M-W6o" secondAttribute="trailing" id="L7M-NF-Wby"/>
+                            <constraint firstItem="NiP-sE-B27" firstAttribute="top" secondItem="H28-5w-zh8" secondAttribute="top" id="Og6-dV-CWi"/>
+                            <constraint firstAttribute="trailing" secondItem="NiP-sE-B27" secondAttribute="trailing" id="XVF-9i-CeX"/>
+                            <constraint firstItem="NiP-sE-B27" firstAttribute="leading" secondItem="H28-5w-zh8" secondAttribute="leading" id="Ymh-W9-ZPd"/>
+                            <constraint firstItem="OwA-3M-W6o" firstAttribute="top" secondItem="NiP-sE-B27" secondAttribute="bottom" id="aCg-7d-Ze5"/>
+                            <constraint firstItem="OwA-3M-W6o" firstAttribute="leading" secondItem="H28-5w-zh8" secondAttribute="leading" id="baD-wz-7vi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomBar" destination="OwA-3M-W6o" id="ibs-hS-dtm"/>
+                        <outlet property="btAddToShopCart" destination="sXO-1U-cBE" id="Vw7-hL-lCz"/>
+                        <outlet property="btBuyNow" destination="Tyk-yT-IP8" id="OwK-nF-ePR"/>
+                        <outlet property="btCollection" destination="NRw-on-EtX" id="uIi-Tw-ayJ"/>
+                        <outlet property="table" destination="NiP-sE-B27" id="M8b-Rq-eqP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UNm-ij-Lpg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="405" y="1126"/>
         </scene>
         <!--Confirm Order Ctrller-->
         <scene sceneID="kMQ-QH-M34">
@@ -193,7 +293,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jfW-EP-nFO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1046" y="348"/>
+            <point key="canvasLocation" x="1122" y="348"/>
         </scene>
     </scenes>
     <resources>

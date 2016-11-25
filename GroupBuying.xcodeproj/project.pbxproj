@@ -461,6 +461,7 @@
 		D7FBF2CF1DE5AEAF00B3136D /* COVCPaywayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7FBF2CD1DE5AEAE00B3136D /* COVCPaywayCell.xib */; };
 		D7FBF2D31DE5B11200B3136D /* PaywayItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FBF2D11DE5B11200B3136D /* PaywayItemCell.m */; };
 		D7FBF2D41DE5B11200B3136D /* PaywayItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7FBF2D21DE5B11200B3136D /* PaywayItemCell.xib */; };
+		D7FBF2D81DE6C93700B3136D /* ProductDetailCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FBF2D71DE6C93700B3136D /* ProductDetailCtrller.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1316,6 +1317,8 @@
 		D7FBF2D01DE5B11200B3136D /* PaywayItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PaywayItemCell.h; path = "GroupBuying/VC+V/Shop/ConfirmOrder/PaywayItemCell.h"; sourceTree = SOURCE_ROOT; };
 		D7FBF2D11DE5B11200B3136D /* PaywayItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PaywayItemCell.m; path = "GroupBuying/VC+V/Shop/ConfirmOrder/PaywayItemCell.m"; sourceTree = SOURCE_ROOT; };
 		D7FBF2D21DE5B11200B3136D /* PaywayItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PaywayItemCell.xib; path = "GroupBuying/VC+V/Shop/ConfirmOrder/PaywayItemCell.xib"; sourceTree = SOURCE_ROOT; };
+		D7FBF2D61DE6C93700B3136D /* ProductDetailCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductDetailCtrller.h; path = "GroupBuying/VC+V/Product/ProductDetailCtrller.h"; sourceTree = SOURCE_ROOT; };
+		D7FBF2D71DE6C93700B3136D /* ProductDetailCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductDetailCtrller.m; path = "GroupBuying/VC+V/Product/ProductDetailCtrller.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1849,6 +1852,7 @@
 		D75CC3F71C2A92B200E590E6 /* VC+V */ = {
 			isa = PBXGroup;
 			children = (
+				D7FBF2D51DE6C82200B3136D /* Product */,
 				60319DD51DAC061600BD094D /* HomePageCollectionCellHeader.h */,
 				D7CE29CE1DACD52A00FF452C /* BigPhotoHeaderViewProtocolHeader.h */,
 				60074DF91D60DEC90040C3C0 /* HomePage1 */,
@@ -3284,6 +3288,15 @@
 			name = MyNote;
 			sourceTree = "<group>";
 		};
+		D7FBF2D51DE6C82200B3136D /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				D7FBF2D61DE6C93700B3136D /* ProductDetailCtrller.h */,
+				D7FBF2D71DE6C93700B3136D /* ProductDetailCtrller.m */,
+			);
+			name = Product;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -3798,6 +3811,7 @@
 				D7CE2A051DAF85E600FF452C /* MyCouponCodeCtrller.m in Sources */,
 				D7CE2A161DAF9FA700FF452C /* MyPointDetailHeader.m in Sources */,
 				D7E4FF1A1DA8E37F00DC0E53 /* ShopCartCtrller.m in Sources */,
+				D7FBF2D81DE6C93700B3136D /* ProductDetailCtrller.m in Sources */,
 				D75CC5BD1C2A965000E590E6 /* ASIS3ServiceRequest.m in Sources */,
 				60319D5D1D8F1A9200BD094D /* DetailHisFocusCell.m in Sources */,
 				D7D79FB51DDAAB3C004E52FC /* ODVCAddressCell.m in Sources */,
