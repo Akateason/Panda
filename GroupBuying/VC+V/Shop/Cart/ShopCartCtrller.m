@@ -37,7 +37,6 @@
 - (IBAction)btCompleteOnClick:(id)sender
 {
     NSLog(@"结算") ;
-    
     ConfirmOrderCtrller *confirmOrderCtrller = (ConfirmOrderCtrller *)[[self class] getCtrllerFromStory:@"Shop" controllerIdentifier:@"ConfirmOrderCtrller"] ;
     [self.navigationController pushViewController:confirmOrderCtrller animated:YES] ;
 }

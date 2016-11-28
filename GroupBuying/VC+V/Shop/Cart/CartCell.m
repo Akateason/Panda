@@ -61,7 +61,11 @@
     NSLog(@"-") ;
 }
 
-
+- (void)tapProduct
+{
+    NSLog(@"tap product") ;
+    
+}
 
 
 
@@ -95,6 +99,9 @@
     
     _lb_offSale.textColor = [UIColor whiteColor] ;
     _lb_offSale.backgroundColor = [UIColor colorWithWhite:0.5 alpha:0.7] ;
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapProduct)] ;
+    [_imgProduct addGestureRecognizer:tapGesture] ;
 }
 
 

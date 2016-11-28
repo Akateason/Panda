@@ -430,6 +430,8 @@
 		D7E4FF1A1DA8E37F00DC0E53 /* ShopCartCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E4FF191DA8E37F00DC0E53 /* ShopCartCtrller.m */; };
 		D7E4FF1F1DA8FEB900DC0E53 /* CartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E4FF1D1DA8FEB900DC0E53 /* CartCell.m */; };
 		D7E4FF201DA8FEB900DC0E53 /* CartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E4FF1E1DA8FEB900DC0E53 /* CartCell.xib */; };
+		D7E713021DEC171C000C6C94 /* ProductHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E713001DEC171C000C6C94 /* ProductHeadCell.m */; };
+		D7E713031DEC171C000C6C94 /* ProductHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E713011DEC171C000C6C94 /* ProductHeadCell.xib */; };
 		D7E994621D93D3D700EACDFB /* MineUserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994601D93D3D700EACDFB /* MineUserInfoCell.m */; };
 		D7E994631D93D3D700EACDFB /* MineUserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E994611D93D3D700EACDFB /* MineUserInfoCell.xib */; };
 		D7E994661D94C9DC00EACDFB /* XTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994651D94C9DC00EACDFB /* XTButton.m */; };
@@ -1265,6 +1267,9 @@
 		D7E4FF1C1DA8FEB900DC0E53 /* CartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CartCell.h; path = "GroupBuying/VC+V/Shop/Cart/CartCell.h"; sourceTree = SOURCE_ROOT; };
 		D7E4FF1D1DA8FEB900DC0E53 /* CartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CartCell.m; path = "GroupBuying/VC+V/Shop/Cart/CartCell.m"; sourceTree = SOURCE_ROOT; };
 		D7E4FF1E1DA8FEB900DC0E53 /* CartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CartCell.xib; path = "GroupBuying/VC+V/Shop/Cart/CartCell.xib"; sourceTree = SOURCE_ROOT; };
+		D7E712FF1DEC171C000C6C94 /* ProductHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductHeadCell.h; path = "GroupBuying/VC+V/Product/ProductHeadCell.h"; sourceTree = SOURCE_ROOT; };
+		D7E713001DEC171C000C6C94 /* ProductHeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductHeadCell.m; path = "GroupBuying/VC+V/Product/ProductHeadCell.m"; sourceTree = SOURCE_ROOT; };
+		D7E713011DEC171C000C6C94 /* ProductHeadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProductHeadCell.xib; path = "GroupBuying/VC+V/Product/ProductHeadCell.xib"; sourceTree = SOURCE_ROOT; };
 		D7E9945F1D93D3D700EACDFB /* MineUserInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MineUserInfoCell.h; path = "GroupBuying/VC+V/Mine/MineUserInfoCell.h"; sourceTree = SOURCE_ROOT; };
 		D7E994601D93D3D700EACDFB /* MineUserInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MineUserInfoCell.m; path = "GroupBuying/VC+V/Mine/MineUserInfoCell.m"; sourceTree = SOURCE_ROOT; };
 		D7E994611D93D3D700EACDFB /* MineUserInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MineUserInfoCell.xib; path = "GroupBuying/VC+V/Mine/MineUserInfoCell.xib"; sourceTree = SOURCE_ROOT; };
@@ -3293,6 +3298,9 @@
 			children = (
 				D7FBF2D61DE6C93700B3136D /* ProductDetailCtrller.h */,
 				D7FBF2D71DE6C93700B3136D /* ProductDetailCtrller.m */,
+				D7E712FF1DEC171C000C6C94 /* ProductHeadCell.h */,
+				D7E713001DEC171C000C6C94 /* ProductHeadCell.m */,
+				D7E713011DEC171C000C6C94 /* ProductHeadCell.xib */,
 			);
 			name = Product;
 			sourceTree = "<group>";
@@ -3479,6 +3487,7 @@
 				D7CE29E51DAE517C00FF452C /* RankingTodayHotCtrl.xib in Resources */,
 				D7D79FC01DDAB7D1004E52FC /* ODVCProductListCell.xib in Resources */,
 				D7CE2A131DAF9C0A00FF452C /* MyPointsInfomationCell.xib in Resources */,
+				D7E713031DEC171C000C6C94 /* ProductHeadCell.xib in Resources */,
 				60319D641D8F1D0C00BD094D /* UserItemCollectionCell.xib in Resources */,
 				608405941D74AA6800B40D68 /* SVProgressHUD.bundle in Resources */,
 				D7886D651D915787003D6D57 /* FVCBannerCell.xib in Resources */,
@@ -3698,6 +3707,7 @@
 				D75CC5B81C2A965000E590E6 /* ASIS3Bucket.m in Sources */,
 				D76E84091D755FDD0014FDEA /* PreviewCtrller.m in Sources */,
 				D75CC44F1C2A95DE00E590E6 /* ShareUtils.m in Sources */,
+				D7E713021DEC171C000C6C94 /* ProductHeadCell.m in Sources */,
 				D76E846C1D780FAC0014FDEA /* MASCompositeConstraint.m in Sources */,
 				D75CC61D1C2A965000E590E6 /* FBShimmeringLayer.m in Sources */,
 				D7E994BA1D98C67F00EACDFB /* FeaturesProductsCell.m in Sources */,
