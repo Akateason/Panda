@@ -20,7 +20,7 @@
 {
     [super awakeFromNib];
     // Initialization code
-    
+    _webView.scrollView.scrollEnabled = false ;
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://weibo.com"]] ;
     [_webView loadRequest:request] ;
 }
