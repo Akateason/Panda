@@ -11,6 +11,13 @@
 static NSString *const kID_CartCell = @"CartCell" ;
 static const float kHeight_CartCell = 201. ;
 
+
+@protocol ProductProtocol <NSObject>
+- (void)productOnClick ;
+@end
+
 @interface CartCell : UITableViewCell
+
+@property (nonatomic,weak) id <ProductProtocol> pdtDelegate ;
 
 @end

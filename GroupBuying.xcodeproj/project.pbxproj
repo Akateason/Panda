@@ -432,6 +432,9 @@
 		D7E4FF201DA8FEB900DC0E53 /* CartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E4FF1E1DA8FEB900DC0E53 /* CartCell.xib */; };
 		D7E713021DEC171C000C6C94 /* ProductHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E713001DEC171C000C6C94 /* ProductHeadCell.m */; };
 		D7E713031DEC171C000C6C94 /* ProductHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E713011DEC171C000C6C94 /* ProductHeadCell.xib */; };
+		D7E713321DF1848D000C6C94 /* PDVCSegmentHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E713311DF1848D000C6C94 /* PDVCSegmentHeaderView.m */; };
+		D7E713361DF1895D000C6C94 /* ProductDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E713341DF1895D000C6C94 /* ProductDetailCell.m */; };
+		D7E713371DF1895D000C6C94 /* ProductDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E713351DF1895D000C6C94 /* ProductDetailCell.xib */; };
 		D7E994621D93D3D700EACDFB /* MineUserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994601D93D3D700EACDFB /* MineUserInfoCell.m */; };
 		D7E994631D93D3D700EACDFB /* MineUserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E994611D93D3D700EACDFB /* MineUserInfoCell.xib */; };
 		D7E994661D94C9DC00EACDFB /* XTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E994651D94C9DC00EACDFB /* XTButton.m */; };
@@ -1270,6 +1273,11 @@
 		D7E712FF1DEC171C000C6C94 /* ProductHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductHeadCell.h; path = "GroupBuying/VC+V/Product/ProductHeadCell.h"; sourceTree = SOURCE_ROOT; };
 		D7E713001DEC171C000C6C94 /* ProductHeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductHeadCell.m; path = "GroupBuying/VC+V/Product/ProductHeadCell.m"; sourceTree = SOURCE_ROOT; };
 		D7E713011DEC171C000C6C94 /* ProductHeadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProductHeadCell.xib; path = "GroupBuying/VC+V/Product/ProductHeadCell.xib"; sourceTree = SOURCE_ROOT; };
+		D7E713301DF1848D000C6C94 /* PDVCSegmentHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDVCSegmentHeaderView.h; path = "GroupBuying/VC+V/Product/PDVCSegmentHeaderView.h"; sourceTree = SOURCE_ROOT; };
+		D7E713311DF1848D000C6C94 /* PDVCSegmentHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDVCSegmentHeaderView.m; path = "GroupBuying/VC+V/Product/PDVCSegmentHeaderView.m"; sourceTree = SOURCE_ROOT; };
+		D7E713331DF1895D000C6C94 /* ProductDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductDetailCell.h; path = "GroupBuying/VC+V/Product/ProductDetailCell.h"; sourceTree = SOURCE_ROOT; };
+		D7E713341DF1895D000C6C94 /* ProductDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductDetailCell.m; path = "GroupBuying/VC+V/Product/ProductDetailCell.m"; sourceTree = SOURCE_ROOT; };
+		D7E713351DF1895D000C6C94 /* ProductDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProductDetailCell.xib; path = "GroupBuying/VC+V/Product/ProductDetailCell.xib"; sourceTree = SOURCE_ROOT; };
 		D7E9945F1D93D3D700EACDFB /* MineUserInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MineUserInfoCell.h; path = "GroupBuying/VC+V/Mine/MineUserInfoCell.h"; sourceTree = SOURCE_ROOT; };
 		D7E994601D93D3D700EACDFB /* MineUserInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MineUserInfoCell.m; path = "GroupBuying/VC+V/Mine/MineUserInfoCell.m"; sourceTree = SOURCE_ROOT; };
 		D7E994611D93D3D700EACDFB /* MineUserInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MineUserInfoCell.xib; path = "GroupBuying/VC+V/Mine/MineUserInfoCell.xib"; sourceTree = SOURCE_ROOT; };
@@ -1857,9 +1865,9 @@
 		D75CC3F71C2A92B200E590E6 /* VC+V */ = {
 			isa = PBXGroup;
 			children = (
-				D7FBF2D51DE6C82200B3136D /* Product */,
 				60319DD51DAC061600BD094D /* HomePageCollectionCellHeader.h */,
 				D7CE29CE1DACD52A00FF452C /* BigPhotoHeaderViewProtocolHeader.h */,
+				D7FBF2D51DE6C82200B3136D /* Product */,
 				60074DF91D60DEC90040C3C0 /* HomePage1 */,
 				60074E001D60DF410040C3C0 /* Find1 */,
 				60074DFF1D60DF3C0040C3C0 /* Features1 */,
@@ -3301,6 +3309,11 @@
 				D7E712FF1DEC171C000C6C94 /* ProductHeadCell.h */,
 				D7E713001DEC171C000C6C94 /* ProductHeadCell.m */,
 				D7E713011DEC171C000C6C94 /* ProductHeadCell.xib */,
+				D7E713301DF1848D000C6C94 /* PDVCSegmentHeaderView.h */,
+				D7E713311DF1848D000C6C94 /* PDVCSegmentHeaderView.m */,
+				D7E713331DF1895D000C6C94 /* ProductDetailCell.h */,
+				D7E713341DF1895D000C6C94 /* ProductDetailCell.m */,
+				D7E713351DF1895D000C6C94 /* ProductDetailCell.xib */,
 			);
 			name = Product;
 			sourceTree = "<group>";
@@ -3414,6 +3427,7 @@
 			files = (
 				60319DC61DAA9FA900BD094D /* TuSDK.strings in Resources */,
 				60319D591D8ED3B800BD094D /* DetailCommentsCell.xib in Resources */,
+				D7E713371DF1895D000C6C94 /* ProductDetailCell.xib in Resources */,
 				606BF8511D84164200C503FE /* DetailUserInfoView.xib in Resources */,
 				60319D7F1D91918400BD094D /* FVCHotTagCell.xib in Resources */,
 				D71099D21DD0359600F16471 /* OrderlListCell.xib in Resources */,
@@ -3759,6 +3773,7 @@
 				D7CE2A541DBDEFC100FF452C /* CommentsListCtrller.m in Sources */,
 				6035CF341D75EDBA00EA590B /* TagSearchingCell.m in Sources */,
 				D75CC5C11C2A965000E590E6 /* CHTCollectionViewWaterfallLayout.m in Sources */,
+				D7E713321DF1848D000C6C94 /* PDVCSegmentHeaderView.m in Sources */,
 				D7CE29DB1DAE3A5600FF452C /* MineNavCtrller.m in Sources */,
 				D75CC5FB1C2A965000E590E6 /* SDWebImagePrefetcher.m in Sources */,
 				D75CC5EB1C2A965000E590E6 /* QNFileRecorder.m in Sources */,
@@ -3849,6 +3864,7 @@
 				D76E84041D7528F70014FDEA /* PostAddPhotoCell.m in Sources */,
 				D75CC6001C2A965000E590E6 /* UIImageView+HighlightedWebCache.m in Sources */,
 				D7CE2A6D1DC1D54A00FF452C /* WPHotspotLabel.m in Sources */,
+				D7E713361DF1895D000C6C94 /* ProductDetailCell.m in Sources */,
 				D7E4FF0E1DA8D75A00DC0E53 /* AddFriendCell.m in Sources */,
 				D7D79FB11DDAA975004E52FC /* OrderDetailCtrller.m in Sources */,
 				60319D8D1D91B4D000BD094D /* ActivityPageCell.m in Sources */,

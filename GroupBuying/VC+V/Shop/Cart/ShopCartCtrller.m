@@ -4,15 +4,16 @@
 //
 //  Created by TuTu on 16/10/8.
 //  Copyright © 2016年 teason. All rights reserved.
-//
+// 购物车
 
 #import "ShopCartCtrller.h"
 #import "UIAlternativeButton.h"
 #import "CartCell.h"
 #import "CartIntroductionFooterView.h"
 #import "ConfirmOrderCtrller.h"
+#import "ProductDetailCtrller.h"
 
-@interface ShopCartCtrller () <UITableViewDataSource,UITableViewDelegate,RootTableViewDelegate>
+@interface ShopCartCtrller () <UITableViewDataSource,UITableViewDelegate,RootTableViewDelegate,ProductProtocol>
 
 @property (weak, nonatomic) IBOutlet UIAlternativeButton *bt_AllChoose;
 @property (weak, nonatomic) IBOutlet UIView *bottomBar;
@@ -25,6 +26,16 @@
 @end
 
 @implementation ShopCartCtrller
+
+#pragma mark - ProductProtocol
+- (void)productOnClick
+{
+    ProductDetailCtrller *productDetailCtrller = (ProductDetailCtrller *)[[self class] getCtrllerFromStory:@"Shop" controllerIdentifier:@"ProductDetailCtrller"] ;
+    [self.navigationController pushViewController:productDetailCtrller
+                                         animated:YES] ;
+}
+
+
 
 #pragma mark - action
 - (IBAction)btAllChooseOnClick:(UIAlternativeButton *)sender
@@ -91,7 +102,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CartCell *cell = [tableView dequeueReusableCellWithIdentifier:kID_CartCell] ;
-    
+    cell.pdtDelegate = self ;
     return cell ;
 }
 

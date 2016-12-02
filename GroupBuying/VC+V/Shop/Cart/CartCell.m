@@ -34,7 +34,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lb_Num;
 
 //
-@property (weak, nonatomic) IBOutlet UILabel *lb_offSale; //已下架
+@property (weak, nonatomic) IBOutlet UILabel *lb_offSale; //显示 已下架
 
 @end
 
@@ -64,7 +64,10 @@
 - (void)tapProduct
 {
     NSLog(@"tap product") ;
-    
+    if (self.pdtDelegate && [self.pdtDelegate respondsToSelector:@selector(productOnClick)])
+    {
+        [self.pdtDelegate productOnClick] ;
+    }
 }
 
 
@@ -100,6 +103,8 @@
     _lb_offSale.textColor = [UIColor whiteColor] ;
     _lb_offSale.backgroundColor = [UIColor colorWithWhite:0.5 alpha:0.7] ;
     
+    
+    _imgProduct.userInteractionEnabled = true ;
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapProduct)] ;
     [_imgProduct addGestureRecognizer:tapGesture] ;
 }
