@@ -94,7 +94,7 @@ static NSString *const kQiniuImgStrTail = @"?imageView2/0/w/%d/h/%d/q/100" ;
 
 - (NSString *)combineResultImageWithOriginalStr:(NSString *)strOrigin
 {
-    NSString *tailStr = [NSString stringWithFormat:kQiniuImgStrTail,(int)CGWidth(self.frame),(int)CGHeight(self.frame)] ;
+    NSString *tailStr = [NSString stringWithFormat:kQiniuImgStrTail,(int)CGWidth(self.frame) * 2 ,(int)CGHeight(self.frame) * 2] ;
     return [strOrigin stringByAppendingString:tailStr] ;
 }
 
