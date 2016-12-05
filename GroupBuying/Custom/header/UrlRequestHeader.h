@@ -10,7 +10,7 @@
 #define SuBaoJiang_UrlRequestHeader_h
 
 //服务器
-static NSString *const G_IP_SERVER              = @"http://101.201.71.239:8080/CCommerce" ;
+static NSString *const G_IP_SERVER              = @"http://139.224.223.19/CCommerce" ;
 
 //用户登录
 static NSString *const URL_USERS_LOGIN          = @"/gwn/user/login" ;
