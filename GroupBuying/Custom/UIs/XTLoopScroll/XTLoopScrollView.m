@@ -239,7 +239,9 @@ static int IMAGEVIEW_COUNT = 3 ;
 - (void)tapScrollView
 {
     NSLog(@"tap in xtloopscroll : %d",_currentImageIndex) ;
-    [self.delegate tapingCurrentIndex:_currentImageIndex] ;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(tapingCurrentIndex:)]) {
+        [self.delegate tapingCurrentIndex:_currentImageIndex] ;
+    }    
 }
 
 #pragma mark 添加图片三个控件
